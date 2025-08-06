@@ -1,0 +1,101 @@
+---
+// index.astro - Home page
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import Card from '../components/Card.astro';
+import NewsletterForm from '../components/NewsletterForm';
+import { getCollection } from 'astro:content';
+
+// Get ventures data
+const allVentures = await getCollection('ventures');
+const ventureData = allVentures.map(v => v.data);
+
+// Get featured work
+const allWork = await getCollection('work');
+const featuredWork = allWork.filter(work => work.data.featured);
+
+// Get recent posts
+const allPosts = await getCollection('posts');
+const recentPosts = allPosts
+  .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+  .slice(0, 3);
+---
+
+<BaseLayout currentPage="home">
+  <HeroSection 
+    title="Smart Tech Investments"
+    subtitle="Investing in the future of technology"
+    ctaText="View Our Work"
+    ctaLink="/work"
+  />
+
+  <section class="ventures">
+    <h2>Our Ventures</h2>
+    <div class="grid">
+      {ventureData.map(venture => (
+        <Card 
+          title={venture.title}
+          description={venture.description}
+          tags={[venture.industry, venture.year]}
+          link={venture.website}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="featured-work">
+    <h2>Featured Work</h2>
+    <div class="work-grid">
+      {featuredWork.map(work => (
+        <Card 
+          title={work.data.title}
+          description={work.data.description}
+          imageUrl={work.data.image}
+          tags={work.data.tags}
+          link={`/work/${work.slug}`}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="recent-posts">
+    <h2>Recent Posts</h2>
+    <div class="grid">
+      {recentPosts.map(post => (
+        <Card 
+          title={post.data.title}
+          description={post.data.description}
+          tags={post.data.tags}
+          link={`/blog/${post.slug}`}
+        />
+      ))}
+    </div>
+  </section>
+
+  <NewsletterForm 
+    title="Stay Updated"
+    description="Get the latest news about our investments and ventures"
+  />
+</BaseLayout>
+
+<style>
+  .ventures,
+  .featured-work,
+  .recent-posts {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .work-grid,
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

@@ -1,0 +1,47 @@
+---
+// ventures.astro - Ventures showcase page
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import Card from '../components/Card.astro';
+import { getCollection } from 'astro:content';
+
+const ventures = await getCollection('ventures');
+---
+
+<BaseLayout 
+  title="Our Ventures | Smart Tech Investments" 
+  description="Explore our investment portfolio"
+  currentPage="ventures"
+>
+  <HeroSection 
+    title="Our Ventures"
+    subtitle="Strategic investments in innovative technology"
+  />
+
+  <section class="ventures-container">
+    <div class="ventures-grid">
+      {ventures.map(venture => (
+        <Card
+          title={venture.data.title}
+          description={venture.data.description}
+          imageUrl={venture.data.logo}
+          tags={venture.data.sectors}
+          link={venture.data.website}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .ventures-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+  .ventures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

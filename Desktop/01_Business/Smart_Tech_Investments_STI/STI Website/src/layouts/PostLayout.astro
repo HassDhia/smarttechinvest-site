@@ -1,0 +1,200 @@
+---
+// PostLayout.astro - MDX post wrapper with copy button and newsletter
+import BaseLayout from './BaseLayout.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import { getCollection } from 'astro:content';
+
+const { post } = Astro.props;
+const headings = await getHeadings(post.body);
+
+const copyToClipboard = () => {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url)
+    .then(() => {
+      const copyBtn = document.getElementById('copy-btn');
+      if (copyBtn) {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy Link';
+        }, 2000);
+      }
+    })
+    .catch(err => console.error('Failed to copy: ', err));
+};
+---
+
+<BaseLayout title={post.data.title} description={post.data.excerpt} currentPage="blog">
+  <article class="post-container">
+    <header class="post-header">
+      <div class="post-title-row">
+        <h1>{post.data.title}</h1>
+        <button 
+          id="copy-btn"
+          onClick={copyToClipboard}
+          class="copy-btn"
+        >
+          Copy Link
+        </button>
+      </div>
+      {post.data.subtitle && <h2 class="post-subtitle">{post.data.subtitle}</h2>}
+      <div class="post-meta">
+        <time datetime={post.data.date.toISOString()}>
+          {post.data.date.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          })}
+        </time>
+        {post.data.tags && (
+          <div class="post-tags">
+            {post.data.tags.map(tag => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        )}
+      </div>
+    </header>
+
+    {headings.length > 0 && (
+      <aside class="toc-container">
+        <h2>Table of Contents</h2>
+        <nav class="toc-nav">
+          <ul>
+            {headings.map(heading => (
+              <li>
+                <a href={`#${heading.slug}`}>{heading.text}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+    )}
+
+    <div class="post-content">
+      <slot />
+    </div>
+
+    <div class="post-footer">
+      <NewsletterForm 
+        title="Enjoyed this post?" 
+        description="Get the latest updates delivered to your inbox."
+      />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  .post-header {
+    margin-bottom: 2rem;
+  }
+  .post-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .post-subtitle {
+    margin: 0.5rem 0 1rem;
+    font-size: 1.25rem;
+    color: var(--secondary);
+    font-weight: normal;
+  }
+  .copy-btn {
+    padding: 0.25rem 0.75rem;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+  .copy-btn:hover {
+    background: #e0e0e0;
+  }
+  .post-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 0.5rem;
+    color: var(--secondary);
+    font-size: 0.9rem;
+  }
+  .post-tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .tag {
+    padding: 0.25rem 0.5rem;
+    background: #f0f0f0;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+  .toc-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+  }
+  .toc-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .toc-nav li {
+    margin: 0.5rem 0;
+  }
+  .toc-nav a {
+    text-decoration: none;
+    color: var(--primary);
+  }
+  .post-content {
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .post-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+  }
+</style>
+
+<script>
+  async function getHeadings(content) {
+    const { remark } = await import('remark');
+    const { default: remarkToc } = await import('remark-toc');
+    const { default: remarkParse } = await import('remark-parse');
+    const { default: remarkRehype } = await import('remark-rehype');
+    const { default: rehypeStringify } = await import('rehype-stringify');
+    
+    const result = await remark()
+      .use(remarkParse)
+      .use(remarkToc)
+      .use(remarkRehype)
+      .use(rehypeStringify)
+      .process(content);
+
+    const headings = [];
+    const regex = /<h[2-6] id="([^"]+)">([^<]+)<\/h[2-6]>/g;
+    let match;
+    
+    while ((match = regex.exec(String(result)))) {
+      headings.push({
+        slug: match[1],
+        text: match[2]
+      });
+    }
+    
+    return headings;
+  }
+</script>

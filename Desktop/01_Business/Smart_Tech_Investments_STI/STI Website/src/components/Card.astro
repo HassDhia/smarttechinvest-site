@@ -1,0 +1,87 @@
+---
+// Card.astro - Reusable card component for Work and Posts
+const { 
+  title,
+  tag,
+  excerpt,
+  href = "#",
+  image
+} = Astro.props;
+---
+
+<article class="card-container">
+  {image && (
+    <div class="card-image-container">
+      <img src={image} alt={title} class="card-image" loading="lazy" />
+    </div>
+  )}
+  <div class="card-content">
+    {tag && <span class="card-tag">{tag}</span>}
+    <h3 class="card-title">
+      <a href={href} class="card-link">{title}</a>
+    </h3>
+    <p class="card-excerpt">{excerpt}</p>
+  </div>
+</article>
+
+<style>
+  .card-container {
+    display: block;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+  }
+  .card-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .card-image-container {
+    height: 180px;
+    overflow: hidden;
+  }
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .card-container:hover .card-image {
+    transform: scale(1.05);
+  }
+  .card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .card-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #f0f0f0;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    align-self: flex-start;
+  }
+  .card-title {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  .card-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card-link:hover {
+    text-decoration: underline;
+  }
+  .card-excerpt {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+  }
+</style>

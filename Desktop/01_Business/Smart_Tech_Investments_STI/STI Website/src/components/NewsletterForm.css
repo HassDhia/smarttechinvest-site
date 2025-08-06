@@ -1,0 +1,55 @@
+.newsletter-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: #f8f8f8;
+}
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.name-input,
+.email-input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+.submit-btn {
+  padding: 0.5rem 1rem;
+  background: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.submit-btn:hover:not(:disabled) {
+  background: #0061d5;
+}
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.success-message {
+  padding: 1rem;
+  background: #e6ffed;
+  color: #22863a;
+  border-radius: 4px;
+  text-align: center;
+}
+.error-message {
+  padding: 0.5rem;
+  background: #ffeef0;
+  color: #cb2431;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+}

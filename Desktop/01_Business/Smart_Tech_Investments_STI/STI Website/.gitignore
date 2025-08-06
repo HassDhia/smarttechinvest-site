@@ -1,0 +1,8 @@
+# Runtime cruft
+node_modules/
+.astro/
+dist/
+.env
+# Editor / OS noise
+.DS_Store
+.vscode/

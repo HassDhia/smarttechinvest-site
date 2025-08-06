@@ -1,0 +1,47 @@
+---
+// work/index.astro - Work/projects listing page
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('work');
+---
+
+<BaseLayout 
+  title="Our Work | Smart Tech Investments" 
+  description="Explore our portfolio of investments and projects"
+  currentPage="work"
+>
+  <HeroSection 
+    title="Our Work"
+    subtitle="Projects and companies we've invested in"
+  />
+
+  <section class="projects-container">
+    <div class="projects-grid">
+      {projects.map(project => (
+        <Card
+          title={project.data.title}
+          description={project.data.excerpt}
+          imageUrl={project.data.heroImage}
+          tags={project.data.tags}
+          link={`/work/${project.slug}`}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .projects-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

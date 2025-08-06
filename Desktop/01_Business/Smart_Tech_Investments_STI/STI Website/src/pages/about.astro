@@ -1,0 +1,168 @@
+---
+// about.astro - About page
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import Card from '../components/Card.astro';
+import { Image } from 'astro:assets';
+import founderImage from '../images/founder.jpg';
+
+const teamMembers = [
+  {
+    title: 'John Doe',
+    description: 'Founder & CEO',
+    imageUrl: '/images/john.jpg',
+    tags: ['Strategy', 'Investments']
+  },
+  {
+    title: 'Jane Smith',
+    description: 'CTO',
+    imageUrl: '/images/jane.jpg',
+    tags: ['Technology', 'Innovation']
+  }
+];
+---
+
+<BaseLayout 
+  title="About Us | Smart Tech Investments" 
+  description="Learn about our mission and team"
+  currentPage="about"
+>
+  <HeroSection 
+    title="About Our Company"
+    subtitle="Driving innovation through strategic investments"
+  />
+
+  <section class="about-content">
+    <div class="mission">
+      <h2>Our Mission</h2>
+      <p>
+        We identify and invest in groundbreaking technology companies that are shaping the future.
+        Our focus is on early-stage startups with potential for massive impact.
+      </p>
+    </div>
+
+    <div class="biography">
+      <h2>Founder's Story</h2>
+      <div class="bio-content">
+        <Image 
+          src={founderImage} 
+          alt="Founder portrait" 
+          width={400}
+          height={400}
+          class="bio-image"
+        />
+        <div class="bio-text">
+          <p>
+            Founded in 2020, Smart Tech Investments was born from a passion for 
+            technology and a vision for its potential to solve global challenges.
+          </p>
+          <p>
+            With over 15 years in venture capital and technology development, 
+            our founder has cultivated a unique approach to identifying and 
+            nurturing promising startups.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="philosophy">
+      <h2>Investment Philosophy</h2>
+      <div class="philosophy-grid">
+        <div class="philosophy-item">
+          <h3>People First</h3>
+          <p>
+            We invest in exceptional founders with deep domain expertise 
+            and relentless execution capabilities.
+          </p>
+        </div>
+        <div class="philosophy-item">
+          <h3>Market Potential</h3>
+          <p>
+            We look for large, growing markets where technology can create 
+            significant value and competitive advantages.
+          </p>
+        </div>
+        <div class="philosophy-item">
+          <h3>Technology Edge</h3>
+          <p>
+            We prioritize companies with proprietary technology that creates 
+            defensible barriers to entry.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="team">
+      <h2>Our Team</h2>
+      <div class="team-grid">
+        {teamMembers.map(member => (
+          <Card {...member} />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-content {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+  .about-content h2 {
+    margin-bottom: 1.5rem;
+  }
+  .mission {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  .mission p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  .biography {
+    margin: 4rem 0;
+  }
+  .bio-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .bio-image {
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  .bio-text {
+    flex: 1;
+  }
+  .bio-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+  .philosophy {
+    margin: 4rem 0;
+  }
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .philosophy-item {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  .philosophy-item h3 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

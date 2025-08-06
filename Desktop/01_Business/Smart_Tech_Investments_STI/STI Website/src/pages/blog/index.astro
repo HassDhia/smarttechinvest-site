@@ -1,0 +1,48 @@
+---
+// blog/index.astro - Blog posts listing page
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import Card from '../../components/Card.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts');
+const posts = allPosts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+---
+
+<BaseLayout 
+  title="Blog | Smart Tech Investments" 
+  description="Insights and updates from our team"
+  currentPage="blog"
+>
+  <HeroSection 
+    title="Our Blog"
+    subtitle="Thoughts on technology, investing, and innovation"
+  />
+
+  <section class="posts-container">
+    <div class="posts-grid">
+      {posts.map(post => (
+        <Card
+          title={post.data.title}
+          description={post.data.excerpt}
+          imageUrl={post.data.heroImage}
+          tags={post.data.tags}
+          link={`/blog/${post.slug}`}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .posts-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>
