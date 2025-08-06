@@ -5,6 +5,7 @@ import HeroSection from '../components/HeroSection.astro';
 import Card from '../components/Card.astro';
 import { Image } from 'astro:assets';
 import founderImage from '../images/founder.jpg';
+import NewsletterForm from '../components/NewsletterForm.jsx';
 
 const teamMembers = [
   {
@@ -99,8 +100,14 @@ const teamMembers = [
           <Card {...member} />
         ))}
       </div>
-    </div>
-  </section>
+   </div>
+  
+  <div class="about-newsletter">
+    <NewsletterForm 
+      title="Stay in the loop" 
+      description="Sign up for our newsletter to get AI investment insights, stories, and updates delivered straight to your inbox." />
+  </div>
+/section>
 </BaseLayout>
 
 <style>
@@ -133,7 +140,8 @@ const teamMembers = [
   }
   .bio-image {
     border-radius: 8px;
-    object-fit: cover;
+    o
+bject-fit: cover;
   }
   .bio-text {
     flex: 1;
@@ -165,4 +173,9 @@ const teamMembers = [
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
   }
+  .about-newsletter {
+    margin-top: 4rem;
+    text-align: center;
+  }
+
 </style>
