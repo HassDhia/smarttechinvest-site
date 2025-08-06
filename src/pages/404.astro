@@ -1,53 +1,42 @@
 ---
-// 404.astro - Not found page
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroSection from '../components/HeroSection.astro';
 ---
-
-<BaseLayout 
-  title="Page Not Found | Smart Tech Investments" 
-  description="The page you're looking for doesn't exist"
-  currentPage="404"
->
-  <HeroSection 
-    title="404 - Lost in Space?"
-    subtitle="The page you're looking for seems to have taken off without us"
-  />
-
-  <section class="not-found-container">
-    <div class="not-found-content">
-      <p>Don't worry, we'll get you back on track:</p>
-      <a href="/" class="home-button">Return to Home</a>
-    </div>
+<BaseLayout title="Not Found">
+  <section class="not-found">
+    <h1>Dammmmit!</h1>
+    <p>The page you're looking for doesn't exist or has been moved.</p>
+    <p>Please check the URL or head back home.</p>
+    <a href="/" class="home-link">← Back to Home</a>
   </section>
-</BaseLayout>
 
-<style>
-  .not-found-container {
-    max-width: 800px;
-    margin: 4rem auto;
-    padding: 0 1rem;
-    text-align: center;
-  }
-  .not-found-content {
-    margin-top: 2rem;
-  }
-  .not-found-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: var(--secondary);
-  }
-  .home-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: var(--primary);
-    color: white;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    transition: background 0.2s ease;
-  }
-  .home-button:hover {
-    background: #0061d5;
-  }
-</style>
+  <style>
+    .not-found {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .not-found h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .not-found p {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+    .home-link {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .home-link:hover {
+      background: #08161d;
+    }
+  </style>
+</BaseLayout>
