@@ -6,7 +6,7 @@ const {
   title = "SmartTechInvest's |",
   subtitle,
   ctaText,
-  ctaLink,
+  ctaLin,
   backgroundIllustration
 } = Astro.props;
 ---
@@ -22,7 +22,7 @@ const {
   )}
   <div class="hero-content">
     <h1 class="hero-title">
-      {title} <AnimatedText />
+    {title} <  AnimatedText phrases={Astro.props.phrases} interval={Astro.props.interval} />
     </h1>
     {subtitle && <p class="hero-subtitle">{subtitle}</p>}
     {ctaText && (
