@@ -1,11 +1,35 @@
 ---
 // work/[slug].astro - Individual project page
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getEntryBySlug } from 'astro:content';
+import Card from '../../components/Card.astro';
+import NewsletterForm from '../../components/NewsletterForm';
+import { getEntryBySlug, getCollection } from 'astro:content';
 
 const { slug } = Astro.params;
 const entry = await getEntryBySlug('work', slug);
 const { Content, data } = await entry.render();
+
+// Fetch all work entries to generate related projects (excluding current)
+const allWork = await getCollection('work');
+const relatedProjects = allWork
+  .filter(project => project.slug !== slug)
+  .slice(0, 3);
+
+// Function to copy current page URL to clipboard (runs in browser)
+const copyToClipboard = () => {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url)
+    .then(() => {
+      const copyBtn = document.getElementById('copy-btn');
+      if (copyBtn) {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy Link';
+        }, 2000);
+      }
+    })
+    .catch(err => console.error('Failed to copy: ', err));
+};
 ---
 
 <BaseLayout 
@@ -15,7 +39,16 @@ const { Content, data } = await entry.render();
 >
   <article class="project-container">
     <header class="project-header">
-      <h1>{data.title}</h1>
+      <div class="project-title-row">
+        <h1>{data.title}</h1>
+        <button 
+          id="copy-btn" 
+          onClick={copyToClipboard} 
+          class="copy-btn"
+        >
+          Copy Link
+        </button>
+      </div>
       <div class="project-meta">
         <time datetime={data.date.toISOString()}>
           {data.date.toLocaleDateString('en-US', { 
@@ -68,6 +101,30 @@ const { Content, data } = await entry.render();
         </section>
       )}
     </div>
+
+    {relatedProjects.length > 0 && (
+      <section class="related-projects">
+        <h2>Related Projects</h2>
+        <div class="related-grid">
+          {relatedProjects.map(project => (
+            <Card
+              title={project.data.title}
+              description={project.data.excerpt}
+              imageUrl={project.data.heroImage}
+              tags={project.data.tags}
+              link={`/work/${project.slug}`}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <div class="project-newsletter">
+      <NewsletterForm 
+        title="Liked this project?" 
+        description="Subscribe for updates on our latest investments and projects."
+      />
+    </div>
   </article>
 </BaseLayout>
 
@@ -119,5 +176,44 @@ const { Content, data } = await entry.render();
   .project-section h2 {
     margin-bottom: 1.5rem;
     color: var(--primary);
+  }
+
+  /* Title row with copy link button */
+  .project-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .copy-btn {
+    padding: 0.25rem 0.75rem;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+  .copy-btn:hover {
+    background: #e0e0e0;
+  }
+
+  /* Related projects section */
+  .related-projects {
+    margin: 4rem 0 2rem;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  /* Newsletter section at bottom */
+  .project-newsletter {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
   }
 </style>
