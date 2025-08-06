@@ -1,26 +1,70 @@
 ---
 // Card.astro - Reusable card component for Work and Posts
-const { 
+// Card.astro - Updated card component supporting multiple props
+// Accepts title (string), description/excerpt (string), tags (array of strings or single string),
+// image or imageUrl (string), and href or link (string). Provides flexible fallback props
+// so usage across various pages (work, blog, ventures) is consistent.
+
+const {
   title,
-  tag,
+  /**
+   * Description or excerpt of the content. Accept either `description` or `excerpt`.
+   */
+  description,
   excerpt,
-  href = "#",
-  image
+  /**
+   * Single tag or array of tags to display as small chips.
+   */
+  tag,
+  tags,
+  /**
+   * Link destination. Accept `href` or `link`.
+   */
+  href,
+  link,
+  /**
+   * Image URL. Accept `image` or `imageUrl`.
+   */
+  image,
+  imageUrl
 } = Astro.props;
+
+// Normalize props for internal use
+const cardHref = href || link || '#';
+const cardImage = image || imageUrl || null;
+// Determine description text
+const cardExcerpt = description || excerpt || '';
+// Normalize tags into an array
+let cardTags = [];
+if (tags && Array.isArray(tags)) {
+  cardTags = tags;
+} else if (typeof tags === 'string') {
+  cardTags = [tags];
+} else if (typeof tag === 'string') {
+  cardTags = [tag];
+}
 ---
 
 <article class="card-container">
-  {image && (
+  {cardImage && (
     <div class="card-image-container">
-      <img src={image} alt={title} class="card-image" loading="lazy" />
+      <img src={cardImage} alt={title} class="card-image" loading="lazy" />
     </div>
   )}
   <div class="card-content">
-    {tag && <span class="card-tag">{tag}</span>}
-    <h3 class="card-title">
-      <a href={href} class="card-link">{title}</a>
-    </h3>
-    <p class="card-excerpt">{excerpt}</p>
+    {cardTags.length > 0 && (
+      <div class="card-tags">
+        {cardTags.map(t => (
+          <span class="card-tag">{t}</span>
+        ))}
+      </div>
+    )}
+    {title && (
+      <h3 class="card-title">
+        <a href={cardHref} class="card-link">{title}</a>
+      </h3>
+    )}
+    {cardExcerpt && <p class="card-excerpt">{cardExcerpt}</p>}
   </div>
 </article>
 
@@ -60,13 +104,14 @@ const {
   }
   .card-tag {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
+    padding: 0.25rem 0.5rem;
     background: #f0f0f0;
     border-radius: 4px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    align-self: flex-start;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
   }
   .card-title {
     margin: 0;
