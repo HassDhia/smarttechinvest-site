@@ -1,5 +1,6 @@
 ---
 // work/index.astro - Work/projects listing page
+import NewsletterForm from '../../components/NewsletterForm.jsx';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroSection from '../../components/HeroSection.astro';
 import Card from '../../components/Card.astro';
@@ -31,6 +32,13 @@ const projects = await getCollection('work');
       ))}
     </div>
   </section>
+  <div class="work-newsletter">
+    <NewsletterForm
+      title="Stay updated"
+      description="Join my newsletter to stay up to date with my latest ventures and projects."
+    />
+  </div>
+
 </BaseLayout>
 
 <style>
@@ -44,4 +52,10 @@ const projects = await getCollection('work');
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
   }
+
+  .work-newsletter {
+    margin-top: 4rem;
+    text-align: center;
+  }
+
 </style>
