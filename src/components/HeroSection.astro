@@ -2,27 +2,30 @@
 // HeroSection.astro - Page hero banner with animated text
 import AnimatedText from './AnimatedText.jsx';
 
-const { 
+const {
   title = "SmartTechInvest's |",
   subtitle,
   ctaText,
-  ctaLin,
-  backgroundIllustration
+  ctaLink,
+  backgroundIllustration,
+  // Optional props for animated text. If provided, these override defaults.
+  phrases,
+  interval
 } = Astro.props;
 ---
 
 <section class="hero-container">
   {backgroundIllustration && (
-    <img 
-      src={backgroundIllustration} 
-      alt="" 
+    <img
+      src={backgroundIllustration}
+      alt=""
       class="hero-bg-illustration"
       loading="lazy"
     />
   )}
   <div class="hero-content">
     <h1 class="hero-title">
-    {title} <  AnimatedText phrases={Astro.props.phrases} interval={Astro.props.interval} />
+      {title}<AnimatedText phrases={phrases} interval={interval} />
     </h1>
     {subtitle && <p class="hero-subtitle">{subtitle}</p>}
     {ctaText && (
