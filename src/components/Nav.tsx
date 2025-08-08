@@ -31,7 +31,7 @@ export function Nav() {
                 target={external ? "_blank" : undefined}
                 rel={external ? "noopener" : undefined}
                   data-nav={href}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-xl transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] ${active ? "text-[var(--brand)] dark:text-white" : "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white/90"} ${href === "/offers" && activeSection === "how" ? "font-semibold" : ""}`}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-xl transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] ${active ? "text-[var(--brand)] dark:text-white" : "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"} ${href === "/offers" && activeSection === "how" ? "font-semibold" : ""}`}
                 aria-current={active ? "page" : undefined}
               >
                 <Icon size={18} />

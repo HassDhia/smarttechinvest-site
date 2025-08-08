@@ -82,7 +82,7 @@
   --background: #0b1220;
   --foreground: #f3f4f6; /* brighter body text */
   --surface: #0f172a;
-  --border: #334155; /* slate-700 for clearer edges on dark cards */
+  --border: #3b4a5d; /* slightly brighter for legibility */
   --muted: #cbd5e1; /* slate-300 for descriptions */
   --brand: #9cc4ff;
   --brand-600: #6ba3f5;
@@ -103,7 +103,9 @@ body {
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color-scheme: light;
 }
+.dark body { color-scheme: dark; }
 
 /* Improve mobile readability */
 @media (max-width: 640px) {

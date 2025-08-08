@@ -21,7 +21,7 @@ export function Card({
       className
     )} style={{ borderColor: "var(--border)" }}>
       {Icon ? (
-        <div className="mb-2 text-[var(--brand)] dark:text-white/80"><Icon size={16} /></div>
+        <div className="mb-2" style={{ color: "var(--brand)" }}><Icon size={16} /></div>
       ) : null}
       <h3 className="text-lg font-semibold" style={{ fontFamily: "var(--font-heading)" }}>{title}</h3>
       {description && (
