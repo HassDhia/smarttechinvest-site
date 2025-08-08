@@ -18,7 +18,7 @@ export function WorkCard({
   href?: string;
 }) {
   const content = (
-    <div className={cn("group rounded-2xl overflow-hidden bg-white/80 dark:bg-white/5 p-2 border") } style={{ borderColor: "var(--border)" }}> 
+    <div className={cn("group rounded-2xl overflow-hidden bg-white/80 dark:bg-white/5 p-2 border border-[var(--border)]") }>
       <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
         <Image
           src={image || "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop"}
@@ -29,11 +29,13 @@ export function WorkCard({
           priority={false}
         />
       </div>
-      <div className="mt-3 flex items-center gap-2 text-xs" style={{ color: "var(--muted)" }}>
+      <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-[var(--muted)]">
         <span className="font-mono">{role}</span>
         <span>•</span>
         <span className="font-mono">{year}</span>
-        {outcome ? <Badge className="ml-auto">{outcome}</Badge> : null}
+        {outcome ? (
+          <Badge className="ml-0 sm:ml-auto bg-white/60 text-[var(--brand)] dark:bg-white/10">{outcome}</Badge>
+        ) : null}
       </div>
       <h3 className="mt-1 text-lg font-semibold">{title}</h3>
     </div>
