@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/manrope";
+
+:root {
+  /* Color tokens */
+  --background: #f5f7fb; /* soft cool canvas for light mode */
+  --foreground: #0a0a0a; /* near-black for max readability */
+  --brand: #0f2544; /* deepen brand, keep identity */
+  --brand-600: #163b6b;
+  --muted: #374151; /* slate-700 for clearer light mode text */
+  --surface: #ffffff;
+  --border: #d7dce3; /* slightly cooler border to contrast white cards */
+  --success: #16a34a;
+  --success-fg: #0a0a0a;
+  --warning: #f59e0b;
+  --warning-fg: #0a0a0a;
+  --info: #2563eb;
+  --info-fg: #ffffff;
+  --danger: #dc2626;
+  --danger-fg: #ffffff;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(15, 37, 68, 0.08);
+  --shadow: 0 8px 24px rgba(15, 37, 68, 0.10);
+  --shadow-lg: 0 14px 40px rgba(15, 37, 68, 0.14);
+
+  /* Motion tokens */
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-100: 120ms;
+  --dur-200: 200ms;
+  --dur-300: 320ms;
+  --dur-500: 500ms;
+
+  /* Fluid type scale */
+  --step--1: clamp(0.79rem, 0.78rem + 0.1vw, 0.84rem); /* small */
+  --step-0: clamp(0.94rem, 0.90rem + 0.3vw, 1.00rem); /* body */
+  --step-1: clamp(1.13rem, 1.06rem + 0.5vw, 1.25rem);
+  --step-2: clamp(1.35rem, 1.23rem + 0.8vw, 1.56rem);
+  --step-3: clamp(1.62rem, 1.42rem + 1.1vw, 1.95rem);
+  --step-4: clamp(1.94rem, 1.64rem + 1.6vw, 2.44rem);
+  --step-5: clamp(2.32rem, 1.89rem + 2.3vw, 3.05rem);
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --section-padding: clamp(3rem, 6vw, 6rem);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: InterVariable, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-heading: ManropeVariable, InterVariable, ui-sans-serif, system-ui;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b1220;
+    --foreground: #e5e7eb;
+    --surface: #0f172a;
+    --border: #1f2a44;
+    --muted: #acb1bd;
+    --brand: #9cc4ff;
+    --brand-600: #6ba3f5;
+  }
+}
+
+/* Explicit dark mode override when toggled via .dark on <html> */
+.dark {
+  --background: #0b1220;
+  --foreground: #f3f4f6; /* brighter body text */
+  --surface: #0f172a;
+  --border: #334155; /* slate-700 for clearer edges on dark cards */
+  --muted: #cbd5e1; /* slate-300 for descriptions */
+  --brand: #9cc4ff;
+  --brand-600: #6ba3f5;
+  --success: #22c55e;
+  --success-fg: #052e1c;
+  --warning: #fbbf24;
+  --warning-fg: #111827;
+  --info: #60a5fa;
+  --info-fg: #0b1220;
+  --danger: #ef4444;
+  --danger-fg: #0b1220;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: InterVariable, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.section {
+  margin-block: var(--section-padding);
+}
+
+.divide-line {
+  border-top: 1px solid var(--border);
+}
+
+/* Link underline animation */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute; left: 0; bottom: -2px; height: 2px; width: 0;
+  background: currentColor; transition: width var(--dur-200) var(--ease-standard);
+}
+.link-underline:hover::after { width: 100%; }
+
+/* Selection + scrollbar */
+::selection { background: var(--brand); color: white; }
+* { scrollbar-width: thin; scrollbar-color: rgba(100,116,139,0.5) transparent; }
+*::-webkit-scrollbar { height: 10px; width: 10px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: rgba(100,116,139,0.5); border-radius: 10px; }
