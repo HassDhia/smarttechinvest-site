@@ -22,14 +22,25 @@ export function TestimonialsCarousel() {
   const prev = () => setIndex((i) => (i - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
   const t = TESTIMONIALS[index];
   return (
-    <div className="relative max-w-3xl mx-auto rounded-2xl border bg-white/80 dark:bg-white/5 backdrop-blur-md p-6" style={{ borderColor: "var(--border)" }}>
-      <blockquote className="text-lg leading-relaxed text-slate-800 dark:text-slate-200">“{t.quote}”</blockquote>
-      <div className="mt-3 text-sm font-semibold text-slate-600 dark:text-slate-300">{t.author}</div>
+    <div
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Testimonials"
+      aria-live="polite"
+      className="relative max-w-3xl mx-auto rounded-2xl border border-[var(--border)] bg-white/80 dark:bg-[var(--surface)] backdrop-blur-md p-6"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "ArrowRight") next();
+        if (e.key === "ArrowLeft") prev();
+      }}
+    >
+      <blockquote className="text-lg leading-relaxed text-[var(--foreground)]">“{t.quote}”</blockquote>
+      <div className="mt-3 text-sm font-semibold text-slate-700 dark:text-[var(--muted)]">{t.author}</div>
       <div className="absolute inset-y-0 left-0 flex items-center">
-        <button aria-label="Previous" onClick={prev} className="m-2 rounded-full px-2 py-1 text-sm bg-black/5 dark:bg-white/10">‹</button>
+        <button type="button" aria-label="Previous" onClick={prev} className="m-2 rounded-full px-2 py-1 text-sm bg-black/5 dark:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70">‹</button>
       </div>
       <div className="absolute inset-y-0 right-0 flex items-center">
-        <button aria-label="Next" onClick={next} className="m-2 rounded-full px-2 py-1 text-sm bg-black/5 dark:bg-white/10">›</button>
+        <button type="button" aria-label="Next" onClick={next} className="m-2 rounded-full px-2 py-1 text-sm bg-black/5 dark:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70">›</button>
       </div>
     </div>
   );

@@ -18,7 +18,10 @@ export function WorkCard({
   href?: string;
 }) {
   const content = (
-    <div className={cn("group rounded-2xl overflow-hidden bg-white/80 dark:bg-white/5 p-2 border border-[var(--border)]") }>
+    <div className={cn(
+      "group rounded-2xl overflow-hidden p-2 bg-card/90 text-[hsl(var(--card-foreground))] border border-[hsl(var(--border)/0.6)] shadow-[var(--shadow-sm)]",
+      "transition-[background,box-shadow,transform] duration-[var(--dur-200)] ease-[var(--ease-standard)] hover:-translate-y-0.5 hover:shadow-[var(--shadow)] hover:bg-accent/40"
+    )}>
       <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
         <Image
           src={image || "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop"}
@@ -29,19 +32,19 @@ export function WorkCard({
           priority={false}
         />
       </div>
-      <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-[var(--muted)]">
+      <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-[hsl(var(--muted-foreground))]">
         <span className="font-mono">{role}</span>
         <span>•</span>
         <span className="font-mono">{year}</span>
         {outcome ? (
-          <Badge className="ml-0 sm:ml-auto bg-white/60 text-[var(--brand)] dark:bg-white/10">{outcome}</Badge>
+          <Badge className="ml-0 sm:ml-auto">{outcome}</Badge>
         ) : null}
       </div>
-      <h3 className="mt-1 text-lg font-semibold">{title}</h3>
+      <h3 className="mt-1 text-lg font-semibold text-foreground">{title}</h3>
     </div>
   );
   return href ? (
-    <a href={href} className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] rounded-2xl">{content}</a>
+    <a href={href} className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] rounded-2xl">{content}</a>
   ) : (
     content
   );

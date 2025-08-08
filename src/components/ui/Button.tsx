@@ -1,35 +1,65 @@
 import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/cn";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "destructive";
-type ButtonSize = "sm" | "md" | "lg";
+const buttonVariants = cva(
+  "inline-flex items-center justify-center rounded-md font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] disabled:opacity-50 disabled:cursor-not-allowed active:translate-y-[0.5px] transition-[background,transform,box-shadow,filter] duration-[var(--dur-200)] ease-[var(--ease-standard)] motion-reduce:transform-none",
+  {
+    variants: {
+      variant: {
+        primary: "bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--primary)/0.9)] shadow-[var(--shadow-sm)]",
+        secondary: "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] border border-[hsl(var(--border))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))] shadow-[var(--shadow-sm)]",
+        ghost: "bg-transparent text-[hsl(var(--foreground))] hover:bg-[hsl(var(--accent))]",
+        destructive: "bg-[var(--danger)] text-[var(--danger-fg)] hover:brightness-110 active:brightness-95 shadow-[var(--shadow-sm)]",
+      },
+      size: {
+        sm: "h-9 px-3 text-sm",
+        md: "h-10 px-4",
+        lg: "h-11 px-5 text-base",
+      },
+    },
+    defaultVariants: {
+      variant: "primary",
+      size: "md",
+    },
+  }
+);
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+  isLoading?: boolean;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "primary", size = "md", children, ...props }, ref) => {
-    const base = "inline-flex items-center justify-center rounded-xl font-semibold transition-transform focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] disabled:opacity-50 disabled:cursor-not-allowed active:translate-y-[1px]";
-    const variants: Record<ButtonVariant, string> = {
-      primary: "bg-[var(--brand)] text-white hover:-translate-y-0.5 shadow-sm",
-      secondary: "bg-white text-[var(--brand)] border border-[var(--border)] hover:-translate-y-0.5 shadow-sm",
-      ghost: "bg-transparent text-[var(--brand)] hover:bg-slate-100/70 dark:hover:bg-slate-800/60",
-      destructive: "bg-red-600 text-white hover:-translate-y-0.5 shadow-sm",
-    };
-    const sizes: Record<ButtonSize, string> = {
-      sm: "px-3 py-1.5 text-sm",
-      md: "px-4 py-2",
-      lg: "px-5 py-2.5 text-base",
-    };
+  ({ className, variant, size, asChild, isLoading = false, children, disabled, ...props }, ref) => {
+    const classes = cn(buttonVariants({ variant, size }), className);
+    if (asChild && React.isValidElement(children)) {
+      const child = children as React.ReactElement<any>;
+      return React.cloneElement(child, {
+        className: cn(classes, (child.props as any)?.className),
+      });
+    }
     return (
       <button
+        type="button"
         ref={ref}
-        className={cn(base, variants[variant], sizes[size], className)}
+        className={classes}
+        disabled={disabled || isLoading}
         {...props}
       >
-        {children}
+        {isLoading ? (
+          <span className="inline-flex items-center gap-2">
+            <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" aria-hidden>
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+              <path className="opacity-75" d="M4 12a8 8 0 018-8" stroke="currentColor" strokeWidth="4" fill="none" />
+            </svg>
+            <span>{children}</span>
+          </span>
+        ) : (
+          children
+        )}
       </button>
     );
   }

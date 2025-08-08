@@ -1,0 +1,47 @@
+---
+// schedule.astro - Meeting scheduling page
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+---
+
+<BaseLayout 
+  title="Schedule a Meeting | Smart Tech Investments" 
+  description="Book a time to meet with our team"
+  currentPage="schedule"
+>
+  <HeroSection 
+    title="Book a Clarity Call"
+    subtitle="30 minutes to assess constraints and define pragmatic next steps."
+  />
+
+  <section class="schedule-container wrap section">
+    <div class="schedule-widget">
+      <h2>Book a Time</h2>
+      <p>Select an available time below to schedule your consultation.</p>
+      <!-- Calendly inline widget begin -->
+      <div 
+        class="calendly-inline-widget" 
+        data-url="https://calendly.com/hassdhia/30min" 
+        style="min-width:320px;height:700px;"
+      ></div>
+      <script 
+        type="text/javascript" 
+        src="https://assets.calendly.com/assets/external/widget.js" 
+        async
+      ></script>
+      <!-- Calendly inline widget end -->
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .schedule-container { max-width: 800px; text-align: center; }
+  .schedule-widget {
+    margin-top: 2rem;
+  }
+  .schedule-widget p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: var(--secondary);
+  }
+</style>

@@ -20,7 +20,7 @@ export default function Home() {
         ctaHref="/schedule"
         badge="Capacity: accepting 2 new clients this quarter"
       />
-      <section id="how" className="max-w-[1100px] mx-auto px-4 py-12">
+      <section id="how" className="container section">
         <SectionHeader kicker="Capabilities" title="How We Help" subtitle="Leverage executive-level strategy without full-time overhead." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
@@ -30,13 +30,13 @@ export default function Home() {
             ["GTM and Pipeline Acceleration","Messaging, ICP, channel strategy, and a simple repeatable pipeline that compounds.", Workflow],
             ["Ops Automation","Automate low-value tasks across scheduling, follow-ups, and SOPs to free up time for deep work.", Settings],
             ["Founder Advisory & Strategic Deals","Hands-on guidance for partnerships, hiring, and key decisions when the stakes are high.", Handshake],
-          ].map(([t,d,Icon]) => (
-            <Card key={String(t)} title={String(t)} description={String(d)} icon={Icon as any} />
+          ].map(([t,d,I]) => (
+            <Card key={String(t)} title={String(t)} description={String(d)} icon={I as any} />
           ))}
         </div>
       </section>
       <LogoStrip />
-      <section id="work" className="max-w-[1100px] mx-auto px-4 py-12">
+      <section id="work" className="container section">
         <SectionHeader kicker="Case Studies" title="Selected Work" subtitle="Outcome‑focused engagements across strategy and growth." />
         <div className="grid md:grid-cols-3 gap-6">
           <WorkCard title="Pricing overhaul for B2B SaaS" role="Strategy" year="2025" outcome="+$1.2M ARR" />
@@ -44,7 +44,7 @@ export default function Home() {
           <WorkCard title="Ops automation for SMB services" role="Ops" year="2024" outcome="-34% cycle" />
         </div>
       </section>
-      <section id="outcomes" className="max-w-[1100px] mx-auto px-4 py-12">
+      <section id="outcomes" className="container section">
         <SectionHeader kicker="Proof" title="Outcomes" subtitle="Clarity, momentum, and measurable results." />
         <div className="grid sm:grid-cols-3 gap-4">
           <KPIStat label="ARR Impact" value="+$1.2M" />
@@ -52,7 +52,7 @@ export default function Home() {
           <KPIStat label="Cycle Time" value="-34%" />
         </div>
       </section>
-      <section className="max-w-[1100px] mx-auto px-4 py-12">
+      <section className="container section">
         <SectionHeader kicker="Social Proof" title="What Clients Say" />
         <TestimonialsCarousel />
       </section>

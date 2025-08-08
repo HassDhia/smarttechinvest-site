@@ -15,7 +15,7 @@ export function ProofBar({
   return (
     <div
       className={
-        "mt-6 flex flex-col items-center justify-center gap-2 text-xs text-[var(--muted)] sm:flex-row sm:gap-3 " +
+        "mt-6 flex flex-col items-center justify-center gap-2 text-xs text-[hsl(var(--muted-foreground))] sm:flex-row sm:gap-3 " +
         (className ?? "")
       }
     >
@@ -26,16 +26,12 @@ export function ProofBar({
       <div className="flex flex-wrap items-center justify-center gap-1.5">
         <span className="font-medium">Outcomes:</span>
         {outcomes.map((value) => (
-          <Badge
-            key={value}
-            className="bg-white/60 text-[var(--brand)] dark:bg-white/10"
-          >
-            {value}
-          </Badge>
+          <Badge key={value}>{value}</Badge>
         ))}
       </div>
     </div>
   );
 }
+
 
 

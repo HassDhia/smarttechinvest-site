@@ -9,13 +9,15 @@ export function MiniTOC({
   const active = useScrollspy(sections.map((s) => s.id));
   return (
     <nav className="hidden xl:block fixed right-4 top-28 z-20">
-      <ul className="rounded-2xl border bg-white/70 dark:bg-white/5 backdrop-blur-md p-2 space-y-1" style={{ borderColor: "var(--border)" }}>
+      <ul className="rounded-2xl border bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] p-2 space-y-1" style={{ borderColor: "hsl(var(--border))" }}>
         {sections.map((s) => (
           <li key={s.id}>
             <a
               href={`#${s.id}`}
-              className={`block px-3 py-1.5 rounded-lg text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)] ${
-                active === s.id ? "font-semibold text-[var(--brand)] dark:text-white" : "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+              className={`block px-3 py-1.5 rounded-lg text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] ${
+                active === s.id
+                  ? "font-semibold text-[hsl(var(--foreground))] bg-[hsl(var(--accent))]"
+                  : "text-[hsl(var(--foreground)/0.7)] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--accent))]"
               }`}
             >
               {s.label}

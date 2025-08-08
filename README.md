@@ -1,3 +1,30 @@
+# Smart Technology Investments – UI System Notes
+
+## Tokens
+- Colors via CSS variables in `src/app/globals.css` (`--background`, `--foreground`, `--surface`, `--border`, `--brand`, `--muted`, semantic statuses).
+- Motion: `--dur-100/200/300/500`, `--ease-standard`.
+- Focus: `--ring`, `--ring-color`, `--ring-offset`.
+- Radii: `--radius-sm`, `--radius`, `--radius-lg`.
+- Shadows: `--shadow-sm`, `--shadow`, `--shadow-lg`.
+- Z-index: `--z-nav`, `--z-overlay`, `--z-toast`.
+
+## Primitives
+- Button: `src/components/ui/Button.tsx` (`variant`: primary/secondary/ghost/destructive; `size`: sm/md/lg; `asChild`; `isLoading`).
+- Input: `src/components/ui/Input.tsx` (`variant`: default/subtle; `size`: sm/md/lg).
+- Tooltip: `src/components/ui/Tooltip.tsx` (Radix; collision padding; `data-[state=open]`).
+- Dialog: `src/components/ui/Dialog.tsx` (Radix + Framer motion; overlay/panel variants).
+- Icon: `src/components/ui/Icon.tsx` (Lucide facade; respects global `.lucide` defaults; allows overrides).
+
+## Layout
+- Use `.container` and `.section` utilities for page sections.
+
+## Motion
+- `LazyMotion` provided at root in `src/app/layout.tsx`.
+- Helpers in `src/components/motion.tsx` (`FadeIn`, `RiseIn`, overlay/panel variants).
+
+## Accessibility
+- Global focus-visible rings via tokens; keyboard navigation in carousel and mobile menu; tooltip and dialog use Radix semantics.
+
 This is a [Next.js](https://nextjs.org) project for Smart Technology Investments, using Tailwind CSS, Lucide, Radix Icons, and Framer Motion.
 
 ## Getting Started

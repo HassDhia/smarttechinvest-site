@@ -1,0 +1,187 @@
+---
+// index.astro - Home page
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import Card from '../components/Card.astro';
+import NewsletterForm from '../components/NewsletterForm';
+import { getCollection } from 'astro:content';
+
+// Get recent posts (optional blog teasers)
+let recentPosts = [];
+try {
+  const allPosts = await getCollection('posts');
+  recentPosts = allPosts
+    .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+    .slice(0, 3);
+} catch (err) {
+  recentPosts = [];
+}
+---
+
+<BaseLayout currentPage="home">
+  <HeroSection 
+    title="Smart Technology Investments |"
+    subtitle="Fractional Chief of Strategy for SMBs: pricing, positioning, GTM, and AI-augmented ops to accelerate growth."
+    ctaText="Book a Clarity Call"
+    ctaLink="/schedule"
+    badgeText="Capacity: accepting 2 new clients this quarter"
+  />
+
+  <section class="services wrap section">
+    <h2>How We Help</h2>
+    <div class="grid fade-in">
+      <Card 
+        title="Fractional Chief of Strategy"
+        excerpt="Executive-level strategic planning, OKRs, and operating cadence tailored for SMBs without full-time overhead."
+      />
+      <Card 
+        title="Pricing, Positioning, and Offers"
+        excerpt="Clarify value, reshape pricing, and craft irresistible offers to unlock margin and conversion."
+      />
+      <Card 
+        title="AI-Augmented Growth Systems"
+        excerpt="Deploy intelligent workflows for outreach, CRM hygiene, and reporting without losing the human edge."
+      />
+      <Card 
+        title="GTM and Pipeline Acceleration"
+        excerpt="Messaging, ICP, channel strategy, and a simple repeatable pipeline that compounds."
+      />
+      <Card 
+        title="Ops Automation"
+        excerpt="Automate low-value tasks across scheduling, follow-ups, and SOPs to free up time for deep work."
+      />
+      <Card 
+        title="Founder Advisory & Strategic Deals"
+        excerpt="Hands-on guidance for partnerships, hiring, and key decisions when the stakes are high."
+      />
+    </div>
+  </section>
+
+  
+  <section class="advisory-cta wrap section">
+    <div class="advisory-card rise-in">
+      <h2>Let’s Clarify Your Next Best Move</h2>
+      <p>In 30 minutes, we’ll assess your current growth constraints and define pragmatic next steps.</p>
+      <a class="advisory-btn" href="/schedule">Book a Clarity Call</a>
+    </div>
+  </section>
+
+  {recentPosts.length > 0 && (
+    <section class="recent-posts wrap section">
+      <h2>Recent Posts</h2>
+      <div class="grid fade-in">
+        {recentPosts.map(post => (
+          <Card 
+            title={post.data.title}
+            excerpt={post.data.description || post.data.excerpt}
+            tags={post.data.tags}
+            link={`/blog/${post.slug}`}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="process wrap section">
+    <h2>Simple, Focused Process</h2>
+    <div class="grid fade-in">
+      <Card title="Diagnose" excerpt="Identify constraints across strategy, GTM, ops, and data." />
+      <Card title="Design" excerpt="Prioritize a few high-leverage moves that compound." />
+      <Card title="Deploy" excerpt="Install cadence, dashboards, and systems that stick." />
+    </div>
+  </section>
+
+  <section class="testimonials wrap section">
+    <h2>What Clients Say</h2>
+    <div class="quotes">
+      <blockquote>
+        <p>We added 20% in margin through pricing and packaged offers within 60 days.</p>
+        <footer>CEO, SMB Services</footer>
+      </blockquote>
+      <blockquote>
+        <p>Pipeline clarity + outbound automations doubled qualified demos.</p>
+        <footer>Founder, SaaS</footer>
+      </blockquote>
+      <blockquote>
+        <p>Weekly operating cadence removed chaos—we finally execute the plan.</p>
+        <footer>Principal, Agency</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="logos wrap section">
+    <div class="logos-row">
+      <span class="logo-pill">AI</span>
+      <span class="logo-pill">SaaS</span>
+      <span class="logo-pill">SMB</span>
+      <span class="logo-pill">Ops</span>
+      <span class="logo-pill">GTM</span>
+    </div>
+  </section>
+
+  <NewsletterForm 
+    title="Stay Updated"
+    description="Get the latest news about our investments and ventures"
+  />
+</BaseLayout>
+
+<style>
+  .ventures,
+  .featured-work,
+  .recent-posts {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+  .process, .testimonials, .logos { 
+    max-width: 1200px; 
+    margin: 4rem auto; 
+    padding: 0 1rem; 
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .testimonials .card-container { border-color: #e6eefc }
+  .quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  blockquote { margin: 0; padding: 1.25rem 1.25rem 1rem; background: #f8fafc; border: 1px solid #e6eefc; border-radius: 10px; }
+  blockquote p { margin: 0 0 0.75rem; font-size: 1rem; line-height: 1.7; }
+  blockquote footer { color: #0f2544; font-weight: 600; }
+  .logos { text-align: center }
+  .logos-row { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap }
+  .logo-pill { background: #f5f7fb; border: 1px solid #e6eefc; padding: 0.5rem 0.75rem; border-radius: 999px; font-weight: 600; color: #0f2544 }
+
+  .work-grid,
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .advisory-cta {
+    max-width: 960px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+  .advisory-card {
+    background: linear-gradient(135deg, #0f2544, #163b6b);
+    color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+  .advisory-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #fff;
+    color: #0f2544;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .fade-in { animation: fadeIn 0.6s ease both; }
+  .rise-in { animation: riseIn 0.5s ease both; }
+  @keyframes fadeIn { from {opacity: 0} to {opacity: 1} }
+  @keyframes riseIn { from {transform: translateY(8px); opacity: 0} to {transform: translateY(0); opacity: 1} }
+</style>
