@@ -28,7 +28,7 @@ export function BackToTop() {
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
       }}
-      className="fixed right-5 bottom-20 px-3 py-2 rounded-full bg-[var(--brand)] text-white shadow-sm hover:shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]"
+      className="fixed right-5 bottom-20 px-3 py-2 rounded-full bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] shadow-sm hover:shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))]"
     >
       ↑
     </button>

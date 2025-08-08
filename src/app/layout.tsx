@@ -7,6 +7,7 @@ import { PageTransition } from "../components/PageTransition";
 import { BackToTop } from "../components/BackToTop";
 import Script from "next/script";
 import { ToastProvider } from "../components/ui/Toast";
+import { Button } from "../components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Smart Technology Investments",
@@ -19,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased">
         <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-2 focus:rounded-md focus:bg-[var(--brand)] focus:text-white">Skip to content</a>
+          <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-2 focus:rounded-md focus:bg-[hsl(var(--primary))] focus:text-[hsl(var(--primary-foreground))]">Skip to content</a>
         <Script id="theme-init" strategy="beforeInteractive">{`
           (function(){
             try {
@@ -47,7 +48,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-slate-500">© {new Date().getFullYear()} Smart Technology Investments</footer>
             </main>
           </div>
-          <a href="/schedule" className="hidden lg:inline-flex fixed right-5 bottom-5 px-4 py-2 rounded-full bg-[var(--brand)] text-white shadow hover:shadow-lg transition-[box-shadow,transform] duration-[var(--dur-200)] ease-[var(--ease-standard)]">Book Call</a>
+          <Button asChild size="lg" className="hidden lg:inline-flex fixed right-5 bottom-5 shadow-[var(--shadow-sm)] hover:shadow">
+            <a href="/schedule" aria-label="Book a call">Book Call</a>
+          </Button>
           <BackToTop />
         </ToastProvider>
       </body>

@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { Button } from "./ui/Button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TESTIMONIALS = [
   {
@@ -37,10 +39,26 @@ export function TestimonialsCarousel() {
       <blockquote className="text-lg leading-relaxed text-[var(--foreground)]">“{t.quote}”</blockquote>
       <div className="mt-3 text-sm font-semibold text-slate-700 dark:text-[var(--muted)]">{t.author}</div>
       <div className="absolute inset-y-0 left-0 flex items-center">
-        <button type="button" aria-label="Previous" onClick={prev} className="m-2 rounded-full px-2 py-1 text-sm bg-black/5 dark:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70">‹</button>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={prev}
+          aria-label="Previous"
+          className="m-2 h-8 w-8 p-0 rounded-full bg-black/5 dark:bg-white/10"
+        >
+          <ChevronLeft size={18} strokeWidth={1.5} aria-hidden />
+        </Button>
       </div>
       <div className="absolute inset-y-0 right-0 flex items-center">
-        <button type="button" aria-label="Next" onClick={next} className="m-2 rounded-full px-2 py-1 text-sm bg-black/5 dark:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70">›</button>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={next}
+          aria-label="Next"
+          className="m-2 h-8 w-8 p-0 rounded-full bg-black/5 dark:bg-white/10"
+        >
+          <ChevronRight size={18} strokeWidth={1.5} aria-hidden />
+        </Button>
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ export function MobileNav() {
   return (
     <div className="lg:hidden">
       {/* Top bar */}
-      <div className="fixed top-0 inset-x-0 z-40 h-14 bg-white/80 dark:bg-slate-950/60 backdrop-blur-md border-b border-[var(--border)]">
+      <div className="fixed top-0 inset-x-0 z-40 h-14 bg-[hsl(var(--card)/0.8)] dark:bg-[hsl(var(--card)/0.6)] backdrop-blur-md border-b border-[hsl(var(--border))]">
         <div className="h-full px-4 flex items-center justify-between">
           <Link href="/" className="font-bold [font-family:var(--font-heading)]">STI</Link>
           {open ? (

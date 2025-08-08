@@ -7,8 +7,7 @@ export function LogoStrip() {
         {brands.map((name) => (
           <span
             key={name}
-            className="uppercase tracking-wide rounded-xl px-4 py-2 text-xs font-semibold bg-white/5 dark:bg-white/5"
-            style={{ color: "var(--muted)", border: "1px solid var(--border)" }}
+            className="uppercase tracking-wide rounded-xl px-4 py-2 text-xs font-semibold text-[hsl(var(--muted-foreground))] border border-[hsl(var(--border))] bg-transparent"
             aria-label={`Logo ${name}`}
           >
             {name}
