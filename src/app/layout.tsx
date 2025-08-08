@@ -12,6 +12,13 @@ import { Button } from "../components/ui/Button";
 export const metadata: Metadata = {
   title: "Smart Technology Investments",
   description: "Fractional Chief of Strategy for SMBs",
+  icons: {
+    icon: [
+      { url: "/sti_favicon.webp", type: "image/webp" },
+      { url: "/favicon.ico", rel: "icon", sizes: "any" },
+    ],
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
