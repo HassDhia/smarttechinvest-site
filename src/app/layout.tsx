@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Nav } from "../components/Nav";
+import { MobileNav } from "../components/MobileNav";
 import { ParallaxBG } from "../components/ParallaxBG";
 import { PageTransition } from "../components/PageTransition";
 import { BackToTop } from "../components/BackToTop";
@@ -23,8 +24,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <ParallaxBG />
-        <div className="grid min-h-screen grid-cols-[260px_1fr]" style={{ background: "transparent" }}>
-          <aside className="sticky top-0 h-svh bg-transparent">
+        <MobileNav />
+        <div className="grid min-h-screen grid-cols-1 lg:grid-cols-[260px_1fr]" style={{ background: "transparent" }}>
+          <aside className="hidden lg:block sticky top-0 h-svh bg-transparent">
             <Nav />
           </aside>
           <main id="main" className="min-w-0">
@@ -32,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-slate-500">© {new Date().getFullYear()} Smart Technology Investments</footer>
           </main>
         </div>
-        <a href="/schedule" className="fixed right-5 bottom-5 px-4 py-2 rounded-full bg-[var(--brand)] text-white shadow hover:shadow-lg transition" style={{ transitionTimingFunction: "var(--ease-standard)", transitionDuration: "var(--dur-200)" }}>Book Call</a>
+        <a href="/schedule" className="hidden lg:inline-flex fixed right-5 bottom-5 px-4 py-2 rounded-full bg-[var(--brand)] text-white shadow hover:shadow-lg transition" style={{ transitionTimingFunction: "var(--ease-standard)", transitionDuration: "var(--dur-200)" }}>Book Call</a>
         <BackToTop />
       </body>
     </html>

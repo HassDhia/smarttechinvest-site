@@ -105,6 +105,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Improve mobile readability */
+@media (max-width: 640px) {
+  p { line-height: 1.7; }
+}
+
 /* Utilities */
 .container {
   max-width: 1200px;
