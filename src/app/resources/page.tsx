@@ -23,8 +23,11 @@ export default function Resources() {
           <figure key={seed} className="relative rounded-2xl overflow-hidden bg-white/85 dark:bg-white/5 backdrop-blur-md border border-[var(--border)]">
             <div className="relative w-full aspect-[16/9]">
               <Image
-                src={i === 0 ? "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop" : "https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1600&auto=format&fit=crop"}
-                alt={seed}
+                src={i === 0
+                  ? "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop" // disorder: busy, tense office scene
+                  : "https://images.unsplash.com/photo-1520881363902-a0ff4e722963?q=80&w=1600&auto=format&fit=crop" // polish: elegant boardroom/lobby
+                }
+                alt={seed === "before" ? "Corporate disorder" : "Corporate polish and prestige"}
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
                 className="object-cover"

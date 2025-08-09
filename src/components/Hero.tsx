@@ -32,7 +32,7 @@ export function Hero({
       </motion.div>
       <div className="max-w-screen-xl mx-auto px-4 py-16 text-center">
         <div className="relative mx-auto mb-6 h-10 w-10">
-          <Image src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=200&auto=format&fit=crop" alt="Light accent" fill sizes="40px" className="rounded-full opacity-80" />
+          <Image src="/globe.svg" alt="" fill sizes="40px" className="opacity-80" />
         </div>
         {badge ? (
           <div className="inline-flex items-center mb-3 px-3 h-8 rounded-full border border-[hsl(var(--border))] font-medium bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))] transition-colors">

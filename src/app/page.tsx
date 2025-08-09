@@ -40,9 +40,28 @@ export default function Home() {
       <section id="work" className="container section">
         <SectionHeader kicker="Case Studies" title="Selected Work" subtitle="Outcome‑focused engagements across strategy and growth." useGradientTitle />
         <div className="grid md:grid-cols-3 gap-6">
-          <WorkCard title="Pricing overhaul for B2B SaaS" role="Strategy" year="2025" outcome="+$1.2M ARR" highlight />
-          <WorkCard title="ICP + outbound pipeline" role="GTM" year="2025" outcome="2x demos" />
-          <WorkCard title="Ops automation for SMB services" role="Ops" year="2024" outcome="-34% cycle" />
+          <WorkCard
+            title="Pricing overhaul for B2B SaaS"
+            role="Strategy"
+            year="2025"
+            outcome="+$1.2M ARR"
+            highlight
+            image="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop"
+          />
+          <WorkCard
+            title="ICP + outbound pipeline"
+            role="GTM"
+            year="2025"
+            outcome="2x demos"
+            image="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop"
+          />
+          <WorkCard
+            title="Ops automation for SMB services"
+            role="Ops"
+            year="2024"
+            outcome="-34% cycle"
+            image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop"
+          />
         </div>
       </section>
       <section id="outcomes" className="container section">
