@@ -18,7 +18,7 @@ export default function Resources() {
       </div>
       <div className="mt-8 grid sm:grid-cols-2 gap-4">
         {["before", "after"].map((seed, i) => (
-          <figure key={seed} className="relative rounded-2xl overflow-hidden bg-[hsl(var(--card))] text-[hsl(var(--foreground))] border border-[hsl(var(--border))] shadow-sm">
+          <figure key={seed} className="relative rounded-xl overflow-hidden bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))] shadow-sm">
             <div className="relative w-full aspect-[16/9]">
               <Image
                 src={i === 0
@@ -33,7 +33,7 @@ export default function Resources() {
               />
             </div>
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
-            <figcaption className="relative px-4 py-3 font-semibold text-[hsl(var(--foreground))]">{seed === "before" ? "Before" : "After"}</figcaption>
+            <figcaption className="relative px-4 py-3 font-semibold text-[hsl(var(--card-foreground))]">{seed === "before" ? "Before" : "After"}</figcaption>
           </figure>
         ))}
       </div>
