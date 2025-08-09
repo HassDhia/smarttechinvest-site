@@ -211,6 +211,13 @@ body {
 }
 .dark body { color-scheme: dark; }
 
+/* Avoid layout shift when mobile drawer is open by removing scrollbar */
+.has-drawer {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 /* Base anchor/link pattern */
 a { text-decoration: none; }
 .link { position: relative; }
@@ -375,7 +382,7 @@ a { text-decoration: none; }
 @keyframes rise { to { opacity: 1; transform: translateY(0) } }
 
 /* Default states (no support): keep content visible, keep bar hidden */
-.progress { transform-origin: left; transform: scaleX(0); }
+.progress { transform-origin: left; transform: scaleX(0); will-change: transform; }
 .vt-section { view-timeline: --vt block; }
 
 /* Enhance when supported */
@@ -399,7 +406,7 @@ a { text-decoration: none; }
 
 /* Progressive enhancement guardrails */
 @media (prefers-reduced-motion: reduce) {
-  .progress { animation: none !important; transform: none !important; }
+  .progress { display: none !important; }
   .vt-reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
 

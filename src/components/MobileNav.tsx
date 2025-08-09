@@ -21,14 +21,18 @@ export function MobileNav() {
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
+      document.documentElement.classList.add("has-drawer");
       return () => {
         document.body.style.removeProperty("overflow");
+        document.documentElement.classList.remove("has-drawer");
       };
     }
     // Ensure no stray inline style remains when closed
     document.body.style.removeProperty("overflow");
+    document.documentElement.classList.remove("has-drawer");
     return () => {
       document.body.style.removeProperty("overflow");
+      document.documentElement.classList.remove("has-drawer");
     };
   }, [open]);
   // Hide main content from assistive tech and interaction when drawer is open
