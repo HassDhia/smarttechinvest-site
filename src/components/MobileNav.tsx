@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { Home, NotebookText, Rocket, Layers, FileText, Phone, Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { AnimatePresence, m } from "framer-motion";
+import { durations, easings, overlayVariants } from "../lib/motion";
 
 const links = [
   { href: "/", label: "Home", icon: Home },
@@ -20,6 +22,19 @@ export function MobileNav() {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
+  // Hide main content from assistive tech and interaction when drawer is open
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const main = document.getElementById("main");
+    if (!main) return;
+    if (open) {
+      main.setAttribute("aria-hidden", "true");
+      main.setAttribute("inert", "");
+    } else {
+      main.removeAttribute("aria-hidden");
+      main.removeAttribute("inert");
+    }
+  }, [open]);
   useEffect(() => { if (open) closeRef.current?.focus(); }, [open]);
   return (
     <div className="lg:hidden">
@@ -32,7 +47,6 @@ export function MobileNav() {
               type="button"
               aria-label="Close menu"
               aria-expanded="true"
-              aria-controls="mobile-menu"
               onClick={() => setOpen(false)}
               className="rounded-lg px-2 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70"
             >
@@ -43,7 +57,6 @@ export function MobileNav() {
               type="button"
               aria-label="Open menu"
               aria-expanded="false"
-              aria-controls="mobile-menu"
               onClick={() => setOpen(true)}
               className="rounded-lg px-2 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70"
             >
@@ -53,17 +66,36 @@ export function MobileNav() {
         </div>
       </div>
       {/* Drawer */}
-      {open && (
-        <div className="fixed inset-0 z-40" onKeyDown={(e) => { if (e.key === 'Escape') setOpen(false); }}>
-          <div className="absolute inset-0 bg-black/40" onClick={() => setOpen(false)} />
-          <nav
-            id="mobile-menu"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="mobile-menu-title"
-            className="absolute left-0 top-0 h-full w-[80%] max-w-xs bg-white dark:bg-slate-950 shadow-xl p-4 overflow-y-auto outline-none"
-            tabIndex={-1}
-          >
+        <AnimatePresence>
+          {open ? (
+            <m.div
+              className="fixed inset-0 z-40"
+              onKeyDown={(e) => { if (e.key === 'Escape') setOpen(false); }}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+            >
+              <m.div
+                key="scrim"
+                className="absolute inset-0 bg-black/40 motion-reduce:transition-none"
+                onClick={() => setOpen(false)}
+                initial="hidden"
+                animate="show"
+                exit="exit"
+                variants={overlayVariants}
+              />
+              <m.nav
+                key="panel"
+                id="mobile-menu"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="mobile-menu-title"
+                className="absolute left-0 top-0 h-full w-[80%] max-w-xs bg-white dark:bg-slate-950 shadow-xl p-4 overflow-y-auto outline-none motion-reduce:transition-none"
+                tabIndex={-1}
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1, transition: { duration: durations.md, ease: easings.standard } }}
+                exit={{ x: -20, opacity: 0, transition: { duration: durations.sm } }}
+              >
             <div className="flex items-center justify-between mb-2">
               <span id="mobile-menu-title" className="font-bold [font-family:var(--font-heading)]">Menu</span>
               <button ref={closeRef} type="button" aria-label="Close menu" onClick={() => setOpen(false)} className="rounded-lg p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70">
@@ -86,9 +118,10 @@ export function MobileNav() {
             <div className="mt-3">
               <ThemeToggle />
             </div>
-          </nav>
-        </div>
-      )}
+              </m.nav>
+            </m.div>
+          ) : null}
+        </AnimatePresence>
       {/* Spacer so content is not hidden under top bar */}
       <div className="h-14" />
     </div>

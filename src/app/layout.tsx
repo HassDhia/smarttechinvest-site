@@ -8,6 +8,7 @@ import { BackToTop } from "../components/BackToTop";
 import Script from "next/script";
 import { ToastProvider } from "../components/ui/Toast";
 import { Button } from "../components/ui/Button";
+import { LazyMotion, domAnimation } from "framer-motion";
 
 export const metadata: Metadata = {
   title: "Smart Technology Investments",
@@ -37,29 +38,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             } catch (e) {}
           })();
         `}</Script>
-        <ParallaxBG />
-        <MobileNav />
-        <ToastProvider>
-          <div className="grid min-h-screen grid-cols-1 lg:grid-cols-[260px_1fr] bg-transparent">
-            <aside className="hidden lg:block sticky top-0 h-svh bg-transparent">
-              {/* Sidebar: ensure content sits above any fades */}
-              <div className="relative h-full">
-                <div className="relative z-10 flex h-full flex-col overflow-y-auto pb-12">
-                  <Nav />
+        <LazyMotion features={domAnimation}>
+          <ParallaxBG />
+          <MobileNav />
+          <ToastProvider>
+            <div className="grid min-h-screen grid-cols-1 lg:grid-cols-[260px_1fr] bg-transparent">
+              <aside className="hidden lg:block sticky top-0 h-svh bg-transparent">
+                {/* Sidebar: ensure content sits above any fades */}
+                <div className="relative h-full">
+                  <div className="relative z-10 flex h-full flex-col overflow-y-auto pb-12">
+                    <Nav />
+                  </div>
+                  <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-10 bg-gradient-to-t from-background to-transparent" />
                 </div>
-                <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-10 bg-gradient-to-t from-background to-transparent" />
-              </div>
-            </aside>
-            <main id="main" className="min-w-0">
-              <PageTransition>{children}</PageTransition>
-              <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-slate-500">© {new Date().getFullYear()} Smart Technology Investments</footer>
-            </main>
-          </div>
-          <Button asChild size="lg" className="hidden lg:inline-flex fixed right-5 bottom-5 shadow-[var(--shadow-sm)] hover:shadow">
-            <a href="/schedule" aria-label="Book a call">Book Call</a>
-          </Button>
-          <BackToTop />
-        </ToastProvider>
+              </aside>
+              <main id="main" className="min-w-0">
+                <PageTransition>{children}</PageTransition>
+                <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-slate-500">© {new Date().getFullYear()} Smart Technology Investments</footer>
+              </main>
+            </div>
+            <Button asChild size="lg" className="hidden lg:inline-flex fixed right-5 bottom-5 shadow-[var(--shadow-sm)] hover:shadow">
+              <a href="/schedule" aria-label="Book a call">Book Call</a>
+            </Button>
+            <BackToTop />
+          </ToastProvider>
+        </LazyMotion>
       </body>
     </html>
   );

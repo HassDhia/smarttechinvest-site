@@ -1,6 +1,8 @@
 import { cn } from "../lib/cn";
 import { Badge } from "./ui/Badge";
 import Image from "next/image";
+import { m } from "framer-motion";
+import { microPress } from "../lib/motion";
 
 export function WorkCard({
   title,
@@ -44,9 +46,15 @@ export function WorkCard({
     </div>
   );
   return href ? (
-    <a href={href} className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] rounded-2xl">{content}</a>
+    <m.a
+      href={href}
+      className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] rounded-2xl"
+      {...microPress}
+    >
+      {content}
+    </m.a>
   ) : (
-    content
+    <m.div {...microPress}>{content}</m.div>
   );
 }
 

@@ -1,5 +1,7 @@
 "use client";
 import Link from "next/link";
+import { m } from "framer-motion";
+import { microPress } from "../lib/motion";
 import { Home, NotebookText, Rocket, Layers, FileText, Phone } from "lucide-react";
 // Avoid passing Lucide component classes across the RSC boundary; render directly
 import { ThemeToggle } from "./ThemeToggle";
