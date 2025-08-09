@@ -24,7 +24,7 @@ export default function Resources() {
             <div className="relative w-full aspect-[16/9]">
               <Image
                 src={i === 0
-                  ? "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop" // disorder: busy, tense office scene
+                  ? "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=1600&auto=format&fit=crop" // disorder: sticky-notes chaos
                   : "https://images.unsplash.com/photo-1520881363902-a0ff4e722963?q=80&w=1600&auto=format&fit=crop" // polish: elegant boardroom/lobby
                 }
                 alt={seed === "before" ? "Corporate disorder" : "Corporate polish and prestige"}
