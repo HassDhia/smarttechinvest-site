@@ -48,16 +48,16 @@ export function MobileNav() {
   return (
     <div className="lg:hidden">
       {/* Top bar */}
-      <div className="fixed top-0 inset-x-0 z-40 h-14 bg-[hsl(var(--card))] backdrop-blur-md border-b border-[hsl(var(--border))]">
+      <div className="fixed top-0 inset-x-0 z-40 h-14 bg-[hsl(var(--card))] text-[hsl(var(--foreground))] backdrop-blur-md border-b border-[hsl(var(--border))]">
         <div className="h-full px-4 flex items-center justify-between">
-          <Link href="/" className="font-bold [font-family:var(--font-heading)]">STI</Link>
+          <Link href="/" className="font-bold [font-family:var(--font-heading)] text-[hsl(var(--foreground))]">STI</Link>
           {open ? (
             <button
               type="button"
               aria-label="Close menu"
               aria-expanded="true"
               onClick={() => setOpen(false)}
-              className="rounded-lg px-2 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70"
+              className="rounded-lg px-2 py-1 text-[hsl(var(--foreground))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70"
             >
               <X aria-hidden />
             </button>
@@ -67,7 +67,7 @@ export function MobileNav() {
               aria-label="Open menu"
               aria-expanded="false"
               onClick={() => setOpen(true)}
-              className="rounded-lg px-2 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70"
+              className="rounded-lg px-2 py-1 text-[hsl(var(--foreground))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)]/70"
             >
               <Menu aria-hidden />
             </button>
@@ -116,7 +116,7 @@ export function MobileNav() {
                 const Anchor = (external ? ("a" as const) : Link) as unknown as React.ElementType;
                 return (
                   <li key={href}>
-                    <Anchor href={href} prefetch={external ? undefined : true} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} onClick={() => setOpen(false)} className="flex items-center gap-2 px-2 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100/70 dark:hover:bg-slate-800/60">
+                    <Anchor href={href} prefetch={external ? undefined : true} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} onClick={() => setOpen(false)} className="flex items-center gap-2 px-2 py-2 rounded-lg text-[hsl(var(--foreground)/0.9)] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--foreground))]">
                       <Icon aria-hidden />
                       <span>{label}</span>
                     </Anchor>
