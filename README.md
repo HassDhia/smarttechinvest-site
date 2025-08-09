@@ -1,80 +1,208 @@
-# Smart Technology Investments – UI System Notes
+## Smart Technology Investments (STI) – Website
 
-## Tokens
-- Colors via CSS variables in `src/app/globals.css` (`--background`, `--foreground`, `--surface`, `--border`, `--brand`, `--muted`, semantic statuses).
-- Motion: `--dur-100/200/300/500`, `--ease-standard`.
-- Focus: `--ring`, `--ring-color`, `--ring-offset`.
-- Radii: `--radius-sm`, `--radius`, `--radius-lg`.
-- Shadows: `--shadow-sm`, `--shadow`, `--shadow-lg`.
-- Z-index: `--z-nav`, `--z-overlay`, `--z-toast`.
+Production website for Smart Technology Investments. Built with Next.js App Router, Tailwind CSS v4, Framer Motion, and a small design system of reusable UI primitives.
 
-## Primitives
-- Button: `src/components/ui/Button.tsx` (`variant`: primary/secondary/ghost/destructive; `size`: sm/md/lg; `asChild`; `isLoading`).
-- Input: `src/components/ui/Input.tsx` (`variant`: default/subtle; `size`: sm/md/lg).
-- Tooltip: `src/components/ui/Tooltip.tsx` (Radix; collision padding; `data-[state=open]`).
-- Dialog: `src/components/ui/Dialog.tsx` (Radix + Framer motion; overlay/panel variants).
-- Icon: `src/components/ui/Icon.tsx` (Lucide facade; respects global `.lucide` defaults; allows overrides).
+— Production domain: `smarttechinvest.com` (configured via Vercel)
 
-## Layout
-- Use `.container` and `.section` utilities for page sections.
 
-## Motion
-- `LazyMotion` provided at root in `src/app/layout.tsx`.
-- Helpers in `src/components/motion.tsx` (`FadeIn`, `RiseIn`, overlay/panel variants).
+### Features
 
-## Accessibility
-- Global focus-visible rings via tokens; keyboard navigation in carousel and mobile menu; tooltip and dialog use Radix semantics.
+- **Framework**: Next.js 15 + React 19 (App Router)
+- **Styling**: Tailwind CSS v4 with tokenized design system (`src/app/globals.css`)
+- **Motion**: Framer Motion animations and page transitions
+- **UI**: Radix primitives (Dialog, Tooltip, Toast) + Lucide icons
+- **UX**: Responsive layout, desktop sidebar nav, mobile menu, parallax background, gradients, dark mode
+- **Booking**: Calendly embed
+- **Leads**: `/api/lead` endpoint using Resend
+- **SEO/Infra**: Middleware canonicalizes `www` → apex domain in production
 
-This is a [Next.js](https://nextjs.org) project for Smart Technology Investments, using Tailwind CSS, Lucide, Radix Icons, and Framer Motion.
 
-## Getting Started
+### Tech Stack
 
-First, run the development server:
+- **Next.js** `15.4.6`, **React** `19.1.0`
+- **Tailwind CSS** `^4` via PostCSS
+- **Framer Motion** `^12`
+- **Radix UI** (Dialog/Tooltip/Toast), **lucide-react** icons
+- **Resend** for transactional email
+- **Vercel** for hosting/deployments
+
+
+### Getting Started
+
+#### Prerequisites
+
+- Node.js >= 18 and npm >= 9 (see `package.json#engines`)
+
+#### Setup
+
+1) Install dependencies
+
+```bash
+npm install
+```
+
+2) Create `.env.local`
+
+```bash
+# Required for /api/lead
+RESEND_API_KEY=your_resend_api_key
+
+# Optional overrides
+LEAD_NOTIFY_EMAIL=has.dhia@gmail.com
+LEADS_FROM_EMAIL=onboarding@resend.dev
+```
+
+3) Start the dev server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
-Tech stack: Next.js App Router, Tailwind v4, Framer Motion, Lucide, Radix Icons. Fonts via `@fontsource`.
+### Scripts
 
-## Learn More
+- `npm run dev` – Start local development (Turbopack)
+- `npm run build` – Production build
+- `npm run start` – Start production server
+- `npm run lint` – Lint with Next.js ESLint config
+- `npm run deploy` – Deploy to Vercel (`vercel --prod`)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Used by `src/app/api/lead/route.ts`:
 
-## Deploy
+- `RESEND_API_KEY` (required): API key for Resend; without it, posting a lead returns 500.
+- `LEAD_NOTIFY_EMAIL` (optional): Notification recipient. Defaults to `has.dhia@gmail.com`.
+- `LEADS_FROM_EMAIL` (optional): From address for Resend. Defaults to `onboarding@resend.dev`.
 
-- Install Vercel CLI: `npm i -g vercel`
-- Build locally: `npm run build`
-- Deploy: `npm run deploy` (prompts the first time to link project)
+Define these in `.env.local` for development and in Vercel Project Settings for production.
 
-## Style guide (utilities and best practices)
 
-- Typography scale utilities: `fs-step--1`, `fs-step-0`, `fs-step-1`, `fs-step-2`, `fs-step-3`, `fs-step-4`.
-- Color helpers: `text-brand`, `text-muted`. Prefer tokens over raw hex.
-- Gradients:
-  - Text: `text-gradient` (uses `--gradient-text` per theme)
-  - Buttons: `<Button variant="gradient" />` (uses `--gradient-accent`)
-  - Background accents: `bg-aurora`, `bg-conic-beam`, `bg-glow`, `bg-grid`, `bg-noise`
-  - Dividers: `divide-gradient`
-- Cards:
-  - Standard card uses `bg-card` and tokenized borders.
-  - Optional emphasis via `card-gradient` or `highlight` prop on `Card`/`WorkCard`.
-- Parallax background: uses CSS variables (`--ty`, `--alpha`) set by refs. Avoid inline JSX styles.
-- Reduced motion: complex animations disable automatically via media queries.
+### Project Structure
 
-When adding components, avoid inline `style={{ ... }}` for static values. Prefer utilities in `globals.css` or Tailwind classes referencing design tokens.
+```
+src/
+  app/
+    api/lead/route.ts        # POST endpoint – scores diagnostic + emails via Resend
+    diagnostic/page.tsx      # Growth diagnostic form (client)
+    offers/page.tsx          # Productized offers
+    resources/page.tsx       # Strategy OS resources
+    schedule/page.tsx        # Calendly booking
+    layout.tsx               # Root layout, providers, nav, transitions
+    page.tsx                 # Home page
+    globals.css              # Tokens + utilities
+  components/
+    ui/                      # Button, Input, Tooltip, Dialog, Toast, Icon
+    ...                      # Hero, SectionHeader, WorkCard, etc.
+  lib/                       # Motion helpers, utilities
+  middleware.ts              # www -> apex redirect in production
+```
+
+
+### Routes
+
+- `/` – Home
+- `/offers` – Productized offers
+- `/diagnostic` – Growth diagnostic (client-side form posts to API)
+- `/resources` – Strategy OS resources
+- `/schedule` – Calendly booking
+- `/api/lead` – POST endpoint
+
+Example `POST /api/lead` payload (sent by the diagnostic page):
+
+```json
+{
+  "icp": "Low|Medium|High",
+  "pricing": "Low|Medium|High",
+  "pipeline": "Low|Medium|High",
+  "ops": "Low|Medium|High",
+  "email": "you@example.com",
+  "url": "http://localhost:3000/diagnostic",
+  "referrer": "",
+  "userAgent": "..."
+}
+```
+
+The API sums a score (1–12), categorizes it (Quick Wins / Good Foundation / High Leverage), and emails the details via Resend.
+
+
+### Design System
+
+Tokens live in `src/app/globals.css` as CSS variables:
+
+- **Colors**: `--background`, `--foreground`, `--surface`, `--border`, `--brand`, `--muted`, semantic statuses
+- **Motion**: `--dur-100`, `--dur-200`, `--dur-300`, `--dur-500`, `--ease-standard`
+- **Focus**: `--ring`, `--ring-color`, `--ring-offset`
+- **Radii**: `--radius-sm`, `--radius`, `--radius-lg`
+- **Shadows**: `--shadow-sm`, `--shadow`, `--shadow-lg`
+
+Core UI primitives (see `src/components/ui/`):
+
+- `Button` – variants: `primary | secondary | ghost | destructive | gradient`; sizes: `sm | md | lg`; supports `asChild`, loading
+- `Input` – variants: `default | subtle`; sizes: `sm | md | lg`
+- `Tooltip`, `Dialog`, `Toast` – Radix-based components
+- `Icon` – Lucide facade honoring global `.lucide` defaults
+
+Layout helpers:
+
+- Use `.container` and `.section` utilities for consistent spacing
+- Parallax background and page transitions are wired in `src/app/layout.tsx`
+
+Accessibility:
+
+- Global focus-visible rings via tokens
+- Keyboard navigation supported in carousel and menus
+- Radix semantics for overlays and tooltips
+
+
+### Styling Notes
+
+- Tailwind CSS v4 is configured via PostCSS (`@tailwindcss/postcss`).
+- Prefer design tokens and utilities over inline styles for static values.
+- Gradient utilities: `text-gradient`, `bg-aurora`, `bg-conic-beam`, `bg-glow`, `bg-grid`, `bg-noise`; divider: `divide-gradient`.
+- Card surfaces use `bg-card` and tokenized borders; `highlight` prop on cards for emphasis.
+- Reduced motion is respected via media queries and motion helpers in `src/components/motion.tsx`.
+
+
+### Images
+
+Remote images are allowed from the following hosts (see `next.config.ts`):
+
+- `images.unsplash.com`
+- `picsum.photos`
+- `dummyimage.com`
+- `upload.wikimedia.org`
+
+
+### Deployment (Vercel)
+
+Option A: CLI
+
+```bash
+npm run build
+npm run deploy
+```
+
+Option B: Git integration
+
+- Push to the `main` branch; Vercel builds and deploys automatically.
+
+Domain & middleware
+
+- `src/middleware.ts` redirects `www.smarttechinvest.com` to `smarttechinvest.com` (308). Update these values if the domain changes.
+
+
+### Maintenance Tips
+
+- Add new pages under `src/app/<route>/page.tsx`.
+- Wrap new interactive components with existing providers in `layout.tsx` when needed.
+- Keep design tokens centralized in `globals.css`.
+- Configure environment variables in Vercel for production parity.
+
+
+### License
+
+All rights reserved. © Smart Technology Investments.
