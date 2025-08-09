@@ -1,29 +1,24 @@
 import Image from "next/image";
 import { Button } from "../../components/ui/Button";
+import { SectionHeader } from "../../components/SectionHeader";
+import { Card } from "../../components/Card";
+import { FileText, BarChart3, ClipboardList } from "lucide-react";
 export default function Resources() {
   return (
     <section className="container section">
-      <h1 className="font-extrabold tracking-tight text-gradient">Strategy OS Resources</h1>
-      <p className="mt-1 text-[var(--muted)]">Templates and assets to run a high-leverage operating cadence.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+      <SectionHeader kicker="Resources" title="Strategy OS Resources" subtitle="Templates and assets to run a high‑leverage operating cadence." useGradientTitle />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
         {[
-          ["Weekly Review", "Template", "Agenda + scorecard"],
-          ["Pipeline", "Dashboard", "Stage health + forecast"],
-          ["OKRs", "Planner", "Quarterly alignment"],
-        ].map(([label, value, hint]) => (
-          <div
-            key={String(label)}
-            className="rounded-2xl p-5 bg-white/85 dark:bg-card-gradient backdrop-blur-md border border-[var(--border)] dark:border-transparent shadow-[var(--shadow-sm)] dark:shadow-[var(--shadow)]"
-          >
-            <div className="font-extrabold tracking-tight fs-step-2 text-brand dark:text-[hsl(var(--foreground))]">{value as string}</div>
-            <div className="font-semibold">{label as string}</div>
-            <div className="mt-0.5 text-muted fs-step--1">{hint as string}</div>
-          </div>
+          { title: "Weekly Review", description: "Agenda + scorecard", icon: ClipboardList },
+          { title: "Pipeline Dashboard", description: "Stage health + forecast", icon: BarChart3 },
+          { title: "OKR Planner", description: "Quarterly alignment", icon: FileText },
+        ].map((item, idx) => (
+          <Card key={item.title} title={item.title} description={item.description} icon={item.icon as any} highlight={idx === 1} />
         ))}
       </div>
-      <div className="mt-6 grid sm:grid-cols-2 gap-3">
+      <div className="mt-8 grid sm:grid-cols-2 gap-4">
         {["before", "after"].map((seed, i) => (
-          <figure key={seed} className="relative rounded-2xl overflow-hidden bg-white/85 dark:bg-white/5 backdrop-blur-md border border-[var(--border)]">
+          <figure key={seed} className="relative rounded-2xl overflow-hidden bg-[hsl(var(--card))] text-[hsl(var(--foreground))] border border-[hsl(var(--border))] shadow-sm">
             <div className="relative w-full aspect-[16/9]">
               <Image
                 src={i === 0
@@ -37,8 +32,8 @@ export default function Resources() {
                 priority={false}
               />
             </div>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            <figcaption className="relative px-4 py-3 font-semibold text-[var(--brand)]">{seed === "before" ? "Before" : "After"}</figcaption>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+            <figcaption className="relative px-4 py-3 font-semibold text-[hsl(var(--foreground))]">{seed === "before" ? "Before" : "After"}</figcaption>
           </figure>
         ))}
       </div>
