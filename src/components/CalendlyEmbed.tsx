@@ -1,48 +1,32 @@
 "use client";
-import { useEffect, useRef, useCallback } from "react";
-import Script from "next/script";
+import { useEffect } from "react";
 
 export function CalendlyEmbed({ url }: { url: string }) {
-  // Ensure Calendly styles are available in the <head> even on client-side navigations
+  // Ensure Calendly CSS/JS are available on client navigations
   useEffect(() => {
-    const existing = document.querySelector(
-      'link[href="https://assets.calendly.com/assets/external/widget.css"]'
-    ) as HTMLLinkElement | null;
-    if (!existing) {
+    const cssHref = "https://assets.calendly.com/assets/external/widget.css";
+    if (!document.querySelector(`link[href="${cssHref}"]`)) {
       const linkEl = document.createElement("link");
       linkEl.rel = "stylesheet";
-      linkEl.href = "https://assets.calendly.com/assets/external/widget.css";
+      linkEl.href = cssHref;
       document.head.appendChild(linkEl);
+    }
+
+    const jsSrc = "https://assets.calendly.com/assets/external/widget.js";
+    if (!document.querySelector(`script[src="${jsSrc}"]`)) {
+      const script = document.createElement("script");
+      script.src = jsSrc;
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
     }
   }, []);
 
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
-  const initCalendly = useCallback(() => {
-    const calendlyGlobal = (window as unknown as { Calendly?: any }).Calendly;
-    if (!calendlyGlobal || !containerRef.current) return;
-
-    // Clean previous mount to avoid duplicates on hot reloads / navs
-    containerRef.current.innerHTML = "";
-
-    calendlyGlobal.initInlineWidget({
-      url,
-      parentElement: containerRef.current,
-    });
-  }, [url]);
-
-  useEffect(() => {
-    initCalendly();
-  }, [initCalendly]);
-
   return (
     <div className="w-full">
-      <div ref={containerRef} className="calendly-inline-widget rounded-2xl bg-transparent h-[720px] min-w-[320px]" />
-      {/* Load Calendly's script right after the page becomes interactive to avoid blank widget */}
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="afterInteractive"
-        onLoad={initCalendly}
+      <div
+        className="calendly-inline-widget rounded-2xl bg-transparent min-w-[320px] h-[720px]"
+        data-url={url}
       />
     </div>
   );
