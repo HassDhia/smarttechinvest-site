@@ -6,12 +6,14 @@ import * as React from "react";
 export function StaggerList<T>({
   items,
   render,
+  className = "",
 }: {
   items: T[];
   render: (item: T, i: number) => React.ReactNode;
+  className?: string;
 }) {
   return (
-    <ul>
+    <ul className={className}>
       {items.map((it, i) => (
         <m.li
           key={i}
