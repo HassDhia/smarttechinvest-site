@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "../lib/cn";
 import { Badge } from "./ui/Badge";
 import Image from "next/image";
