@@ -75,7 +75,10 @@ export default function Diagnostic() {
         ].map(([name, label]) => (
           <label key={name as string} className="grid gap-1 font-semibold">
             {label}
-            <select name={name as string} className="border rounded-lg px-2 py-2 bg-white/80 backdrop-blur dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+            <select
+              name={name as string}
+              className="border rounded-lg px-3 py-2 bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 border-slate-200 dark:border-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 dark:focus-visible:ring-slate-600 transition-colors"
+            >
               <option>Low</option>
               <option>Medium</option>
               <option>High</option>
@@ -84,7 +87,13 @@ export default function Diagnostic() {
         ))}
         <label className="grid gap-1 font-semibold">
           Email
-          <input ref={emailInputRef} name="email" type="email" placeholder="you@example.com" className="border rounded-lg px-2 py-2 bg-white/80 backdrop-blur dark:bg-slate-900 border-slate-200 dark:border-slate-700" />
+          <input
+            ref={emailInputRef}
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+            className="border rounded-lg px-3 py-2 bg-white text-slate-900 placeholder:text-slate-500 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-400 border-slate-200 dark:border-slate-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 dark:focus-visible:ring-slate-600 transition-colors"
+          />
         </label>
         <Button type="submit" className="mt-1 w-full" variant="gradient" disabled={sending}>
           {sending ? "Sending..." : "Get My Score"}
