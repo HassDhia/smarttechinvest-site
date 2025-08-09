@@ -7,18 +7,21 @@ export function Card({
   href,
   className,
   icon: IconCmp,
+  highlight,
 }: {
   title: string;
   description?: string;
   href?: string;
   className?: string;
   icon?: LucideIcon;
+  highlight?: boolean;
 }) {
   const content = (
     <div className={cn(
-      "rounded-xl p-5 bg-card/90 text-[hsl(var(--card-foreground))] border border-[hsl(var(--border)/0.6)] shadow-sm",
+      "rounded-xl p-5 bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))] shadow-sm",
       "transition-[transform,box-shadow,background-color] duration-[var(--dur-200)] ease-[var(--ease-standard)]",
-      "hover:-translate-y-0.5 hover:shadow-[var(--shadow)] hover:bg-accent/40",
+      "hover:-translate-y-0.5 hover:shadow-[var(--shadow)] hover:bg-[hsl(var(--accent)/0.4)]",
+      highlight ? "card-gradient" : "",
       className
     )}>
       {IconCmp ? (

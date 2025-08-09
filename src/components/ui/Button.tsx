@@ -10,7 +10,8 @@ const buttonVariants = cva(
         primary: "bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--primary)/0.9)] shadow-[var(--shadow-sm)]",
         secondary: "bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] border border-[hsl(var(--border))] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))] shadow-[var(--shadow-sm)]",
         ghost: "bg-transparent text-[hsl(var(--foreground))] hover:bg-[hsl(var(--accent))]",
-        destructive: "bg-[var(--danger)] text-[var(--danger-fg)] hover:brightness-110 active:brightness-95 shadow-[var(--shadow-sm)]",
+        destructive: "bg-[hsl(var(--destructive))] text-[hsl(var(--destructive-foreground))] hover:bg-[hsl(var(--destructive)/0.9)] active:bg-[hsl(var(--destructive)/0.85)] shadow-[var(--shadow-sm)]",
+        gradient: "btn-gradient shadow-[var(--shadow-sm)]",
       },
       size: {
         sm: "h-9 px-3 text-sm",

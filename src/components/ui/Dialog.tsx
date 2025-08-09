@@ -18,7 +18,7 @@ export function DialogContent({ children, className = "" }: { children: React.Re
     <RD.Portal>
       <RD.Overlay asChild>
         <m.div
-          className="fixed inset-0 z-[var(--z-overlay)] bg-black/40 motion-reduce:transition-none"
+          className="fixed inset-0 z-[var(--z-overlay)] bg-black/50 motion-reduce:transition-none"
           initial="hidden"
           animate="show"
           exit="exit"

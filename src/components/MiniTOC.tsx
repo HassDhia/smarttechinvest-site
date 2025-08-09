@@ -9,7 +9,7 @@ export function MiniTOC({
   const active = useScrollspy(sections.map((s) => s.id));
   return (
     <nav className="hidden xl:block fixed right-4 top-28 z-20">
-      <ul className="rounded-2xl border bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] p-2 space-y-1" style={{ borderColor: "hsl(var(--border))" }}>
+      <ul className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] p-2 space-y-1">
         {sections.map((s) => (
           <li key={s.id}>
             <a

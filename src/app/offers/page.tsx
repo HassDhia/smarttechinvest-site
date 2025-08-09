@@ -32,7 +32,7 @@ export default function Offers() {
   ];
   return (
     <section className="container section">
-      <h1 className="font-extrabold tracking-tight text-foreground">Productized Offers</h1>
+      <h1 className="font-extrabold tracking-tight text-gradient">Productized Offers</h1>
       <p className="mt-1 text-foreground/90">Start small, move fast, and scale what works.</p>
       <div className="mt-3 text-sm rounded-xl border px-3 py-2 bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] border-[hsl(var(--border))]">
         Risk reversal: If we’re not adding clear value in 30 days, you can opt out — no hard feelings.
@@ -42,7 +42,7 @@ export default function Offers() {
         items={offers}
         render={(o) => (
           <m.article
-            className={`rounded-2xl p-5 bg-card/90 text-[hsl(var(--card-foreground))] border ${o.highlight ? "border-[hsl(var(--ring))] shadow-[var(--shadow)]" : "border-[hsl(var(--border)/0.6)] shadow-[var(--shadow-sm)]"} transition-[background,box-shadow,transform] duration-[var(--dur-200)] ease-[var(--ease-standard)] hover:-translate-y-0.5 hover:shadow-[var(--shadow)] hover:bg-accent/40`}
+            className={`rounded-2xl p-5 bg-card text-[hsl(var(--card-foreground))] border ${o.highlight ? "border-[hsl(var(--ring))] shadow-[var(--shadow)]" : "border-[hsl(var(--border))] shadow-[var(--shadow-sm)]"} transition-[background,box-shadow,transform] duration-[var(--dur-200)] ease-[var(--ease-standard)] hover:-translate-y-0.5 hover:shadow-[var(--shadow)] hover:bg-[hsl(var(--accent)/0.4)]`}
             {...microPress}
           >
             <h3 className="text-lg font-bold text-foreground">{o.title}</h3>
@@ -54,7 +54,7 @@ export default function Offers() {
             </ul>
             <p className="font-bold text-foreground/90">{o.anchor}</p>
             <div className="mt-3">
-              <Button asChild>
+              <Button asChild variant="gradient">
                 <Link href="/schedule">{o.cta}</Link>
               </Button>
             </div>

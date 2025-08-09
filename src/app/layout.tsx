@@ -8,7 +8,7 @@ import { BackToTop } from "../components/BackToTop";
 import Script from "next/script";
 import { ToastProvider } from "../components/ui/Toast";
 import { Button } from "../components/ui/Button";
-import { LazyMotion, domAnimation } from "framer-motion";
+import { MotionProvider } from "../components/ClientMotionProvider";
 
 export const metadata: Metadata = {
   title: "Smart Technology Investments",
@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             } catch (e) {}
           })();
         `}</Script>
-        <LazyMotion features={domAnimation}>
+        <MotionProvider>
           <ParallaxBG />
           <MobileNav />
           <ToastProvider>
@@ -57,12 +57,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-slate-500">© {new Date().getFullYear()} Smart Technology Investments</footer>
               </main>
             </div>
-            <Button asChild size="lg" className="hidden lg:inline-flex fixed right-5 bottom-5 shadow-[var(--shadow-sm)] hover:shadow">
+            <Button asChild size="lg" variant="gradient" className="hidden lg:inline-flex fixed right-5 bottom-5 hover:shadow">
               <a href="/schedule" aria-label="Book a call">Book Call</a>
             </Button>
             <BackToTop />
           </ToastProvider>
-        </LazyMotion>
+        </MotionProvider>
       </body>
     </html>
   );

@@ -28,7 +28,7 @@ export function Hero({
         animate={{ scale: 1, opacity: 0.2 }}
         transition={{ duration: 1 }}
       >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_60%_at_80%_0%,theme(colors.primary)/0.12,transparent)]" />
+        <div className="pointer-events-none absolute inset-0 bg-glow" />
       </motion.div>
       <div className="max-w-screen-xl mx-auto px-4 py-16 text-center">
         <div className="relative mx-auto mb-6 h-10 w-10">
@@ -43,23 +43,24 @@ export function Hero({
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="font-extrabold tracking-tight text-foreground text-[var(--step-5)]"
-          style={{ fontFamily: "var(--font-heading)" }}
+          className="font-extrabold tracking-tight text-[var(--step-5)] text-gradient"
         >
           {title}
         </motion.h1>
         {subtitle ? (
-          <p className="mt-3 max-w-3xl mx-auto text-foreground/90 text-[var(--step-1)]">{subtitle}</p>
+          <p className="mt-3 max-w-3xl mx-auto text-foreground/90 fs-step-1">{subtitle}</p>
         ) : null}
         {ctaText && ctaHref ? (
           <div className="mt-6">
-            <Button asChild className="shadow-[var(--shadow-sm)] hover:-translate-y-0.5">
+            <Button asChild variant="gradient" className="hover:-translate-y-0.5">
               <Link href={ctaHref}>{ctaText}</Link>
             </Button>
           </div>
         ) : null}
         {/* Proof bar */}
         <ProofBar />
+        {/* Ambient aurora accent */}
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 -bottom-24 h-64 blur-2xl opacity-60 bg-aurora" />
       </div>
     </section>
   );

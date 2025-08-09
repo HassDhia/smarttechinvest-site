@@ -3,7 +3,7 @@ import { Button } from "../../components/ui/Button";
 export default function Resources() {
   return (
     <section className="container section">
-      <h1 className="font-extrabold tracking-tight">Strategy OS Resources</h1>
+      <h1 className="font-extrabold tracking-tight text-gradient">Strategy OS Resources</h1>
       <p className="mt-1 text-[var(--muted)]">Templates and assets to run a high-leverage operating cadence.</p>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
         {[
@@ -12,9 +12,9 @@ export default function Resources() {
           ["OKRs", "Planner", "Quarterly alignment"],
         ].map(([label, value, hint]) => (
           <div key={String(label)} className="rounded-2xl p-5 bg-white/85 dark:bg-white/5 backdrop-blur-md border border-[var(--border)]">
-            <div className="font-extrabold tracking-tight text-[var(--brand)] text-[var(--step-2)]">{value as string}</div>
+            <div className="font-extrabold tracking-tight text-brand fs-step-2">{value as string}</div>
             <div className="font-semibold">{label as string}</div>
-            <div className="mt-0.5 text-[var(--muted)] text-[var(--step--1)]">{hint as string}</div>
+            <div className="mt-0.5 text-muted fs-step--1">{hint as string}</div>
           </div>
         ))}
       </div>
@@ -37,7 +37,7 @@ export default function Resources() {
         ))}
       </div>
       <div className="text-center mt-8">
-        <Button asChild>
+        <Button asChild variant="gradient">
           <a href="/schedule">Request Access</a>
         </Button>
       </div>

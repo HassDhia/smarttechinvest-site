@@ -5,7 +5,7 @@ export default function Loading() {
     <section className="container section">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {Array.from({ length: 3 }).map((_, i) => (
-          <div key={i} className="rounded-2xl p-5 border border-[hsl(var(--border)/0.6)] bg-[hsl(var(--card)/0.7)] shadow-[var(--shadow-sm)]">
+          <div key={i} className="rounded-2xl p-5 border border-[hsl(var(--border))] bg-[hsl(var(--card))] shadow-[var(--shadow-sm)]">
             <Skeleton className="h-6 w-2/3" />
             <Skeleton className="mt-2 h-4 w-3/4" />
             <div className="mt-3 space-y-2">

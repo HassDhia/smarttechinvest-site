@@ -61,3 +61,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 - Install Vercel CLI: `npm i -g vercel`
 - Build locally: `npm run build`
 - Deploy: `npm run deploy` (prompts the first time to link project)
+
+## Style guide (utilities and best practices)
+
+- Typography scale utilities: `fs-step--1`, `fs-step-0`, `fs-step-1`, `fs-step-2`, `fs-step-3`, `fs-step-4`.
+- Color helpers: `text-brand`, `text-muted`. Prefer tokens over raw hex.
+- Gradients:
+  - Text: `text-gradient` (uses `--gradient-text` per theme)
+  - Buttons: `<Button variant="gradient" />` (uses `--gradient-accent`)
+  - Background accents: `bg-aurora`, `bg-conic-beam`, `bg-glow`, `bg-grid`, `bg-noise`
+  - Dividers: `divide-gradient`
+- Cards:
+  - Standard card uses `bg-card` and tokenized borders.
+  - Optional emphasis via `card-gradient` or `highlight` prop on `Card`/`WorkCard`.
+- Parallax background: uses CSS variables (`--ty`, `--alpha`) set by refs. Avoid inline JSX styles.
+- Reduced motion: complex animations disable automatically via media queries.
+
+When adding components, avoid inline `style={{ ... }}` for static values. Prefer utilities in `globals.css` or Tailwind classes referencing design tokens.

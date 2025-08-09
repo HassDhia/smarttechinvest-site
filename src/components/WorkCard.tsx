@@ -12,6 +12,7 @@ export function WorkCard({
   outcome,
   image,
   href,
+  highlight,
 }: {
   title: string;
   role: string;
@@ -19,16 +20,18 @@ export function WorkCard({
   outcome?: string;
   image?: string;
   href?: string;
+  highlight?: boolean;
 }) {
   const content = (
     <div className={cn(
-      "group rounded-2xl overflow-hidden p-2 bg-card/90 text-[hsl(var(--card-foreground))] border border-[hsl(var(--border)/0.6)] shadow-[var(--shadow-sm)]",
-      "transition-[background,box-shadow,transform] duration-[var(--dur-200)] ease-[var(--ease-standard)] hover:-translate-y-0.5 hover:shadow-[var(--shadow)] hover:bg-accent/40"
+      "group rounded-2xl overflow-hidden p-2 bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))] shadow-[var(--shadow-sm)]",
+      "transition-[background,box-shadow,transform] duration-[var(--dur-200)] ease-[var(--ease-standard)] hover:-translate-y-0.5 hover:shadow-[var(--shadow)] hover:bg-accent/40",
+      highlight ? "card-gradient" : ""
     )}>
       <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
         <Image
           src={image || "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop"}
-          alt="Project placeholder"
+          alt="Project case study image"
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"

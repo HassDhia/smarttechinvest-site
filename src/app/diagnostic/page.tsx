@@ -18,7 +18,7 @@ export default function Diagnostic() {
   }
   return (
     <section className="container section max-w-2xl">
-      <h1 className="font-extrabold tracking-tight text-[var(--step-4)]">Growth Diagnostic</h1>
+      <h1 className="font-extrabold tracking-tight text-[var(--step-4)] text-gradient">Growth Diagnostic</h1>
       <p className="mt-1 text-[var(--muted)]">Answer 4 quick questions for a tailored recommendation.</p>
       <form
         action={(formData) => {
@@ -45,7 +45,7 @@ export default function Diagnostic() {
           Email (optional)
           <input name="email" type="email" placeholder="you@example.com" className="border rounded-lg px-2 py-2 bg-white/80 backdrop-blur dark:bg-slate-900 border-slate-200 dark:border-slate-700" />
         </label>
-        <Button className="mt-1 w-full">Get My Score</Button>
+        <Button className="mt-1 w-full" variant="gradient">Get My Score</Button>
       </form>
       {result && <div className="mt-3 p-3 border border-[var(--border)] rounded-xl bg-white/60 dark:bg-slate-950/40 backdrop-blur-md">{result}</div>}
     </section>

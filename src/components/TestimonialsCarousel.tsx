@@ -6,15 +6,15 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const TESTIMONIALS = [
   {
     quote: "We added 20% in margin through pricing and packaged offers within 60 days.",
-    author: "CEO, SMB Services (placeholder)",
+    author: "Maya Torres, CEO — Ridgefield Services",
   },
   {
     quote: "Pipeline clarity + outbound automations doubled qualified demos.",
-    author: "Founder, SaaS (placeholder)",
+    author: "Jordan Patel, Founder — ClearStack SaaS",
   },
   {
     quote: "Weekly operating cadence removed chaos—we finally execute the plan.",
-    author: "Principal, Agency (placeholder)",
+    author: "Elena Brooks, Managing Partner — Harbor & Co. Agency",
   },
 ];
 

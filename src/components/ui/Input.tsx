@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/cn";
 
 const inputStyles = cva(
-  "w-full rounded-md border bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] px-3 py-2 text-sm transition-colors placeholder:text-[hsl(var(--muted-foreground)/0.8)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] invalid:ring-2 invalid:ring-[var(--danger)] disabled:opacity-60 disabled:cursor-not-allowed",
+  "w-full rounded-md border bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] px-3 py-2 text-sm transition-colors placeholder:text-[hsl(var(--muted-foreground)/0.8)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] invalid:ring-2 invalid:ring-[hsl(var(--destructive))] disabled:opacity-60 disabled:cursor-not-allowed",
   {
     variants: {
       variant: {

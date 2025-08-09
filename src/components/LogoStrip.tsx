@@ -1,6 +1,12 @@
 export function LogoStrip() {
   // Use simple brand name chips for a cleaner, premium look
-  const brands = ["ACME", "NOVA", "ZENCO", "ALPHA", "PRIME"];
+  const brands = [
+    "Northwind Labs",
+    "BluePeak Logistics",
+    "Aurora Health",
+    "Cinderworks",
+    "Helios Cloud"
+  ];
   return (
     <div className="container section">
       <div className="flex flex-wrap items-center justify-center gap-4">

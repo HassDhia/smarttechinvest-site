@@ -22,6 +22,14 @@
   --border: 220 13% 91%;
   --ring: 213 94% 58%;
 
+  /* Semantic states (HSL) */
+  --success: 146 55% 38%;
+  --success-foreground: 0 0% 100%;
+  --warning: 36 100% 45%;
+  --warning-foreground: 0 0% 8%;
+  --destructive: 0 78% 55%;
+  --destructive-foreground: 0 0% 100%;
+
   /* Legacy brand/system tokens kept for compatibility */
   --brand: #0f2544;
   --brand-600: #163b6b;
@@ -82,6 +90,16 @@
   --z-nav: 40;
   --z-overlay: 50;
   --z-toast: 60;
+
+  /* Gradient tokens (light) */
+  --gradient-hero: linear-gradient(135deg, #f5f7fb 0%, #e6eefc 100%);
+  --gradient-card: linear-gradient(135deg, #0f2544, #163b6b);
+  --bg-glow: radial-gradient(1000px 520px at 50% -10%, rgba(15, 37, 68, 0.08), transparent 60%);
+  --bg-grid: radial-gradient(rgba(15, 37, 68, 0.10) 1px, transparent 1px);
+  --bg-noise: radial-gradient(rgba(255, 255, 255, 0.015) 0.8px, transparent 0.8px);
+  /* Advanced gradients */
+  --gradient-accent: linear-gradient(135deg, #60a5fa 0%, #a78bfa 45%, #34d399 100%);
+  --gradient-text: linear-gradient(90deg, #0ea5e9 0%, #6366f1 50%, #22c55e 100%);
 }
 
 @theme inline {
@@ -98,6 +116,14 @@
   --color-accent-foreground: hsl(var(--accent-foreground));
   --color-border: hsl(var(--border));
   --color-ring: hsl(var(--ring));
+
+  /* Semantic states */
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
 
   /* Fonts */
   --font-sans: InterVariable, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -140,6 +166,14 @@ svg.lucide { width: var(--icon-size); height: var(--icon-size); stroke-width: va
   --border: 220 18% 22%;
   --ring: 213 94% 62%;
 
+  /* Semantic states (HSL) */
+  --success: 146 55% 44%;
+  --success-foreground: 210 40% 98%;
+  --warning: 36 100% 52%;
+  --warning-foreground: 210 40% 4%;
+  --destructive: 0 78% 60%;
+  --destructive-foreground: 210 40% 98%;
+
   /* legacy tokens */
   --brand: #9cc4ff;
   --brand-600: #6ba3f5;
@@ -154,6 +188,16 @@ svg.lucide { width: var(--icon-size); height: var(--icon-size); stroke-width: va
   --info-fg: #0b1220;
   --danger: #ef4444;
   --danger-fg: #0b1220;
+
+  /* Gradient tokens (dark) */
+  --gradient-hero: linear-gradient(135deg, #0b1220 0%, #0f2544 100%);
+  --gradient-card: linear-gradient(135deg, #0f2544, #163b6b);
+  --bg-glow: radial-gradient(1000px 520px at 50% -10%, rgba(156, 196, 255, 0.10), transparent 60%);
+  --bg-grid: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  --bg-noise: radial-gradient(rgba(255, 255, 255, 0.02) 0.8px, transparent 0.8px);
+  /* Advanced gradients (dark) */
+  --gradient-accent: linear-gradient(135deg, #60a5fa 0%, #7c3aed 45%, #10b981 100%);
+  --gradient-text: linear-gradient(90deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
 }
 
 body {
@@ -214,11 +258,105 @@ a { text-decoration: none; }
 }
 .link-underline:hover::after { width: 100%; }
 
+/* Gradient utility classes (respect theme tokens) */
+.bg-hero-gradient { background: var(--gradient-hero); }
+.bg-card-gradient { background: var(--gradient-card); }
+.bg-glow { background: var(--bg-glow); }
+.bg-grid {
+  background-image: var(--bg-grid);
+  background-size: 28px 28px;
+  background-position: 0 0;
+}
+.bg-noise {
+  background-image: var(--bg-noise);
+  background-size: 3px 3px;
+  background-position: 0 0;
+  mix-blend-mode: overlay;
+}
+
+/* Typography utilities to avoid inline styles */
+.fs-step--1 { font-size: var(--step--1); }
+.fs-step-0  { font-size: var(--step-0); }
+.fs-step-1  { font-size: var(--step-1); }
+.fs-step-4  { font-size: var(--step-4); }
+.fs-step-2  { font-size: var(--step-2); }
+.fs-step-3  { font-size: var(--step-3); }
+.text-brand { color: var(--brand); }
+.text-muted { color: hsl(var(--muted)); }
+
+/* Token swatch helpers */
+.bg-token-brand { background: var(--brand); }
+.bg-token-brand-600 { background: var(--brand-600); }
+.bg-token-surface { background: var(--surface); }
+.bg-token-border { background: hsl(var(--border)); }
+.bg-token-muted { background: hsl(var(--muted)); }
+
+/* Advanced gradient utilities */
+.text-gradient {
+  background-image: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-gradient {
+  background-image: var(--gradient-accent);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  color: white;
+}
+.btn-gradient:hover {
+  background-position: 100% 50%;
+  filter: saturate(1.05);
+}
+
+/* Aurora background: layered, subtle animated mesh */
+.bg-aurora {
+  background-image:
+    radial-gradient(40% 35% at 20% 10%, rgba(96, 165, 250, 0.28), transparent 60%),
+    radial-gradient(35% 40% at 80% 0%, rgba(167, 139, 250, 0.24), transparent 60%),
+    radial-gradient(45% 40% at 30% 100%, rgba(34, 211, 238, 0.20), transparent 60%),
+    radial-gradient(35% 45% at 90% 90%, rgba(52, 211, 153, 0.18), transparent 60%);
+  background-size: 150% 150%, 150% 150%, 150% 150%, 150% 150%;
+  animation: auroraShift 18s ease-in-out infinite alternate;
+}
+
+/* Conic beam accent (use with low opacity and masks) */
+.bg-conic-beam {
+  background-image: conic-gradient(from 210deg at 30% 10%, rgba(99, 102, 241, 0.18), rgba(56, 189, 248, 0.12), rgba(34, 197, 94, 0.10), transparent 220deg);
+}
+
+@keyframes auroraShift {
+  0% { background-position: 0% 50%, 100% 50%, 50% 100%, 0% 100%; }
+  50% { background-position: 100% 50%, 0% 50%, 50% 0%, 100% 0%; }
+  100% { background-position: 50% 100%, 50% 0%, 0% 50%, 100% 50%; }
+}
+
+/* Parallax helpers using CSS custom properties */
+.parallax-transform {
+  transform: translateY(var(--ty, 0));
+  will-change: transform;
+}
+.opacity-var { opacity: var(--alpha, 1); }
+
+/* Subtle gradient divider */
+.divide-gradient {
+  height: 1px;
+  background-image: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+}
+
+/* Gradient card highlight */
+.card-gradient {
+  background: linear-gradient(135deg, rgba(99,102,241,0.10), rgba(56,189,248,0.08));
+}
+
 /* Reduced motion: neutralize common hover transforms */
 @media (prefers-reduced-motion: reduce) {
   .hover\:-translate-y-0\.5:hover { transform: none !important; }
   html:focus-within { scroll-behavior: auto; }
   * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  .bg-aurora, .btn-gradient { animation: none !important; }
+  .parallax-transform { transform: none !important; }
 }
 
 /* Selection + scrollbar */

@@ -19,8 +19,17 @@ export function MobileNav() {
   const [open, setOpen] = useState(false);
   const closeRef = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    if (open) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.removeProperty("overflow");
+      };
+    }
+    // Ensure no stray inline style remains when closed
+    document.body.style.removeProperty("overflow");
+    return () => {
+      document.body.style.removeProperty("overflow");
+    };
   }, [open]);
   // Hide main content from assistive tech and interaction when drawer is open
   useEffect(() => {
@@ -39,7 +48,7 @@ export function MobileNav() {
   return (
     <div className="lg:hidden">
       {/* Top bar */}
-      <div className="fixed top-0 inset-x-0 z-40 h-14 bg-[hsl(var(--card)/0.8)] dark:bg-[hsl(var(--card)/0.6)] backdrop-blur-md border-b border-[hsl(var(--border))]">
+      <div className="fixed top-0 inset-x-0 z-40 h-14 bg-[hsl(var(--card))] backdrop-blur-md border-b border-[hsl(var(--border))]">
         <div className="h-full px-4 flex items-center justify-between">
           <Link href="/" className="font-bold [font-family:var(--font-heading)]">STI</Link>
           {open ? (
@@ -77,7 +86,7 @@ export function MobileNav() {
             >
               <m.div
                 key="scrim"
-                className="absolute inset-0 bg-black/40 motion-reduce:transition-none"
+                className="absolute inset-0 bg-black/50 motion-reduce:transition-none"
                 onClick={() => setOpen(false)}
                 initial="hidden"
                 animate="show"
@@ -90,7 +99,7 @@ export function MobileNav() {
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="mobile-menu-title"
-                className="absolute left-0 top-0 h-full w-[80%] max-w-xs bg-white dark:bg-slate-950 shadow-xl p-4 overflow-y-auto outline-none motion-reduce:transition-none"
+                className="absolute left-0 top-0 h-full w-[80%] max-w-xs bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] border-r border-[hsl(var(--border))] shadow-xl p-4 overflow-y-auto outline-none motion-reduce:transition-none"
                 tabIndex={-1}
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1, transition: { duration: durations.md, ease: easings.standard } }}

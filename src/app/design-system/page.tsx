@@ -7,16 +7,20 @@ import { SectionHeader } from "../../components/SectionHeader";
 export default function DesignSystem() {
   return (
     <div className="container section">
-      <h1 className="font-extrabold" style={{ fontFamily: "var(--font-heading)", fontSize: "var(--step-4)" }}>Design System</h1>
-      <p className="mt-1" style={{ color: "var(--muted)", fontSize: "var(--step-0)" }}>Tokens, components, and examples</p>
+      <h1 className="font-extrabold fs-step-4 text-gradient">Design System</h1>
+      <p className="mt-1 text-muted fs-step-0">Tokens, components, and examples</p>
 
       <div className="divide-line my-6" />
 
-      <SectionHeader title="Tokens" subtitle="Preview brand and surfaces" />
+      <SectionHeader title="Tokens" subtitle="Preview brand and surfaces" useGradientTitle />
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {["--brand","--brand-600","--surface","--border","--muted"].map((v)=> (
-          <div key={v} className="rounded-2xl border p-3 bg-white/60 dark:bg-slate-950/40 backdrop-blur-md" style={{ borderColor: "var(--border)" }}>
-            <div className="h-10 rounded-md" style={{ background: `var(${v})` }} />
+          <div key={v} className="rounded-2xl border p-3 bg-white/60 dark:bg-slate-950/40 backdrop-blur-md border-[hsl(var(--border))]">
+            {v === "--brand" && <div className="h-10 rounded-md bg-token-brand" />}
+            {v === "--brand-600" && <div className="h-10 rounded-md bg-token-brand-600" />}
+            {v === "--surface" && <div className="h-10 rounded-md bg-token-surface" />}
+            {v === "--border" && <div className="h-10 rounded-md bg-token-border" />}
+            {v === "--muted" && <div className="h-10 rounded-md bg-token-muted" />}
             <div className="mt-2 text-xs">{v}</div>
           </div>
         ))}
@@ -24,16 +28,17 @@ export default function DesignSystem() {
 
       <div className="divide-line my-6" />
 
-      <SectionHeader title="Buttons" />
+      <SectionHeader title="Buttons" useGradientTitle />
       <div className="flex gap-3 flex-wrap">
         <Button>Primary</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="ghost">Ghost</Button>
+        <Button variant="gradient">Gradient</Button>
       </div>
 
       <div className="divide-line my-6" />
 
-      <SectionHeader title="Inputs & Badges" />
+      <SectionHeader title="Inputs & Badges" useGradientTitle />
       <div className="grid sm:grid-cols-2 gap-4">
         <Input placeholder="Your email" />
         <div className="flex items-center gap-2"><Badge>Badge</Badge><Badge className="bg-slate-100">Neutral</Badge></div>
@@ -41,7 +46,7 @@ export default function DesignSystem() {
 
       <div className="divide-line my-6" />
 
-      <SectionHeader title="Card" />
+      <SectionHeader title="Card" useGradientTitle />
       <div className="grid sm:grid-cols-3 gap-4">
         <Card title="Component" description="Composable, token-driven card for content sections." />
         <Card title="Accessibility" description="Focusable states and clear visual affordances." />
