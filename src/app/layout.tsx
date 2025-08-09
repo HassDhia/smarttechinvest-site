@@ -40,6 +40,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}</Script>
         <MotionProvider>
           <ParallaxBG />
+          {/* Native scroll progress bar (no JS, progressive enhancement) */}
+          <div className="progress fixed inset-x-0 top-0 h-1 bg-[hsl(var(--primary))] z-[var(--z-nav)]" />
           <MobileNav />
           <ToastProvider>
             <div className="grid min-h-screen grid-cols-1 lg:grid-cols-[260px_1fr] bg-transparent">

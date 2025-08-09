@@ -1,9 +1,10 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, m, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ProofBar } from "./ProofBar";
 import { Button } from "./ui/Button";
+import { useRef } from "react";
 
 export function Hero({
   title,
@@ -18,8 +19,11 @@ export function Hero({
   ctaHref?: string;
   badge?: string;
 }) {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const parallaxY = useTransform(scrollYProgress, [0, 1], ["0px", "-48px"]);
   return (
-    <section className="relative overflow-hidden">
+    <section ref={sectionRef} className="relative overflow-hidden">
       {/* Let the site background show through. Add subtle, non-blocking accents only. */}
       <motion.div
         aria-hidden
@@ -59,8 +63,8 @@ export function Hero({
         ) : null}
         {/* Proof bar */}
         <ProofBar />
-        {/* Ambient aurora accent */}
-        <div aria-hidden className="pointer-events-none absolute inset-x-0 -bottom-24 h-64 blur-2xl opacity-60 bg-aurora" />
+        {/* Ambient aurora accent (micro‑parallax) */}
+        <m.div aria-hidden style={{ y: parallaxY }} className="pointer-events-none absolute inset-x-0 -bottom-24 h-64 blur-2xl opacity-60 bg-aurora" />
       </div>
     </section>
   );

@@ -29,22 +29,22 @@ export function TestimonialsCarousel() {
       aria-roledescription="carousel"
       aria-label="Testimonials"
       aria-live="polite"
-      className="relative max-w-3xl mx-auto rounded-2xl border border-[var(--border)] bg-white/80 dark:bg-[var(--surface)] backdrop-blur-md p-6"
+      className="relative overflow-hidden max-w-3xl mx-auto rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] shadow-[var(--shadow-sm)] md:shadow-[var(--shadow)] p-6 md:p-8 focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))]"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === "ArrowRight") next();
         if (e.key === "ArrowLeft") prev();
       }}
     >
-      <blockquote className="text-lg leading-relaxed text-[var(--foreground)]">“{t.quote}”</blockquote>
-      <div className="mt-3 text-sm font-semibold text-slate-700 dark:text-[var(--muted)]">{t.author}</div>
+      <blockquote className="text-base md:text-lg leading-relaxed">“{t.quote}”</blockquote>
+      <div className="mt-3 text-sm font-semibold text-[hsl(var(--muted-foreground))]">{t.author}</div>
       <div className="absolute inset-y-0 left-0 flex items-center">
         <Button
           variant="ghost"
           size="sm"
           onClick={prev}
           aria-label="Previous"
-          className="m-2 h-8 w-8 p-0 rounded-full bg-black/5 dark:bg-white/10"
+          className="m-2 h-8 w-8 p-0 rounded-full bg-[hsl(var(--accent)/0.4)] hover:bg-[hsl(var(--accent))]"
         >
           <ChevronLeft size={18} strokeWidth={1.5} aria-hidden />
         </Button>
@@ -55,11 +55,12 @@ export function TestimonialsCarousel() {
           size="sm"
           onClick={next}
           aria-label="Next"
-          className="m-2 h-8 w-8 p-0 rounded-full bg-black/5 dark:bg-white/10"
+          className="m-2 h-8 w-8 p-0 rounded-full bg-[hsl(var(--accent)/0.4)] hover:bg-[hsl(var(--accent))]"
         >
           <ChevronRight size={18} strokeWidth={1.5} aria-hidden />
         </Button>
       </div>
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-noise opacity-40" />
     </div>
   );
 }

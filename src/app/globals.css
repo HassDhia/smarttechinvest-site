@@ -368,3 +368,46 @@ a { text-decoration: none; }
 
 /* Ensure borders pick up the tokenized color by default */
 * { border-color: hsl(var(--border)); }
+
+/* --- Scroll-driven animations & utilities --- */
+@keyframes grow { from { transform: scaleX(0) } to { transform: scaleX(1) } }
+@keyframes fadeIn { to { opacity: 1 } }
+@keyframes rise { to { opacity: 1; transform: translateY(0) } }
+
+/* Default states (no support): keep content visible, keep bar hidden */
+.progress { transform-origin: left; transform: scaleX(0); }
+.vt-section { view-timeline: --vt block; }
+
+/* Enhance when supported */
+@supports (animation-timeline: scroll()) {
+  /* Reading progress bar (page scroll timeline) */
+  .progress {
+    animation: grow linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100%;
+  }
+
+  /* View-timeline section reveal (zero JS) */
+  .vt-reveal {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: rise var(--dur-200) ease-out both;
+    animation-timeline: --vt;
+    animation-range: entry 0% cover 50%;
+  }
+}
+
+/* Progressive enhancement guardrails */
+@media (prefers-reduced-motion: reduce) {
+  .progress { animation: none !important; transform: none !important; }
+  .vt-reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* Content visibility helper for long pages */
+.cv-auto { content-visibility: auto; contain-intrinsic-size: 1px 1000px; }
+
+/* Scroll shadows / mask hints for horizontal scrollers */
+.mask-fade-x {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 24%, #000 76%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 24%, #000 76%, transparent);
+}

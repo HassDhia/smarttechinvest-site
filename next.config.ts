@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   trailingSlash: false,
+  experimental: { viewTransition: true },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },

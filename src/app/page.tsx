@@ -20,7 +20,7 @@ export default function Home() {
         ctaHref="/schedule"
         badge="Capacity: accepting 2 new clients this quarter"
       />
-      <section id="how" className="container section">
+      <section id="how" className="container section vt-section">
         <SectionHeader kicker="Capabilities" title="How We Help" subtitle="Leverage executive-level strategy without full-time overhead." useGradientTitle />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
@@ -37,7 +37,7 @@ export default function Home() {
       </section>
       <div className="divide-gradient container mt-10" aria-hidden />
       <LogoStrip />
-      <section id="work" className="container section">
+      <section id="work" className="container section vt-section">
         <SectionHeader kicker="Case Studies" title="Selected Work" subtitle="Outcome‑focused engagements across strategy and growth." useGradientTitle />
         <div className="grid md:grid-cols-3 gap-6">
           <WorkCard
@@ -64,7 +64,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section id="outcomes" className="container section">
+      <section id="outcomes" className="container section vt-section">
         <SectionHeader kicker="Proof" title="Outcomes" subtitle="Clarity, momentum, and measurable results." useGradientTitle />
         <div className="grid sm:grid-cols-3 gap-4">
           <KPIStat label="ARR Impact" value="+$1.2M" />
@@ -72,7 +72,7 @@ export default function Home() {
           <KPIStat label="Cycle Time" value="-34%" />
         </div>
       </section>
-      <section className="container section">
+      <section className="container section vt-section">
         <SectionHeader kicker="Social Proof" title="What Clients Say" />
         <TestimonialsCarousel />
       </section>
