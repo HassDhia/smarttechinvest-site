@@ -11,8 +11,11 @@ export default function Resources() {
           ["Pipeline", "Dashboard", "Stage health + forecast"],
           ["OKRs", "Planner", "Quarterly alignment"],
         ].map(([label, value, hint]) => (
-          <div key={String(label)} className="rounded-2xl p-5 bg-white/85 dark:bg-white/5 backdrop-blur-md border border-[var(--border)]">
-            <div className="font-extrabold tracking-tight text-brand fs-step-2">{value as string}</div>
+          <div
+            key={String(label)}
+            className="rounded-2xl p-5 bg-white/85 dark:bg-card-gradient backdrop-blur-md border border-[var(--border)] dark:border-transparent shadow-[var(--shadow-sm)] dark:shadow-[var(--shadow)]"
+          >
+            <div className="font-extrabold tracking-tight fs-step-2 text-brand dark:text-[hsl(var(--foreground))]">{value as string}</div>
             <div className="font-semibold">{label as string}</div>
             <div className="mt-0.5 text-muted fs-step--1">{hint as string}</div>
           </div>
