@@ -18,23 +18,27 @@ export default function Resources() {
       </div>
       <div className="mt-8 grid sm:grid-cols-2 gap-4">
         {["before", "after"].map((seed, i) => (
-          <figure key={seed} className="relative rounded-xl overflow-hidden bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))] shadow-sm">
-            <div className="relative w-full aspect-[16/9]">
-              <Image
-                src={i === 0
-                  ? "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=1600&auto=format&fit=crop" // disorder: sticky-notes chaos
-                  : "https://images.unsplash.com/photo-1520881363902-a0ff4e722963?q=80&w=1600&auto=format&fit=crop" // polish: elegant boardroom/lobby
-                }
-                alt={seed === "before" ? "Corporate disorder" : "Corporate polish and prestige"}
-                fill
-                sizes="(min-width: 640px) 50vw, 100vw"
-                className="object-cover"
-                priority={false}
-              />
-            </div>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
-            <figcaption className="relative px-4 py-3 font-semibold text-[hsl(var(--card-foreground))]">{seed === "before" ? "Before" : "After"}</figcaption>
-          </figure>
+          <div key={seed} className="rounded-xl p-[1px] bg-gradient-to-br from-[hsl(var(--ring))] via-[hsl(var(--border))] to-transparent">
+            <figure className="relative rounded-[calc(var(--radius)+1px)] overflow-hidden bg-[hsl(var(--card))] dark:bg-card-gradient text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))] dark:border-transparent shadow-sm">
+              <div className="relative w-full aspect-[16/9]">
+                <Image
+                  src={i === 0
+                    ? "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?q=80&w=1600&auto=format&fit=crop"
+                    : "https://images.unsplash.com/photo-1520881363902-a0ff4e722963?q=80&w=1600&auto=format&fit=crop"
+                  }
+                  alt={seed === "before" ? "Corporate disorder" : "Corporate polish and prestige"}
+                  fill
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  className="object-cover"
+                  priority={false}
+                />
+              </div>
+              {/* Theme-aware overlays for readability and depth */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[hsl(var(--background)/0.35)] via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-0 hidden dark:block opacity-25 bg-aurora" aria-hidden />
+              <figcaption className="relative px-4 py-3 font-semibold text-[hsl(var(--card-foreground))]">{seed === "before" ? "Before" : "After"}</figcaption>
+            </figure>
+          </div>
         ))}
       </div>
       <div className="text-center mt-8">
