@@ -5,7 +5,7 @@ export default function SchedulePage() {
   return (
     <div className="container section">
       <SectionHeader kicker="Booking" title="Schedule a Call" subtitle="Advisory and fractional engagements. Use your work email for priority access." useGradientTitle />
-      <div className="rounded-2xl overflow-hidden bg-[hsl(var(--card))] text-[hsl(var(--foreground))] border border-[hsl(var(--border))] shadow-sm">
+      <div className="rounded-2xl overflow-hidden bg-[hsl(var(--card))] dark:bg-card-gradient text-[hsl(var(--foreground))] border border-[hsl(var(--border))] dark:border-transparent shadow-sm dark:shadow-[var(--shadow)]">
         <CalendlyEmbed url="https://calendly.com/has-dhia/strategy-sync?back=1&month=2025-08" />
       </div>
       <p className="mt-3 text-xs text-[hsl(var(--muted-foreground))]">
