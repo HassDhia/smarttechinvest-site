@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Offer Uplift Simulator (Python) artifacts
+Offer Uplift Simulator/.venv/
+Offer Uplift Simulator/**/__pycache__/
+Offer Uplift Simulator/**/.pytest_cache/
+Offer Uplift Simulator/**/.mypy_cache/
+Offer Uplift Simulator/**/*.db
