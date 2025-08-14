@@ -209,7 +209,32 @@ def offer_uplift_export() -> Any:
 
 @app.post("/offer-uplift/email")
 def offer_uplift_email() -> Any:
-    return jsonify({"ok": True})
+    payload = request.form.to_dict()
+    email = payload.get("email", "").strip()
+    # Basic validation
+    if not email:
+        return jsonify({"ok": False, "message": "Please enter your email above."})
+    # Store an event so we can follow up later (minimal PII)
+    try:
+        conn = get_db_connection()
+        conn.execute(
+            "INSERT INTO offer_uplift_events (created_at, event_type, email, payload_json, result_json, ip, ua) VALUES (?,?,?,?,?,?,?)",
+            (
+                datetime.now(timezone.utc).isoformat(),
+                "email_request",
+                email,
+                json.dumps(payload),
+                None,
+                request.headers.get("x-forwarded-for", request.remote_addr),
+                request.headers.get("user-agent", ""),
+            ),
+        )
+        conn.commit()
+        conn.close()
+    except Exception:
+        pass
+    # Respond with a user-friendly message to render inline via htmx
+    return make_response('<span class="text-green-700">Thanks! I\'ll email you the model and raise sequence shortly.</span>')
 
 if __name__ == "__main__":
     # Render and many PaaS platforms provide $PORT and require binding to 0.0.0.0

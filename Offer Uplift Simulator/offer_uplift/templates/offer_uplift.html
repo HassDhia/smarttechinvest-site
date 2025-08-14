@@ -34,6 +34,10 @@
 				<label class="text-sm flex items-center gap-2">Subscription <input type="checkbox" name="is_sub" value="true" {% if state.is_sub %}checked{% endif %}></label>
 			</div>
 		</details>
+		<label class="text-sm font-medium block">
+			Email
+			<input type="email" name="email" placeholder="you@example.com" class="w-full border rounded px-2 py-1 mt-1" />
+		</label>
 		<div class="flex gap-3">
 			<button type="submit" formaction="/offer-uplift/export" formmethod="post" formtarget="_blank" class="px-3 py-2 bg-gray-800 text-white rounded">Export PDF</button>
 			<button type="button" hx-post="/offer-uplift/email" hx-include="#ou-form" hx-target="#email-status" hx-swap="innerHTML" class="px-3 py-2 bg-blue-600 text-white rounded">Email me the model + Raise Sequence</button>
