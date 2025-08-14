@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { Home, NotebookText, Rocket, Layers, FileText, Phone, Menu, X } from "lucide-react";
+import { Home, NotebookText, Rocket, Layers, FileText, Phone, Menu, X, Calculator } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { AnimatePresence, m } from "framer-motion";
 import { durations, easings, overlayVariants } from "../lib/motion";
@@ -11,6 +11,7 @@ const links = [
   { href: "/offers", label: "Offers", icon: Rocket },
   { href: "/diagnostic", label: "Diagnostic", icon: NotebookText },
   { href: "/resources", label: "Resources", icon: Layers },
+  { href: "/simulator", label: "Simulator", icon: Calculator },
   { href: "/schedule", label: "Schedule", icon: Phone },
   { href: "https://linkedin.com", label: "Blog", icon: FileText, external: true },
 ];

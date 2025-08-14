@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 // framer-motion not required here; keep CSS-based micro interactions for anchors
-import { Home, NotebookText, Rocket, Layers, FileText, Phone } from "lucide-react";
+import { Home, NotebookText, Rocket, Layers, FileText, Phone, Calculator } from "lucide-react";
 // Avoid passing Lucide component classes across the RSC boundary; render directly
 import { ThemeToggle } from "./ThemeToggle";
 import { useScrollspy } from "../hooks/useScrollspy";
@@ -12,6 +12,7 @@ const links = [
   { href: "/offers", label: "Offers", icon: Rocket },
   { href: "/diagnostic", label: "Diagnostic", icon: NotebookText },
   { href: "/resources", label: "Resources", icon: Layers },
+  { href: "/simulator", label: "Simulator", icon: Calculator },
   { href: "/schedule", label: "Schedule", icon: Phone },
   { href: "https://linkedin.com", label: "Blog", icon: FileText, external: true },
 ];
