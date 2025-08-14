@@ -78,6 +78,10 @@ Used by `src/app/api/lead/route.ts`:
 - `LEAD_NOTIFY_EMAIL` (optional): Notification recipient. Defaults to `has.dhia@gmail.com`.
 - `LEADS_FROM_EMAIL` (optional): From address for Resend. Defaults to `onboarding@resend.dev`.
 
+For the simulator embed (optional):
+
+- `NEXT_PUBLIC_SIMULATOR_URL` (optional): If set, `/simulator` will load this URL in an iframe. If not set, it falls back to `/simulator/index.html` so you can serve a static build under `public/simulator/`.
+
 Define these in `.env.local` for development and in Vercel Project Settings for production.
 
 
@@ -109,6 +113,7 @@ src/
 - `/diagnostic` – Growth diagnostic (client-side form posts to API)
 - `/resources` – Strategy OS resources
 - `/schedule` – Calendly booking
+- `/simulator` – Offer Uplift Simulator (iframe embed)
 - `/api/lead` – POST endpoint
 
 Example `POST /api/lead` payload (sent by the diagnostic page):
