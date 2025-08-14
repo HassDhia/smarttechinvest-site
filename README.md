@@ -78,9 +78,10 @@ Used by `src/app/api/lead/route.ts`:
 - `LEAD_NOTIFY_EMAIL` (optional): Notification recipient. Defaults to `has.dhia@gmail.com`.
 - `LEADS_FROM_EMAIL` (optional): From address for Resend. Defaults to `onboarding@resend.dev`.
 
-For the simulator embed (optional):
+For the simulator embed (optional, choose one):
 
-- `NEXT_PUBLIC_SIMULATOR_URL` (optional): If set, `/simulator` will load this URL in an iframe. If not set, it falls back to `/simulator/index.html` so you can serve a static build under `public/simulator/`.
+- `NEXT_PUBLIC_SIMULATOR_URL`: Direct URL to the hosted simulator (loaded in an iframe)
+- `SIMULATOR_PROXY_ORIGIN`: Origin to proxy via Next.js rewrites (e.g., `https://simulator.example.com`). Then `/simulator` loads `/simulator-app` which proxies to that origin.
 
 Define these in `.env.local` for development and in Vercel Project Settings for production.
 
