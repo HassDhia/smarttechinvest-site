@@ -35,10 +35,11 @@
 			</div>
 		</details>
 		<div class="flex gap-3">
-			<button type="button" hx-post="/offer-uplift/export" hx-include="#ou-form" class="px-3 py-2 bg-gray-800 text-white rounded">Export PDF</button>
-			<button type="button" hx-post="/offer-uplift/email" hx-include="#ou-form" class="px-3 py-2 bg-blue-600 text-white rounded">Email me the model + Raise Sequence</button>
-			<a href="https://calendly.com/" target="_blank" class="px-3 py-2 border rounded">Book Clarity Sprint</a>
+			<button type="submit" formaction="/offer-uplift/export" formmethod="post" formtarget="_blank" class="px-3 py-2 bg-gray-800 text-white rounded">Export PDF</button>
+			<button type="button" hx-post="/offer-uplift/email" hx-include="#ou-form" hx-target="#email-status" hx-swap="innerHTML" class="px-3 py-2 bg-blue-600 text-white rounded">Email me the model + Raise Sequence</button>
+			<a href="https://smarttechinvest.com/schedule" target="_blank" rel="noopener" class="px-3 py-2 border rounded">Book Clarity Sprint</a>
 		</div>
+		<div id="email-status" class="text-sm text-green-700 mt-2"></div>
 	</div>
 	{% include "partials/ou_results.html" %}
 </form>
