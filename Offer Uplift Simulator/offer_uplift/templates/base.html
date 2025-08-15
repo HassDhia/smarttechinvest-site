@@ -14,6 +14,9 @@
       input[type="range"]::-webkit-slider-thumb{ -webkit-appearance:none; appearance:none; height:24px; width:24px; margin-top:-9px; background:#2563eb; border-radius:9999px; box-shadow:0 0 0 2px #fff inset; }
       input[type="range"]::-moz-range-track{ height: 6px; background:#e5e7eb; border-radius:9999px; }
       input[type="range"]::-moz-range-thumb{ height:24px; width:24px; background:#2563eb; border:none; border-radius:9999px; }
+      /* Indeterminate loading bar */
+      #export-progress .bar{ width:30%; animation: indet 1.2s infinite ease-in-out; }
+      @keyframes indet{ 0%{ transform: translateX(-100%);} 50%{ transform: translateX(60%);} 100%{ transform: translateX(200%);} }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -31,15 +34,24 @@
             if (el) el.textContent = parseFloat(t.value).toFixed(2) + '%';
         }
     });
-    // Client-side guard: ensure email present before htmx POST
+    // Client-side helpers: email guard + export progress
     document.addEventListener('click', function(e){
       const btn = e.target && e.target.closest('[data-requires-email]');
-      if (!btn) return;
-      const email = document.getElementById('ou-email');
-      if (email && !email.value) {
-        e.preventDefault();
-        const status = document.getElementById('email-status');
-        if (status) status.innerHTML = '<span class="text-red-700">Please enter your email above.</span>';
+      if (btn) {
+        const email = document.getElementById('ou-email');
+        if (email && !email.value) {
+          e.preventDefault();
+          const status = document.getElementById('email-status');
+          if (status) status.innerHTML = '<span class="text-red-700">Please enter your email above to continue.</span>';
+          return;
+        }
+      }
+      const exportBtn = e.target && e.target.closest('button[formaction="/offer-uplift/export"]');
+      if (exportBtn) {
+        const prog = document.getElementById('export-progress');
+        if (prog) prog.classList.remove('hidden');
+        // hide after a few seconds in case the new tab blocks
+        setTimeout(function(){ const p = document.getElementById('export-progress'); if (p) p.classList.add('hidden'); }, 8000);
       }
     });
     </script>
