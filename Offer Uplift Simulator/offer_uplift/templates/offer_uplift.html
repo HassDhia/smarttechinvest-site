@@ -19,7 +19,7 @@
 		</div>
 		<details class="bg-white rounded border p-4">
 			<summary class="cursor-pointer font-medium">Show Advanced</summary>
-			<div class="grid grid-cols-2 gap-4 mt-4">
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
 				<label class="text-sm">Base Price <input type="number" step="0.01" name="P0" value="{{ state.P0 }}" class="w-full border rounded px-2 py-1"></label>
 				<label class="text-sm">Qualified Opps / mo <input type="number" name="L" value="{{ state.L }}" class="w-full border rounded px-2 py-1"></label>
 				<label class="text-sm">Base Win-Rate % <input type="number" name="w0_pct" value="{{ state.w0_pct }}" class="w-full border rounded px-2 py-1"></label>
@@ -28,7 +28,7 @@
 					<div class="font-medium mb-1">Cost model</div>
 					<label class="mr-4"><input type="radio" name="cost_model" value="margin" {% if state.cost_model == 'margin' %}checked{% endif %}> Margin % constant</label>
 					<input type="number" name="g_pct" value="{{ state.g_pct }}" class="w-24 border rounded px-2 py-1 ml-2" aria-label="Gross Margin %">
-					<label class="ml-6 mr-2"><input type="radio" name="cost_model" value="unit" {% if state.cost_model == 'unit' %}checked{% endif %}> Unit cost fixed</label>
+					<label class="ml-0 sm:ml-6 mr-2 block sm:inline"><input type="radio" name="cost_model" value="unit" {% if state.cost_model == 'unit' %}checked{% endif %}> Unit cost fixed</label>
 					<input type="number" name="C" value="{{ state.C }}" class="w-24 border rounded px-2 py-1" aria-label="Unit Cost">
 				</div>
 				<label class="text-sm flex items-center gap-2">Subscription <input type="checkbox" name="is_sub" value="true" {% if state.is_sub %}checked{% endif %}></label>
@@ -36,11 +36,11 @@
 		</details>
 		<label class="text-sm font-medium block">
 			Email
-			<input type="email" name="email" placeholder="you@example.com" class="w-full border rounded px-2 py-1 mt-1" />
+			<input type="email" name="email" id="ou-email" placeholder="you@example.com" class="w-full border rounded px-2 py-1 mt-1" required />
 		</label>
-		<div class="flex gap-3">
+		<div class="flex flex-col sm:flex-row gap-3">
 			<button type="submit" formaction="/offer-uplift/export" formmethod="post" formtarget="_blank" class="px-3 py-2 bg-gray-800 text-white rounded">Export PDF</button>
-			<button type="button" hx-post="/offer-uplift/email" hx-include="#ou-form" hx-target="#email-status" hx-swap="innerHTML" class="px-3 py-2 bg-blue-600 text-white rounded">Email me the model + Raise Sequence</button>
+			<button type="button" data-requires-email hx-post="/offer-uplift/email" hx-include="#ou-form" hx-target="#email-status" hx-swap="innerHTML" class="px-3 py-2 bg-blue-600 text-white rounded">Email me the model + Raise Sequence</button>
 			<a href="https://smarttechinvest.com/schedule" target="_blank" rel="noopener" class="px-3 py-2 border rounded">Book Clarity Sprint</a>
 		</div>
 		<div id="email-status" class="text-sm text-green-700 mt-2"></div>

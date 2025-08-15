@@ -4,7 +4,7 @@
 		<span class="px-2 py-1 rounded bg-gray-200">New Win-Rate: {{ ((state.w0_pct/100.0)*(1 - state.d_pct/100.0)) | percent }}</span>
 		<span class="px-2 py-1 rounded {{ 'bg-green-200' if state.cushion > 0 else 'bg-red-200' }}">Safety Cushion: {{ (state.cushion*100)|num }}%</span>
 	</div>
-	<div class="overflow-auto">
+	<div class="overflow-auto -mx-4 sm:mx-0">
 		<table class="min-w-full text-sm">
 			<thead>
 				<tr class="text-left border-b">
