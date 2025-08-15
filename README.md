@@ -115,6 +115,10 @@ src/
 - `/resources` – Strategy OS resources
 - `/schedule` – Calendly booking
 - `/simulator` – Offer Uplift Simulator (iframe embed)
+ - `/simulator` – Offer Uplift Simulator (iframe embed). Buttons:
+   - Export PDF: server-side render to PDF or printable HTML
+   - Email: validates email, logs event, and shows inline confirmation
+   - Book Clarity Sprint: links to `/schedule`
 - `/api/lead` – POST endpoint
 
 Example `POST /api/lead` payload (sent by the diagnostic page):
@@ -199,6 +203,14 @@ Option B: Git integration
 Domain & middleware
 
 - `src/middleware.ts` redirects `www.smarttechinvest.com` to `smarttechinvest.com` (308). Update these values if the domain changes.
+
+Simulator hosting (Render)
+
+- Deploy `Offer Uplift Simulator/` as a Web Service (Python 3)
+- Start command (recommended):
+  - `gunicorn -w 2 -k gthread -b 0.0.0.0:$PORT offer_uplift.app:app`
+  - or `python Offer Uplift Simulator/offer_uplift/app.py` (binds to `0.0.0.0:$PORT` by default)
+- Then set `NEXT_PUBLIC_SIMULATOR_URL` (direct) or `SIMULATOR_PROXY_ORIGIN` (proxy) in this site
 
 
 ### Maintenance Tips
