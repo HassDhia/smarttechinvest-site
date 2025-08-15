@@ -7,6 +7,10 @@ from datetime import datetime, timezone
 from typing import Any, Dict, List
 
 from flask import Flask, jsonify, make_response, render_template, request, redirect
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import requests
 
 try:
     from weasyprint import HTML  # type: ignore
@@ -172,6 +176,53 @@ def simulate(payload: Dict[str, Any]) -> Dict[str, Any]:
     )
     return out
 
+
+def send_email_via_resend(to_email: str, subject: str, html: str, text: str) -> bool:
+    api_key = os.environ.get("RESEND_API_KEY")
+    if not api_key:
+        return False
+    from_email = os.environ.get("OFFER_FROM_EMAIL", "onboarding@resend.dev")
+    try:
+        resp = requests.post(
+            "https://api.resend.com/emails",
+            headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+            data=json.dumps({
+                "from": from_email,
+                "to": [to_email],
+                "subject": subject,
+                "html": html,
+                "text": text,
+            }),
+            timeout=10,
+        )
+        return 200 <= resp.status_code < 300
+    except Exception:
+        return False
+
+
+def send_email_via_smtp(to_email: str, subject: str, html: str, text: str) -> bool:
+    host = os.environ.get("SMTP_HOST")
+    user = os.environ.get("SMTP_USER")
+    password = os.environ.get("SMTP_PASS")
+    port = int(os.environ.get("SMTP_PORT", "587"))
+    if not (host and user and password):
+        return False
+    from_email = os.environ.get("OFFER_FROM_EMAIL", user)
+    try:
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = subject
+        msg["From"] = from_email
+        msg["To"] = to_email
+        msg.attach(MIMEText(text, "plain"))
+        msg.attach(MIMEText(html, "html"))
+        with smtplib.SMTP(host, port, timeout=10) as server:
+            server.starttls()
+            server.login(user, password)
+            server.sendmail(from_email, [to_email], msg.as_string())
+        return True
+    except Exception:
+        return False
+
 @app.get("/offer-uplift")
 def offer_uplift() -> Any:
     defaults = dict(P0=1000, i_pct=10, d_pct=5, L=100, w0_pct=20,
@@ -214,6 +265,11 @@ def offer_uplift_email() -> Any:
     # Basic validation
     if not email:
         return jsonify({"ok": False, "message": "Please enter your email above."})
+    # Compute a brief result snapshot for the email body
+    try:
+        result = simulate(payload)
+    except Exception:
+        result = {}
     # Store an event so we can follow up later (minimal PII)
     try:
         conn = get_db_connection()
@@ -224,7 +280,7 @@ def offer_uplift_email() -> Any:
                 "email_request",
                 email,
                 json.dumps(payload),
-                None,
+                json.dumps(result) if result else None,
                 request.headers.get("x-forwarded-for", request.remote_addr),
                 request.headers.get("user-agent", ""),
             ),
@@ -233,8 +289,25 @@ def offer_uplift_email() -> Any:
         conn.close()
     except Exception:
         pass
-    # Respond with a user-friendly message to render inline via htmx
-    return make_response('<span class="text-green-700">Thanks! I\'ll email you the model and raise sequence shortly.</span>')
+    # Send email to operator (default: has.dhia@gmail.com)
+    notify_to = os.environ.get("OFFER_NOTIFY_EMAIL", "has.dhia@gmail.com")
+    subject = "New Offer Uplift Model Request"
+    html = f"""
+      <h2>Offer Uplift Model Request</h2>
+      <p><strong>User Email:</strong> {email}</p>
+      <p><strong>Inputs</strong></p>
+      <pre style='white-space:pre-wrap'>{json.dumps(payload, indent=2)}</pre>
+      <hr />
+      <p><strong>Key Results</strong></p>
+      <pre style='white-space:pre-wrap'>{json.dumps({k: result.get(k) for k in ['P0','P1','R0','R1','GP0','GP1','NP0','NP1','margin0','margin1','ARR0','ARR1','d_star'] if result}, indent=2)}</pre>
+    """
+    text = f"Offer Uplift Model Request\n\nUser Email: {email}\n\nInputs:\n{json.dumps(payload, indent=2)}\n\nKey Results:\n{json.dumps({k: result.get(k) for k in ['P0','P1','R0','R1','GP0','GP1','NP0','NP1','margin0','margin1','ARR0','ARR1','d_star'] if result}, indent=2)}\n"
+
+    delivered = send_email_via_resend(notify_to, subject, html, text) or send_email_via_smtp(notify_to, subject, html, text)
+    if delivered:
+        return make_response('<span class="text-green-700">Thanks! I\'ll email you the model and raise sequence shortly.</span>')
+    else:
+        return make_response('<span class="text-yellow-700">Request received. Email service is not configured; we\'ll follow up manually.</span>')
 
 if __name__ == "__main__":
     # Render and many PaaS platforms provide $PORT and require binding to 0.0.0.0
