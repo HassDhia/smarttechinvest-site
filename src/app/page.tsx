@@ -10,11 +10,11 @@ import { MiniTOC } from "../components/MiniTOC";
 import { TestimonialsCarousel } from "../components/TestimonialsCarousel";
 import { IntelligenceCard } from "../components/IntelligenceCard";
 import { BriefCard } from "../components/BriefCard";
-import { getLatestBrief, getLatestDailies } from "../lib/content";
+import { getLatestBrief, getLatestDailies, listBriefs } from "../lib/content";
 import Link from "next/link";
 
 export default function Home() {
-  const latestBrief = getLatestBrief();
+  const latestBriefs = listBriefs().slice(0, 3); // Get top 3 briefs
   const latestDailies = getLatestDailies(2);
 
   return (
@@ -46,15 +46,23 @@ export default function Home() {
       <section id="intelligence" className="container section vt-section">
         <SectionHeader kicker="From the Intelligence Desk" title="Latest Insights" subtitle="Daily signals and weekly briefs on technology investments and strategic trends." useGradientTitle />
         
-        <div className="grid md:grid-cols-3 gap-6">
-          {latestBrief && (
-            <div className="md:col-span-1">
-              <BriefCard brief={latestBrief} highlight />
+        <div className="space-y-8">
+          {/* Briefs Row */}
+          {latestBriefs.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {latestBriefs.map((brief, idx) => (
+                <BriefCard 
+                  key={brief.date} 
+                  brief={brief} 
+                  highlight={idx === 0}
+                />
+              ))}
             </div>
           )}
           
-          <div className="md:col-span-2">
-            <div className="grid sm:grid-cols-2 gap-4">
+          {/* Daily Signals Row */}
+          {latestDailies.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {latestDailies.map((daily) => (
                 <IntelligenceCard
                   key={daily.slug}
@@ -66,7 +74,7 @@ export default function Home() {
                 />
               ))}
             </div>
-          </div>
+          )}
         </div>
         
         <div className="text-center mt-6">

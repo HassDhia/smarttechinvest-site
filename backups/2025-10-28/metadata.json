@@ -1,0 +1,126 @@
+{
+  "generation_timestamp": "2025-10-28T20:53:56.511996",
+  "query": "Agent Economies & AI Labor Markets",
+  "days_back": 7,
+  "report_stats": {
+    "character_count": 28011,
+    "word_count": 3652,
+    "jsonld_size": 5501
+  },
+  "confidence_score": 0.7999999999999999,
+  "sources_count": 10,
+  "system_info": {
+    "agent_type": "Enhanced STI Agent",
+    "version": "1.0.0",
+    "model": "gpt-5-mini-2025-08-07",
+    "date_filtering": "Strict 7-day window enforced"
+  },
+  "agent_stats": {
+    "date_filter_stats": {
+      "total_processed": 10,
+      "within_window": 10,
+      "outside_window": 0,
+      "parse_failed": 0,
+      "success_rate": 1.0,
+      "parse_success_rate": 1.0
+    },
+    "sources_data": [
+      {
+        "id": 1,
+        "title": "The AI rollout is here - and it's messy | FT Working It - Financial Times",
+        "url": "https://www.ft.com/video/521c05bc-b5ac-4d0e-9acf-dbb106691b9f",
+        "publisher": "Financial Times",
+        "date": "2025-10-27",
+        "credibility": 0.9
+      },
+      {
+        "id": 2,
+        "title": "The AI Shift: where are all the job losses? - Financial Times",
+        "url": "https://www.ft.com/content/3d2669e3-c05e-48c9-8bb3-893c1d66de2e",
+        "publisher": "Financial Times",
+        "date": "2025-10-23",
+        "credibility": 0.9
+      },
+      {
+        "id": 3,
+        "title": "AI’s rapid evolution demands more flexible training - Financial Times",
+        "url": "https://www.ft.com/content/177dab62-efc7-4485-9cf2-c78e94ac0302",
+        "publisher": "Financial Times",
+        "date": "2025-10-23",
+        "credibility": 0.8500000000000001
+      },
+      {
+        "id": 4,
+        "title": "Meet the AI Disruptors 60: The Startups Defining AI’s Future - TechCrunch",
+        "url": "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+        "publisher": "TechCrunch",
+        "date": "2025-10-28",
+        "credibility": 0.9
+      },
+      {
+        "id": 5,
+        "title": "Why Cohere’s ex-AI research lead is betting against the scaling race - TechCrunch",
+        "url": "https://techcrunch.com/2025/10/22/why-coheres-ex-ai-research-lead-is-betting-against-the-scaling-race/",
+        "publisher": "TechCrunch",
+        "date": "2025-10-22",
+        "credibility": 0.8500000000000001
+      },
+      {
+        "id": 6,
+        "title": "Sam Altman says OpenAI will have a ‘legitimate AI researcher’ by 2028 - TechCrunch",
+        "url": "https://techcrunch.com/2025/10/28/sam-altman-says-openai-will-have-a-legitimate-ai-researcher-by-2028/",
+        "publisher": "TechCrunch",
+        "date": "2025-10-28",
+        "credibility": 0.8500000000000001
+      },
+      {
+        "id": 7,
+        "title": "S-1",
+        "url": "https://www.sec.gov/Archives/edgar/data/2046386/000119312525253020/d932091ds1.htm",
+        "publisher": "Sec.Gov",
+        "date": "2025-10-28",
+        "credibility": 1.0
+      },
+      {
+        "id": 8,
+        "title": "T.Rowe Price Active Crypto ETF S-1",
+        "url": "https://www.sec.gov/Archives/edgar/data/2089855/000199937125015832/activecrypto-s1_102225.htm",
+        "publisher": "Sec.Gov",
+        "date": "2025-10-22",
+        "credibility": 0.9
+      },
+      {
+        "id": 9,
+        "title": "Built to benefit everyone - OpenAI",
+        "url": "https://openai.com/index/built-to-benefit-everyone/",
+        "publisher": "OpenAI",
+        "date": "2025-10-28",
+        "credibility": 0.5
+      },
+      {
+        "id": 10,
+        "title": "The next chapter of the Microsoft–OpenAI partnership - OpenAI",
+        "url": "https://openai.com/index/next-chapter-of-microsoft-openai-partnership/",
+        "publisher": "OpenAI",
+        "date": "2025-10-28",
+        "credibility": 0.45
+      }
+    ],
+    "validated_sources_count": 10
+  },
+  "social_media_content": {
+    "generated": true,
+    "formats": [
+      "long_form",
+      "twitter_thread",
+      "linkedin_post"
+    ],
+    "metadata": {
+      "long_form_length": 2796,
+      "twitter_tweet_count": 5,
+      "linkedin_length": 1729,
+      "generation_timestamp": "2025-10-28T20:54:46.783909"
+    },
+    "generation_timestamp": "2025-10-28T20:54:46.783909"
+  }
+}

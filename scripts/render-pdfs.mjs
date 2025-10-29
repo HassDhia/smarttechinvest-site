@@ -1,3 +1,10 @@
+// This script is now primarily used for backfilling missing PDFs
+// Normal workflow: PDFs are automatically generated during ingestion
+// Use this script only if:
+// - You need to regenerate PDFs after HTML changes
+// - You have old briefs without PDFs
+// - PDF generation failed during ingestion
+
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';

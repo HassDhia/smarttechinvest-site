@@ -13,7 +13,9 @@ export function BriefCard({
   highlight?: boolean;
   className?: string;
 }) {
-  const formattedDate = new Date(brief.date).toLocaleDateString('en-US', {
+  // Use displayDate if available, otherwise extract from full date string
+  const dateStr = brief.displayDate || brief.date.slice(0, 10);
+  const formattedDate = new Date(dateStr).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
@@ -31,12 +33,12 @@ export function BriefCard({
         <Badge variant="brand">Weekly Brief</Badge>
         <div className="flex items-center gap-1 text-xs text-[hsl(var(--muted-foreground))]">
           <Calendar size={12} />
-          <time dateTime={brief.date}>{formattedDate}</time>
+          <time dateTime={dateStr}>{formattedDate}</time>
         </div>
       </div>
       
       <h3 className="text-lg font-semibold text-foreground mb-3">
-        {brief.title || `Tech Brief — ${formattedDate}`}
+        {brief.title || 'Intelligence Brief'}
       </h3>
       
       {/* Executive Summary */}

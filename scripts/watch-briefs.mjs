@@ -17,7 +17,7 @@ function loadState() {
     if (fs.existsSync(STATE_FILE)) {
       return JSON.parse(fs.readFileSync(STATE_FILE, 'utf8'));
     }
-  } catch (e) {
+  } catch {
     console.warn('Could not load state file, starting fresh');
   }
   return { ingested: {} };
@@ -27,16 +27,22 @@ function saveState(state) {
   fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
 }
 
-// Extract date from folder name
-function extractDate(folderName) {
-  const match = folderName.match(/sti_enhanced_output_(\d{8})_/);
+// Extract YYYY-MM-DD-HHMMSS from folder name
+function extractDateWithTime(folderName) {
+  const match = folderName.match(/sti_enhanced_output_(\d{8})_(\d{6})_/);
   if (!match) return null;
   
-  const dateStr = match[1];
+  const dateStr = match[1];  // YYYYMMDD
+  const timeStr = match[2];  // HHMMSS
+  
   const YYYY = dateStr.slice(0,4);
   const MM = dateStr.slice(4,6);
   const DD = dateStr.slice(6,8);
-  return `${YYYY}-${MM}-${DD}`;
+  const HH = timeStr.slice(0,2);
+  const mm = timeStr.slice(2,4);
+  const ss = timeStr.slice(4,6);
+  
+  return `${YYYY}-${MM}-${DD}-${HH}${mm}${ss}`;
 }
 
 // Check if folder has required files
@@ -45,9 +51,9 @@ function hasRequiredFiles(folderPath) {
   return required.every(file => fs.existsSync(path.join(folderPath, file)));
 }
 
-// Check if brief already exists on website
-function briefExists(date) {
-  const briefPath = path.join(process.cwd(), 'public', 'intelligence', 'briefs', date);
+// Check if this specific timestamped brief exists
+function briefExistsWithTimestamp(dateWithTime) {
+  const briefPath = path.join(process.cwd(), 'public', 'intelligence', 'briefs', dateWithTime);
   return fs.existsSync(briefPath);
 }
 
@@ -63,11 +69,10 @@ function ingestFolder(folderName, state) {
       stdio: ['inherit', 'pipe', 'pipe']
     });
     
-    let stdout = '';
     let stderr = '';
     
     child.stdout.on('data', (data) => {
-      stdout += data.toString();
+      // stdout is captured but not used in this context
     });
     
     child.stderr.on('data', (data) => {
@@ -111,14 +116,14 @@ async function processNewFolder(folderName, state) {
     return;
   }
   
-  const date = extractDate(folderName);
+  const date = extractDateWithTime(folderName);
   if (!date) {
-    console.warn(`⚠️  [${new Date().toISOString()}] Skipping ${folderName} - invalid date format`);
+    console.warn(`⚠️  [${new Date().toISOString()}] Skipping ${folderName} - invalid date/time format`);
     return;
   }
   
-  // Check if brief already exists on website
-  if (briefExists(date)) {
+  // Check if this specific timestamped brief already exists
+  if (briefExistsWithTimestamp(date)) {
     console.log(`⏭️  [${new Date().toISOString()}] Skipping ${folderName} - brief exists on website (${date})`);
     return;
   }
@@ -157,7 +162,7 @@ function startWatching() {
         if (stat.isDirectory()) {
           await processNewFolder(filename, state);
         }
-      } catch (e) {
+      } catch {
         // File might have been deleted or moved, ignore
       }
     }
