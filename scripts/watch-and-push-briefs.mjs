@@ -333,6 +333,95 @@ const handleFsEvent = (eventType, filename) => {
   }
 };
 
+// Reconcile website with source directory - remove orphaned briefs
+const reconcileSiteWithSource = async () => {
+  try {
+    logWithTimestamp(`🔍 Reconciling website with source directory...`);
+    
+    // Get all source folders
+    const sourceFolders = fs.readdirSync(SOURCE_DIR)
+      .filter(name => fs.statSync(path.join(SOURCE_DIR, name)).isDirectory())
+      .filter(name => name.match(/^sti_enhanced_output_\d{8}_\d{6}_/));
+    
+    const sourceDates = new Set();
+    for (const folderName of sourceFolders) {
+      const briefDate = getBriefDateFromFolderName(folderName);
+      if (briefDate) {
+        sourceDates.add(briefDate);
+      }
+    }
+    
+    // Get all website brief directories
+    const briefsDir = path.join(process.cwd(), 'public', 'intelligence', 'briefs');
+    if (!fs.existsSync(briefsDir)) {
+      logWithTimestamp(`ℹ️  No briefs directory found, nothing to reconcile`);
+      return;
+    }
+    
+    const websiteBriefs = fs.readdirSync(briefsDir)
+      .filter(name => fs.statSync(path.join(briefsDir, name)).isDirectory())
+      .filter(name => name.match(/^\d{4}-\d{2}-\d{2}-\d{6}$/));
+    
+    // Find orphaned briefs (exist on website but not in source)
+    const orphanedBriefs = websiteBriefs.filter(briefDate => !sourceDates.has(briefDate));
+    
+    if (orphanedBriefs.length === 0) {
+      logWithTimestamp(`✅ Website is in sync with source directory`);
+      return;
+    }
+    
+    logWithTimestamp(`🗑️  Found ${orphanedBriefs.length} orphaned brief(s): ${orphanedBriefs.join(', ')}`);
+    
+    // Delete each orphaned brief
+    for (const briefDate of orphanedBriefs) {
+      const briefDir = path.join(briefsDir, briefDate);
+      if (fs.existsSync(briefDir)) {
+        logWithTimestamp(`🗑️  Removing orphaned brief: ${briefDate}`);
+        
+        // Use git rm to stage deletion
+        const briefPath = `public/intelligence/briefs/${briefDate}`;
+        if (!runGitCommand(`git rm -r "${briefPath}"`, `Staging deletion of orphaned brief ${briefDate}`)) {
+          logWithTimestamp(`⚠️  Failed to stage deletion for orphaned brief ${briefDate}`);
+          continue;
+        }
+        
+        // Check git status
+        if (!checkGitStatus()) {
+          execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
+          try {
+            execSync(`git checkout -- "${briefPath}"`, { stdio: 'ignore' });
+          } catch {}
+          logWithTimestamp(`⚠️  Aborted deletion for orphaned brief ${briefDate} due to disallowed changes`);
+          continue;
+        }
+        
+        // Commit deletion
+        const commitMessage = `Remove orphaned intelligence brief for ${briefDate}`;
+        if (!runGitCommand(`git commit -m "${commitMessage}"`, `Committing removal of orphaned brief ${briefDate}`)) {
+          execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
+          try {
+            execSync(`git checkout -- "${briefPath}"`, { stdio: 'ignore' });
+          } catch {}
+          continue;
+        }
+        
+        // Push deletion
+        if (!runGitCommand('git push origin main', `Pushing removal of orphaned brief ${briefDate} to main`)) {
+          logWithTimestamp(`⚠️  Failed to push deletion for orphaned brief ${briefDate}`);
+          continue;
+        }
+        
+        logWithTimestamp(`✅ Successfully removed orphaned brief ${briefDate}`);
+      }
+    }
+    
+    logWithTimestamp(`✅ Reconciliation completed`);
+    
+  } catch (error) {
+    logWithTimestamp(`❌ Error during reconciliation: ${error.message}`);
+  }
+};
+
 // Retry failed operations from previous runs
 const retryFailedOperations = async () => {
   const failedBriefs = Object.entries(state.ingested).filter(
@@ -414,6 +503,14 @@ const runWatcher = async () => {
 
   // Retry any failed operations from previous runs
   await retryFailedOperations();
+  
+  // Reconcile website with source directory
+  await reconcileSiteWithSource();
+  
+  // Set up periodic reconciliation every 5 minutes
+  setInterval(async () => {
+    await reconcileSiteWithSource();
+  }, 5 * 60 * 1000); // 5 minutes
 
   // Handle Ctrl+C gracefully
   process.on('SIGINT', () => {
