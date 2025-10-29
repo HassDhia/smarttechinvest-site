@@ -195,6 +195,7 @@ Domain & middleware
 - `src/middleware.ts` redirects `www.smarttechinvest.com` to `smarttechinvest.com` (308). Update these values if the domain changes.
 
 
+
 ### Maintenance Tips
 
 - Add new pages under `src/app/<route>/page.tsx`.

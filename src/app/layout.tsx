@@ -12,13 +12,24 @@ import { MotionProvider } from "../components/ClientMotionProvider";
 
 export const metadata: Metadata = {
   title: "Smart Technology Investments",
-  description: "Fractional Chief of Strategy for SMBs",
+  description: "Fractional Chief of Strategy for SMBs. Daily signals, weekly briefs, and strategic insights on technology investments, pricing, positioning, and AI-augmented operations.",
   icons: {
     icon: [
       { url: "/sti_favicon.webp", type: "image/webp" },
       { url: "/favicon.ico", rel: "icon", sizes: "any" },
     ],
     shortcut: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Smart Technology Investments",
+    description: "Fractional Chief of Strategy for SMBs. Daily signals, weekly briefs, and strategic insights on technology investments.",
+    type: "website",
+    images: ["/sti_favicon.webp"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Smart Technology Investments",
+    description: "Fractional Chief of Strategy for SMBs. Daily signals, weekly briefs, and strategic insights on technology investments.",
   },
 };
 
@@ -56,7 +67,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </aside>
               <main id="main" className="min-w-0">
                 <PageTransition>{children}</PageTransition>
-                <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-slate-500">© {new Date().getFullYear()} Smart Technology Investments</footer>
+                <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-slate-500">
+                  © {new Date().getFullYear()} Smart Technology Investments · <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Follow on LinkedIn</a>
+                </footer>
               </main>
             </div>
             <Button asChild size="lg" variant="gradient" className="hidden lg:inline-flex fixed right-5 bottom-5 hover:shadow">

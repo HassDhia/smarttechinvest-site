@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { Home, NotebookText, Rocket, Layers, FileText, Phone, Menu, X, Calculator } from "lucide-react";
+import { Home, Rocket, Layers, FileText, Phone, Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { AnimatePresence, m } from "framer-motion";
 import { durations, easings, overlayVariants } from "../lib/motion";
@@ -9,11 +9,9 @@ import { durations, easings, overlayVariants } from "../lib/motion";
 const links = [
   { href: "/", label: "Home", icon: Home },
   { href: "/offers", label: "Offers", icon: Rocket },
-  { href: "/diagnostic", label: "Diagnostic", icon: NotebookText },
+  { href: "/intelligence", label: "Intelligence", icon: FileText },
   { href: "/resources", label: "Resources", icon: Layers },
-  { href: "/simulator", label: "Simulator", icon: Calculator },
   { href: "/schedule", label: "Schedule", icon: Phone },
-  { href: "https://linkedin.com", label: "Blog", icon: FileText, external: true },
 ];
 
 export function MobileNav() {
@@ -117,14 +115,13 @@ export function MobileNav() {
               </button>
             </div>
             <ul className="flex flex-col gap-2">
-              {links.map(({ href, label, icon: Icon, external }) => {
-                const Anchor = (external ? ("a" as const) : Link) as unknown as React.ElementType;
+              {links.map(({ href, label, icon: Icon }) => {
                 return (
                   <li key={href}>
-                    <Anchor href={href} prefetch={external ? undefined : true} target={external ? "_blank" : undefined} rel={external ? "noopener noreferrer" : undefined} onClick={() => setOpen(false)} className="flex items-center gap-2 px-2 py-2 rounded-lg text-[hsl(var(--foreground)/0.9)] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--foreground))]">
+                    <Link href={href} prefetch={true} onClick={() => setOpen(false)} className="flex items-center gap-2 px-2 py-2 rounded-lg text-[hsl(var(--foreground)/0.9)] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--foreground))]">
                       <Icon aria-hidden />
                       <span>{label}</span>
-                    </Anchor>
+                    </Link>
                   </li>
                 );
               })}
