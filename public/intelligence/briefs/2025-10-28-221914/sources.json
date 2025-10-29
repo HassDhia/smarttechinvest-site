@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-29 — Mbodi (co‑founder & CEO Xavier Chi) will publicly demo training 1 physical robot using its cluster of AI agents at TechCrunch Disrupt 2025, showing the system breaking a natural‑language prompt into multiple subtasks and orchestrating agents to train the robot.",
+    "confidence": 0.8,
+    "citations": [
+      "https://techcrunch.com/2025/10/27/mbodi-will-show-how-it-can-train-a-robot-using-ai-agents-at-techcrunch-disrupt-2025/",
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — Global investors and companies are deploying hundreds of billions of US dollars (hundreds of billions USD) into automating workplaces this year, driving a large-scale AI investment wave.",
+    "confidence": 0.85,
+    "citations": [
+      "https://www.ft.com/video/521c05bc-b5ac-4d0e-9acf-dbb106691b9f",
+      "https://www.ft.com/content/177dab62-efc7-4485-9cf2-c78e94ac0302"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-27 — Cogent’s autonomous cybersecurity agents are operating continuously (24 hours/day, 7 days/week) to identify, prioritize and remediate cybersecurity risks for enterprise customers.",
+    "confidence": 0.7,
+    "citations": [
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://www.bloomberg.com/news/articles/2025-10-26/carney-pushes-back-on-provinces-spoiling-for-a-fight-with-trump"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-30 — Notch is offering secure, fully managed AI agents that will operate as a 100% managed service to automate routine customer‑support and back‑office workflows (covering tasks such as account updates and information requests) for client deployments.",
+    "confidence": 0.65,
+    "citations": [
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://openai.com/index/openai-acquires-software-applications-incorporated/"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-31 — Mbodi’s software will split user natural‑language prompts into multiple smaller subtasks and orchestrate a cluster of ≥2 agents per prompt to gather training data and instruct the robot (≥2 agents per prompt).",
+    "confidence": 0.7,
+    "citations": [
+      "https://techcrunch.com/2025/10/27/mbodi-will-show-how-it-can-train-a-robot-using-ai-agents-at-techcrunch-disrupt-2025/",
+      "https://openai.com/index/next-chapter-of-microsoft-openai-partnership/"
+    ]
+  },
+  {
+    "id": 6,
+    "headline": "2025-10-27 — Financial Times reporting warns the current AI investment wave (backed by hundreds of billions USD) raises bubble risk and higher stakes for companies spending on AI, implying potential downward market pressure on overinvested firms.",
+    "confidence": 0.75,
+    "citations": [
+      "https://www.ft.com/video/521c05bc-b5ac-4d0e-9acf-dbb106691b9f",
+      "https://www.ft.com/content/177dab62-efc7-4485-9cf2-c78e94ac0302",
+      "https://openai.com/index/openai-acquires-software-applications-incorporated/"
+    ]
+  }
+]
