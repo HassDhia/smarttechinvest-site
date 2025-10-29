@@ -1,7 +1,7 @@
 import { cn } from "../lib/cn";
 import { Badge } from "./ui/Badge";
 import { Button } from "./ui/Button";
-import { Calendar, Download, ExternalLink } from "lucide-react";
+import { Calendar, Download, ExternalLink, BarChart3, FileText, Target } from "lucide-react";
 import type { Brief } from "../lib/content";
 
 export function BriefCard({
@@ -36,20 +36,46 @@ export function BriefCard({
       </div>
       
       <h3 className="text-lg font-semibold text-foreground mb-3">
-        Tech Brief — {formattedDate}
+        {brief.title || `Tech Brief — ${formattedDate}`}
       </h3>
       
-      <div className="space-y-2 mb-4">
-        <p className="text-sm text-[hsl(var(--muted-foreground))]">
-          • Model routing, safety middleware, and embodied AI are redrawing the margin map
-        </p>
-        <p className="text-sm text-[hsl(var(--muted-foreground))]">
-          • Multi-model routers + verification flip buyer power dynamics
-        </p>
-        <p className="text-sm text-[hsl(var(--muted-foreground))]">
-          • Pilot one embodied task with compounding data advantages
-        </p>
-      </div>
+      {/* Executive Summary */}
+      {brief.summary && (
+        <div className="mb-4">
+          <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
+            {brief.summary}
+          </p>
+        </div>
+      )}
+      
+      {/* Key Signals */}
+      {brief.keySignals && brief.keySignals.length > 0 && (
+        <div className="space-y-2 mb-4">
+          {brief.keySignals.slice(0, 2).map((signal, idx) => (
+            <p key={idx} className="text-sm text-[hsl(var(--muted-foreground))]">
+              • {signal}
+            </p>
+          ))}
+        </div>
+      )}
+      
+      {/* Metadata Stats */}
+      {brief.metadata && (
+        <div className="flex items-center gap-4 mb-4 text-xs text-[hsl(var(--muted-foreground))]">
+          <div className="flex items-center gap-1">
+            <FileText size={12} />
+            <span>{brief.metadata.sources_count} sources</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <BarChart3 size={12} />
+            <span>{brief.metadata.confidence_score}% confidence</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <Target size={12} />
+            <span>{brief.metadata.word_count.toLocaleString()} words</span>
+          </div>
+        </div>
+      )}
       
       <div className="flex gap-2">
         <Button asChild variant="gradient" size="sm">

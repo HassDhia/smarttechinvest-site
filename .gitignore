@@ -46,3 +46,7 @@ Offer Uplift Simulator/**/__pycache__/
 Offer Uplift Simulator/**/.pytest_cache/
 Offer Uplift Simulator/**/.mypy_cache/
 Offer Uplift Simulator/**/*.db
+
+# Brief ingest system
+.brief-ingest-state.json
+logs/

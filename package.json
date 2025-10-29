@@ -7,7 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "vercel --prod"
+    "deploy": "vercel --prod",
+    "ingest": "node scripts/ingest-brief.mjs",
+    "ingest:brief": "node scripts/ingest-brief.mjs",
+    "ingest:sync": "node scripts/sync-all-briefs.mjs",
+    "watch:briefs": "node scripts/watch-briefs.mjs",
+    "watch:briefs:bg": "node scripts/watch-briefs.mjs > logs/brief-watch.log 2>&1 &",
+    "watch:briefs:auto": "node scripts/watch-and-push-briefs.mjs",
+    "watch:briefs:auto:bg": "node scripts/watch-and-push-briefs.mjs > logs/brief-autopush.log 2>&1 &",
+    "pdf:render": "node scripts/render-pdfs.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.6",
@@ -39,6 +47,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
+    "playwright": "^1.40.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

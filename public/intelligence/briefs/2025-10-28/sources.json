@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-27 — Nexos.ai (startup) announced unified access to 200+ LLMs via one secure API and confirmed a $8,000,000 fundraising round led by Index Ventures.",
+    "confidence": 0.9,
+    "citations": [
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://www.ft.com/content/177dab62-efc7-4485-9cf2-c78e94ac0302"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — OpenRouter (platform) is routing to 400+ LLMs across 60+ providers, enabling developers to compare and switch between models without vendor lock-in.",
+    "confidence": 0.88,
+    "citations": [
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://techcrunch.com/2025/10/28/sam-altman-says-openai-will-have-a-legitimate-ai-researcher-by-2028/"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-29 — Elloe AI (startup) is operating an SDK/API layer that fact-checks every single LLM output (checking 100% of responses) and was named a Top 20 finalist at TechCrunch Disrupt.",
+    "confidence": 0.82,
+    "citations": [
+      "https://techcrunch.com/2025/10/28/elloe-ai-wants-to-be-the-immune-system-for-ai-check-it-out-at-disrupt-2025/",
+      "https://techcrunch.com/2025/10/27/mbodi-will-show-how-it-can-train-a-robot-using-ai-agents-at-techcrunch-disrupt-2025/"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-30 — Dyna Robotics (company) is deploying its DYNA-1 embodied foundation model in production to perform four categories of complex manipulation tasks: folding, packaging, warehouse kitting, and food preparation.",
+    "confidence": 0.87,
+    "citations": [
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://www.ft.com/content/1f915aa9-c61c-4f55-b27e-47d0a0f2c016"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-31 — Omnea (company) launched Omnea AI copilots that automate procurement by handling three subprocesses: supplier requests, contract analysis, and due-diligence summaries.",
+    "confidence": 0.75,
+    "citations": [
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://openai.com/index/openai-acquires-software-applications-incorporated/"
+    ]
+  },
+  {
+    "id": 6,
+    "headline": "2025-11-01 — Two companies (Skild AI and FieldAI) are actively building large-world AI models using real-world data to accelerate robot training, representing 2 named entrants focused on scaling training data for embodied AI.",
+    "confidence": 0.72,
+    "citations": [
+      "https://techcrunch.com/2025/10/27/mbodi-will-show-how-it-can-train-a-robot-using-ai-agents-at-techcrunch-disrupt-2025/",
+      "https://openai.com/index/built-to-benefit-everyone/"
+    ]
+  }
+]
