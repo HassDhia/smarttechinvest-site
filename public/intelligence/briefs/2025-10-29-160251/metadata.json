@@ -1,0 +1,55 @@
+{
+  "generation_timestamp": "2025-10-29T16:02:51.680119",
+  "query": "Command Theory in Multi-Agent Systems",
+  "days_back": 7,
+  "report_stats": {
+    "character_count": 27645,
+    "word_count": 3462,
+    "jsonld_size": 5823
+  },
+  "confidence_score": 0.7999999999999999,
+  "sources_count": 8,
+  "system_info": {
+    "agent_type": "Enhanced STI Agent",
+    "version": "1.0.0",
+    "model": "gpt-5-mini-2025-08-07",
+    "date_filtering": "Strict 7-day window enforced"
+  },
+  "agent_stats": {
+    "date_filter_stats": {
+      "total_processed": 8,
+      "within_window": 8,
+      "outside_window": 0,
+      "parse_failed": 0,
+      "success_rate": 1.0,
+      "parse_success_rate": 1.0
+    },
+    "sources_data": [
+      {
+        "id": 1,
+        "title": "From cargo hub, US plots complex goal of forming international force for Gaza - Reuters",
+        "url": "https://www.reuters.com/world/middle-east/cargo-hub-us-plots-complex-goal-forming-international-force-gaza-2025-10-24/",
+        "publisher": "Reuters",
+        "date": "2025-10-24",
+        "credibility": 0.8500000000000001
+      },
+      {
+        "id": 2,
+        "title": "Meet the AI Disruptors 60: The Startups Defining AI’s Future - TechCrunch",
+        "url": "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+        "publisher": "TechCrunch",
+        "date": "2025-10-28",
+        "credibility": 0.9
+      },
+      {
+        "id": 3,
+        "title": "Carney Pushes Back on Provinces Spoiling for a Fight With Trump - Bloomberg.com",
+        "url": "https://www.bloomberg.com/news/articles/2025-10-26/carney-pushes-back-on-provinces-spoiling-for-a-fight-with-trump",
+        "publisher": "Bloomberg",
+        "date": "2025-10-26",
+        "credibility": 0.9
+      }
+    ],
+    "validated_sources_count": 8
+  }
+}

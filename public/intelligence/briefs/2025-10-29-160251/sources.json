@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-27 — H.A. Hellyer (senior associate fellow, Royal United Services Institute) said most potential contributing countries are likely to commit 0 combat troops to a proposed force (majority: >50%), signalling low likelihood of troop contributions.",
+    "confidence": 0.72,
+    "citations": [
+      "https://www.reuters.com/world/middle-east/cargo-hub-us-plots-complex-goal-forming-international-force-gaza-2025-10-24/",
+      "https://www.bloomberg.com/news/articles/2025-10-26/carney-pushes-back-on-provinces-spoiling-for-a-fight-with-trump"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — Cogent (AI-native cybersecurity platform) is reported to operate autonomous agents that continuously identify, prioritize, and remediate vulnerabilities — agents running 24/7 (168 hours/week) to reduce exposure windows.",
+    "confidence": 0.78,
+    "citations": [
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://www.bloomberg.com/news/articles/2025-10-26/carney-pushes-back-on-provinces-spoiling-for-a-fight-with-trump"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-29 — Paid announced AI agents that run whole operations workflows and take action (not just suggestions), meaning routine approvals and vendor onboarding processes can be executed autonomously — agents available to operate 24/7 (168 hours/week) for routine tasks.",
+    "confidence": 0.7,
+    "citations": [
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://www.reuters.com/world/middle-east/cargo-hub-us-plots-complex-goal-forming-international-force-gaza-2025-10-24/"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-30 — Maven (customer experience AI) is certified to ISO 27001 and SOC 2 Type II and offers HIPAA‑compliant deployments, i.e., holds 2 named security certifications and 1 HIPAA-compliant deployment option.",
+    "confidence": 0.82,
+    "citations": [
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://www.reuters.com/world/middle-east/cargo-hub-us-plots-complex-goal-forming-international-force-gaza-2025-10-24/"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-31 — The government of British Columbia (Ravi Parmar, Minister of Forests) launched 1 digital ad campaign this week highlighting that US tariffs on Canadian lumber exceed those on Russian lumber, targeting U.S. audiences about rising forestry tariffs.",
+    "confidence": 0.76,
+    "citations": [
+      "https://www.bloomberg.com/news/articles/2025-10-26/carney-pushes-back-on-provinces-spoiling-for-a-fight-with-trump",
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/"
+    ]
+  },
+  {
+    "id": 6,
+    "headline": "2025-11-01 — Arab countries (collectively) stated they would withhold participation in a multinational force unless there is a single major diplomatic push to create a Palestinian state — conditioning participation on 1 major political/diplomatic initiative.",
+    "confidence": 0.69,
+    "citations": [
+      "https://www.reuters.com/world/middle-east/cargo-hub-us-plots-complex-goal-forming-international-force-gaza-2025-10-24/",
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/"
+    ]
+  }
+]
