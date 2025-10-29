@@ -16,10 +16,21 @@ const saveState = () => {
 };
 
 const getBriefDateFromFolderName = (folderName) => {
-  const m = folderName.match(/_(\d{8})_/);
+  // Match: sti_enhanced_output_YYYYMMDD_HHMMSS_
+  const m = folderName.match(/sti_enhanced_output_(\d{8})_(\d{6})_/);
   if (!m) return null;
-  const YYYY = m[1].slice(0,4), MM = m[1].slice(4,6), DD = m[1].slice(6,8);
-  return `${YYYY}-${MM}-${DD}`;
+  
+  const dateStr = m[1]; // YYYYMMDD
+  const timeStr = m[2]; // HHMMSS
+  
+  const YYYY = dateStr.slice(0, 4);
+  const MM = dateStr.slice(4, 6);
+  const DD = dateStr.slice(6, 8);
+  const HH = timeStr.slice(0, 2);
+  const mm = timeStr.slice(2, 4);
+  const ss = timeStr.slice(4, 6);
+  
+  return `${YYYY}-${MM}-${DD}-${HH}${mm}${ss}`;
 };
 
 const logWithTimestamp = (message) => {
@@ -41,26 +52,55 @@ const runGitCommand = (command, description) => {
 
 const checkGitStatus = () => {
   try {
+    logWithTimestamp(`🔍 Checking git status...`);
+    
     // Check if we're on main branch
     const currentBranch = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
+    logWithTimestamp(`   Branch: ${currentBranch}`);
+    
     if (currentBranch !== 'main') {
-      logWithTimestamp(`⚠️  Not on main branch (currently on ${currentBranch}). Skipping push.`);
+      logWithTimestamp(`⚠️  Not on main branch. Skipping push.`);
       return false;
     }
 
-    // Check if working directory is clean (except for new briefs)
+    // Get git status
     const status = execSync('git status --porcelain', { encoding: 'utf8' });
+    
+    // If completely clean, that's fine (nothing to push)
+    if (!status.trim()) {
+      logWithTimestamp(`   ✅ Working directory clean`);
+      return true;
+    }
+    
     const lines = status.trim().split('\n').filter(line => line.length > 0);
+    logWithTimestamp(`   Found ${lines.length} change(s) in working directory`);
     
-    // Allow only new files in public/intelligence/briefs/
-    const allowedPattern = /^A\s+public\/intelligence\/briefs\//;
-    const hasUnallowedChanges = lines.some(line => !allowedPattern.test(line));
+    // Patterns for allowed changes:
+    // ?? public/intelligence/briefs/ = Untracked brief files (NEW briefs)
+    // A  public/intelligence/briefs/ = Staged brief files
+    // M  public/intelligence/briefs/ = Modified brief files (edge case, but allow)
+    const briefPattern = /^(\?\?|A\s|M\s)\s*public\/intelligence\/briefs\//;
     
-    if (hasUnallowedChanges) {
-      logWithTimestamp(`⚠️  Working directory has uncommitted changes outside briefs. Skipping push.`);
+    // Check each line
+    for (const line of lines) {
+      // If it's a brief file, it's allowed
+      if (briefPattern.test(line)) {
+        continue;
+      }
+      
+      // If it's the state file, it's allowed (auto-updated by this script)
+      if (line.includes('.brief-ingest-state.json')) {
+        continue;
+      }
+      
+      // Any other change is not allowed
+      logWithTimestamp(`⚠️  Found uncommitted changes outside briefs:`);
+      logWithTimestamp(`   ${line}`);
+      logWithTimestamp(`⚠️  Please commit or stash these changes. Skipping push.`);
       return false;
     }
 
+    logWithTimestamp(`   ✅ All changes are allowed (briefs + state file)`);
     return true;
   } catch (error) {
     logWithTimestamp(`❌ Git status check failed: ${error.message}`);
@@ -93,25 +133,27 @@ const processNewBrief = (folderName) => {
       date: briefDate,
       ingestedAt: new Date().toISOString(),
       pushStatus: 'pending',
-      targetDir: path.relative(process.cwd(), path.join('public/intelligence/briefs', briefDate)),
+      targetDir: `public/intelligence/briefs/${briefDate}`,
     };
     saveState();
 
     logWithTimestamp(`✅ Successfully ingested ${folderName}.`);
 
-    // Now handle Git operations
-    if (!checkGitStatus()) {
+    // Add the brief files FIRST (before checking git status)
+    const briefPath = `public/intelligence/briefs/${briefDate}*`; // Use wildcard to catch timestamped dirs
+    if (!runGitCommand(`git add "${briefPath}"`, `Adding ${briefDate} brief files`)) {
       state.ingested[folderName].pushStatus = 'failed';
-      state.ingested[folderName].pushError = 'Git status check failed';
+      state.ingested[folderName].pushError = 'Git add failed';
       saveState();
       return;
     }
 
-    // Add the brief files
-    const briefPath = `public/intelligence/briefs/${briefDate}`;
-    if (!runGitCommand(`git add ${briefPath}`, `Adding ${briefDate} brief files`)) {
+    // NOW check git status (after staging the brief)
+    if (!checkGitStatus()) {
+      // If check fails, unstage the brief files
+      execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
       state.ingested[folderName].pushStatus = 'failed';
-      state.ingested[folderName].pushError = 'Git add failed';
+      state.ingested[folderName].pushError = 'Git status check failed - working directory not clean';
       saveState();
       return;
     }
