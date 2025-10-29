@@ -1,10 +1,16 @@
 import type { NextConfig } from "next";
+import createMDX from '@next/mdx';
+
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+});
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   trailingSlash: false,
   experimental: { viewTransition: true },
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
@@ -13,16 +19,6 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "upload.wikimedia.org" },
     ],
   },
-  async rewrites() {
-    const origin = process.env.SIMULATOR_PROXY_ORIGIN;
-    if (!origin) return [];
-    const base = origin.replace(/\/$/, "");
-    return [
-      { source: "/simulator-app", destination: `${base}/` },
-      { source: "/simulator-app/", destination: `${base}/` },
-      { source: "/simulator-app/:path*", destination: `${base}/:path*` },
-    ];
-  },
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);

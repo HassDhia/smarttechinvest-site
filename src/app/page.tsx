@@ -8,11 +8,18 @@ import { WorkCard } from "../components/WorkCard";
 import { Rocket, BadgeDollarSign, Bot, Workflow, Settings, Handshake } from "lucide-react";
 import { MiniTOC } from "../components/MiniTOC";
 import { TestimonialsCarousel } from "../components/TestimonialsCarousel";
+import { IntelligenceCard } from "../components/IntelligenceCard";
+import { BriefCard } from "../components/BriefCard";
+import { getLatestBrief, getLatestDailies } from "../lib/content";
+import Link from "next/link";
 
 export default function Home() {
+  const latestBrief = getLatestBrief();
+  const latestDailies = getLatestDailies(2);
+
   return (
     <div className="font-sans">
-      <MiniTOC sections={[{ id: "how", label: "How We Help" }, { id: "work", label: "Selected Work" }, { id: "outcomes", label: "Outcomes" }]} />
+      <MiniTOC sections={[{ id: "how", label: "How We Help" }, { id: "intelligence", label: "Intelligence" }, { id: "work", label: "Selected Work" }, { id: "outcomes", label: "Outcomes" }]} />
       <Hero
         title="Smart Technology Investments"
         subtitle="Fractional Chief of Strategy for SMBs: pricing, positioning, GTM, and AI-augmented ops to accelerate growth."
@@ -35,6 +42,40 @@ export default function Home() {
           ))}
         </div>
       </section>
+      
+      <section id="intelligence" className="container section vt-section">
+        <SectionHeader kicker="From the Intelligence Desk" title="Latest Insights" subtitle="Daily signals and weekly briefs on technology investments and strategic trends." useGradientTitle />
+        
+        <div className="grid md:grid-cols-3 gap-6">
+          {latestBrief && (
+            <div className="md:col-span-1">
+              <BriefCard brief={latestBrief} highlight />
+            </div>
+          )}
+          
+          <div className="md:col-span-2">
+            <div className="grid sm:grid-cols-2 gap-4">
+              {latestDailies.map((daily) => (
+                <IntelligenceCard
+                  key={daily.slug}
+                  title={daily.frontmatter.title}
+                  date={daily.frontmatter.date}
+                  summary={daily.frontmatter.summary}
+                  href={daily.href}
+                  type="daily"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        <div className="text-center mt-6">
+          <Link href="/intelligence" className="text-sm text-[hsl(var(--primary))] hover:underline">
+            Explore All Intelligence →
+          </Link>
+        </div>
+      </section>
+      
       <div className="divide-gradient container mt-10" aria-hidden />
       <LogoStrip />
       <section id="work" className="container section vt-section">
