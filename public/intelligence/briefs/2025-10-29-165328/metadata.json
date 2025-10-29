@@ -1,0 +1,137 @@
+{
+  "generation_timestamp": "2025-10-29T16:53:28.886716",
+  "query": "Command Theory in Multi-Agent Systems",
+  "days_back": 7,
+  "report_stats": {
+    "character_count": 28605,
+    "word_count": 3535,
+    "jsonld_size": 4398
+  },
+  "confidence_score": 0.7333333333333333,
+  "sources_count": 12,
+  "system_info": {
+    "agent_type": "Enhanced STI Agent",
+    "version": "1.0.0",
+    "model": "gpt-5-mini-2025-08-07",
+    "date_filtering": "Strict 7-day window enforced"
+  },
+  "agent_stats": {
+    "date_filter_stats": {
+      "total_processed": 9,
+      "within_window": 9,
+      "outside_window": 0,
+      "parse_failed": 0,
+      "success_rate": 1.0,
+      "parse_success_rate": 1.0
+    },
+    "sources_data": [
+      {
+        "id": 1,
+        "title": "Revealing Key Dimensions Underlying the Recognition of Dynamic Human Actions - Nature",
+        "url": "https://www.nature.com/articles/s44271-025-00338-y",
+        "publisher": "Nature.Com",
+        "date": "2025-10-23",
+        "credibility": 0.55
+      },
+      {
+        "id": 2,
+        "title": "Reinforcement learning-driven deep learning approaches for optimized robot trajectory planning - Nature",
+        "url": "https://www.nature.com/articles/s41598-025-21664-5",
+        "publisher": "Nature.Com",
+        "date": "2025-10-29",
+        "credibility": 0.55
+      },
+      {
+        "id": 3,
+        "title": "Human disturbance thresholds determine the ecological role of an apex predator - Nature",
+        "url": "https://www.nature.com/articles/s41598-025-21402-x",
+        "publisher": "Nature.Com",
+        "date": "2025-10-28",
+        "credibility": 0.6
+      },
+      {
+        "id": 4,
+        "title": "filed",
+        "url": "https://www.sec.gov/Archives/edgar/data/2090011/000121390025103237/ea0262697-s1_21shares.htm",
+        "publisher": "Sec.Gov",
+        "date": "2025-10-29",
+        "credibility": 0.9
+      },
+      {
+        "id": 5,
+        "title": "Mbodi will show how it can train a robot using AI agents at TechCrunch Disrupt 2025 - TechCrunch",
+        "url": "https://techcrunch.com/2025/10/27/mbodi-will-show-how-it-can-train-a-robot-using-ai-agents-at-techcrunch-disrupt-2025/",
+        "publisher": "TechCrunch",
+        "date": "2025-10-27",
+        "credibility": 0.9
+      },
+      {
+        "id": 6,
+        "title": "AI’s rapid evolution demands more flexible training - Financial Times",
+        "url": "https://www.ft.com/content/177dab62-efc7-4485-9cf2-c78e94ac0302",
+        "publisher": "Financial Times",
+        "date": "2025-10-23",
+        "credibility": 0.9
+      },
+      {
+        "id": 7,
+        "title": "Meet the AI Disruptors 60: The Startups Defining AI’s Future - TechCrunch",
+        "url": "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+        "publisher": "TechCrunch",
+        "date": "2025-10-28",
+        "credibility": 0.9
+      },
+      {
+        "id": 8,
+        "title": "Microsoft introduces new Copilot features such as collaboration, Google integration - Reuters",
+        "url": "https://www.reuters.com/technology/microsoft-introduces-new-copilot-features-such-collaboration-google-integration-2025-10-23/",
+        "publisher": "Reuters",
+        "date": "2025-10-23",
+        "credibility": 0.8500000000000001
+      },
+      {
+        "id": 9,
+        "title": "AI tutors show their potential in interactive workplace learning - Financial Times",
+        "url": "https://www.ft.com/content/1f915aa9-c61c-4f55-b27e-47d0a0f2c016",
+        "publisher": "Financial Times",
+        "date": "2025-10-23",
+        "credibility": 0.8500000000000001
+      },
+      {
+        "id": 10,
+        "title": "Character AI is ending its chatbot experience for kids - TechCrunch",
+        "url": "https://techcrunch.com/2025/10/29/character-ai-is-killing-the-chatbot-experience-for-minors/",
+        "publisher": "TechCrunch",
+        "date": "2025-10-29",
+        "credibility": 0.9
+      },
+      {
+        "id": 11,
+        "title": "OpenAI acquires Software Applications Incorporated, maker of Sky - OpenAI",
+        "url": "https://openai.com/index/openai-acquires-software-applications-incorporated/",
+        "publisher": "OpenAI",
+        "date": "2025-10-23",
+        "credibility": 0.5
+      },
+      {
+        "id": 12,
+        "title": "Built to benefit everyone - OpenAI",
+        "url": "https://openai.com/index/built-to-benefit-everyone/",
+        "publisher": "OpenAI",
+        "date": "2025-10-28",
+        "credibility": 0.45
+      }
+    ],
+    "validated_sources_count": 12
+  },
+  "social_media_content": {
+    "generated": true,
+    "formats": [
+      "long_form",
+      "twitter_thread",
+      "linkedin_post"
+    ],
+    "metadata": {},
+    "generation_timestamp": ""
+  }
+}
