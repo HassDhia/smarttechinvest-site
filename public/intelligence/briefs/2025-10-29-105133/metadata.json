@@ -1,0 +1,95 @@
+{
+  "generation_timestamp": "2025-10-29T10:51:33.042898",
+  "query": "Command Theory in Multi-Agent Systems",
+  "days_back": 7,
+  "report_stats": {
+    "character_count": 27918,
+    "word_count": 3526,
+    "jsonld_size": 5908
+  },
+  "confidence_score": 0.7999999999999999,
+  "sources_count": 8,
+  "system_info": {
+    "agent_type": "Enhanced STI Agent",
+    "version": "1.0.0",
+    "model": "gpt-5-mini-2025-08-07",
+    "date_filtering": "Strict 7-day window enforced"
+  },
+  "agent_stats": {
+    "date_filter_stats": {
+      "total_processed": 8,
+      "within_window": 8,
+      "outside_window": 0,
+      "parse_failed": 0,
+      "success_rate": 1.0,
+      "parse_success_rate": 1.0
+    },
+    "sources_data": [
+      {
+        "id": 1,
+        "title": "Mbodi will show how it can train a robot using AI agents at TechCrunch Disrupt 2025 - TechCrunch",
+        "url": "https://techcrunch.com/2025/10/27/mbodi-will-show-how-it-can-train-a-robot-using-ai-agents-at-techcrunch-disrupt-2025/",
+        "publisher": "TechCrunch",
+        "date": "2025-10-27",
+        "credibility": 0.9
+      },
+      {
+        "id": 2,
+        "title": "Transcript: The vigorous nods of Bessent - Financial Times",
+        "url": "https://www.ft.com/content/d828a724-1556-4725-a4b0-b652ef962f0e",
+        "publisher": "Financial Times",
+        "date": "2025-10-29",
+        "credibility": 0.8
+      },
+      {
+        "id": 3,
+        "title": "The AI rollout is here - and it's messy | FT Working It - Financial Times",
+        "url": "https://www.ft.com/video/521c05bc-b5ac-4d0e-9acf-dbb106691b9f",
+        "publisher": "Financial Times",
+        "date": "2025-10-27",
+        "credibility": 0.9
+      },
+      {
+        "id": 4,
+        "title": "Meet the AI Disruptors 60: The Startups Defining AI’s Future - TechCrunch",
+        "url": "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+        "publisher": "TechCrunch",
+        "date": "2025-10-28",
+        "credibility": 0.9
+      },
+      {
+        "id": 5,
+        "title": "Carney Pushes Back on Provinces Spoiling for a Fight With Trump - Bloomberg.com",
+        "url": "https://www.bloomberg.com/news/articles/2025-10-26/carney-pushes-back-on-provinces-spoiling-for-a-fight-with-trump",
+        "publisher": "Bloomberg",
+        "date": "2025-10-26",
+        "credibility": 0.8500000000000001
+      },
+      {
+        "id": 6,
+        "title": "AI’s rapid evolution demands more flexible training - Financial Times",
+        "url": "https://www.ft.com/content/177dab62-efc7-4485-9cf2-c78e94ac0302",
+        "publisher": "Financial Times",
+        "date": "2025-10-23",
+        "credibility": 0.9
+      },
+      {
+        "id": 7,
+        "title": "OpenAI acquires Software Applications Incorporated, maker of Sky - OpenAI",
+        "url": "https://openai.com/index/openai-acquires-software-applications-incorporated/",
+        "publisher": "OpenAI",
+        "date": "2025-10-23",
+        "credibility": 0.5
+      },
+      {
+        "id": 8,
+        "title": "The next chapter of the Microsoft–OpenAI partnership - OpenAI",
+        "url": "https://openai.com/index/next-chapter-of-microsoft-openai-partnership/",
+        "publisher": "OpenAI",
+        "date": "2025-10-28",
+        "credibility": 0.45
+      }
+    ],
+    "validated_sources_count": 8
+  }
+}

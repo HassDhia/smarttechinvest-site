@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-27 — Mbodi (co‑founder/CEO Xavier Chi) will demonstrate training a robot using AI agent clusters in 1 live demo session at TechCrunch Disrupt 2025, showing agent-driven decomposition of natural‑language prompts into subtasks.",
+    "confidence": 0.85,
+    "citations": [
+      "https://techcrunch.com/2025/10/27/mbodi-will-show-how-it-can-train-a-robot-using-ai-agents-at-techcrunch-disrupt-2025/",
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — Financial Times published a video/transcript this week warning that 'hundreds of billions of dollars' are being spent on workplace automation (AI investment wave), highlighting large-scale capital deployment into AI initiatives.",
+    "confidence": 0.8,
+    "citations": [
+      "https://www.ft.com/video/521c05bc-b5ac-4d0e-9acf-dbb106691b9f",
+      "https://www.ft.com/content/177dab62-efc7-4485-9cf2-c78e94ac0302"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-29 — Financial Times article published this week has comments disabled and is behind a subscription paywall, i.e., 0 comments enabled and subscription required to access full content.",
+    "confidence": 0.75,
+    "citations": [
+      "https://www.ft.com/content/d828a724-1556-4725-a4b0-b652ef962f0e",
+      "https://www.ft.com/video/521c05bc-b5ac-4d0e-9acf-dbb106691b9f"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-27 — Cogent (AI‑native cybersecurity platform) is operating autonomous agents that continuously monitor and remediate cybersecurity risks, providing 24/7 monitoring (168 hours/week) to identify, prioritize and remediate vulnerabilities across enterprise environments.",
+    "confidence": 0.7,
+    "citations": [
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://www.bloomberg.com/news/articles/2025-10-26/carney-pushes-back-on-provinces-spoiling-for-a-fight-with-trump"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-28 — Notch (AI agent service) this week describes delivering secure, fully managed AI agents to automate routine customer‑support and back‑office workflows — explicitly automating at least 2 named workflow categories (account updates and information requests) upon deployment.",
+    "confidence": 0.7,
+    "citations": [
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://openai.com/index/next-chapter-of-microsoft-openai-partnership/"
+    ]
+  },
+  {
+    "id": 6,
+    "headline": "2025-10-29 — Industry trend this week: at least 3 companies (Mbodi, Cogent, Notch) are publicly demonstrating or marketing cluster/agent‑based AI approaches to physical robotics, cybersecurity and back‑office automation, indicating cross‑sector adoption of agent orchestration.",
+    "confidence": 0.75,
+    "citations": [
+      "https://techcrunch.com/2025/10/27/mbodi-will-show-how-it-can-train-a-robot-using-ai-agents-at-techcrunch-disrupt-2025/",
+      "https://techcrunch.com/sponsor/greenfield-partners/meet-the-ai-disruptors-60-the-startups-defining-ais-future/",
+      "https://openai.com/index/openai-acquires-software-applications-incorporated/",
+      "https://www.bloomberg.com/news/articles/2025-10-26/carney-pushes-back-on-provinces-spoiling-for-a-fight-with-trump"
+    ]
+  }
+]
