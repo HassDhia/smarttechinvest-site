@@ -1,5 +1,4 @@
 import { cn } from "../lib/cn";
-import { Badge } from "./ui/Badge";
 import { Button } from "./ui/Button";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import type { Brief } from "../lib/content";

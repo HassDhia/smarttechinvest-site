@@ -27,36 +27,6 @@ export function DailySignalCard({
   const rawHook = socialHook || daily.frontmatter.summary.split('.')[0] + '.';
   const hookLine = rawHook.length > 150 ? rawHook.slice(0, 150) + '...' : rawHook;
 
-  // Parse MDX content for sensemaking and systemization bullets
-  const parseMDXContent = (content: string) => {
-    const lines = content.split('\n').map(line => line.trim()).filter(Boolean);
-    
-    let sensemaking: string[] = [];
-    let systemization: string[] = [];
-    let currentSection = '';
-    
-    for (const line of lines) {
-      if (line.startsWith('**Sensemaking**')) {
-        currentSection = 'sensemaking';
-        continue;
-      } else if (line.startsWith('**Systemization**')) {
-        currentSection = 'systemization';
-        continue;
-      } else if (line.startsWith('**Shock**')) {
-        currentSection = 'shock';
-        continue;
-      }
-      
-      if (currentSection === 'sensemaking' && line.startsWith('-')) {
-        sensemaking.push(line.replace(/^-\s*/, ''));
-      } else if (currentSection === 'systemization' && line.startsWith('-')) {
-        systemization.push(line.replace(/^-\s*/, ''));
-      }
-    }
-    
-    return { sensemaking, systemization };
-  };
-
   // For now, we'll use the frontmatter summary as fallback bullets
   // In a real implementation, you'd pass the MDX content here
   const sensemakingBullets = daily.frontmatter.summary.split('.').slice(1, 3).filter(Boolean);

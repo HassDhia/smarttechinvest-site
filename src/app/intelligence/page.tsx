@@ -1,15 +1,13 @@
 import { Hero } from "../../components/Hero";
 import { SectionHeader } from "../../components/SectionHeader";
 import { Button } from "../../components/ui/Button";
-import { IntelligenceCard } from "../../components/IntelligenceCard";
-import { BriefCard } from "../../components/BriefCard";
 import { FeaturedBriefCard } from "../../components/FeaturedBriefCard";
 import { DailySignalCard } from "../../components/DailySignalCard";
 import { SignalsTicker } from "../../components/SignalsTicker";
 import { OperatorQuickWins } from "../../components/OperatorQuickWins";
 import { BriefSpecs } from "../../components/BriefSpecs";
 import { DownloadCenter } from "../../components/DownloadCenter";
-import { getLatestBrief, getLatestDailies, enrichBriefData, listBriefs } from "../../lib/content";
+import { getLatestDailies, enrichBriefData, listBriefs } from "../../lib/content";
 import Link from "next/link";
 
 export default function IntelligencePage() {

@@ -10,7 +10,7 @@ import { MiniTOC } from "../components/MiniTOC";
 import { TestimonialsCarousel } from "../components/TestimonialsCarousel";
 import { IntelligenceCard } from "../components/IntelligenceCard";
 import { BriefCard } from "../components/BriefCard";
-import { getLatestBrief, getLatestDailies, listBriefs } from "../lib/content";
+import { getLatestDailies, listBriefs } from "../lib/content";
 import Link from "next/link";
 
 export default function Home() {
