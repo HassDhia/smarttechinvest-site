@@ -163,7 +163,7 @@ export function listBriefs(): Brief[] {
           og: `/intelligence/briefs/${dateDir}/og.png`,
           title: metadata?.title,
           summary: summary || (keySignals.length > 0 ? keySignals.slice(0, 1).join(' • ') : undefined),
-          metadata,
+          metadata: metadata || undefined,
           keySignals: keySignals.length > 0 ? keySignals : undefined
         };
       });
