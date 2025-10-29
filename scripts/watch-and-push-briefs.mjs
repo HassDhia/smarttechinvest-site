@@ -79,7 +79,8 @@ const checkGitStatus = () => {
     // ?? public/intelligence/briefs/ = Untracked brief files (NEW briefs)
     // A  public/intelligence/briefs/ = Staged brief files
     // M  public/intelligence/briefs/ = Modified brief files (edge case, but allow)
-    const briefPattern = /^(\?\?|A\s|M\s)\s*public\/intelligence\/briefs\//;
+    // D  public/intelligence/briefs/ = Deleted brief files (REMOVED briefs)
+    const briefPattern = /^(\?\?|A\s|M\s|D\s)\s*public\/intelligence\/briefs\//;
     
     // Check each line
     for (const line of lines) {
@@ -117,9 +118,18 @@ const processNewBrief = (folderName) => {
     return;
   }
 
-  if (state.ingested[folderName]) {
-    logWithTimestamp(`⏭️  Skipping ${folderName} - already processed.`);
+  // If already processed and successful, skip
+  if (state.ingested[folderName] && state.ingested[folderName].pushStatus === 'success') {
+    logWithTimestamp(`⏭️  Skipping ${folderName} - already processed successfully.`);
     return;
+  }
+
+  // If it failed before, retry it
+  if (state.ingested[folderName] && state.ingested[folderName].pushStatus === 'failed') {
+    logWithTimestamp(`🔄 Retrying failed brief: ${folderName} (previous error: ${state.ingested[folderName].pushError || 'unknown'})`);
+    // Clear the failed status so we can retry
+    delete state.ingested[folderName];
+    saveState();
   }
 
   try {
@@ -202,15 +212,192 @@ const processNewBrief = (folderName) => {
   }
 };
 
-let timeoutId;
-const handleFsEvent = (eventType, filename) => {
-  if (filename && fs.statSync(path.join(SOURCE_DIR, filename)).isDirectory()) {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => processNewBrief(filename), DEBOUNCE_DELAY);
+const deleteBriefForFolder = (folderName) => {
+  const briefDate = getBriefDateFromFolderName(folderName);
+  
+  if (!briefDate) {
+    logWithTimestamp(`⚠️  Could not infer date from removed folder: ${folderName}. Skipping deletion.`);
+    return;
+  }
+
+  const briefDir = path.join(process.cwd(), 'public', 'intelligence', 'briefs', briefDate);
+  
+  if (!fs.existsSync(briefDir)) {
+    logWithTimestamp(`ℹ️  No website brief found for ${briefDate}. Cleaning up state entry.`);
+    // Clean up state even if directory doesn't exist
+    if (state.ingested[folderName]) {
+      delete state.ingested[folderName];
+      saveState();
+    }
+    return;
+  }
+
+  try {
+    logWithTimestamp(`🗑️  Source folder removed: ${folderName}. Deleting brief ${briefDate} from website...`);
+
+    // Stage the deletion (git rm)
+    const briefPath = `public/intelligence/briefs/${briefDate}`;
+    if (!runGitCommand(`git rm -r "${briefPath}"`, `Staging deletion of ${briefDate} brief`)) {
+      logWithTimestamp(`⚠️  Failed to stage deletion for ${briefDate}`);
+      return;
+    }
+
+    // Check git status to ensure only allowed changes
+    if (!checkGitStatus()) {
+      // Rollback: unstage the deletion and restore files
+      execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
+      try {
+        execSync(`git checkout -- "${briefPath}"`, { stdio: 'ignore' });
+      } catch {
+        // If checkout fails, files might already be gone, that's okay
+      }
+      logWithTimestamp(`⚠️  Aborted deletion for ${briefDate} due to disallowed changes in working directory`);
+      return;
+    }
+
+    // Commit the deletion
+    const commitMessage = `Remove intelligence brief for ${briefDate}`;
+    if (!runGitCommand(`git commit -m "${commitMessage}"`, `Committing removal of ${briefDate} brief`)) {
+      // Rollback on commit failure
+      execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
+      try {
+        execSync(`git checkout -- "${briefPath}"`, { stdio: 'ignore' });
+      } catch {
+        // Files may already be deleted, that's okay
+      }
+      return;
+    }
+
+    // Push to main
+    if (!runGitCommand('git push origin main', `Pushing removal of ${briefDate} brief to main`)) {
+      logWithTimestamp(`⚠️  Failed to push deletion for ${briefDate}. Commit was successful locally.`);
+      return;
+    }
+
+    // Update state - remove the ingested entry
+    if (state.ingested[folderName]) {
+      delete state.ingested[folderName];
+      saveState();
+    }
+
+    logWithTimestamp(`✅ Successfully removed brief ${briefDate} from website`);
+    logWithTimestamp(`📱 Vercel will update automatically (~2 minutes)`);
+
+  } catch (error) {
+    logWithTimestamp(`❌ Error removing brief for ${folderName}: ${error.message}`);
+    
+    // Attempt to restore files if deletion was staged but failed
+    const briefPath = `public/intelligence/briefs/${briefDate}`;
+    try {
+      execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
+      try {
+        execSync(`git checkout -- "${briefPath}"`, { stdio: 'ignore' });
+      } catch {
+        // Files may not exist, that's okay
+      }
+    } catch {
+      // If restore fails, continue anyway
+    }
   }
 };
 
-const runWatcher = () => {
+let timeoutId;
+let deleteTimeoutId;
+const handleFsEvent = (eventType, filename) => {
+  if (!filename) return;
+
+  const fullPath = path.join(SOURCE_DIR, filename);
+  
+  // Check if the path exists and is a directory
+  let exists = false;
+  let isDirectory = false;
+  
+  try {
+    const stat = fs.statSync(fullPath);
+    exists = true;
+    isDirectory = stat.isDirectory();
+  } catch {
+    exists = false; // Path doesn't exist (likely deleted)
+  }
+
+  if (eventType === 'rename') {
+    if (exists && isDirectory) {
+      // New folder created or moved in
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => processNewBrief(filename), DEBOUNCE_DELAY);
+    } else if (!exists) {
+      // Folder deleted or moved out
+      clearTimeout(deleteTimeoutId);
+      deleteTimeoutId = setTimeout(() => deleteBriefForFolder(filename), DEBOUNCE_DELAY);
+    }
+  }
+};
+
+// Retry failed operations from previous runs
+const retryFailedOperations = async () => {
+  const failedBriefs = Object.entries(state.ingested).filter(
+    ([_, info]) => info.pushStatus === 'failed'
+  );
+
+  if (failedBriefs.length === 0) {
+    return;
+  }
+
+  logWithTimestamp(`🔄 Found ${failedBriefs.length} failed operation(s) from previous runs. Retrying...`);
+
+  for (const [folderName, info] of failedBriefs) {
+    const sourcePath = path.join(SOURCE_DIR, folderName);
+    const briefDir = path.join(process.cwd(), info.targetDir);
+
+    // Check if source folder still exists (for additions that failed)
+    if (fs.existsSync(sourcePath)) {
+      logWithTimestamp(`🔄 Retrying failed brief: ${folderName}`);
+      // Check if brief files already exist (ingestion succeeded but git failed)
+      if (fs.existsSync(briefDir)) {
+        // Brief was ingested but git operations failed - retry git operations only
+        logWithTimestamp(`📁 Brief files already exist, retrying git operations...`);
+        const briefDate = getBriefDateFromFolderName(folderName);
+        if (briefDate) {
+          // Retry from the git add step
+          const briefPath = `public/intelligence/briefs/${briefDate}*`;
+          if (!runGitCommand(`git add "${briefPath}"`, `Retrying: Adding ${briefDate} brief files`)) {
+            continue;
+          }
+          if (!checkGitStatus()) {
+            execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
+            continue;
+          }
+          const commitMessage = `Add intelligence brief for ${briefDate}`;
+          if (!runGitCommand(`git commit -m "${commitMessage}"`, `Retrying: Committing ${briefDate} brief`)) {
+            continue;
+          }
+          if (!runGitCommand('git push origin main', `Retrying: Pushing ${briefDate} brief to main`)) {
+            continue;
+          }
+          // Success!
+          state.ingested[folderName].pushStatus = 'success';
+          state.ingested[folderName].pushedAt = new Date().toISOString();
+          saveState();
+          logWithTimestamp(`✅ Successfully retried and pushed ${briefDate}`);
+          continue;
+        }
+      }
+      // Brief doesn't exist yet, retry full process
+      delete state.ingested[folderName];
+      saveState();
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Delay between retries
+      processNewBrief(folderName);
+    } 
+    // Check if brief directory exists but source doesn't (for deletions that failed)
+    else if (!fs.existsSync(sourcePath) && fs.existsSync(briefDir)) {
+      logWithTimestamp(`🔄 Retrying failed deletion: ${folderName}`);
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Delay between retries
+      deleteBriefForFolder(folderName);
+    }
+  }
+};
+
+const runWatcher = async () => {
   if (!fs.existsSync(SOURCE_DIR)) {
     logWithTimestamp(`❌ Source directory not found: ${SOURCE_DIR}. Please create it.`);
     process.exit(1);
@@ -224,6 +411,9 @@ const runWatcher = () => {
 
   const ingestedCount = Object.keys(state.ingested).length;
   logWithTimestamp(`📈 Previously processed: ${ingestedCount} briefs`);
+
+  // Retry any failed operations from previous runs
+  await retryFailedOperations();
 
   // Handle Ctrl+C gracefully
   process.on('SIGINT', () => {
