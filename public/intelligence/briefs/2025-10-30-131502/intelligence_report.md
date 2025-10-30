@@ -1,0 +1,1 @@
+Error generating thesis-style analysis: 'dict' object has no attribute 'date'
