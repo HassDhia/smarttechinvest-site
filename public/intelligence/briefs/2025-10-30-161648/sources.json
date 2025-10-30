@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-28 — Researchers who authored the interactive energy state-space model paper issued an intermediate reactive-power control command measured in volt‑ampere reactive (VAR) units to the lower-layer physical model (evidence: “derive intermediate reactive power control, which becomes a control command to the lower layer physical model” and “physical interpretation of instantaneous power and generalized reactive power”).",
+    "confidence": 0.78,
+    "citations": [
+      "http://arxiv.org/abs/2411.12067v1",
+      "http://arxiv.org/abs/1303.6397v1"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-29 — The same research team implemented two controller types — Feedback Linearizing Control (FBLC) and Sliding Mode Control (SMC) — to actuate a controllable voltage source in an RLC test circuit, applying control voltages measured in volts (V) to stabilize the circuit (evidence: “implemented using either Feedback Linearizing Control (FBLC) or Sliding Mode Control (SMC)” and “utilize a simple RLC circuit with a controllable voltage source”).",
+    "confidence": 0.85,
+    "citations": [
+      "http://arxiv.org/abs/2111.12046v2",
+      "http://arxiv.org/abs/1009.6050v1"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-30 — The authors formalized an interaction variable with a physical interpretation as instantaneous power and generalized reactive power, explicitly tying the variable to power units (watts, W, and VAR) for system-wide interaction characterization (evidence: “The same variable captures aggregate system-wide effects … physical interpretation of instantaneous power and generalized reactive power”).",
+    "confidence": 0.88,
+    "citations": [
+      "http://arxiv.org/abs/2006.15686v1",
+      "http://arxiv.org/abs/0902.4218v1"
+    ]
+  }
+]
