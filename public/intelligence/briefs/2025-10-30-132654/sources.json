@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-27 — ArXiv paper authors utilized 1 simple RLC circuit (1 RLC circuit) to illustrate the proposed interactive energy state-space model and distributed output-feedback control.",
+    "confidence": 0.9,
+    "citations": [
+      "http://arxiv.org/abs/2411.12067v1",
+      "http://arxiv.org/abs/2111.12046v2"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — ArXiv paper authors implemented 1 intermediate reactive-power control command (1 unit of reactive power command) to the lower-layer physical model, using either Feedback Linearizing Control (FBLC) or Sliding Mode Control (SMC).",
+    "confidence": 0.8,
+    "citations": [
+      "http://arxiv.org/abs/2006.15686v1"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-29 — ArXiv paper authors presented an autonomous flight controller for 1 quadcopter (1 UAV) with thrust-vectoring (tilt-motion enabled rotors) and evaluated performance via numerical simulations for attitude-step tracking and waypoint navigation.",
+    "confidence": 0.9,
+    "citations": [
+      "http://arxiv.org/abs/1303.6397v1"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-30 — UAV controller designers applied quaternion state feedback to eliminate dependence on Euler-angle trigonometric parameters, effectively reducing trigonometric-parameter dependence to 0 (0 trigonometric parameters) and avoiding gimbal lock for the attitude controller.",
+    "confidence": 0.8,
+    "citations": [
+      "http://arxiv.org/abs/1009.6050v1"
+    ]
+  }
+]
