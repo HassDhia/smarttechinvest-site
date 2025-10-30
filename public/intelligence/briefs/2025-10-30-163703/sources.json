@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-28 — Research team (arXiv energy-systems paper) introduced 1 generalized interaction variable (1 variable) that captures instantaneous power and generalized reactive power (evidence: \"generalizes the notion of interaction variable... captures aggregate system-wide effects... instantaneous power and generalized reactive power\").",
+    "confidence": 0.9,
+    "citations": [
+      "http://arxiv.org/abs/2411.12067v1",
+      "http://arxiv.org/abs/2111.12046v2"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-29 — The same energy-systems authors implemented the lower-layer control command using 2 control methods (2 control methods: Feedback Linearizing Control (FBLC) and Sliding Mode Control (SMC)) (evidence: \"This command is implemented using either Feedback Linearizing Control (FBLC) or Sliding Mode Control (SMC)\").",
+    "confidence": 0.9,
+    "citations": [
+      "http://arxiv.org/abs/2006.15686v1"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-30 — Energy-systems authors used 1 simplified RLC circuit (1 circuit) with a controllable voltage source as an illustrative model for the proposed design (evidence: \"we utilize a simple RLC circuit with a controllable voltage source for illustrations\").",
+    "confidence": 0.9,
+    "citations": [
+      "http://arxiv.org/abs/1303.6397v1"
+    ]
+  }
+]
