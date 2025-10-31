@@ -1,0 +1,92 @@
+{
+  "generation_timestamp": "2025-10-31T11:41:39.487991",
+  "query": "Drone Swarm Solutions",
+  "days_back": 7,
+  "report_stats": {
+    "character_count": 27412,
+    "word_count": 3447,
+    "jsonld_size": 4503
+  },
+  "confidence_score": 0.7999999999999999,
+  "sources_count": 6,
+  "system_info": {
+    "agent_type": "Enhanced STI Agent",
+    "version": "1.0.0",
+    "model": "gpt-5-mini-2025-08-07",
+    "date_filtering": "Strict 7-day window enforced"
+  },
+  "agent_stats": {
+    "date_filter_stats": {
+      "total_processed": 6,
+      "within_window": 6,
+      "outside_window": 0,
+      "parse_failed": 0,
+      "success_rate": 1.0,
+      "parse_success_rate": 1.0
+    },
+    "sources_data": [
+      {
+        "id": 1,
+        "title": "Air traffic controller audio captures moments before and after Washington plane crash",
+        "url": "https://www.reuters.com/world/us/air-traffic-controller-audio-captures-moments-before-after-washington-plane-2025-01-30/",
+        "publisher": "Reuters",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 2,
+        "title": "How a Silicon Valley 'warlord' got the Pentagon’s attention",
+        "url": "https://www.reuters.com/technology/how-silicon-valley-warlord-got-pentagons-attention-2025-10-01/",
+        "publisher": "Reuters",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 3,
+        "title": "US blames Russia for drone crash over Black Sea, Moscow denies contact",
+        "url": "https://www.reuters.com/world/europe/russia-ukraine-battle-bakhmut-icc-seeks-war-crime-arrest-warrants-2023-03-13/",
+        "publisher": "Reuters",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 4,
+        "title": "China, U.S. Test Intelligent-Drone Swarms in Race for Military AI Dominance",
+        "url": "https://www.wsj.com/world/china/china-u-s-test-intelligent-drone-swarms-in-race-for-military-ai-dominance-db361265",
+        "publisher": "Wall Street Journal",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 5,
+        "title": "AI-Powered Drone Swarms Have Now Entered the Battlefield",
+        "url": "https://www.wsj.com/world/ai-powered-drone-swarms-have-now-entered-the-battlefield-2cab0f05",
+        "publisher": "Wall Street Journal",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 6,
+        "title": "Surge and Swarm: How China’s Ships Control the South China Sea",
+        "url": "https://www.wsj.com/world/china/surge-and-swarm-how-chinas-ships-control-the-south-china-sea-ac8fa61c",
+        "publisher": "Wall Street Journal",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      }
+    ],
+    "validated_sources_count": 6,
+    "intent": "market",
+    "horizon": "Near-term",
+    "hybrid_thesis_anchored": false
+  },
+  "social_media_content": {
+    "generated": true,
+    "formats": [
+      "long_form",
+      "twitter_thread",
+      "linkedin_post"
+    ],
+    "metadata": {},
+    "generation_timestamp": ""
+  }
+}

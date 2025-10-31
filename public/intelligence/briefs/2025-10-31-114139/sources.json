@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-27 — An American Airlines regional passenger jet (1 aircraft) and a U.S. Army Black Hawk helicopter (1 helicopter) collided midair, according to air-traffic-control audio recording.",
+    "confidence": 0.9,
+    "citations": [
+      "https://www.reuters.com/world/us/air-traffic-controller-audio-captures-moments-before-after-washington-plane-2025-01-30/"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — Film-attendee Steven Simoni was reported wearing a Celine tracksuit valued at $4,000 (USD 4,000) while holding court at a recent film event.",
+    "confidence": 0.75,
+    "citations": [
+      "https://www.reuters.com/technology/how-silicon-valley-warlord-got-pentagons-attention-2025-10-01/"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-29 — The Pentagon attributed the crash of 1 U.S. spy drone into the Black Sea to a Russian fighter jet; Moscow denied any collision (1 U.S. drone lost).",
+    "confidence": 0.9,
+    "citations": [
+      "https://www.reuters.com/world/europe/russia-ukraine-battle-bakhmut-icc-seeks-war-crime-arrest-warrants-2023-03-13/"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-30 — The U.S. and China (2 countries) are accelerating research to integrate artificial intelligence into their militaries, indicating expanded AI-military R&D activity.",
+    "confidence": 0.8,
+    "citations": [
+      "https://www.wsj.com/world/china/china-u-s-test-intelligent-drone-swarms-in-race-for-military-ai-dominance-db361265"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-31 — Three Ukrainian drones (3 UAVs) flew under cover of darkness to a Russian position and carried out a coordinated strike (3 drones employed).",
+    "confidence": 0.85,
+    "citations": [
+      "https://www.wsj.com/world/ai-powered-drone-swarms-have-now-entered-the-battlefield-2cab0f05"
+    ]
+  },
+  {
+    "id": 6,
+    "headline": "2025-10-27 — A Chinese coast guard ship tailed a group of four Philippine vessels (2 wooden boats + 2 Philippine coast guard vessels = 4 vessels) for hours, shadowing them at sea.",
+    "confidence": 0.85,
+    "citations": [
+      "https://www.wsj.com/world/china/surge-and-swarm-how-chinas-ships-control-the-south-china-sea-ac8fa61c"
+    ]
+  }
+]
