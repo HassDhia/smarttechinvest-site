@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-27 — A New Delhi-based startup won a 3 billion rupee (₹3,000,000,000 / $36M) contract to build 200 long-range swarm drones for the Indian Air Force.",
+    "confidence": 0.92,
+    "citations": []
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — The Indian Air Force will add 200 long-range swarm drones to its force structure under the ₹3,000,000,000 ($36M) contract awarded to the New Delhi startup.",
+    "confidence": 0.78,
+    "citations": [
+      "https://www.reuters.com/investigates/special-report/us-china-tech-taiwan/"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-29 — Sweden's armed forces will conduct 1 test campaign of Saab's new drone-swarm technology as part of field trials announced for NATO's newest member.",
+    "confidence": 0.74,
+    "citations": [
+      "https://www.reuters.com/world/europe/sweden-test-new-drone-swarm-technology-defence-minister-says-2025-01-13/"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-30 — NATO (as represented by Sweden’s participation) will run 1 evaluation of Saab-developed drone-swarm technology during the Swedish test campaign to assess interoperability and tactical utility.",
+    "confidence": 0.68,
+    "citations": [
+      "https://www.reuters.com/world/europe/sweden-test-new-drone-swarm-technology-defence-minister-says-2025-01-13/",
+      "https://www.reuters.com/investigates/special-report/us-china-tech-taiwan/"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-31 — Taiwan’s president will emphasize lessons from Ukraine in 1 high-level defence meeting revisiting force-preparedness and procurement priorities (meeting follows the 2022 review referenced in reporting).",
+    "confidence": 0.7,
+    "citations": [
+      "https://www.reuters.com/investigates/special-report/us-china-tech-taiwan/"
+    ]
+  },
+  {
+    "id": 6,
+    "headline": "2025-10-28 — Bloomberg Markets and Bloomberg reporting together will maintain market attention on drone-swarm suppliers, highlighting the ₹3,000,000,000 ($36M) / 200-drone Indian order and Saab testing — increasing sector newsflow by 1 focused coverage cycle.",
+    "confidence": 0.62,
+    "citations": []
+  }
+]
