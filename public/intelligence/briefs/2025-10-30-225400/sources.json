@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-28 — An Australian AI startup developing crewless-boat software was granted 1 AUKUS exemption licence (1 licence).",
+    "confidence": 0.9,
+    "citations": [
+      "https://www.reuters.com/business/aerospace-defense/australian-ai-startup-granted-aukus-exemption-autonomous-vessel-software-2025-07-16/",
+      "https://www.reuters.com/technology/artificial-intelligence/autonomous-agents-profitability-dominate-ai-agenda-2025-executives-forecast-2024-12-12/"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — The same Australian AI startup gained permission to share information with defence contractors in 2 countries (United States and Britain).",
+    "confidence": 0.85,
+    "citations": [
+      "https://www.reuters.com/business/aerospace-defense/australian-ai-startup-granted-aukus-exemption-autonomous-vessel-software-2025-07-16/",
+      "https://www.reuters.com/business/energy/uaes-adnoc-deploy-autonomous-ai-energy-sector-first-time-2024-11-04/"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-27 — ADNOC announced it will apply highly autonomous agentic AI in the energy industry in partnership with 3 firms (G42, Microsoft, AIQ).",
+    "confidence": 0.9,
+    "citations": [
+      "https://www.reuters.com/business/energy/uaes-adnoc-deploy-autonomous-ai-energy-sector-first-time-2024-11-04/",
+      "https://www.reuters.com/technology/artificial-intelligence/autonomous-agents-profitability-dominate-ai-agenda-2025-executives-forecast-2024-12-12/"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-27 — ADNOC CEO Sultan Al Jaber said on Monday that this will be ADNOC's first-time application of highly autonomous agentic AI (1 first-time application).",
+    "confidence": 0.85,
+    "citations": [
+      "https://www.reuters.com/business/energy/uaes-adnoc-deploy-autonomous-ai-energy-sector-first-time-2024-11-04/",
+      "https://www.reuters.com/business/aerospace-defense/australian-ai-startup-granted-aukus-exemption-autonomous-vessel-software-2025-07-16/"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-29 — Business executives and researchers at the Reuters NEXT conference in New York predicted 2 topics (autonomous 'agents' and profitability) will dominate the AI agenda next year (2 topics).",
+    "confidence": 0.75,
+    "citations": [
+      "https://www.reuters.com/technology/artificial-intelligence/autonomous-agents-profitability-dominate-ai-agenda-2025-executives-forecast-2024-12-12/",
+      "https://www.reuters.com/business/energy/uaes-adnoc-deploy-autonomous-ai-energy-sector-first-time-2024-11-04/"
+    ]
+  },
+  {
+    "id": 6,
+    "headline": "2025-10-29 — Combined signals from defence reporting and ADNOC's announcement indicate at least 2 sectors (defence and energy) are set to deploy autonomous agents (2 sectors).",
+    "confidence": 0.7,
+    "citations": [
+      "https://www.reuters.com/technology/artificial-intelligence/autonomous-agents-profitability-dominate-ai-agenda-2025-executives-forecast-2024-12-12/",
+      "https://www.reuters.com/business/aerospace-defense/australian-ai-startup-granted-aukus-exemption-autonomous-vessel-software-2025-07-16/"
+    ]
+  }
+]
