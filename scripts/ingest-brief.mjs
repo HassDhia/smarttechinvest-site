@@ -194,7 +194,35 @@ async function ingest() {
       const page = await browser.newPage();
       
       const reportHtmlPath = path.join(dst, 'report.html');
-      await page.goto(`file://${path.resolve(reportHtmlPath)}`, { waitUntil: 'load' });
+      await page.goto(`file://${path.resolve(reportHtmlPath)}`, { waitUntil: 'networkidle' });
+      
+      // Explicitly wait for all images to load
+      await page.waitForLoadState('networkidle');
+      
+      // Additional safety: wait for all img elements to have loaded
+      try {
+        await page.evaluate(() => {
+          return Promise.all(
+            Array.from(document.images).map(img => {
+              if (img.complete) return Promise.resolve();
+              return new Promise((resolve, reject) => {
+                img.onload = resolve;
+                img.onerror = () => resolve(); // Continue even if image fails to load
+                // Timeout after 5 seconds per image
+                setTimeout(() => resolve(), 5000);
+              });
+            })
+          );
+        });
+      } catch (imgError) {
+        // Continue even if image loading check fails
+        if (watchMode) {
+          console.warn(`⚠️  Some images may not have loaded: ${imgError.message}`);
+        }
+      }
+      
+      // Small delay to ensure all rendering is complete
+      await page.waitForTimeout(500);
       
       await page.pdf({ 
         path: pdfPath, 
