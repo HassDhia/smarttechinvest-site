@@ -1,0 +1,106 @@
+{
+  "generation_timestamp": "2025-10-30T22:40:26.961591",
+  "query": "Autonomous Research & Simulation AI",
+  "days_back": 7,
+  "report_stats": {
+    "character_count": 30257,
+    "word_count": 3758,
+    "jsonld_size": 4891
+  },
+  "confidence_score": 0.7999999999999999,
+  "sources_count": 12,
+  "system_info": {
+    "agent_type": "Enhanced STI Agent",
+    "version": "1.0.0",
+    "model": "gpt-5-mini-2025-08-07",
+    "date_filtering": "Strict 7-day window enforced"
+  },
+  "agent_stats": {
+    "date_filter_stats": {
+      "total_processed": 12,
+      "within_window": 12,
+      "outside_window": 0,
+      "parse_failed": 0,
+      "success_rate": 1.0,
+      "parse_success_rate": 1.0
+    },
+    "sources_data": [
+      {
+        "id": 1,
+        "title": "Australian AI startup granted AUKUS exemption for autonomous vessel software | Reuters",
+        "url": "https://www.reuters.com/business/aerospace-defense/australian-ai-startup-granted-aukus-exemption-autonomous-vessel-software-2025-07-16/",
+        "publisher": "Reuters",
+        "date": "2025-10-30",
+        "credibility": 0.8
+      },
+      {
+        "id": 2,
+        "title": "UAE'S ADNOC to deploy autonomous AI in the energy sector for the first time | Reuters",
+        "url": "https://www.reuters.com/business/energy/uaes-adnoc-deploy-autonomous-ai-energy-sector-first-time-2024-11-04/",
+        "publisher": "Reuters",
+        "date": "2025-10-30",
+        "credibility": 0.8
+      },
+      {
+        "id": 3,
+        "title": "Autonomous agents and profitability to dominate AI agenda in 2025, executives forecast | Reuters",
+        "url": "https://www.reuters.com/technology/artificial-intelligence/autonomous-agents-profitability-dominate-ai-agenda-2025-executives-forecast-2024-12-12/",
+        "publisher": "Reuters",
+        "date": "2025-10-30",
+        "credibility": 0.8
+      },
+      {
+        "id": 4,
+        "title": "Microsoft to let clients build AI agents for routine tasks from November | Reuters",
+        "url": "https://www.reuters.com/technology/artificial-intelligence/microsoft-allow-autonomous-ai-agent-development-starting-next-month-2024-10-21/",
+        "publisher": "Reuters",
+        "date": "2025-10-30",
+        "credibility": 0.8
+      },
+      {
+        "id": 5,
+        "title": "OpenAI, Anthropic sign deals with US govt for AI research and testing | Reuters",
+        "url": "https://reuters.com/technology/artificial-intelligence/openai-anthropic-sign-deals-with-us-govt-ai-research-testing-2024-08-29",
+        "publisher": "Reuters",
+        "date": "2025-10-30",
+        "credibility": 0.8
+      },
+      {
+        "id": 6,
+        "title": "U.S. spending plan include $100 million for autonomous cars research, testing | Reuters",
+        "url": "https://reuters.com/article/us-autos-selfdriving-congress/u-s-spending-plan-include-100-million-for-autonomous-cars-research-testing-idUSKBN1GY074",
+        "publisher": "Reuters",
+        "date": "2025-10-30",
+        "credibility": 0.8
+      },
+      {
+        "id": 7,
+        "title": "Nebius Robotics & Physical AI Awards",
+        "url": "https://nebius.com/robotics-physical-ai-awards",
+        "publisher": "Nebius",
+        "date": "2025-10-30",
+        "credibility": 0.4
+      },
+      {
+        "id": 8,
+        "title": "Nebius launches Nebius Robotics and Physical AI Awards",
+        "url": "https://nebius.com/newsroom/nebius-launches-nebius-robotics-and-physical-ai-awards",
+        "publisher": "Nebius",
+        "date": "2025-10-30",
+        "credibility": 0.4
+      }
+    ],
+    "validated_sources_count": 12,
+    "intent": "market"
+  },
+  "social_media_content": {
+    "generated": true,
+    "formats": [
+      "long_form",
+      "twitter_thread",
+      "linkedin_post"
+    ],
+    "metadata": {},
+    "generation_timestamp": ""
+  }
+}

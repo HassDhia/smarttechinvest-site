@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-28: An Australian AI startup was granted 1 AUKUS exemption licence allowing it to share defence-related information with U.S. and U.K. contractors.",
+    "confidence": 0.8,
+    "citations": [
+      "https://www.reuters.com/business/aerospace-defense/australian-ai-startup-granted-aukus-exemption-autonomous-vessel-software-2025-07-16/"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-27: ADNOC announced it will apply highly autonomous agentic AI in the energy industry in partnership with 3 companies (G42, Microsoft and AIQ).",
+    "confidence": 0.85,
+    "citations": [
+      "https://www.reuters.com/business/energy/uaes-adnoc-deploy-autonomous-ai-energy-sector-first-time-2024-11-04/",
+      "https://www.reuters.com/technology/artificial-intelligence/microsoft-allow-autonomous-ai-agent-development-starting-next-month-2024-10-21/"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-30: Microsoft will allow its customers to build autonomous AI agents starting next month (availability beginning 2025-11-01), enabling enterprises to deploy agent workflows.",
+    "confidence": 0.8,
+    "citations": [
+      "https://www.reuters.com/technology/artificial-intelligence/microsoft-allow-autonomous-ai-agent-development-starting-next-month-2024-10-21/",
+      "https://www.reuters.com/technology/artificial-intelligence/autonomous-agents-profitability-dominate-ai-agenda-2025-executives-forecast-2024-12-12/"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-29: A U.S. spending bill unveiled includes $100,000,000 allocated to a highly automated vehicle research and development program; separately, the U.S. Artificial Intelligence Safety Institute reported that OpenAI and Anthropic signed 2 government research/testing deals.",
+    "confidence": 0.9,
+    "citations": [
+      "https://reuters.com/article/us-autos-selfdriving-congress/u-s-spending-plan-include-100-million-for-autonomous-cars-research-testing-idUSKBN1GY074",
+      "https://reuters.com/technology/artificial-intelligence/openai-anthropic-sign-deals-with-us-govt-ai-research-testing-2024-08-29"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-27: ADNOC's announced agentic-AI partnership with G42, Microsoft and AIQ targets deployment across 3 technology pillars — Foundation Models, Robot Brains and Runtime infrastructure — to operationalize autonomous systems.",
+    "confidence": 0.7,
+    "citations": [
+      "https://www.reuters.com/business/energy/uaes-adnoc-deploy-autonomous-ai-energy-sector-first-time-2024-11-04/"
+    ]
+  }
+]
