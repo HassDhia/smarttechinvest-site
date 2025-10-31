@@ -28,14 +28,27 @@ async function ingest() {
 
   const dst = path.join(process.cwd(), 'public', 'intelligence', 'briefs', dateDir);
 
-  // Check if already exists and not forcing
+  // Check if already exists and has all required files
   if (fs.existsSync(dst) && !forceMode) {
-    if (watchMode) {
-      console.log(`⏭️  Skipping ${base} - already exists (${dateDir})`);
-      process.exit(0);
+    const requiredFiles = ['report.html', 'metadata.json', 'executive_summary.txt', 'index.html'];
+    const hasAllRequired = requiredFiles.every(file => 
+      fs.existsSync(path.join(dst, file))
+    );
+    
+    if (hasAllRequired) {
+      if (watchMode) {
+        console.log(`⏭️  Skipping ${base} - already exists and complete (${dateDir})`);
+        process.exit(0);
+      } else {
+        console.error(`Brief already exists: ${dateDir}. Use --force to re-ingest.`);
+        process.exit(1);
+      }
     } else {
-      console.error(`Brief already exists: ${dateDir}. Use --force to re-ingest.`);
-      process.exit(1);
+      // Directory exists but is incomplete - log and continue with ingestion
+      if (watchMode) {
+        console.log(`⚠️  Directory exists but is incomplete. Re-ingesting ${base}...`);
+      }
+      // Continue with ingestion (will overwrite/recreate files)
     }
   }
 

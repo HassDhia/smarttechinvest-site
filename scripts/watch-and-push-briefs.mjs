@@ -183,7 +183,7 @@ const processNewBrief = (folderName) => {
     logWithTimestamp(`✅ Successfully ingested ${folderName}.`);
 
     // Add the brief files FIRST (before checking git status)
-    const briefPath = `public/intelligence/briefs/${briefDate}*`; // Use wildcard to catch timestamped dirs
+    const briefPath = `public/intelligence/briefs/${briefDate}`; // Use directory path directly (git add recurses)
     if (!runGitCommand(`git add "${briefPath}"`, `Adding ${briefDate} brief files`)) {
       state.ingested[folderName].pushStatus = 'failed';
       state.ingested[folderName].pushError = 'Git add failed';
@@ -535,7 +535,7 @@ const retryFailedOperations = async () => {
         const briefDate = getBriefDateFromFolderName(folderName);
         if (briefDate) {
           // Retry from the git add step
-          const briefPath = `public/intelligence/briefs/${briefDate}*`;
+          const briefPath = `public/intelligence/briefs/${briefDate}`;
           if (!runGitCommand(`git add "${briefPath}"`, `Retrying: Adding ${briefDate} brief files`)) {
             continue;
           }
