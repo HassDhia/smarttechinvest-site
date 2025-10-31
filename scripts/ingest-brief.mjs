@@ -81,6 +81,16 @@ async function ingest() {
   if (socialThreadPath) fs.copyFileSync(socialThreadPath, path.join(dst, 'social_media_thread.txt'));
   if (socialLinkedinPath) fs.copyFileSync(socialLinkedinPath, path.join(dst, 'social_media_linkedin.txt'));
 
+  // Check for and copy images folder if it exists
+  const imagesSrc = path.join(src, 'images');
+  const imagesDst = path.join(dst, 'images');
+  if (fs.existsSync(imagesSrc) && fs.statSync(imagesSrc).isDirectory()) {
+    fs.cpSync(imagesSrc, imagesDst, { recursive: true });
+    if (watchMode) {
+      console.log(`📁 Copied images folder to ${dateDir}/images/`);
+    }
+  }
+
   // 3) Create index.html wrapper that redirects to report.html + declares canonical
   const indexWrapper = `<!doctype html>
 <html><head>
