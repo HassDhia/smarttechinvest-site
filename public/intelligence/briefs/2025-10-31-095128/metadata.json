@@ -1,0 +1,92 @@
+{
+  "generation_timestamp": "2025-10-31T09:51:28.909068",
+  "query": "Drone Swarm Solutions",
+  "days_back": 7,
+  "report_stats": {
+    "character_count": 27967,
+    "word_count": 3491,
+    "jsonld_size": 5507
+  },
+  "confidence_score": 0.7999999999999999,
+  "sources_count": 6,
+  "system_info": {
+    "agent_type": "Enhanced STI Agent",
+    "version": "1.0.0",
+    "model": "gpt-5-mini-2025-08-07",
+    "date_filtering": "Strict 7-day window enforced"
+  },
+  "agent_stats": {
+    "date_filter_stats": {
+      "total_processed": 6,
+      "within_window": 6,
+      "outside_window": 0,
+      "parse_failed": 0,
+      "success_rate": 1.0,
+      "parse_success_rate": 1.0
+    },
+    "sources_data": [
+      {
+        "id": 1,
+        "title": "How China could use DeepSeek and AI for an era of war",
+        "url": "https://www.reuters.com/world/asia-pacific/robot-dogs-ai-drone-swarms-how-china-could-use-deepseek-an-era-war-2025-10-27/",
+        "publisher": "Reuters",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 2,
+        "title": "Tech News | Today's Latest Technology News | Reuters",
+        "url": "https://www.reuters.com/technology/",
+        "publisher": "Reuters",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 3,
+        "title": "Sweden to test new drone swarm technology, defence minister says",
+        "url": "https://www.reuters.com/world/europe/sweden-test-new-drone-swarm-technology-defence-minister-says-2025-01-13/",
+        "publisher": "Reuters",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 4,
+        "title": "Drone Swarm Software Maker Auterion Raises $130 Million",
+        "url": "https://www.bloomberg.com/news/videos/2025-09-23/drone-swarm-software-maker-auterion-raises-130-million-video",
+        "publisher": "Bloomberg",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 5,
+        "title": "China Drone Attack on Crop-Eating ‘Monster’ Shows 98% Kill Rate",
+        "url": "https://www.bloomberg.com/news/articles/2019-09-02/china-drone-attack-on-crop-eating-monster-shows-98-kill-rate",
+        "publisher": "Bloomberg",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 6,
+        "title": "Drone swarms vs conventional arms: China’s military debate",
+        "url": "https://www.ft.com/content/302fc14a-66ef-11e7-8526-7b38dcaef614",
+        "publisher": "Financial Times",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      }
+    ],
+    "validated_sources_count": 6,
+    "intent": "market",
+    "horizon": "Near-term",
+    "hybrid_thesis_anchored": false
+  },
+  "social_media_content": {
+    "generated": true,
+    "formats": [
+      "long_form",
+      "twitter_thread",
+      "linkedin_post"
+    ],
+    "metadata": {},
+    "generation_timestamp": ""
+  }
+}

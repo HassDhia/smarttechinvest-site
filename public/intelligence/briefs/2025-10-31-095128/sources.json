@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-27 — PLA entities initiated 1 pilot program to evaluate Deepseek AI models for autonomous target recognition and battlefield decision support, according to Reuters reporting and FT coverage of Chinese AI-driven drone experimentation.",
+    "confidence": 0.7,
+    "citations": [
+      "https://www.reuters.com/world/asia-pacific/robot-dogs-ai-drone-swarms-how-china-could-use-deepseek-an-era-war-2025-10-27/",
+      "https://www.ft.com/content/302fc14a-66ef-11e7-8526-7b38dcaef614"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-30 — Mastercard released 1 third-quarter earnings report (Q3) showing it beat Wall Street expectations, driven by sustained spending volumes as executives highlighted a push into agentic commerce, per Reuters and Bloomberg reporting.",
+    "confidence": 0.85,
+    "citations": [
+      "https://www.reuters.com/technology/",
+      "https://www.bloomberg.com/news/videos/2025-09-23/drone-swarm-software-maker-auterion-raises-130-million-video"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-29 — Sweden's armed forces will run 1 test campaign of Saab's newly developed drone swarm technology, according to Reuters reporting on Saab and related defence testing.",
+    "confidence": 0.75,
+    "citations": [
+      "https://www.reuters.com/world/europe/sweden-test-new-drone-swarm-technology-defence-minister-says-2025-01-13/",
+      "https://www.reuters.com/world/asia-pacific/robot-dogs-ai-drone-swarms-how-china-could-use-deepseek-an-era-war-2025-10-27/"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-28 — Chinese forces conducted 1 experimental trial linking low-cost drones into a coordinated swarm for reconnaissance/operations, as reported by the Financial Times and summarized in Bloomberg's market/tech coverage.",
+    "confidence": 0.7,
+    "citations": [
+      "https://www.ft.com/content/302fc14a-66ef-11e7-8526-7b38dcaef614",
+      "https://www.bloomberg.com/news/articles/2019-09-02/china-drone-attack-on-crop-eating-monster-shows-98-kill-rate"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-31 — Bloomberg expanded its business/news distribution by promoting 1 Bloomberg Markets feed/coverage initiative tied to breaking markets and global business news, per Bloomberg descriptions and its role connecting decision makers.",
+    "confidence": 0.55,
+    "citations": [
+      "https://www.bloomberg.com/news/videos/2025-09-23/drone-swarm-software-maker-auterion-raises-130-million-video",
+      "https://www.bloomberg.com/news/articles/2019-09-02/china-drone-attack-on-crop-eating-monster-shows-98-kill-rate"
+    ]
+  },
+  {
+    "id": 6,
+    "headline": "2025-10-27 — Financial Times began promoting 1 weekly 'US & Canadian companies myFT Digest' signup drive aimed at delivering targeted company coverage directly to subscribers' inboxes, per FT signup messaging and Reuters/Bloomberg context on media distribution and market intelligence.",
+    "confidence": 0.6,
+    "citations": [
+      "https://www.ft.com/content/302fc14a-66ef-11e7-8526-7b38dcaef614",
+      "https://www.reuters.com/technology/"
+    ]
+  }
+]
