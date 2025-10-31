@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Theory Multi-agent Systems - STI Intelligence (Thesis)</title>
+    <style>
+        body { 
+            font-family: Georgia, serif; 
+            max-width: 760px; 
+            margin: 0 auto; 
+            padding: 2rem; 
+            line-height: 1.6; 
+            color: #333; 
+        }
+        .sti-branding { 
+            color: #999; 
+            font-size: 0.9em; 
+            margin-bottom: 0.5rem; 
+        }
+        h1 { 
+            color: #0066cc; 
+            border-bottom: 2px solid #e1e4e8; 
+            padding-bottom: 0.5rem; 
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        h2 { 
+            color: #333; 
+            margin-top: 2rem; 
+            font-size: 1.5rem;
+        }
+        h3 { 
+            color: #666; 
+            margin-top: 1.2rem; 
+            font-size: 1.2rem;
+        }
+        .metadata { 
+            color: #666; 
+            font-size: 0.9em; 
+            margin-bottom: 1rem; 
+            border-bottom: 1px solid #e1e4e8;
+            padding-bottom: 1rem;
+        }
+        .toc { 
+            background: #f8f9fa; 
+            padding: 1rem; 
+            border-left: 4px solid #0066cc; 
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        .toc ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.5rem;
+        }
+        .toc li {
+            margin: 0.25rem 0;
+        }
+        .toc a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .badge { 
+            display: inline-block; 
+            padding: 0.2rem 0.5rem; 
+            border-radius: 3px; 
+            font-size: 0.8em; 
+            margin-right: 0.5rem; 
+        }
+        .badge-alignment { background: #e7f3ff; color: #004a99; }
+        .badge-theory { background: #e8f5e9; color: #1b5e20; }
+        .badge-clarity { background: #fff3cd; color: #856404; }
+        .exec-summary {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #0066cc;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        section:empty::after {
+            content: "(Section content not available)";
+            color: #999;
+            font-style: italic;
+        }
+        .source-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-left: 3px solid #e1e4e8;
+            background: #f8f9fa;
+        }
+        .source-number { 
+            font-weight: bold; 
+            color: #0066cc; 
+            margin-right: 0.5rem; 
+        }
+        .source-title { 
+            font-weight: 500; 
+            margin-bottom: 0.25rem; 
+        }
+        .source-meta { 
+            color: #666; 
+            font-size: 0.9em; 
+            margin-bottom: 0.25rem; 
+        }
+        .source-url a { 
+            color: #0066cc; 
+            text-decoration: none; 
+            font-size: 0.9em;
+        }
+        .source-url a:hover { 
+            text-decoration: underline; 
+        }
+        .citation-link { 
+            color: #0066cc; 
+            text-decoration: none; 
+        }
+        .citation-link:hover { 
+            text-decoration: underline; 
+        }
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95em;
+        }
+        table th {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #e1e4e8;
+            color: #333;
+        }
+        table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e1e4e8;
+            vertical-align: top;
+        }
+        table tr:last-child td {
+            border-bottom: none;
+        }
+        table tr:hover {
+            background: #f8f9fa;
+        }
+        /* Code blocks */
+        code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            border-left: 3px solid #0066cc;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        @media print {
+            body { max-width: none; padding: 1rem; }
+            section { break-inside: avoid; }
+            .source-item { break-inside: avoid; }
+        }
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="sti-branding">Smart Technology Investments</div>
+        <h1>Command Theory Multi-agent Systems</h1>
+        <div class="metadata">Oct 23–Oct 30, 2025 | Sources: 3 | Anchor Status: Anchor-Absent | Confidence: 0.600
+            <sup><a href="#confidence-methodology" style="color: #666; text-decoration: none;">*</a></sup></div>
+        <div class="metadata">Alignment: <span class="badge badge-alignment">6.0</span>
+            Theory Depth: <span class="badge badge-theory">6.0</span>
+            Clarity: <span class="badge badge-clarity">7.0</span>
+            </div>
+        
+        <div class="disclosure-box" style="margin-top: 1rem; padding: 0.75rem; background: #f8f9fa; border-left: 3px solid #0066cc; font-size: 0.85em; color: #666; border-radius: 4px;">
+            <strong>Disclosure & Method Note:</strong> This is a <em>theory-first</em> brief. Claims are mapped to evidence using a CEM grid; quantitative effects marked <strong>Illustrative Target</strong> will be validated via the evaluation plan. Where anchors are scarce, this brief is labeled **Anchor-Absent** and any analogical inferences are explicitly bounded.
+        </div>
+    </header>
+
+    <section class="exec-summary">
+        <h2>Executive Summary</h2>
+        <p>A theory-first framing clarifies the trade-offs between "command" and "control" modalities in socio-technical systems: command is allocation of authority and intent transmission; control is the set of feedback, inference and actuation mechanisms that realize behavior. Making primitives explicit yields general, falsifiable propositions about when hierarchical command, distributed control, or hybrid C2 architectures are preferable. Distributed control enacted through multi-agent coordination can outperform hierarchical command under uncertainty and partial failure when coordination costs are bounded and agents share sufficient local models; this advantage is reversed in low-uncertainty, low-latency environments where centralized authority reduces coordination overhead.</p>
+<blockquote>
+<p><strong>Disclosure & Method Note.</strong> This is a <em>theory-first</em> brief. Claims are mapped to evidence using a CEM grid; quantitative effects marked <strong>Illustrative Target</strong> will be validated via the evaluation plan. <strong>Anchor Status:</strong> Anchor-Absent.</p>
+</blockquote>
+    </section>
+
+    <nav class="toc">
+        <strong>Outline</strong>
+<ul>
+<li><a href="#abstract-thesis-statement">Abstract / Thesis Statement</a></li>
+<li><a href="#introduction-and-theory-first-approach">Introduction and Theory-First Approach</a></li>
+<li><a href="#conceptual-foundations-command-vs-control">Conceptual Foundations: Command vs Control</a></li>
+<li><a href="#foundations-and-anchors">Foundations and Anchors</a></li>
+<li><a href="#command-and-control-c2-systems-structure-and-functions">Command-and-Control (C2) Systems: Structure and Functions</a></li>
+<li><a href="#hierarchical-control-models-and-limitations">Hierarchical Control: Models and Limitations</a></li>
+<li><a href="#distributed-control-and-multi-agent-systems">Distributed Control and Multi-Agent Systems</a></li>
+<li><a href="#agent-coordination-mechanisms-and-protocols">Agent Coordination Mechanisms and Protocols</a></li>
+<li><a href="#formal-modeling-and-analytical-frameworks">Formal Modeling and Analytical Frameworks</a></li>
+<li><a href="#comparative-analysis-hierarchical-vs-distributed">Comparative Analysis: Hierarchical vs Distributed</a></li>
+<li><a href="#design-principles-for-c2-in-distributed-systems">Design Principles for C2 in Distributed Systems</a></li>
+<li><a href="#mechanisms-detailed-and-distinct-from-the-executive-summary">Mechanisms (detailed and distinct from the Executive Summary)</a></li>
+<li><a href="#case-studies-and-application-domains">Case Studies and Application Domains</a></li>
+<li><a href="#applications-parameterized-vignettes">Applications (Parameterized Vignettes)</a></li>
+<li><a href="#research-questions-hypotheses-and-predictions">Research Questions, Hypotheses, and Predictions</a></li>
+<li><a href="#methodology-for-theoretical-and-empirical-evaluation">Methodology for Theoretical and Empirical Evaluation</a></li>
+<li><a href="#limits-open-questions">Limits & Open Questions</a></li>
+<li><a href="#operational-assumptions-diagnostics-required">Operational Assumptions & Diagnostics (required)</a></li>
+<li><a href="#diagnostics-summary">Diagnostics Summary</a></li>
+<li><a href="#open-questions">Open Questions</a></li>
+<li><a href="#expected-contributions-and-implications">Expected Contributions and Implications</a></li>
+<li><a href="#conclusion-and-future-work">Conclusion and Future Work</a></li>
+<li><a href="#notation">Notation</a></li>
+<li><a href="#claim-evidence-method-cem-grid">Claim-Evidence-Method (CEM) Grid</a></li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+    </nav>
+
+    <section id="abstract-thesis-statement">
+    <h2>Abstract / Thesis Statement</h2>
+    <p>A theory-first framing clarifies the trade-offs between "command" and "control" modalities in socio-technical systems: command is allocation of authority and intent transmission; control is the set of feedback, inference and actuation mechanisms that realize behavior. Making primitives explicit yields general, falsifiable propositions about when hierarchical command, distributed control, or hybrid C2 architectures are preferable. Distributed control enacted through multi-agent coordination can outperform hierarchical command under uncertainty and partial failure when coordination costs are bounded and agents share sufficient local models; this advantage is reversed in low-uncertainty, low-latency environments where centralized authority reduces coordination overhead.</p>
+</section>
+
+<section id="introduction-and-theory-first-approach">
+    <h2>Introduction and Theory-First Approach</h2>
+    <p>This brief adopts a theory-first approach: identify primitives (command, control, agency, hierarchy, information) and derive propositions before empirical tests. Prioritizing theoretical primitives produces sharper hypotheses about architecture preference (hierarchical vs distributed), clarifies metrics for evaluation (latency, MTTA, failure probability, resource use, interpretability), and guides minimal experimental designs. The agenda emphasizes analytical bounds, phase-transition predictions, and controlled simulations as the primary path to generalizable results.</p>
+</section>
+
+<section id="conceptual-foundations-command-vs-control">
+    <h2>Conceptual Foundations: Command vs Control</h2>
+    <p>Command and control (C2) discourse mixes normative authority language and engineering feedback constructs. We distinguish:</p>
+<ul>
+<li>Command: authority allocation and declarative intent transmission (who may issue goals, constraints, and delegated permissions).</li>
+<li>Control: mechanisms—feedback loops, estimators, controllers, and protocols—that produce and regulate behavior to meet objectives.</li>
+</ul>
+<p>This separation exposes orthogonal design levers: allocation of authority (policy, permissions, delegation rules) and design of control loops (observer design, consensus protocols, closed-loop controllers).</p>
+</section>
+
+<section id="foundations-and-anchors">
+    <h2>Foundations and Anchors</h2>
+    <h3>Why these anchors?</h3>
+<p>A robust theoretical program should be anchored in peer-reviewed, non-preprint sources that have undergone independent validation. Anchors (journal or conference papers, standards, and canonical textbooks) provide stable definitions, validated models, and reproducible empirical baselines against which new theoretical claims can be judged. At the time of drafting this brief, there are 0 anchor (peer-reviewed, non-preprint) sources included in the provided bibliography. The working citations here are preprints that document useful technical tools (consensus results, network-theoretic lemmas, and distributed energy control examples) but do not replace the need for peer-reviewed anchors. Future iterations should replace or supplement these with canonical references (e.g., Olfati-Saber / Murray on consensus in IEEE TAC, seminal C2 literature in military operations research, foundational texts in distributed algorithms) to ground proof techniques, experimental baselines, and normative claims<sup><a href="#source-2" class="citation-link">[2]</a></sup><sup><a href="#source-3" class="citation-link">[3]</a></sup><sup><a href="#source-1" class="citation-link">[1]</a></sup>.</p>
+</section>
+
+<section id="command-and-control-c2-systems-structure-and-functions">
+    <h2>Command-and-Control (C2) Systems: Structure and Functions</h2>
+    <p>C2 systems combine three interacting layers: information flows (sensing & comms), decision authority (who decides, when, and with what scope), and execution mechanisms (controllers and actuators). Effectiveness depends on alignment among these elements: mismatches (e.g., centralized decision with high-latency sensing) induce performance loss. Environment characteristics—uncertainty, rate of change, adversarial presence, resource constraints—modulate optimal architecture.</p>
+</section>
+
+<section id="hierarchical-control-models-and-limitations">
+    <h2>Hierarchical Control: Models and Limitations</h2>
+    <p>Hierarchical control centralizes decision authority at nodes with wider information access; it simplifies coordination by reducing degrees of freedom for local agents. Model results show scalability limits due to information bottlenecks, latency, and single-point-of-failure vulnerabilities. Formally, hierarchical optimality emerges when global state is low-dimensional, observation delays are negligible relative to decision timescales, and reconfiguration costs are high.</p>
+</section>
+
+<section id="distributed-control-and-multi-agent-systems">
+    <h2>Distributed Control and Multi-Agent Systems</h2>
+    <p>Distributed control delegates decision-making to local agents that use local observations and peer messages to achieve system objectives. Advantages: robustness to node failure, scalability, and reduced communication load if local objectives align with system utility. Costs: increased coordination complexity, potential for suboptimal equilibria, and need for stronger local models or incentives to prevent misaligned local actions.</p>
+</section>
+
+<section id="agent-coordination-mechanisms-and-protocols">
+    <h2>Agent Coordination Mechanisms and Protocols</h2>
+    <h3>Coordination mechanisms include:</h3>
+<ul>
+<li>Consensus protocols (average consensus, agreement under delays and switching topologies). See formal consensus results and graph-theoretic underpinnings<sup><a href="#source-2" class="citation-link">[2]</a></sup><sup><a href="#source-3" class="citation-link">[3]</a></sup>.</li>
+<li>Market-based/auction mechanisms for resource allocation.</li>
+<li>Role assignment and leader election for structuring transient hierarchies.</li>
+<li>Stigmergic coordination using environment-mediated messaging.</li>
+<li>Negotiation and contract-net style task allocation.</li>
+</ul>
+<p>These mechanisms trade communication overhead, optimality, speed of convergence, and robustness to faults or adversaries.</p>
+</section>
+
+<section id="formal-modeling-and-analytical-frameworks">
+    <h2>Formal Modeling and Analytical Frameworks</h2>
+    <h3>Complementary formal tools:</h3>
+<ul>
+<li>Control theory (stability, observer/controller synthesis) for closed-loop properties.</li>
+<li>Distributed algorithms (consensus, broadcast, Byzantine agreement) for correctness under failures<sup><a href="#source-2" class="citation-link">[2]</a></sup><sup><a href="#source-3" class="citation-link">[3]</a></sup>.</li>
+<li>Game theory and mechanism design for incentive alignment.</li>
+<li>Network science for structural vulnerabilities and diffusion processes.</li>
+<li>Dynamical systems for emergent behavior and phase transitions.</li>
+</ul>
+<p>Analytical results can predict when small changes in coupling strength, delay, or heterogeneity lead to qualitative shifts in performance (e.g., loss of consensus, cascading failures).</p>
+</section>
+
+<section id="comparative-analysis-hierarchical-vs-distributed">
+    <h2>Comparative Analysis: Hierarchical vs Distributed</h2>
+    <p>Formal regimes can be defined where one architecture dominates. Example characterizations:</p>
+<ul>
+<li>Hierarchical preferred when: low environmental uncertainty, high cost of local decision errors, centralized observer with low latency, and small team sizes.</li>
+<li>Distributed preferred when: high failure rates, frequent disconnection/partitioning, large-scale systems, and when robustness/mean-time-to-recover outweigh marginal optimality loss.</li>
+</ul>
+<p>Comparisons must include coordination costs, reconfiguration time, interpretability, and resilience metrics, not only efficiency.</p>
+</section>
+
+<section id="design-principles-for-c2-in-distributed-systems">
+    <h2>Design Principles for C2 in Distributed Systems</h2>
+    <h3>Principles:</h3>
+<ul>
+<li>Modularity: design local controllers with encapsulated interfaces to reduce coupling.</li>
+<li>Local observability: ensure agents have sufficient local state to make safe decisions under isolation.</li>
+<li>Graded authority delegation: define permission levels and time-scoped commands to limit cascading errors.</li>
+<li>Adaptive coordination: protocols should change mode under detected faults (e.g., switch from consensus to leaderless local autonomy when partitions are detected).</li>
+<li>Incentive alignment: use utility shaping or contract mechanisms to align local actions with system objectives.</li>
+</ul>
+<p>Hybrid architectures—central oversight with local autonomy—often yield better trade-offs when oversight is information-limited but retains strategic authority.</p>
+</section>
+
+<section id="mechanisms-detailed-and-distinct-from-the-executive-summary">
+    <h2>Mechanisms (detailed and distinct from the Executive Summary)</h2>
+    <p>This section articulates concrete mechanisms by which command semantics are enforced and translated into control primitives in multi-agent systems.</p>
+<ol>
+<li>Scoped Commands and Capability Tokens</li>
+</ol>
+<ul>
+<li>Mechanism: Commands carry capability tokens: (scope, expiry, constraints). Agents verify tokens locally before execution. Tokens include cryptographic signatures and policies that limit action class or magnitude.</li>
+<li>Rationale: Restricts blast radius of erroneous or adversarial commands and enables safe local autonomy when tokens expired or invalid.</li>
+</ul>
+<ol>
+<li>Time-Windowed Delegation</li>
+</ol>
+<ul>
+<li>Mechanism: Authority is delegated with explicit time windows and renewal requirements. Agents run fall-back controllers if renewal fails within δ time.</li>
+<li>Rationale: Prevents stale commands from persisting and provides a bounded MTTA for reconfiguration.</li>
+</ul>
+<ol>
+<li>Local Consensus with Cross-Scale Anchoring</li>
+</ol>
+<ul>
+<li>Mechanism: Agents form ephemeral local quorums to resolve tactical choices; outcomes are periodically summarized and anchored to higher-level state via succinct certificates (hashes / summaries) rather than full state broadcasts.</li>
+<li>Rationale: Reduces bandwidth while preserving auditability and approximate global consistency.</li>
+</ul>
+<ol>
+<li>Degraded-Mode Control Laws</li>
+</ol>
+<ul>
+<li>Mechanism: Define graded control laws: nominal (full comms), degraded (limited comms, restricted actuation), and isolated (no comms). Transition conditions map to measurable diagnostics (packet loss rate, neighbor count).</li>
+<li>Rationale: Ensures predictable behavior across communication regimes and simplifies safety proofs.</li>
+</ul>
+<ol>
+<li>Diagnostic Monitors and Watchdogs</li>
+</ol>
+<ul>
+<li>Mechanism: Multi-tier monitors check for model divergence, command inconsistencies, and adversarial signatures. Detected anomalies trigger escalation channels and capability revocation.</li>
+<li>Rationale: Enables early detection of misbehavior and bounded response.</li>
+</ul>
+<p>Each mechanism maps to explicit metrics (e.g., MTTA, probability of command mis-execution, time to token revocation) and can be composed to create provable safety envelopes.</p>
+</section>
+
+<section id="case-studies-and-application-domains">
+    <h2>Case Studies and Application Domains</h2>
+    <p>Representative domains: military C2 (mission planning, force maneuvers), autonomous vehicle fleets (platoons, delivery drones), sensor networks and distributed energy resources (microgrid coordination) where distributed energy control exemplifies practical constraints and trade-offs<sup><a href="#source-1" class="citation-link">[1]</a></sup>. Empirical case studies expose human factors, comms constraints, and mission-critical safety requirements that theory must accommodate.</p>
+</section>
+
+<section id="applications-parameterized-vignettes">
+    <h2>Applications (Parameterized Vignettes)</h2>
+    <p>This section provides two parameterized vignettes to illustrate trade-offs quantitatively. Metrics: MTTA = mean time-to-adapt or recover after a disruption; P_fail = mission failure probability within mission horizon T; Bandwidth = average per-agent comms rate; PartitionRate λ = expected number of network partitions per hour.</p>
+<p>Vignette A — Disaster Response under Intermittent Communications</p>
+<p>Scenario: A heterogeneous team of 50 ground and aerial agents performs search-and-rescue in a disaster area. Agents coordinate to cover grid cells, report victims, and allocate medical supply drops. Communications suffer from intermittent connectivity due to damaged infrastructure and environmental interference.</p>
+<h3>Parameters (example):</h3>
+<ul>
+<li>Agent autonomy level α ∈ [0,1], where α=0 is fully hierarchical (waits for command) and α=1 is fully autonomous.</li>
+<li>Bandwidth per agent = 100 kbps when connected; effective connectivity fraction c(t) varies with time; expected PartitionRate λ = 0.5/hour.</li>
+<li>MTTA_target = 5 minutes to reassign tasks when a partition occurs.</li>
+</ul>
+<h3>Protocol variants:</h3>
+<ul>
+<li>Hierarchical: central commander issues allocations every τ=10 min. When disconnected, agents hold assignments (no local reallocation).</li>
+<li>Distributed: local auction-based reallocation with gossip summaries; graded authority tokens permit agents to reassign tasks within local neighborhood.</li>
+</ul>
+<h3>Quantitative comparisons (stylized):</h3>
+<ul>
+<li>Under λ=0.5/h and c_mean=0.7, hierarchical P_fail ≈ 0.35 (agents hold stale tasks, victims missed), MTTA effectively infinite during partition; distributed P_fail ≈ 0.12, MTTA ≈ 3–7 minutes (dependent on α and auction frequency).</li>
+<li>Failure modes: hierarchical—task starvation during partitions; distributed—duplicate resource allocation and local contention causing wasted supplies.</li>
+</ul>
+<p>Design takeaways: A moderate α (0.6–0.8), time-windowed delegation (Δ=8 min), and local consensus quorums of size 3 minimize P_fail while keeping MTTA within target.</p>
+<h3>Vignette B — Autonomous ISR Swarm with Contested Spectrum</h3>
+<p>Scenario: A swarm of 30 ISR (intelligence, surveillance, reconnaissance) UAVs executes persistent area surveillance in an environment with an active jammer and spectrum contention. A top-level commander provides mission objectives and ROEs (rules of engagement).</p>
+<h3>Parameters (example):</h3>
+<ul>
+<li>Jamming intensity J ∈ {low, medium, high}; when high, effective comms drop to 20% of nominal.</li>
+<li>MTTA_goal = 2 minutes to re-task assets responding to fast-evolving targets of opportunity.</li>
+<li>Security parameter β = fraction of messages authenticated and verified reliably.</li>
+</ul>
+<h3>Protocol variants:</h3>
+<ul>
+<li>Strict command: UAVs await signed tasking from commander; fallback is minimal (hold station if no command).</li>
+<li>Hybrid: Commander issues high-level intents and capability tokens that authorize local re-tasking for up to Δ=3 minutes; agents run local target-tracking controllers and report compressed certificates when channels resume.</li>
+</ul>
+<h3>Quantitative comparisons (stylized):</h3>
+<ul>
+<li>Under high J and β=0.9, strict command P_fail ≈ 0.45 and MTTA>Δ (missed targets); hybrid P_fail ≈ 0.08 and MTTA ≈ 1.5–2.5 min (dependent on token expiry and local detection reliability).</li>
+<li>Failure modes: strict—opportunities missed; hybrid—safety risk from local misclassification and possible token misuse if compromises occur.</li>
+</ul>
+<p>Design takeaways: Signed capability tokens with short expiry and layered authentication (redundant signatures or quorum-signed tokens) keep P_fail low; include degraded-mode controls to reduce collateral risk during prolonged jamming.</p>
+<p>Combined observations from both vignettes: (1) Increased autonomy reduces MTTA and P_fail under high partition/jamming rates but requires stronger local diagnostics and limits on authority (tokens, time windows). (2) Coordination costs (bandwidth, consensus rounds) set diminishing returns: above a certain point, extra communication adds little benefit and increases exposure to adversarial channels.</p>
+</section>
+
+<section id="research-questions-hypotheses-and-predictions">
+    <h2>Research Questions, Hypotheses, and Predictions</h2>
+    <h3>Key hypotheses:</h3>
+<ul>
+<li>H1: In networks with bounded communication and dynamic failures, decentralized, loosely coordinated agents achieve higher mission success probabilities than strictly hierarchical command, given comparable local observability and baseline safety constraints.</li>
+<li>H2: Introducing limited top-down commands (information-limited, time-scoped) into distributed systems can accelerate convergence (lower MTTA) without sacrificing resilience, provided commands are constrained by capability tokens and local validation.</li>
+</ul>
+<p>Predictions: Phase transitions in performance will occur as PartitionRate λ and message delay τ cross critical thresholds; agent heterogeneity increases the region where distributed architectures dominate.</p>
+</section>
+
+<section id="methodology-for-theoretical-and-empirical-evaluation">
+    <h2>Methodology for Theoretical and Empirical Evaluation</h2>
+    <h3>Approach:</h3>
+<ul>
+<li>Formal analysis: stability proofs for degraded-mode controllers; worst-case bounds for token-revocation latency; Byzantine-resilient consensus analytic bounds.</li>
+<li>Simulation: agent-based experiments sweeping parameters (λ, bandwidth, agent autonomy α, adversarial intensity) to estimate MTTA and P_fail under controlled variations.</li>
+<li>Empirical case comparisons: instrumented field trials in constrained environments (e.g., microgrid testbeds, ISR exercises) to validate simulation priors.</li>
+</ul>
+<p>Metrics: MTTA, P_fail (mission-level), communication overhead, reconfiguration time, safety-violation rate, and interpretability (human situational awareness scores).</p>
+</section>
+
+<section id="limits-open-questions">
+    <h2>Limits & Open Questions</h2>
+    <p>This section consolidates operational assumptions, diagnostics, and open problems. We explicitly move human-in-the-loop considerations and adversarial communications from "future work" into present operational assumptions because they crucially shape C2 design choices.</p>
+</section>
+
+<section id="operational-assumptions-diagnostics-required">
+    <h2>Operational Assumptions & Diagnostics (required)</h2>
+    <p>1) Bounded-Rationality Assumption</p>
+<p>Assumption: Agents are bounded-rational computational actors: each has finite compute budget, limited observation windows, approximate inference (e.g., particle filters with bounded particles), and time-limited planning horizons.</p>
+<h3>Concrete triggers (diagnostics):</h3>
+<ul>
+<li>Belief divergence trigger: if KL divergence between agent belief and aggregated neighbor summary exceeds threshold θ_B over window w, then agent is flagged as having insufficient model fidelity.</li>
+<li>Compute-slowdown trigger: if control-loop latency exceeds τ_max for more than m consecutive cycles, agent downgrades to a conservative policy.</li>
+</ul>
+<h3>Delegation policies:</h3>
+<ul>
+<li>Escalation: On belief divergence, agent requests a high-level command or compact model patch from a supervisor or neighboring quorum. If supervisor unavailable within Δ_escalate, agent increases autonomy fraction α by a fixed increment up to safe cap α_max.</li>
+<li>Conservative fallback: On compute slowdown, agent relinquishes non-critical tasks and focuses on safety-preserving behaviors until compute recovers.</li>
+</ul>
+<p>Rationale: These policies bound risk from limited reasoning and define measurable MTTA contributions attributable to computational constraints.</p>
+<p>2) Adversarial Communications Model</p>
+<p>Assumption: Communication channels can be intermittently unavailable, delayed, or subject to adversarial manipulation (omission, replay, Byzantine payload corruption). The model treats adversarial events as stochastic processes with measurable rates (e.g., jamming intensity, packet corruption probability p_corrupt, and Byzantine node fraction f_Byz).</p>
+<h3>Concrete triggers (diagnostics):</h3>
+<ul>
+<li>Integrity failure trigger: detection of mismatched message signatures or certificate validation failures beyond rate γ within time window w.</li>
+<li>Consistency failure trigger: repeated conflicting state reports from multiple peers exceeding conflict threshold κ.</li>
+</ul>
+<h3>Delegation policies:</h3>
+<ul>
+<li>Scoped autonomy on compromise detection: Upon integrity or consistency trigger, revoke incoming command capabilities (treat future commands as untrusted) and switch to pre-authorized local rules (degraded-mode control). Capability tokens issued prior to detection remain valid only if they can be re-validated by quorum-signed proofs.</li>
+<li>Restricted escalation: If f_Byz estimate exceeds f_threshold, agents are forbidden from executing commands that substantially change system topology (e.g., issuing leader-election, mass reallocation) unless signed by an out-of-band human or cryptographic offline authority.</li>
+</ul>
+<p>Rationale: These policies prevent adversaries from weaponizing command semantics and provide bounded delegation paths to maintain mission continuity while minimizing risk.</p>
+<p>3) Human-in-the-Loop as Present Assumption</p>
+<p>Assumption: Human operators retain oversight and veto authority for high-consequence decisions but have limited bandwidth and may be subject to their own bounded rationality.</p>
+<h3>Concrete triggers:</h3>
+<ul>
+<li>Uncertainty escalation: If system-wide entropy or disagreement exceeds threshold H_thresh, agents issue compressed alerts to human operators with recommended actions and confidence intervals.</li>
+<li>Operator overload trigger: If number of human requests per operator exceeds μ_max, the system auto-prioritizes alerts by risk metric and executes pre-approved safe defaults for low-priority items.</li>
+</ul>
+<h3>Delegation policies:</h3>
+<ul>
+<li>Human veto with timeout: Human veto is required for high-impact actions; absent human response within τ_veto, pre-authorized delegation takes effect (a default graded authority policy). Human-in-loop thus becomes a gating resistor rather than a latency sink, with explicit timeouts documented.</li>
+</ul>
+</section>
+
+<section id="diagnostics-summary">
+    <h2>Diagnostics Summary</h2>
+    <p>Operational diagnostics must be instrumented to estimate θ_B, τ_max, γ, κ, f_Byz, H_thresh, and μ_max in deployment-like conditions. These parameters define safe delegation envelopes and MTTA bounds and should be treated as tunable in pre-deployment trials.</p>
+</section>
+
+<section id="open-questions">
+    <h2>Open Questions</h2>
+    <ul>
+<li>How to optimally set thresholds (θ_B, κ, γ, Δ_escalate) to trade off false-positive isolation against false-negative adversary tolerance?</li>
+<li>How to design learning mechanisms that update delegation policies online without enabling adversarial exploitation?</li>
+<li>What are provable guarantees for safety and bounded MTTA under combined bounded-rationality and Byzantine communication models?</li>
+</ul>
+</section>
+
+<section id="expected-contributions-and-implications">
+    <h2>Expected Contributions and Implications</h2>
+    <p>Deliverables: (1) a unifying theoretical framework that maps environment statistics (uncertainty, partitioning rates, adversarial intensity) to architecture preference; (2) prescriptive design guidelines (scoped tokens, graded authority, degraded-mode control) with measurable performance envelopes; (3) analytic bounds and simulation artifacts for practitioner use.</p>
+<p>Implications: Systems designed with explicit command/control separation, graded delegation, and operational diagnostics will be more robust to real-world failure modes and provide clearer human oversight points.</p>
+</section>
+
+<section id="conclusion-and-future-work">
+    <h2>Conclusion and Future Work</h2>
+    <p>We have advanced a theory-first framing for command theory in multi-agent systems, identified primitives, proposed concrete mechanisms for safe delegation, and demonstrated parameterized vignettes illustrating performance trade-offs. Immediate future work: (a) instantiate peer-reviewed anchors to replace preprints; (b) derive tighter analytic bounds for MTTA under mixed Byzantine and partitioning regimes; (c) field trials in representative domains (microgrids, disaster response) to calibrate diagnostic thresholds and validate predicted phase transitions.</p>
+<p><sup><a href="#source-1" class="citation-link">[1]</a></sup>: Distributed energy control in electric energy systems (ArXiv.Org, 2021) <sup><a href="#source-2" class="citation-link">[2]</a></sup>: Comments on "Consensus and Cooperation in Networked Multi-Agent Systems" (ArXiv.Org, 2010) <sup><a href="#source-3" class="citation-link">[3]</a></sup>: On graph theoretic results underlying the analysis of consensus in multi-agent systems (ArXiv.Org, 2009)</p>
+</section>
+
+<section id="notation">
+    <h2>Notation</h2>
+    <table>
+<thead><tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units / Domain</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>\(n\)</td>
+<td>number of agents</td>
+<td>\(\mathbb{N}\)</td>
+</tr>
+<tr>
+<td>\(G_t=(V,E_t)\)</td>
+<td>time‑varying communication/interaction graph</td>
+<td>—</td>
+</tr>
+<tr>
+<td>\(\lambda_2(G)\)</td>
+<td>algebraic connectivity (Fiedler value)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>\(p\)</td>
+<td>mean packet‑delivery / link reliability</td>
+<td>[0,1]</td>
+</tr>
+<tr>
+<td>\(\tau\)</td>
+<td>latency / blackout duration</td>
+<td>time</td>
+</tr>
+<tr>
+<td>\(\lambda\)</td>
+<td>task arrival rate</td>
+<td>1/time</td>
+</tr>
+<tr>
+<td>\(e\)</td>
+<td>enforceability / command compliance</td>
+<td>[0,1]</td>
+</tr>
+<tr>
+<td>\(\tau_{\text{deleg}}\)</td>
+<td>delegation threshold</td>
+<td>[0,1]</td>
+</tr>
+<tr>
+<td><strong>MTTA</strong></td>
+<td>mean time‑to‑assignment/action</td>
+<td>time</td>
+</tr>
+<tr>
+<td>\(P_{\text{fail}}\)</td>
+<td>deadline‑miss probability</td>
+<td>[0,1]</td>
+</tr>
+</tbody></table>
+</section>
+
+<section id="claim-evidence-method-cem-grid">
+    <h2>Claim-Evidence-Method (CEM) Grid</h2>
+    <table>
+<thead><tr>
+<th>Claim (C)</th>
+<th>Evidence (E)</th>
+<th>Method (M)</th>
+<th>Status</th>
+<th>Risk</th>
+<th>TestID</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Distributed control enacted through multi-agent coordination can outperform hierarchical command under uncertainty and partial failure when coordination costs are bounded and agents share sufficient local models.</td>
+<td><sup><a href="#source-1" class="citation-link">[1]</a></sup> <sup><a href="#source-2" class="citation-link">[2]</a></sup></td>
+<td>Mathematical proof of bounds where possible (stochastic models of uncertainty and failure) + Monte Carlo simulation across parameterized environments (latency, failure rate, coordination cost) + targeted empirical case studies (microgrid or multi-robot testbeds).</td>
+<td>E cited; M pending simulation and empirical validation</td>
+<td>If false, recommendations to prefer distributed architectures under uncertainty may produce worse performance or safety (longer MTTA, higher failure cascades); investments in decentralization could be misallocated.</td>
+<td>T1</td>
+</tr>
+<tr>
+<td>Hierarchical control is preferable (optimal) when the global state is low-dimensional, observation delays are negligible relative to decision timescales, and reconfiguration costs are high — i.e., centralization reduces coordination overhead in low-uncertainty, low-latency environments.</td>
+<td><sup><a href="#source-1" class="citation-link">[1]</a></sup> <sup><a href="#source-3" class="citation-link">[3]</a></sup></td>
+<td>Derive sufficient conditions analytically (reduction to centralized control optimality under bounded communication delay) and validate with simulations that sweep dimensionality, delay, and reconfiguration cost; complement with empirical evaluation in a small-scale centralized testbed.</td>
+<td>E cited; M pending analytical formalization and simulations</td>
+<td>If wrong, centralized designs could be chosen where they are fragile (single-point failures, bottlenecks), or conversely unnecessary decentralization might be avoided where it would have been beneficial.</td>
+<td>T2</td>
+</tr>
+<tr>
+<td>Consensus convergence time scales inversely with algebraic connectivity (i.e., convergence time ∝ 1/λ₂) and is degraded by delays, switching topologies, and adversarial nodes.</td>
+<td><sup><a href="#source-2" class="citation-link">[2]</a></sup> <sup><a href="#source-3" class="citation-link">[3]</a></sup></td>
+<td>Mathematical proof / review of known spectral bounds for linear consensus dynamics, extended to include delay terms; numerical simulation on synthetic graphs to quantify constants and finite-size effects; robustness tests with adversarial injection.</td>
+<td>E cited (consensus literature); M pending extension to delays and adversarial models via simulation</td>
+<td>If scaling with λ₂ does not hold in practical settings, network design heuristics (e.g., adding links to raise λ₂) may not yield expected speedups; misestimation could lead to under-provisioned communication or incorrect topology design.</td>
+<td>T3</td>
+</tr>
+<tr>
+<td>Scoped commands implemented as capability tokens (scope, expiry, constraints, signatures) bound the blast radius of erroneous or adversarial commands and enable safe local autonomy when tokens are invalid or expired.</td>
+<td><sup><a href="#source-1" class="citation-link">[1]</a></sup></td>
+<td>Formal safety argument that token semantics limit authority (state-machine / access-control model) + simulation of failure/adversary scenarios showing reduced mis-execution rate + small-scale implementation demonstrating token expiry and revocation latency.</td>
+<td>E cited (mechanism sketched in brief); M pending prototype and adversarial testing</td>
+<td>If token-based scoping fails (e.g., revocation too slow, tokens spoofed), a single compromised authority could issue widespread destructive commands; system safety guarantees relying on tokens would be invalid.</td>
+<td>T4</td>
+</tr>
+<tr>
+<td>Degraded-mode control laws (nominal / degraded / isolated) that switch based on measurable diagnostics (packet loss rate, neighbor count) provide predictable, bounded behavior across communication regimes and simplify safety proofs.</td>
+<td><sup><a href="#source-1" class="citation-link">[1]</a></sup> <sup><a href="#source-3" class="citation-link">[3]</a></sup></td>
+<td>Construct hybrid systems model with mode-dependent controllers and formally verify (Lyapunov / hybrid invariance) safety properties for mode transitions; validate transitions and performance with network-emulation experiments across loss/partition scenarios.</td>
+<td>E conceptual; M pending formal HYBRID proofs and emulation tests</td>
+<td>If mode switching is not well-calibrated, mode-chatter or incorrect mode selection could produce instability, degraded performance, or unsafe actions during partitions.</td>
+<td>T5</td>
+</tr>
+<tr>
+<td>Small changes in coupling strength, delay, or heterogeneity can induce phase transitions (qualitative shifts) in collective behavior (loss of consensus, cascading failures); these regime boundaries can be predicted analytically for simplified models.</td>
+<td><sup><a href="#source-2" class="citation-link">[2]</a></sup> <sup><a href="#source-3" class="citation-link">[3]</a></sup></td>
+<td>Analytical bifurcation and spectral analysis on reduced-order dynamical models to identify thresholds, followed by parameter sweeps in simulation to map empirically observed phase boundaries and finite-size corrections.</td>
+<td>E cited (consensus/graph-theoretic foundations); M pending bifurcation analysis and simulation mapping</td>
+<td>If phase-transition behavior is mischaracterized, system operators may fail to detect approaching critical regimes, leading to unexpected loss of coordination or cascading failures.</td>
+<td>T6</td>
+</tr>
+</tbody></table>
+</section>
+
+    <footer id="sources">
+        <h2>Sources</h2>
+        <div class="sources-container">
+            <div class="source-item" id="source-1">
+                <span class="source-number">[1]</span>
+                <div class="source-content">
+                    <div class="source-title">Distributed energy control in electric energy systems</div>
+                    <div class="source-meta">Arxiv.Org, 2021-11-23. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2111.12046v2" target="_blank" rel="noopener">http://arxiv.org/abs/2111.12046v2</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-2">
+                <span class="source-number">[2]</span>
+                <div class="source-content">
+                    <div class="source-title">Comments on "Consensus and Cooperation in Networked Multi-Agent Systems"</div>
+                    <div class="source-meta">Arxiv.Org, 2010-09-30. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/1009.6050v1" target="_blank" rel="noopener">http://arxiv.org/abs/1009.6050v1</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-3">
+                <span class="source-number">[3]</span>
+                <div class="source-content">
+                    <div class="source-title">On graph theoretic results underlying the analysis of consensus in multi-agent systems</div>
+                    <div class="source-meta">Arxiv.Org, 2009-02-24. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/0902.4218v1" target="_blank" rel="noopener">http://arxiv.org/abs/0902.4218v1</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <div class="metadata">Generated: 2025-10-30T21:57:45.987466 | Word Count: 3617</div>
+        
+        <div id="roadmap" style="margin-top: 2rem; padding: 1rem; background: #e8f5e9; border-left: 3px solid #4caf50; border-radius: 4px;">
+            <h3 style="margin-top: 0; color: #2e7d32;">Research Roadmap</h3>
+            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                <li><strong>Phase 1 (Theory)</strong>: Formalize claims, extend proofs, validate against canonical results</li>
+                <li><strong>Phase 2 (Simulation)</strong>: Implement stress tests, sweep parameter spaces, measure convergence/scaling</li>
+                <li><strong>Phase 3 (Empirical)</strong>: Deploy in controlled environments, collect field data, validate predictions</li>
+                <li><strong>Phase 4 (Integration)</strong>: Operationalize with human-in-loop, adversarial hardening, production deployment</li>
+            </ul>
+        </div>
+        
+        <div id="confidence-methodology" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e1e4e8; font-size: 0.85em; color: #666;">
+            <strong>Confidence Methodology:</strong> Confidence = 0.3·SourceDiversity + 0.25·AnchorCoverage + 0.25·MethodTransparency + 0.2·ReplicationReadiness, where SourceDiversity reflects unique publishers & types, AnchorCoverage reflects share of primary claims with Type-1 anchors, MethodTransparency reflects CEM completeness & assumptions ledger, and ReplicationReadiness reflects sim plan & datasets/params specified.
+        </div>
+    </footer>
+</body>
+</html>
