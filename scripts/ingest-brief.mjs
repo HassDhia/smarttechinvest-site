@@ -61,13 +61,22 @@ async function ingest() {
 
   if (!htmlPath || !metaPath || !summaryPath) {
     const error = 'Missing one or more required files: intelligence_report.html/report.html, metadata.json, executive_summary.txt';
+    // Debug: List what files actually exist in source directory
     if (watchMode) {
-      console.warn(`⚠️  ${error}`);
-      process.exit(0);
+      try {
+        const existingFiles = fs.readdirSync(src);
+        console.warn(`⚠️  ${error}`);
+        console.warn(`📁 Debug: Files found in source directory: ${existingFiles.join(', ')}`);
+        console.warn(`📁 Debug: Looking for: htmlPath=${htmlPath}, metaPath=${metaPath}, summaryPath=${summaryPath}`);
+      } catch (e) {
+        console.warn(`⚠️  ${error}`);
+        console.warn(`📁 Debug: Could not read source directory: ${e.message}`);
+      }
     } else {
       console.error(error);
-      process.exit(1);
     }
+    // Exit with failure code even in watch mode so parent script knows ingestion failed
+    process.exit(1);
   }
 
   // 2) Copy with canonical names
@@ -84,10 +93,38 @@ async function ingest() {
   // Check for and copy images folder if it exists
   const imagesSrc = path.join(src, 'images');
   const imagesDst = path.join(dst, 'images');
-  if (fs.existsSync(imagesSrc) && fs.statSync(imagesSrc).isDirectory()) {
-    fs.cpSync(imagesSrc, imagesDst, { recursive: true });
+  if (fs.existsSync(imagesSrc)) {
+    try {
+      const stat = fs.statSync(imagesSrc);
+      if (stat.isDirectory()) {
+        if (watchMode) {
+          const imageFiles = fs.readdirSync(imagesSrc);
+          console.log(`📁 Found images folder with ${imageFiles.length} file(s): ${imageFiles.join(', ')}`);
+        }
+        fs.cpSync(imagesSrc, imagesDst, { recursive: true });
+        if (watchMode) {
+          const copiedFiles = fs.readdirSync(imagesDst);
+          console.log(`📁 Copied images folder to ${dateDir}/images/ (${copiedFiles.length} file(s))`);
+        }
+      } else {
+        if (watchMode) {
+          console.warn(`⚠️  Source has 'images' but it's not a directory (type: ${stat.isFile() ? 'file' : 'other'})`);
+        }
+      }
+    } catch (error) {
+      // If images copy fails, warn but don't fail the entire ingestion
+      const warning = `Failed to copy images folder: ${error.message}`;
+      if (watchMode) {
+        console.warn(`⚠️  ${warning}`);
+        console.warn(`📁 Debug: imagesSrc=${imagesSrc}, imagesDst=${imagesDst}`);
+      } else {
+        console.warn(warning);
+      }
+      // Continue - brief is still usable without images
+    }
+  } else {
     if (watchMode) {
-      console.log(`📁 Copied images folder to ${dateDir}/images/`);
+      console.log(`ℹ️  No images folder found in source (checked: ${imagesSrc})`);
     }
   }
 
