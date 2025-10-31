@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Theory In Multi-Agent Systems - STI Intelligence (Thesis)</title>
+    <style>
+        body { 
+            font-family: Georgia, serif; 
+            max-width: 760px; 
+            margin: 0 auto; 
+            padding: 2rem; 
+            line-height: 1.6; 
+            color: #333; 
+        }
+        .sti-branding { 
+            color: #999; 
+            font-size: 0.9em; 
+            margin-bottom: 0.5rem; 
+        }
+        h1 { 
+            color: #0066cc; 
+            border-bottom: 2px solid #e1e4e8; 
+            padding-bottom: 0.5rem; 
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        h2 { 
+            color: #333; 
+            margin-top: 2rem; 
+            font-size: 1.5rem;
+        }
+        h3 { 
+            color: #666; 
+            margin-top: 1.2rem; 
+            font-size: 1.2rem;
+        }
+        .metadata { 
+            color: #666; 
+            font-size: 0.9em; 
+            margin-bottom: 1rem; 
+            border-bottom: 1px solid #e1e4e8;
+            padding-bottom: 1rem;
+        }
+        .toc { 
+            background: #f8f9fa; 
+            padding: 1rem; 
+            border-left: 4px solid #0066cc; 
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        .toc ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.5rem;
+        }
+        .toc li {
+            margin: 0.25rem 0;
+        }
+        .toc a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .badge { 
+            display: inline-block; 
+            padding: 0.2rem 0.5rem; 
+            border-radius: 3px; 
+            font-size: 0.8em; 
+            margin-right: 0.5rem; 
+        }
+        .badge-alignment { background: #e7f3ff; color: #004a99; }
+        .badge-theory { background: #e8f5e9; color: #1b5e20; }
+        .badge-clarity { background: #fff3cd; color: #856404; }
+        .exec-summary {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #0066cc;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        section:empty::after {
+            content: "(Section content not available)";
+            color: #999;
+            font-style: italic;
+        }
+        .source-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-left: 3px solid #e1e4e8;
+            background: #f8f9fa;
+        }
+        .source-number { 
+            font-weight: bold; 
+            color: #0066cc; 
+            margin-right: 0.5rem; 
+        }
+        .source-title { 
+            font-weight: 500; 
+            margin-bottom: 0.25rem; 
+        }
+        .source-meta { 
+            color: #666; 
+            font-size: 0.9em; 
+            margin-bottom: 0.25rem; 
+        }
+        .source-url a { 
+            color: #0066cc; 
+            text-decoration: none; 
+            font-size: 0.9em;
+        }
+        .source-url a:hover { 
+            text-decoration: underline; 
+        }
+        .citation-link { 
+            color: #0066cc; 
+            text-decoration: none; 
+        }
+        .citation-link:hover { 
+            text-decoration: underline; 
+        }
+        @media print {
+            body { max-width: none; padding: 1rem; }
+            section { break-inside: avoid; }
+            .source-item { break-inside: avoid; }
+        }
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="sti-branding">Smart Technology Investments</div>
+        <h1>Command Theory In Multi-Agent Systems</h1>
+        <div class="metadata">Oct 23–Oct 30, 2025 | Sources: 7 | Confidence: 0.6</div>
+        <div class="metadata">Alignment: <span class="badge badge-alignment">N/A</span>
+            Theory Depth: <span class="badge badge-theory">N/A</span>
+            Clarity: <span class="badge badge-clarity">N/A</span></div>
+    </header>
+
+    <section class="exec-summary">
+        <h2>Executive Summary</h2>
+        <p>This brief advances a theory-first account of Command and Control (C2) in multi-agent systems. We argue that starting from formal definitions and analytic models yields clearer, generalizable design principles than purely empirical case studies, and that explicitly distinguishing hierarchical from distributed control clarifies trade-offs in responsiveness, robustness, and scalability. We summarize formal properties, coordination primitives, hybrid transition mechanisms, evaluation metrics, and testable predictions for C2 architectures in operational domains.</p>
+    </section>
+
+    <nav class="toc">
+        <strong>Outline</strong>
+        <ul>
+            <li><a href="#foundations">Foundations</a></li>
+            <li><a href="#formalization">Formalization</a></li>
+            <li><a href="#mechanisms">Mechanisms</a></li>
+            <li><a href="#applications">Applications</a></li>
+            <li><a href="#limits">Limits & Open Questions</a></li>
+            <li><a href="#synthesis">Synthesis & Current Developments</a></li>
+            <li><a href="#sources">Sources</a></li>
+        </ul>
+    </nav>
+
+    <section id="foundations">
+        <h2>Foundations</h2>
+        <p>Operational environments (military operations, disaster response, autonomous vehicle fleets, smart grids) increasingly require distributed, multi-agent C2 capabilities. Rapid tempo, partial observability, connectivity variability, and adversarial conditions demand architectures that trade off centralized coherence against local responsiveness. A rigorous theoretical framework can: (1) guide design choices before costly field deployments; (2) predict emergent system-level behavior; and (3) enable provable guarantees when possible. Precise definitions of command, control, hierarchical control, distributed control, multi-agent, and coordination reduce ambiguity across domains and permit transferable results.</p>
+<ul>
+<li>Command: an assertion of intent, policy, or constraint issued by an authority or decision policy; formally, a specification C mapping states or contexts to desired objectives or constraints.</li>
+</ul>
+    </section>
+    <section id="formalization">
+        <h2>Formalization</h2>
+        <p>Model: a hierarchy is a directed acyclic control graph H with levels L_0 (top) ... L_k (bottom). A top-level policy P_0 issues commands C_0 which constrain subordinate controllers P_1,...,P_k. Each subordinate optimizes local objectives subject to constraints from above and feedback flows upward.</p>
+<p>Model: each agent i runs a local controller u_i = f_i(x_i, s_i) where s_i is communicated summaries from neighbors N(i). The global objective is an aggregate utility or constraint satisfaction over all agents.</p>
+<h3>Minimal formal language:</h3>
+<p>A theory-first thesis for Command Theory in Multi-Agent Systems provides unifying definitions, formal models, and transferable design principles. Distinguishing hierarchical and distributed control, and analyzing coordination primitives, enables principled trade-offs among responsiveness, robustness, and scalability. The framework yields testable hypotheses, prescribes design patterns (delegation, constrained autonomy, redundancy), and identifies key directions for integrating human factors and adversarial resilience into future C2 systems.</p>
+    </section>
+    <section id="mechanisms">
+        <h2>Mechanisms</h2>
+        <p>This brief advances a theory-first account of Command and Control (C2) in multi-agent systems. We argue that starting from formal definitions and analytic models yields clearer, generalizable design principles than purely empirical case studies, and that explicitly distinguishing hierarchical from distributed control clarifies trade-offs in responsiveness, robustness, and scalability. We summarize formal properties, coordination primitives, hybrid transition mechanisms, evaluation metrics, and testable predictions for C2 architectures in operational domains.</p>
+<h3>Categorization of primitives:</h3>
+<p>Continuum perspective: hierarchy and distribution inhabit a design spectrum. Pure hierarchy maximizes centralized coherence; pure distribution maximizes local autonomy. Hybrid architectures interpolate by delegating authority conditionally.</p>
+<p>1. Match architecture to information topology and mission tempo: choose delegation boundaries so local decision times match operational tempo.</p>
+    </section>
+    <section id="applications">
+        <h2>Applications</h2>
+        <h3>Representative domains and theoretical mapping:</h3>
+    </section>
+    <section id="limits">
+        <h2>Limits & Open Questions</h2>
+        <h3>Implications:</h3>
+    </section>
+    <section id="synthesis">
+        <h2>Synthesis & Current Developments</h2>
+        <p>This brief advances a theory-first account of Command and Control (C2) in multi-agent systems. We argue that starting from formal definitions and analytic models yields clearer, generalizable design principles than purely empirical case studies, and that explicitly distinguishing hierarchical from distributed control clarifies trade-offs in responsiveness, robustness, and scalability. We summarize formal properties, coordination primitives, hybrid transition mechanisms, evaluation metrics, and testable predictions for C2 architectures in operational domains.</p>
+    </section>
+
+    <footer id="sources">
+        <h2>Sources</h2>
+        <div class="sources-container">
+            <div class="source-item" id="source-1">
+                <span class="source-number">[1]</span>
+                <div class="source-content">
+                    <div class="source-title">Distributed energy control in electric energy systems</div>
+                    <div class="source-meta">Arxiv.Org, 2021-11-23. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2111.12046v2" target="_blank" rel="noopener">http://arxiv.org/abs/2111.12046v2</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-2">
+                <span class="source-number">[2]</span>
+                <div class="source-content">
+                    <div class="source-title">Quaternion Feedback Based Autonomous Control of a Quadcopter UAV with Thrust Vectoring Rotors</div>
+                    <div class="source-meta">Arxiv.Org, 2020-06-28. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2006.15686v1" target="_blank" rel="noopener">http://arxiv.org/abs/2006.15686v1</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-3">
+                <span class="source-number">[3]</span>
+                <div class="source-content">
+                    <div class="source-title">Conditions for detectability in distributed consensus-based observer networks</div>
+                    <div class="source-meta">Arxiv.Org, 2013-03-26. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/1303.6397v1" target="_blank" rel="noopener">http://arxiv.org/abs/1303.6397v1</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-4">
+                <span class="source-number">[4]</span>
+                <div class="source-content">
+                    <div class="source-title">Comments on "Consensus and Cooperation in Networked Multi-Agent Systems"</div>
+                    <div class="source-meta">Arxiv.Org, 2010-09-30. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/1009.6050v1" target="_blank" rel="noopener">http://arxiv.org/abs/1009.6050v1</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-5">
+                <span class="source-number">[5]</span>
+                <div class="source-content">
+                    <div class="source-title">On graph theoretic results underlying the analysis of consensus in multi-agent systems</div>
+                    <div class="source-meta">Arxiv.Org, 2009-02-24. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/0902.4218v1" target="_blank" rel="noopener">http://arxiv.org/abs/0902.4218v1</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-6">
+                <span class="source-number">[6]</span>
+                <div class="source-content">
+                    <div class="source-title">Cooperative Target Capture using Predefined-time Consensus over Fixed and Switching Networks</div>
+                    <div class="source-meta">Arxiv.Org, 2021-09-03. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2109.01338v1" target="_blank" rel="noopener">http://arxiv.org/abs/2109.01338v1</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-7">
+                <span class="source-number">[7]</span>
+                <div class="source-content">
+                    <div class="source-title">Measuring social consensus</div>
+                    <div class="source-meta">Arxiv.Org, 2024-11-18. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2411.12067v1" target="_blank" rel="noopener">http://arxiv.org/abs/2411.12067v1</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <div class="metadata">Generated: 2025-10-30T17:18:09.569835 | Word Count: 1890</div>
+    </footer>
+</body>
+</html>

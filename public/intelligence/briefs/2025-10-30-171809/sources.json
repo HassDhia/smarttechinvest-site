@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-27 — Authors of the ArXiv paper defined an interaction variable that represents instantaneous electrical power (W) to characterize component interactions across the system.",
+    "confidence": 0.75,
+    "citations": [
+      "http://arxiv.org/abs/2411.12067v1"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — The paper's authors derived an intermediate reactive-power control command (measured in volt-amperes reactive, VAr) to be sent from the higher layer to the lower-layer physical model.",
+    "confidence": 0.78,
+    "citations": [
+      "http://arxiv.org/abs/2111.12046v2"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-29 — The researchers illustrated the control design on a simple RLC circuit with a controllable voltage source, i.e., applying control signals measured in volts (V) to the lower-level hardware model.",
+    "confidence": 0.72,
+    "citations": [
+      "http://arxiv.org/abs/2006.15686v1"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-30 — The authors specified that the high-layer control command is implemented at the physical layer using Feedback Linearizing Control (FBLC), which issues continuous control inputs (measured in volts, V) to stabilize mismatches in generated vs. absorbed power.",
+    "confidence": 0.74,
+    "citations": [
+      "http://arxiv.org/abs/1303.6397v1"
+    ]
+  }
+]
