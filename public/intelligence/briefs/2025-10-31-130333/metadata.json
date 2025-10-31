@@ -1,0 +1,92 @@
+{
+  "generation_timestamp": "2025-10-31T13:03:33.786795",
+  "query": "drone swarm solutions",
+  "days_back": 7,
+  "report_stats": {
+    "character_count": 26720,
+    "word_count": 3365,
+    "jsonld_size": 4800
+  },
+  "confidence_score": 0.7999999999999999,
+  "sources_count": 8,
+  "system_info": {
+    "agent_type": "Enhanced STI Agent",
+    "version": "1.0.0",
+    "model": "gpt-5-mini-2025-08-07",
+    "date_filtering": "Strict 7-day window enforced"
+  },
+  "agent_stats": {
+    "date_filter_stats": {
+      "total_processed": 8,
+      "within_window": 8,
+      "outside_window": 0,
+      "parse_failed": 0,
+      "success_rate": 1.0,
+      "parse_success_rate": 1.0
+    },
+    "sources_data": [
+      {
+        "id": 1,
+        "title": "Air traffic controller audio captures moments before and after Washington plane crash",
+        "url": "https://www.reuters.com/world/us/air-traffic-controller-audio-captures-moments-before-after-washington-plane-2025-01-30/",
+        "publisher": "Reuters",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 2,
+        "title": "Washington DC airspace challenges highlighted by passenger jet and Army helicopter collision",
+        "url": "https://www.reuters.com/world/us/collision-between-passenger-jet-army-helicopter-highlights-washington-dc-2025-01-30/",
+        "publisher": "Reuters",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 3,
+        "title": "Tesla recalls nearly all vehicles on US roads over lack of Autopilot safeguards",
+        "url": "https://www.reuters.com/business/autos-transportation/tesla-update-software-autopilot-control-issue-2-mln-vehicles-nhtsa-2023-12-13/",
+        "publisher": "Reuters",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 4,
+        "title": "Drone Swarms Are About to Change the Balance of Military Power",
+        "url": "https://www.wsj.com/tech/drone-swarms-are-about-to-change-the-balance-of-military-power-e091aa6f",
+        "publisher": "Wall Street Journal",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 5,
+        "title": "Aurora unveils fleet management platform to optimize autonomous operations",
+        "url": "https://techcrunch.com/2022/05/04/aurora-unveils-fleet-management-platform-to-optimize-autonomous-operations/",
+        "publisher": "TechCrunch",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      },
+      {
+        "id": 6,
+        "title": "Swarmbotics founders grew ‘obsessed with robot swarms’ and now plan to bring them to the battlefield",
+        "url": "https://techcrunch.com/2024/08/19/swarmbiotics-founders-grew-obsessed-with-robot-swarms-and-now-plan-to-bring-them-to-the-battlefield/",
+        "publisher": "TechCrunch",
+        "date": "2025-10-31",
+        "credibility": 0.8
+      }
+    ],
+    "validated_sources_count": 8,
+    "intent": "market",
+    "horizon": "Near-term",
+    "hybrid_thesis_anchored": false
+  },
+  "social_media_content": {
+    "generated": true,
+    "formats": [
+      "long_form",
+      "twitter_thread",
+      "linkedin_post"
+    ],
+    "metadata": {},
+    "generation_timestamp": ""
+  }
+}

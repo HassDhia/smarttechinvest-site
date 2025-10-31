@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-27 — Tesla (TSLA.O) recalled over 2,000,000 vehicles in the U.S. to install new Autopilot safeguards (recall: >2,000,000 vehicles).",
+    "confidence": 0.9,
+    "citations": [
+      "https://www.reuters.com/business/autos-transportation/tesla-update-software-autopilot-control-issue-2-mln-vehicles-nhtsa-2023-12-13/",
+      "https://techcrunch.com/2022/05/04/aurora-unveils-fleet-management-platform-to-optimize-autonomous-operations/"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — A Shahed-model drone (built by Shahed Aviation Industries Research family) that struck a U.S. base was priced at about $20,000 per unit (cost: $20,000 per drone), highlighting low per-unit cost of lethal UAVs.",
+    "confidence": 0.85,
+    "citations": [
+      "https://www.wsj.com/tech/drone-swarms-are-about-to-change-the-balance-of-military-power-e091aa6f",
+      "https://techcrunch.com/2024/08/19/swarmbiotics-founders-grew-obsessed-with-robot-swarms-and-now-plan-to-bring-them-to-the-battlefield/"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-29 — The Jan. 28 drone strike on a remote base in Jordan killed 3 U.S. service members (fatalities: 3 persons), underscoring lethal impact of low-cost drones.",
+    "confidence": 0.9,
+    "citations": [
+      "https://www.wsj.com/tech/drone-swarms-are-about-to-change-the-balance-of-military-power-e091aa6f",
+      "https://www.reuters.com/world/us/collision-between-passenger-jet-army-helicopter-highlights-washington-dc-2025-01-30/"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-30 — An American Airlines regional passenger jet and a U.S. Army Black Hawk helicopter were involved in 1 midair collision (involved aircraft: 2 aircraft), and air traffic control audio captured the moments before and after the event.",
+    "confidence": 0.8,
+    "citations": [
+      "https://www.reuters.com/world/us/air-traffic-controller-audio-captures-moments-before-after-washington-plane-2025-01-30/",
+      "https://www.reuters.com/world/us/collision-between-passenger-jet-army-helicopter-highlights-washington-dc-2025-01-30/"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-31 — The FAA opened 1 audit targeting runway incursion risks at the busiest U.S. airports and the Army and the Defense Department launched a joint investigation (actions: 1 FAA audit; 2 agencies investigating 1 collision).",
+    "confidence": 0.8,
+    "citations": [
+      "https://www.reuters.com/world/us/collision-between-passenger-jet-army-helicopter-highlights-washington-dc-2025-01-30/",
+      "https://www.reuters.com/world/us/air-traffic-controller-audio-captures-moments-before-after-washington-plane-2025-01-30/"
+    ]
+  }
+]
