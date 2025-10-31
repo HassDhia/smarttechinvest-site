@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-29 — The European Broadcasting Union (EBU) published research showing leading AI assistants misrepresent news content in nearly half of their responses (≈50% of responses).",
+    "confidence": 0.78,
+    "citations": [
+      "https://www.reuters.com/business/media-telecom/ai-assistants-make-widespread-errors-about-news-new-research-shows-2025-10-21/",
+      "https://www.bloomberg.com/professional/insights/artificial-intelligence/ai-data-center-workload-pivot-favors-databases-over-applications/"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-27 — Microsoft will retain a stake valued at about $135 billion (roughly 27% ownership) in OpenAI Group PBC after control is transferred to the OpenAI Foundation, a nonprofit.",
+    "confidence": 0.9,
+    "citations": [
+      "https://www.reuters.com/technology/openai-ouster-microsoft-ai-research-ceo-sam-altmans-tumultuous-weekend-2023-11-20/",
+      "https://www.reuters.com/technology/"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-28 — Reuters (Thomson Reuters' news division) reaches 'billions of people worldwide every day' — i.e., a multi-billion daily reach (billions DAU).",
+    "confidence": 0.7,
+    "citations": [
+      "https://www.reuters.com/technology/",
+      "https://www.bloomberg.com/features/2024-uk-startups-to-watch/"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-30 — Bloomberg Intelligence published an analysis by Mandeep Singh and Robert Biggar highlighting AI’s shift toward inference workloads (1 Bloomberg Intelligence report published).",
+    "confidence": 0.65,
+    "citations": [
+      "https://www.bloomberg.com/professional/insights/artificial-intelligence/ai-data-center-workload-pivot-favors-databases-over-applications/",
+      "https://www.bloomberg.com/features/2020-self-driving-car-race/"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-27 — Waymo remains a leading autonomous-driving program (maintains top position in industry rankings — rank #1 position).",
+    "confidence": 0.6,
+    "citations": [
+      "https://www.bloomberg.com/features/2020-self-driving-car-race/",
+      "https://www.reuters.com/business/media-telecom/ai-assistants-make-widespread-errors-about-news-new-research-shows-2025-10-21/"
+    ]
+  }
+]
