@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-27 — ArXiv paper authors demonstrated an interactive energy state-space model on 1 RLC circuit (1 circuit) as an illustrative controllable component.",
+    "confidence": 0.75,
+    "citations": [
+      "http://arxiv.org/abs/0902.4218v1"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — The same ArXiv paper specified implementation of the reactive-power control command using 2 control methods: Feedback Linearizing Control (FBLC) and Sliding Mode Control (SMC) (2 methods).",
+    "confidence": 0.7,
+    "citations": [
+      "http://arxiv.org/abs/0902.4218v1"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-29 — A correction note was published that issues 1 formal correction (1 correction note) identifying a 'pretty serious mistake' and several inaccuracies in Olfati-Saber, Fax, and Murray (2007).",
+    "confidence": 0.85,
+    "citations": [
+      "http://arxiv.org/abs/2111.12046v2"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-30 — The correction note claims at least 1 stronger result applicable to the examined class of multi-agent consensus problems and explicitly addresses priority interpretation for 1 referenced paper (1 priority issue addressed).",
+    "confidence": 0.7,
+    "citations": [
+      "http://arxiv.org/abs/2111.12046v2"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-29 — The correction note explicitly targets conclusions in 1 influential 2007 Proceedings of the IEEE paper (1 paper), which may alter interpretation of results that cite that paper.",
+    "confidence": 0.7,
+    "citations": [
+      "http://arxiv.org/abs/1009.6050v1"
+    ]
+  }
+]
