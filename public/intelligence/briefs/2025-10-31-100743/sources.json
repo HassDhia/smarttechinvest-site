@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-10-27 — Ukrainian military applied artificial intelligence to both air and land drones (2 drone domains) to assist target identification, per reporting that 'In Ukraine, AI being applied to air and land drones; AI helps drones identify targets.'",
+    "confidence": 0.7,
+    "citations": [
+      "https://www.reuters.com/technology/artificial-intelligence/ukraine-rushes-create-ai-enabled-war-drones-2024-07-18/"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-10-28 — Taiwan’s president (Tsai Ing-wen) and her ruling party held 1 senior-level meeting in downtown Taipei to assess lessons from the Ukraine war, according to reporting that 'Taiwan’s president gathered senior officials from her ruling party in downtown Taipei. On the agenda: How was Ukraine...'",
+    "confidence": 0.65,
+    "citations": [
+      "https://www.reuters.com/investigates/special-report/us-china-tech-taiwan/"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-10-29 — The U.S. Federal Aviation Administration (FAA) experienced a breakdown of a key computer system that resulted in the suspension of U.S. flight departures on Wednesday (impacting 1 day of departures), per Reuters: 'the breakdown of a key computer system ... resulted in the suspension of U.S. flight departures on Wednesday.'",
+    "confidence": 0.8,
+    "citations": [
+      "https://www.reuters.com/technology/faa-has-struggled-modernize-computer-air-traffic-operations-2023-01-12/"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-10-30 — Bloomberg authors David Allright and Rohit Tak published 1 analysis on changes needed in trader services and cash & derivative risk and compliance, indicating a push for updated financial risk frameworks, as noted in the byline and article content.",
+    "confidence": 0.7,
+    "citations": [
+      "https://www.bloomberg.com/professional/insights/financial-services/optimizing-multi-asset-trading-with-single-platform-solutions/"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-10-31 — Bloomberg (corporate) stated it 'quickly and accurately delivers business and financial information, news and insight around the world,' reflecting dissemination via its 1 global information network to decision makers.",
+    "confidence": 0.6,
+    "citations": [
+      "https://www.bloomberg.com/news/newsletters/2025-08-10/apple-app-intents-voice-control-feature-for-siri-apps-ios-26-release-timing"
+    ]
+  }
+]
