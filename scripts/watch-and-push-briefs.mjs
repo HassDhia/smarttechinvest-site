@@ -135,8 +135,41 @@ const processNewBrief = (folderName) => {
   try {
     logWithTimestamp(`🚀 New brief detected: ${folderName}. Ingesting...`);
     
-    // Ingest the brief
-    execSync(`node scripts/ingest-brief.mjs "${fullPath}" --watch-mode`, { stdio: 'inherit' });
+    // Ingest the brief - catch failures properly
+    try {
+      execSync(`node scripts/ingest-brief.mjs "${fullPath}" --watch-mode`, { stdio: 'inherit' });
+    } catch (ingestError) {
+      logWithTimestamp(`❌ Ingestion failed for ${folderName}`);
+      logWithTimestamp(`   Error: ${ingestError.message || 'Ingest script exited with non-zero code'}`);
+      logWithTimestamp(`⏭️  Skipping git operations - brief was not successfully ingested`);
+      logWithTimestamp(`   Will retry when files are ready or on next reconciliation`);
+      return; // Exit early - don't try to commit/push if ingestion failed
+    }
+    
+    // Verify the brief directory was actually created before proceeding
+    const briefDir = path.join(process.cwd(), 'public', 'intelligence', 'briefs', briefDate);
+    if (!fs.existsSync(briefDir)) {
+      logWithTimestamp(`⚠️  Brief directory not created for ${folderName} at ${briefDate}`);
+      logWithTimestamp(`   Files may not have been ready when detected. Will retry later.`);
+      return;
+    }
+    
+    // Verify required files exist in the brief directory
+    const requiredFiles = ['report.html', 'metadata.json', 'executive_summary.txt'];
+    const missingFiles = requiredFiles.filter(file => {
+      const filePath = path.join(briefDir, file);
+      return !fs.existsSync(filePath);
+    });
+    
+    if (missingFiles.length > 0) {
+      logWithTimestamp(`⚠️  Brief directory exists but missing required files: ${missingFiles.join(', ')}`);
+      logWithTimestamp(`   Skipping git operations until all files are present`);
+      return;
+    }
+    
+    // Count files in brief directory for debugging
+    const briefFiles = fs.readdirSync(briefDir);
+    logWithTimestamp(`📊 Brief directory created with ${briefFiles.length} file(s): ${briefFiles.slice(0, 5).join(', ')}${briefFiles.length > 5 ? '...' : ''}`);
     
     // Update state with ingestion info
     state.ingested[folderName] = {
@@ -507,10 +540,10 @@ const runWatcher = async () => {
   // Reconcile website with source directory
   await reconcileSiteWithSource();
   
-  // Set up periodic reconciliation every 5 minutes
+  // Set up periodic reconciliation every 1 minute
   setInterval(async () => {
     await reconcileSiteWithSource();
-  }, 5 * 60 * 1000); // 5 minutes
+  }, 1 * 60 * 1000); // 1 minute
 
   // Handle Ctrl+C gracefully
   process.on('SIGINT', () => {
