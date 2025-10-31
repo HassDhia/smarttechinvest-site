@@ -366,7 +366,7 @@ const handleFsEvent = (eventType, filename) => {
   }
 };
 
-// Reconcile website with source directory - remove orphaned briefs
+// Reconcile website with source directory - remove orphaned briefs and add missing ones
 const reconcileSiteWithSource = async () => {
   try {
     logWithTimestamp(`🔍 Reconciling website with source directory...`);
@@ -377,10 +377,12 @@ const reconcileSiteWithSource = async () => {
       .filter(name => name.match(/^sti_enhanced_output_\d{8}_\d{6}_/));
     
     const sourceDates = new Set();
+    const sourceFolderMap = new Map(); // Map briefDate -> folderName
     for (const folderName of sourceFolders) {
       const briefDate = getBriefDateFromFolderName(folderName);
       if (briefDate) {
         sourceDates.add(briefDate);
+        sourceFolderMap.set(briefDate, folderName);
       }
     }
     
@@ -398,53 +400,105 @@ const reconcileSiteWithSource = async () => {
     // Find orphaned briefs (exist on website but not in source)
     const orphanedBriefs = websiteBriefs.filter(briefDate => !sourceDates.has(briefDate));
     
-    if (orphanedBriefs.length === 0) {
+    // Find missing/incomplete briefs (exist in source but not on website OR incomplete on website)
+    const missingBriefs = [];
+    const requiredFiles = ['report.html', 'metadata.json', 'executive_summary.txt'];
+    
+    for (const folderName of sourceFolders) {
+      const briefDate = getBriefDateFromFolderName(folderName);
+      if (!briefDate) continue;
+      
+      const briefDir = path.join(briefsDir, briefDate);
+      const hasBriefDir = fs.existsSync(briefDir);
+      
+      // Check if brief is missing
+      if (!hasBriefDir) {
+        missingBriefs.push(folderName);
+        logWithTimestamp(`📋 Missing brief detected: ${folderName} (not on website)`);
+      } else {
+        // Check if brief directory is empty or incomplete
+        try {
+          const briefFiles = fs.readdirSync(briefDir);
+          const hasRequiredFiles = requiredFiles.every(file => 
+            fs.existsSync(path.join(briefDir, file))
+          );
+          
+          if (!hasRequiredFiles || briefFiles.length === 0) {
+            missingBriefs.push(folderName);
+            logWithTimestamp(`📋 Incomplete brief detected: ${folderName} (missing required files or empty directory)`);
+          }
+        } catch (error) {
+          // Directory might be in inconsistent state, treat as missing
+          missingBriefs.push(folderName);
+          logWithTimestamp(`📋 Brief directory error for ${folderName}: ${error.message}`);
+        }
+      }
+    }
+    
+    // Check if we need to do anything
+    const hasOrphaned = orphanedBriefs.length > 0;
+    const hasMissing = missingBriefs.length > 0;
+    
+    if (!hasOrphaned && !hasMissing) {
       logWithTimestamp(`✅ Website is in sync with source directory`);
       return;
     }
     
-    logWithTimestamp(`🗑️  Found ${orphanedBriefs.length} orphaned brief(s): ${orphanedBriefs.join(', ')}`);
+    // Process missing/incomplete briefs first
+    if (hasMissing) {
+      logWithTimestamp(`📥 Found ${missingBriefs.length} missing/incomplete brief(s): ${missingBriefs.join(', ')}`);
+      for (const folderName of missingBriefs) {
+        logWithTimestamp(`🔄 Processing missing brief: ${folderName}`);
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Small delay between processing
+        processNewBrief(folderName);
+      }
+    }
     
-    // Delete each orphaned brief
-    for (const briefDate of orphanedBriefs) {
-      const briefDir = path.join(briefsDir, briefDate);
-      if (fs.existsSync(briefDir)) {
-        logWithTimestamp(`🗑️  Removing orphaned brief: ${briefDate}`);
-        
-        // Use git rm to stage deletion
-        const briefPath = `public/intelligence/briefs/${briefDate}`;
-        if (!runGitCommand(`git rm -r "${briefPath}"`, `Staging deletion of orphaned brief ${briefDate}`)) {
-          logWithTimestamp(`⚠️  Failed to stage deletion for orphaned brief ${briefDate}`);
-          continue;
+    // Then handle orphaned briefs (briefs on website but not in source)
+    if (hasOrphaned) {
+      logWithTimestamp(`🗑️  Found ${orphanedBriefs.length} orphaned brief(s): ${orphanedBriefs.join(', ')}`);
+      
+      // Delete each orphaned brief
+      for (const briefDate of orphanedBriefs) {
+        const briefDir = path.join(briefsDir, briefDate);
+        if (fs.existsSync(briefDir)) {
+          logWithTimestamp(`🗑️  Removing orphaned brief: ${briefDate}`);
+          
+          // Use git rm to stage deletion
+          const briefPath = `public/intelligence/briefs/${briefDate}`;
+          if (!runGitCommand(`git rm -r "${briefPath}"`, `Staging deletion of orphaned brief ${briefDate}`)) {
+            logWithTimestamp(`⚠️  Failed to stage deletion for orphaned brief ${briefDate}`);
+            continue;
+          }
+          
+          // Check git status
+          if (!checkGitStatus()) {
+            execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
+            try {
+              execSync(`git checkout -- "${briefPath}"`, { stdio: 'ignore' });
+            } catch {}
+            logWithTimestamp(`⚠️  Aborted deletion for orphaned brief ${briefDate} due to disallowed changes`);
+            continue;
+          }
+          
+          // Commit deletion
+          const commitMessage = `Remove orphaned intelligence brief for ${briefDate}`;
+          if (!runGitCommand(`git commit -m "${commitMessage}"`, `Committing removal of orphaned brief ${briefDate}`)) {
+            execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
+            try {
+              execSync(`git checkout -- "${briefPath}"`, { stdio: 'ignore' });
+            } catch {}
+            continue;
+          }
+          
+          // Push deletion
+          if (!runGitCommand('git push origin main', `Pushing removal of orphaned brief ${briefDate} to main`)) {
+            logWithTimestamp(`⚠️  Failed to push deletion for orphaned brief ${briefDate}`);
+            continue;
+          }
+          
+          logWithTimestamp(`✅ Successfully removed orphaned brief ${briefDate}`);
         }
-        
-        // Check git status
-        if (!checkGitStatus()) {
-          execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
-          try {
-            execSync(`git checkout -- "${briefPath}"`, { stdio: 'ignore' });
-          } catch {}
-          logWithTimestamp(`⚠️  Aborted deletion for orphaned brief ${briefDate} due to disallowed changes`);
-          continue;
-        }
-        
-        // Commit deletion
-        const commitMessage = `Remove orphaned intelligence brief for ${briefDate}`;
-        if (!runGitCommand(`git commit -m "${commitMessage}"`, `Committing removal of orphaned brief ${briefDate}`)) {
-          execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
-          try {
-            execSync(`git checkout -- "${briefPath}"`, { stdio: 'ignore' });
-          } catch {}
-          continue;
-        }
-        
-        // Push deletion
-        if (!runGitCommand('git push origin main', `Pushing removal of orphaned brief ${briefDate} to main`)) {
-          logWithTimestamp(`⚠️  Failed to push deletion for orphaned brief ${briefDate}`);
-          continue;
-        }
-        
-        logWithTimestamp(`✅ Successfully removed orphaned brief ${briefDate}`);
       }
     }
     
