@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-11-03 — Wood Mackenzie analysts (via Reuters) say U.S. nuclear power generation is set to rise this week as surging data‑center demand strains grids; BloombergNEF commentary (Ashish Sethia) confirms AI/data‑center builds are shifting demand patterns. Evidence: Reuters Oct 29 report that nuclear generation is set to rise to meet data‑center demand; BloombergNEF remarks at Bloomberg Green Seattle 2025 on shifting energy demand from new AI data centers.",
+    "confidence": 0.7,
+    "citations": [
+      "https://www.reuters.com/business/energy/us-nuclear-generation-grow-27-post-2035-data-centers-fuel-power-demand-woodmac-2025-10-29/",
+      "https://bloomberg.com/news/videos/2025-07-15/bloombergnef-how-ai-is-reshaping-us-power-markets-video"
+    ]
+  }
+]
