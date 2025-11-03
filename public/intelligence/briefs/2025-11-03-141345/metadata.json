@@ -1,0 +1,82 @@
+{
+  "generation_timestamp": "2025-11-03T14:13:45.918518",
+  "query": "The Energy Arbitrage Behind AI",
+  "days_back": 7,
+  "report_stats": {
+    "character_count": 25870,
+    "word_count": 3235,
+    "jsonld_size": 2957
+  },
+  "confidence_score": 0.7,
+  "sources_count": 6,
+  "system_info": {
+    "agent_type": "Enhanced STI Agent",
+    "version": "1.0.0",
+    "model": "gpt-5-mini-2025-08-07",
+    "date_filtering": "Strict 7-day window enforced"
+  },
+  "agent_stats": {
+    "date_filter_stats": {
+      "total_processed": 6,
+      "within_window": 6,
+      "outside_window": 0,
+      "parse_failed": 0,
+      "success_rate": 1.0,
+      "parse_success_rate": 1.0
+    },
+    "sources_data": [
+      {
+        "id": 1,
+        "title": "Amazon launches AI infrastructure project, to power Anthropic's Claude model",
+        "url": "https://www.reuters.com/business/retail-consumer/amazon-launches-ai-infrastructure-project-power-anthropics-claude-model-2025-10-29/",
+        "publisher": "Reuters",
+        "date": "2025-11-03",
+        "credibility": 0.8
+      },
+      {
+        "id": 2,
+        "title": "Sustainability Economics.ai Launches Agentic System to Vertically Integrate AI Infrastructure, Clean Energy, and Innovative Financing: Pioneering a Global Inference Platform ...",
+        "url": "https://www.reuters.com/press-releases/sustainability-economics-ai-agentic-system-ai-clean-energy-financing-2025-09-25/",
+        "publisher": "Reuters",
+        "date": "2025-11-03",
+        "credibility": 0.8
+      },
+      {
+        "id": 3,
+        "title": "UAE'S ADNOC to deploy autonomous AI in the energy sector for the first time",
+        "url": "https://www.reuters.com/business/energy/uaes-adnoc-deploy-autonomous-ai-energy-sector-first-time-2024-11-04/",
+        "publisher": "Reuters",
+        "date": "2025-11-03",
+        "credibility": 0.8
+      },
+      {
+        "id": 4,
+        "title": "AI Is Already Wreaking Havoc on Global Power Systems",
+        "url": "https://www.bloomberg.com/graphics/2024-ai-data-centers-power-grids/",
+        "publisher": "Bloomberg",
+        "date": "2025-11-03",
+        "credibility": 0.8
+      },
+      {
+        "id": 5,
+        "title": "Generative AI races toward $1.3 trillion in revenue by 2032",
+        "url": "https://www.bloomberg.com/professional/insights/data/generative-ai-races-toward-1-3-trillion-in-revenue-by-2032/",
+        "publisher": "Bloomberg",
+        "date": "2025-11-03",
+        "credibility": 0.8
+      },
+      {
+        "id": 6,
+        "title": "Inside Active: Chautauqua’s Velarde on Exploiting Time Arbitrage",
+        "url": "https://www.bloomberg.com/news/audio/2025-08-19/inside-active-chautauqua-s-velarde-on-exploiting-time-arbitrage",
+        "publisher": "Bloomberg",
+        "date": "2025-11-03",
+        "credibility": 0.8
+      }
+    ],
+    "validated_sources_count": 6,
+    "intent": "market",
+    "horizon": "Near-term",
+    "hybrid_thesis_anchored": false
+  }
+}

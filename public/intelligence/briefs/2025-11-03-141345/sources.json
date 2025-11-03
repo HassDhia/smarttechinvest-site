@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-11-03 — Amazon.com launched a new compute-cluster project named 'Rainier' (1 new compute-cluster project) and said Anthropic will use the cluster for expanded AI compute needs.",
+    "confidence": 0.75,
+    "citations": [
+      "https://www.reuters.com/business/retail-consumer/amazon-launches-ai-infrastructure-project-power-anthropics-claude-model-2025-10-29/",
+      "https://www.bloomberg.com/graphics/2024-ai-data-centers-power-grids/"
+    ]
+  }
+]
