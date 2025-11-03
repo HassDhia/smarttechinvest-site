@@ -1,0 +1,74 @@
+{
+  "generation_timestamp": "2025-11-03T14:30:15.239229",
+  "query": "The Energy Arbitrage Behind AI",
+  "days_back": 7,
+  "report_stats": {
+    "character_count": 28991,
+    "word_count": 3709,
+    "jsonld_size": 5659
+  },
+  "confidence_score": 0.7999999999999999,
+  "sources_count": 6,
+  "system_info": {
+    "agent_type": "Enhanced STI Agent",
+    "version": "1.0.0",
+    "model": "gpt-5-mini-2025-08-07",
+    "date_filtering": "Strict 7-day window enforced"
+  },
+  "agent_stats": {
+    "date_filter_stats": {
+      "total_processed": 6,
+      "within_window": 6,
+      "outside_window": 0,
+      "parse_failed": 0,
+      "success_rate": 1.0,
+      "parse_success_rate": 1.0
+    },
+    "sources_data": [
+      {
+        "id": 1,
+        "title": "DTE Energy raises five-year spending plan by 22% on data center power demand",
+        "url": "https://www.reuters.com/business/energy/dte-energy-adds-65-billion-five-year-spending-plan-data-center-power-demand-2025-10-30/",
+        "publisher": "Reuters",
+        "date": "2025-11-03",
+        "credibility": 0.8
+      },
+      {
+        "id": 2,
+        "title": "Singapore allocates more land for green energy, data centre park",
+        "url": "https://www.reuters.com/sustainability/climate-energy/singapore-allocates-more-land-green-energy-data-centre-park-2025-10-27/",
+        "publisher": "Reuters",
+        "date": "2025-11-03",
+        "credibility": 0.8
+      },
+      {
+        "id": 3,
+        "title": "Lagarde Says Capital Markets Union Is Key for Energy Transition",
+        "url": "https://www.bloomberg.com/news/articles/2025-10-21/lagarde-says-capital-markets-union-is-key-for-energy-transition",
+        "publisher": "Bloomberg",
+        "date": "2025-11-03",
+        "credibility": 0.8
+      },
+      {
+        "id": 4,
+        "title": "AI data center workload pivot favors databases over applications",
+        "url": "https://www.bloomberg.com/professional/insights/artificial-intelligence/ai-data-center-workload-pivot-favors-databases-over-applications/",
+        "publisher": "Bloomberg",
+        "date": "2025-11-03",
+        "credibility": 0.8
+      },
+      {
+        "id": 5,
+        "title": "AI-Driven Demand for Gas Turbines Risks a New Energy Crunch",
+        "url": "https://www.bloomberg.com/features/2025-bottlenecks-gas-turbines/",
+        "publisher": "Bloomberg",
+        "date": "2025-11-03",
+        "credibility": 0.8
+      }
+    ],
+    "validated_sources_count": 6,
+    "intent": "market",
+    "horizon": "Near-term",
+    "hybrid_thesis_anchored": false
+  }
+}
