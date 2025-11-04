@@ -8,7 +8,7 @@ export function LogoStrip() {
     "Helios Cloud"
   ];
   return (
-    <div className="container section">
+    <div className="container section vt-section">
       <div className="text-center mb-6">
         <div className="uppercase tracking-[0.18em] text-xs font-semibold mb-2 text-[hsl(var(--muted-foreground))] vt-reveal">
           Trusted Partners
