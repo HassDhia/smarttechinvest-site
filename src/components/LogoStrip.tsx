@@ -10,9 +10,9 @@ export function LogoStrip() {
   return (
     <div className="container section">
       <div className="text-center mb-6">
-        <p className="text-xs uppercase tracking-wider text-[hsl(var(--muted-foreground))] font-semibold">
+        <div className="uppercase tracking-[0.18em] text-xs font-semibold text-[hsl(var(--muted-foreground))]">
           Trusted Partners
-        </p>
+        </div>
       </div>
       <div className="flex flex-wrap items-center justify-center gap-4">
         {brands.map((name) => (
