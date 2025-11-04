@@ -5,7 +5,7 @@ import { LogoStrip } from "../components/LogoStrip";
 import { SectionHeader } from "../components/SectionHeader";
 // removed unused Testimonial in favor of carousel
 import { WorkCard } from "../components/WorkCard";
-import { Rocket, BadgeDollarSign, Bot, Workflow, Settings, Handshake } from "lucide-react";
+import { FileText, Presentation, Headphones, Users, Share2, BarChart3 } from "lucide-react";
 import { MiniTOC } from "../components/MiniTOC";
 import { TestimonialsCarousel } from "../components/TestimonialsCarousel";
 import { IntelligenceCard } from "../components/IntelligenceCard";
@@ -19,26 +19,26 @@ export default function Home() {
 
   return (
     <div className="font-sans">
-      <MiniTOC sections={[{ id: "how", label: "How We Help" }, { id: "intelligence", label: "Intelligence" }, { id: "work", label: "Selected Work" }, { id: "outcomes", label: "Outcomes" }]} />
+      <MiniTOC sections={[{ id: "engine", label: "The Engine" }, { id: "intelligence", label: "Intelligence" }, { id: "work", label: "Selected Work" }, { id: "outcomes", label: "Outcomes" }]} />
       <Hero
         title="Smart Technology Investments"
-        subtitle="Fractional Chief of Strategy for SMBs: pricing, positioning, GTM, and AI-augmented ops to accelerate growth."
-        ctaText="Book a Clarity Call"
+        subtitle="Plug-in Intelligence & Strategy Engine: automated research, insights, community, and distribution for your vertical."
+        ctaText="Request Demo"
         ctaHref="/schedule"
-        badge="Capacity: accepting 2 new clients this quarter"
+        badge="Turnkey business intelligence ecosystem"
       />
-      <section id="how" className="container section vt-section">
-        <SectionHeader kicker="Capabilities" title="How We Help" subtitle="Leverage executive-level strategy without full-time overhead." useGradientTitle />
+      <section id="engine" className="container section vt-section">
+        <SectionHeader kicker="What You Get" title="The Intelligence Engine" subtitle="A self-perpetuating business intelligence ecosystem that generates insights, drives engagement, and creates revenue impact." useGradientTitle />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-            ["Fractional Chief of Strategy","Executive-level strategic planning, OKRs, and operating cadence without full-time overhead.", Rocket],
-            ["Pricing, Positioning, and Offers","Clarify value, reshape pricing, and craft irresistible offers to unlock margin and conversion.", BadgeDollarSign],
-            ["AI-Augmented Growth Systems","Intelligent workflows for outreach, CRM hygiene, and reporting without losing the human edge.", Bot],
-            ["GTM and Pipeline Acceleration","Messaging, ICP, channel strategy, and a simple repeatable pipeline that compounds.", Workflow],
-            ["Ops Automation","Automate low-value tasks across scheduling, follow-ups, and SOPs to free up time for deep work.", Settings],
-            ["Founder Advisory & Strategic Deals","Hands-on guidance for partnerships, hiring, and key decisions when the stakes are high.", Handshake],
+            ["Automated Research Reports","Well-cited market & thesis reports generated daily with key findings and strategic insights.", FileText],
+            ["Board-Ready Slide Decks","Auto-generated presentations summarizing key insights for executive briefings and stakeholder updates.", Presentation],
+            ["Podcast-Style Briefings","Audio overviews for each report, perfect for on-the-go consumption and team sharing.", Headphones],
+            ["Community Engagement","Discourse forum for discussion and debate, with AI-assisted moderation and seeded insights.", Users],
+            ["Multi-Channel Distribution","Auto-post to LinkedIn, Medium, Twitter, and other channels with tracked links and analytics.", Share2],
+            ["Analytics & Optimization","Track engagement, conversions, and ROI with built-in dashboards and continuous improvement.", BarChart3],
           ].map(([t,d,I], idx) => (
-            <Card key={String(t)} title={String(t)} description={String(d)} icon={I as any} highlight={idx === 1} />
+            <Card key={String(t)} title={String(t)} description={String(d)} icon={I as any} highlight={idx === 0} />
           ))}
         </div>
       </section>
@@ -114,11 +114,11 @@ export default function Home() {
         </div>
       </section>
       <section id="outcomes" className="container section vt-section">
-        <SectionHeader kicker="Proof" title="Outcomes" subtitle="Clarity, momentum, and measurable results." useGradientTitle />
+        <SectionHeader kicker="Proof" title="Outcomes" subtitle="Measurable impact from intelligence-driven insights and strategic engagement." useGradientTitle />
         <div className="grid sm:grid-cols-3 gap-4">
-          <KPIStat label="ARR Impact" value="+$1.2M" />
-          <KPIStat label="Margin" value="+8%" />
-          <KPIStat label="Cycle Time" value="-34%" />
+          <KPIStat label="Reports Published" value="120+" />
+          <KPIStat label="Engagement Rate" value="+45%" />
+          <KPIStat label="Traffic Driven" value="10K+" />
         </div>
       </section>
       <section className="container section vt-section">

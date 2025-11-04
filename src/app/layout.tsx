@@ -12,7 +12,7 @@ import { MotionProvider } from "../components/ClientMotionProvider";
 
 export const metadata: Metadata = {
   title: "Smart Technology Investments",
-  description: "Fractional Chief of Strategy for SMBs. Daily signals, weekly briefs, and strategic insights on technology investments, pricing, positioning, and AI-augmented operations.",
+  description: "Plug-in Intelligence & Strategy Engine: automated research, insights, community, and distribution for your vertical. Turnkey business intelligence ecosystem.",
   icons: {
     icon: [
       { url: "/sti_favicon.webp", type: "image/webp" },
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Smart Technology Investments",
-    description: "Fractional Chief of Strategy for SMBs. Daily signals, weekly briefs, and strategic insights on technology investments.",
+    description: "Plug-in Intelligence & Strategy Engine: automated research, insights, community, and distribution for your vertical.",
     type: "website",
     images: ["/sti_favicon.webp"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Smart Technology Investments",
-    description: "Fractional Chief of Strategy for SMBs. Daily signals, weekly briefs, and strategic insights on technology investments.",
+    description: "Plug-in Intelligence & Strategy Engine: automated research, insights, community, and distribution for your vertical.",
   },
 };
 
@@ -73,7 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </main>
             </div>
             <Button asChild size="lg" variant="gradient" className="hidden lg:inline-flex fixed right-5 bottom-5 hover:shadow">
-              <a href="/schedule" aria-label="Book a call">Book Call</a>
+              <a href="/schedule" aria-label="Request a demo">Request Demo</a>
             </Button>
             <BackToTop />
           </ToastProvider>

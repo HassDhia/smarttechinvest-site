@@ -41,7 +41,7 @@ export function OperatorQuickWins({
       <Button asChild variant="gradient" size="sm" className="w-full">
         <a href="/schedule">
           <ArrowRight size={14} className="mr-2" />
-          Schedule Strategy Call
+          Request Demo
         </a>
       </Button>
       
