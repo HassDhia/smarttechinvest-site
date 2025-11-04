@@ -10,7 +10,7 @@ export function LogoStrip() {
   return (
     <div className="container section">
       <div className="text-center mb-6">
-        <div className="uppercase tracking-[0.18em] text-xs font-semibold text-[hsl(var(--muted-foreground))]">
+        <div className="uppercase tracking-[0.18em] text-xs font-semibold mb-2 text-[hsl(var(--muted-foreground))] vt-reveal">
           Trusted Partners
         </div>
       </div>
