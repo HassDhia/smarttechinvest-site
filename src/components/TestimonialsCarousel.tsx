@@ -5,15 +5,15 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TESTIMONIALS = [
   {
-    quote: "We added 20% in margin through pricing and packaged offers within 60 days.",
+    quote: "The Intelligence Engine has become our go-to source for market insights. Automated reports plus community engagement has driven 3x more qualified leads.",
     author: "Maya Torres, CEO — Ridgefield Services",
   },
   {
-    quote: "Pipeline clarity + outbound automations doubled qualified demos.",
+    quote: "Having well-cited reports, decks, and audio summaries automatically generated and distributed has freed up our team to focus on execution.",
     author: "Jordan Patel, Founder — ClearStack SaaS",
   },
   {
-    quote: "Weekly operating cadence removed chaos—we finally execute the plan.",
+    quote: "The community engagement around our insights has created a network effect—we&apos;re now seen as thought leaders in our vertical.",
     author: "Elena Brooks, Managing Partner — Harbor & Co. Agency",
   },
 ];
