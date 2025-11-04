@@ -29,6 +29,7 @@ export type Brief = {
   href: string;
   pdf: string;
   og: string;
+  heroImage?: string;
   title?: string;
   summary?: string;
   metadata?: BriefMetadata;
@@ -171,6 +172,26 @@ export function getBriefKeySignals(dateDir: string): string[] {
   }
 }
 
+export function getBriefHeroImage(dateDir: string): string | undefined {
+  try {
+    const imagesDir = path.join(BRIEFS_DIR, dateDir, 'images');
+    if (!fs.existsSync(imagesDir)) {
+      return undefined;
+    }
+    
+    const files = fs.readdirSync(imagesDir);
+    const heroFile = files.find(file => file.startsWith('hero_') && file.endsWith('.png'));
+    
+    if (heroFile) {
+      return `/intelligence/briefs/${dateDir}/images/${heroFile}`;
+    }
+    
+    return undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 export function listBriefs(): Brief[] {
   try {
     if (!fs.existsSync(BRIEFS_DIR)) {
@@ -187,6 +208,7 @@ export function listBriefs(): Brief[] {
         const metadata = getBriefMetadata(dateDir);
         const summary = getBriefSummary(dateDir);
         const keySignals = getBriefKeySignals(dateDir);
+        const heroImage = getBriefHeroImage(dateDir);
         
         // Extract display components
         const displayDate = dateDir.slice(0, 10); // YYYY-MM-DD
@@ -200,6 +222,7 @@ export function listBriefs(): Brief[] {
           href: `/intelligence/briefs/${dateDir}/report.html`,
           pdf: `/intelligence/briefs/${dateDir}/brief.pdf`,
           og: `/intelligence/briefs/${dateDir}/og.png`,
+          heroImage,
           title: metadata?.title,
           summary: summary || (keySignals.length > 0 ? keySignals.slice(0, 1).join(' • ') : undefined),
           metadata: metadata || undefined,
@@ -374,6 +397,7 @@ export function enrichBriefData(dateDir: string): Brief | null {
     const topSignals = getBriefTopSignals(dateDir, 3);
     const coverageWindow = getBriefCoverageWindow(dateDir);
     const tags = getBriefTags(dateDir);
+    const heroImage = getBriefHeroImage(dateDir);
     
     // Extract display components
     const displayDate = dateDir.slice(0, 10);
@@ -387,6 +411,7 @@ export function enrichBriefData(dateDir: string): Brief | null {
       href: `/intelligence/briefs/${dateDir}/report.html`,
       pdf: `/intelligence/briefs/${dateDir}/brief.pdf`,
       og: `/intelligence/briefs/${dateDir}/og.png`,
+      heroImage,
       title: metadata?.title, // Generated from query
       summary: summary || (keySignals.length > 0 ? keySignals.slice(0, 1).join(' • ') : undefined),
       metadata: metadata || undefined,

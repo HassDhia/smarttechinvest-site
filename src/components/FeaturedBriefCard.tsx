@@ -3,6 +3,7 @@ import { Badge } from "./ui/Badge";
 import { Button } from "./ui/Button";
 import { Calendar, Download, ExternalLink, BarChart3, FileText, Target, Clock } from "lucide-react";
 import type { Brief } from "../lib/content";
+import Image from "next/image";
 
 export function FeaturedBriefCard({
   brief,
@@ -32,13 +33,28 @@ export function FeaturedBriefCard({
 
   return (
     <div className={cn(
-      "rounded-2xl p-6 md:p-8 bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))] shadow-sm",
+      "rounded-2xl overflow-hidden bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))] shadow-sm",
       "transition-all duration-200 ease-[var(--ease-standard)]",
       "hover:border-[hsl(var(--ring))] hover:shadow-md",
       highlight && "border-[hsl(var(--ring))] shadow-md",
       className
     )}>
-      {/* Title */}
+      {/* Hero Image */}
+      {brief.heroImage && (
+        <div className="relative w-full aspect-video overflow-hidden">
+          <Image
+            src={brief.heroImage}
+            alt={brief.title || 'Intelligence Brief'}
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+            priority={highlight}
+          />
+        </div>
+      )}
+      
+      <div className="p-6 md:p-8">
+        {/* Title */}
       <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2 leading-tight">
         {brief.title || 'Intelligence Brief'}
       </h2>
@@ -52,7 +68,7 @@ export function FeaturedBriefCard({
         <Badge variant="brand" size="sm">Weekly Brief</Badge>
       </div>
       
-      {/* Teaser from executive summary */}
+      {/* Teaser from executive summary / Preview Text */}
       {brief.summary && (
         <div className="mb-6">
           <p className="text-sm md:text-base text-[hsl(var(--muted-foreground))] leading-relaxed line-clamp-3">
@@ -131,6 +147,7 @@ export function FeaturedBriefCard({
             Download PDF
           </a>
         </Button>
+      </div>
       </div>
     </div>
   );

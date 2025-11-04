@@ -3,6 +3,7 @@ import { Badge } from "./ui/Badge";
 import { Button } from "./ui/Button";
 import { Calendar, Download, ExternalLink, BarChart3, FileText, Target } from "lucide-react";
 import type { Brief } from "../lib/content";
+import Image from "next/image";
 
 export function BriefCard({
   brief,
@@ -23,13 +24,28 @@ export function BriefCard({
 
   return (
     <div className={cn(
-      "rounded-xl p-5 bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))] shadow-sm",
+      "rounded-xl overflow-hidden bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))] shadow-sm",
       "transition-[transform,box-shadow,background-color] duration-[var(--dur-200)] ease-[var(--ease-standard)]",
       "hover:-translate-y-0.5 hover:shadow-[var(--shadow)] hover:bg-[hsl(var(--accent)/0.4)]",
       highlight && "border-[hsl(var(--ring))] shadow-[var(--shadow)]",
       className
     )}>
-      <div className="flex items-center gap-2 mb-3">
+      {/* Hero Image */}
+      {brief.heroImage && (
+        <div className="relative w-full aspect-video overflow-hidden">
+          <Image
+            src={brief.heroImage}
+            alt={brief.title || 'Intelligence Brief'}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover"
+            priority={highlight}
+          />
+        </div>
+      )}
+      
+      <div className="p-5">
+        <div className="flex items-center gap-2 mb-3">
         <Badge variant="brand">Weekly Brief</Badge>
         <div className="flex items-center gap-1 text-xs text-[hsl(var(--muted-foreground))]">
           <Calendar size={12} />
@@ -41,10 +57,10 @@ export function BriefCard({
         {brief.title || 'Intelligence Brief'}
       </h3>
       
-      {/* Executive Summary */}
+      {/* Executive Summary / Preview Text */}
       {brief.summary && (
         <div className="mb-4">
-          <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">
+          <p className="text-sm text-[hsl(var(--muted-foreground))] leading-relaxed line-clamp-3">
             {brief.summary}
           </p>
         </div>
@@ -93,6 +109,7 @@ export function BriefCard({
             PDF
           </a>
         </Button>
+      </div>
       </div>
     </div>
   );
