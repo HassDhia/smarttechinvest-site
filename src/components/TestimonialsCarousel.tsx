@@ -13,7 +13,7 @@ const TESTIMONIALS = [
     author: "Jordan Patel, Founder — ClearStack SaaS",
   },
   {
-    quote: "The community engagement around our insights has created a network effect—we&apos;re now seen as thought leaders in our vertical.",
+    quote: "The community engagement around our insights has created a network effect—we're now seen as thought leaders in our vertical.",
     author: "Elena Brooks, Managing Partner — Harbor & Co. Agency",
   },
 ];
