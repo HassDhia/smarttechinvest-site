@@ -66,7 +66,7 @@ export default function Offers() {
         useGradientTitle 
       />
       <div className="mt-3 text-sm rounded-xl border px-3 py-2 bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] border-[hsl(var(--border))]">
-        Risk reversal: If we're not delivering clear value in 30 days, you can opt out — no hard feelings.
+        Risk reversal: If we&apos;re not delivering clear value in 30 days, you can opt out — no hard feelings.
       </div>
       <StaggerList
         className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
