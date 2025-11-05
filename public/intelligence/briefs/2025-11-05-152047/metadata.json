@@ -1,0 +1,99 @@
+{
+  "generation_timestamp": "2025-11-05T15:20:47.207014",
+  "query": "Cognitive Wars: The AI Industrialization of Influence",
+  "days_back": 7,
+  "report_stats": {
+    "character_count": 27269,
+    "word_count": 3453,
+    "jsonld_size": 3601
+  },
+  "confidence_score": 0.7999999999999999,
+  "sources_count": 6,
+  "system_info": {
+    "agent_type": "Enhanced STI Agent",
+    "version": "1.0.0",
+    "model": "gpt-5-mini-2025-08-07",
+    "date_filtering": "Strict 7-day window enforced"
+  },
+  "agent_stats": {
+    "date_filter_stats": {
+      "total_processed": 6,
+      "within_window": 6,
+      "outside_window": 0,
+      "parse_failed": 0,
+      "success_rate": 1.0,
+      "parse_success_rate": 1.0
+    },
+    "sources_data": [
+      {
+        "id": 1,
+        "title": "Exclusive: Amazon targets as many as 30,000 corporate job cuts, sources say",
+        "url": "https://www.reuters.com/business/world-at-work/amazon-targets-many-30000-corporate-job-cuts-sources-say-2025-10-27/",
+        "publisher": "Reuters",
+        "date": "2025-11-05",
+        "credibility": 0.8
+      },
+      {
+        "id": 2,
+        "title": "Cybersecurity | Latest Cyber Security News | Reuters",
+        "url": "https://www.reuters.com/technology/cybersecurity/",
+        "publisher": "Reuters",
+        "date": "2025-11-05",
+        "credibility": 0.8
+      },
+      {
+        "id": 3,
+        "title": "Ukraine rushes to create AI-enabled war drones",
+        "url": "https://www.reuters.com/technology/artificial-intelligence/ukraine-rushes-create-ai-enabled-war-drones-2024-07-18/",
+        "publisher": "Reuters",
+        "date": "2025-11-05",
+        "credibility": 0.8
+      },
+      {
+        "id": 4,
+        "title": "AI Warfare Is Already Here",
+        "url": "https://www.bloomberg.com/features/2024-ai-warfare-project-maven/",
+        "publisher": "Bloomberg",
+        "date": "2025-11-05",
+        "credibility": 0.8
+      },
+      {
+        "id": 5,
+        "title": "AI Startup Writer Raises $100 Million to Pen Corporate Content",
+        "url": "https://www.bloomberg.com/news/articles/2023-09-18/ai-startup-writer-raises-100-million-to-pen-corporate-content",
+        "publisher": "Bloomberg",
+        "date": "2025-11-05",
+        "credibility": 0.8
+      },
+      {
+        "id": 6,
+        "title": "AI Eroded Doctors’ Ability to Spot Cancer Within Months in Study",
+        "url": "https://www.bloomberg.com/news/articles/2025-08-12/ai-eroded-doctors-ability-to-spot-cancer-within-months-in-study",
+        "publisher": "Bloomberg",
+        "date": "2025-11-05",
+        "credibility": 0.8
+      }
+    ],
+    "validated_sources_count": 6,
+    "intent": "market",
+    "horizon": "Near-term",
+    "hybrid_thesis_anchored": false,
+    "thesis_io": {}
+  },
+  "slides": {
+    "generated": true,
+    "slides_url": "https://docs.google.com/presentation/d/1szMgKPLkJtTY7vJ24lq8mWjNfLIzi6UJixuYZBy1DuE",
+    "pdf_path": "sti_reports/sti_enhanced_output_20251105_152047_cognitive_wars__the_/slides_export.pdf",
+    "generation_timestamp": "2025-11-05T15:24:29.227287"
+  },
+  "social_media_content": {
+    "generated": true,
+    "formats": [
+      "long_form",
+      "twitter_thread",
+      "linkedin_post"
+    ],
+    "metadata": {},
+    "generation_timestamp": ""
+  }
+}
