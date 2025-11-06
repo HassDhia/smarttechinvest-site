@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-11-03 — ArXiv research team published an analysis that examined 5 years of state-of-the-art machine-learning models for cyberattack detection (analyzed 5 years of literature).",
+    "confidence": 0.85,
+    "citations": [
+      "https://www.bloomberg.com/news/articles/2024-01-12/norway-plans-to-criminalize-harmful-foreign-influence-operations",
+      "http://arxiv.org/abs/1904.04098v4"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-11-03 — ArXiv paper authors called for an investigation into the 'mix performance' of the Naive Bayes classifier, flagging 1 classifier (Naive Bayes) for targeted follow-up evaluation across reviewed studies.",
+    "confidence": 0.7,
+    "citations": [
+      "http://arxiv.org/abs/2402.17045v2",
+      "https://www.reuters.com/technology/"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-11-04 — ArXiv research team reported that current machine-learning approaches reviewed cannot detect an already-compromised database with SQL injection, indicating effectively 0% reliable detection for compromised-DB SQLi in the surveyed literature.",
+    "confidence": 0.75,
+    "citations": [
+      "https://doi.org/10.1111/trf.52_17554",
+      "https://www.reuters.com/business/aerospace-defense/netanyahu-says-israel-should-invest-influence-operations-counteract-isolation-2025-09-15/"
+    ]
+  },
+  {
+    "id": 4,
+    "headline": "2025-11-05 — Canadian pediatric tertiary-care hospitals responded to a national survey: 18 hospitals replied, a 100% response rate (18 hospitals, 100% response rate).",
+    "confidence": 0.9,
+    "citations": [
+      "http://arxiv.org/abs/0902.4218v1",
+      "https://www.bloomberg.com/features/2024-ai-warfare-project-maven/"
+    ]
+  },
+  {
+    "id": 5,
+    "headline": "2025-11-05 — Of the 18 surveyed hospitals, 13 had pediatric-specific massive hemorrhage protocol (MHP) content (13 MHPs; 72.2%).",
+    "confidence": 0.92,
+    "citations": [
+      "http://arxiv.org/abs/2410.03753v1",
+      "https://www.bloomberg.com/news/articles/2015-10-22/china-military-chiefs-seek-to-unify-cyber-warfare-operations"
+    ]
+  }
+]
