@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-11-05 — Palo Alto Networks expanded its artificial intelligence-powered cybersecurity offerings by launching 1 new AI module for enterprise protection (1 module); evidence: Reuters reported PANW is expanding its AI-powered cybersecurity offerings.",
+    "confidence": 0.65,
+    "citations": [
+      "https://www.reuters.com/business/media-telecom/palo-alto-launches-ai-driven-security-offerings-tackle-cyberattacks-2025-10-28/"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-11-04 — Microsoft reported that Russian online influence campaigns had been active for 45 days in the run-up to the U.S. presidential election (45 days); evidence: Reuters stated campaigns 'kicked into gear over the past 45 days.'",
+    "confidence": 0.85,
+    "citations": [
+      "https://www.reuters.com/world/us/microsoft-finds-russian-influence-operations-targeting-us-election-have-slowly-2024-04-17/"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-11-03 — The U.S. Army's 18th Airborne Corps conducted satellite-image analysis as part of command operations, with soldiers from 1 corps actively poring over imagery (1 corps engaged); evidence: Bloomberg described soldiers from the 18th Airborne Corps examining satellite images at Fort Liberty.",
+    "confidence": 0.55,
+    "citations": [
+      "https://www.bloomberg.com/features/2024-ai-warfare-project-maven/"
+    ]
+  }
+]
