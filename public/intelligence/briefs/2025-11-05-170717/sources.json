@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "headline": "2025-11-03 — Eighteen Canadian pediatric tertiary care hospitals (surveyed) reported a 100% response rate and that 13 of 18 hospitals (72.2%) maintain pediatric-specific massive hemorrhage protocol (MHP) content.",
+    "confidence": 0.87,
+    "citations": [
+      "https://doi.org/10.1111/trf.52_17554"
+    ]
+  },
+  {
+    "id": 2,
+    "headline": "2025-11-04 — Among pediatric-specific MHPs, 12 of 13 (92.3%) recommended initial ratio-based blood component transfusion before transitioning to laboratory-guided transfusion.",
+    "confidence": 0.85,
+    "citations": [
+      "https://doi.org/10.1111/trf.52_17554"
+    ]
+  },
+  {
+    "id": 3,
+    "headline": "2025-11-05 — The surveyed pediatric MHPs reported transport-container content variability: 8 of 13 pediatric MHPs (61.5%) included only red blood cell (RBC) units in the first container.",
+    "confidence": 0.78,
+    "citations": [
+      "https://doi.org/10.1111/trf.52_17554"
+    ]
+  }
+]
