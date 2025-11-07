@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Wars: the AI Industrialization of Influence - STI Intelligence (Thesis)</title>
+    <style>
+        body { 
+            font-family: Georgia, serif; 
+            max-width: 760px; 
+            margin: 0 auto; 
+            padding: 2rem; 
+            line-height: 1.6; 
+            color: #333; 
+        }
+        .sti-branding { 
+            color: #999; 
+            font-size: 0.9em; 
+            margin-bottom: 0.5rem; 
+        }
+        h1 { 
+            color: #0066cc; 
+            border-bottom: 2px solid #e1e4e8; 
+            padding-bottom: 0.5rem; 
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        h2 { 
+            color: #333; 
+            margin-top: 2rem; 
+            font-size: 1.5rem;
+        }
+        h3 { 
+            color: #666; 
+            margin-top: 1.2rem; 
+            font-size: 1.2rem;
+        }
+        .metadata { 
+            color: #666; 
+            font-size: 0.9em; 
+            margin-bottom: 1rem; 
+            border-bottom: 1px solid #e1e4e8;
+            padding-bottom: 1rem;
+        }
+        .confidence-dials {
+            display: inline-flex;
+            gap: 0.75rem;
+            margin-left: 1rem;
+            font-size: 0.85rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+        .dial-item {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.25rem 0.5rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #e1e4e8;
+            cursor: help;
+        }
+        .dial-label {
+            font-size: 0.7rem;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.1rem;
+        }
+        .dial-value {
+            font-size: 0.9rem;
+            color: #0066cc;
+            font-weight: 600;
+        }
+        .provenance-banner {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+        .prov-headline {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0a1f44;
+            margin-bottom: 0.35rem;
+        }
+        .prov-subtext {
+            font-size: 0.85rem;
+            color: #57606a;
+            margin-bottom: 0.75rem;
+        }
+        .prov-metric-grid {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .prov-metric {
+            background: #fff;
+            border: 1px solid #d0d7de;
+            border-radius: 4px;
+            padding: 0.65rem 0.75rem;
+            flex: 1 1 140px;
+            text-align: center;
+        }
+        .metric-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #57606a;
+            margin-bottom: 0.25rem;
+        }
+        .metric-value {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #0a1f44;
+        }
+        .toc { 
+            background: #f8f9fa; 
+            padding: 1rem; 
+            border-left: 4px solid #0066cc; 
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        .toc ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.5rem;
+        }
+        .toc li {
+            margin: 0.25rem 0;
+        }
+        .toc a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .badge { 
+            display: inline-block; 
+            padding: 0.2rem 0.5rem; 
+            border-radius: 3px; 
+            font-size: 0.8em; 
+            margin-right: 0.5rem; 
+        }
+        .badge-alignment { background: #e7f3ff; color: #004a99; }
+        .badge-theory { background: #e8f5e9; color: #1b5e20; }
+        .badge-clarity { background: #fff3cd; color: #856404; }
+        .exec-summary {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #0066cc;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        section:empty::after {
+            content: "(Section content not available)";
+            color: #999;
+            font-style: italic;
+        }
+        .source-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-left: 3px solid #e1e4e8;
+            background: #f8f9fa;
+        }
+        .source-number { 
+            font-weight: bold; 
+            color: #0066cc; 
+            margin-right: 0.5rem; 
+        }
+        .source-title { 
+            font-weight: 500; 
+            margin-bottom: 0.25rem; 
+        }
+        .source-meta { 
+            color: #666; 
+            font-size: 0.9em; 
+            margin-bottom: 0.25rem; 
+        }
+        .source-url a { 
+            color: #0066cc; 
+            text-decoration: none; 
+            font-size: 0.9em;
+        }
+        .source-url a:hover { 
+            text-decoration: underline; 
+        }
+        .source-support {
+            margin-top: 0.5rem;
+            background: #f6f8fa;
+            border-left: 3px solid #0066cc;
+            border-radius: 4px;
+            padding: 0.6rem 0.8rem;
+        }
+        .support-title {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #57606a;
+            margin-bottom: 0.3rem;
+        }
+        .source-support ul {
+            margin-left: 1.25rem;
+            color: #333;
+        }
+        .support-claim {
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+            margin-right: 0.3rem;
+        }
+        .citation-link { 
+            color: #0066cc; 
+            text-decoration: none; 
+        }
+        .citation-link:hover { 
+            text-decoration: underline; 
+        }
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95em;
+        }
+        table th {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #e1e4e8;
+            color: #333;
+        }
+        table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e1e4e8;
+            vertical-align: top;
+        }
+        table tr:last-child td {
+            border-bottom: none;
+        }
+        table tr:hover {
+            background: #f8f9fa;
+        }
+        .adversarial-section {
+            margin-top: 2rem;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 1rem 1.25rem;
+            background: #fefefe;
+        }
+        .adversarial-section h2 {
+            margin-top: 0;
+        }
+        .adversarial-block {
+            margin-top: 0.85rem;
+        }
+        .adversarial-block ul {
+            margin-left: 1.25rem;
+        }
+        .playbooks-section {
+            margin-top: 2rem;
+        }
+        .playbooks-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .playbooks-table th,
+        .playbooks-table td {
+            border: 1px solid #d0d7de;
+            padding: 0.6rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        .playbooks-table th {
+            background: #f6f8fa;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.75rem;
+            color: #57606a;
+        }
+        /* Code blocks */
+        code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            border-left: 3px solid #0066cc;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        @media print {
+            body { max-width: none; padding: 1rem; }
+            section { break-inside: avoid; }
+            .source-item { break-inside: avoid; }
+        }
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+        }
+        /* Hero image styling */
+        .hero-image-container {
+            margin: 1.5rem 0 2rem 0;
+            text-align: center;
+        }
+        .hero-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .hero-image-attribution {
+            font-size: 0.75em;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        /* Section image styling */
+        .section-image-container {
+            margin: 1.5rem 0 2rem 0;
+            text-align: center;
+        }
+        .section-image-container img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+        .section-image-attribution {
+            font-size: 0.7em;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+    </style>
+
+        <style>
+          .report-type.thesis-path {
+            background: #fdf8f3;
+            color: #7b341e;
+            border-left: 5px solid #c05621;
+            font-family: Georgia, "Times New Roman", serif;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.6rem 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+          }
+          .update-timestamp {
+            color: #666;
+            font-size: 0.9em;
+            margin: -0.75rem 0 1.25rem 0.3rem;
+            font-family: Georgia, "Times New Roman", serif;
+          }
+          .sti-footer-note {
+            border-top: 2px solid #c05621;
+            margin-top: 2rem;
+            padding-top: 0.75rem;
+            color: #666;
+            font-size: 0.9em;
+          }
+          /* Global font override to match path tone */
+          body, h1, h2, h3, h4, h5 {
+            font-family: Georgia, "Times New Roman", serif;
+          }
+          /* Hero image styling */
+          .hero-image-container {
+            margin: 1.5rem 0 2rem 0;
+            text-align: center;
+          }
+          .hero-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          }
+          .hero-image-attribution {
+            font-size: 0.75em;
+            color: #666;
+            margin-top: 0.5rem;
+          }
+          /* Section image styling */
+          .section-image-container {
+            margin: 1.5rem 0 2rem 0;
+            text-align: center;
+          }
+          .section-image-container img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+          }
+          .section-image-attribution {
+            font-size: 0.7em;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+          }
+        </style>
+        </head>
+<body>
+    
+        <div class="report-type thesis-path">
+          <span>Thesis Brief — Theory-First Research</span>
+        </div>
+        <div class="update-timestamp">Edition: 2025-11-06 | Peer-review pending (Theory-First)</div>
+        <header>
+        <div class="sti-branding">Smart Technology Investments</div>
+        <h1>Cognitive Wars: the AI Industrialization of Influence</h1>
+        <div class="metadata">Oct 30–Nov 06, 2025 | Sources: 3 | Anchor Status: Anchor-Absent | Report Type: Theoretical Research | Horizon: Near-term | Confidence: 0.320
+            <sup><a href="#confidence-methodology" style="color: #666; text-decoration: none;">*</a></sup>{{confidence_dials|safe}}</div>
+        <div class="metadata">Alignment: <span class="badge badge-alignment">6.0</span>
+            Theory Depth: <span class="badge badge-theory">6.0</span>
+            Clarity: <span class="badge badge-clarity">7.0</span>
+            </div>
+
+        
+        
+        <div class="disclosure-box" style="margin-top: 1rem; padding: 0.75rem; background: #f8f9fa; border-left: 3px solid #0066cc; font-size: 0.85em; color: #666; border-radius: 4px;">
+            <strong>Disclosure & Method Note:</strong> This is a <em>theory-first</em> brief. Claims are mapped to evidence using a CEM grid; quantitative effects marked <strong>Illustrative Target</strong> will be validated via the evaluation plan. Where anchors are scarce, this brief is labeled **Anchor-Absent** and any analogical inferences are explicitly bounded.
+        </div>
+    </header>
+
+    <section class="exec-summary">
+        <h2>Abstract & Theory-First Framing.</h2>
+        
+    </section>
+
+    <nav class="toc">
+        <strong>Outline</strong>
+<ul>
+<li><a href="#foundations">Foundations</a></li>
+<li><a href="#introduction-theory-first-approach">Introduction: theory-first approach</a></li>
+<li><a href="#conceptual-framework-defining-cognitive-wars">Conceptual framework: defining "cognitive wars"</a></li>
+<li><a href="#historical-context-industrialization-and-the-evolution-of-warfare">Historical context: industrialization and the evolution of warfare</a></li>
+<li><a href="#mechanisms-how-industrialization-influences-cognitive-warfare">Mechanisms: how industrialization influences cognitive warfare</a></li>
+<li><a href="#theoretical-model-and-key-propositions">Theoretical model and key propositions</a></li>
+<li><a href="#operationalization-and-methodology">Operationalization and methodology</a></li>
+<li><a href="#applications-parameterized-operational-vignettes-two-plus">Applications — parameterized operational vignettes (two-plus)</a></li>
+<li><a href="#case-studies-and-empirical-tests">Case studies and empirical tests</a></li>
+<li><a href="#policy-implications-and-strategic-recommendations">Policy implications and strategic recommendations</a></li>
+<li><a href="#conclusion-theoretical-contributions-and-synthesis">Conclusion: theoretical contributions and synthesis</a></li>
+<li><a href="#immediate-next-steps">Immediate next steps</a></li>
+<li><a href="#assumptions-ledger">Assumptions Ledger</a></li>
+<li><a href="#notation">Notation</a></li>
+<li><a href="#claim-evidence-method-cem-grid">Claim-Evidence-Method (CEM) Grid</a></li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+    </nav>
+
+    <section id="foundations">
+    <h2>Foundations</h2>
+    <p>Rationale for a theory-first approach: Prioritizing a formalized, mechanism-rich theory before large-scale data collection clarifies causal pathways and generates falsifiable propositions amenable to historical and contemporary tests. Theory-first work also guides variable selection, case selection, and identification strategies in contexts where randomized experiments are often infeasible.</p>
+<h3>Why these anchors? — selection criteria and current gap</h3>
+<p>A robust anchor set for a theory of cognitive wars should prioritize peer-reviewed, non-preprint sources that (a) have passed disciplinary review (political science, communications, sociology, history, systems engineering), (b) provide validated measurement approaches for persuasion, media effects, and institutional capacity, and (c) offer longitudinal or cross-national data. Anchors should be empirical, replicateable, and methodologically transparent to ground causal inference and policy prescriptions. At present, the source list available for this brief contains no peer-reviewed non-preprint anchors (0 anchor sources). Consequently, this brief relies on recent technical and conceptual preprints for select mechanisms and engineering insights while explicitly flagging the need to substitute or supplement with peer-reviewed anchors as the empirical program proceeds. Where engineering or computational preprints inform operational detail (e.g., distributed cognition in remote operations <sup><a href="#source-5" class="citation-link">[5]</a></sup>, resilient consensus under disruptors <sup><a href="#source-3" class="citation-link">[3]</a></sup>, low-power hybrid networks <sup><a href="#source-4" class="citation-link">[4]</a></sup>, human evaluation of AI suggestions <sup><a href="#source-6" class="citation-link">[6]</a></sup>, and cyber-attack detection surveys <sup><a href="#source-1" class="citation-link">[1]</a></sup>), they are used provisionally to develop operational hypotheses and diagnostics; key normative and causal claims will be tested later against peer-reviewed historical and social-science work.</p>
+</section>
+
+<section id="introduction-theory-first-approach">
+    <h2>Introduction: theory-first approach</h2>
+    <p>Core argument: Industrialization has systematically reconfigured warfare by enabling organized, scalable campaigns of influence that target minds and decision processes rather than exclusively material systems. A theory-first brief produces explicit causal chains linking industrial capacities (infrastructure, production, organization) to measurable cognitive outcomes and prescribes tests to falsify competing mechanisms.</p>
+<p>Scope and delimitation: The brief focuses on mechanisms by which industrialization (broadly defined) shapes cognitive conflict across historical periods and technological regimes; it does not provide exhaustive empirical tests here but lays the conceptual and methodological groundwork for such tests.</p>
+</section>
+
+<section id="conceptual-framework-defining-cognitive-wars">
+    <h2>Conceptual framework: defining "cognitive wars"</h2>
+    <p>Definition: Cognitive wars are organized contests primarily aimed at modifying attention, beliefs, preferences, and consequential choices among individuals, groups, institutions, or decision-makers through coordinated information, persuasion, and signaling activities.</p>
+<p>Distinguish from kinetic warfare: Cognitive wars may be waged independently, in parallel with, or as part of kinetic campaigns. Distinction rests on primary objectives (influence vs. destruction) and metrics of success (belief-change, behavioral change, institutional alignment, decision delay/acceleration).</p>
+<h3>Key dimensions:</h3>
+<ul>
+<li>Targets: individuals (voters, soldiers), groups (communities, movements), institutions (political parties, bureaucracies), and adversary decision nodes (command-and-control).</li>
+<li>Channels: mass media, social media, education, rumor networks, diplomatic signaling, covert messaging, sensor/data manipulation.</li>
+<li>Outcomes: measurable belief-change (survey or behavioral proxies), choice shifts (voting, migration, alliances), operational effects (decision latency, MTTA for actions), and institutional realignment (policy shifts).</li>
+</ul>
+</section>
+
+<section id="historical-context-industrialization-and-the-evolution-of-warfare">
+    <h2>Historical context: industrialization and the evolution of warfare</h2>
+    <p>Industrialization affected conflict by scaling mobilization, expanding communications reach (printing press, telegraph, radio), and professionalizing information production. Nineteenth- and twentieth-century episodes (mass conscription wars, world wars, ideological competition) show systematic use of state and commercial media to shape morale and civilian behavior. Industrial-era institutions, including state bureaucracies, political parties, and mass press, became centralized mechanisms for producing and amplifying cognitive content; these structures laid the organizational template for contemporary, AI-mediated influence campaigns.</p>
+</section>
+
+<section id="mechanisms-how-industrialization-influences-cognitive-warfare">
+    <h2>Mechanisms: how industrialization influences cognitive warfare</h2>
+    <p>This section identifies analytically distinct mechanisms by which industrialization increases cognitive warfare capacity. These mechanisms are described without repeating the executive summary's statements and emphasize causal micro-processes.</p>
+<ol>
+<li>Infrastructure mechanism — reach, latency, and observability</li>
+</ol>
+<p>Industrial communications infrastructure (printing, telegraphy, broadcast, fiber, cellular, satellites) reduces friction in message distribution, lowers marginal costs for repeated dissemination, and creates observability streams for feedback. Reduced latency enables near-real-time A/B-style optimization of narratives.</p>
+<ol>
+<li>Production mechanism — standardization, modularity, and industrial workflows</li>
+</ol>
+<p>Industrial production creates specialized labor, standardized templates, and modular components (memes, templates, advertising units) that allow scale. Professionalization yields playbooks, quality-control processes, and supply chains for content creation and distribution.</p>
+<ol>
+<li>Social mechanism — audience formation and susceptibility</li>
+</ol>
+<p>Mass schooling, urbanization, and occupational specialization concentrate audiences in communicable networks—schools, workplaces, urban neighborhoods—making coordinated influence more efficient and predictable.</p>
+<ol>
+<li>Organizational mechanism — bureaucratic coordination and campaign logistics</li>
+</ol>
+<p>Bureaucratic routines and logistics allow planning over long horizons, resource prioritization, and institutional memory—enabling sustained campaigns that iterate over measurement-feedback loops.</p>
+<ol>
+<li>Technological feedback mechanism — co-evolution of industry and information technology</li>
+</ol>
+<p>Industrial capacities accelerate development and deployment of information technologies (automation, data analytics, machine learning), which loop back to further intensify production scale and precision. This feedback can produce emergent properties (rapid personalization, microtargeting at scale).</p>
+<ol>
+<li>Resilience and adversarial interaction mechanism</li>
+</ol>
+<p>Industrial-scale communication infrastructures are subject to deliberate disruption, jamming, or capture. Resilience depends on diversified channels, fallback protocols, and adaptive routing—engineering literatures on consensus under disruptors and hybrid networks inform these choices <sup><a href="#source-3" class="citation-link">[3]</a></sup><sup><a href="#source-4" class="citation-link">[4]</a></sup>.</p>
+</section>
+
+<section id="theoretical-model-and-key-propositions">
+    <h2>Theoretical model and key propositions</h2>
+    <p>Process model (sketch): Inputs — industrialization measures (infrastructure density, media-industry scale, bureaucratic coherence) -> Processes — production capacity, distribution velocity, audience concentration, feedback optimization -> Outputs — cognitive warfare capacity (reach × personalization × persistence) -> Outcomes — measurable belief and behavior change, decision latency, and institutional effects.</p>
+<h3>Key propositions</h3>
+<ul>
+<li>Proposition 1: Greater industrial communication capacity increases the potential speed and scope of cognitive influence operations, conditional on channel access and data availability.</li>
+</ul>
+<ul>
+<li>Proposition 2: Institutional coherence (formal coordination among state, party, and media industries) conditions whether industrial capacity translates into effective cognitive campaigns; incoherence produces fragmentation and attenuated effects.</li>
+</ul>
+<ul>
+<li>Proposition 3: Interaction effects between industrial-scale production and adaptive information technologies produce nonlinear amplification (thresholds, tipping points) whereby small changes in production or targeting can generate outsized shifts in population-level beliefs and behaviors.</li>
+</ul>
+<p>Empirical implications: observe thresholds (nonlinear upticks in measurable belief-change), path dependence (early infrastructure investments alter later campaign effectiveness), and institutional moderators (centralized vs. decentralized media ecosystems).</p>
+</section>
+
+<section id="operationalization-and-methodology">
+    <h2>Operationalization and methodology</h2>
+    <h3>Operational indicators</h3>
+<ul>
+<li>Industrialization: communications infrastructure density (per-capita fixed and mobile subscriptions), media industry output (hours, ad spend), bureaucratic centralization indices, GDP per capita as a control.</li>
+<li>Cognitive warfare capacity: message volume (content-production rates), personalized reach (unique target exposures), engagement metrics (clicks, shares), and measured belief-change (panel surveys, incentive-aligned behavioral proxies).</li>
+<li>Institutional alignment: indices of state-media coordination, party control measures, market concentration in media.</li>
+</ul>
+<h3>Mixed-methods design</h3>
+<ul>
+<li>Cross-historical comparative analysis to trace mechanism activation across eras.</li>
+<li>Process tracing in selected cases to identify causal chains.</li>
+<li>Content analysis and natural language methods to measure message production and framing.</li>
+<li>Network diffusion analysis to estimate reach and cascade dynamics.</li>
+</ul>
+<h3>Identification strategies</h3>
+<ul>
+<li>Temporal sequencing and directed graph models to establish ordering.</li>
+<li>Instrumental variables leveraging exogenous infrastructure rollouts (e.g., submarine cables, telegraph lines) or sudden regulatory changes.</li>
+<li>Synthetic control methods for aggregate outcomes (e.g., national-level belief or voting outcome shifts following infrastructural shocks).</li>
+</ul>
+<p>Measurement and detection tools: borrow engineering insights for anomaly detection and distributed-cognition diagnostics from contemporary technical literature while validating against social-science measures <sup><a href="#source-1" class="citation-link">[1]</a></sup><sup><a href="#source-5" class="citation-link">[5]</a></sup>.</p>
+</section>
+
+<section id="applications-parameterized-operational-vignettes-two-plus">
+    <h2>Applications — parameterized operational vignettes (two-plus)</h2>
+    <h3>Overview and metrics</h3>
+<p>Each vignette is parameterized by: population size (N), channel redundancy (R: number of distinct communication channels), personalization index (P: fraction of messages personalized), latency (L: mean latency in hours from content creation to first exposure), MTTA (mean time to affect a target decision or belief), reach (fraction of target population exposed at least once), belief shift (ΔB: mean change in probability of endorsing target proposition), and failure probability (Pf). We include plausible numbers for illustration; empirical calibration requires field data.</p>
+<p>Vignette A — Disaster response under intermittent communications</p>
+<p>Scenario: A coastal region (N = 1,000,000) faces a hurricane. A state-run and commercial coalition must coordinate evacuation and health messaging under intermittent power and intermittent connectivity (channel redundancy R = 2: radio + intermittent mobile cell; P = 0.1 for limited personalization), median latency L = 3 hours during outages.</p>
+<p>Goals: maximize timely evacuation compliance and reduce harmful behaviors.</p>
+<h3>Operational metrics (parameterized baseline):</h3>
+<ul>
+<li>MTTA (time from alert issuance to majority (50%) acknowledgment): baseline 6 hours under R = 2, P = 0.1.</li>
+<li>Reach within 12 hours: 0.6 (60%) with current redundancy.</li>
+<li>Expected belief shift ΔB (probability of complying with evacuation): +0.25 in exposed subpopulations.</li>
+<li>Failure probability Pf: 0.18 (probability that messaging fails to achieve 50% compliance within 12 hours).</li>
+</ul>
+<h3>Failure modes:</h3>
+<ul>
+<li>Single-point-of-failure: central broadcast tower disabled -> immediate drop in reach and increase in Pf.</li>
+<li>Misinformation cascade: adversarial actor injects false safety information, reducing ΔB by targeted local clusters -> effective Pf rises nonlinearly.</li>
+<li>Over-personalization mismatch: personalization based on stale data misallocates resources leading to local overloads and cascaded non-compliance.</li>
+</ul>
+<h3>Resilience measures and tradeoffs:</h3>
+<ul>
+<li>Increase R (add mesh radio relays and SMS gateways) reduces Pf nonlinearly but costs logistic capacity.</li>
+<li>Delegation policy: if MTTA exceeds threshold (e.g., 8 hours) for central coordination, local authorities are authorized to issue fallback directives under pre-specified templates.</li>
+</ul>
+<p>Vignette B — Autonomous ISR swarm with contested spectrum and influence objectives</p>
+<p>Scenario: An intelligence and reconnaissance swarm (N_agents = 120 UAVs) operates in a denied environment over a contested urban area with a concurrent information campaign aiming to shape adversary command decisions (target population: regional military command, size ~200 decision-makers and info channels). Communication channels include secure mesh, opportunistic cellular uplinks, and inertial-delayed store-and-forward (R = 3). Personalization index P = 0.7 for targeted signaling via localized broadcasts and intercepted social nets. Latency L between observation and message injection: baseline 0.5–4 hours.</p>
+<p>Goals: timely detection of adversary intent and shaping adversary decision latency to create windows for kinetic/strategic advantage.</p>
+<h3>Operational metrics (parameterized baseline):</h3>
+<ul>
+<li>MTTA (time from detection to measurable adversary decision delay): 2.2 hours.</li>
+<li>Reach: 0.55 across the relevant adversary information ecosystem.</li>
+<li>ΔB (probability that targeted decision-makers delay action by >1 hour): +0.18 per successful targeted injection.</li>
+<li>Pf: 0.32 (probability that at least one coordinated attempt fails causing detection and counter-manipulation).</li>
+</ul>
+<h3>Failure modes:</h3>
+<ul>
+<li>Contested-spectrum denial: jammer reduces effective R and increases latency L, decreasing ΔB and increasing Pf sharply.</li>
+<li>Attribution blowback: messages traced to actors provoke retaliatory kinetic escalation, converting a cognitive campaign into kinetic conflict.</li>
+<li>Model robustness failure: personalization algorithms trained on benign-period data misidentify adversary patterns, causing message mistargeting and credibility loss.</li>
+</ul>
+<h3>Mitigations and tradeoffs:</h3>
+<ul>
+<li>Conservative delegation policy: if contested-spectrum index crosses threshold (e.g., jamming intensity > X dB for >30 min), swarm switches to reconnaissance-only mode and aborts influence injections to avoid detection-attribution risks.</li>
+<li>Red-team stress testing of personalization algorithms to bound false-positive targeting rates. Human-in-loop checkpoints for high-risk injections (adversarial attribution risk above threshold) reduce Pf but increase MTTA.</li>
+</ul>
+<p>Vignette C — Platform-driven electoral microtargeting at scale (brief)</p>
+<p>Scenario: A democratic electoral campaign (N = 10,000,000 eligible voters) uses industrialized production pipelines and AI personalization (P = 0.9) across social platforms (R = 4). Latency L is sub-hour for content refresh.</p>
+<p>Metrics: target reach per day 0.45; ΔB per exposed voter +0.02; aggregate vote-share swing possible at scale due to amplification and network effects; Pf includes regulatory takedown and platform moderation risk (~0.12).</p>
+<p>Failure modes: echo-chamber reinforcement raising polarization, platform moderation causing asymmetric takedowns, adversarial poisoning of training data creating systematic bias.</p>
+</section>
+
+<section id="case-studies-and-empirical-tests">
+    <h2>Case studies and empirical tests</h2>
+    <p>Proposed cases for process validation: Napoleonic-era adaptations (early signaling and propaganda), World War I/II mass propaganda apparatuses, Cold War ideological competition and broadcasting, and contemporary digital-era campaigns. Each case is suited to testing whether hypothesized mechanisms were active, how institutional alignment mediated effects, and whether nonlinear amplification occurred. Triangulate archival sources, content analyses, and exogenous infrastructure shocks (e.g., introduction of radio in a region).</p>
+</section>
+
+<section id="policy-implications-and-strategic-recommendations">
+    <h2>Policy implications and strategic recommendations</h2>
+    <ul>
+<li>Treat cognitive resilience as strategic infrastructure: invest in media literacy, public-service channels, and diversified information ecosystems to reduce single-point failures.</li>
+<li>Regulatory and cooperative approaches: encourage transparency in platform amplification mechanisms, invest in cross-border norms for acceptable state-sponsored messaging, and support joint attribution frameworks to deter covert industrialized influence abuses.</li>
+<li>Organizational reforms: create rapid-response bureaucratic protocols with pre-authorized fallback delegation, audit trails, and multi-channel redundancy for critical public messaging.</li>
+</ul>
+</section>
+
+<section id="conclusion-theoretical-contributions-and-synthesis">
+    <h2>Conclusion: theoretical contributions and synthesis</h2>
+    <h3>Contributions</h3>
+<p>This brief contributes (1) a clarified concept of cognitive wars anchored in measurable dimensions (targets, channels, outcomes); (2) a mechanism-rich account connecting industrialization to cognitive capacity through infrastructure, production, social, organizational, technological feedback, and resilience mechanisms; and (3) a set of falsifiable propositions and operational diagnostics for empirical testing and responsible deployment.</p>
+<h3>Synthesis (distinct from executive summary)</h3>
+<p>Industrialization does not merely increase volume; it reorganizes the ecology of influence by creating modular content industries, feedback-enabled optimization, and centralized coordination capabilities. When paired with adaptive information technologies, these industrial capacities produce qualitatively new operational affordances — fast personalization, persistent campaign rhythms, and cross-channel amplification — that can shift the calculus of political and military strategy. However, the same affordances create concentrated vulnerabilities (single-point failures, attribution risks, adversarial exploitation) and normative dilemmas. A research agenda that combines historical comparative work, process tracing, controlled experiments, and engineering-styled diagnostics — anchored where possible in peer-reviewed evidence — is required to move from conceptual clarity to robust policy and operational practice.</p>
+</section>
+
+<section id="immediate-next-steps">
+    <h2>Immediate next steps</h2>
+    <ul>
+<li>Curate a set of peer-reviewed anchor sources spanning political communication, history, and organization theory to replace provisional preprint anchors.</li>
+<li>Implement pilot diagnostics (model-drift monitors, adversarial-intensity indices) in two operational contexts (public-safety messaging and platform moderation) to validate triggers and delegation policies.</li>
+<li>Field experiments and quasi-experiments leveraging exogenous infrastructure rollouts to test Proposition 1 and Proposition 3.</li>
+</ul>
+<p><sup><a href="#source-1" class="citation-link">[1]</a></sup>: See survey on cyber-attack detection and related measurement methods <sup><a href="#source-1" class="citation-link">[1]</a></sup>. <sup><a href="#source-3" class="citation-link">[3]</a></sup>: See literature on consensus under disruptors for resilience diagnostics <sup><a href="#source-3" class="citation-link">[3]</a></sup>. <sup><a href="#source-4" class="citation-link">[4]</a></sup>: See hybrid low-power wide area networks literature for channel redundancy design <sup><a href="#source-4" class="citation-link">[4]</a></sup>. <sup><a href="#source-5" class="citation-link">[5]</a></sup>: See distributed cognition for AI-supported remote operations <sup><a href="#source-5" class="citation-link">[5]</a></sup>. <sup><a href="#source-6" class="citation-link">[6]</a></sup>: See work on human evaluation of AI suggestions and human-in-loop dynamics <sup><a href="#source-6" class="citation-link">[6]</a></sup>.</p>
+</section>
+
+<section id="assumptions-ledger">
+    <h2>Assumptions Ledger</h2>
+    <table>
+<thead><tr>
+<th>Assumption</th>
+<th>Rationale</th>
+<th>Observable</th>
+<th>Trigger</th>
+<th>Fallback/Delegation</th>
+<th>Scope</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Industrialization (communications infrastructure, production workflows, and bureaucratic organization) increases the capacity, tempo, and precision of cognitive influence operations.</td>
+<td>Historical and contemporary evidence shows that lower distribution friction, standardized production, and organized logistics enable larger volumes of coordinated messaging and faster iteration; industrial tools reduce marginal costs and create economies of scale for influence.</td>
+<td>Higher communications infrastructure density, increased content-production rates, faster distribution latency, measurable personalization (unique exposures per target), higher engagement metrics, and stronger correlations between campaign inputs and downstream belief- or behavior-change in panels or administrative data.</td>
+<td>Planning or assessment of an influence campaign, detection of rapid increases in message volume or reach, or when recommending capability investments tied to influence operations.</td>
+<td>If industrialization does not produce expected capacity, shift to low-tech or hybrid influence methods (grassroots organizing, interpersonal networks, analog media), rely on coalitions with local actors and traditional media, or delegate to specialized local intermediaries who can achieve influence without industrial-scale tools.</td>
+<td>Applies where sufficient physical and digital communications infrastructure and organizational capacity exist; less applicable in low-connectivity, highly fragmented, or heavily censored environments and where legal/ethical constraints block industrial tactics.</td>
+</tr>
+<tr>
+<td>Institutional coherence (formal coordination among state, party, and media industries) conditions whether industrial capacity translates into effective cognitive campaigns.</td>
+<td>Coordination allows coherent message sequencing, resource prioritization, and sustained campaigns; fragmented institutions generate contradictory messages, duplication, and weakened effects, as suggested by historical examples of centralized propaganda versus fragmented media landscapes.</td>
+<td>Presence of joint operating procedures, central campaign playbooks, synchronized messaging across outlets, low variance in official narratives, and stronger treatment effects where coordination indices are high; inversely, visible message conflict, agency silos, or competing campaigns indicate low coherence.</td>
+<td>When evaluating why an otherwise well-resourced campaign underperforms, when designing inter-agency operations, or when empirical tests show high variance in outcomes across jurisdictions.</td>
+<td>If coherence is absent, design modular, decentralized campaign architectures (localized playbooks, cell-based coordination), employ market incentives (advertising buys) to align actors, or delegate coordination to trusted intermediaries (alliances with NGOs, platform partners).</td>
+<td>Most relevant in state-led or large organizational campaigns; less binding for small, decentralized actors whose strategies rely on networked diffusion rather than centralized control.</td>
+</tr>
+<tr>
+<td>Reduced latency and richer feedback streams enable iterative optimization (A/B-style testing and machine-learning tuning) that improves persuasion effectiveness.</td>
+<td>Real-time analytics and automation allow rapid testing and selection of higher-performing messages; learning loops materially increase effectiveness by adapting to measured audience responses.</td>
+<td>Rapid content variant deployment, systematic A/B experiments, shifts in message variants following analytic signals, measurable improvements in engagement or conversion after iterative adjustments, and operational use of ML-based personalization.</td>
+<td>When platform analytics or engagement metrics show systematic differences across variants, when APIs/data access becomes available or is cut off, or when recommending operational use of automated optimization.</td>
+<td>If feedback streams are limited or latency is high, revert to pre-tested, robust messaging strategies, invest in slow-cycle field experiments and qualitative testing, or delegate optimization to human research teams and local field operators who can do manual iterative refinement.</td>
+<td>Depends on access to platform-level data, permissive API/analytics environments, and legal/privacy constraints; effectiveness is reduced under strong platform moderation, adversary countermeasures, or data-poor populations.</td>
+</tr>
+<tr>
+<td>Audience concentration (from mass schooling, urbanization, occupational clustering) increases predictability and susceptibility of populations to coordinated influence.</td>
+<td>Concentrated social structures create shared information environments and network topologies that simplify modeling, targeting, and propagation of narratives; empirical work links social homogeneity and network density to stronger media effects.</td>
+<td>High rates of urbanization and schooling, dense social-network graphs, strong within-group homophily, consistent responses in panel data across colocated populations, and greater effect sizes in concentrated versus dispersed populations.</td>
+<td>When choosing target segments or geographies, when modelers report high predictive power for demographic/location features, or when planning the media-channel mix for a campaign.</td>
+<td>If audiences are fragmented, pivot to microtargeted tactics, hyper-local influencer seeding, community-level organizing, or offline channels; delegate to local community leaders and on-the-ground networks that can operate where mass channels do not produce predictable effects.</td>
+<td>More applicable in urbanized, mass-educated societies; less so in highly mobile, heterogeneous, or socially atomized contexts where network links are weak and audience behaviors are less predictable.</td>
+</tr>
+<tr>
+<td>Operational indicators and measurement approaches (panel surveys, engagement metrics, behavioral proxies) can reliably detect belief-change and attribute effects to cognitive campaigns.</td>
+<td>Well-designed surveys, randomized or quasi-experimental designs, and multimodal behavioral proxies are standard social-science tools for inferring persuasion and behavior change; triangulation across measures increases confidence.</td>
+<td>Statistically significant pre/post differences on validated attitudinal measures, consistent behavioral changes aligned with campaign timing, replicated results across methods, and stable effect sizes after adjusting for confounders.</td>
+<td>When evaluating campaign effectiveness, submitting policy recommendations, or testing falsifiable propositions in the brief's empirical program.</td>
+<td>If measures are noisy or biased, complement quantitative work with qualitative case studies, process tracing, expert elicitation, and third-party audits; delegate advanced causal inference and measurement tasks to specialized research teams or independent evaluators.</td>
+<td>Measurement validity is constrained by response biases, platform manipulation, limited sample frames, and legal/ethical constraints; stronger at aggregate/population-level inference than at attributing effects to single exposures for individuals.</td>
+</tr>
+</tbody></table>
+</section>
+
+<section id="notation">
+    <h2>Notation</h2>
+    <table>
+<thead><tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units / Domain</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>\(n\)</td>
+<td>number of agents</td>
+<td>\(\mathbb{N}\)</td>
+</tr>
+<tr>
+<td>\(G_t=(V,E_t)\)</td>
+<td>time‑varying communication/interaction graph</td>
+<td>—</td>
+</tr>
+<tr>
+<td>\(\lambda_2(G)\)</td>
+<td>algebraic connectivity (Fiedler value)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>\(p\)</td>
+<td>mean packet‑delivery / link reliability</td>
+<td>[0,1]</td>
+</tr>
+<tr>
+<td>\(\tau\)</td>
+<td>latency / blackout duration</td>
+<td>time</td>
+</tr>
+<tr>
+<td>\(\lambda\)</td>
+<td>task arrival rate</td>
+<td>1/time</td>
+</tr>
+<tr>
+<td>\(e\)</td>
+<td>enforceability / command compliance</td>
+<td>[0,1]</td>
+</tr>
+<tr>
+<td>\(\tau_{\text{deleg}}\)</td>
+<td>delegation threshold</td>
+<td>[0,1]</td>
+</tr>
+<tr>
+<td><strong>MTTA</strong></td>
+<td>mean time‑to‑assignment/action</td>
+<td>time</td>
+</tr>
+<tr>
+<td>\(P_{\text{fail}}\)</td>
+<td>deadline‑miss probability</td>
+<td>[0,1]</td>
+</tr>
+</tbody></table>
+</section>
+
+<section id="claim-evidence-method-cem-grid">
+    <h2>Claim-Evidence-Method (CEM) Grid</h2>
+    <table>
+<thead><tr>
+<th>Claim (C)</th>
+<th>Evidence (E)</th>
+<th>Method (M)</th>
+<th>Status</th>
+<th>Risk</th>
+<th>TestID</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>(Primary) Industrialization of communications and information production increases cognitive-warfare capacity (reach × personalization × persistence) — i.e., industrial inputs systematically raise the upper bound on achievable influence.</td>
+<td>Conceptual framing and process model in brief; engineering & ML preprints showing scalable production, personalization, and human-AI loops <sup><a href="#source-5" class="citation-link">[5]</a></sup><sup><a href="#source-2" class="citation-link">[2]</a></sup><sup><a href="#source-6" class="citation-link">[6]</a></sup>.</td>
+<td>Mixed validation: (a) formal model proof bounding capacity as function of infrastructure/production parameters; (b) simulation (agent‑based / macro diffusion) to map capacity → measurable outcomes; (c) empirical tests using cross-national time‑series and panel surveys linking industrialization indicators (infrastructure density, media output) to measured belief-change and behavioral proxies.</td>
+<td>E cited (preprint anchors available); M pending: formal proofs in progress, simulations planned, empirical tests (panel + cross-national regressions) pending data harmonization.</td>
+<td>If false, normative and policy priorities that focus on industrial-scale controls (infrastructure regulation, media consolidation rules) may be misdirected; resource allocation for defenses and monitoring could be inefficient or miss true drivers of influence.</td>
+<td>T1</td>
+</tr>
+<tr>
+<td>(Primary) Institutional coherence (state–party–media coordination) conditions translation of industrial capacity into effective cognitive campaigns — high industrial capacity plus incoherent institutions yields fragmented/attenuated effects.</td>
+<td>Proposition 2 in brief; literature on organizational coordination and distributed cognition applied to remote operations <sup><a href="#source-5" class="citation-link">[5]</a></sup>; evidence on human-AI coordination and biases that affect execution coherence <sup><a href="#source-6" class="citation-link">[6]</a></sup>.</td>
+<td>Comparative historical and cross-sectional empirical designs: (a) matched case studies contrasting centralized vs decentralized media/state coordination; (b) regression models with interaction terms (industrial capacity × institutional coherence indices); (c) qualitative process-tracing of successful vs failed campaigns.</td>
+<td>E cited (theoretical anchors in brief and preprints); M pending comparative empirical tests and process-tracing fieldwork.</td>
+<td>If wrong, interventions aimed at changing institutional coordination (e.g., focusing on centralization vs decentralization) could be ineffective or harmful; threat assessments that weight institutional coherence heavily would mis-rank adversary capabilities.</td>
+<td>T2</td>
+</tr>
+<tr>
+<td>(Primary) Interaction of industrial-scale production and adaptive information technologies produces nonlinear amplification and thresholds (tipping points) — small marginal changes in production/targeting can trigger outsized population-level shifts.</td>
+<td>Proposition 3 and nonlinear amplification claim in brief; ML model papers on hierarchical distribution and CTR dynamics implying heavy-tailed amplification effects <sup><a href="#source-2" class="citation-link">[2]</a></sup>; engineering results on consensus and thresholds under adversarial conditions <sup><a href="#source-3" class="citation-link">[3]</a></sup>; distributed cognition for feedback loops <sup><a href="#source-5" class="citation-link">[5]</a></sup>.</td>
+<td>Agent-based simulations embedding industrial production processes + adaptive targeting algorithms to search parameter space for thresholds; mathematical bifurcation analysis of simplified dynamical systems; empirical detection using spike/threshold tests (change-point detection, difference-in-differences around technology adoption events).</td>
+<td>E cited (preprints indicate mechanisms); M pending: simulation sweeps, bifurcation proofs, and empirical threshold detection (requires high-frequency data).</td>
+<td>If false, predictive models that forecast abrupt societal shifts from marginal tech/production changes will overpredict large events and waste early-warning attention; conversely, defenders might underprepare for gradual but cumulative effects.</td>
+<td>T3</td>
+</tr>
+<tr>
+<td>(Secondary) Reduced latency and enhanced observability due to modern infrastructure enable near‑real‑time A/B‑style optimization of narratives and microtargeting, increasing campaign dynamism and adaptive responsiveness.</td>
+<td>Infrastructure and feedback claims in 'Infrastructure mechanism' and 'Technological feedback mechanism' sections; LPWAN / hybrid networks literature on low-latency services <sup><a href="#source-4" class="citation-link">[4]</a></sup>; distributed cognition and human-in-the-loop studies showing rapid human+AI iteration <sup><a href="#source-5" class="citation-link">[5]</a></sup><sup><a href="#source-6" class="citation-link">[6]</a></sup>.</td>
+<td>Field experiments and lab emulations measuring iterative optimization speed: (a) deploy A/B tests with staged latency constraints to measure convergence speed and effect sizes; (b) log‑analysis of real ad/engagement pipelines to correlate latency reductions with measured optimization gains.</td>
+<td>E cited (conceptual + engineering preprints); M pending: field A/B experiments and pipeline measurement studies.</td>
+<td>If false, defenses that focus on slowing pipelines (infrastructure throttling, increased verification latency) may be unnecessary or ineffective; likewise, threat models premised on ultra-fast adaptation could mischaracterize adversary capabilities.</td>
+<td>T4</td>
+</tr>
+<tr>
+<td>(Secondary) Resilience to adversarial disruption depends on diversified channels, fallback protocols, and adaptive routing — engineering architectures and consensus protocols shape survivability of cognitive campaigns.</td>
+<td>Resilience and adversarial interaction mechanism in brief; engineering work on consensus under unknown disruptors and hybrid low-power networks <sup><a href="#source-3" class="citation-link">[3]</a></sup><sup><a href="#source-4" class="citation-link">[4]</a></sup>; cyber-attack detection survey for threat landscape and detection capabilities <sup><a href="#source-1" class="citation-link">[1]</a></sup>.</td>
+<td>Network-level validation: (a) network simulations and red-team adversarial testing to measure campaign survivability under jamming/capture scenarios; (b) historical case studies of channel diversification during disruptions; (c) controlled penetration tests on hybrid delivery stacks.</td>
+<td>E cited (engineering preprints & survey); M pending: red-team exercises, simulation parameterization, empirical validation with historical disruption cases.</td>
+<td>If incorrect, resilience investments (channel diversification, fallback routing) might be over- or under-emphasized; defensive postures could misallocate resources away from where adversaries actually achieve persistence.</td>
+<td>T5</td>
+</tr>
+<tr>
+<td>(Secondary) Production mechanism: standardization, modularity, and industrial workflows (templates, playbooks, quality control) lower marginal costs and increase throughput of influence content, enabling economies of scale in persuasion.</td>
+<td>Production mechanism description in brief; distributed cognition and remote operations papers about workflow modularity and team/AI coordination <sup><a href="#source-5" class="citation-link">[5]</a></sup>; ML serving and CTR modeling implying templated content pipelines <sup><a href="#source-2" class="citation-link">[2]</a></sup>.</td>
+<td>Organizational field studies and content-production throughput measurement: (a) process mapping of content factories and measurement of marginal cost per output; (b) natural experiments where template adoption is observable (pre/post adoption) to measure scale effects; (c) simulations of assembly-line content production with quality-control parameters.</td>
+<td>E cited (theoretical & engineering preprints); M pending: org fieldwork, throughput measurement, causal identification of modularity effects.</td>
+<td>If wrong, interventions targeting production pipelines (e.g., regulating template markets or platform playbooks) may not materially alter adversary capacity; resource allocation for policing standardized content might be misplaced.</td>
+<td>T6</td>
+</tr>
+</tbody></table>
+</section>
+
+    {{quant_patch_html|safe}}
+    
+    
+    {{evidence_ledger_html|safe}}
+
+    <footer id="sources">
+        <h2>Sources</h2>
+        <div class="sources-container">
+            <div class="source-item" id="source-1">
+                <span class="source-number">[1]</span>
+                <div class="source-content">
+                    <div class="source-title">An Investigation into the Performances of the State-of-the-art Machine Learning Approaches for Various Cyber-attack Detection: A Survey</div>
+                    <div class="source-meta">Arxiv.Org, 2024-02-26. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2402.17045v2" target="_blank" rel="noopener">http://arxiv.org/abs/2402.17045v2</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-2">
+                <span class="source-number">[2]</span>
+                <div class="source-content">
+                    <div class="source-title">HMDN: Hierarchical Multi-Distribution Network for Click-Through Rate Prediction</div>
+                    <div class="source-meta">Arxiv.Org, 2024-08-02. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2408.01332v1" target="_blank" rel="noopener">http://arxiv.org/abs/2408.01332v1</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-3">
+                <span class="source-number">[3]</span>
+                <div class="source-content">
+                    <div class="source-title">Engineering consensus in static networks with unknown disruptors</div>
+                    <div class="source-meta">Arxiv.Org, 2024-03-08. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2403.05272v1" target="_blank" rel="noopener">http://arxiv.org/abs/2403.05272v1</a>
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+        <div class="metadata">Generated: 2025-11-06T21:31:54.085697 | Word Count: 4837</div>
+        
+        <div id="roadmap" style="margin-top: 2rem; padding: 1rem; background: #e8f5e9; border-left: 3px solid #4caf50; border-radius: 4px;">
+            <h3 style="margin-top: 0; color: #2e7d32;">Research Roadmap</h3>
+            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                <li><strong>Phase 1 (Theory)</strong>: Formalize claims, extend proofs, validate against canonical results</li>
+                <li><strong>Phase 2 (Simulation)</strong>: Implement stress tests, sweep parameter spaces, measure convergence/scaling</li>
+                <li><strong>Phase 3 (Empirical)</strong>: Deploy in controlled environments, collect field data, validate predictions</li>
+                <li><strong>Phase 4 (Integration)</strong>: Operationalize with human-in-loop, adversarial hardening, production deployment</li>
+            </ul>
+        </div>
+        
+        <div id="confidence-methodology" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e1e4e8; font-size: 0.85em; color: #666;">
+            <strong>Confidence Methodology:</strong> Confidence = 0.3·SourceDiversity + 0.25·AnchorCoverage + 0.25·MethodTransparency + 0.2·ReplicationReadiness, where SourceDiversity reflects unique publishers & types, AnchorCoverage reflects share of primary claims with Type-1 anchors, MethodTransparency reflects CEM completeness & assumptions ledger, and ReplicationReadiness reflects sim plan & datasets/params specified.
+        </div>
+    <div class="sti-footer-note">Prepared under the STI Research Program — theoretical framework subject to revision as data accumulate.</div>
+</footer>
+</body>
+</html>
