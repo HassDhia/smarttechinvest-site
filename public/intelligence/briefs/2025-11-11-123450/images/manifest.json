@@ -1,0 +1,17 @@
+[
+  {
+    "type": "hero",
+    "query": "Cognitive Wars: The AI Industrialization of Influence",
+    "intent": "theory",
+    "prompt": "Eye-level, rule-of-thirds-right portrait of a single neural‑accelerator module on a cool steel lab bench, side‑lit from the left with soft daylight and a shallow depth of field. The minimalist object—glowing traces suggesting information throughput—reads as an emblem of AI industrialization, technological–bureaucratic feedback loops and scaled influence in the emerging “cognitive wars,” set against generous negative space for a magazine masthead.. clean editorial photography, soft daylight, cool slate/steel palette, no text or lettering, single subject, generous negative space, magazine cover aesthetic, depth-of-field, subtle contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/hero_cognitive_wars_the_ai_industri.png"
+  },
+  {
+    "type": "section",
+    "query": "Cognitive Wars: The AI Industrialization of Influence",
+    "intent": "theory",
+    "section": "Applications (parameterized vignettes)",
+    "prompt": "A restrained hub-and-mesh composition of thin arcs and sparse nodes suggests a 70% platform-penetration urban topology, where programmatic spend and automated content production radiate from a central hub into psychographic microsegments. Soft slate gradients and generous negative space, with delicate broken threads and attenuated clusters, hint at recommendation-driven amplification, MTTA latency, and the risk of deplatforming.. clean editorial photography, soft daylight, cool slate/steel palette, no text or lettering, single subject, generous negative space, magazine cover aesthetic, depth-of-field, subtle contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels, not a dashboard, not an infographic, no widgets, no icons",
+    "image": "images/section_applications_parameterized_vig_cognitive_wars_the_ai_industri.png"
+  }
+]
