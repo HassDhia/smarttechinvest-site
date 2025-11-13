@@ -5,17 +5,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TESTIMONIALS = [
   {
-    quote: "Our pitch went from generic to cinematic. The first deck STI rebuilt for us opened doors we'd been knocking on for months — and we closed our first partnership in 18 days instead of 90.",
+    quote: "STI reframed our partnership story from a vendor pitch into a brand collaboration narrative. Their strategic positioning opened doors we'd been knocking on for months — we closed our first partnership in 18 days instead of 90.",
     author: "Sarah Chen",
     role: "Founder & CEO, Artisan Goods Co.",
   },
   {
-    quote: "The activation concept was so strong that the brand rep asked who our creative studio was. That deck generated $850K in ARR pipeline from just 3 pitches. We're now using their framework for every new partnership.",
+    quote: "The activation concept STI designed was so strong that the brand rep asked who our creative studio was. Their narrative framework generated $850K in ARR pipeline from just 3 pitches.",
     author: "Marcus Rodriguez",
     role: "VP Marketing, Urban Retail Collective",
   },
   {
-    quote: "STI redesigned our partner narrative and we immediately saw better responses and cleaner conversations. Response rates tripled, and we went from 2–3 warm intros per quarter to 2–4 per month. The ROI was clear within the first 30 days.",
+    quote: "STI redesigned our partner narrative and we immediately saw better responses. Response rates tripled, and we went from 2–3 warm intros per quarter to 2–4 per month.",
     author: "Jennifer Park",
     role: "COO, CloudScale Solutions",
   },

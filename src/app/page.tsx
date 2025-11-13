@@ -80,7 +80,7 @@ export default function Home() {
             role="Strategy"
             year="2025"
             outcome="$850K ARR pipeline generated"
-            description="$850K ARR pipeline generated from a rebuilt partner story and pitch deck."
+            description="from a rebuilt partner story and pitch deck."
             highlight
             image="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop"
           />
@@ -89,7 +89,7 @@ export default function Home() {
             role="Partnership Design"
             year="2025"
             outcome="47% response rate, 3 deals closed"
-            description="47% response rate, 3 deals closed from a new narrative and deck system used across multiple brands."
+            description="from a new narrative and deck system used across multiple brands."
             image="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop"
           />
           <WorkCard
@@ -97,7 +97,7 @@ export default function Home() {
             role="Activation Design"
             year="2024"
             outcome="$120K revenue in 48 hours"
-            description="$120K revenue in 48 hours from a zero-new-SKU, on-premise activation concept."
+            description="from a zero-new-SKU, on-premise activation concept."
             image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop"
           />
         </div>
