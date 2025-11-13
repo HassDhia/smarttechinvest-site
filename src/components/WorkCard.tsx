@@ -52,7 +52,7 @@ export function WorkCard({
         </div>
       ) : null}
       {description ? (
-        <p className="mt-2 text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">{description}</p>
+        <p className="mt-1.5 text-xs text-[hsl(var(--muted-foreground))] leading-snug">{description}</p>
       ) : null}
     </div>
   );
