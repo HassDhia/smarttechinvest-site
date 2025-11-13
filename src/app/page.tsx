@@ -1,11 +1,9 @@
 import { Hero } from "../components/Hero";
-import { Card } from "../components/Card";
 import { KPIStat } from "../components/KPIStat";
 import { LogoStrip } from "../components/LogoStrip";
 import { SectionHeader } from "../components/SectionHeader";
 // removed unused Testimonial in favor of carousel
 import { WorkCard } from "../components/WorkCard";
-import { FileText, Presentation, Headphones, Users, Share2, BarChart3 } from "lucide-react";
 import { MiniTOC } from "../components/MiniTOC";
 import { TestimonialsCarousel } from "../components/TestimonialsCarousel";
 import { IntelligenceCard } from "../components/IntelligenceCard";
@@ -22,8 +20,8 @@ export default function Home() {
       <MiniTOC sections={[{ id: "partnership-lane", label: "Partnership Lane" }, { id: "intelligence", label: "Intelligence" }, { id: "work", label: "Selected Work" }, { id: "outcomes", label: "Outcomes" }]} />
       <Hero
         title="Turn Your Business Into a Brand Magnet"
-        subtitle="Smart Technology Investments (STI) designs and runs your Partnership Pitch Engine™ — cinematic decks, activation concepts, and strategic narratives that make brands say 'yes.'"
-        body="Most teams treat 'brand partnerships' like a vague goal. We turn it into a lane: a flagship deck that feels like a film pitch, a concrete activation plan, and a repeatable system for the next collab."
+        subtitle="Smart Technology Investments (STI) designs and runs your Partnership Pitch Engine™ — cinematic decks, activation concepts, and strategic narratives that make brands say &apos;yes.&apos;"
+        body="Most teams treat &apos;brand partnerships&apos; like a vague goal. We turn it into a lane: a flagship deck that feels like a film pitch, a concrete activation plan, and a repeatable system for the next collab."
         ctaText="Build My Partnership Deck"
         ctaHref="/schedule"
         secondaryCtaText="See How the Engine Works"
@@ -33,7 +31,7 @@ export default function Home() {
         <SectionHeader kicker="What We Actually Do" title="More Than a Deck. A Partnership Lane." useGradientTitle />
         <div className="max-w-3xl mx-auto text-center mb-8">
           <p className="text-foreground/90 fs-step-0 mb-6">
-            Anyone can open Gamma and spit out slides. What you don't get from a template is: the story that makes a brand care, the activation that lives in the real world, and the system that lets you repeat the play.
+            Anyone can open Gamma and spit out slides. What you don&apos;t get from a template is: the story that makes a brand care, the activation that lives in the real world, and the system that lets you repeat the play.
           </p>
           <p className="text-foreground/90 fs-step-0 mb-6">
             STI works with operators, creators, and brands to:
