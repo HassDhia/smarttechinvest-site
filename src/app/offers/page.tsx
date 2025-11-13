@@ -9,49 +9,56 @@ import { SectionHeader } from "../../components/SectionHeader";
 export default function Offers() {
   const tiers = [
     {
-      title: "Core",
-      tagline: "Flagship partnership deck and activation framework.",
+      title: "Flagship Pitch",
+      tagline: "Your flagship partnership deck + activation concept",
       bullets: [
-        "Flagship partnership deck (cinematic, campaign-style)",
-        "Activation storyboard (in-store, on-premise, digital)",
-        "Reusable framework template",
-        "Strategic narrative development",
+        "Cinematic, campaign-style pitch deck",
+        "Activation storyboard (in-store, event, digital)",
+        "Strategic narrative architecture",
         "Brand partnership positioning",
-        "Initial consultation & strategy session"
+        "Visual & identity direction",
+        "Reusable pitch structure + messaging framework",
+        "Discovery + strategic consultation session"
       ],
-      anchor: "Starting at $12k–$25k",
+      anchor: "$15K – $30K",
+      anchorNote: "(Depending on industry, depth, and creative scope)",
       cta: "Request Demo",
       highlight: false,
     },
     {
-      title: "Premium",
-      tagline: "Everything in Core, plus advanced capabilities.",
+      title: "Pitch System",
+      tagline: "Your reusable, multi-brand partnership pitch machine",
       bullets: [
-        "Everything in Core",
-        "Multiple partnership decks (3-5 brands)",
-        "Advanced activation concepts",
-        "Strategic consultation & optimization",
+        "Everything in Flagship Pitch, plus:",
+        "2–4 tailored pitch variants for specific brands",
+        "Expanded activation concepts (multiple environments)",
+        "Priority narrative refinement & deck revisions",
         "Partnership pipeline development",
-        "Priority support & revisions",
-        "Custom framework adaptations"
+        "Founder/BD team coaching on pitch delivery",
+        "Brand-fit analysis & message testing",
+        "Custom asset set (one-pagers, scripts, thematic identity)"
       ],
-      anchor: "Starting at $25k+",
+      anchor: "Starting at $35K+",
       cta: "Request Demo",
       highlight: true,
     },
     {
-      title: "Enterprise",
-      tagline: "Ongoing partnership pipeline and dedicated support.",
+      title: "Partnership Engine",
+      tagline: "Full partnership lane: outreach, narrative, assets, pipeline",
       bullets: [
-        "Everything in Premium",
+        "Everything in Pitch System, plus:",
         "Ongoing partnership pipeline management",
-        "Dedicated account management",
-        "Custom framework development",
-        "Quarterly strategy reviews",
-        "Unlimited revisions & consultations",
-        "Training & onboarding included"
+        "Monthly pitch variants (per partner)",
+        "Dedicated account strategist",
+        "Custom framework & visual system development",
+        "Quarterly strategy & performance reviews",
+        "Activation support (from concept to prep)",
+        "Unlimited narrative revisions",
+        "Team onboarding + training",
+        "Priority turnaround"
       ],
-      anchor: "Custom pricing",
+      anchor: "Custom",
+      anchorNote: "(typically $8K–$20K/month, scope-based)",
       cta: "Contact Sales",
       highlight: false,
     },
@@ -61,7 +68,7 @@ export default function Offers() {
       <SectionHeader 
         kicker="Partnership Pitch Engine" 
         title="Pricing & Packages" 
-        subtitle="Partnership deck packages: cinematic decks, activation concepts, and strategic narratives that make brands say 'yes.'" 
+        subtitle="Partnership deck packages: cinematic decks, activation concepts, and strategic narratives that win real partnerships." 
         useGradientTitle 
       />
       <div className="mt-3 text-sm rounded-xl border px-3 py-2 bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] border-[hsl(var(--border))]">
@@ -77,12 +84,21 @@ export default function Offers() {
           >
             <h3 className="text-xl font-bold text-foreground">{tier.title}</h3>
             <p className="font-semibold text-[hsl(var(--foreground)/0.9)] mt-2 mb-4">{tier.tagline}</p>
-            <ul className="list-disc pl-5 my-3 text-sm leading-6 space-y-1.5">
-              {tier.bullets.map((b) => (
-                <li key={b}>{b}</li>
-              ))}
-            </ul>
-            <p className="font-bold text-foreground/90 mt-4 mb-4">{tier.anchor}</p>
+            <div className="mb-4">
+              <p className="text-sm font-semibold text-[hsl(var(--muted-foreground))] mb-1">What you get:</p>
+              <ul className="list-disc pl-5 text-sm leading-6 space-y-1.5">
+                {tier.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="mt-4 mb-4">
+              <p className="text-sm font-semibold text-[hsl(var(--muted-foreground))] mb-1">Price:</p>
+              <p className="font-bold text-foreground/90">{tier.anchor}</p>
+              {tier.anchorNote && (
+                <p className="text-xs text-[hsl(var(--muted-foreground))] mt-1">{tier.anchorNote}</p>
+              )}
+            </div>
             <div className="mt-4">
               <Button asChild variant={tier.highlight ? "gradient" : "secondary"} className="w-full">
                 <Link href="/schedule">{tier.cta}</Link>
