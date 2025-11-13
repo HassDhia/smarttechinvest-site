@@ -5,16 +5,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TESTIMONIALS = [
   {
-    quote: "The Intelligence Engine has become our go-to source for market insights. Automated reports plus community engagement has driven 3x more qualified leads.",
-    author: "Maya Torres, CEO — Ridgefield Services",
+    quote: "Our pitch went from generic to cinematic. The first deck STI rebuilt for us opened doors we'd been knocking on for months.",
+    author: "Founder, DTC Brand",
   },
   {
-    quote: "Having well-cited reports, decks, and audio summaries automatically generated and distributed has freed up our team to focus on execution.",
-    author: "Jordan Patel, Founder — ClearStack SaaS",
+    quote: "The activation concept was so strong that the brand rep asked who our creative studio was.",
+    author: "Marketing Lead, Boutique Retailer",
   },
   {
-    quote: "The community engagement around our insights has created a network effect—we're now seen as thought leaders in our vertical.",
-    author: "Elena Brooks, Managing Partner — Harbor & Co. Agency",
+    quote: "STI redesigned our partner narrative and we immediately saw better responses and cleaner conversations.",
+    author: "COO, Growth-Stage SaaS",
   },
 ];
 
