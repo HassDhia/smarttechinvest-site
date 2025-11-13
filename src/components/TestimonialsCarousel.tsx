@@ -39,7 +39,7 @@ export function TestimonialsCarousel() {
         if (e.key === "ArrowLeft") prev();
       }}
     >
-      <blockquote className="text-base md:text-lg leading-relaxed">"{t.quote}"</blockquote>
+      <blockquote className="text-base md:text-lg leading-relaxed">&ldquo;{t.quote}&rdquo;</blockquote>
       <div className="mt-3 text-sm font-semibold text-[hsl(var(--muted-foreground))]">
         {t.author}
         {t.role ? <span className="font-normal"> — {t.role}</span> : null}
