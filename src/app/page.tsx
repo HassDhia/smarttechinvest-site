@@ -79,7 +79,6 @@ export default function Home() {
             title="Partnership Narrative Overhaul"
             role="Strategy"
             year="2025"
-            outcome="$850K ARR pipeline generated"
             description="Rebuilt partner story repositioned us from vendor to strategic collaborator."
             highlight
             image="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop"
@@ -88,7 +87,6 @@ export default function Home() {
             title="Campaign-Ready Pitch System"
             role="Partnership Design"
             year="2025"
-            outcome="47% response rate, 3 deals closed"
             description="New narrative system standardized our approach across multiple brands."
             image="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop"
           />
@@ -96,7 +94,6 @@ export default function Home() {
             title="Local Activation Concept"
             role="Activation Design"
             year="2024"
-            outcome="$120K revenue in 48 hours"
             description="Zero-new-SKU activation concept drove immediate revenue without inventory changes."
             image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop"
           />
