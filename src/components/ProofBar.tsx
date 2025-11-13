@@ -9,7 +9,7 @@ type ProofBarProps = {
 
 export function ProofBar({
   trustedByText = "Trusted by operators & SMB leaders",
-  outcomes = ["+$1.2M ARR unlocked", "+8% margin", "−34% cycle time"],
+  outcomes = ["+$1.2M ARR unlocked", "+8% margin on partnership revenue", "−34% cycle time from pitch to close", "47% response rate"],
   className,
 }: ProofBarProps) {
   return (

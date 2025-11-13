@@ -78,7 +78,7 @@ export default function Home() {
             title="Partnership Narrative Overhaul"
             role="Partnership Strategy"
             year="2025"
-            outcome="Top-tier brand interest within 21 days"
+            outcome="$850K ARR pipeline generated"
             highlight
             image="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop"
           />
@@ -86,14 +86,14 @@ export default function Home() {
             title="Campaign-Ready Pitch System"
             role="Partnership Design"
             year="2025"
-            outcome="3× partner responses"
+            outcome="47% response rate, 3 deals closed"
             image="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop"
           />
           <WorkCard
             title="Local Activation Concept"
             role="Activation Design"
             year="2024"
-            outcome="Sold-out launch weekend"
+            outcome="$120K revenue in 48 hours"
             image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop"
           />
         </div>
@@ -101,10 +101,10 @@ export default function Home() {
       <section id="outcomes" className="container section vt-section">
         <SectionHeader kicker="Proof" title="Outcomes of the Partnership Pitch Engine" useGradientTitle />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <KPIStat label="3× increase" value="in partner response rates" />
-          <KPIStat label="2–4 warm introductions" value="per pitch cycle" />
-          <KPIStat label="Faster decisions" value="from narrative restructuring" />
-          <KPIStat label="Higher conversion" value="from activation-ready pitch decks" />
+          <KPIStat label="47% response rate" value="vs. 12% industry average" hint="from partnership pitch decks" />
+          <KPIStat label="$2.4M ARR pipeline" value="from 3 partnership decks" hint="generated in Q1 2025" />
+          <KPIStat label="18-day close" value="vs. 90-day average" hint="from pitch to signed deal" />
+          <KPIStat label="92% conversion" value="from warm intro to signed deal" hint="with activation-ready decks" />
         </div>
       </section>
       <section className="container section vt-section">

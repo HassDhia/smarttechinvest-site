@@ -1,11 +1,11 @@
 export function LogoStrip() {
   // Use simple brand name chips for a cleaner, premium look
   const brands = [
-    "Northwind Labs",
-    "BluePeak Logistics",
-    "Aurora Health",
-    "Cinderworks",
-    "Helios Cloud"
+    "Summit Operations",
+    "Ridgeway Supply Co.",
+    "Meridian Tech Solutions",
+    "Cascade Retail Group",
+    "Pinnacle Manufacturing"
   ];
   return (
     <div className="container section vt-section">

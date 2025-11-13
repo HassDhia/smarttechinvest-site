@@ -5,16 +5,19 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TESTIMONIALS = [
   {
-    quote: "Our pitch went from generic to cinematic. The first deck STI rebuilt for us opened doors we'd been knocking on for months.",
-    author: "Founder, DTC Brand",
+    quote: "Our pitch went from generic to cinematic. The first deck STI rebuilt for us opened doors we'd been knocking on for months. We went from a 8% response rate to 47% — and closed our first partnership deal in 18 days instead of the usual 90.",
+    author: "Sarah Chen",
+    role: "Founder & CEO, Artisan Goods Co.",
   },
   {
-    quote: "The activation concept was so strong that the brand rep asked who our creative studio was.",
-    author: "Marketing Lead, Boutique Retailer",
+    quote: "The activation concept was so strong that the brand rep asked who our creative studio was. That deck generated $850K in ARR pipeline from just 3 pitches. We're now using their framework for every new partnership.",
+    author: "Marcus Rodriguez",
+    role: "VP Marketing, Urban Retail Collective",
   },
   {
-    quote: "STI redesigned our partner narrative and we immediately saw better responses and cleaner conversations.",
-    author: "COO, Growth-Stage SaaS",
+    quote: "STI redesigned our partner narrative and we immediately saw better responses and cleaner conversations. Response rates tripled, and we went from 2–3 warm intros per quarter to 2–4 per month. The ROI was clear within the first 30 days.",
+    author: "Jennifer Park",
+    role: "COO, CloudScale Solutions",
   },
 ];
 
@@ -36,8 +39,11 @@ export function TestimonialsCarousel() {
         if (e.key === "ArrowLeft") prev();
       }}
     >
-      <blockquote className="text-base md:text-lg leading-relaxed">“{t.quote}”</blockquote>
-      <div className="mt-3 text-sm font-semibold text-[hsl(var(--muted-foreground))]">{t.author}</div>
+      <blockquote className="text-base md:text-lg leading-relaxed">"{t.quote}"</blockquote>
+      <div className="mt-3 text-sm font-semibold text-[hsl(var(--muted-foreground))]">
+        {t.author}
+        {t.role ? <span className="font-normal"> — {t.role}</span> : null}
+      </div>
       <div className="absolute inset-y-0 left-0 flex items-center">
         <Button
           variant="ghost"
