@@ -10,6 +10,7 @@ export function WorkCard({
   role,
   year,
   outcome,
+  description,
   image,
   href,
   highlight,
@@ -18,6 +19,7 @@ export function WorkCard({
   role: string;
   year: string;
   outcome?: string;
+  description?: string;
   image?: string;
   href?: string;
   highlight?: boolean;
@@ -38,15 +40,20 @@ export function WorkCard({
           priority={false}
         />
       </div>
-      <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-[hsl(var(--muted-foreground))]">
+      <h3 className="mt-3 text-lg font-semibold text-foreground">{title}</h3>
+      <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-[hsl(var(--muted-foreground))]">
         <span className="font-mono">{role}</span>
-        <span>•</span>
+        <span>·</span>
         <span className="font-mono">{year}</span>
-        {outcome ? (
-          <Badge className="ml-0 sm:ml-auto">{outcome}</Badge>
-        ) : null}
       </div>
-      <h3 className="mt-1 text-lg font-semibold text-foreground">{title}</h3>
+      {outcome ? (
+        <div className="mt-2">
+          <Badge className="font-semibold">{outcome}</Badge>
+        </div>
+      ) : null}
+      {description ? (
+        <p className="mt-2 text-sm text-[hsl(var(--muted-foreground))] leading-relaxed">{description}</p>
+      ) : null}
     </div>
   );
   return href ? (

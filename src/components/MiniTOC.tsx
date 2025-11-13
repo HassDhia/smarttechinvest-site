@@ -9,12 +9,12 @@ export function MiniTOC({
   const active = useScrollspy(sections.map((s) => s.id));
   return (
     <nav className="hidden xl:block fixed right-4 top-28 z-20">
-      <ul className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] p-2 space-y-1">
+      <ul className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] p-2.5 space-y-1.5">
         {sections.map((s) => (
           <li key={s.id}>
             <a
               href={`#${s.id}`}
-              className={`block px-3 py-1.5 rounded-lg text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] ${
+              className={`block px-3 py-2 rounded-lg text-sm transition whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] ${
                 active === s.id
                   ? "font-semibold text-[hsl(var(--foreground))] bg-[hsl(var(--accent))]"
                   : "text-[hsl(var(--foreground)/0.7)] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--accent))]"

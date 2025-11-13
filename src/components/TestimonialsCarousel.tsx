@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TESTIMONIALS = [
   {
-    quote: "Our pitch went from generic to cinematic. The first deck STI rebuilt for us opened doors we'd been knocking on for months. We went from a 8% response rate to 47% — and closed our first partnership deal in 18 days instead of the usual 90.",
+    quote: "Our pitch went from generic to cinematic. The first deck STI rebuilt for us opened doors we'd been knocking on for months — and we closed our first partnership in 18 days instead of 90.",
     author: "Sarah Chen",
     role: "Founder & CEO, Artisan Goods Co.",
   },

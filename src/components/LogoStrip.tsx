@@ -1,11 +1,11 @@
 export function LogoStrip() {
-  // Use simple brand name chips for a cleaner, premium look
+  // Use brand names with industry descriptors for better context
   const brands = [
-    "Summit Operations",
-    "Ridgeway Supply Co.",
-    "Meridian Tech Solutions",
-    "Cascade Retail Group",
-    "Pinnacle Manufacturing"
+    { name: "Summit Operations", industry: "Logistics & Warehousing" },
+    { name: "Ridgeway Supply Co.", industry: "Distribution" },
+    { name: "Meridian Tech Solutions", industry: "B2B SaaS" },
+    { name: "Cascade Retail Group", industry: "Multi-location Retail" },
+    { name: "Pinnacle Manufacturing", industry: "Industrial Equipment" }
   ];
   return (
     <div className="container section vt-section">
@@ -15,13 +15,14 @@ export function LogoStrip() {
         </div>
       </div>
       <div className="flex flex-wrap items-center justify-center gap-4">
-        {brands.map((name) => (
+        {brands.map((brand) => (
           <span
-            key={name}
+            key={brand.name}
             className="uppercase tracking-wide rounded-xl px-4 py-2 text-xs font-semibold text-[hsl(var(--muted-foreground))] border border-[hsl(var(--border))] bg-transparent"
-            aria-label={`Partner: ${name}`}
+            aria-label={`Partner: ${brand.name} — ${brand.industry}`}
+            title={`${brand.name} — ${brand.industry}`}
           >
-            {name}
+            {brand.name} — {brand.industry}
           </span>
         ))}
       </div>

@@ -7,7 +7,6 @@ import { PageTransition } from "../components/PageTransition";
 import { BackToTop } from "../components/BackToTop";
 import Script from "next/script";
 import { ToastProvider } from "../components/ui/Toast";
-import { Button } from "../components/ui/Button";
 import { MotionProvider } from "../components/ClientMotionProvider";
 
 export const metadata: Metadata = {
@@ -72,9 +71,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </footer>
               </main>
             </div>
-            <Button asChild size="lg" variant="gradient" className="hidden lg:inline-flex fixed right-5 bottom-5 hover:shadow">
-              <a href="/schedule" aria-label="Build my partnership deck">Build My Partnership Deck</a>
-            </Button>
             <BackToTop />
           </ToastProvider>
         </MotionProvider>

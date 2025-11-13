@@ -9,10 +9,12 @@ export function BriefCard({
   brief,
   highlight = false,
   className,
+  hideMetadata = false,
 }: {
   brief: Brief;
   highlight?: boolean;
   className?: string;
+  hideMetadata?: boolean;
 }) {
   // Use displayDate if available, otherwise extract from full date string
   const dateStr = brief.displayDate || brief.date.slice(0, 10);
@@ -78,7 +80,7 @@ export function BriefCard({
       )}
       
       {/* Metadata Stats */}
-      {brief.metadata && (
+      {brief.metadata && !hideMetadata && (
         <div className="flex items-center gap-4 mb-4 text-xs text-[hsl(var(--muted-foreground))]">
           <div className="flex items-center gap-1">
             <FileText size={12} />
