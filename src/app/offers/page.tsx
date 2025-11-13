@@ -10,17 +10,16 @@ export default function Offers() {
   const tiers = [
     {
       title: "Core",
-      tagline: "Full intelligence pipeline for your vertical.",
+      tagline: "Flagship partnership deck and activation framework.",
       bullets: [
-        "8-12 reports/month (market + thesis mix)",
-        "Board-ready slide deck per report",
-        "Audio overview per report",
-        "Community thread per report + AI moderation",
-        "Distribution to 2-3 channels (LinkedIn, Medium, Twitter)",
-        "Website integration with SEO optimization",
-        "Analytics dashboard & ROI tracking"
+        "Flagship partnership deck (cinematic, campaign-style)",
+        "Activation storyboard (in-store, on-premise, digital)",
+        "Reusable framework template",
+        "Strategic narrative development",
+        "Brand partnership positioning",
+        "Initial consultation & strategy session"
       ],
-      anchor: "Starting at $12k–$25k/mo",
+      anchor: "Starting at $12k–$25k",
       cta: "Request Demo",
       highlight: false,
     },
@@ -29,27 +28,27 @@ export default function Offers() {
       tagline: "Everything in Core, plus advanced capabilities.",
       bullets: [
         "Everything in Core",
-        "Custom foresight modules & predictive analytics",
-        "On-site advisor widget (RAG-powered Q&A)",
-        "Quarterly strategy review & optimization",
-        "Additional distribution channels",
-        "Priority support & custom integrations",
-        "White-label options"
+        "Multiple partnership decks (3-5 brands)",
+        "Advanced activation concepts",
+        "Strategic consultation & optimization",
+        "Partnership pipeline development",
+        "Priority support & revisions",
+        "Custom framework adaptations"
       ],
-      anchor: "Starting at $25k+/mo",
+      anchor: "Starting at $25k+",
       cta: "Request Demo",
       highlight: true,
     },
     {
       title: "Enterprise",
-      tagline: "Multiple verticals and custom instances.",
+      tagline: "Ongoing partnership pipeline and dedicated support.",
       bullets: [
         "Everything in Premium",
-        "Multiple vertical instances",
+        "Ongoing partnership pipeline management",
         "Dedicated account management",
-        "Custom report templates & workflows",
-        "API access for integrations",
-        "SLA guarantees",
+        "Custom framework development",
+        "Quarterly strategy reviews",
+        "Unlimited revisions & consultations",
         "Training & onboarding included"
       ],
       anchor: "Custom pricing",
@@ -60,13 +59,13 @@ export default function Offers() {
   return (
     <section className="container section">
       <SectionHeader 
-        kicker="Intelligence Engine" 
+        kicker="Partnership Pitch Engine" 
         title="Pricing & Packages" 
-        subtitle="Turnkey business intelligence ecosystem that generates insights, drives engagement, and creates revenue impact." 
+        subtitle="Partnership deck packages: cinematic decks, activation concepts, and strategic narratives that make brands say 'yes.'" 
         useGradientTitle 
       />
       <div className="mt-3 text-sm rounded-xl border px-3 py-2 bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] border-[hsl(var(--border))]">
-        Risk reversal: If we&apos;re not delivering clear value in 30 days, you can opt out — no hard feelings.
+        Risk reversal: If your partnership deck doesn&apos;t get brands excited, we&apos;ll revise until it does — no hard feelings.
       </div>
       <StaggerList
         className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
@@ -93,8 +92,8 @@ export default function Offers() {
         )}
       />
       <div className="mt-8 text-center text-sm text-[hsl(var(--muted-foreground))]">
-        <p>All tiers include full pipeline setup, integration support, and ongoing maintenance.</p>
-        <p className="mt-2">Questions? <Link href="/schedule" className="text-[hsl(var(--primary))] hover:underline">Schedule a consultation</Link> to discuss your needs.</p>
+        <p>All tiers include strategic consultation, deck design, and framework development.</p>
+        <p className="mt-2">Questions? <Link href="/schedule" className="text-[hsl(var(--primary))] hover:underline">Schedule a consultation</Link> to discuss your partnership goals.</p>
       </div>
     </section>
   );

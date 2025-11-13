@@ -9,14 +9,20 @@ import { useRef } from "react";
 export function Hero({
   title,
   subtitle,
+  body,
   ctaText,
   ctaHref,
+  secondaryCtaText,
+  secondaryCtaHref,
   badge,
 }: {
   title: string;
   subtitle?: string;
+  body?: string;
   ctaText?: string;
   ctaHref?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
   badge?: string;
 }) {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -54,11 +60,21 @@ export function Hero({
         {subtitle ? (
           <p className="mt-3 max-w-3xl mx-auto text-foreground/90 fs-step-1">{subtitle}</p>
         ) : null}
-        {ctaText && ctaHref ? (
-          <div className="mt-6">
-            <Button asChild variant="gradient" className="hover:-translate-y-0.5">
-              <Link href={ctaHref}>{ctaText}</Link>
-            </Button>
+        {body ? (
+          <p className="mt-4 max-w-3xl mx-auto text-foreground/80 fs-step-0">{body}</p>
+        ) : null}
+        {(ctaText && ctaHref) || (secondaryCtaText && secondaryCtaHref) ? (
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+            {ctaText && ctaHref ? (
+              <Button asChild variant="gradient" className="hover:-translate-y-0.5">
+                <Link href={ctaHref}>{ctaText}</Link>
+              </Button>
+            ) : null}
+            {secondaryCtaText && secondaryCtaHref ? (
+              <Button asChild variant="secondary" className="hover:-translate-y-0.5">
+                <Link href={secondaryCtaHref}>{secondaryCtaText}</Link>
+              </Button>
+            ) : null}
           </div>
         ) : null}
         {/* Proof bar */}

@@ -8,8 +8,8 @@ type ProofBarProps = {
 };
 
 export function ProofBar({
-  trustedByText = "Trusted by SMB leaders",
-  outcomes = ["+$1.2M ARR", "+8% margin", "−34% cycle"],
+  trustedByText = "Trusted by operators & SMB leaders",
+  outcomes = ["+$1.2M ARR unlocked", "+8% margin", "−34% cycle time"],
   className,
 }: ProofBarProps) {
   return (
@@ -24,7 +24,6 @@ export function ProofBar({
         •
       </span>
       <div className="flex flex-wrap items-center justify-center gap-1.5">
-        <span className="font-medium">Outcomes:</span>
         {outcomes.map((value) => (
           <Badge key={value}>{value}</Badge>
         ))}

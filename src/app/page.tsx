@@ -19,32 +19,47 @@ export default function Home() {
 
   return (
     <div className="font-sans">
-      <MiniTOC sections={[{ id: "engine", label: "The Engine" }, { id: "intelligence", label: "Intelligence" }, { id: "work", label: "Selected Work" }, { id: "outcomes", label: "Outcomes" }]} />
+      <MiniTOC sections={[{ id: "partnership-lane", label: "Partnership Lane" }, { id: "intelligence", label: "Intelligence" }, { id: "work", label: "Selected Work" }, { id: "outcomes", label: "Outcomes" }]} />
       <Hero
-        title="Smart Technology Investments"
-        subtitle="Plug-in Intelligence & Strategy Engine: automated research, insights, community, and distribution for your vertical."
-        ctaText="Request Demo"
+        title="Turn Your Business Into a Brand Magnet"
+        subtitle="Smart Technology Investments (STI) designs and runs your Partnership Pitch Engine™ — cinematic decks, activation concepts, and strategic narratives that make brands say 'yes.'"
+        body="Most teams treat 'brand partnerships' like a vague goal. We turn it into a lane: a flagship deck that feels like a film pitch, a concrete activation plan, and a repeatable system for the next collab."
+        ctaText="Build My Partnership Deck"
         ctaHref="/schedule"
-        badge="Turnkey business intelligence ecosystem"
+        secondaryCtaText="See How the Engine Works"
+        secondaryCtaHref="#partnership-lane"
       />
-      <section id="engine" className="container section vt-section">
-        <SectionHeader kicker="What You Get" title="The Intelligence Engine" subtitle="A self-perpetuating business intelligence ecosystem that generates insights, drives engagement, and creates revenue impact." useGradientTitle />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[
-            ["Automated Research Reports","Well-cited market & thesis reports generated daily with key findings and strategic insights.", FileText],
-            ["Board-Ready Slide Decks","Auto-generated presentations summarizing key insights for executive briefings and stakeholder updates.", Presentation],
-            ["Podcast-Style Briefings","Audio overviews for each report, perfect for on-the-go consumption and team sharing.", Headphones],
-            ["Community Engagement","Discourse forum for discussion and debate, with AI-assisted moderation and seeded insights.", Users],
-            ["Multi-Channel Distribution","Auto-post to LinkedIn, Medium, Twitter, and other channels with tracked links and analytics.", Share2],
-            ["Analytics & Optimization","Track engagement, conversions, and ROI with built-in dashboards and continuous improvement.", BarChart3],
-          ].map(([t,d,I], idx) => (
-            <Card key={String(t)} title={String(t)} description={String(d)} icon={I as any} highlight={idx === 0} />
-          ))}
+      <section id="partnership-lane" className="container section vt-section">
+        <SectionHeader kicker="What We Actually Do" title="More Than a Deck. A Partnership Lane." useGradientTitle />
+        <div className="max-w-3xl mx-auto text-center mb-8">
+          <p className="text-foreground/90 fs-step-0 mb-6">
+            Anyone can open Gamma and spit out slides. What you don't get from a template is: the story that makes a brand care, the activation that lives in the real world, and the system that lets you repeat the play.
+          </p>
+          <p className="text-foreground/90 fs-step-0 mb-6">
+            STI works with operators, creators, and brands to:
+          </p>
+          <ul className="text-left space-y-4 mb-6">
+            <li className="flex items-start gap-3">
+              <span className="text-[hsl(var(--primary))] font-bold mt-1">•</span>
+              <span className="text-foreground/90 fs-step-0">Design flagship partnership decks that feel like premium campaign treatments, not pitch homework.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[hsl(var(--primary))] font-bold mt-1">•</span>
+              <span className="text-foreground/90 fs-step-0">Storyboard live activations (in-store, on-premise, digital) that make the collab tangible.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-[hsl(var(--primary))] font-bold mt-1">•</span>
+              <span className="text-foreground/90 fs-step-0">Encode it all into a reusable framework you can adapt to new partners in minutes instead of weeks.</span>
+            </li>
+          </ul>
+          <p className="text-foreground/90 fs-step-0 font-medium">
+            Partnerships stop being a one-off wish and become an explicit growth lane.
+          </p>
         </div>
       </section>
       
       <section id="intelligence" className="container section vt-section">
-        <SectionHeader kicker="From the Intelligence Desk" title="Latest Insights" subtitle="Daily signals and weekly briefs on technology investments and strategic trends." useGradientTitle />
+        <SectionHeader kicker="Domain Expertise" title="Latest Insights" subtitle="Market intelligence and strategic insights that demonstrate the analytical depth we bring to every Partnership Pitch Engine engagement. This expertise informs our deck narratives and activation concepts." useGradientTitle />
         
         <div className="space-y-8">
           {/* Briefs Row */}

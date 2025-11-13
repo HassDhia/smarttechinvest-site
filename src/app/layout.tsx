@@ -12,7 +12,7 @@ import { MotionProvider } from "../components/ClientMotionProvider";
 
 export const metadata: Metadata = {
   title: "Smart Technology Investments",
-  description: "Plug-in Intelligence & Strategy Engine: automated research, insights, community, and distribution for your vertical. Turnkey business intelligence ecosystem.",
+  description: "Partnership Pitch Engine: cinematic decks, activation concepts, and strategic narratives that make brands say 'yes.'",
   icons: {
     icon: [
       { url: "/sti_favicon.webp", type: "image/webp" },
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Smart Technology Investments",
-    description: "Plug-in Intelligence & Strategy Engine: automated research, insights, community, and distribution for your vertical.",
+    description: "Partnership Pitch Engine: cinematic decks, activation concepts, and strategic narratives that make brands say 'yes.'",
     type: "website",
     images: ["/sti_favicon.webp"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Smart Technology Investments",
-    description: "Plug-in Intelligence & Strategy Engine: automated research, insights, community, and distribution for your vertical.",
+    description: "Partnership Pitch Engine: cinematic decks, activation concepts, and strategic narratives that make brands say 'yes.'",
   },
 };
 
@@ -73,7 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </main>
             </div>
             <Button asChild size="lg" variant="gradient" className="hidden lg:inline-flex fixed right-5 bottom-5 hover:shadow">
-              <a href="/schedule" aria-label="Request a demo">Request Demo</a>
+              <a href="/schedule" aria-label="Build my partnership deck">Build My Partnership Deck</a>
             </Button>
             <BackToTop />
           </ToastProvider>
