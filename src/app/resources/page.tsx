@@ -6,15 +6,15 @@ import { FileText, BarChart3, Settings, BookOpen, Users, Share2 } from "lucide-r
 export default function Resources() {
   return (
     <section className="container section">
-      <SectionHeader kicker="Partnership Resources" title="Partnership Pitch Engine Resources" subtitle="Templates, guides, and frameworks for creating compelling partnership decks and activation concepts." useGradientTitle />
+      <SectionHeader kicker="Signal & Outcome Frameworks" title="Signal Analysis & Outcome Frameworks" subtitle="Frameworks, guides, and templates for identifying behavioral signals and transforming them into measurable brand outcomes." useGradientTitle />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
         {[
-          { title: "Partnership Deck Templates", description: "Cinematic deck templates and frameworks", icon: FileText },
-          { title: "Activation Storyboard Guides", description: "Step-by-step guides for activation concepts", icon: BookOpen },
-          { title: "Brand Partnership Framework", description: "Strategic framework for partnership development", icon: Settings },
-          { title: "Pitch Best Practices", description: "Proven strategies for compelling partnership pitches", icon: Share2 },
-          { title: "Reusable Deck Components", description: "Modular components for quick deck assembly", icon: Users },
-          { title: "Partnership ROI Tracking", description: "Track partnership success and impact metrics", icon: BarChart3 },
+          { title: "Signal Analysis Frameworks", description: "Systematic approaches to identifying and analyzing behavioral signals", icon: FileText },
+          { title: "Outcome Architecture Templates", description: "Templates for designing measurable brand outcome systems", icon: BookOpen },
+          { title: "Behavioral Pattern Recognition Guides", description: "Guides for recognizing patterns in market signals and consumer behavior", icon: Settings },
+          { title: "Brand Outcome Tracking Systems", description: "Systems for tracking signal-driven outcomes and performance metrics", icon: BarChart3 },
+          { title: "Signal-to-Outcome Mapping", description: "Frameworks for connecting behavioral signals to brand outcomes", icon: Share2 },
+          { title: "Strategic Positioning Frameworks", description: "Frameworks for translating signal insights into strategic positioning", icon: Users },
         ].map((item, idx) => (
           <Card key={item.title} title={item.title} description={item.description} icon={item.icon as any} highlight={idx === 0} />
         ))}

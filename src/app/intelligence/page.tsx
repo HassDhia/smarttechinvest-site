@@ -30,18 +30,18 @@ export default function IntelligencePage() {
   return (
     <div className="font-sans">
       <Hero
-        title="Market Intelligence. Strategic Depth. Domain Expertise."
-        subtitle="Deep market research and strategic insights that inform our Partnership Pitch Engine. This intelligence is the foundation that makes our partnership decks and activation concepts credible and compelling."
+        title="Behavioral Signals That Drive Brand Outcomes"
+        subtitle="Market intelligence, cultural shifts, and operational patterns we track to identify opportunities and drive measurable brand results. Signal analysis → strategic insight → measurable outcomes."
         ctaText="Build My Partnership Deck"
         ctaHref="/schedule"
-        badge="Market intelligence that powers partnership strategy"
+        badge="Signal analysis that drives brand outcomes"
       />
 
              <section className="container section py-12 md:py-16">
                <SectionHeader
-                 kicker="Domain Expertise"
+                 kicker="Signal Analysis"
                  title="Intelligence Briefs"
-                 subtitle="Strategic market research and insights that demonstrate the depth of analysis we bring to every Partnership Pitch Engine engagement. This intelligence informs our deck narratives and activation concepts."
+                 subtitle="Behavioral signal analysis that identifies market opportunities and drives brand outcomes. Each brief tracks signals → insights → measurable results."
                  useGradientTitle
                />
 
@@ -84,9 +84,9 @@ export default function IntelligencePage() {
 
              <section className="container section py-12 md:py-16">
                <SectionHeader
-                 kicker="Domain Expertise"
+                 kicker="Signal Monitoring"
                  title="Latest Analysis"
-                 subtitle="Daily insights on market shifts, technology trends, and operational patterns that inform our partnership strategy and deck development."
+                 subtitle="Daily insights on behavioral signals, market shifts, technology trends, and operational patterns that drive brand outcomes."
                  useGradientTitle
                />
 

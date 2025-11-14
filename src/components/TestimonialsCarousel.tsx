@@ -5,17 +5,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TESTIMONIALS = [
   {
-    quote: "STI reframed our partnership story from a vendor pitch into a brand collaboration narrative. Their strategic positioning opened doors we'd been knocking on for months — we closed our first partnership in 18 days instead of 90.",
+    quote: "STI identified a market signal we'd missed — the shift from vendor relationships to strategic partnerships. Their signal-driven positioning opened doors we'd been knocking on for months — we closed our first partnership in 18 days instead of 90.",
     author: "Sarah Chen",
     role: "Founder & CEO, Artisan Goods Co.",
   },
   {
-    quote: "The activation concept STI designed was so strong that the brand rep asked who our creative studio was. Their narrative framework generated $850K in ARR pipeline from just 3 pitches.",
+    quote: "STI analyzed behavioral patterns in partnership responses and built a narrative framework around those signals. The result: $850K in ARR pipeline from just 3 pitches. The signals told the story.",
     author: "Marcus Rodriguez",
     role: "VP Marketing, Urban Retail Collective",
   },
   {
-    quote: "STI redesigned our partner narrative and we immediately saw better responses. Response rates tripled, and we went from 2–3 warm intros per quarter to 2–4 per month.",
+    quote: "STI's signal analysis revealed gaps in our partner narrative that we couldn't see. After they redesigned it based on those behavioral signals, response rates tripled — and we went from 2–3 warm intros per quarter to 2–4 per month.",
     author: "Jennifer Park",
     role: "COO, CloudScale Solutions",
   },

@@ -9,13 +9,14 @@ import { SectionHeader } from "../../components/SectionHeader";
 export default function Offers() {
   const tiers = [
     {
-      title: "Flagship Pitch",
-      tagline: "Your flagship partnership deck + activation concept",
+      title: "Flagship Signal Analysis",
+      tagline: "Behavioral signal identification → Strategic positioning → Brand outcome",
       bullets: [
+        "Market intelligence & behavioral signal analysis",
+        "Strategic narrative architecture based on signals",
         "Cinematic, campaign-style pitch deck",
         "Activation storyboard (in-store, event, digital)",
-        "Strategic narrative architecture",
-        "Brand partnership positioning",
+        "Brand partnership positioning from signal insights",
         "Visual & identity direction",
         "Reusable pitch structure + messaging framework",
         "Discovery + strategic consultation session"
@@ -26,15 +27,16 @@ export default function Offers() {
       highlight: false,
     },
     {
-      title: "Pitch System",
-      tagline: "Your reusable, multi-brand partnership pitch machine",
+      title: "Signal System",
+      tagline: "Multiple signal streams → Multi-outcome architecture",
       bullets: [
-        "Everything in Flagship Pitch, plus:",
+        "Everything in Flagship Signal Analysis, plus:",
+        "Ongoing behavioral signal monitoring & analysis",
         "2–4 tailored pitch variants for specific brands",
         "Expanded activation concepts (multiple environments)",
         "Priority narrative refinement & deck revisions",
-        "Partnership pipeline development",
-        "Founder/BD team coaching on pitch delivery",
+        "Partnership pipeline development from signal insights",
+        "Founder/BD team coaching on signal-driven pitch delivery",
         "Brand-fit analysis & message testing",
         "Custom asset set (one-pagers, scripts, thematic identity)"
       ],
@@ -43,18 +45,19 @@ export default function Offers() {
       highlight: true,
     },
     {
-      title: "Partnership Engine",
-      tagline: "Full partnership lane: outreach, narrative, assets, pipeline",
+      title: "Outcome Engine",
+      tagline: "Continuous signal monitoring → Ongoing outcome optimization",
       bullets: [
-        "Everything in Pitch System, plus:",
+        "Everything in Signal System, plus:",
+        "Continuous behavioral signal monitoring & analysis",
         "Ongoing partnership pipeline management",
-        "Monthly pitch variants (per partner)",
+        "Monthly pitch variants (per partner) based on latest signals",
         "Dedicated account strategist",
         "Custom framework & visual system development",
         "Quarterly strategy & performance reviews",
         "Activation support (from concept to prep)",
         "Unlimited narrative revisions",
-        "Team onboarding + training",
+        "Team onboarding + training on signal analysis",
         "Priority turnaround"
       ],
       anchor: "Custom",
@@ -66,9 +69,9 @@ export default function Offers() {
   return (
     <section className="container section">
       <SectionHeader 
-        kicker="Partnership Pitch Engine" 
+        kicker="Signal-to-Outcome Packages" 
         title="Pricing & Packages" 
-        subtitle="Partnership deck packages: cinematic decks, activation concepts, and strategic narratives that win real partnerships." 
+        subtitle="Behavioral signal analysis → strategic positioning → measurable brand outcomes. We identify the signals that matter and transform them into partnerships, revenue, and brand positioning." 
         useGradientTitle 
       />
       <div className="mt-3 text-sm rounded-xl border px-3 py-2 bg-[hsl(var(--muted))] text-[hsl(var(--muted-foreground))] border-[hsl(var(--border))]">
@@ -108,8 +111,8 @@ export default function Offers() {
         )}
       />
       <div className="mt-8 text-center text-sm text-[hsl(var(--muted-foreground))]">
-        <p>All tiers include strategic consultation, deck design, and framework development.</p>
-        <p className="mt-2">Questions? <Link href="/schedule" className="text-[hsl(var(--primary))] hover:underline">Schedule a consultation</Link> to discuss your partnership goals.</p>
+        <p>All tiers include signal analysis, strategic consultation, deck design, and framework development.</p>
+        <p className="mt-2">Questions? <Link href="/schedule" className="text-[hsl(var(--primary))] hover:underline">Schedule a consultation</Link> to discuss how behavioral signals can drive your brand outcomes.</p>
       </div>
     </section>
   );
