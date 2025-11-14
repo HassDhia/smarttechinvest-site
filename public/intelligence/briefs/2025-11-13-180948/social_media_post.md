@@ -1,0 +1,4 @@
+### Tech Brief — Cognitive Wars: A First‑Principles Theory of the AI‑Industrialization of Information and Its Impact on Influence, Collective Belief, and Conflict Dynamics
+
+- Primary claim: 2025-11-10 — Bootes multiwavelength survey (Chandra team) reported detection of ~4,000 X‑ray sources using shallow 5 ks exposures across a 9 square degree field
+- Status: in validation (anchors thin)
