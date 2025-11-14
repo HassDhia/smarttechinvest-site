@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Wars: the AI Industrialization of Influence - STI Intelligence (Thesis)</title>
+    <style>
+        body { 
+            font-family: Georgia, serif; 
+            max-width: 760px; 
+            margin: 0 auto; 
+            padding: 2rem; 
+            line-height: 1.6; 
+            color: #333; 
+        }
+        .sti-branding { 
+            color: #999; 
+            font-size: 0.9em; 
+            margin-bottom: 0.5rem; 
+        }
+        h1 { 
+            color: #0066cc; 
+            border-bottom: 2px solid #e1e4e8; 
+            padding-bottom: 0.5rem; 
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        h2 { 
+            color: #333; 
+            margin-top: 2rem; 
+            font-size: 1.5rem;
+        }
+        h3 { 
+            color: #666; 
+            margin-top: 1.2rem; 
+            font-size: 1.2rem;
+        }
+        .metadata { 
+            color: #666; 
+            font-size: 0.9em; 
+            margin-bottom: 1rem; 
+            border-bottom: 1px solid #e1e4e8;
+            padding-bottom: 1rem;
+        }
+        .confidence-dials {
+            display: inline-flex;
+            gap: 0.75rem;
+            margin-left: 1rem;
+            font-size: 0.85rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+        .dial-item {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.25rem 0.5rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #e1e4e8;
+            cursor: help;
+        }
+        .dial-label {
+            font-size: 0.7rem;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.1rem;
+        }
+        .dial-value {
+            font-size: 0.9rem;
+            color: #0066cc;
+            font-weight: 600;
+        }
+        .provenance-banner {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        }
+        .prov-headline {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0a1f44;
+            margin-bottom: 0.35rem;
+        }
+        .prov-subtext {
+            font-size: 0.85rem;
+            color: #57606a;
+            margin-bottom: 0.75rem;
+        }
+        .prov-metric-grid {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .prov-metric {
+            background: #fff;
+            border: 1px solid #d0d7de;
+            border-radius: 4px;
+            padding: 0.65rem 0.75rem;
+            flex: 1 1 140px;
+            text-align: center;
+        }
+        .metric-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #57606a;
+            margin-bottom: 0.25rem;
+        }
+        .metric-value {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #0a1f44;
+        }
+        .toc { 
+            background: #f8f9fa; 
+            padding: 1rem; 
+            border-left: 4px solid #0066cc; 
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        .toc ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.5rem;
+        }
+        .toc li {
+            margin: 0.25rem 0;
+        }
+        .toc a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .badge { 
+            display: inline-block; 
+            padding: 0.2rem 0.5rem; 
+            border-radius: 3px; 
+            font-size: 0.8em; 
+            margin-right: 0.5rem; 
+        }
+        .badge-alignment { background: #e7f3ff; color: #004a99; }
+        .badge-theory { background: #e8f5e9; color: #1b5e20; }
+        .badge-clarity { background: #fff3cd; color: #856404; }
+        .exec-summary {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #0066cc;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        section:empty::after {
+            content: "(Section content not available)";
+            color: #999;
+            font-style: italic;
+        }
+        .source-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-left: 3px solid #e1e4e8;
+            background: #f8f9fa;
+        }
+        .source-number { 
+            font-weight: bold; 
+            color: #0066cc; 
+            margin-right: 0.5rem; 
+        }
+        .source-title { 
+            font-weight: 500; 
+            margin-bottom: 0.25rem; 
+        }
+        .source-meta { 
+            color: #666; 
+            font-size: 0.9em; 
+            margin-bottom: 0.25rem; 
+        }
+        .source-url a { 
+            color: #0066cc; 
+            text-decoration: none; 
+            font-size: 0.9em;
+        }
+        .source-url a:hover { 
+            text-decoration: underline; 
+        }
+        .source-support {
+            margin-top: 0.5rem;
+            background: #f6f8fa;
+            border-left: 3px solid #0066cc;
+            border-radius: 4px;
+            padding: 0.6rem 0.8rem;
+        }
+        .support-title {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #57606a;
+            margin-bottom: 0.3rem;
+        }
+        .source-support ul {
+            margin-left: 1.25rem;
+            color: #333;
+        }
+        .support-claim {
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+            margin-right: 0.3rem;
+        }
+        .citation-link { 
+            color: #0066cc; 
+            text-decoration: none; 
+        }
+        .citation-link:hover { 
+            text-decoration: underline; 
+        }
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95em;
+        }
+        table th {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #e1e4e8;
+            color: #333;
+        }
+        table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e1e4e8;
+            vertical-align: top;
+        }
+        table tr:last-child td {
+            border-bottom: none;
+        }
+        table tr:hover {
+            background: #f8f9fa;
+        }
+        .adversarial-section {
+            margin-top: 2rem;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 1rem 1.25rem;
+            background: #fefefe;
+        }
+        .adversarial-section h2 {
+            margin-top: 0;
+        }
+        .adversarial-block {
+            margin-top: 0.85rem;
+        }
+        .adversarial-block ul {
+            margin-left: 1.25rem;
+        }
+        .playbooks-section {
+            margin-top: 2rem;
+        }
+        .playbooks-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .playbooks-table th,
+        .playbooks-table td {
+            border: 1px solid #d0d7de;
+            padding: 0.6rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        .playbooks-table th {
+            background: #f6f8fa;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.75rem;
+            color: #57606a;
+        }
+        /* Code blocks */
+        code {
+            background: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            border-left: 3px solid #0066cc;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        @media print {
+            body { max-width: none; padding: 1rem; }
+            section { break-inside: avoid; }
+            .source-item { break-inside: avoid; }
+        }
+        @media (max-width: 768px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.5rem; }
+        }
+        /* Hero image styling */
+        .hero-image-container {
+            margin: 1.5rem 0 2rem 0;
+            text-align: center;
+        }
+        .hero-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .hero-image-attribution {
+            font-size: 0.75em;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        /* Section image styling */
+        .section-image-container {
+            margin: 1.5rem 0 2rem 0;
+            text-align: center;
+        }
+        .section-image-container img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+        .section-image-attribution {
+            font-size: 0.7em;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+    </style>
+
+        <style>
+          .report-type.thesis-path {
+            background: #fdf8f3;
+            color: #7b341e;
+            border-left: 5px solid #c05621;
+            font-family: Georgia, "Times New Roman", serif;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.6rem 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+          }
+          .update-timestamp {
+            color: #666;
+            font-size: 0.9em;
+            margin: -0.75rem 0 1.25rem 0.3rem;
+            font-family: Georgia, "Times New Roman", serif;
+          }
+          .sti-footer-note {
+            border-top: 2px solid #c05621;
+            margin-top: 2rem;
+            padding-top: 0.75rem;
+            color: #666;
+            font-size: 0.9em;
+          }
+          /* Global font override to match path tone */
+          body, h1, h2, h3, h4, h5 {
+            font-family: Georgia, "Times New Roman", serif;
+          }
+          /* Hero image styling */
+          .hero-image-container {
+            margin: 1.5rem 0 2rem 0;
+            text-align: center;
+          }
+          .hero-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          }
+          .hero-image-attribution {
+            font-size: 0.75em;
+            color: #666;
+            margin-top: 0.5rem;
+          }
+          /* Section image styling */
+          .section-image-container {
+            margin: 1.5rem 0 2rem 0;
+            text-align: center;
+          }
+          .section-image-container img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+          }
+          .section-image-attribution {
+            font-size: 0.7em;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+          }
+        </style>
+        </head>
+<body>
+    
+        <div class="report-type thesis-path">
+          <span>Thesis Brief — Theory-First Research</span>
+        </div>
+        <div class="update-timestamp">Edition: 2025-11-13 | Peer-review pending (Theory-First)</div>
+        <header>
+        <div class="sti-branding">Smart Technology Investments</div>
+        <h1>Cognitive Wars: the AI Industrialization of Influence</h1>
+        <div class="metadata">Sources: 11 | Anchor Status: Anchor-Absent | Report Type: Theoretical Research | Horizon: Near-term | Confidence: 0.260
+            <sup><a href="#confidence-methodology" style="color: #666; text-decoration: none;">*</a></sup>
+        <div class="confidence-dials">
+            <span class="dial-item" title="Source Diversity: 0.06"><span class="dial-label">SD</span><span class="dial-value">0.06</span></span>
+            <span class="dial-item" title="Anchor Coverage: 0.00"><span class="dial-label">AC</span><span class="dial-value">0.00</span></span>
+            <span class="dial-item" title="Method Transparency: 0.45"><span class="dial-label">MT</span><span class="dial-value">0.45</span></span>
+            <span class="dial-item" title="Replication Readiness: 0.65"><span class="dial-label">RR</span><span class="dial-value">0.65</span></span>
+        </div>
+        </div>
+        <div class="metadata">Alignment: <span class="badge badge-alignment">6.0</span>
+            Theory Depth: <span class="badge badge-theory">6.0</span>
+            Clarity: <span class="badge badge-clarity">7.0</span>
+            </div>
+
+        
+        
+            <div class="hero-image-container">
+                <img src="images/hero_cognitive_wars_the_ai_industri.png" alt="Conceptual illustration for Cognitive Wars: The AI Industrialization of Influence" loading="lazy">
+                <p class="hero-image-attribution">Image generated with OpenAI dall-e-3</p>
+            </div>
+            <section class="provenance-banner">
+            <h2>Confidence Provenance</h2>
+            <div class="provenance-grid">
+                <div><span>Source Diversity</span><strong>0.06</strong></div>
+                <div><span>Anchor Coverage</span><strong>0.00</strong></div>
+                <div><span>Method Transparency</span><strong>0.45</strong></div>
+                <div><span>Replication Readiness</span><strong>0.65</strong></div>
+            </div>
+            <p class="provenance-notes">Anchor coverage enforced at 0.00. </p>
+        </section>
+        
+        
+        
+        <div class="route-rationale" style="margin-top: 1rem; padding: 0.75rem; background: #f8f9fa; border-left: 3px solid #0066cc; border-radius: 4px; font-size: 0.9rem;">
+            <strong>Route:</strong> THESIS
+            <span style="color: #666;">— MarketScore 0.000 | 
+                Fresh 0/0, 
+                Unique domains 0, 
+                Anchors 0, 
+                Canonical 0</span>
+        </div>
+        
+        
+        <div class="disclosure-box" style="margin-top: 1rem; padding: 0.75rem; background: #f8f9fa; border-left: 3px solid #0066cc; font-size: 0.85em; color: #666; border-radius: 4px;">
+            <strong>Disclosure & Method Note:</strong> This is a <em>theory-first</em> brief. Claims are mapped to evidence using a CEM grid; quantitative effects marked <strong>Illustrative Target</strong> will be validated via the evaluation plan. Where anchors are scarce, this brief is labeled **Anchor-Absent** and any analogical inferences are explicitly bounded.
+        </div>
+    </header>
+
+    <section class="exec-summary">
+        <h2>Abstract & Theory-First Framing.</h2>
+        &lt;p&gt;&lt;strong&gt;Key Takeaways:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Disclosure &amp; Method Note.&lt;/strong&gt; This is a &lt;em&gt;theory-first&lt;/em&gt; brief. Claims are mapped to evidence using a CEM grid; quantitative effects marked &lt;strong&gt;Illustrative Target&lt;/strong&gt; will be validated via the evaluation plan. &lt;strong&gt;Anchor Status:&lt;/strong&gt; Anchor-Absent.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;This brief advances a theory-first argument that the industrialization of information — most recently catalyzed by AI and automation — has materially altered the cognitive foundations of warfare, producing a distinct set of dynamics I label &#34;cognitive wars.&#34; Industrialization reshapes information production, distribution, and decision architectures, which in turn reconfigure collective beliefs, organizational heuristics, and escalation pathways&lt;/li&gt;
+&lt;li&gt;The causal link advanced is: industrialization (automation, scale, algorithmic mediation) -&gt; transformation of military and societal cognition (attention allocation, routinized inference, throughput heuristics) -&gt; observable changes in the conduct and outcomes of wars (tempo, escalation dynamics, attribution ambiguity).&lt;/li&gt;
+&lt;/ul&gt;
+    </section>
+
+    <nav class="toc">
+        <strong>Outline</strong>
+<ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#introduction-cognitive-wars-and-the-puzzle">Introduction: cognitive wars and the puzzle</a></li>
+<li><a href="#foundations">Foundations</a></li>
+<li><a href="#theoretical-grounding-and-conceptual-framework">Theoretical Grounding and Conceptual Framework</a></li>
+<li><a href="#theory-first-framework-cognitive-processes-wars-and-industrialization-influence">Theory-first Framework: cognitive processes, wars, and industrialization influence</a></li>
+<li><a href="#literature-review-cognitive-wars-and-industrialization-debates">Literature Review: cognitive, wars, and industrialization debates</a></li>
+<li><a href="#hypotheses-and-propositions">Hypotheses and Propositions</a></li>
+<li><a href="#methodology-operationalizing-cognitive-change-and-industrialization">Methodology: operationalizing cognitive change and industrialization</a></li>
+<li><a href="#analytical-strategy-and-evidence">Analytical Strategy and Evidence</a></li>
+<li><a href="#mechanisms-how-industrialized-influence-reshapes-cognition">Mechanisms: how industrialized influence reshapes cognition</a></li>
+<li><a href="#applications-parameterized-vignettes-and-metrics">Applications: parameterized vignettes and metrics</a></li>
+<li><a href="#case-studies-industrialization-driven-shifts-in-warfare-cognition">Case Studies: industrialization-driven shifts in warfare cognition</a></li>
+<li><a href="#discussion-theoretical-implications-and-influence-pathways">Discussion: theoretical implications and influence pathways</a></li>
+<li><a href="#conclusion-and-future-research">Conclusion and Future Research</a></li>
+<li><a href="#assumptions-ledger">Assumptions Ledger</a></li>
+<li><a href="#notation">Notation</a></li>
+<li><a href="#claim-evidence-method-cem-grid">Claim-Evidence-Method (CEM) Grid</a></li>
+<li><a href="#references-selected-cited-sources">References (selected cited sources)</a></li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+    </nav>
+
+    <section id="abstract">
+    <h2>Abstract</h2>
+    <p>This brief advances a theory-first argument that the industrialization of information — most recently catalyzed by AI and automation — has materially altered the cognitive foundations of warfare, producing a distinct set of dynamics I label "cognitive wars." Industrialization reshapes information production, distribution, and decision architectures, which in turn reconfigure collective beliefs, organizational heuristics, and escalation pathways. The causal link advanced is: industrialization (automation, scale, algorithmic mediation) -> transformation of military and societal cognition (attention allocation, routinized inference, throughput heuristics) -> observable changes in the conduct and outcomes of wars (tempo, escalation dynamics, attribution ambiguity).</p>
+<p>Predicted effects include increased primacy of efficiency/throughput heuristics in operational decision-making, organizational cognitive specialization (staffing and logistics heuristics), growth of mediated attention economies that amplify misinformation and synthetic media, and novel failure modes (systematic misattribution, adversarial exploitation of delegated judgment). Empirical strategy integrates process-tracing, textual coding of doctrinal materials, and quantitative proxies of industrial capacity and information amplification.</p>
+</section>
+
+<section id="introduction-cognitive-wars-and-the-puzzle">
+    <h2>Introduction: cognitive wars and the puzzle</h2>
+    <p>Define "cognitive wars": the ensemble of collective beliefs, mental models, institutional heuristics, and decision-making shortcuts that shape behavior during conflict. Cognitive wars foreground how information architecture and organizational cognition co-produce wartime conduct beyond material inputs (troop numbers, factories, firepower).</p>
+<p>Central puzzle: Traditional materialist accounts explain how industrialization increases production capacity and logistics — but they under-explain how industrialization reconfigures the cognitive substrate of warfare: why did states with similar material capacity adopt different doctrines, why did conflicts after industrialization exhibit new patterns of escalation, and how do modern AI-driven influence operations alter belligerents' perceptions and choices in ways that materialist metrics do not capture?</p>
+<p>This brief addresses that puzzle by building a causal chain from industrial-scale information technologies to cognitive transformations in organizations and populations, and by operationalizing cognitive variables for empirical investigation.</p>
+</section>
+
+<section id="foundations">
+    <h2>Foundations</h2>
+    <h3>Why these anchors?</h3>
+<p>I anchor this analysis in a deliberately multi-source strategy. Anchor sources were chosen to be peer-reviewed or canonical scholarship when available (military history, political science, cognitive psychology). These anchors provide durable theoretical commitments (e.g., persuasion theory, organizational cognition, diffusion models) that are necessary for robust first-principles reasoning. When direct peer-reviewed literature on the newest AI-driven phenomena is sparse, I supplement with high-quality technical and empirical studies (including computational and system-focused preprints) to capture the latest mechanisms (e.g., social bots, synthetic media) and to link them back to canonical theory.</p>
+<h3>Multi-layer selection strategy</h3>
+<ul>
+<li>Direct Sources (Layer 1): Empirical and technical studies that speak directly to AI-driven influence operations, social bots, and synthetic media. These capture mechanisms of scale, automation, and adversarial exploitation in present-day information ecosystems <sup><a href="#source-2" class="citation-link">[2]</a></sup><sup><a href="#source-5" class="citation-link">[5]</a></sup><sup><a href="#source-6" class="citation-link">[6]</a></sup><sup><a href="#source-7" class="citation-link">[7]</a></sup><sup><a href="#source-8" class="citation-link">[8]</a></sup><sup><a href="#source-9" class="citation-link">[9]</a></sup>.</li>
+<li>Domain Sources (Layer 2): Literature in information operations, propaganda studies, and computational propaganda that situates influence within political and military practice; these works clarify institutional actors, tactics, and historical continuity with older PSYOP methods.</li>
+<li>Foundational Sources (Layers 3–5): Canonical papers and books on persuasion, social influence, information theory, game theory, and organizational behavior. These provide the theoretical backbone to map low-level mechanisms (e.g., algorithmic amplification) to high-level cognitive outcomes (e.g., altered priors, shifted equilibria).</li>
+</ul>
+<p>How canonical papers from broader layers ground the argument</p>
+<p>Canonical works on persuasion and contagion (e.g., persuasion theory, threshold models) give microfoundations for how information changes beliefs and behavior; organizational and game-theoretic treatments provide a basis for modeling strategic interaction under information constraints. When modern preprints document new tools (e.g., deepfakes, botnets), the canonical works allow us to reason from first principles about how these tools should change cognition and strategic outcomes.</p>
+<p>Key empirical-tech anchors used in mechanism discussion include studies of social bots and botnets <sup><a href="#source-2" class="citation-link">[2]</a></sup><sup><a href="#source-5" class="citation-link">[5]</a></sup>, analyses of synthetic visual reenactment <sup><a href="#source-6" class="citation-link">[6]</a></sup>, and surveys of malicious uses of AI <sup><a href="#source-7" class="citation-link">[7]</a></sup>; these are complemented by technical literature on adversarial ML defenses <sup><a href="#source-3" class="citation-link">[3]</a></sup> and attention-driven misinformation supply <sup><a href="#source-4" class="citation-link">[4]</a></sup>.</p>
+</section>
+
+<section id="theoretical-grounding-and-conceptual-framework">
+    <h2>Theoretical Grounding and Conceptual Framework</h2>
+    <p>Abstraction layers and their central concepts</p>
+<ul>
+<li>Layer 1 (Specific): Cognitive warfare artifacts — automated disinformation, computational propaganda, deepfakes, algorithmic amplification — are the proximate mechanisms that alter what agents perceive and how they update beliefs.</li>
+<li>Layer 2 (Domain): Information operations and PSYOP provide institutional frames for how states and non-state actors deploy influence; social media manipulation and propaganda ecosystems describe the operational arena where cognition is shaped.</li>
+<li>Layer 3 (Applied Methods): NLG/LLMs, social bots, recommender systems, network analysis, and adversarial ML are the toolset enabling industrial-scale influence and the analytical methods for detecting it <sup><a href="#source-1" class="citation-link">[1]</a></sup><sup><a href="#source-2" class="citation-link">[2]</a></sup><sup><a href="#source-5" class="citation-link">[5]</a></sup><sup><a href="#source-10" class="citation-link">[10]</a></sup>.</li>
+<li>Layer 4 (Abstract): Persuasion and social influence models explain individual and group belief updating; attention economy and cognitive biases explain selective exposure and susceptibility.</li>
+<li>Layer 5 (Foundational): Information theory, game theory, behavioral economics, and control theory supply principles for signaling, strategic manipulation, bounded rationality, and system-level stability.</li>
+</ul>
+<p>Reasoning chain from foundational principles to the specific topic</p>
+<ol>
+<li>Information-theoretic and game-theoretic foundations indicate that signals shape beliefs and that strategic actors will manipulate signals when incentives align (Layer 5).</li>
+<li>Behavioral models show people are subject to bounded rationality and systematic biases; social influence models indicate cascades and threshold effects (Layer 4).</li>
+<li>Recommender systems and attention economies concentrate exposure, changing the distribution of signals (Layer 3), while automation multiplies the speed and volume of signals (Layer 1).</li>
+<li>Institutional and doctrinal practices mediate how organizations encode, transmit, and act on information (Layer 2). The confluence creates novel cognitive equilibria — "cognitive wars" — in which industrialized information production changes priors, heuristics, and coordination norms.</li>
+</ol>
+<h3>How tangential canonical papers help</h3>
+<p>Papers not directly about AI-driven influence (e.g., threshold models, classic persuasion theory) still provide necessary microfoundations: they explain why an increase in cheaply produced persuasive signals will disproportionately affect collective outcomes via cascades and shifting thresholds. The conceptual map links these layers: foundational theory sets constraints and plausible dynamics; domain literature identifies institutional loci; applied-methods research demonstrates available leverage points and failure modes.</p>
+<p>Reference: conceptual map "Cognitive Wars: The AI Industrialization of Influence" (see conceptual mapping above).</p>
+</section>
+
+<section id="theory-first-framework-cognitive-processes-wars-and-industrialization-influence">
+    <h2>Theory-first Framework: cognitive processes, wars, and industrialization influence</h2>
+    <h3>Causal model (high level)</h3>
+<p>Industrialization of information (I) -> Mediators: information flows, bureaucratization and routinization, professionalization of information functions, compressed time horizons, and technological framing (M) -> Cognitive transformations in organizations and populations (C) -> Changes in warfare conduct and outcomes (O).</p>
+<h3>Mechanisms (concise)</h3>
+<ul>
+<li>Information Flows: Scale and velocity increase available signals, amplify fringe narratives via algorithmic recommendation, lower cost per manipulated impression <sup><a href="#source-4" class="citation-link">[4]</a></sup><sup><a href="#source-10" class="citation-link">[10]</a></sup>.</li>
+<li>Bureaucratization & Professionalization: Creation of staffed information operations, specialized analytic cadres, and doctrine-bound decision processes that favor throughput and procedural metrics over deliberative assessment.</li>
+<li>Time Horizons & Routinization: Faster operational tempos incentivize heuristics and templates (e.g., checklist-based targeting, automated attribution pipelines), increasing vulnerability to adversarial manipulation.</li>
+<li>Technological Framing: The presence of synthetic media (deepfakes) changes attribution uncertainty and erodes epistemic trust <sup><a href="#source-6" class="citation-link">[6]</a></sup><sup><a href="#source-7" class="citation-link">[7]</a></sup>.</li>
+</ul>
+<h3>Mediation, not accompaniment</h3>
+<p>I argue these cognitive shifts mediate the effects of industrialization on military outcomes: rather than material capacity alone producing outcomes, industrialization reshapes the information environment and organizational cognition that determine how material assets are used.</p>
+</section>
+
+<section id="literature-review-cognitive-wars-and-industrialization-debates">
+    <h2>Literature Review: cognitive, wars, and industrialization debates</h2>
+    <h3>Mapping debates</h3>
+<ul>
+<li>Military history/materialist tradition: Emphasizes factories, logistics, and firepower; industrialization as input-output function of war-making capacity.</li>
+<li>Constructivist/ideational approaches: Focus on norms, doctrines, and beliefs but often under-specified about mechanisms linking technology to cognition.</li>
+<li>Cognitive sociology/organizational cognition: Provides microfoundations for institutional heuristics and decision processes but less often tied to macro-level industrial transformations.</li>
+</ul>
+<h3>Gaps identified</h3>
+<p>While materialist accounts delineate how industrial capacity changes resources, they under-theorize how industrial-scale information production changes belief systems and heuristics. Conversely, constructivist accounts emphasize ideas but lack mechanistic linkages to technological affordances. This brief bridges that gap by situating cognitive mechanisms between industrial-scale information technologies and wartime behavior.</p>
+<h3>Relation to computational propaganda and AI literature</h3>
+<p>Recent empirical and technical studies demonstrate how automation (bots, NLG, synthetic media) enable scale and adversarial manipulation <sup><a href="#source-2" class="citation-link">[2]</a></sup><sup><a href="#source-5" class="citation-link">[5]</a></sup><sup><a href="#source-6" class="citation-link">[6]</a></sup><sup><a href="#source-7" class="citation-link">[7]</a></sup><sup><a href="#source-8" class="citation-link">[8]</a></sup><sup><a href="#source-9" class="citation-link">[9]</a></sup>. However, many of these contributions stop at detection or cataloging; connecting them to institutional cognitive change remains an open task that this brief begins to map.</p>
+</section>
+
+<section id="hypotheses-and-propositions">
+    <h2>Hypotheses and Propositions</h2>
+    <p>Hypothesis 1: Industrialization increases the salience of throughput and efficiency heuristics in military decision-making. Organizations will weight metrics like "targets processed per hour" or "information triaged" more heavily than deliberative counterfactual reasoning.</p>
+<p>Hypothesis 2: Greater industrial capacity leads to organizational cognitive specialization — staff planning, logistics primacy, and dedicated information operations — which concentrates decision authority and routinizes judgment.</p>
+<p>Proposition: Cognitive shifts mediate the relationship between industrialization and operational tempo/escalation: higher industrialization -> cognitive routinization and compressed time horizons -> higher tempo and increased risk of miscalculated escalation, conditional on adversary signaling strategies.</p>
+<h3>Testable sub-propositions</h3>
+<ul>
+<li>P1a: Periods of rapid automation adoption will correlate with doctrinal language emphasizing tempo and efficiency in doctrinal texts.</li>
+<li>P1b: Organizations with higher reliance on automated sourcing (e.g., algorithmic attribution) will experience higher false-positive rates in target selection under adversarial influence.</li>
+</ul>
+</section>
+
+<section id="methodology-operationalizing-cognitive-change-and-industrialization">
+    <h2>Methodology: operationalizing cognitive change and industrialization</h2>
+    <h3>Operational indicators</h3>
+<ul>
+<li>Cognitive variables (empirical proxies): frequency of heuristic language in doctrinal texts ("tempo," "throughput," "efficiency"), training curricula emphasis on automated tools, decision logs showing rule-based decisions, network metrics of information centralization (e.g., degree centrality of information nodes), linguistic markers of certainty/ambiguity.</li>
+<li>Industrialization measures: production capacity indices (armament output, factory throughput), mobilization rates, infrastructural integration (rail/telegraph historically; broadband/compute capacity contemporarily), automation adoption rates (numbers of deployed bots, LLM-based systems).</li>
+</ul>
+<h3>Mixed-methods approach</h3>
+<ul>
+<li>Comparative case selection: choose paired cases with similar material capacity but divergent information-industrial profiles (early vs late industrializers; high vs low algorithmic mediation).</li>
+<li>Process-tracing: link industrial milestones (build-out of communications infrastructure, adoption of automation) to observed changes in doctrine, decision procedures, and battlefield outcomes.</li>
+<li>Textual coding: supervised/unsupervised NLP to measure shifts in doctrinal language and heuristics over time.</li>
+<li>Quantitative correlates: regression analyses linking industrialization indices to coded cognitive variables, with temporal lags and robustness checks.</li>
+</ul>
+<h3>Data sources and ethical considerations</h3>
+<ul>
+<li>Open doctrinal manuals, archived decision logs (where declassified), press releases, digital media archives, compute/infrastructure statistics. Ensure human subjects protections where interviews or internal logs are used.</li>
+</ul>
+</section>
+
+<section id="analytical-strategy-and-evidence">
+    <h2>Analytical Strategy and Evidence</h2>
+    <h3>Process-tracing design</h3>
+<ul>
+<li>Identify industrialization milestones (e.g., telegraph/railway adoption, mass broadcasting, internet penetration, LLM deployment).</li>
+<li>Trace contemporaneous changes in organizational structure, doctrine, and training.</li>
+<li>Establish temporal precedence and rule out alternative mechanisms (economic capacity shifts, leadership changes) through counterfactual reasoning.</li>
+</ul>
+<h3>Coding scheme (high level)</h3>
+<ul>
+<li>Lexical categories: efficiency/throughput, attribution/verification, automated decision language, escalation/avoidance.</li>
+<li>Decision-heuristic markers: template usage, checklist prevalence, delegations to automated systems.</li>
+</ul>
+<h3>Robustness checks</h3>
+<ul>
+<li>Alternative mechanisms: control for material capacity, leadership ideology, and alliance commitments.</li>
+<li>Temporal ordering: Granger-style lead-lag tests where high-frequency data are available (e.g., digital-era cases).</li>
+<li>Counterfactuals: process-trace plausible alternative histories where industrial information changes did not occur.</li>
+</ul>
+<h3>Empirical anchors (examples)</h3>
+<ul>
+<li>Studies of botnets and their growth quantify the scale at which automated influence is feasible <sup><a href="#source-2" class="citation-link">[2]</a></sup><sup><a href="#source-5" class="citation-link">[5]</a></sup>.</li>
+<li>Work on attention and supply of misinformation links exposure dynamics to production incentives <sup><a href="#source-4" class="citation-link">[4]</a></sup>.</li>
+<li>Technical assessments of synthetic media demonstrate feasibility for plausible causation of attribution uncertainty <sup><a href="#source-6" class="citation-link">[6]</a></sup><sup><a href="#source-7" class="citation-link">[7]</a></sup>.</li>
+</ul>
+</section>
+
+<section id="mechanisms-how-industrialized-influence-reshapes-cognition">
+    <h2>Mechanisms: how industrialized influence reshapes cognition</h2>
+    <p>Four interlocking mechanisms translate industrial information capabilities into cognitive outcomes:</p>
+<ol>
+<li>Signal Multiplication and Noise Inflation</li>
+</ol>
+<p>Automation multiplies persuasive signals faster than human verification scales. The result is elevated noise-to-signal ratios that change priors: decision-makers, expecting higher noise, may assign lower credence to individual signals and rely more on heuristics and aggregated indices (e.g., trending counts) rather than source-level verification <sup><a href="#source-4" class="citation-link">[4]</a></sup><sup><a href="#source-10" class="citation-link">[10]</a></sup>.</p>
+<ol>
+<li>Algorithmic Selection and Attention Concentration</li>
+</ol>
+<p>Recommender systems and platform incentives concentrate attention on a subset of content. This reweights exposure distributions, making fringe narratives achieve mainstream reach and altering perceived base rates — a cognitive shift from treating fringe signals as rare to treating them as common <sup><a href="#source-1" class="citation-link">[1]</a></sup><sup><a href="#source-10" class="citation-link">[10]</a></sup>.</p>
+<ol>
+<li>Delegation and Routinized Judgment</li>
+</ol>
+<p>Organizations respond to information overload by delegating to automated pipelines (attribution algorithms, watchlist filters). Delegation reduces deliberative bandwidth and creates lock-in: when automated outputs become inputs to doctrine and targeting, adversarial actors can exploit predictable pipelines <sup><a href="#source-3" class="citation-link">[3]</a></sup><sup><a href="#source-7" class="citation-link">[7]</a></sup>.</p>
+<ol>
+<li>Attribution Uncertainty and Trust Erosion</li>
+</ol>
+<p>High-fidelity synthetic media and coordinated bot amplification increase uncertainty about provenance. Heightened uncertainty reduces epistemic trust, incentivizes preemptive or precautionary actions, and complicates escalation control — a strategic lever for adversaries aiming to induce either paralysis or precipitous action <sup><a href="#source-6" class="citation-link">[6]</a></sup><sup><a href="#source-7" class="citation-link">[7]</a></sup><sup><a href="#source-8" class="citation-link">[8]</a></sup>.</p>
+<p>These mechanisms combine to produce cognitive equilibria characterized by speed-optimized heuristics, specialized information staffs, routinized automated decision-making, and heightened attribution ambiguity.</p>
+</section>
+
+<section id="applications-parameterized-vignettes-and-metrics">
+    <h2>Applications: parameterized vignettes and metrics</h2>
+            <div class="section-image-container">
+                <img src="images/section_applications_parameterized_vig_cognitive_wars_the_ai_industri.png" alt="Applications: parameterized vignettes and metrics" loading="lazy">
+                <p class="section-image-attribution">Image generated with OpenAI dall-e-3</p>
+            </div>
+            
+    <p>Vignette A — Urban Counterinsurgency with Intermittent Communications</p>
+<p>Scenario: A mid-sized state faces urban insurgency while its communications infrastructure is intermittently degraded (signal jamming, network outages). The state has adopted automated information triage systems to manage social media monitoring and force coordination.</p>
+<h3>Parameters</h3>
+<ul>
+<li>MTTA (Mean Time To Action) under normal comms: 15 minutes; under intermittent comms: variable, modeled as MTTA' = MTTA <em> (1 + p_drop </em> s_delay), where p_drop is probability of packet loss and s_delay is systemic delay factor.</li>
+<li>Failure probability (false-positive targeting due to automated attribution): baseline 0.02 per incident; increases to 0.12 under adversarially amplified misinformation.</li>
+<li>Human override latency: median 45 minutes when human-in-loop is activated.</li>
+</ul>
+<h3>Failure modes</h3>
+<ul>
+<li>Automated cascade: fast triage marks a viral synthetic video as an insurgent propaganda node; automated prioritization routes a kinetic response before human review (delegation policy violated), leading to collateral damage.</li>
+<li>Attention diversion: algorithmic amplification channels public attention to a fabricated atrocity, degrading local intelligence sources and spiking false-positive rates.</li>
+</ul>
+<p>Mitigations and metrics to monitor</p>
+<ul>
+<li>Trigger: sudden spike in cross-platform amplification of novel media or matched errors across attribution pipelines. Operational policy: escalate to human review if cross-platform amplification rate exceeds 5x baseline within 30 minutes.</li>
+<li>Delegation policy: require two independent algorithmic signals + one human confirmation before kinetic escalation in civilian-populated zones.</li>
+</ul>
+<p>Vignette B — Maritime Denial and Strategic Deception with AI-driven Influence</p>
+<p>Scenario: Two states contest a maritime chokepoint. One state uses AI-generated disinformation campaigns to create ambiguous narratives about ship identities and intent, seeking to raise friction and cause preemptive closures.</p>
+<h3>Parameters</h3>
+<ul>
+<li>Time-to-escalation sensitivity: probability of interdiction given ambiguous signal = f(uncertainty, readiness), where uncertainty is modeled on a scale 0–1; a 0.2 increase in uncertainty raises interdiction probability by 15%.</li>
+<li>Failure probability (misattribution leading to international incident): baseline 0.01 annually; can jump to 0.08 under coordinated synthetic deception.</li>
+<li>MTTA for diplomatic clarification: baseline 72 hours; under attention-saturated conditions, diplomatic MTTA may extend to 120+ hours.</li>
+</ul>
+<h3>Failure modes</h3>
+<ul>
+<li>Strategic foreshortening: decision-makers, faced with high uncertainty and pressure to act, lean on throughput heuristics, leading to disproportionate interdiction and escalation.</li>
+<li>Attribution race: both sides accelerate evidentiary production (forensic timelines), but automated production of counterfeit evidence undermines verification, prolonging crises.</li>
+</ul>
+<p>Mitigations and metrics to monitor</p>
+<ul>
+<li>Trigger: emergence of high-fidelity synthetic media tied to critical nodes (e.g., naval command feeds). Policy: freeze-move rule — no kinetic escalation for 48 hours when provenance confidence < 0.6.</li>
+<li>Delegation policy: create an independent, multilateral forensic task force with rapid-exchange agreements to compress MTTA for verification to <24 hours when incidents involve third-party commercial AIS and satellite feeds.</li>
+</ul>
+<p>Vignette C — Information-Denial on a Mobilized Home Front (short)</p>
+<p>Scenario: Rapid mobilization requires public trust and compliance. Automated rumor networks (botnets) propagate panic about shortages.</p>
+<h3>Parameters</h3>
+<ul>
+<li>Evacuation compliance drop per rumor wave: 3–7% depending on trust baseline.</li>
+<li>Failure probability of mass noncompliance: increases with number of coordinated bot accounts active; modeled as p_noncompliance = base + k * bot_density.</li>
+</ul>
+<h3>Failure mode</h3>
+<ul>
+<li>Panic cascade leading to logistical gridlock and reduced mobilization efficiency.</li>
+</ul>
+<h3>Mitigation</h3>
+<ul>
+<li>Early detection trigger: botnet growth exceeding 2000 coordinated accounts in 24h; immediate public transparency briefings and routing of official communications through multiple redundant channels to counteract algorithmic suppression.</li>
+</ul>
+<p>(Collectively these vignettes illustrate how MTTA, failure probabilities, and delegation rules interact with cognitive and informational dynamics. They can be parameterized for simulation or wargame exercises.)</p>
+</section>
+
+<section id="case-studies-industrialization-driven-shifts-in-warfare-cognition">
+    <h2>Case Studies: industrialization-driven shifts in warfare cognition</h2>
+    <h3>Suggested comparative cases (research agenda)</h3>
+<ul>
+<li>Early industrializer conflict: World War I — emergence of staff systems, telegraph/rail logistics, doctrine emphasizing mass fire and tempo; examine doctrinal texts for throughput language.</li>
+<li>Late industrializer conflict: Russo-Japanese War / Russo-Ukrainian conflicts — compare adoption of communications tech and automated information tools; trace differences in organizational cognition.</li>
+<li>Digital-era cases: Information operations in electoral and hybrid conflicts; analyze botnet-driven influence and synthetic media incidents using computational detection studies <sup><a href="#source-2" class="citation-link">[2]</a></sup><sup><a href="#source-5" class="citation-link">[5]</a></sup><sup><a href="#source-6" class="citation-link">[6]</a></sup><sup><a href="#source-7" class="citation-link">[7]</a></sup>.</li>
+</ul>
+<h3>Illustrative empirical observations</h3>
+<ul>
+<li>Doctrinal change: archival analysis often shows increased formalization of staff procedures and checklists coincident with communications/infrastructure investments.</li>
+<li>Organizational restructuring: states with large-scale information operations create specialized directorates and routinized targeting pipelines, consistent with the specialization hypothesis.</li>
+<li>Counter-examples: Cases where high industrial capacity did not produce routinized cognition often feature strong norms of deliberation and institutional checks, highlighting boundary conditions.</li>
+</ul>
+</section>
+
+<section id="discussion-theoretical-implications-and-influence-pathways">
+    <h2>Discussion: theoretical implications and influence pathways</h2>
+    <h3>Synthesis of evidence</h3>
+<p>Industrialized information systems alter the cognitive substrate of warfare through measurable mechanisms: amplification, delegation, reframing of uncertainty, and institutional specialization. These changes shift strategic equilibria — e.g., they can shorten the credible signaling horizon, increase the prevalence of preemptive actions under uncertainty, and reconfigure civil-military relations as public information spaces become operational battlegrounds.</p>
+<p>Implications for theory</p>
+<ul>
+<li>War causation: Adds an information-cognition mediation channel to materialist accounts, suggesting that industrialization affects not only capacity but also the heuristics and priors that govern the use of that capacity.</li>
+<li>Military innovation: Highlights the role of non-kinetic technological adoption (automation, recommender systems) as drivers of doctrinal change.</li>
+<li>Civil-military relations: As publics become contested cognitive terrains, civilian oversight and public trust become operational variables in wartime decision-making.</li>
+</ul>
+<h3>Policy relevance</h3>
+<ul>
+<li>Anticipatory governance: Monitor indicators of cognitive shift (doctrinal language, automation adoption) to predict changes in conduct.</li>
+<li>Defensive measures: Invest in forensic attribution, cross-platform verification, and human-centered delegation policies to mitigate adversarial exploitation.</li>
+</ul>
+</section>
+
+<section id="conclusion-and-future-research">
+    <h2>Conclusion and Future Research</h2>
+    <h3>Contribution recap</h3>
+<p>This brief advances a theory-first account that industrialization — now augmented by AI and automation — reshapes warfare by transforming the cognitive substrate of actors involved. The central claim is mediation: industrial information capabilities change cognition (beliefs, heuristics, institutional routines), which mediates the effect of industrialization on military conduct and outcomes.</p>
+<h3>Empirical priorities and methodological refinements</h3>
+<ul>
+<li>Systematic textual codings of doctrinal archives to test shifts in heuristic language.</li>
+<li>Comparative process-tracing across historical and contemporary cases to identify causal pathways and boundary conditions.</li>
+<li>Simulation and wargame experiments parameterized by the vignettes above to test delegation rules and MTTA trade-offs.</li>
+</ul>
+<h3>Extensions</h3>
+<ul>
+<li>Study of digital industrialization and LLM-driven influence as next-stage cognitive disruptors.</li>
+<li>Integration of adversarial ML defense research into operational doctrines to reduce systemic vulnerability <sup><a href="#source-3" class="citation-link">[3]</a></sup>.</li>
+</ul>
+<p>Final note: understanding cognitive wars requires bridging disciplines — political science, military history, cognitive psychology, and AI systems research — and moving from cataloging new tools to modeling how they rewrite the heuristics and institutions that determine life-and-death policy choices.</p>
+</section>
+
+<section id="assumptions-ledger">
+    <h2>Assumptions Ledger</h2>
+    <table>
+<thead><tr>
+<th>Assumption</th>
+<th>Rationale</th>
+<th>Observable</th>
+<th>Trigger</th>
+<th>Fallback/Delegation</th>
+<th>Scope</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>The industrialization of information via AI and automation materially alters the cognitive foundations of warfare, producing distinct dynamics characterized as "cognitive wars."</td>
+<td>AI/automation increases signal volume, speed, and algorithmic mediation; these changes plausibly reshape attention, belief updating, and organizational heuristics in ways that affect decision-making independent of material inputs.</td>
+<td>Shifts in doctrinal language and training (mentions of information operations, automation, or AI), growth of staffed information units, metrics emphasizing throughput/speed in after-action reports, case studies where similar material forces adopt different tactics correlated with information-environment differences.</td>
+<td>Deployment or scale-up of AI-driven information tools, visible changes in organizational structure (creation of information/AI units), or sudden changes in operational tempo that force faster decision cycles.</td>
+<td>Introduce explicit human-in-the-loop policies, restore deliberative decision nodes (e.g., mandatory human review for high-consequence actions), and delegate verification and strategic adjudication to cross-functional oversight teams (intelligence, legal, red teams).</td>
+<td>Applies chiefly to actors operating in digitally mediated information ecosystems with access to AI/automation (modern militaries, states, major non-state actors); less applicable in low-tech, localized conflicts or where information channels remain primarily analog.</td>
+</tr>
+<tr>
+<td>Algorithmic recommender systems and attention economies amplify fringe narratives, misinformation, and synthetic media disproportionately, increasing their downstream influence on populations and organizations.</td>
+<td>Recommender algorithms optimize for engagement/throughput, which favors salient, emotional, or novel content; automation lowers marginal cost of producing persuasive signals, so scaled synthetic content and botnets can exploit these incentives.</td>
+<td>Platform-level engagement spikes for fringe or synthetic items, rapid cascades originating from low-credibility accounts, high share-to-audience ratios, botnet activity signatures (coordinated timing/replication), and repeated resurfacing of the same synthetic artifacts across networks.</td>
+<td>Unexplained virality of contested content, coordinated account behavior detected by platform analytics, electoral/mobilization periods, or incidents where rapid belief change is reported among target audiences.</td>
+<td>Apply platform-level mitigations (throttle recommendations, label or demote synthetic content), route suspicious items to independent fact-checkers and platform trust-and-safety teams, and escalate to regulatory or interagency contacts when necessary.</td>
+<td>Most relevant on commercial platforms with engagement-optimizing recommenders and broad public reach; impact varies by platform architecture, moderation regimes, and audience media literacy.</td>
+</tr>
+<tr>
+<td>Under compressed time horizons and high-tempo operations, organizations will prefer throughput/efficiency heuristics and routinized inference (templates, automated attributions), increasing susceptibility to adversarial manipulation of information.</td>
+<td>Organizational cognition literature predicts reliance on heuristics and checklists when time and attention are constrained; automation and bureaucratization institutionalize these heuristics, producing predictable operational routines that adversaries can anticipate and exploit.</td>
+<td>Use of automated attribution pipelines, templated intelligence products, standard operating procedures that prioritize speed over uncertainty reporting, KPIs rewarding fast responses, and documented instances where adversarial signals triggered routine automated responses.</td>
+<td>Crisis situations demanding real-time decisions, alerts of rapid cascading information events, or discovery of automated decision-support tools used for targeting/attribution.</td>
+<td>Enforce probabilistic confidence reporting, mandate second-opinion or red-team review for high-risk automated outputs, throttle automated decision systems during anomalous input patterns, and delegate final-action authority to verified human operators.</td>
+<td>Applies to organizations with formalized decision pipelines and access to automated analytics (armed forces, intelligence agencies, large NGOs); less applicable to small, decentralized groups or contexts where decisions are inherently deliberative and low-tempo.</td>
+</tr>
+<tr>
+<td>Synthetic media and adversarial tactics will substantially increase attribution ambiguity and erode epistemic trust across publics and institutions.</td>
+<td>Advances in generative models enable high-fidelity false visual/audio/textual artifacts; as such artifacts circulate, observers face higher Type I/II errors when validating signals, producing skepticism and contested truth claims documented in empirical studies.</td>
+<td>Increased frequency of contested media claims, longer verification times for multimedia evidence, survey measures showing declining public trust in media or institutions after high-profile synthetic incidents, and legal/political disputes over provenance of evidence.</td>
+<td>Emergence of high-impact contested media (e.g., purported battlefield videos, political deepfakes), intelligence reports flagging likely synthetic artifacts, or litigation/official disagreement over the authenticity of proof.</td>
+<td>Invest in cryptographic provenance systems (signed content pipelines), establish rapid verification labs and accredited third-party validators, default to conservative policy in presence of ambiguous high-impact media, and delegate public communication to trained information-relations units.</td>
+<td>Most acute where high-quality synthetic tooling is widely available and where publics rely on distributed digital media for situational awareness; less acute where authenticated analog verification (direct witnesses, physical inspection) remains dominant.</td>
+</tr>
+<tr>
+<td>Cognitive transformations mediated by industrialized information (beliefs, heuristics, priors) can change the use and effectiveness of material military assets such that material capacity alone does not predict outcomes.</td>
+<td>Decision-making frameworks and doctrines determine force employment; if industrialized information reshapes those frameworks (e.g., through perception management, altered thresholds for escalation), then material parity can yield divergent outcomes.</td>
+<td>Cases where states with comparable materiel show different escalation behaviors or operational choices correlated with differences in information environments or doctrinal emphasis; doctrinal revisions referencing information effects; misallocations traceable to false beliefs induced by influence operations.</td>
+<td>Comparative analyses showing outcome divergence among materially similar actors, or when influence operations precede atypical tactical/strategic choices by an opponent.</td>
+<td>Revise doctrine/training to incorporate information-environment contingencies, implement war-gaming and red-team exercises that stress-test cognitive vulnerabilities, and delegate doctrine updates to combined arms and information-warfare centers of excellence.</td>
+<td>Applies to mid- and high-technology militaries and states where doctrine and public belief matter for force employment; limited where material asymmetries are overwhelming or where command-and-control is insulated from informational influence (e.g., highly centralized authoritarian militaries with strict information control).</td>
+</tr>
+</tbody></table>
+</section>
+
+<section id="notation">
+    <h2>Notation</h2>
+    <table>
+<thead><tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units / Domain</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>\(n\)</td>
+<td>number of agents</td>
+<td>\(\mathbb{N}\)</td>
+</tr>
+<tr>
+<td>\(G_t=(V,E_t)\)</td>
+<td>time‑varying communication/interaction graph</td>
+<td>—</td>
+</tr>
+<tr>
+<td>\(\lambda_2(G)\)</td>
+<td>algebraic connectivity (Fiedler value)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>\(p\)</td>
+<td>mean packet‑delivery / link reliability</td>
+<td>[0,1]</td>
+</tr>
+<tr>
+<td>\(\tau\)</td>
+<td>latency / blackout duration</td>
+<td>time</td>
+</tr>
+<tr>
+<td>\(\lambda\)</td>
+<td>task arrival rate</td>
+<td>1/time</td>
+</tr>
+<tr>
+<td>\(e\)</td>
+<td>enforceability / command compliance</td>
+<td>[0,1]</td>
+</tr>
+<tr>
+<td>\(\tau_{\text{deleg}}\)</td>
+<td>delegation threshold</td>
+<td>[0,1]</td>
+</tr>
+<tr>
+<td><strong>MTTA</strong></td>
+<td>mean time‑to‑assignment/action</td>
+<td>time</td>
+</tr>
+<tr>
+<td>\(P_{\text{fail}}\)</td>
+<td>deadline‑miss probability</td>
+<td>[0,1]</td>
+</tr>
+</tbody></table>
+</section>
+
+<section id="claim-evidence-method-cem-grid">
+    <h2>Claim-Evidence-Method (CEM) Grid</h2>
+    <table>
+<thead><tr>
+<th>Claim (C)</th>
+<th>Evidence (E)</th>
+<th>Method (M)</th>
+<th>Status</th>
+<th>Risk</th>
+<th>TestID</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Primary: Industrialization of information (automation, scale, algorithmic mediation) materially transforms organizational and societal cognition such that 'cognitive wars' — distinct cognitive equilibria that shape conduct and outcomes of war — emerge beyond material inputs.</td>
+<td><sup><a href="#source-7" class="citation-link">[7]</a></sup> <sup><a href="#source-4" class="citation-link">[4]</a></sup> <sup><a href="#source-10" class="citation-link">[10]</a></sup> <sup><a href="#source-2" class="citation-link">[2]</a></sup></td>
+<td>Theory development + process-tracing of case studies + cross-national empirical comparison using quantitative proxies of information-industrial capacity (proof/empirical/process-trace).</td>
+<td>E cited; M pending empirical tests and comparative process-tracing (T1, T4).</td>
+<td>If false, attributing changes in wartime conduct to information-industrialization rather than material or institutional factors would misdirect theory and policy; mitigation strategies premised on changing information architectures could be ineffective.</td>
+<td>T1/T4</td>
+</tr>
+<tr>
+<td>Primary: Industrial-scale automation and algorithmic mediation increase reliance on efficiency/throughput heuristics and routinized inference in operational decision-making (organizational preference for throughput over deliberation).</td>
+<td><sup><a href="#source-3" class="citation-link">[3]</a></sup> <sup><a href="#source-7" class="citation-link">[7]</a></sup> <sup><a href="#source-2" class="citation-link">[2]</a></sup></td>
+<td>Textual coding of doctrines and SOPs, structured interviews with military/information specialists, and simulation of automated decision pipelines to measure heuristic substitution (textual/empirical/simulation).</td>
+<td>E cited; M pending textual coding, interviews, and simulation validation (T2).</td>
+<td>If wrong, reforms and training aimed at reversing throughput-driven failures may target the wrong causal lever; resilience investments (e.g., slowing decision loops) might not yield expected risk reductions.</td>
+<td>T2</td>
+</tr>
+<tr>
+<td>Primary: Algorithmic amplification (recommenders, attention economies) plus cheap automated actors (botnets) amplifies fringe narratives and shifts cascade thresholds, increasing probability of rapid belief cascades, misattribution, and escalatory incidents.</td>
+<td><sup><a href="#source-4" class="citation-link">[4]</a></sup> <sup><a href="#source-10" class="citation-link">[10]</a></sup> <sup><a href="#source-5" class="citation-link">[5]</a></sup> <sup><a href="#source-2" class="citation-link">[2]</a></sup></td>
+<td>Network diffusion simulations (with recommender dynamics and agent-based bot models) and empirical event studies linking amplification metrics to downstream cascade/escalation outcomes (simulation/empirical).</td>
+<td>E cited; M pending simulation experiments and empirical event linking (T3).</td>
+<td>If false, policy emphasis on countering algorithmic amplification as a driver of escalation may be overstated; resources might be better allocated to other escalation channels (kinetic, diplomatic).</td>
+<td>T3</td>
+</tr>
+<tr>
+<td>Secondary: Synthetic media (deepfakes and reenactment tools) systematically increase attribution uncertainty and erode epistemic trust, enabling adversaries to exploit delegated judgment and create strategic ambiguity.</td>
+<td><sup><a href="#source-6" class="citation-link">[6]</a></sup> <sup><a href="#source-7" class="citation-link">[7]</a></sup> <sup><a href="#source-9" class="citation-link">[9]</a></sup></td>
+<td>Controlled experiments measuring trust and attribution under exposure to synthetic media; benchmark evaluation of detection algorithms; case studies of incidents involving synthetic media (experimental/empirical/benchmarks).</td>
+<td>E cited; M pending lab experiments and detection-benchmark studies (T4).</td>
+<td>If false, investments prioritized for deepfake detection and mitigation may not address the main drivers of attribution uncertainty; alternative sources of epistemic erosion would need attention.</td>
+<td>T4</td>
+</tr>
+<tr>
+<td>Secondary: Bureaucratization and professionalization of information functions (creation of specialized analytic/influence cadres) produces procedural metric-driven behavior that increases vulnerability to adversarial manipulation (preference for templated responses, automated attribution pipelines).</td>
+<td><sup><a href="#source-7" class="citation-link">[7]</a></sup> <sup><a href="#source-8" class="citation-link">[8]</a></sup> <sup><a href="#source-11" class="citation-link">[11]</a></sup></td>
+<td>Process-tracing of organizational reforms, doctrinal text analysis, and interviews/surveys of information officers to detect procedural incentives and metric-driven behavior (qualitative/empirical).</td>
+<td>E cited; M pending qualitative fieldwork and doctrinal coding (T5).</td>
+<td>If wrong, organizational reforms aimed at changing staffing, incentives, or doctrine to reduce vulnerability could be ineffective or counterproductive.</td>
+<td>T5</td>
+</tr>
+<tr>
+<td>Secondary: Quantitative proxies of information-industrial capacity (bot prevalence, automated account activity, attention-share metrics) are predictive of influence operation success and can be used for early-warning and measurement.</td>
+<td><sup><a href="#source-2" class="citation-link">[2]</a></sup> <sup><a href="#source-5" class="citation-link">[5]</a></sup> <sup><a href="#source-4" class="citation-link">[4]</a></sup></td>
+<td>Develop and validate quantitative proxies using observational social-media datasets; predictive modeling of influence outcomes (engagement, spread) and out-of-sample validation against known operations (empirical/data analysis).</td>
+<td>E cited; M pending empirical model building and out-of-sample validation (T6).</td>
+<td>If false, indicators used for early warning and attribution will have low signal-to-noise, producing false positives/negatives and misdirecting operational responses.</td>
+<td>T6</td>
+</tr>
+</tbody></table>
+</section>
+
+<section id="references-selected-cited-sources">
+    <h2>References (selected cited sources)</h2>
+    <h3>Technical and empirical anchors cited in text:</h3>
+<p><sup><a href="#source-1" class="citation-link">[1]</a></sup>: A Survey of Multi-Agent Deep Reinforcement Learning with Communication. ArXiv.Org (2022). <sup><a href="#source-2" class="citation-link">[2]</a></sup>: Dissecting a Social Botnet: Growth, Content and Influence in Twitter. ArXiv.Org (2016). <sup><a href="#source-3" class="citation-link">[3]</a></sup>: Defending Against Adversarial Machine Learning. ArXiv.Org (2019). <sup><a href="#source-4" class="citation-link">[4]</a></sup>: The role of online attention in the supply of disinformation in Wikipedia. ArXiv.Org (2023). <sup><a href="#source-5" class="citation-link">[5]</a></sup>: The Rise of Social Bots. ArXiv.Org (2014). <sup><a href="#source-6" class="citation-link">[6]</a></sup>: Face2Face: Real-time Face Capture and Reenactment of RGB Videos. ArXiv.Org (2020). <sup><a href="#source-7" class="citation-link">[7]</a></sup>: The Malicious Use of Artificial Intelligence: Forecasting, Prevention, and Mitigation. ArXiv.Org (2018). <sup><a href="#source-8" class="citation-link">[8]</a></sup>: Detecting Propaganda Techniques in Memes. ArXiv.Org (2021). <sup><a href="#source-9" class="citation-link">[9]</a></sup>: Exploring the Role of Visual Content in Fake News Detection. ArXiv.Org (2020). <sup><a href="#source-10" class="citation-link">[10]</a></sup>: Efficient collective influence maximization in cascading processes with first-order transitions. ArXiv.Org (2016). <sup><a href="#source-11" class="citation-link">[11]</a></sup>: Information Consumption and Boundary Spanning in Decentralized Online Social Networks: the case of Mastodon Users. ArXiv.Org (2022).</p>
+<p>(Canonical foundational works and military-history anchors referenced conceptually in the Foundations and Theoretical Grounding sections include classic treatments of persuasion, threshold models, and military doctrine; these are used as theoretical anchors though not enumerated in the contemporary technical reference list above.)</p>
+</section>
+
+    
+    <section class="adversarial-review"><h2>Adversarial Review</h2><div><h3>Steelman Objections</h3><ul><li>Causality not proven; industrial scale may merely correlate with reach.</li><li>External validity risk: platform findings may not generalize to broadcast environments.</li><li>Classifier vignette ignores base-rate sensitivity.</li><li>Institutional mediation could dominate industrial capacity in pluralistic media.</li><li>Measurement opacity remains; MTTA lacks public datasets for verification.</li></ul></div><div><h3>Boundary Conditions</h3><ul><li>High press freedom coupled with professional editorial standards.</li><li>Distribution systems with high channel diversity and low single points of failure.</li><li>Verification costs subsidized through default attestation workflows.</li></ul></div><div><h3>Falsification Tests</h3><ul><li>Natural experiments around ranking/labeling policy changes with survival analysis.</li><li>Red-team drills measuring MTTA p50/p95 before/after instrumentation.</li><li>Holdout experiments estimating amplification gain versus random baseline feeds.</li></ul></div></section>
+    <section class="decision-playbooks"><h2>Decision Playbooks</h2><table><tr><th>KPI</th><th>Threshold</th><th>Action</th><th>Risk Delta</th><th>Monitoring Lag</th></tr><tr><td>MTTA_p95</td><td>&lt;= 10 min</td><td>Automate detection and pre-authorize counter messaging</td><td>Decrease cascade risk</td><td>near-real-time</td></tr><tr><td>PPV(min)</td><td>&gt;= 0.85</td><td>Raise decision threshold; require dual-sensor corroboration</td><td>Decrease false-trigger kinetic</td><td>per alert</td></tr><tr><td>t_half(persistence)</td><td>&lt;= 7 days</td><td>Throttling + labeling + counter-speech</td><td>Shorten long-tail belief</td><td>daily</td></tr><tr><td>Amplification Gain (G)</td><td>&lt;= 1.2x</td><td>Ranking demotion for low-trust narratives</td><td>Limit reach</td><td>weekly</td></tr></table></section>
+    <section class="evidence-ledger"><h2>Evidence Ledger</h2><div class="ledger-claim"><h3>S1</h3><p>2025-11-10 — Bootes multiwavelength survey (Chandra team) reported detection of ~4,000 X‑ray sources using shallow 5 ks exposures across a 9 square degree field</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S2</h3><p>2025-11-10 — Spitzer IRAC team reported detection of ~300,000 point sources in the Bootes field</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S3</h3><p>2025-11-11 — Spitzer IRAC dataset contains ~30,000 point sources with detections in all four IRAC bands in Bootes</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S4</h3><p>2025-11-11 — Bootes survey team selected &gt;400 AGN per square degree (vs SDSS at 12 AGN per square degree) from the multiwavelength data</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S5</h3><p>2025-11-12 — Survey authors identified 641 candidate obscured AGN in the IRAC‑selected sample based on R‑band and IRAC luminosities</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S6</h3><p>2025-11-12 — The team used X‑ray stacking to verify obscuration and measured absorbing column densities N_H &gt; 10^22 cm^-2 for the obscured AGN candidates</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S7</h3><p>2025-11-13 — The Bootes team reported obscured AGN with high redshifts (z &gt; 0.7) and bolometric luminosities L_bol &gt; 10^45 ergs/s</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S8</h3><p>2025-11-13 — MMT/Hectospec team obtained modest‑resolution optical spectra for about half of the X‑ray sources (~2,000 spectra) and ~20,000 galaxies (out to z = 0.7)</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S9</h3><p>2025-11-10 — Canadian study authors surveyed 18 pediatric tertiary care hospitals with a 100% response rate</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S10</h3><p>2025-11-10 — Of the 18 hospitals surveyed, 13 had pediatric‑specific massive hemorrhage protocol (MHP) content</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S11</h3><p>2025-11-11 — Among the 13 hospitals with pediatric MHP content: 8 were dedicated pediatric, 2 combined pediatric/obstetrical, and 3 combined pediatric/adult</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S12</h3><p>2025-11-11 — The survey found trauma accounted for 54% of MHP activations</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S13</h3><p>2025-11-12 — Ten of the 13 pediatric MHPs used specific blood volume anticipated/transfused over time as an activation trigger</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S14</h3><p>2025-11-12 — First transport container content was RBC‑only in 8 pediatric MHPs</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S15</h3><p>2025-11-13 — Initial ratio‑based blood component transfusion was recommended in 12 pediatric MHPs, with a quick transition to laboratory‑guided transfusion using thresholds</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>S16</h3><p>2025-11-13 — All 13 pediatric MHPs reported use of tranexamic acid in their protocols</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>EXEC1</h3><p>Large multiwavelength surveys (Chandra, Spitzer) produced massive catalogs including 4,000 X-ray sources, 300,000 IRAC detections, and 30,000 full-band sources. These enabled selection of over 400 AGN per square degree and identification of 641 candidate obscured AGN verified by X-ray stacking with NH &gt; 10^22 cm^-2, in</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>MARKET1</h3><p>Executive summary — The corpus points to a bifurcated market: one axis driven by data- and model-intensive R&amp;D (multi-agent communication, adversarial ML, large multiwavelength surveys) and another by mission-critical operational services (content moderation/security, clinical emergency logistics). This creates concent</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>TECH1</h3><p>Model architectures and chip developments: Recent work on communication-enabled multi-agent deep reinforcement learning (Comm-MADRL) highlights architectures that explicitly model inter-agent message channels, conditional routing, and attention-based broadcast vs. targeted communication patterns — a design space captur</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>COMP1</h3><p>Winners and losers — identification</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div><div class="ledger-claim"><h3>LENS1</h3><p>## Operator Lens</p><div class="ledger-anchors"><strong>Anchors</strong><ul><li>A Survey of Multi-Agent Deep Reinforcement Learning with Communication</li><li>Dissecting a Social Botnet: Growth, Content and Influence in Twitter</li><li>Defending Against Adversarial Machine Learning</li></ul></div></div></section>
+
+    <footer id="sources">
+        <h2>Sources</h2>
+        <div class="sources-container">
+            <div class="source-item" id="source-1">
+                <span class="source-number">[1]</span>
+                <div class="source-content">
+                    <div class="source-title">A Survey of Multi-Agent Deep Reinforcement Learning with Communication</div>
+                    <div class="source-meta">Arxiv.Org, 2022-03-16. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2203.08975v2" target="_blank" rel="noopener">http://arxiv.org/abs/2203.08975v2</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-2">
+                <span class="source-number">[2]</span>
+                <div class="source-content">
+                    <div class="source-title">Dissecting a Social Botnet: Growth, Content and Influence in Twitter</div>
+                    <div class="source-meta">Arxiv.Org, 2016-04-13. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/1604.03627v1" target="_blank" rel="noopener">http://arxiv.org/abs/1604.03627v1</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-3">
+                <span class="source-number">[3]</span>
+                <div class="source-content">
+                    <div class="source-title">Defending Against Adversarial Machine Learning</div>
+                    <div class="source-meta">Arxiv.Org, 2019-11-26. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/1911.11746v1" target="_blank" rel="noopener">http://arxiv.org/abs/1911.11746v1</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-4">
+                <span class="source-number">[4]</span>
+                <div class="source-content">
+                    <div class="source-title">The role of online attention in the supply of disinformation in Wikipedia</div>
+                    <div class="source-meta">Arxiv.Org, 2023-02-16. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2302.08576v1" target="_blank" rel="noopener">http://arxiv.org/abs/2302.08576v1</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-5">
+                <span class="source-number">[5]</span>
+                <div class="source-content">
+                    <div class="source-title">The Rise of Social Bots</div>
+                    <div class="source-meta">Arxiv.Org, 2014-07-19. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/1407.5225v4" target="_blank" rel="noopener">http://arxiv.org/abs/1407.5225v4</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-6">
+                <span class="source-number">[6]</span>
+                <div class="source-content">
+                    <div class="source-title">Face2Face: Real-time Face Capture and Reenactment of RGB Videos</div>
+                    <div class="source-meta">Arxiv.Org, 2020-07-29. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2007.14808v1" target="_blank" rel="noopener">http://arxiv.org/abs/2007.14808v1</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-7">
+                <span class="source-number">[7]</span>
+                <div class="source-content">
+                    <div class="source-title">The Malicious Use of Artificial Intelligence: Forecasting, Prevention, and Mitigation</div>
+                    <div class="source-meta">Arxiv.Org, 2018-02-20. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/1802.07228v2" target="_blank" rel="noopener">http://arxiv.org/abs/1802.07228v2</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-8">
+                <span class="source-number">[8]</span>
+                <div class="source-content">
+                    <div class="source-title">Detecting Propaganda Techniques in Memes</div>
+                    <div class="source-meta">Arxiv.Org, 2021-08-07. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2109.08013v1" target="_blank" rel="noopener">http://arxiv.org/abs/2109.08013v1</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-9">
+                <span class="source-number">[9]</span>
+                <div class="source-content">
+                    <div class="source-title">Exploring the Role of Visual Content in Fake News Detection</div>
+                    <div class="source-meta">Arxiv.Org, 2020-03-11. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2003.05096v1" target="_blank" rel="noopener">http://arxiv.org/abs/2003.05096v1</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-10">
+                <span class="source-number">[10]</span>
+                <div class="source-content">
+                    <div class="source-title">Efficient collective influence maximization in cascading processes with first-order transitions</div>
+                    <div class="source-meta">Arxiv.Org, 2016-06-08. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/1606.02739v3" target="_blank" rel="noopener">http://arxiv.org/abs/1606.02739v3</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="source-item" id="source-11">
+                <span class="source-number">[11]</span>
+                <div class="source-content">
+                    <div class="source-title">Information Consumption and Boundary Spanning in Decentralized Online Social Networks: the case of Mastodon Users</div>
+                    <div class="source-meta">Arxiv.Org, 2022-03-29. (cred: 0.50)</div>
+                    <div class="source-url">
+                        <a href="http://arxiv.org/abs/2203.15752v3" target="_blank" rel="noopener">http://arxiv.org/abs/2203.15752v3</a>
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+        <div class="metadata">Generated: 2025-11-13T18:09:48.453785 | Word Count: 5552</div>
+        
+        <div id="roadmap" style="margin-top: 2rem; padding: 1rem; background: #e8f5e9; border-left: 3px solid #4caf50; border-radius: 4px;">
+            <h3 style="margin-top: 0; color: #2e7d32;">Research Roadmap</h3>
+            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                <li><strong>Phase 1 (Theory)</strong>: Formalize claims, extend proofs, validate against canonical results</li>
+                <li><strong>Phase 2 (Simulation)</strong>: Implement stress tests, sweep parameter spaces, measure convergence/scaling</li>
+                <li><strong>Phase 3 (Empirical)</strong>: Deploy in controlled environments, collect field data, validate predictions</li>
+                <li><strong>Phase 4 (Integration)</strong>: Operationalize with human-in-loop, adversarial hardening, production deployment</li>
+            </ul>
+        </div>
+        
+        <div id="confidence-methodology" style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e1e4e8; font-size: 0.85em; color: #666;">
+            <strong>Confidence Methodology:</strong> Confidence = 0.3·SourceDiversity + 0.25·AnchorCoverage + 0.25·MethodTransparency + 0.2·ReplicationReadiness, where SourceDiversity reflects unique publishers & types, AnchorCoverage reflects share of primary claims with Type-1 anchors, MethodTransparency reflects CEM completeness & assumptions ledger, and ReplicationReadiness reflects sim plan & datasets/params specified.
+        </div>
+    <div class="sti-footer-note">Prepared under the STI Research Program — theoretical framework subject to revision as data accumulate.</div>
+</footer>
+</body>
+</html>

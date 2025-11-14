@@ -1,0 +1,62 @@
+[
+  {
+    "type": "hero",
+    "query": "Cognitive Wars: The AI Industrialization of Influence",
+    "intent": "theory",
+    "prompt": "A single matte titanium AI inference module rests on a stainless-steel lab bench, its subtle circuit etching suggesting the industrialization of information and the \"cognitive wars\" reshaping decision architectures and collective belief formation. Shot eye-level, placed on the right third of a modern research lab, side-lit from the left with soft daylight in a cool slate palette, generous negative space above and shallow depth-of-field create a magazine-cover aesthetic.. clean editorial photography, soft daylight, cool slate/steel palette, no text or lettering, single subject, generous negative space, magazine cover aesthetic, depth-of-field, subtle contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/hero_cognitive_wars_the_ai_industri.png"
+  },
+  {
+    "type": "section",
+    "query": "Cognitive Wars: The AI Industrialization of Influence",
+    "intent": "theory",
+    "section": "Applications: parameterized vignettes and metrics",
+    "prompt": "A minimalist slate-toned composition shows a central hub-and-spoke node dissolving into an irregular mesh, with thin arcs interrupted by small gaps to suggest packet loss (p_drop) and elongated arcs for systemic delay (s_delay). A soft cascading chain of arcs implies automated triage rushing toward a jittered peripheral node (synthetic video, adversarial amplification), while a solitary muted node set apart signals delayed human-in-loop oversight.. clean editorial photography, soft daylight, cool slate/steel palette, no text or lettering, single subject, generous negative space, magazine cover aesthetic, depth-of-field, subtle contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels, not a dashboard, not an infographic, no widgets, no icons",
+    "image": "images/section_applications_parameterized_vig_cognitive_wars_the_ai_industri.png"
+  },
+  {
+    "type": "hero",
+    "query": "Cognitive Wars: The AI Industrialization of Influence",
+    "intent": "theory",
+    "prompt": "A single matte‑black AI accelerator module (neural processing unit) rests on a cool steel bench in a modern research lab, its patterned die evoking the industrialization of information and the \"cognitive wars\" reshaping collective beliefs and organizational heuristics. Shot eye‑level and placed on the right third of the frame, side‑lit from the left with soft daylight, cool slate palette, shallow depth‑of‑field and generous negative space above for a magazine header.. clean editorial photography, soft daylight, cool slate/steel palette, no text or lettering, single subject, generous negative space, magazine cover aesthetic, depth-of-field, subtle contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/hero_cognitive_wars_the_ai_industri.png"
+  },
+  {
+    "type": "section",
+    "query": "Cognitive Wars: The AI Industrialization of Influence",
+    "intent": "theory",
+    "section": "Applications: parameterized vignettes and metrics",
+    "prompt": "A minimalist cool-slate network of thin arcs and sparse nodes forms a fragmented urban mesh, with measured radial gaps and damped waveforms suggesting intermittent communications and varying MTTA delays from packet loss. A compact clustered hub with a faint halo implies automated triage and escalation, while a diffuse veil of amplified arcs evokes synthetic-media cascades and cross‑platform misinformation, all on generous negative space.. clean editorial photography, soft daylight, cool slate/steel palette, no text or lettering, single subject, generous negative space, magazine cover aesthetic, depth-of-field, subtle contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels, not a dashboard, not an infographic, no widgets, no icons",
+    "image": "images/section_applications_parameterized_vig_cognitive_wars_the_ai_industri.png"
+  },
+  {
+    "type": "hero",
+    "query": "Cognitive Wars: The AI Industrialization of Influence",
+    "intent": "theory",
+    "prompt": "Eye-level, rule-of-thirds-right view of a single matte-black AI compute module on a low pedestal in a modern lab atrium, side-lit from the left by soft daylight and rendered in a cool slate/steel palette with shallow depth-of-field. The spare, magazine-style composition—with generous negative space at the top—visualizes the industrialization of information and \"cognitive wars,\" the compute module symbolizing AI and automation reshaping decision architectures and organizational heuristics.. clean editorial photography, soft daylight, cool slate/steel palette, no text or lettering, single subject, generous negative space, magazine cover aesthetic, depth-of-field, subtle contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/hero_cognitive_wars_the_ai_industri.png"
+  },
+  {
+    "type": "section",
+    "query": "Cognitive Wars: The AI Industrialization of Influence",
+    "intent": "theory",
+    "section": "Applications: parameterized vignettes and metrics",
+    "prompt": "A minimal slate-and-steel network of thin arcs and scattered nodes forms an irregular hub-and-mesh topology, with a few attenuated, broken links and a semi‑opaque cluster evoking intermittent communications and MTTA delays. Subtle concentric glows and softened gradients around select nodes imply automated attribution, cross-platform amplification, false-positive spikes, and a queued human-in-loop override, all set against generous negative space.. clean editorial photography, soft daylight, cool slate/steel palette, no text or lettering, single subject, generous negative space, magazine cover aesthetic, depth-of-field, subtle contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels, not a dashboard, not an infographic, no widgets, no icons",
+    "image": "images/section_applications_parameterized_vig_cognitive_wars_the_ai_industri.png"
+  },
+  {
+    "type": "hero",
+    "query": "Cognitive Wars: The AI Industrialization of Influence",
+    "intent": "theory",
+    "prompt": "Eye-level, rule-of-thirds right composition of a single matte AI inference server blade in a spacious modern lab, side-lit from the left by soft daylight. Cool slate/steel palette, generous negative space with ~25% top room for a header and shallow depth‑of‑field; the lone object symbolizes AI and automation industrializing information and the emergent \"cognitive wars\" shaping decision architectures and information distribution.. clean editorial photography, soft daylight, cool slate/steel palette, no text or lettering, single subject, generous negative space, magazine cover aesthetic, depth-of-field, subtle contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/hero_cognitive_wars_the_ai_industri.png"
+  },
+  {
+    "type": "section",
+    "query": "Cognitive Wars: The AI Industrialization of Influence",
+    "intent": "theory",
+    "section": "Applications: parameterized vignettes and metrics",
+    "prompt": "A sparse hierarchical-to-mesh network of thin arcs and nodes, with intermittent dashed connections and muted gaps to suggest packet loss and degraded communications. A single luminous node with concentric ripples and sharp radiating arcs signals algorithmic amplification of synthetic media, while a segmented slow arc circling the cluster evokes MTTA and human-override latency—all in a cool slate, soft daylight palette with generous negative space.. clean editorial photography, soft daylight, cool slate/steel palette, no text or lettering, single subject, generous negative space, magazine cover aesthetic, depth-of-field, subtle contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels, not a dashboard, not an infographic, no widgets, no icons",
+    "image": "images/section_applications_parameterized_vig_cognitive_wars_the_ai_industri.png"
+  }
+]

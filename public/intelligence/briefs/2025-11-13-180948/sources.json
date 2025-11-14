@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": "A Survey of Multi-Agent Deep Reinforcement Learning with Communication",
+    "url": "http://arxiv.org/abs/2203.08975v2",
+    "publisher": "Arxiv.Org",
+    "date": "2022-03-16",
+    "credibility": 0.5,
+    "content_sha": null
+  },
+  {
+    "id": 2,
+    "title": "Dissecting a Social Botnet: Growth, Content and Influence in Twitter",
+    "url": "http://arxiv.org/abs/1604.03627v1",
+    "publisher": "Arxiv.Org",
+    "date": "2016-04-13",
+    "credibility": 0.5,
+    "content_sha": null
+  },
+  {
+    "id": 3,
+    "title": "Defending Against Adversarial Machine Learning",
+    "url": "http://arxiv.org/abs/1911.11746v1",
+    "publisher": "Arxiv.Org",
+    "date": "2019-11-26",
+    "credibility": 0.5,
+    "content_sha": null
+  },
+  {
+    "id": 4,
+    "title": "The role of online attention in the supply of disinformation in Wikipedia",
+    "url": "http://arxiv.org/abs/2302.08576v1",
+    "publisher": "Arxiv.Org",
+    "date": "2023-02-16",
+    "credibility": 0.5,
+    "content_sha": null
+  },
+  {
+    "id": 5,
+    "title": "The Rise of Social Bots",
+    "url": "http://arxiv.org/abs/1407.5225v4",
+    "publisher": "Arxiv.Org",
+    "date": "2014-07-19",
+    "credibility": 0.5,
+    "content_sha": null
+  },
+  {
+    "id": 6,
+    "title": "Face2Face: Real-time Face Capture and Reenactment of RGB Videos",
+    "url": "http://arxiv.org/abs/2007.14808v1",
+    "publisher": "Arxiv.Org",
+    "date": "2020-07-29",
+    "credibility": 0.5,
+    "content_sha": null
+  },
+  {
+    "id": 7,
+    "title": "The Malicious Use of Artificial Intelligence: Forecasting, Prevention, and Mitigation",
+    "url": "http://arxiv.org/abs/1802.07228v2",
+    "publisher": "Arxiv.Org",
+    "date": "2018-02-20",
+    "credibility": 0.5,
+    "content_sha": null
+  },
+  {
+    "id": 8,
+    "title": "Detecting Propaganda Techniques in Memes",
+    "url": "http://arxiv.org/abs/2109.08013v1",
+    "publisher": "Arxiv.Org",
+    "date": "2021-08-07",
+    "credibility": 0.5,
+    "content_sha": null
+  },
+  {
+    "id": 9,
+    "title": "Exploring the Role of Visual Content in Fake News Detection",
+    "url": "http://arxiv.org/abs/2003.05096v1",
+    "publisher": "Arxiv.Org",
+    "date": "2020-03-11",
+    "credibility": 0.5,
+    "content_sha": null
+  },
+  {
+    "id": 10,
+    "title": "Efficient collective influence maximization in cascading processes with first-order transitions",
+    "url": "http://arxiv.org/abs/1606.02739v3",
+    "publisher": "Arxiv.Org",
+    "date": "2016-06-08",
+    "credibility": 0.5,
+    "content_sha": null
+  },
+  {
+    "id": 11,
+    "title": "Information Consumption and Boundary Spanning in Decentralized Online Social Networks: the case of Mastodon Users",
+    "url": "http://arxiv.org/abs/2203.15752v3",
+    "publisher": "Arxiv.Org",
+    "date": "2022-03-29",
+    "credibility": 0.5,
+    "content_sha": null
+  }
+]
