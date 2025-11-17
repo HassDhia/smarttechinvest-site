@@ -3,16 +3,30 @@ import { CalendlyEmbed } from "../../components/CalendlyEmbed";
 
 export default function SchedulePage() {
   return (
-    <div className="container section">
-      <SectionHeader kicker="Booking" title="Schedule a Consultation" subtitle="Discuss how behavioral signals can drive your brand outcomes. We'll identify the signals that matter and transform them into measurable results — partnerships, revenue, and strategic positioning." useGradientTitle />
-      <div className="rounded-2xl overflow-hidden bg-[hsl(var(--card))] dark:bg-card-gradient text-[hsl(var(--foreground))] border border-[hsl(var(--border))] dark:border-transparent shadow-sm dark:shadow-[var(--shadow)]">
-        <CalendlyEmbed url="https://calendly.com/has-dhia/strategy-sync?back=1&month=2025-08" />
-      </div>
-      <p className="mt-3 text-xs text-[hsl(var(--muted-foreground))]">
-        Powered by Calendly. If the embed doesn’t load, open the booking page directly: <a className="link-underline" href="https://calendly.com/has-dhia/strategy-sync?back=1&month=2025-08" target="_blank" rel="noopener">calendly.com/has-dhia</a>.
-      </p>
+    <div className="font-sans">
+      <section className="container section">
+        <div className="max-w-2xl mx-auto text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-balance mb-6">
+            Book the Brand Collab Lab
+          </h1>
+          <p className="text-lg text-foreground/90 max-w-xl mx-auto mb-8 leading-relaxed">
+            A 45-minute session to turn your world into a forwardable brand concept and outreach spine.
+          </p>
+        </div>
+
+        <div className="max-w-3xl mx-auto">
+          <div className="rounded-xl overflow-hidden border border-[hsl(var(--border))] mb-8">
+            <CalendlyEmbed url="https://calendly.com/has-dhia/strategy-sync?back=1&month=2025-08" />
+          </div>
+
+          {/* Micro reassurance */}
+          <div className="text-center space-y-2 text-sm text-[hsl(var(--muted-foreground))]">
+            <p>• No hard pitch</p>
+            <p>• You leave with a concrete concept</p>
+            <p>• If it&apos;s not a fit, we part as friends</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
-
-

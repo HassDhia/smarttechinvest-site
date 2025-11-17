@@ -18,9 +18,7 @@ export function Card({
 }) {
   const content = (
     <div className={cn(
-      "rounded-xl p-5 bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))] shadow-sm",
-      "transition-[transform,box-shadow,background-color] duration-[var(--dur-200)] ease-[var(--ease-standard)]",
-      "hover:-translate-y-0.5 hover:shadow-[var(--shadow)] hover:bg-[hsl(var(--accent)/0.4)]",
+      "rounded-xl p-6 bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))]",
       highlight ? "card-gradient" : "",
       className
     )}>

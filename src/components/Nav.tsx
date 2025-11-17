@@ -1,24 +1,20 @@
 "use client";
 import Link from "next/link";
-// framer-motion not required here; keep CSS-based micro interactions for anchors
-import { Home, Rocket, Layers, FileText, Phone } from "lucide-react";
-// Avoid passing Lucide component classes across the RSC boundary; render directly
+import { Home, FlaskConical, Briefcase, BookOpen, CalendarClock } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { useScrollspy } from "../hooks/useScrollspy";
 import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", label: "Home", icon: Home },
-  { href: "/offers", label: "Offers", icon: Rocket },
-  { href: "/intelligence", label: "Intelligence", icon: FileText },
-  { href: "/resources", label: "Resources", icon: Layers },
-  { href: "/schedule", label: "Schedule", icon: Phone },
+  { href: "/collab-lab", label: "Collab Lab", icon: FlaskConical },
+  { href: "/work", label: "Work", icon: Briefcase },
+  { href: "/intelligence", label: "Intelligence", icon: BookOpen },
+  { href: "/schedule", label: "Schedule", icon: CalendarClock },
 ];
 
 export function Nav() {
   const pathname = usePathname();
   const currentPath = pathname ?? "";
-  const activeSection = useScrollspy(["how", "work", "outcomes"]);
   return (
     <nav className="h-full py-6" aria-label="Primary">
       <div className="mx-4 rounded-3xl bg-transparent p-3 flex flex-col items-center gap-3 sticky top-6">
@@ -31,7 +27,7 @@ export function Nav() {
                 href={href}
                 prefetch={true}
                   data-nav={href}
-                  className={`group flex items-center gap-2 px-3 h-9 rounded-md transition-[color,background,transform] duration-[var(--dur-200)] ease-[var(--ease-standard)] motion-reduce:transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] ${active ? "bg-[hsl(var(--accent))] text-[hsl(var(--foreground))]" : "text-[hsl(var(--foreground)/0.7)] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--foreground))]"} ${href === "/offers" && activeSection === "how" ? "font-semibold" : ""}`}
+                  className={`group flex items-center gap-2 px-3 h-9 rounded-md transition-[color,background,transform] duration-[var(--dur-200)] ease-[var(--ease-standard)] motion-reduce:transform-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] ${active ? "bg-[hsl(var(--accent))] text-[hsl(var(--foreground))]" : "text-[hsl(var(--foreground)/0.7)] hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--foreground))]"}`}
                 aria-current={active ? "page" : undefined}
               >
                 <Icon size={18} strokeWidth={1.5} aria-hidden className="lucide shrink-0 opacity-90 group-hover:opacity-100" />
@@ -49,5 +45,4 @@ export function Nav() {
     </nav>
   );
 }
-
 

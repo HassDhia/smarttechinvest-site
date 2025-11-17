@@ -1,17 +1,17 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { Home, Rocket, Layers, FileText, Phone, Menu, X } from "lucide-react";
+import { Home, FlaskConical, Briefcase, BookOpen, CalendarClock, Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { AnimatePresence, m } from "framer-motion";
 import { durations, easings, overlayVariants } from "../lib/motion";
 
 const links = [
   { href: "/", label: "Home", icon: Home },
-  { href: "/offers", label: "Offers", icon: Rocket },
-  { href: "/intelligence", label: "Intelligence", icon: FileText },
-  { href: "/resources", label: "Resources", icon: Layers },
-  { href: "/schedule", label: "Schedule", icon: Phone },
+  { href: "/collab-lab", label: "Collab Lab", icon: FlaskConical },
+  { href: "/work", label: "Work", icon: Briefcase },
+  { href: "/intelligence", label: "Intelligence", icon: BookOpen },
+  { href: "/schedule", label: "Schedule", icon: CalendarClock },
 ];
 
 export function MobileNav() {
@@ -138,5 +138,4 @@ export function MobileNav() {
     </div>
   );
 }
-
 
