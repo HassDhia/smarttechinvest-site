@@ -1,5 +1,4 @@
 import { SectionHeader } from "../../components/SectionHeader";
-import { BriefCard } from "../../components/BriefCard";
 import { listBriefs } from "../../lib/content";
 import Link from "next/link";
 

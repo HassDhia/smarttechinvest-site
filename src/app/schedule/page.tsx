@@ -1,4 +1,3 @@
-import { SectionHeader } from "../../components/SectionHeader";
 import { CalendlyEmbed } from "../../components/CalendlyEmbed";
 
 export default function SchedulePage() {
