@@ -47,11 +47,11 @@ export default function IntelligencePage() {
                       >
                         Read brief →
                       </Link>
-                      {brief.pdfPath && (
+                      {brief.pdf && (
                         <>
                           <span className="text-[hsl(var(--muted-foreground))]">·</span>
                           <Link
-                            href={brief.pdfPath}
+                            href={brief.pdf}
                             className="text-sm text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:underline"
                             target="_blank"
                             rel="noopener noreferrer"
