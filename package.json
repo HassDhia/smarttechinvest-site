@@ -15,6 +15,10 @@
     "watch:briefs:bg": "node scripts/watch-briefs.mjs > logs/brief-watch.log 2>&1 &",
     "watch:briefs:auto": "node scripts/watch-and-push-briefs.mjs",
     "watch:briefs:auto:bg": "node scripts/watch-and-push-briefs.mjs > logs/brief-autopush.log 2>&1 &",
+    "watch:briefs:auto:start": "node scripts/manage-brief-watcher.mjs start",
+    "watch:briefs:auto:stop": "node scripts/manage-brief-watcher.mjs stop",
+    "watch:briefs:auto:status": "node scripts/manage-brief-watcher.mjs status",
+    "watch:briefs:auto:restart": "node scripts/manage-brief-watcher.mjs restart",
     "pdf:render": "node scripts/render-pdfs.mjs"
   },
   "dependencies": {

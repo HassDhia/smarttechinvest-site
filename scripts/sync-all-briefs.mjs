@@ -45,7 +45,7 @@ function findReportFolders() {
       .filter(item => {
         const fullPath = path.join(STI_REPORTS_DIR, item);
         return fs.statSync(fullPath).isDirectory() && 
-               item.match(/^sti_enhanced_output_\d{8}_/);
+               item.match(/^sti_(?:enhanced|operator)_output_\d{8}_/);
       })
       .sort();
   } catch (e) {
@@ -56,7 +56,7 @@ function findReportFolders() {
 
 // Extract date from folder name
 function extractDate(folderName) {
-  const match = folderName.match(/sti_enhanced_output_(\d{8})_/);
+  const match = folderName.match(/sti_(?:enhanced|operator)_output_(\d{8})_/);
   if (!match) return null;
   
   const dateStr = match[1];
@@ -68,8 +68,22 @@ function extractDate(folderName) {
 
 // Check if folder has required files
 function hasRequiredFiles(folderPath) {
-  const required = ['intelligence_report.html', 'metadata.json', 'executive_summary.txt'];
-  return required.every(file => fs.existsSync(path.join(folderPath, file)));
+  const htmlCandidates = ['intelligence_report.html', 'report.html'];
+  const hasHtml = htmlCandidates.some(file => fs.existsSync(path.join(folderPath, file)));
+  if (!hasHtml) return false;
+  
+  const metadataPath = path.join(folderPath, 'metadata.json');
+  if (!fs.existsSync(metadataPath)) return false;
+  
+  const summaryPath = path.join(folderPath, 'executive_summary.txt');
+  if (fs.existsSync(summaryPath)) return true;
+  
+  try {
+    const meta = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+    return typeof meta.executive_summary === 'string' && meta.executive_summary.trim().length > 0;
+  } catch {
+    return false;
+  }
 }
 
 // Run ingest for a single folder

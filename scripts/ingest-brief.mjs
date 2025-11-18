@@ -17,7 +17,7 @@ if (!input) {
 async function ingest() {
   const src = path.resolve(input);
   const base = path.basename(src).replace(/\/+$/, '');
-  const m = base.match(/sti_enhanced_output_(\d{8})_(\d{6})_/);
+  const m = base.match(/sti_(?:enhanced|operator)_output_(\d{8})_(\d{6})_/);
   if (!m) {
     console.error('Cannot infer date and time (YYYYMMDD_HHMMSS) from folder name:', base);
     process.exit(1);
@@ -63,41 +63,68 @@ async function ingest() {
     return null;
   };
 
-  const htmlPath   = pick(src, ['intelligence_report.html', 'report.html']); // canonical HTML  🔒
-  const metaPath   = pick(src, ['metadata.json']);                            // stats          🧭
-  const sourcesPath= pick(src, ['sources.json']);                             // signals        🗞️
-  const summaryPath= pick(src, ['executive_summary.txt']);                    // teaser/OG desc 🧾
-  const mdPath     = pick(src, ['intelligence_report.md']);                   // syndication    ✍️ (optional)
-  const socialPostPath = pick(src, ['social_media_post.md']);                 // social post    📱 (optional)
-  const socialThreadPath = pick(src, ['social_media_thread.txt']);            // twitter thread 🐦 (optional)
-  const socialLinkedinPath = pick(src, ['social_media_linkedin.txt']);        // linkedin post  💼 (optional)
+const htmlPath   = pick(src, ['intelligence_report.html', 'report.html']); // canonical HTML  🔒
+const metaPath   = pick(src, ['metadata.json']);                            // stats          🧭
+const sourcesPath= pick(src, ['sources.json']);                             // signals        🗞️
+const summaryPath= pick(src, ['executive_summary.txt']);                    // teaser/OG desc 🧾
+const mdPath     = pick(src, ['intelligence_report.md']);                   // syndication    ✍️ (optional)
+const socialPostPath = pick(src, ['social_media_post.md']);                 // social post    📱 (optional)
+const socialThreadPath = pick(src, ['social_media_thread.txt']);            // twitter thread 🐦 (optional)
+const socialLinkedinPath = pick(src, ['social_media_linkedin.txt']);        // linkedin post  💼 (optional)
 
-  if (!htmlPath || !metaPath || !summaryPath) {
-    const error = 'Missing one or more required files: intelligence_report.html/report.html, metadata.json, executive_summary.txt';
-    // Debug: List what files actually exist in source directory
+let metadataJson = null;
+if (metaPath) {
+  try {
+    metadataJson = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+  } catch (error) {
     if (watchMode) {
-      try {
-        const existingFiles = fs.readdirSync(src);
-        console.warn(`⚠️  ${error}`);
-        console.warn(`📁 Debug: Files found in source directory: ${existingFiles.join(', ')}`);
-        console.warn(`📁 Debug: Looking for: htmlPath=${htmlPath}, metaPath=${metaPath}, summaryPath=${summaryPath}`);
-      } catch (e) {
-        console.warn(`⚠️  ${error}`);
-        console.warn(`📁 Debug: Could not read source directory: ${e.message}`);
-      }
-    } else {
-      console.error(error);
+      console.warn(`⚠️  metadata.json exists but parsing failed: ${error.message}`);
     }
-    // Exit with failure code even in watch mode so parent script knows ingestion failed
-    process.exit(1);
   }
+}
+
+let summaryFallback = null;
+if (!summaryPath && metadataJson && typeof metadataJson.executive_summary === 'string') {
+  const trimmed = metadataJson.executive_summary.trim();
+  if (trimmed.length > 0) {
+    summaryFallback = trimmed;
+  }
+}
+
+if (!htmlPath || !metaPath || (!summaryPath && !summaryFallback)) {
+  const error = 'Missing one or more required files: intelligence_report.html/report.html, metadata.json, executive_summary.txt (or metadata.executive_summary)';
+  // Debug: List what files actually exist in source directory
+  if (watchMode) {
+    try {
+      const existingFiles = fs.readdirSync(src);
+      console.warn(`⚠️  ${error}`);
+      console.warn(`📁 Debug: Files found in source directory: ${existingFiles.join(', ')}`);
+      console.warn(`📁 Debug: Looking for: htmlPath=${htmlPath}, metaPath=${metaPath}, summaryPath=${summaryPath}, summaryFallback=${summaryFallback ? 'metadata.executive_summary' : 'none'}`);
+    } catch (e) {
+      console.warn(`⚠️  ${error}`);
+      console.warn(`📁 Debug: Could not read source directory: ${e.message}`);
+    }
+  } else {
+    console.error(error);
+  }
+  // Exit with failure code even in watch mode so parent script knows ingestion failed
+  process.exit(1);
+}
 
   // 2) Copy with canonical names
-  const dstReport = path.join(dst, 'report.html');
-  fs.copyFileSync(htmlPath, dstReport);
-  fs.copyFileSync(metaPath, path.join(dst, 'metadata.json'));
-  if (sourcesPath) fs.copyFileSync(sourcesPath, path.join(dst, 'sources.json'));
-  fs.copyFileSync(summaryPath, path.join(dst, 'executive_summary.txt'));
+const dstReport = path.join(dst, 'report.html');
+fs.copyFileSync(htmlPath, dstReport);
+fs.copyFileSync(metaPath, path.join(dst, 'metadata.json'));
+if (sourcesPath) fs.copyFileSync(sourcesPath, path.join(dst, 'sources.json'));
+const dstSummary = path.join(dst, 'executive_summary.txt');
+if (summaryPath) {
+  fs.copyFileSync(summaryPath, dstSummary);
+} else if (summaryFallback) {
+  fs.writeFileSync(dstSummary, summaryFallback, 'utf8');
+  if (watchMode) {
+    console.log('ℹ️  No executive_summary.txt found. Generated from metadata.executive_summary');
+  }
+}
   if (mdPath) fs.copyFileSync(mdPath, path.join(dst, 'intelligence_report.md'));
   if (socialPostPath) fs.copyFileSync(socialPostPath, path.join(dst, 'social_media_post.md'));
   if (socialThreadPath) fs.copyFileSync(socialThreadPath, path.join(dst, 'social_media_thread.txt'));
@@ -161,12 +188,14 @@ async function ingest() {
   }
 
   // Validate metadata structure enough for the UI
-  let meta = {};
-  try {
-    meta = JSON.parse(fs.readFileSync(path.join(dst, 'metadata.json'), 'utf8'));
-  } catch (e) {
-    console.error('metadata.json is not valid JSON');
-    process.exit(1);
+  let meta = metadataJson;
+  if (!meta) {
+    try {
+      meta = JSON.parse(fs.readFileSync(path.join(dst, 'metadata.json'), 'utf8'));
+    } catch (e) {
+      console.error('metadata.json is not valid JSON');
+      process.exit(1);
+    }
   }
   if (typeof meta.sources_count !== 'number' || typeof meta.confidence_score !== 'number') {
     const warning = 'metadata.json missing expected fields (sources_count, confidence_score). UI will still render with fallbacks.';

@@ -29,7 +29,7 @@ function saveState(state) {
 
 // Extract YYYY-MM-DD-HHMMSS from folder name
 function extractDateWithTime(folderName) {
-  const match = folderName.match(/sti_enhanced_output_(\d{8})_(\d{6})_/);
+  const match = folderName.match(/sti_(?:enhanced|operator)_output_(\d{8})_(\d{6})_/);
   if (!match) return null;
   
   const dateStr = match[1];  // YYYYMMDD
@@ -47,8 +47,22 @@ function extractDateWithTime(folderName) {
 
 // Check if folder has required files
 function hasRequiredFiles(folderPath) {
-  const required = ['intelligence_report.html', 'metadata.json', 'executive_summary.txt'];
-  return required.every(file => fs.existsSync(path.join(folderPath, file)));
+  const htmlCandidates = ['intelligence_report.html', 'report.html'];
+  const hasHtml = htmlCandidates.some(file => fs.existsSync(path.join(folderPath, file)));
+  if (!hasHtml) return false;
+  
+  const metadataPath = path.join(folderPath, 'metadata.json');
+  if (!fs.existsSync(metadataPath)) return false;
+  
+  const summaryPath = path.join(folderPath, 'executive_summary.txt');
+  if (fs.existsSync(summaryPath)) return true;
+  
+  try {
+    const meta = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+    return typeof meta.executive_summary === 'string' && meta.executive_summary.trim().length > 0;
+  } catch {
+    return false;
+  }
 }
 
 // Check if this specific timestamped brief exists
@@ -81,7 +95,7 @@ function ingestFolder(folderName, state) {
     
     child.on('close', (code) => {
       if (code === 0) {
-        const date = extractDate(folderName);
+        const date = extractDateWithTime(folderName);
         if (date) {
           // Update state
           state.ingested[folderName] = {
@@ -106,7 +120,7 @@ async function processNewFolder(folderName, state) {
   const folderPath = path.join(STI_REPORTS_DIR, folderName);
   
   // Check if it's a valid report folder
-  if (!folderName.match(/^sti_enhanced_output_\d{8}_/)) {
+  if (!folderName.match(/^sti_(?:enhanced|operator)_output_\d{8}_/)) {
     return;
   }
   

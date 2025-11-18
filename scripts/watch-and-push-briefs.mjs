@@ -17,7 +17,7 @@ const saveState = () => {
 
 const getBriefDateFromFolderName = (folderName) => {
   // Match: sti_enhanced_output_YYYYMMDD_HHMMSS_
-  const m = folderName.match(/sti_enhanced_output_(\d{8})_(\d{6})_/);
+  const m = folderName.match(/sti_(?:enhanced|operator)_output_(\d{8})_(\d{6})_/);
   if (!m) return null;
   
   const dateStr = m[1]; // YYYYMMDD
@@ -182,51 +182,18 @@ const processNewBrief = (folderName) => {
 
     logWithTimestamp(`✅ Successfully ingested ${folderName}.`);
 
-    // Add the brief files FIRST (before checking git status)
-    const briefPath = `public/intelligence/briefs/${briefDate}`; // Use directory path directly (git add recurses)
-    if (!runGitCommand(`git add "${briefPath}"`, `Adding ${briefDate} brief files`)) {
+    const result = stageCommitPushBrief(briefDate);
+    if (!result.success) {
       state.ingested[folderName].pushStatus = 'failed';
-      state.ingested[folderName].pushError = 'Git add failed';
+      state.ingested[folderName].pushError = result.error;
       saveState();
       return;
     }
 
-    // NOW check git status (after staging the brief)
-    if (!checkGitStatus()) {
-      // If check fails, unstage the brief files
-      execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
-      state.ingested[folderName].pushStatus = 'failed';
-      state.ingested[folderName].pushError = 'Git status check failed - working directory not clean';
-      saveState();
-      return;
+    if (result.commitHash) {
+      state.ingested[folderName].commitHash = result.commitHash;
     }
 
-    // Commit the brief
-    const commitMessage = `Add intelligence brief for ${briefDate}`;
-    if (!runGitCommand(`git commit -m "${commitMessage}"`, `Committing ${briefDate} brief`)) {
-      state.ingested[folderName].pushStatus = 'failed';
-      state.ingested[folderName].pushError = 'Git commit failed';
-      saveState();
-      return;
-    }
-
-    // Get commit hash
-    try {
-      const commitHash = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
-      state.ingested[folderName].commitHash = commitHash;
-    } catch (error) {
-      logWithTimestamp(`⚠️  Could not get commit hash: ${error.message}`);
-    }
-
-    // Push to main
-    if (!runGitCommand('git push origin main', `Pushing ${briefDate} brief to main`)) {
-      state.ingested[folderName].pushStatus = 'failed';
-      state.ingested[folderName].pushError = 'Git push failed';
-      saveState();
-      return;
-    }
-
-    // Success!
     state.ingested[folderName].pushStatus = 'success';
     state.ingested[folderName].pushedAt = new Date().toISOString();
     saveState();
@@ -243,6 +210,79 @@ const processNewBrief = (folderName) => {
       saveState();
     }
   }
+};
+
+const stageCommitPushBrief = (briefDate) => {
+  const briefPath = `public/intelligence/briefs/${briefDate}`;
+
+  if (!runGitCommand(`git add "${briefPath}"`, `Adding ${briefDate} brief files`)) {
+    return { success: false, error: 'Git add failed' };
+  }
+
+  if (!checkGitStatus()) {
+    try {
+      execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
+    } catch {
+      // ignore reset errors
+    }
+    return { success: false, error: 'Git status check failed - working directory not clean' };
+  }
+
+  const commitMessage = `Add intelligence brief for ${briefDate}`;
+  if (!runGitCommand(`git commit -m "${commitMessage}"`, `Committing ${briefDate} brief`)) {
+    return { success: false, error: 'Git commit failed' };
+  }
+
+  let commitHash = null;
+  try {
+    commitHash = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
+  } catch (error) {
+    logWithTimestamp(`⚠️  Could not get commit hash: ${error.message}`);
+  }
+
+  if (!runGitCommand('git push origin main', `Pushing ${briefDate} brief to main`)) {
+    return { success: false, error: 'Git push failed', commitHash };
+  }
+
+  return { success: true, commitHash };
+};
+
+const registerExistingBrief = (folderName, briefDate) => {
+  const briefDir = path.join(process.cwd(), 'public', 'intelligence', 'briefs', briefDate);
+
+  if (!fs.existsSync(briefDir)) {
+    logWithTimestamp(`⚠️  Cannot register ${folderName} – directory not found (${briefDate})`);
+    return;
+  }
+
+  logWithTimestamp(`📝 Found existing brief ${briefDate} without state entry. Registering + pushing...`);
+
+  state.ingested[folderName] = {
+    date: briefDate,
+    ingestedAt: new Date().toISOString(),
+    pushStatus: 'pending',
+    targetDir: `public/intelligence/briefs/${briefDate}`,
+    registeredManually: true,
+  };
+  saveState();
+
+  const result = stageCommitPushBrief(briefDate);
+
+  if (!result.success) {
+    state.ingested[folderName].pushStatus = 'failed';
+    state.ingested[folderName].pushError = result.error;
+    saveState();
+    logWithTimestamp(`⚠️  Failed to register ${briefDate}: ${result.error}`);
+    return;
+  }
+
+  if (result.commitHash) {
+    state.ingested[folderName].commitHash = result.commitHash;
+  }
+  state.ingested[folderName].pushStatus = 'success';
+  state.ingested[folderName].pushedAt = new Date().toISOString();
+  saveState();
+  logWithTimestamp(`🎉 Registered and pushed brief ${briefDate}`);
 };
 
 const deleteBriefForFolder = (folderName) => {
@@ -374,7 +414,7 @@ const reconcileSiteWithSource = async () => {
     // Get all source folders
     const sourceFolders = fs.readdirSync(SOURCE_DIR)
       .filter(name => fs.statSync(path.join(SOURCE_DIR, name)).isDirectory())
-      .filter(name => name.match(/^sti_enhanced_output_\d{8}_\d{6}_/));
+      .filter(name => name.match(/^sti_(?:enhanced|operator)_output_\d{8}_\d{6}_/));
     
     const sourceDates = new Set();
     const sourceFolderMap = new Map(); // Map briefDate -> folderName
@@ -404,6 +444,8 @@ const reconcileSiteWithSource = async () => {
     const missingBriefs = [];
     const requiredFiles = ['report.html', 'metadata.json', 'executive_summary.txt'];
     
+    const manualBriefs = [];
+
     for (const folderName of sourceFolders) {
       const briefDate = getBriefDateFromFolderName(folderName);
       if (!briefDate) continue;
@@ -426,6 +468,9 @@ const reconcileSiteWithSource = async () => {
           if (!hasRequiredFiles || briefFiles.length === 0) {
             missingBriefs.push(folderName);
             logWithTimestamp(`📋 Incomplete brief detected: ${folderName} (missing required files or empty directory)`);
+          } else if (!state.ingested[folderName]) {
+            manualBriefs.push({ folderName, briefDate });
+            logWithTimestamp(`📝 Brief ${folderName} exists on website but is not tracked. Will register.`);
           }
         } catch (error) {
           // Directory might be in inconsistent state, treat as missing
@@ -439,7 +484,14 @@ const reconcileSiteWithSource = async () => {
     const hasOrphaned = orphanedBriefs.length > 0;
     const hasMissing = missingBriefs.length > 0;
     
-    if (!hasOrphaned && !hasMissing) {
+    if (manualBriefs.length > 0) {
+      logWithTimestamp(`📝 Registering ${manualBriefs.length} existing brief(s) that were added manually`);
+      for (const entry of manualBriefs) {
+        registerExistingBrief(entry.folderName, entry.briefDate);
+      }
+    }
+
+    if (!hasOrphaned && !hasMissing && manualBriefs.length === 0) {
       logWithTimestamp(`✅ Website is in sync with source directory`);
       return;
     }
@@ -599,13 +651,46 @@ const runWatcher = async () => {
     await reconcileSiteWithSource();
   }, 1 * 60 * 1000); // 1 minute
 
-  // Handle Ctrl+C gracefully
-  process.on('SIGINT', () => {
-    logWithTimestamp(`🛑 Stopping auto-push watcher...`);
-    process.exit(0);
-  });
+  let watcher = null;
 
-  fs.watch(SOURCE_DIR, { recursive: false }, handleFsEvent);
+  const attachFsWatcher = () => {
+    try {
+      if (watcher) {
+        try {
+          watcher.close();
+        } catch {
+          // ignore close errors
+        }
+      }
+      watcher = fs.watch(SOURCE_DIR, { recursive: false }, handleFsEvent);
+      watcher.on('error', (error) => {
+        logWithTimestamp(`❌ File watcher error: ${error.message}`);
+        logWithTimestamp(`🔁 Retrying watcher attachment in 5s...`);
+        setTimeout(attachFsWatcher, 5000);
+      });
+    } catch (error) {
+      logWithTimestamp(`❌ Failed to attach file watcher: ${error.message}`);
+      logWithTimestamp(`🔁 Retrying watcher attachment in 5s...`);
+      setTimeout(attachFsWatcher, 5000);
+    }
+  };
+
+  attachFsWatcher();
+
+  const shutdown = () => {
+    logWithTimestamp(`🛑 Stopping auto-push watcher...`);
+    if (watcher) {
+      try {
+        watcher.close();
+      } catch {
+        // ignore close errors
+      }
+    }
+    process.exit(0);
+  };
+
+  process.on('SIGINT', shutdown);
+  process.on('SIGTERM', shutdown);
 };
 
 runWatcher();
