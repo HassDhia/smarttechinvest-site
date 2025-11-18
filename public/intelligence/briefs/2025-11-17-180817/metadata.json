@@ -1,0 +1,48 @@
+{
+  "generated_at": "2025-11-17T18:12:13.548065",
+  "query": "holiday flagship retail story worlds",
+  "time_window": {
+    "start": "2025-11-11",
+    "end": "2025-11-18",
+    "days": 7
+  },
+  "confidence": {
+    "score": 0.85,
+    "breakdown": {
+      "source_diversity": 0.5714285714285714,
+      "signal_density": 1.0,
+      "activation_readiness": 1.0,
+      "pattern_depth": 1.0
+    }
+  },
+  "files": [
+    "intelligence_report.md",
+    "intelligence_report.html",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "signal_map_notes"
+  ],
+  "title": "Signal Report — Short Windows, Earlier Deals",
+  "highlights": [
+    "Run a 2‑week coordinated parade/Black Friday activation tying paid social, an in‑store timed offer, and one tracking URL.",
+    "A/B test early‑access discounts versus last‑week deep discounts to measure acquisition cost, margin erosion, and lifetime value.",
+    "Pilot family experience bundles or local pop‑ups to drive footfall and companion spend in non–chain and family‑oriented settings."
+  ],
+  "executive_summary": "Major seasonal moments are compressing shopping and foot traffic into short, predictable windows, so tightly timed campaigns tied to events like the Macy’s Parade and Black Friday can buy outsized reach with limited spend [^1][^2][^5][^6]. At the same time, retailers are surfacing Black Friday–level offers earlier in the season, shortening the competitive window and making staged discounting more effective than single‑day markdowns [^2][^5]. Collaboration teams should run a 2‑week coordinated activation that links a paid‑social mini‑burst, an in‑store timed offer, and a single tracking URL to the parade/Black Friday weekend to measure incremental reach and conversions [^1][^2][^5][^6]. In parallel, merchandising and analytics should A/B test an “early access” discount cohort versus a last‑week deep‑discount cohort on the same SKUs to compare acquisition cost, margin impact, and downstream value [^2][^5].",
+  "statistics": {
+    "word_count": 3076,
+    "signal_count": 6,
+    "source_count": 7
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07"
+}
