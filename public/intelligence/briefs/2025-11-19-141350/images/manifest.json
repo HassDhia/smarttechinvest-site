@@ -1,0 +1,33 @@
+[
+  {
+    "type": "hero",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "prompt": "Capture Choosing where to invest limited ops and creative energy: run an earlier 2–4 week holiday test (S1) versus a parade-weekend activation (S2), while protecting margin with targeted discounts (S5) and sizing a branded pop-up (S3). The image should convey that split-second resource tradeoff and scheduling urgency without literal clocks.. Scene: Flagship back-of-house adjacent to a polished storefront — visible shopfront glass and a worktable in the foreground. Persona: Store operations lead collaborating with a studio creative director and a merch planner. Action: Leaning over a glossy mockup table, exchanging printed play cards and fabric swatches, pointing at a tiered promo card stack. Urgency symbol: Staggered warm-to-cool light bands cast across the table and layered ribbon-like paper strips that narrow from left-to-right to suggest an earlier-to-peak timing window. Key objects: Printed play cards labeled S1–S5 (behavioral, cultural, market, tech, discount), Fabric swatches and sample packaging, A/B test matrices on matte paper, Brass pins and acetate overlays (studio material cues). Lighting: Polished editorial lighting with confident highlights on faces and hands, soft falloff into clean negative space. Mood: Precise, collaborative, decisive — calm urgency. Props: Printed play cards labeled S1–S5 (behavioral, cultural, market, tech, discount), Fabric swatches and sample packaging, A/B test matrices on matte paper, Brass pins and acetate overlays (studio material cues). polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/hero_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Signal Map",
+    "prompt": "Structure: Concentric arcs and intersecting rings that place signals on a timeline-arc (early window → parade weekend → post-holiday), with a central lattice anchoring operational KPIs. Motion: Gentle left-to-right pull: S1 arcs drawn slightly forward, S2 peaks mid-arc, S3 sits as a lateral popup node; directional light and subtle shadow pulls imply reallocation of effort and spend. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_signal_map_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Case Study 1",
+    "prompt": "Scene: Back-room test planning table (early-holiday program). Moment: Signing off on a 2–4 week early-holiday program design and measurement plan. Persona: Operations manager and loyalty manager reviewing print A/B matrices. Mood: Analytical, anticipatory — controlled experimentation. Lighting: Targeted editorial rim light on hands and paper edges, clean negative space behind subjects. Props: S1 play card stack and A/B matrix printouts, Loyalty-segment mailing mockups and sample tags, Matte paper notes with margin targets. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_1_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Case Study 2",
+    "prompt": "Scene: Storefront staging area (parade-weekend activation). Moment: Final run-through before a parade-weekend limited drop or in-store activation. Persona: Store manager and events producer adjusting a small branded pop-up display. Mood: Energetic, theatrical, focused on timing. Lighting: Polished directional key light with confident highlights on surfaces and organized negative space around the display. Props: S2 activation cue cards and limited-edition packaging, Staged merchandise on matte pedestals, Folded crowd-flow diagrams printed on vellum. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_2_holiday_flagship_retail_story_.png"
+  }
+]
