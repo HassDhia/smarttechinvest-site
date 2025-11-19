@@ -1,0 +1,78 @@
+{
+  "generated_at": "2025-11-19T09:14:06.879638",
+  "query": "Holiday flagship retail story worlds",
+  "time_window": {
+    "start": "2025-11-12",
+    "end": "2025-11-19",
+    "days": 7
+  },
+  "confidence": {
+    "score": 0.935,
+    "breakdown": {
+      "average_strength": 0.8366666666666666,
+      "coverage": 1.0,
+      "quant_support": 1.0,
+      "contradiction_penalty": 1.0
+    }
+  },
+  "files": [
+    "intelligence_report.md",
+    "intelligence_report.html",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "signal_map_notes"
+  ],
+  "title": "Signal Report — Holiday Flagship Story Worlds",
+  "highlights": [
+    "Thanksgiving-morning activations can convert national broadcast attention into measurable same‑day store lift.",
+    "Run 10–14 day co‑branded pop‑ups in flagships during the Thanksgiving→Black Friday week to test walk‑ins and conversion.",
+    "Start gift guides and a 6‑week shallow promotion cadence by mid‑November to shift purchase timing and protect margin."
+  ],
+  "executive_summary": "Run parade-synced flagship activations and short co‑branded pop-ups to convert Thanksgiving morning viewers into same‑day shoppers and shift volume into the pre‑Black Friday window [^2][^1]. Pilot activity of this type shows same‑day foot traffic up about 12–18% versus baseline during the broadcast window [^2][^5]. Early gift‑guide campaigns and staggered promotions are moving share forward; expect early‑deal share to be roughly 15–25% higher than last year in key metros [^3][^9]. Collaboration teams must, within 30 days, lock partners and creative, set inventory and fixed pricing for limited capsules/pop‑ups, and instrument live measurement (control stores, traffic counters, minute‑level POS) to capture and compare uplift [^1][^4]. [^1][^3]",
+  "top_operator_moves": [
+    "Run a parade-timed flagship activation with an exclusive product drop and broadcast-synced in-store experience; measure against control stores over the long weekend.",
+    "Test a 10–14 day co-branded pop-up in a flagship market during Thanksgiving→Black Friday week; track walk-ins, dwell time, and conversion versus neighboring full-size stores.",
+    "Deploy mid-November gift guides and a staggered promotion calendar (6 weeks, 10–15% shallow promos) and compare conversion and AOV against prior-year timing."
+  ],
+  "statistics": {
+    "word_count": 3619,
+    "signal_count": 6,
+    "source_count": 9
+  },
+  "qa": {
+    "issues": [],
+    "coverage": 1.0,
+    "quant_support": 1.0,
+    "contradiction_penalty": 1.0,
+    "appendix_count": 1,
+    "scope": {
+      "topic": "Holiday flagship retail story worlds",
+      "time_window": {
+        "start": "2025-11-12",
+        "end": "2025-11-19",
+        "days": 7
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand↔brand",
+        "brick&mortar↔brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ]
+    }
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07"
+}
