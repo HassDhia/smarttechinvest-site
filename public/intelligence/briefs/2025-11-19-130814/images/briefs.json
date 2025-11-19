@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "core_tension": "Decide whether to pull a headline holiday promotion and portion of planned inventory forward 2–3 weeks to capture early demand (higher immediate ROI) versus holding for traditional timing (risk of end-season markdowns). Visualize the moment of choice and measurement framing—actionable, testable, time-sensitive without literal clocks.",
+    "setting": "Flagship store planning corner: long studio table near a glazed storefront, polished concrete floor, modular fixture samples stacked nearby",
+    "persona": "Operator (store operations/merchandise planner) collaborating with studio (visual merchandiser/creative director)",
+    "action": "Two people lean over a table aligning physical promo mockups, SKU samples, and weekly sell‑through index cards; one gestures forward toward a stacked set of forward-leaning promo cards while the other marks inventory swatches.",
+    "urgency_symbol": "Symbolic forward motion shown by a compressed-to-stretched sequence of promo cards and staggered product stacks that form a diagonal leading out of frame (implies advancing the window and tracking cadence)",
+    "props": [
+      "printed promo mockups (folded cards)",
+      "sample SKUs and fabric/product swatches",
+      "weekly sell-through index cards and ROI notecards (paper, no screens)",
+      "shelf tags and prototype signage",
+      "measuring tape and labeled box stacks"
+    ],
+    "lighting": "Polished editorial lighting with confident highlights, crisp key light from upper-left, soft rim to separate subjects, and clean negative space around the table",
+    "mood": "Precise, collaborative, decisive — anticipatory energy with controlled tension",
+    "alt": "Two collaborators — a store operations lead and a visual merchandiser — lean over a studio table near a flagship storefront arranging promo mockups, SKU samples and weekly index cards. Polished editorial light creates confident highlights and soft rim separation. A diagonal line of staggered promo cards and product stacks visually implies a forward shift in timing and measurement-focused decision-making."
+  },
+  "signal_map": {
+    "structure": "Layered concentric arcs and overlapping lattice of paper tokens (rings for macro windows, inner arcs for short-term plays) — no screens or literal timelines, geometry suggests nested windows and shifting focus",
+    "elements": [
+      "paper tokens and color-coded product tiles (each token represents a signal: S1–S5)",
+      "threaded string paths connecting tokens to physical props (pins on a board)",
+      "brass pins and translucent overlays to show hypothesis layers"
+    ],
+    "motion": "Converging flows toward a flagship node and branching micro-flows outward to smaller nodes (implies shifting a single event into a series, testing pilots, or advancing promos); tension shown as compressed arcs that relax into parallel ribbons",
+    "palette": "Matte neutrals (linen, warm grey) with accent retail colors (muted red, deep teal), brushed brass hardware and natural paper textures to keep tactile, editorial feel",
+    "alt": "A tactile signal map composed of layered concentric paper arcs and a lattice of color-coded product tokens connected by threaded strings and brass pins. Converging flows lead to a central flagship node while smaller branches indicate targeted promos and pilots. Polished editorial lighting highlights texture and layered depth."
+  },
+  "case_studies": [
+    {
+      "scene": "Backroom planning table for advancing headline promos (S1)",
+      "moment": "Operator and studio compare two physical promo mockups side-by-side — one stacked forward-leaning set of cards and one neutral baseline — while sliding weekly sell-through index cards into a visible pile.",
+      "persona": "Inventory planner + visual merchandiser",
+      "props": [
+        "forward-leaning promo cards",
+        "baseline promo mockup",
+        "weekly sell-through index cards",
+        "small SKU sample boxes"
+      ],
+      "lighting": "Directed editorial key light with gentle fill, confident highlights on hands and cards, negative space around the table",
+      "mood": "Analytical, anticipatory, test-focused",
+      "alt": "Inventory planner and visual merchandiser at a planning table compare a forward-leaning set of promo cards against a baseline mockup, arranging weekly sell-through cards and sample SKUs under polished editorial light to emphasize a decision about timing and measurement."
+    },
+    {
+      "scene": "Flagship storefront prep for parade-weekend experience (S2)",
+      "moment": "A studio lead pins an exclusive product to a staged podium while the operator tightens a short cordon; clustered product and a tightened display imply a timed, limited window without showing clocks.",
+      "persona": "Store events lead + creative studio producer",
+      "props": [
+        "exclusive product pod",
+        "stanchion/cordon (staged, not functional)",
+        "in-store signage mockups (paper)",
+        "staff badges"
+      ],
+      "lighting": "High-contrast editorial front light on the podium, soft ambient fill in the window, clean negative margins",
+      "mood": "Elevated, performative, urgent-but-controlled",
+      "alt": "A studio producer pins an exclusive product to a podium while a store events lead adjusts a short cordon, staged at a flagship window. Polished editorial lighting and clean negative space convey a timed, high-impact in-store experience geared toward parade‑weekend footfall."
+    },
+    {
+      "scene": "Stockroom bundling for phased promos (S3)",
+      "moment": "Operator sorts SKUs into a series of smaller bundle stacks, each wrapped differently and arranged as a stepped sequence to represent a multi-week targeted promo series versus a single deep markdown.",
+      "persona": "Merchandise operations manager + creative lead",
+      "props": [
+        "bundle wraps with color-coded ties",
+        "step-stacked SKU piles",
+        "price-tag mockups",
+        "inventory count cards"
+      ],
+      "lighting": "Polished overhead editorial wash with side highlights to emphasize texture of packaging, clear negative space separating stacks",
+      "mood": "Methodical, strategic, iterative",
+      "alt": "A merchandise operations manager and creative lead sort SKUs into stepped bundles with color-coded wraps and price-tag mockups under polished overhead editorial light, visually suggesting a series of targeted promos replacing a single deep-markdown event."
+    },
+    {
+      "scene": "Co-branded pop-up fixture planning in a high-footfall neighborhood (S4)",
+      "moment": "Operator and studio attach co-branded collateral to modular wall panels and arrange a compact capture station for mailing-list cards and social engagement tokens; spatial compression signals a short-duration pop-up test.",
+      "persona": "Retail partnerships manager + brand studio lead",
+      "props": [
+        "co-branded collateral mockups",
+        "modular fixture samples",
+        "mailing-list clipboards and capture cards (paper)",
+        "social engagement token prints"
+      ],
+      "lighting": "Directional window-back editorial light with warm fill and crisp highlights on printed collateral",
+      "mood": "Collaborative, experimental, high-energy",
+      "alt": "A retail partnerships manager and brand studio lead fit co-branded collateral on modular wall panels and arrange a capture station with mailing-list clipboards and social tokens. Window-back editorial lighting emphasizes the pop-up's compact, test-oriented layout."
+    },
+    {
+      "scene": "AI-driven allocation pilot setup in flagship back-of-house (S5)",
+      "moment": "Operator and data-savvy studio member align a translucent allocation overlay over physical bins; colored pegs and printed margin tags show suggested reallocation and expected clearance reduction without showing device screens.",
+      "persona": "Operations lead + studio data producer",
+      "props": [
+        "translucent allocation film overlays",
+        "labeled physical bins with colored pegs",
+        "clearance SKU samples and margin tags",
+        "pilot measurement notecards"
+      ],
+      "lighting": "Controlled editorial key light with subtle backlight to emphasize translucent overlays and peg textures, clean negative space",
+      "mood": "Experimental, precise, cautiously optimistic",
+      "alt": "An operations lead and studio data producer align a translucent allocation overlay over physical bins, placing colored pegs and margin tags to represent AI-driven reallocation suggestions. Polished editorial light highlights the overlay while maintaining a tactile, non-digital feel."
+    }
+  ]
+}
