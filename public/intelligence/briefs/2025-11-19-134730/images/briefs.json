@@ -1,0 +1,70 @@
+{
+  "hero": {
+    "core_tension": "A measured choice between front-loading demand (Early Holiday window) and conserving inventory for a Black Friday peak — depicted as a forward-leaning demand wave opposing a held reserve.",
+    "setting": "Flagship planning table, three-quarter low-angle over the surface; storefront light through high windows, clean negative space, weathered wood table and matte paper schedules.",
+    "persona": "Senior operator (merchant) and studio producer collaborating side-by-side — hands-on, decisive.",
+    "action": "Arranging tiered offer tabs and sample SKUs into two visible stacks while sketching annotations on a linen notecard.",
+    "urgency_symbol": "A staggered fan of folded offer tickets leaning toward the Early Holiday stack (suggests momentum without literal clocks).",
+    "props": [
+      "tiered offer cards (Nov 12–30) that read as tactile swatches",
+      "sample SKU pack (flagship item)",
+      "laminated fulfillment checklist",
+      "studio headset folded on the table"
+    ],
+    "lighting": "Polished editorial lighting with confident highlights on hands and cards, soft fill to preserve clean negative space.",
+    "mood": "Precise, collaborative, composed confidence.",
+    "alt": "Two people leaning over a flagship planning table under polished editorial light; one arranges tiered offer cards fanned toward an early-holiday stack while the other holds a sample SKU, symbolizing the choice to front‑load offers."
+  },
+  "signal_map": {
+    "structure": "Overhead geometry of concentric rings with radial arcs and a dotted lattice — implied systems topology (rings for timing windows, arcs for customer flows).",
+    "elements": [
+      "laminated cohort tokens (loyalty tiers, walk-in customers, broad market)",
+      "stacked inventory markers at radial nodes",
+      "curved path arcs indicating footfall and online-to-store routing"
+    ],
+    "motion": "Arcing flows that sweep outward from an inner early-window ring toward outer deep-discount nodes, with intermittent pauses suggesting measured rollouts.",
+    "palette": "Muted holiday neutrals with deep cranberry and warm brass accents; materials: matte paper, brushed metal tokens, frosted acrylic overlays for clean highlights.",
+    "alt": "Overhead editorial shot of a signal map built from concentric rings and arcs in muted holiday tones; tokens and markers show cohort paths and inventory nodes to illustrate timing and flow."
+  },
+  "case_studies": [
+    {
+      "scene": "Backroom operations table, overhead 45° angle; tactile materials: corrugated boxes, kraft tags, stainless clipboards.",
+      "moment": "A/B test kickoff: a split row of offer packets — one row fanning forward (Early Holiday), one stacked conservative (Black Friday-only) — tension shown as a careful measuring of supply vs push.",
+      "persona": "Fulfillment lead and merchandising operator conferring over pick lists.",
+      "props": [
+        "paired offer packets labeled by cohort",
+        "fulfillment docket stack",
+        "measured ribbon or tally strip indicating allocation"
+      ],
+      "lighting": "Confident highlights on hands and paperwork, soft shadows to maintain clear negative space.",
+      "mood": "Pragmatic, methodical, focused.",
+      "alt": "Fulfillment lead and merch operator at a backroom table with split offer packets and fulfillment dockets under crisp editorial light, preparing an A/B test between Early Holiday and Black Friday plans."
+    },
+    {
+      "scene": "Storefront activation mock-up, eye-level three-quarter shot toward the parade-facing window; materials: polished acrylic display, fabric bunting.",
+      "moment": "Pre-show setup for a parade-linked activation: team arranging an exclusive parade-themed SKU and portable stream rig — the scene captures local demand being primed versus everyday traffic.",
+      "persona": "Store events manager and studio producer coordinating the window display and live-stream rig.",
+      "props": [
+        "parade-themed product sample on a riser",
+        "portable camera rig with folded cable",
+        "flag-themed fabric swatch and small crowd-control rope"
+      ],
+      "lighting": "Polished editorial key light on the SKU with rim light on faces, abundant negative space to isolate the activation.",
+      "mood": "Energetic, anticipatory, culturally tuned.",
+      "alt": "Events manager and studio producer set a parade-themed SKU in a flagship window under editorial lighting, with a portable camera rig nearby — a poised moment before a live activation to drive footfall."
+    },
+    {
+      "scene": "Merchandising war-room table, overhead wide shot; composition includes sample shelving mock and matte finish price-tag strips.",
+      "moment": "Switching from one deep markdown to segmented promotions: trays of loyalty-tagged items, targeted price strips, and clustered product groupings show the decision to segment offers.",
+      "persona": "Loyalty manager and pricing analyst laying out segmented promotions and loyalty early-access materials.",
+      "props": [
+        "loyalty card stack and laminated member token",
+        "segmented price tags in three tiers",
+        "clustered product samples on sample shelving"
+      ],
+      "lighting": "Clean editorial fill with confident highlights on the loyalty token and price strips, negative space around groupings.",
+      "mood": "Analytical, tactical, measured.",
+      "alt": "Loyalty manager and pricing analyst at a merchandising table arranging segmented price tags and loyalty tokens under polished light, illustrating replacing a single deep markdown with targeted promotions."
+    }
+  ]
+}
