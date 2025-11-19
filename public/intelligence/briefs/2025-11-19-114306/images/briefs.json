@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "core_tension": "The exact moment an operator flips a time-boxed 'go' switch for an early-holiday campaign — urgency to lock a measured window vs. the calm craft of studio-driven merchandising for a controlled test (evokes S1, S2, S3).",
+    "setting": "Backstage of a flagship store display: dark-mode retail lab with a wide expanse of negative space, a dusk storefront visible through glass, and studio scaffolding and rigging just out of focus.",
+    "action": "Low-angle close-up of an operator's hand starting a brushed-steel stopwatch while a studio creative, slightly blurred in mid-adjustment, reaches for a curated gift box on a velvet-lined shelf.",
+    "props": [
+      "brushed-steel mechanical stopwatch (analog, visible countdown hand)",
+      "velvet-lined curated gift boxes (different textures: matte paper, soft ribbon)",
+      "metal merchandising clips and color-coded round cohort tokens (no text)",
+      "studio C-stand and softbox edge (partially in-frame as material cue)",
+      "small leather-bound clipboard with colored dot labels (no text)"
+    ],
+    "lighting": "Moody, cinematic rim and backlight from the storefront (cool dusk blue) with a warm, narrow key spotlight on the stopwatch and gift stack; heavy negative space and deep shadows to emphasize isolation of the moment.",
+    "mood": "Taut, focused, cinematic, deliberate — moody dark-mode with pockets of warm craft light.",
+    "alt": "Low-angle cinematic scene at dusk: an operator's hand starts a brushed-steel analogue stopwatch in the foreground while a studio creative adjusts a velvet-lined curated gift display in deep shadowed negative space; soft warm key light on objects, cool blue window light behind."
+  },
+  "signal_map": {
+    "structure": "A radial, geometric map: multiple concentric rings (three to five) layered like ripples around a central 'YES window' aperture; rings are punctuated by small nodes and connecting radial lines forming a subtle network rather than literal UI controls.",
+    "elements": [
+      "concentric matte rings (varied widths, layered depth)",
+      "glowing central 'YES window' (small rectangular aperture of warm light)",
+      "nodes as tactile metal tokens (colored chips representing S1–S5, no text)",
+      "fine radial lines (etched brass) and occasional frosted-glass panels between rings",
+      "soft shadowed studio hand or pointer off to one side suggesting operator interaction"
+    ],
+    "motion": "Visual flow of data implied by pulsing highlights that travel along radial lines from outer rings inward, accelerating and converging into the central 'YES window' as if a countdown has completed; subtle motion blur trails on the pulses to suggest time-boxed aggregation.",
+    "palette": "Dark charcoal and midnight blue base, muted graphite and matte black materials, warm accent glow (muted gold / amber) for the 'YES window' and pulsing nodes; materials suggest brushed metal, frosted glass, and textured matte rubber for the tokens.",
+    "alt": "Abstract radial signal map in a dark palette: concentric matte rings and etched radial lines converge as pulsing highlights into a warm, glowing central 'YES window'; colored metal tokens sit on outer rings indicating operator-set cohorts."
+  },
+  "case_studies": [
+    {
+      "scene": "Flagship retail window at dusk — wide storefront shot from the sidewalk, storefront glass reflecting the blue of evening.",
+      "moment": "Operator and studio collaborator fine-tune a curated early-holiday assortment in the window while a physical countdown clock (analogue) reflects off the glass; a test assortment tag is attached as a colored dot visible in the display.",
+      "props": [
+        "curated assortment of gift boxes and bundled sets on risers",
+        "analogue countdown clock hanging inside the window (face visible but no numerals shown)",
+        "color-coded promo tokens (round dots clipped to product risers)",
+        "textured wood risers and a short velvet backdrop"
+      ],
+      "lighting": "Dusk ambient from outside (cool blue) combined with warm, directional spotlights inside the window to create layered contrast and deep negative space at the frame edges.",
+      "mood": "Poised, anticipatory, editorial — cinematic retail theater at closing hour.",
+      "alt": "Dusk storefront: an operator and studio creative adjust a curated early-holiday window display of bundled gift sets; a hanging analogue countdown clock reflects on the glass and colored promo tokens pin products; warm spotlighting inside contrasts with cool evening street light."
+    },
+    {
+      "scene": "Co‑branded pop-up inset — a framed inset shot of a temporary modular kiosk inside a high-traffic market street at dusk, photographed as a vignette within the larger dark-mode environment.",
+      "moment": "Two operators (store operator and brand partner) slot modular shelving and place experiential props while a small cluster of passersby is visible as blurred silhouettes outside the inset frame; operators wear practical gloves and use metal clips and fabric swatches to test merchandising.",
+      "props": [
+        "modular metal shelving with neutral co-branded panels (no logos shown)",
+        "folding experiential elements: tactile sample table, small demo riser",
+        "fabric swatches and gesture props (handheld sample cards without text)",
+        "a compact, low-slung autonomous cart parked subtly behind the kiosk (hints at tech pilot)"
+      ],
+      "lighting": "Focused theatrical downlights inside the pop-up creating a warm island in a sea of shadow; surrounding negative space remains cool and moody to isolate the inset.",
+      "mood": "Experimental, collaborative, slightly urgent — alive but controlled testing environment.",
+      "alt": "Framed inset of a co-branded pop-up at dusk: two operators fit modular shelving and place tactile demo props under warm downlights while shadowed crowds move outside; a compact autonomous cart sits discreetly behind the kiosk, suggesting a tech pilot."
+    },
+    {
+      "scene": "Checkout counter interior at dusk — intimate three-quarter view over-the-counter capturing a small family receiving a pre-bundled holiday set.",
+      "moment": "An operator hands a sealed family bundle across the counter while a studio creative crouches to frame the composition for a controlled in-store photo; the operator starts a small mechanical timer to mark the time-boxed pickup window as a subtle ritual.",
+      "props": [
+        "sealed family bundle box with textured paper wrap and cloth ribbon",
+        "countertop materials: matte wood with a frosted glass divider",
+        "small mechanical timer (analog, visible dial)",
+        "discreet shelf sensor puck or low-profile robotic shelf-assist module in the background"
+      ],
+      "lighting": "Soft top fill on the family and bundle, warm rim light to separate subjects from dark background, deep negative space behind focused foreground action.",
+      "mood": "Intimate, reassuring, measured — human-focused service within a moody, time-aware frame.",
+      "alt": "Over-the-counter scene at dusk: an operator hands a wrapped family bundle to a waiting family as a studio creative frames a photo; the operator starts a small mechanical timer on the counter and a low-profile shelf-assist module is visible in soft shadow behind."
+    }
+  ]
+}

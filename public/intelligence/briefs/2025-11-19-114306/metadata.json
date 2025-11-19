@@ -1,0 +1,106 @@
+{
+  "generated_at": "2025-11-19T11:50:41.520087",
+  "query": "Holiday flagship retail story worlds",
+  "time_window": {
+    "start": "2025-11-12",
+    "end": "2025-11-19",
+    "days": 7
+  },
+  "confidence": {
+    "score": 0.82,
+    "display": 0.82,
+    "band": "High",
+    "dials": {
+      "strength": "high",
+      "coverage": "high",
+      "quant_support": "medium",
+      "consistency": "high"
+    },
+    "breakdown": {
+      "average_strength": 0.842,
+      "coverage": 0.833,
+      "quant_support": 0.667,
+      "contradiction_penalty": 1.0
+    }
+  },
+  "files": [
+    "intelligence_report.md",
+    "intelligence_report.html",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "signal_map_notes"
+  ],
+  "title": "Signal Report — Early-assortment and Thanksgiving funnel test",
+  "highlights": [
+    "Design early-assortment A/B (≤8 weeks) to capture spend without full-season margin erosion.",
+    "Target 8–12% incremental foot-traffic from parade-week activations and pop-ups versus baseline.",
+    "Use cohort-level tagging and weekly reports to track conversion, AOV, margin and returns versus control."
+  ],
+  "executive_summary": "Operators should test an early curated assortment the week of Nov 17–24 and a concentrated Thanksgiving-to-Black-Friday funnel; design the A/B to detect a 10–15% lift in conversion and target an early-deal share of 20–30% of seasonal sales versus about 15% last year[^4]. Plan parade-adjacent displays or short pop-ups and measure incremental visits — set the detection band for foot-traffic uplift at 8–12% versus baseline and compare AOV and dwell time to matched controls[^1][^2]. In the next 30 days merchandising, analytics, store ops and partnerships must tag cohorts and promo IDs, lock control stores, finalize creative and site logistics, and stand up weekly reporting so results are actionable within the ≤8-week window[^4][^8].",
+  "top_operator_moves": [
+    "Launch matched-store A/B: early curated assortment + targeted promos, tag promo IDs, run ≤8 weeks and report weekly.",
+    "Activate Thanksgiving-evening displays or 2–3 week pop-up in a high-traffic market and measure incremental visits and AOV against baseline.",
+    "Deploy an AI operations pilot in one flagship to cut fulfillment and checkout time and include those metrics in the weekly dashboard."
+  ],
+  "statistics": {
+    "word_count": 4282,
+    "signal_count": 5,
+    "source_count": 9
+  },
+  "read_time_minutes": 22,
+  "length_label": "~22 min read",
+  "qa": {
+    "issues": [
+      "Cadence missing CTA for play Early curated holiday assortment test",
+      "Cadence missing CTA for play Early curated holiday assortment test",
+      "Cadence missing CTA for play Early curated holiday assortment test",
+      "Cadence missing CTA for play A/B holiday pricing cohort test",
+      "Cadence missing CTA for play A/B holiday pricing cohort test",
+      "Cadence missing CTA for play A/B holiday pricing cohort test",
+      "Cadence missing CTA for play Targeted AI operations pilot in flagship",
+      "Cadence missing CTA for play Targeted AI operations pilot in flagship",
+      "Cadence missing CTA for play Targeted AI operations pilot in flagship",
+      "Cadence missing CTA for play Co-branded creative & merchandising pilot for pop-up",
+      "Cadence missing CTA for play Co-branded creative & merchandising pilot for pop-up",
+      "Cadence missing CTA for play Co-branded creative & merchandising pilot for pop-up",
+      "Cadence missing CTA for play Thanksgiving-week concentrated content & in-store funnel",
+      "Cadence missing CTA for play Thanksgiving-week concentrated content & in-store funnel",
+      "Cadence missing CTA for play Thanksgiving-week concentrated content & in-store funnel",
+      "Read time exceeds target"
+    ],
+    "coverage": 0.833,
+    "quant_support": 0.667,
+    "contradiction_penalty": 1.0,
+    "appendix_count": 1,
+    "scope": {
+      "topic": "Holiday flagship retail story worlds",
+      "time_window": {
+        "start": "2025-11-12",
+        "end": "2025-11-19",
+        "days": 7
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand↔brand",
+        "brick&mortar↔brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ]
+    },
+    "read_time": 22
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07"
+}
