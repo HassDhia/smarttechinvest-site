@@ -1,0 +1,33 @@
+[
+  {
+    "type": "hero",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "prompt": "Capture The split-second decision to accelerate a 'first-look' campaign as the physical countdown hits the last moments — operator and studio must choose which week to time-box for peak impact.. Scene: Shadowed loading-dock adjacent to a flagship storefront; a narrow strip of storefront glass and a studio van door form the negative-space frame (no screens or literal UI).. Action: Low three-quarter angle: an operator slides a brushed-brass stopwatch across a weathered wood clipboard to a studio art director who nods and taps a printed week-by-week test card — the stopwatch face shows an implied countdown.. Key objects: brushed-brass stopwatch (prominent), weathered wood clipboard with printed campaign grid (no visible text), sample product box with matte finish, metal binder clip and ballpoint pen, coffee cup with condensation ring. Lighting: Cinematic dark-mode: hard rim light from upper-left, soft fill from storefront glow at lower-right, deep shadows and generous negative space to emphasize the stopwatch silhouette.. Mood: Moody, urgent, collaborative, disciplined; tension balanced with quiet confidence.. Props: brushed-brass stopwatch (prominent), weathered wood clipboard with printed campaign grid (no visible text), sample product box with matte finish, metal binder clip and ballpoint pen, coffee cup with condensation ring. dark-mode editorial photography, charcoal + cyan palette, dramatic edge lighting, single subject, generous negative space, cinematic contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/hero_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Signal Map",
+    "prompt": "Structure: Radial geometry of concentric rings and sparse network nodes laid over a matte black plane; rings tighten toward a small illuminated aperture labeled conceptually as the 'YES window' (no text rendered in image), with negative space around the outer rings.. Motion: Slow, mechanical pulses travel inward along the rings and node paths; each pulse compresses rhythmically until multiple flows converge and collapse into the single 'YES window' aperture at center.. dark-mode editorial photography, charcoal + cyan palette, dramatic edge lighting, single subject, generous negative space, cinematic contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_signal_map_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Case Study 1",
+    "prompt": "Scene: Retail window at dusk on an early-November evening in front of a flagship store (sidewalk viewpoint).. Moment: Three-quarter sidewalk shot: an operator adjusts a layered display while the studio director watches inside; a brass stopwatch and printed timing plan lie on the counter inside the window.. Mood: Anticipatory, controlled, show-window theater; quiet urgency.. Lighting: Dusk ambient outside, warm interior window light backlighting subjects, strong silhouette and shadows to create negative space around figures.. Props: matte product sample on pedestal, brass stopwatch on counter, printed timing plan (no visible text), frosted glass pane and metal frame. dark-mode editorial photography, charcoal + cyan palette, dramatic edge lighting, single subject, generous negative space, cinematic contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_1_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Case Study 2",
+    "prompt": "Scene: Co-branded pop-up inset framed within a larger storefront — a compact activation staged for parade/Thanksgiving-week footfall.. Moment: Over-the-shoulder inset: studio hands arrange a scale model of the pop-up on a weathered wood table while an operator pins a small product fixture; the pop-up is presented as a tactile miniature rather than signage.. Mood: Collaborative, tactical, rooted in place — purposeful calm amid external spectacle.. Lighting: Moody spotlight on the pop-up inset, soft cool spill to the rear suggesting urban parade lights, deep shadowed negative space around the inset frame.. Props: scale model pop-up with fabric canopy (no logos/text), wooden model stand and clamps, sample merchandise stacks, parade light bokeh in distant background. dark-mode editorial photography, charcoal + cyan palette, dramatic edge lighting, single subject, generous negative space, cinematic contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_2_holiday_flagship_retail_story_.png"
+  }
+]
