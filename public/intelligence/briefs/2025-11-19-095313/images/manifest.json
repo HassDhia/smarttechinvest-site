@@ -1,0 +1,33 @@
+[
+  {
+    "type": "hero",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "prompt": "Eye‑level, rule‑of‑thirds left composition of a single matte modular pop‑up kiosk prototype on a low plinth in a sterile cleanroom atrium, back‑lit with soft cyan neon edges against a charcoal backdrop; shallow depth‑of‑field and generous negative space at the top create a moody, nocturnal magazine cover feel. The minimal frame evokes the two‑week pre‑Parade campaign and parade‑hour activation—co‑branded pop‑up pilot, hourly footfall/AOV tracking and A/B discount test—hinting at the estimated 12–18% foot‑traffic uplift and 20–25% earlier buyer share.. dark-mode editorial photography, charcoal + cyan palette, dramatic edge lighting, single subject, generous negative space, cinematic contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/hero_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Signal Map",
+    "prompt": "A midnight charcoal field holds five matte frosted‑glass rings tightening inward like an algorithmic hub‑and‑spoke, converging toward a small illuminated YES-window aperture at center. Soft cyan pin‑lights mark five subdued nodes as sweeping arcs and a cinematic halo imply AI‑driven prioritization for a holiday flagship retail story world, with generous negative space and slate highlights.. dark-mode editorial photography, charcoal + cyan palette, dramatic edge lighting, single subject, generous negative space, cinematic contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels, not a dashboard, not an infographic, no widgets, no icons",
+    "image": "images/section_signal_map_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Case Study 1",
+    "prompt": "Low-angle cinematic vignette: a charcoal storefront plane with a brass-framed aperture, rain-slick pavement mirroring a warm interior glow and stacked matte boxes — a recessed pop-up kiosk reduced to a cyan-lit inset silhouette. A faint stopwatch-strap arc and algorithmic cyan pulse imply a timed, AI-driven collaboration between operator and studio, long-lens compression flattening planes and preserving generous negative space.. dark-mode editorial photography, charcoal + cyan palette, dramatic edge lighting, single subject, generous negative space, cinematic contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels, not a dashboard, not an infographic, no widgets, no icons",
+    "image": "images/section_case_study_1_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Case Study 2",
+    "prompt": "Low-angled cinematic vignette: a varnished wood plane holds a family bundle implied by stacked card slabs and a matte-black module, studio hands in soft silhouette installing the device. Soft cyan nodes and sweeping arcs hover like an ai recommendation map through the window's dusk, a soft-focus pop-up inset glowing, restrained on a charcoal field with generous negative space and moody side light.. dark-mode editorial photography, charcoal + cyan palette, dramatic edge lighting, single subject, generous negative space, cinematic contrast, not a poster, not a collage, not an infographic, no charts, no UI, no labels, not a dashboard, not an infographic, no widgets, no icons",
+    "image": "images/section_case_study_2_holiday_flagship_retail_story_.png"
+  }
+]
