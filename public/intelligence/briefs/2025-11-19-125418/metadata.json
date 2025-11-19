@@ -1,0 +1,112 @@
+{
+  "generated_at": "2025-11-19T13:00:53.703216",
+  "query": "Holiday flagship retail story worlds",
+  "time_window": {
+    "start": "2025-11-12",
+    "end": "2025-11-19",
+    "days": 7
+  },
+  "confidence": {
+    "score": 0.795,
+    "display": 0.8,
+    "band": "High",
+    "dials": {
+      "strength": "high",
+      "coverage": "light",
+      "quant_support": "high",
+      "consistency": "high"
+    },
+    "breakdown": {
+      "average_strength": 0.8866666666666667,
+      "coverage": 0.5,
+      "quant_support": 1.0,
+      "contradiction_penalty": 0.9
+    }
+  },
+  "files": [
+    "intelligence_report.md",
+    "intelligence_report.html",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "signal_map_notes"
+  ],
+  "title": "Signal Report — Holiday Flagship Windows: Pre-Thanksgiving & Parade Activation",
+  "highlights": [
+    "Prioritize a two-week pre-Thanksgiving window and design the test to detect a 10–15% lift in daily revenue [^3]",
+    "Parade-weekend pop-ups near flagship sites can deliver a 15–25% foot-traffic uplift versus baseline [^1][^5]",
+    "Target a 5–10 percentage-point increase in early-deal share vs last year and measure with cohort A/B and daily reporting [^3]"
+  ],
+  "executive_summary": "Run a concentrated two-week pre-Thanksgiving activation in flagship stores and online to capture early full-price demand; design the test to detect a 10–15% lift in daily revenue versus baseline [^3]. Place parade-weekend pop-ups near major flagships (Herald Square) — plan for an observed 15–25% foot-traffic uplift versus baseline during the event window [^1][^5]. Set a test target to increase early-deal share by 5–10 percentage points versus last year, and in the next 30 days merchandising, store operations, local events, and analytics must lock assortments, allocate inventory, confirm pop-up sites and permits, define loyalty access rules, and instrument cohort A/B measurement for daily reporting [^3][^1].",
+  "top_operator_moves": [
+    "Run an A/B cohort test for the two-week pre-Thanksgiving activation; design to detect 10–15% lift",
+    "Secure and staff parade-weekend pop-up at Herald Square (permits, local ops, merchandising)",
+    "Allocate inventory and set loyalty-only early access; configure analytics for daily cohort reporting"
+  ],
+  "statistics": {
+    "word_count": 3980,
+    "signal_count": 3,
+    "source_count": 9
+  },
+  "read_time_minutes": 20,
+  "length_label": "~20 min read",
+  "qa": {
+    "issues": [
+      "Signal count outside required band",
+      "Cadence missing CTA for play Two-week pre-Thanksgiving concentrated loyalty drop",
+      "Cadence missing CTA for play Two-week pre-Thanksgiving concentrated loyalty drop",
+      "Cadence missing CTA for play Two-week pre-Thanksgiving concentrated loyalty drop",
+      "Cadence missing CTA for play Staged holiday pricing and promotion calendar",
+      "Cadence missing CTA for play Staged holiday pricing and promotion calendar",
+      "Cadence missing CTA for play Staged holiday pricing and promotion calendar",
+      "Cadence missing CTA for play Parade-weekend flagship pop-up coordination",
+      "Cadence missing CTA for play Parade-weekend flagship pop-up coordination",
+      "Cadence missing CTA for play Parade-weekend flagship pop-up coordination",
+      "Cadence missing CTA for play Content and campaign assets for curated partner bundles",
+      "Cadence missing CTA for play Content and campaign assets for curated partner bundles",
+      "Cadence missing CTA for play Content and campaign assets for curated partner bundles",
+      "Cadence missing CTA for play Flagship-exclusive loyalty access event experience",
+      "Cadence missing CTA for play Flagship-exclusive loyalty access event experience",
+      "Cadence missing CTA for play Flagship-exclusive loyalty access event experience",
+      "Read time exceeds target"
+    ],
+    "coverage": 0.5,
+    "quant_support": 1.0,
+    "contradiction_penalty": 0.9,
+    "appendix_count": 4,
+    "scope": {
+      "topic": "Holiday flagship retail story worlds",
+      "time_window": {
+        "start": "2025-11-12",
+        "end": "2025-11-19",
+        "days": 7
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand↔brand",
+        "brick&mortar↔brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ]
+    },
+    "read_time": 20
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07",
+  "social_media_content": {
+    "confidence": 0.8,
+    "teaser_mode": false,
+    "sources_used": "forbes.com | msn.com"
+  }
+}
