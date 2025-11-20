@@ -1,0 +1,100 @@
+{
+  "generated_at": "2025-11-19T16:02:55.537471",
+  "query": "Holiday flagship retail story worlds",
+  "time_window": {
+    "start": "2025-11-13",
+    "end": "2025-11-20",
+    "days": 7
+  },
+  "confidence": {
+    "score": 0.761,
+    "display": 0.76,
+    "band": "Medium",
+    "dials": {
+      "strength": "high",
+      "coverage": "medium",
+      "quant_support": "medium",
+      "consistency": "high"
+    },
+    "breakdown": {
+      "average_strength": 0.845,
+      "coverage": 0.667,
+      "quant_support": 0.667,
+      "contradiction_penalty": 0.9
+    }
+  },
+  "files": [
+    "intelligence_report.md",
+    "intelligence_report.html",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "signal_map_notes"
+  ],
+  "title": "Signal Report — Holiday flagships: early-access test and phased discounts",
+  "highlights": [
+    "Run an 8‑week early‑access test to isolate incremental demand from cannibalization",
+    "Phase discounts: smaller public promotions early, deeper loyalty/in‑store offers later to protect margin",
+    "Use a 10–14 day co‑branded pop‑up or civic flagship activation to measure visit‑to‑purchase conversion and local media impact"
+  ],
+  "executive_summary": "Operators should run a two‑phase holiday activation: an early‑access loyalty window two weeks ahead of last year, followed by a public phase, and measure across an 8‑week trial to separate incremental demand from cannibalized sales [^4]. Design the test to detect a 10–15% weekly foot‑traffic lift versus baseline and track per‑visit AOV and cohorted repeat rate to validate net revenue [^4]. Target early‑deal share to exceed last year by 20–30% as a test objective; in the next 30 days merchandisers, loyalty, operations and property/partnership teams must lock early‑access SKUs and discounts, instrument footfall/AOV tagging, and confirm one 10–14‑day co‑branded pop‑up or civic flagship activation for measurement [^4][^3][^1].",
+  "top_operator_moves": [
+    "Launch an 8‑week early‑access loyalty test and instrument weekly footfall, per‑visit AOV, and repeat rate",
+    "Publish a phased discount calendar (light public early offers, deeper loyalty/in‑store exclusives later) and track margin by week",
+    "Secure and operationalize a 10–14 day co‑branded pop‑up or civic flagship event with landlord or city partner and tag its traffic for conversion analysis"
+  ],
+  "statistics": {
+    "word_count": 3684,
+    "signal_count": 4,
+    "source_count": 9
+  },
+  "read_time_minutes": 19,
+  "length_label": "~19 min read",
+  "qa": {
+    "issues": [
+      "Signal count outside required band",
+      "Read time exceeds target"
+    ],
+    "coverage": 0.667,
+    "quant_support": 0.667,
+    "contradiction_penalty": 0.9,
+    "appendix_count": 3,
+    "scope": {
+      "topic": "Holiday flagship retail story worlds",
+      "time_window": {
+        "start": "2025-11-12",
+        "end": "2025-11-19",
+        "days": 7
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand↔brand",
+        "brick&mortar↔brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ]
+    },
+    "read_time": 19,
+    "high_quality_signals": true,
+    "observed_quant": true,
+    "tier1_market_signals": false
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07",
+  "social_media_content": {
+    "confidence": 0.76,
+    "teaser_mode": false,
+    "sources_used": "forbes.com | msn.com | therealdeal.com"
+  }
+}

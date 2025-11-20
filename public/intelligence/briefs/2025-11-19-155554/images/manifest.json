@@ -1,0 +1,33 @@
+[
+  {
+    "type": "hero",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "prompt": "Capture Deciding when to deploy a two‑phase holiday tempo: a targeted 'early access' loyalty launch two weeks before last year vs. a public flagship weekend — framed as a choice to capture early high‑value shoppers while measuring incremental footfall and per‑visit AOV across an 8‑week test.. Scene: Studio backlot styled as a minimalist flagship corner: matte concrete floor, neutral painted backdrop, a draped window-frame mockup and a collapsible pop‑up maquette on a workbench.. Persona: Store operations lead (operator) in a tailored coat and a studio producer in a casual blazer — both collaborative, hands‑on, deliberate.. Action: Three‑quarter angle: subjects lean over a tabletop playbook of printed loyalty cards, tiered paper discount chips and tagged SKU swatches; one points while the other gestures toward a stacked maquette.. Urgency symbol: Converging light bands and layered translucent schedule cards — staggered, slightly offset — to imply compressed windows and staged release without a literal clock.. Key objects: printed loyalty membership mockups, tiered paper discount chips and physical tag samples, small pop‑up kiosk maquette (cardboard/wood), glass counters or bead tokens representing footfall. Lighting: Polished editorial lighting with confident highlights, key rim light on faces and props, soft directional fill, and ample clean negative space.. Mood: Precise, anticipatory and collaborative — calm confidence under purposeful timing pressure.. Props: printed loyalty membership mockups, tiered paper discount chips and physical tag samples, small pop‑up kiosk maquette (cardboard/wood), glass counters or bead tokens representing footfall. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/hero_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Signal Map",
+    "prompt": "Structure: Concentric rings and radial arcs with an underlying lattice of paths — outer rings for early windows, inner rings for flagship weekends; intersecting arcs mark tactical shifts.. Motion: Soft arcing flows that move from the outer ring inward in staggered pulses (weekly cadence), with occasional diverging paths to show split tests and phased discounts.. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_signal_map_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Case Study 1",
+    "prompt": "Scene: Retail ops test bench staged near a storefront mockup: wide three‑quarter view with depth, matte wood table in foreground and a painted storefront elevation in background.. Moment: Capturing the decision to start an 'early access' loyalty window two weeks before last year's campaign and instrument an 8‑week test to measure incremental footfall and AOV.. Persona: Operator (store district manager) and studio analyst leaning over weekly report cards and footfall bead counters, one marking a physical timeline with a felt tip.. Mood: Measured, data‑driven anticipation — focused testing under mild time pressure.. Lighting: Polished editorial key light off‑axis, subtle backlight to separate subjects, clean negative space around the table.. Props: stacked weekly report cards (printed) with marginalia, glass bead counters for footfall cohorts, membership card mockups, tape measure or simple ruler as a timing metaphor. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_1_holiday_flagship_retail_story_.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday flagship retail story worlds",
+    "intent": "market",
+    "section": "Case Study 2",
+    "prompt": "Scene: Close, low‑angle composition over a matte tabletop showing discount‑tier artifacts arranged in a graded fan toward a flagship sample window.. Moment: Deciding a phased discount schedule: smaller public discounts early with deeper loyalty or in‑store exclusives reserved for flagship weekends to protect margin and track week‑over‑week elasticity.. Persona: Merch and pricing lead (operator) and a creative producer aligning discount chips and margin bands physically on the table.. Mood: Strategic, cautious confidence focused on preserving margin through phased tactics.. Lighting: Crisp editorial overhead rim with confident highlights on paper edges and brass surfaces, plentiful negative space to isolate the graded chips.. Props: graded paper discount chips (small→deep), brass margin rulers or labeled margin tiles, tagged merchandise swatches. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_2_holiday_flagship_retail_story_.png"
+  }
+]
