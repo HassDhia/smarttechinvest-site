@@ -1,0 +1,83 @@
+{
+  "hero": {
+    "core_tension": "Compressing a seasonal campaign into a concentrated early‑access window: show the decision to pull forward high-intent inventory and test whether earlier demand amplifies or cannibalizes peak moments.",
+    "setting": "Studio storefront mockup with a deep window ledge and polished concrete floor; background hints of a city holiday street out of focus.",
+    "persona": "Operator and studio creative leaning in — mid‑career retail operator in a blazer and a studio producer in a black turtleneck.",
+    "action": "They lean over a shared matte table reviewing layered physical artifacts (tags, wireframe cards, and sample bundles) while exchanging a confident gesture.",
+    "urgency_symbol": "Compressed light bands and overlapping shadow lanes falling across the table to suggest condensed timing and accelerated cadence (symbolic, not a clock).",
+    "props": [
+      "campaign ticket stubs (flat printed cards)",
+      "bundle samples wrapped in craft paper",
+      "loyalty card mockups",
+      "inventory swatch pins"
+    ],
+    "lighting": "Polished editorial lighting with confident highlights on faces and props, soft falloff into clean negative space; slight rim light to separate subjects from background.",
+    "mood": "Precise, collaborative, quietly urgent — operational focus with studio polish.",
+    "alt": "Two collaborators — a retail operator and a studio producer — lean over a matte table with campaign cards, bundled product samples, and loyalty mockups. Polished editorial light creates sharp highlights and bands of shadow that symbolically compress the scene, suggesting a tightened holiday timing window."
+  },
+  "signal_map": {
+    "structure": "Concentric arcs and intersecting radial lanes forming a simplified location-and-timing lattice (rings for stages, arcs for channels).",
+    "elements": [
+      "token discs representing S1–S4 (varying sizes)",
+      "connector paths and dotted arcs showing directional influence",
+      "anchor nodes for flagship, pop-up, loyalty, and downtown activation"
+    ],
+    "motion": "Subtle directional pulse along select paths (thicker pulses toward the inner ring for the early-access window), and a staggered glow that implies compressed flows and test cohorts.",
+    "palette": "Warm neutrals and deep charcoal base with accent metallic copper and muted holiday red—materials include matte paper, brushed metal, and soft glass reflections.",
+    "alt": "Abstract retail signal map: concentric arcs and radial lanes with discs labeled S1–S4, connector paths, and pulsing directions. Warm neutrals, copper accents, and glass reflections create a polished editorial diagram suggesting priority flows and compressed timing without UI elements."
+  },
+  "case_studies": [
+    {
+      "scene": "In-store window pop-up vignette framed by a flagship display with a brand partner’s motif.",
+      "moment": "A ten‑day experiential launch at Thanksgiving week caught at the moment footfall converts into a tracked offer — timing compressed into a signature window (symbolized by converging spotlight bands).",
+      "persona": "Store operations lead adjusting POS signage while a visual merchandiser reviews QR-code cards with a tablet‑sized mockup (studio collaborator nearby).",
+      "props": [
+        "branded pop-up fixtures (clean, minimal)",
+        "printed QR offer cards",
+        "staff radio clipped to a lapel"
+      ],
+      "lighting": "Polished editorial window light with confident highlights on merchandise and soft bounces off glass surfaces.",
+      "mood": "Energetic, experiential, observant — measuring footfall-to-conversion in the moment.",
+      "alt": "Flagship pop-up scene: a store operations lead and a merchandiser stand beside branded fixtures and printed QR offer cards. Converging bands of light symbolically mark the short experiential window; polished highlights and reflective glass emphasize measured activity."
+    },
+    {
+      "scene": "Backroom inventory staging area with a long metal table and labeled bundles ready for early-access fulfillment.",
+      "moment": "A throttle point where cadence changes ripple through staging and fulfillment — shown as overlapping rows of bundled SKUs and staggered packing slips aligned like a compressed timeline.",
+      "persona": "Fulfillment manager and operations planner inspecting bundle picks and inventory swatches together.",
+      "props": [
+        "paired bundle boxes with craft ties",
+        "stacked packing slips and tagged inventory pins",
+        "clipboard with cohort notes"
+      ],
+      "lighting": "Controlled editorial overhead with confident highlights along tabletop edges and soft negative space around the workers.",
+      "mood": "Precise, methodical, focused on end‑to‑end latency and velocity.",
+      "alt": "Backroom staging: a fulfillment manager and operations planner review bundled boxes and packing slips on a metal table. Overhead editorial light creates sharp highlights along the bundles, suggesting compressed operational cadence and coordinated staging."
+    },
+    {
+      "scene": "Window activation in a downtown district at dusk, with a brief leased frontage and coordinated street signage.",
+      "moment": "A short‑term downtown activation synchronized with local holiday programming — the tension suggested by layered street reflections and a narrowing depth of field that draws to the activation gateway.",
+      "persona": "Local events coordinator and store brand lead coordinating signage placement while scanning foot traffic patterns.",
+      "props": [
+        "temporary window panels",
+        "event schedule cards",
+        "portable POS terminal casing"
+      ],
+      "lighting": "Polished editorial dusk lighting with confident rim highlights and warm city bokeh in the background.",
+      "mood": "Tactical, community-minded, time-sensitive activation readiness.",
+      "alt": "Downtown window activation at dusk: an events coordinator and brand lead position temporary window panels and event cards. Warm rim lighting and city bokeh symbolically compress the activation window, emphasizing local coordination and timing sensitivity."
+    },
+    {
+      "scene": "Studio planning table with promo math laid out as tactile artifacts (bundle comps, margin notecards, loyalty overlays).",
+      "moment": "Deciding to swap a sitewide markdown for bundle+GWP and loyalty early-access — shown as layered cards where a bold margin card partially overlays a faded sitewide discount card, symbolizing a shift in promo mechanics.",
+      "persona": "Merchandise planner and financial analyst in discussion, pointing to margin overlays and projected unit economics printed on vellum.",
+      "props": [
+        "margin and promo notecards",
+        "product bundle mockups",
+        "loyalty tier pass"
+      ],
+      "lighting": "Clean editorial side light with confident highlights on paper textures and metallic accents on clips.",
+      "mood": "Analytical, margin-protecting, strategically nimble.",
+      "alt": "Studio table with promo math artifacts: a merchandise planner and financial analyst examine margin notecards, bundle mockups, and a loyalty pass. Side editorial lighting highlights paper textures and metallic clips, symbolically showing the transition from broad markdowns to margin-preserving bundles."
+    }
+  ]
+}
