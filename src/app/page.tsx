@@ -2,7 +2,6 @@ import { SectionHeader } from "../components/SectionHeader";
 import { BriefCard } from "../components/BriefCard";
 import { SocialProofStrip } from "../components/SocialProofStrip";
 import { CoreOfferCards } from "../components/CoreOfferCards";
-import { FounderSection } from "../components/FounderSection";
 import { listBriefs } from "../lib/content";
 import Link from "next/link";
 import { Button } from "../components/ui/Button";
@@ -117,7 +116,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <FounderSection />
       </section>
 
       {/* Section 5: Proof of Capability (Case Study Grid) */}
