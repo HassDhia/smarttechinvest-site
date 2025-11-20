@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "core_tension": "Concentrate two high‑intensity activation windows and choose between value‑exchange offers — the visual tension is between focused, limited-time concentration and the operator's decision to allocate resources for hire/lift vs. margin preservation.",
+    "setting": "Indoor retail pop‑up workspace (three‑quarter view) — laminated campaign boards on a timber table, a blurred storefront in the background, clean negative space to the right for copy.",
+    "persona": "Operator (store manager) and studio lead (event/creative producer) collaborating shoulder‑to‑shoulder; both mid‑action.",
+    "action": "One hand places two stacked activation cards (Black Friday / Dec 1–14) while the other sorts three offer samples (donation sleeve, wrapped GWP token, instant points card) on textured paper — angled low to emphasize hands and materials.",
+    "urgency_symbol": "Converging beams of light that create a narrow, bright corridor on the table surface — symbolic focus that suggests a tight, limited window rather than a literal clock.",
+    "props": [
+      "laminated activation cards labeled by window (paper, matte)",
+      "three tangible offer samples: donation envelope (kraft), gift sample (fabric ribbon), points token (metallic chip)",
+      "printed A/B test assignment cards (tabbed)",
+      "small cohort tracking ledger (handwritten)"
+    ],
+    "lighting": "Polished editorial lighting with confident highlights on hands and materials; soft falloff into deep, clean negative space.",
+    "mood": "Precise, collaborative, confident — tension is purposeful and solution‑seeking.",
+    "alt": "Hands of a store manager and creative producer arranging two stacked activation cards labeled Black Friday and Dec 1–14 and three tactile offer samples (donation envelope, wrapped gift token, metallic points chip) on a timber table under strong editorial highlights, suggesting a concentrated timing decision."
+  },
+  "signal_map": {
+    "structure": "Concentric rings and radial arcs (top‑down composition) denoting activation windows and cohort layers; inner node marks conversion focus.",
+    "elements": [
+      "S1 tokens: two dense activation nodes (textured paper tokens) on separate rings",
+      "S2 tokens: three offer nodes (donation, GWP, points) placed on a mid ring",
+      "S3 tokens: Gen Z engagement nodes (Polaroid snippets, social wall chips) on an outer, irregular ring"
+    ],
+    "motion": "Arcs and tapered paths flow inward toward the central conversion node with subtle pulsing highlights on the two prioritized window nodes; pathways overlap where A/B test traffic converges.",
+    "palette": "Warm neutrals (kraft, warm gray), brushed metal accents for tokens, selective neon accent for Gen Z nodes; materials: matte paper, satin metal, soft fabric for gift element.",
+    "alt": "Top‑down composition of concentric rings and radial arcs showing two dense activation nodes on inner rings, three mid‑ring offer nodes (donation, gift, points), and outer Gen Z engagement chips; tapered paths converge to a central conversion node with selective neon accents."
+  },
+  "case_studies": [
+    {
+      "scene": "Busy store floor during a concentrated window (three‑quarter view, medium focal length) — pop‑up kiosks aligned along a corridor, textured floor reflections, branded tent cards visible but no screens.",
+      "moment": "Operator pins A/B assignment tabs to two kiosks (one running instant points, one running a discount variant) while an analyst reviews a small printed cohort snapshot; camera angle slightly elevated to capture both action and kiosk layout.",
+      "persona": "Store manager and operations analyst collaborating in‑scene; manager is arranging physical offer material while analyst holds a data printout.",
+      "props": [
+        "two kiosk tent cards (matte paper) labeled A/B",
+        "instant points metallic chip sample",
+        "discount price tag mockup",
+        "small stack of cohort report printouts (linen paper)"
+      ],
+      "lighting": "Polished editorial side light that sculpts faces and kiosk edges; confident highlights on tent cards, clean shadow separation.",
+      "mood": "Decisive, analytical, outcomes‑driven — focused on measuring sign‑up rate and AOV lift.",
+      "alt": "Store manager attaches A/B tent cards to two pop‑up kiosks while an analyst holds a printed cohort snapshot; side editorial lighting highlights the tent cards and metallic points chip, signaling a live A/B test during a concentrated activation window."
+    },
+    {
+      "scene": "Checkout island vignette (low angle, tight crop) — register counter with tactile materials spread across a marble surface, customer's hand reaching for a wrapped gift sample.",
+      "moment": "Cashier swaps a planned percent markdown tag for a value‑exchange option — physically placing either a donation envelope, a gift‑with‑purchase sample, or a points chip into a display tray; the composition implies rotation/testing rather than a single fixed prop.",
+      "persona": "Cashier and loyalty manager mid‑shift; loyalty manager gestures toward the tray while cashier completes the handoff.",
+      "props": [
+        "donation envelope (kraft)",
+        "small wrapped GWP sample (fabric ribbon)",
+        "instant loyalty points chip (brushed metal)",
+        "margin impact printout folded on counter"
+      ],
+      "lighting": "Polished, directional top light with confident highlights on the gift ribbon and metallic points chip; clean negative space behind the counter.",
+      "mood": "Measured, value‑conscious, experimental — exploring alternatives to blunt discounting.",
+      "alt": "Low‑angle crop of a checkout counter where a cashier swaps a percent markdown tag for an alternative value exchange, placing a donation envelope, wrapped gift sample, or metallic points chip into a tray while a loyalty manager watches; editorial highlights accent the materials."
+    },
+    {
+      "scene": "Evening influencer preview at a pop‑up (wide angle, shallow depth) — social wall of Polaroids and limited‑drop boxes arranged on matte shelving, soft crowd blur in the background.",
+      "moment": "Event producer adjusts Polaroids on the wall while a Gen Z attendee holds a branded sample box; the composition uses a three‑quarter profile to show interaction without literal screens.",
+      "persona": "Event producer (studio lead) and Gen Z attendee (early adopter) exchanging a sample and a quick nod; subtle camera tilt to imply youthful energy.",
+      "props": [
+        "social wall Polaroids (gloss paper)",
+        "limited‑drop sample box (kraft with sticker)",
+        "influencer lanyard and pass",
+        "small sign indicating ‘preview’ dates (printed on vellum)"
+      ],
+      "lighting": "Polished editorial spotlighting on the social wall and sample box with soft ambient fill; confident highlights create visual pops amid clean negative space.",
+      "mood": "Energetic, culturally‑tuned, anticipatory — focused on driving loyalty sign‑ups from event footfall.",
+      "alt": "An event producer straightens Polaroids on a social wall while a Gen Z attendee holds a limited‑drop sample box at a pop‑up preview; editorial spotlighting highlights the wall and box, conveying a culturally tuned activation aimed at loyalty conversion."
+    }
+  ]
+}
