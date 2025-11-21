@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "core_tension": "Compressed holiday windows layered together: a short, high‑intensity brand test (S1) overlapping a retailer's shorter entry window (S2) and a tech-enabled instant reward cadence (S3) — depict competing measurement horizons and the decision to prioritize cadence vs. reach.",
+    "setting": "Studio backlot staged as a pop-up mockup: matte wood counter, brushed steel racks, translucent signage panels; 3/4 angle, medium distance to show collaboration and context.",
+    "persona": "Brand operations lead and studio producer collaborating with a visual merch assistant (operator + studio crew).",
+    "action": "Hands and bodies aligning printed floor plans, loyalty tokens, and sample offer cards; studio lead adjusts a directional light ribbon to suggest test cadence without showing UI.",
+    "urgency_symbol": "Converging light bands and narrowing ribbons of highlight that imply differing window lengths and pulse rates (symbolic timing, no clocks).",
+    "props": [
+      "printed loyalty cards and enrollment tokens (physical mockups)",
+      "stacked paper SMS/reward slips (abstract, not showing screens)",
+      "sample BNPL token slips and coupon tags"
+    ],
+    "lighting": "Polished editorial lighting with confident highlights, subtle rim light, and clean negative space for copy or overlays.",
+    "mood": "Precise, collaborative, confident — controlled urgency.",
+    "alt": "Brand operator and studio lead align light cues over a pop-up mockup, signaling short vs extended test windows"
+  },
+  "signal_map": {
+    "structure": "Concentric arcs and intersecting lattice with staggered ring widths to represent different test durations (nested windows and cohort boundaries).",
+    "elements": [
+      "pulsing nodes for daily enrollment spikes",
+      "ribbons for S1 (brand), S2 (retailer), S3 (tech reward) durations",
+      "pathways showing user flow between entry, checkout, and loyalty enrollment"
+    ],
+    "motion": "Flow of converging ribbons toward a focal node; nodes subtly pulse at different rates to imply timing sensitivity and measurement cadence.",
+    "palette": "Matte graphite base, warm amber highlights for brand pulses, cool cyan accents for instant rewards; materials: frosted glass planes, brass pins, satin paper texture.",
+    "alt": "Abstract map of overlapping arcs and pulsing nodes representing pop-up timing and reward flows"
+  },
+  "case_studies": [
+    {
+      "scene": "Tight studio vignette focused on a prototype checkout table; low-angle composition, subject framed by warm wood and brushed steel materials.",
+      "moment": "Alignment: a short, bright ribbon of light slices a longer shadow across the table to symbolize the brand’s Nov 21–Dec 12 pulse (S1) and the decision point for BNPL + cash-back offers.",
+      "persona": "Brand operations manager and studio assistant working side-by-side, hands in frame arranging physical offer artifacts.",
+      "props": [
+        "BNPL token slips (paper mockups)",
+        "stack of loyalty enrollment cards",
+        "paper receipt strips used as timing markers"
+      ],
+      "lighting": "Polished editorial with confident highlights on hands and props, soft falloff to clean negative space.",
+      "mood": "Precise, watchful, anticipatory — testing-focused.",
+      "alt": "Brand operator and studio assistant position BNPL slips under a bright timing band"
+    },
+    {
+      "scene": "Slightly elevated wide-angle of a staged high-footfall doorway; subject includes a retailer field manager and studio director beside a concrete threshold and translucent signage panels.",
+      "moment": "A narrow wedge of warm light grazes the entry path, symbolizing the retailer's compressed test window (S2) and the cadence of daily enrollment measurement.",
+      "persona": "Retailer field manager and visual merch lead consulting on flow markers and on-site incentive placement.",
+      "props": [
+        "stanchions with abstract token attachments",
+        "incentive tags and paper tally sheets (no digital UI shown)",
+        "folded floor-flow markers"
+      ],
+      "lighting": "Polished editorial with confident side highlights, strong negative space in foreground to emphasize path and timing wedge.",
+      "mood": "Urgent, tactical, outcome-driven.",
+      "alt": "Retail manager and studio director mark an entry path with a warm wedge of light"
+    },
+    {
+      "scene": "Close 3/4 framing of hands exchanging a printed SMS reward mock and a physical loyalty token; materials include matte card stock and satin metal token for tactile contrast.",
+      "moment": "A thin cyan pulse runs beneath the exchange, symbolizing the instant reward delivery and immediate redemption window (S3) and the timing decisions for conversion vs. margin.",
+      "persona": "Brand product operations lead and studio prop master collaborating on reward delivery artifacts.",
+      "props": [
+        "printed SMS coupon mock (paper strip)",
+        "physical loyalty token",
+        "receipt-style paper cue for redemption timing"
+      ],
+      "lighting": "Polished editorial high-contrast with confident highlights on hands and props, generous negative space.",
+      "mood": "Nimble, experimental, measured.",
+      "alt": "Product ops and prop master exchange an instant-reward mock under a cyan pulse"
+    }
+  ]
+}
