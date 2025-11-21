@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "core_tension": "Decision to replace a sitewide percent-off with BNPL + app-cashback for a Black Friday weekend pop-up; conversion depends on payment-account linking and delayed loyalty token issuance, creating a narrow window for operators to capture app-linked enrollments.",
+    "setting": "Pop-up retail interior, three-quarter low angle, subject: operator and studio lead leaning over a test counter; materials: matte signage, brushed-steel fixtures, folded paper schedules; clean negative space around action.",
+    "persona": "Retail operator (ops manager) and studio art director collaborating on launch execution.",
+    "action": "Arranging physical loyalty tokens and signage, rehearsing handoff gestures, calibrating checkout choreography (no literal screens).",
+    "urgency_symbol": "Sequential bands of light and shrinking shadow channels that visually compress from wide to narrow, suggesting a closing opportunity and staged timing windows.",
+    "props": [
+      "branded loyalty tokens (physical)",
+      "stacked sample packages and bundled offers",
+      "folded paper campaign cards with campaign id",
+      "non-digital checkout hardware silhouettes (no UI)"
+    ],
+    "lighting": "Polished editorial lighting with confident highlights, key-side rim light and soft backfill to emphasize hands and materials; clean negative space.",
+    "mood": "Precise, collaborative, confident.",
+    "alt": "Operators in a pop-up; narrowing light bands suggest critical holiday timing."
+  },
+  "signal_map": {
+    "structure": "Concentric rings and radial arcs with a lattice of paths; three-tier geometry (frontline → payment handoff → loyalty issuance) with layered depth.",
+    "elements": [
+      "pulsing nodes representing transactions",
+      "arcs for payment-to-loyalty handoffs",
+      "token markers for app-linked enrollments",
+      "pathway overlays for footfall and staffing pulses (S1–S5 mapped)"
+    ],
+    "motion": "Radial flow from storefront edge inward, nodes pulse sequentially with staggered intensity to imply capture-to-reconcile latency and hourly/daypart peaks.",
+    "palette": "Warm neutrals and cool steel accents; materials: matte paper, soft-gloss metal, translucent gels for light bands.",
+    "alt": "Abstract map of pulsing nodes and arcs linking campaign actions to loyalty."
+  },
+  "case_studies": [
+    {
+      "scene": "Storefront planning huddle, medium angle, subject: operations lead and store manager at a windowed counter; materials: printed hourly staffing charts, queue rope sample, paper footfall tokens.",
+      "moment": "Decision point about a 10-day holiday pop-up (Black Friday → Cyber Week) where hourly staffing and capture windows are being aligned to hit a 20% footfall uplift KPI.",
+      "persona": "Retail brand operations lead and store manager coordinating staffing and measurement cadence.",
+      "props": [
+        "printed hourly schedule cards",
+        "paper footfall markers",
+        "sample bundled packaging (no pricing screens)"
+      ],
+      "lighting": "Polished editorial side lighting with confident highlights on faces and paper textures; intentional negative space to isolate the huddle.",
+      "mood": "Measured urgency: tactical, anticipatory, data-aware.",
+      "alt": "Store ops and manager amid staged light pulses that mark high-footfall windows."
+    },
+    {
+      "scene": "Studio test table, overhead three-quarter angle, subject: brand owner and creative producer prototyping a micro-advent reveal; materials: sealed envelopes, numbered slots, textured wrapping paper.",
+      "moment": "A gating decision for a 12-day micro-advent where one premium reveal requires loyalty signup; timing tension is visualized as sequential reveal shadows rather than literal timers.",
+      "persona": "Brand owner and studio creative producer iterating reveal mechanics and loyalty capture phrasing.",
+      "props": [
+        "stacked sealed reveal envelopes",
+        "numbered slot board (physical)",
+        "physical loyalty sign-up cards (no devices)"
+      ],
+      "lighting": "Warm directional spotlight with crisp shadow edges to emphasize reveal slots and tactile materials.",
+      "mood": "Playful rigor: experimental, focused, slightly anticipatory.",
+      "alt": "Brand owner and studio testing sequential reveal shadows for micro-advent gating."
+    },
+    {
+      "scene": "Co-branded merch alignment, low-angle three-quarter shot, subject: two brand reps and a studio lead arranging dual-tone displays; materials: mixed textiles, co-branded tags, bundled offer samples.",
+      "moment": "Final alignment for a 7-day co-branded pop-up (heritage × fast-fashion) where co-marketing choices and instant loyalty incentives must preserve AOV while driving incremental enrollments.",
+      "persona": "Two-brand operator reps and studio collaboration lead finalizing shelf choreography and loyalty incentive placement.",
+      "props": [
+        "co-branded product displays",
+        "dual-tone physical loyalty tokens",
+        "bundled offer samples and in-store signage mockups (no screens)"
+      ],
+      "lighting": "Polished editorial rim and fill with confident highlights on textures; clean negative space separates brand elements.",
+      "mood": "Collaborative, anticipatory, strategically optimistic.",
+      "alt": "Two brand reps aligning co-branded displays; layered highlights imply tight launch."
+    }
+  ]
+}
