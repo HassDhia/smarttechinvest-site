@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
+import { buildManifestEntryFromDir, upsertManifestEntry } from './lib/brief-manifest.mjs';
 
 // Usage: node scripts/ingest-brief.mjs "<path-to-generator-output-folder>" [--watch-mode] [--force]
 // Example input folder name: sti_enhanced_output_20251028_165613_llm_driven_robotics_
@@ -278,6 +279,18 @@ if (summaryPath) {
         console.warn(warning);
       }
       // Don't exit - brief is still usable without PDF
+    }
+  }
+
+  try {
+    const manifestEntry = buildManifestEntryFromDir(dateDir);
+    upsertManifestEntry(manifestEntry);
+  } catch (error) {
+    const warning = `Failed to update manifest for ${dateDir}: ${error.message}`;
+    if (watchMode) {
+      console.warn(`⚠️  ${warning}`);
+    } else {
+      console.warn(warning);
     }
   }
 

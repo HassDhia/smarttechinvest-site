@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
+import { buildManifestEntryFromDir, upsertManifestEntry } from './lib/brief-manifest.mjs';
 
 const SOURCE_DIR = '/Users/hass/Desktop/02_Projects/Deep Agent STI/sti_reports';
 const STATE_FILE = path.join(process.cwd(), '.brief-ingest-state.json');
@@ -214,14 +215,22 @@ const processNewBrief = (folderName) => {
 
 const stageCommitPushBrief = (briefDate) => {
   const briefPath = `public/intelligence/briefs/${briefDate}`;
+  const manifestPath = 'public/intelligence/briefs/manifest.json';
+  const manifestFullPath = path.join(process.cwd(), manifestPath);
+  const addTargets = [briefPath];
+  if (fs.existsSync(manifestFullPath)) {
+    addTargets.push(manifestPath);
+  }
 
-  if (!runGitCommand(`git add "${briefPath}"`, `Adding ${briefDate} brief files`)) {
+  const addCommand = addTargets.map(target => `"${target}"`).join(' ');
+
+  if (!runGitCommand(`git add ${addCommand}`, `Adding ${briefDate} brief files`)) {
     return { success: false, error: 'Git add failed' };
   }
 
   if (!checkGitStatus()) {
     try {
-      execSync(`git reset HEAD "${briefPath}"`, { stdio: 'ignore' });
+      execSync(`git reset HEAD ${addCommand}`, { stdio: 'ignore' });
     } catch {
       // ignore reset errors
     }
@@ -256,6 +265,14 @@ const registerExistingBrief = (folderName, briefDate) => {
   }
 
   logWithTimestamp(`📝 Found existing brief ${briefDate} without state entry. Registering + pushing...`);
+
+  try {
+    const manifestEntry = buildManifestEntryFromDir(briefDate);
+    upsertManifestEntry(manifestEntry);
+    logWithTimestamp(`📝 Manifest entry refreshed for ${briefDate}`);
+  } catch (error) {
+    logWithTimestamp(`⚠️  Failed to refresh manifest for ${briefDate}: ${error.message}`);
+  }
 
   state.ingested[folderName] = {
     date: briefDate,
