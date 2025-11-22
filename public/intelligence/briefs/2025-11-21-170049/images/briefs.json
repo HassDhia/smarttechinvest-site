@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "core_tension": "Compressed holiday surge vs durable loyalty: a concentrated decision window where short-term footfall must reveal lasting enrollments",
+    "setting": "Studio table near a large window; matte wood surface, satin packaging samples, printed floorplan overlays; low three-quarter angle, shallow depth",
+    "persona": "Brand owner (operator) and studio producer collaborating, leaning in with focused posture, no screens or literal UI",
+    "action": "Hands arranging limited-edition boxes, sliding schedule cards into a staggered grid while pointing to printed traffic tokens",
+    "urgency_symbol": "Overlapping light bands and converging pulses that narrow toward the frame edge to imply compressed timing",
+    "props": [
+      "pop-up mockup (S1)",
+      "advent-style bundle samples (S2)",
+      "BNPL signage prototype in paper form (S3)",
+      "exclusive-access wristband mockups (S4)",
+      "experiment label cards and footfall tokens"
+    ],
+    "lighting": "Polished editorial with confident highlights, crisp rim light on faces, and clean negative space",
+    "mood": "Precise, collaborative, confident — intentional pause before action",
+    "alt": "Brand operator and studio lead over mockups, overlapping light bands signal compressed holiday timing"
+  },
+  "signal_map": {
+    "structure": "Concentric arcs and lattice of radial paths with labeled nodes (rings for windows, arcs for channels)",
+    "elements": [
+      "node S1: dense urban pop-up window",
+      "node S2: calendar-style bundle sequence",
+      "node S3: BNPL + cash-back pilot node",
+      "node S4: exclusive-perk replacement window",
+      "connective tokens: traffic, email-to-loyalty, AOV"
+    ],
+    "motion": "Subtle pulsing along arcs with converging flow toward a central evaluation node, suggesting staggered windows and overlapping test timing",
+    "palette": "Matte paper and translucent acrylic materials, warm neutral base with confident accent tones (gold, deep teal), soft specular highlights",
+    "alt": "Abstract map of pulsing arcs and labeled nodes for S1–S4, suggesting converging test windows"
+  },
+  "case_studies": [
+    {
+      "scene": "Studio mockup of a 7-day urban pop-up plan (S1) laid out across a matte table with printed street grid overlays",
+      "moment": "Operator placing a pop-up signage card and aligning footfall tokens into a dense cluster to mark high-intent days",
+      "persona": "Brand operations lead and field manager collaborating, hands-on posture, no devices visible",
+      "props": [
+        "miniature storefront mockup",
+        "map printouts and footfall tokens",
+        "email-to-loyalty experiment cards"
+      ],
+      "lighting": "Polished editorial side light, confident highlights on materials, negative space to isolate the cluster",
+      "mood": "Tactical, investigative, urgent in a measured way",
+      "alt": "Operators plan an urban pop-up with mockups and traffic tokens, converging pulses imply short test window"
+    },
+    {
+      "scene": "Creative staging of a calendar-style limited bundle (S2) with compartments and staggered parcels on a clean backdrop",
+      "moment": "Merch manager tucks a branded bundle into a numbered slot while the studio designer marks a split-test label",
+      "persona": "Merch manager and creative director in close collaboration, tactile interaction with product, no screens",
+      "props": [
+        "numbered compartment board",
+        "limited-edition parcels and seals",
+        "A/B test cue cards (discount vs loyalty-gated)"
+      ],
+      "lighting": "Polished editorial top light with soft fill, confident highlights on packaging edges, generous negative space",
+      "mood": "Rhythmic, anticipatory, precise",
+      "alt": "Creative team stages advent-style bundles in staggered compartments, rhythmic pulses imply recurring micro-moments"
+    },
+    {
+      "scene": "Payments and loyalty tabletop rehearsal combining BNPL signage mockups and exclusive-perk wristbands (S3, S4)",
+      "moment": "Payments analyst and store lead compare paper receipts and prototype wristbands, swapping cards that represent different incentive flows",
+      "persona": "Payments analyst paired with store operations lead, collaborative problem-solving posture, no literal UI elements",
+      "props": [
+        "paper receipt stacks and AOV tokens",
+        "BNPL and cash-back promo mockups",
+        "exclusive-perk wristbands and loyalty trial cards"
+      ],
+      "lighting": "Polished editorial with directional rim light, controlled shadows, clean negative space to emphasize objects",
+      "mood": "Analytical, experimental, confidently iterative",
+      "alt": "Payments analyst and store lead stage BNPL and exclusive-perk tests, alternating light bands imply split-window timing"
+    }
+  ]
+}

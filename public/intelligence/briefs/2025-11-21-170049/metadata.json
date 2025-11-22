@@ -1,0 +1,100 @@
+{
+  "generated_at": "2025-11-21T17:09:07.166732",
+  "query": "Holiday Pop-Up to Loyalty Conversion",
+  "time_window": {
+    "start": "2025-11-15",
+    "end": "2025-11-22",
+    "days": 7
+  },
+  "confidence": {
+    "score": 0.85,
+    "display": 0.85,
+    "band": "Medium",
+    "dials": {
+      "strength": "high",
+      "coverage": "medium",
+      "quant_support": "high",
+      "consistency": "high"
+    },
+    "breakdown": {
+      "average_strength": 0.9,
+      "coverage": 0.667,
+      "quant_support": 1.0,
+      "contradiction_penalty": 0.9
+    }
+  },
+  "files": [
+    "intelligence_report.md",
+    "intelligence_report.html",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "signal_map_notes"
+  ],
+  "title": "Holiday Flagship Early-Access & Pop-up Tests",
+  "highlights": [
+    "Direct A/B: Arm A (markdown) vs Arm B (bundle+GWP+loyalty) inside same two-week window to isolate CPA and acquisition effects.",
+    "Unified targets: **10–15%** footfall lift (stretch **≥25%**), **20–30%** early-window share, CPA ≤**0.80×**, QR redemption ≥**5%** of visitors.",
+    "Measurement window: instrument door counts, QR→POS attribution and an 8-week post-event analysis to separate one-time visits from repeat value."
+  ],
+  "executive_summary": "This two-week early-access and pop-up test compares Arm A (legacy markdown) vs Arm B (bundle + GWP + loyalty gating) to measure whether urgency and bundled value convert visits into durable enrollments and sales [^4][^3][^1]. Targets are **10–15%** detectable foot-traffic uplift (stretch ≥**25%** in top markets); early-window transaction share **20–30%** (vs ~12–15% baseline); event CPA ≤**0.80×** baseline; and QR/scan redemption ≥**5%** of footfall. To hit those numbers, teams must **within 30 days finalize cell definitions, instrument door counts and QR→POS links, lock creative and GWP logistics, and assign analytics owners with a control baseline and an 8‑week follow-up** [^4][^3][^1]. ### Quick scan",
+  "top_operator_moves": [
+    "Finalize A/B cells and control definition for the two-week window (Arm A vs Arm B) and secure launch dates.",
+    "Deploy and validate tracking: door counts or proxy, QR→POS linking, and event-level loyalty enrollment attribution.",
+    "Lock creative, bundle/GWP inventory and staffing; assign analytics owners and a reporting cadence for 8-week follow-up."
+  ],
+  "statistics": {
+    "word_count": 3751,
+    "signal_count": 4,
+    "source_count": 4
+  },
+  "read_time_minutes": 19,
+  "length_label": "~19 min read",
+  "qa": {
+    "issues": [
+      "Signal count outside required band",
+      "Read time exceeds target"
+    ],
+    "coverage": 0.667,
+    "quant_support": 1.0,
+    "contradiction_penalty": 0.9,
+    "appendix_count": 1,
+    "scope": {
+      "topic": "Holiday Pop-Up to Loyalty Conversion",
+      "time_window": {
+        "start": "2025-11-15",
+        "end": "2025-11-22",
+        "days": 7
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand↔brand",
+        "brick&mortar↔brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ]
+    },
+    "read_time": 19,
+    "high_quality_signals": true,
+    "observed_quant": true,
+    "tier1_market_signals": true
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07",
+  "social_media_content": {
+    "confidence": 0.85,
+    "teaser_mode": false,
+    "sources_used": "retailtouchpoints.com | msn.com | forbes.com"
+  }
+}

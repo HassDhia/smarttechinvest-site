@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Holiday Flagship Early-Access &amp; Pop-up Tests — Signal-Driven Brand Collaborations</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #05070f;
+            --surface: #0d1220;
+            --surface-2: #161d31;
+            --surface-3: #1f2740;
+            --text: #e9edf5;
+            --muted: #a6b0c2;
+            --heading: #ffffff;
+            --link: #79d3ff;
+            --link-visited: #abb4ff;
+            --border: #2a3553;
+            --chip: #0f172a;
+            --accent: #58f0ff;
+            --danger: #f87171;
+        }
+        :root[data-theme="light"] {
+            --bg: #ffffff;
+            --surface: #f7f9fc;
+            --surface-2: #edf2fb;
+            --surface-3: #dfe7f5;
+            --text: #0b1220;
+            --muted: #4c566f;
+            --heading: #050b18;
+            --link: #0c63d6;
+            --link-visited: #5b2aa8;
+            --border: #d3dbe8;
+            --chip: #ffffff;
+            --accent: #0ea5e9;
+            --danger: #b91c1c;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        a { color: var(--link); text-underline-offset: 0.15em; }
+        a:visited { color: var(--link-visited); }
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: auto;
+            padding: 0.5rem 0.75rem;
+            background: var(--surface-2);
+            border-radius: 0.4rem;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+        .skip-link:focus { left: 1rem; top: 1rem; z-index: 40; }
+        .report-nav {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            backdrop-filter: saturate(180%) blur(12px);
+            background: color-mix(in oklab, var(--bg) 85%, transparent);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 24px;
+        }
+        .report-nav__inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .report-nav__brand {
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--heading);
+            text-decoration: none;
+        }
+        .report-nav__breadcrumb {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+        #theme-toggle {
+            margin-left: auto;
+            border: 1px solid var(--border);
+            background: var(--surface-2);
+            color: var(--text);
+            border-radius: 999px;
+            padding: 4px 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+        #theme-toggle:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 32px 72px;
+        }
+        .report-header h1 {
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            margin: 0.25rem 0 0.5rem;
+            color: var(--heading);
+            line-height: 1.2;
+        }
+        .hook-line {
+            font-size: 1.25rem;
+            color: var(--accent);
+            margin: 0 0 1.25rem;
+            max-width: 68ch;
+        }
+        .overview-label {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin-left: 0.65rem;
+        }
+        .leadership-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.25rem 1.5rem;
+        }
+        .tldr {
+            font-style: italic;
+            color: var(--muted);
+            margin: 0.35rem 0 1rem;
+        }
+        .overview-preview ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .overview-preview li {
+            margin-bottom: 0.4rem;
+        }
+        .overview-preview strong {
+            font-size: 0.9rem;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-right: 0.4rem;
+        }
+        .overview-body {
+            margin-top: 1rem;
+        }
+        .overview-body article + article {
+            margin-top: 0.85rem;
+        }
+        .email-subject {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 0.85rem;
+        }
+        .email-subject code {
+            background: var(--surface-3);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.35rem;
+            border: 1px solid var(--border);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        .meta-card {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 0.9rem;
+            padding: 0.75rem 1rem;
+        }
+        .meta-label {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .meta-value {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--heading);
+        }
+        .meta {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin: 0.35rem 0;
+        }
+        .section-chips {
+            position: sticky;
+            top: 74px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 32px 0 24px;
+            padding: 0.65rem 0;
+            background: color-mix(in oklab, var(--bg) 90%, transparent);
+            z-index: 15;
+        }
+        .section-chips a {
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 0.4rem 0.95rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: var(--text);
+            background: var(--chip);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .section-chips a.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #041014;
+            font-weight: 600;
+        }
+        .content-grid {
+            display: block;
+        }
+        .hero-block img {
+            width: 100%;
+            max-height: 280px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+        .hero-spec {
+            margin: 28px 0 16px;
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+            gap: 18px;
+        }
+        .play-summary {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1rem 1.25rem;
+        }
+        .play-summary h3 {
+            margin: 0 0 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+        .play-cards {
+            display: grid;
+            gap: 0.65rem;
+        }
+        .play-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            border: 1px solid var(--border);
+            border-radius: 0.85rem;
+            padding: 0.65rem 0.85rem;
+            background: var(--surface-3);
+        }
+        .play-card strong {
+            font-size: 0.95rem;
+        }
+        .play-card span {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+        .prereq-box {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1rem 1.25rem;
+        }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin: 0.35rem 0 0.75rem;
+        }
+        .tag {
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            font-size: 0.85rem;
+        }
+        .readfirst {
+            background: color-mix(in oklab, var(--surface-2) 90%, transparent);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.25rem 1.4rem;
+        }
+        .readfirst-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .readfirst-grid ul {
+            padding-left: 1.1rem;
+            margin: 0.6rem 0 0;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            color: #041014;
+            background: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        }
+        .attribution {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: 0.35rem;
+        }
+        section {
+            margin-bottom: 32px;
+        }
+        .section-card {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 24px 28px;
+        }
+        .section-card h2 {
+            margin: 0 0 0.5rem;
+            font-size: 1.35rem;
+            letter-spacing: 0.02em;
+            color: var(--heading);
+        }
+        .section-note {
+            margin: 0 0 1.25rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        .priority-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+            display: grid;
+            gap: 0.75rem;
+        }
+        .priority-list li {
+            background: var(--surface-3);
+            border-radius: 0.8rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+        }
+        .priority-list li strong { display: block; font-size: 1rem; }
+        .move-cards {
+            display: grid;
+            gap: 0.9rem;
+        }
+        .move-card {
+            background: var(--surface-3);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            padding: 1rem 1.25rem;
+        }
+        .move-card .badge {
+            display: inline-block;
+            margin-bottom: 0.2rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+        }
+        .move-card .badge::before {
+            content: none;
+        }
+        .move-card p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        .signal-map {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .signal-card {
+            background: var(--surface-3);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            padding: 16px 20px;
+        }
+        .signal-card span.category {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .signal-card h3 { margin: 0.25rem 0 0.5rem; color: var(--heading); }
+        .operator-move {
+            margin: 0.75rem 0 0.5rem;
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+            background: var(--surface-2);
+            display: inline-block;
+            font-size: 0.85rem;
+        }
+        .signal-data {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-top: 0.75rem;
+        }
+        .data-chip {
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .target-chip,
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            font-size: 0.8rem;
+            background: var(--surface-2);
+            color: var(--muted);
+        }
+        .target-chip::before {
+            content: "🎯";
+            font-size: 0.75rem;
+        }
+        .badge::before {
+            content: "•";
+        }
+        .quant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .quant-card {
+            background: var(--surface-3);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            padding: 18px;
+        }
+        .quant-card strong { font-size: 0.95rem; }
+        .quant-value {
+            display: block;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin: 0.4rem 0;
+        }
+        .measurement-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .measurement-row {
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 0.25rem 1rem;
+            background: var(--surface-3);
+        }
+        .measurement-row summary {
+            cursor: pointer;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-items: baseline;
+            list-style: none;
+        }
+        .measurement-row summary::-webkit-details-marker { display: none; }
+        .measurement-body {
+            margin: 0.75rem 0 0.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+        }
+        .measurement-body span {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .dual-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .pattern-card {
+            background: var(--surface-3);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            padding: 18px;
+        }
+        .activation-card {
+            background: var(--surface-3);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            padding: 18px;
+        }
+        .activation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .activation-card h3 { margin: 0; }
+        .activation-meta {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin: 0.45rem 0;
+        }
+        .activation-card ul {
+            margin: 0.5rem 0 0;
+            padding-left: 1.25rem;
+        }
+        .activation-card details {
+            margin-top: 0.65rem;
+            border-top: 1px solid var(--border);
+            padding-top: 0.5rem;
+        }
+        .activation-card summary {
+            cursor: pointer;
+            color: var(--link);
+        }
+        .risk-card, .outlook-card {
+            background: var(--surface-3);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            padding: 18px;
+        }
+        .risk-card details {
+            margin-top: 0.65rem;
+        }
+        .risk-card summary {
+            cursor: pointer;
+            color: var(--link);
+        }
+        .plays-preview {
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .plays-preview ul {
+            margin: 0.4rem 0 0;
+            padding-left: 1.1rem;
+        }
+        details.collapsible {
+            border-top: 1px solid var(--border);
+            margin-top: 0.85rem;
+            padding-top: 0.6rem;
+        }
+        details.collapsible summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--link);
+            list-style: none;
+        }
+        .spec-line {
+            margin: 0.4rem 0 0.4rem;
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+        .operator-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        details.collapsible summary::marker,
+        details.collapsible summary::-webkit-details-marker {
+            display: none;
+        }
+        details.collapsible.small summary {
+            font-weight: 500;
+        }
+        .risk-label { font-weight: 600; font-size: 1rem; }
+        .outlook-card strong { display: block; margin-bottom: 0.25rem; }
+        .sources ol { line-height: 1.4; }
+        .meta-note {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+        @media (max-width: 960px) {
+            .hero-spec {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            .report-nav__inner { flex-wrap: wrap; }
+            #theme-toggle { margin-left: 0; }
+            .page { padding: 32px 18px 60px; }
+        }
+        @media print {
+            :root { color-scheme: light; }
+            body { background: #ffffff; color: #000000; }
+            .report-nav, .section-chips, #theme-toggle { display: none; }
+            .section-card { background: #ffffff; border-color: #cccccc; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#read-first" class="skip-link">Skip to summary</a>
+    <header class="report-nav" role="banner">
+        <nav class="report-nav__inner" aria-label="Global">
+            <a class="report-nav__brand" href="/" aria-label="STI home">STI</a>
+            <div class="report-nav__breadcrumb" aria-label="Breadcrumb">
+                <span>Intelligence</span>
+                <span>·</span>
+                <span>Holiday Pop-Up to Loyalty Conversion</span>
+                
+                <span>·</span>
+                <span>2025-11-15 → 2025-11-22</span>
+                
+            </div>
+            <button id="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle theme">
+                <span aria-hidden="true">🌓</span>
+                <span class="theme-toggle__label">Dark</span>
+            </button>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="page">
+            <header class="report-header">
+                <h1>Holiday Flagship Early-Access &amp; Pop-up Tests</h1>
+                
+                <p class="hook-line">Direct A/B: Arm A (markdown) vs Arm B (bundle+GWP+loyalty) inside same two-week window to isolate CPA and acquisition effects.</p>
+                
+                <div class="meta-grid">
+                    
+                    <div class="meta-card">
+                        <span class="meta-label">Read time</span>
+                        <span class="meta-value">~19 min</span>
+                    </div>
+                    
+                    <div class="meta-card">
+                        <span class="meta-label">Window</span>
+                        <span class="meta-value">2025-11-15 → 2025-11-22</span>
+                    </div>
+                    
+                    <div class="meta-card">
+                        <span class="meta-label">Confidence</span>
+                        <span class="meta-value">Medium</span>
+                    </div>
+                    
+                    <div class="meta-card">
+                        <span class="meta-label">Region</span>
+                        <span class="meta-value">US</span>
+                    </div>
+                    
+                </div>
+            </header>
+
+            
+
+            
+            <section class="hero-block">
+                <img src="images/hero_holiday_pop_up_to_loyalty_conv.png" alt="Brand operator and studio lead over mockups, overlapping light bands signal compressed holiday timing" />
+                
+                <div class="attribution">Image generated with OpenAI gpt-image-1-mini</div>
+                
+            </section>
+            
+
+            <div class="section-chips" aria-label="Navigate sections">
+                
+                <a href="#activation">Plays</a>
+                <a href="#tests">Metrics</a>
+                <a href="#risks">Risks</a>
+                <a href="#signals">Signals</a>
+                <a href="#appendix">Appendix</a>
+            </div>
+
+            
+
+            <section id="read-first" class="section-card summary-block readfirst" data-section="read-first">
+                <h2>Read This First</h2>
+                
+                
+                <div class="readfirst-grid">
+                    <div>
+                        <h3>Why this window is investable</h3>
+                        <ul>
+                            
+                            <li>Unified targets: **10–15%** footfall lift (stretch **≥25%**), **20–30%** early-window share, CPA ≤**0.80×**, QR redemption ≥**5%** of visitors.</li>
+                            
+                            <li>Measurement window: instrument door counts, QR→POS attribution and an 8-week post-event analysis to separate one-time visits from repeat value.</li>
+                            
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Targets</h3>
+                        <ul>
+                            
+                            <li>Footfall uplift: design to detect 10–15% (stretch ≥25%)</li>
+                            
+                            <li>Early-window share: move from 12–15% baseline to 20–30% of transactions</li>
+                            
+                            <li>Event CPA ≤0.80× baseline with QR redemption ≥5% within the window</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="activation" class="section-card" data-section="activation">
+                <h2>Activation Plays</h2>
+                
+                <div class="activation-grid">
+                    
+                    <div class="activation-card">
+                        <h3>Urban mini-burst pop-up (7-day holiday test)</h3>
+                        <p>Brand to run a 7-day urban pop-up from Nov 20–26 measuring email-to-loyalty conversion rate and incremental store visits versus baseline over an 8-week post-event window.</p>
+                        <div class="meta">
+                            Owner: Head of Retail Operations · Partner: Brand / Local Events Team · Timing: pilot
+                        </div>
+                        <details class="collapsible small">
+                            <summary>Operator playbook and outreach cadence</summary>
+                            
+                            <div class="meta">Thresholds: {&#39;primary_success&#39;: &#39;Event CPA ≤ 0.8x baseline AND redemption ≥ 15% (mini-burst guardrail).&#39;, &#39;measurement_window&#39;: &#39;Incremental store visits and email-to-loyalty conversion measured vs. baseline over an 8-week post-event period.&#39;}</div>
+                            
+                            
+                            <div class="meta">Placement options: Flagship window · Downtown kiosk · Civic pop-up (mall or plaza)</div>
+                            
+                            
+                            <div class="meta">Prerequisites: Local permits and short-term retail insurance · POS or mobile checkout and loyalty sign-up integration · Email segmentation and UTM tracking · Staffing plan and on-site training · Daily footfall and conversion attribution plan</div>
+                            
+                            
+                            <div class="meta">Fit: Brands with local retail capacity looking to rapidly test whether in-person urgency converts email traffic into durable loyalty sign-ups and incremental visits. · Not for: Operators without the ability to instrument store-level attribution or to staff a short-term retail build-out.</div>
+                            
+                            <div class="meta">
+                                Persona: Retail Events Manager · Collab: brand↔store · Zero new SKUs: Yes · Ops drag: high
+                            </div>
+                            
+                            
+                            <div class="meta">Target map:</div>
+                            <ul>
+                                
+                                <li>Head of Retail Operations (DTC Brand): Pre-holiday concentrated window to validate in-person urgency converts email traffic to loyalty members.</li>
+                                
+                                <li>CRM Manager (Marketing/CRM): Immediate opportunity to drive high-intent email audience into loyalty within a compressible test window.</li>
+                                
+                                <li>District/Store Manager (Store Network): Test staffing and local merchandising to spot high-value days in holiday surge.</li>
+                                
+                            </ul>
+                            
+                            
+                            <div class="meta">Outreach cadence:</div>
+                            <ul>
+                                
+                                <li>Day Day 0 — Pop-up opens — VIP email invite: Announce the pop-up to segmented email list highlighting exclusive in-person perks tied to loyalty sign-up. (CTA: Send 1-page runbook to merchandising, store ops, and finance)</li>
+                                
+                                <li>Day Day 3 — Local social + SMS push: Drive FOMO with local social posts and SMS showing live footfall and limited inventory calls-to-action. (CTA: Book 30-minute readout with finance and ops to review guardrails)</li>
+                                
+                                <li>Day Day 14 — Post-event conversion and nurture: Follow up attendees and nearby subscribers with outcome-driven messaging (what they missed + online redemption for members). (CTA: Deliver scale/kill decision memo to executive sponsor)</li>
+                                
+                            </ul>
+                            
+                        </details>
+                    </div>
+                    
+                    <div class="activation-card">
+                        <h3>Limited-edition calendar-style bundle A/B acquisition test (Dec 1–24)</h3>
+                        <p>Brand to launch a limited-edition, calendar-style bundle during Dec 1–24 and A/B test two acquisition hooks (discounted bundle vs. loyalty-gated bundle), measuring new-customer rate and cost-per-loyalty-signup within 8 weeks.</p>
+                        <div class="meta">
+                            Owner: Head of Product / Merchandising · Partner: Creative Studio &amp; CRM Acquisition Team · Timing: 6-week
+                        </div>
+                        <details class="collapsible small">
+                            <summary>Operator playbook and outreach cadence</summary>
+                            
+                            <div class="meta">Thresholds: {&#39;acquisition_success&#39;: &#39;New-customer rate increases while cost-per-loyalty-signup ≤ acceptable acquisition CPA; staged discount success if margin per order ≥ baseline minus 100 bps and 90-day repeat ≥ baseline.&#39;, &#39;measurement_window&#39;: &#39;New-customer rate and cost-per-loyalty-signup measured over an 8-week post-campaign window.&#39;}</div>
+                            
+                            
+                            <div class="meta">Placement options: E‑commerce homepage and product detail pages · Email calendar drops and owned social</div>
+                            
+                            
+                            <div class="meta">Prerequisites: E‑commerce bundling capability and SKU mapping · A/B testing infrastructure and tracking · Loyalty gating mechanics and offer code support · Inventory allocation and fulfillment plan</div>
+                            
+                            
+                            <div class="meta">Fit: Brands looking to test scarcity-driven bundle formats and compare direct discount vs. loyalty-gated acquisition hooks during the holiday calendar. · Not for: Operators without bundling capability, A/B test infrastructure, or the ability to track new-customer attribution post-purchase.</div>
+                            
+                            <div class="meta">
+                                Persona: Product Marketing Manager · Collab: brand↔studio · Zero new SKUs: No · Ops drag: medium
+                            </div>
+                            
+                            
+                            <div class="meta">Target map:</div>
+                            <ul>
+                                
+                                <li>Head of Product (DTC Brand): Holiday period with calendar mechanics exposes whether scarcity-driven bundles attract net-new customers.</li>
+                                
+                                <li>Acquisition Lead (Acquisition/CRM): Need to compare discounted vs. loyalty-gated hooks for efficient customer acquisition ahead of year-end planning.</li>
+                                
+                                <li>Revenue/Finance Analyst (Finance): Require margin and repeat-purchase guardrails to protect unit economics from limited-time bundle offers.</li>
+                                
+                            </ul>
+                            
+                            
+                            <div class="meta">Outreach cadence:</div>
+                            <ul>
+                                
+                                <li>Day Day -14 — Creative and test setup: Deliver creative variants and configure A/B test across channels with tracking and segment definitions. (CTA: Send 1-page runbook to merchandising, store ops, and finance)</li>
+                                
+                                <li>Day Day 0 — Bundle launch — A/B email and homepage: Deploy split-test: discounted bundle vs. loyalty-gated bundle to matched audiences; monitor early signals. (CTA: Book 30-minute readout with finance and ops to review guardrails)</li>
+                                
+                                <li>Day Day 21 — Mid-campaign read and reallocation: Analyze new-customer rate and cost-per-loyalty-signup; shift budget to winning acquisition hook while preserving margin guardrails. (CTA: Deliver scale/kill decision memo to executive sponsor)</li>
+                                
+                            </ul>
+                            
+                        </details>
+                    </div>
+                    
+                    <div class="activation-card">
+                        <h3>BNPL + cash-back promotion pilot (4-week holiday window)</h3>
+                        <p>Brand to pilot a BNPL + cash-back-app promotion during a 4-week holiday window (e.g., Nov 22–Dec 20) and measure percent of transactions using BNPL, average order value (AOV), and effective discount dollars saved versus a standard percent-off control within 8 weeks.</p>
+                        <div class="meta">
+                            Owner: Head of Payments / Finance · Partner: Payments Partner &amp; Growth · Timing: pilot
+                        </div>
+                        <details class="collapsible small">
+                            <summary>Operator playbook and outreach cadence</summary>
+                            
+                            <div class="meta">Thresholds: {&#39;adoption_metrics&#39;: &#39;Percent of transactions using BNPL and AOV uplift vs. baseline measured over pilot.&#39;, &#39;economics_guardrail&#39;: &#39;Compare effective discount dollars saved against standard percent-off control; staged discount success if margin per order ≥ baseline minus 100 bps.&#39;}</div>
+                            
+                            
+                            <div class="meta">Placement options: Online checkout flow · In-store POS activation (if POS supports BNPL)</div>
+                            
+                            
+                            <div class="meta">Prerequisites: BNPL and cash-back partner contracts and sandbox · Checkout and POS integration support · Analytics to measure BNPL take-rate, AOV, and effective discount dollars · Legal review of promotional terms</div>
+                            
+                            
+                            <div class="meta">Fit: Operators with digital checkout flexibility who want to test payment incentives for AOV and conversion lift versus traditional discounts. · Not for: Operators that cannot integrate third-party payment partners or who lack granular checkout analytics.</div>
+                            
+                            <div class="meta">
+                                Persona: Payments Operations Lead · Collab: brand↔payments · Zero new SKUs: Yes · Ops drag: medium
+                            </div>
+                            
+                            <div class="meta">Additional variants:</div>
+                            <ul>
+                                
+                                <li>Replace weekend sitewide promo with exclusive early-access + loyalty trial (10-day test) — Retailer/Brand to replace a weekend 20% sitewide promo with an exclusive pop-up perk (early access + loyalty trial) during a 10-day test window (e.g., Nov 20–29) and track loyalty enrollments per 1,000 visitors and 30-day repeat purchase rate. — pilot</li>
+                                
+                                <li>Email-to-loyalty conversion instrumentation sprint — Brand to run a 7-day urban pop-up from Nov 20–26 measuring email-to-loyalty conversion rate and incremental store visits versus baseline over an 8-week post-event window. — immediate</li>
+                                
+                                <li>Creative kit for in-person holiday activations — Brand to run a 7-day urban pop-up from Nov 20–26 measuring email-to-loyalty conversion rate and incremental store visits versus baseline over an 8-week post-event window. — immediate</li>
+                                
+                                <li>Staff-driven loyalty trial &amp; incentive during activations — Retailer/Brand to replace a weekend 20% sitewide promo with an exclusive pop-up perk (early access + loyalty trial) during a 10-day test window (e.g., Nov 20–29) and track loyalty enrollments per 1,000 visitors and 30-day repeat purchase rate. — pilot</li>
+                                
+                            </ul>
+                            
+                            
+                            <div class="meta">Target map:</div>
+                            <ul>
+                                
+                                <li>Head of Payments (Ecommerce Brand): Holiday demand and higher AOV potential provide a strong signal period to test alternative payment mechanics.</li>
+                                
+                                <li>Growth/Product Manager (Growth): Opportunity to measure behavioral lift (AOV) vs. cost of promotion relative to percent-off controls.</li>
+                                
+                                <li>Revenue Analyst (Finance/Operations): Immediate need to understand margin impact and effective discount dollars for holiday offers.</li>
+                                
+                            </ul>
+                            
+                            
+                            <div class="meta">Outreach cadence:</div>
+                            <ul>
+                                
+                                <li>Day Day -7 — Integration &amp; QA: Complete BNPL and cash-back partner integrations; end-to-end checkout QA and analytics tagging. (CTA: Send 1-page runbook to merchandising, store ops, and finance)</li>
+                                
+                                <li>Day Day 0 — Pilot live — checkout banners + email: Announce payment option and promotional cash-back to site visitors and prior purchasers; monitor BNPL take rate and AOV in real time. (CTA: Book 30-minute readout with finance and ops to review guardrails)</li>
+                                
+                                <li>Day Day 28 — Pilot wrap — economics &amp; recommendation: Deliver pilot outcome comparing BNPL adoption, AOV lift, and effective discount dollars vs. percent-off control and recommend next steps. (CTA: Deliver scale/kill decision memo to executive sponsor)</li>
+                                
+                            </ul>
+                            
+                        </details>
+                    </div>
+                    
+                </div>
+                <p class="meta-note">Want this play translated for your brand? → /collab-lab</p>
+            </section>
+            
+
+            
+            <section id="signals" class="section-card" data-section="signals">
+                <h2>Signals to Act On</h2>
+                <div class="signal-map">
+                    
+                    <article class="signal-card">
+                        <span class="category">Market</span>
+                        <h3>Short, Early-Season Pop-Ups Capture Holiday Momentum</h3>
+                        <p>Retail trade coverage of 2025 holiday pop-ups shows large-format operators using compact, high-traffic pop-ups in major U.S. cities to capture early-season shoppers and PR attention. These activations function less as full-scale stores and more as traffic drivers and discovery funnels that can rapidly convert walk-ins into loyalty relationships.</p>
+                        
+                        <div class="operator-move">Brand (owner) to run a 7-day urban pop-up from Nov 20–26 measuring email-to-loyalty conversion rate and incremental store visits versus baseline over an 8-week post-event window.</div>
+                        
+                        <div class="signal-data">
+                            <span class="data-chip">Strength 0.90</span>
+                            <span class="data-chip">US fit 0.95</span>
+                            
+                            <span class="data-chip">Sources 4</span>
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="signal-card">
+                        <span class="category">Cultural</span>
+                        <h3>Advent-Style Limited Editions Drive Gift Discovery</h3>
+                        <p>Advent-style calendars and limited-edition multi-item formats are being adopted across categories as a compact, collectible platform for limited drops, enabling brands to create daily-reveal engagement and cross-brand discovery. These formats encourage incremental purchases and make smaller-ticket trial items feel premium, improving acquisition efficiency for loyalty programs.</p>
+                        
+                        <div class="operator-move">Brand (owner) to launch a limited-edition, calendar-style bundle during Dec 1–24 and A/B test two acquisition hooks (discounted bundle vs. loyalty-gated bundle), measuring new-customer rate and cost-per-loyalty-signup within 8 weeks.</div>
+                        
+                        <div class="signal-data">
+                            <span class="data-chip">Strength 0.88</span>
+                            <span class="data-chip">US fit 0.90</span>
+                            
+                            <span class="data-chip">Sources 3</span>
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="signal-card">
+                        <span class="category">Technology</span>
+                        <h3>BNPL and Cash-Back Partnerships Change Discounting Math</h3>
+                        <p>Reporting during the 2025 holiday period highlights the outsized role of BNPL and cash-back apps in consumers&#39; budgeting and purchase timing, which reduces pure percent-off sensitivity and shifts value to payment flexibility and rebate offers. That dynamic lets brands redesign promotional math — trading headline percent discounts for payment options or cash-back partnerships that preserve margin while maintaining shopper conversion.</p>
+                        
+                        <div class="operator-move">Brand (owner) to pilot a BNPL + cash-back-app promotion during a 4-week holiday window (e.g., Nov 22–Dec 20) and measure percent of transactions using BNPL, average order value (AOV), and effective discount dollars saved versus a standard percent-off control within 8 weeks.</div>
+                        
+                        <div class="signal-data">
+                            <span class="data-chip">Strength 0.92</span>
+                            <span class="data-chip">US fit 0.95</span>
+                            
+                            <span class="data-chip">Sources 1</span>
+                            
+                        </div>
+                    </article>
+                    
+                    <article class="signal-card">
+                        <span class="category">Behavioral</span>
+                        <h3>Experience-First Pop-Ups Convert Better Than Deeper Discounts</h3>
+                        <p>Comparisons of major 2025 holiday pop-ups indicate that experiential elements and exclusivity (limited SKUs, collaborations) create higher loyalty-capture rates than broad sitewide discounts. Brands are increasingly using ephemeral experiences and exclusives to collect emails and loyalty enrollments, then leveraging those relationships for long-term retention rather than immediate margin-heavy markdowns.</p>
+                        
+                        <div class="operator-move">Retailer/Brand (owner) to replace a weekend 20% sitewide promo with an exclusive pop-up perk (early access + loyalty trial) during a 10-day test window (e.g., Nov 20–29) and track loyalty enrollments per 1,000 visitors and 30-day repeat purchase rate.</div>
+                        
+                        <div class="signal-data">
+                            <span class="data-chip">Strength 0.90</span>
+                            <span class="data-chip">US fit 0.90</span>
+                            
+                            <span class="data-chip">Sources 4, 3</span>
+                            
+                        </div>
+                    </article>
+                    
+                </div>
+                
+                <div class="hero-block" style="margin-top:1rem;">
+                    <img src="images/section_signal_map_holiday_pop_up_to_loyalty_conv.png" alt="Abstract map of pulsing arcs and labeled nodes for S1–S4, suggesting converging test windows" />
+                </div>
+                
+            </section>
+            
+
+            
+            <section id="data-anchors" class="section-card" data-section="data-anchors">
+                <h2>Data Anchors</h2>
+                <div class="quant-grid">
+                    
+                    <div class="quant-card">
+                        <strong>Pop-up foot-traffic uplift vs baseline</strong>
+                        
+                        <span class="quant-value">10.0–15.0 % lift vs baseline</span>
+                        
+                        <div class="meta">Status: observed</div>
+                        
+                        <div class="meta">Signals: S1, S4</div>
+                        
+                        
+                        <div class="meta">Sources: 4</div>
+                        
+                    </div>
+                    
+                    <div class="quant-card">
+                        <strong>Early-window transaction share (baseline)</strong>
+                        
+                        <span class="quant-value">12.0–15.0 % of holiday transactions</span>
+                        
+                        <div class="meta">Status: observed</div>
+                        
+                        <div class="meta">Signals: S1, S2, S4</div>
+                        
+                        
+                        <div class="meta">Sources: 3, 4</div>
+                        
+                    </div>
+                    
+                    <div class="quant-card">
+                        <strong>QR / scan redemption target</strong>
+                        
+                        <span class="quant-value">5.0–5.0 % of footfall</span>
+                        
+                        <div class="meta">Status: plan</div>
+                        
+                        <div class="meta">Signals: S1, S4</div>
+                        
+                        
+                        <div class="meta">Sources: 4</div>
+                        
+                    </div>
+                    
+                </div>
+            </section>
+            
+
+            
+            <section id="tests" class="section-card" data-section="tests">
+                <h2>Tests & Targets</h2>
+                
+                <p class="spec-line">Footfall +10–15% (stretch ≥25%) · Early window share 20–30% · Event CPA ≤0.80× baseline · QR redemption ≥5% within 30 days</p>
+                <details class="collapsible">
+                    <summary>Metrics and thresholds for the holiday test (footfall uplift, early-window share, event CPA, QR redemption).</summary>
+                    <div class="measurement-grid">
+                        
+                        <details class="measurement-row">
+                            <summary>
+                                <strong>Event CPA</strong>
+                                <span class="target-chip">CPA ≤ 0.80× baseline (compare event CPA vs running channel baseline over same seasonal window)</span>
+                                <span class="badge">Owner Performance marketing</span>
+                                <span class="badge">Window 2025-11-15 to 2025-11-22</span>
+                            </summary>
+                            <div class="measurement-body">
+                                <div>
+                                    <span>Owner</span>
+                                    <p>Performance marketing</p>
+                                </div>
+                                <div>
+                                    <span>Timeframe</span>
+                                    <p>2025-11-15 to 2025-11-22</p>
+                                </div>
+                                
+                                <div>
+                                    <span>Status</span>
+                                    <p>plan</p>
+                                </div>
+                                
+                                
+                                <div>
+                                    <span>Notes</span>
+                                    <p>Measure channel-level CPA (paid social/search + OOH attribution) and include offline-to-online attribution credit for pop-up-driven signups.</p>
+                                </div>
+                                
+                            </div>
+                        </details>
+                        
+                        <details class="measurement-row">
+                            <summary>
+                                <strong>Buyer activity share vs promo intensity</strong>
+                                <span class="target-chip">Increase early-window transactions to 20–30% of event holiday transactions while keeping promo-SKU share at or below LY share and average discount depth ≤ LY</span>
+                                <span class="badge">Owner Merchandise + Analytics</span>
+                                <span class="badge">Window 2025-11-15 to 2025-11-22</span>
+                            </summary>
+                            <div class="measurement-body">
+                                <div>
+                                    <span>Owner</span>
+                                    <p>Merchandise + Analytics</p>
+                                </div>
+                                <div>
+                                    <span>Timeframe</span>
+                                    <p>2025-11-15 to 2025-11-22</p>
+                                </div>
+                                
+                                <div>
+                                    <span>Status</span>
+                                    <p>plan</p>
+                                </div>
+                                
+                                
+                                <div>
+                                    <span>Notes</span>
+                                    <p>Pair: (a) Buyer activity share = % of transactions in first 48–72h; (b) Promo intensity = % of sold SKUs on promo + avg discount $ per transaction. This shows &#39;more buyers without flooding discounts.&#39;</p>
+                                </div>
+                                
+                            </div>
+                        </details>
+                        
+                        <details class="measurement-row">
+                            <summary>
+                                <strong>High-value windows &amp; discounting math</strong>
+                                <span class="target-chip">Detect high‑value windows = first 48–72 hours and pre-weekend spikes; track AOV uplift, margin impact per transaction, and effective discount dollars vs alternative offers (BNPL/cashback/loyalty perks)</span>
+                                <span class="badge">Owner Strategy / Analytics</span>
+                                <span class="badge">Window 2025-11-15 to 2025-11-22 (primary) with 30-day post-event margin and repeat checks</span>
+                            </summary>
+                            <div class="measurement-body">
+                                <div>
+                                    <span>Owner</span>
+                                    <p>Strategy / Analytics</p>
+                                </div>
+                                <div>
+                                    <span>Timeframe</span>
+                                    <p>2025-11-15 to 2025-11-22 (primary) with 30-day post-event margin and repeat checks</p>
+                                </div>
+                                
+                                <div>
+                                    <span>Status</span>
+                                    <p>plan</p>
+                                </div>
+                                
+                                
+                                <div>
+                                    <span>Notes</span>
+                                    <p>Answering must-asks: (1) When are the high-value windows — first 48–72 hours of the event (plus pre-weekend peaks). (2) What changes discounting math — replace sitewide % off with targeted mechanics (loyalty-gated early access, BNPL/cashback offsets, experiential perks) and measure effective discount $/buyer and margin per order to ensure acquisition isn&#39;t driven by deeper blanket discounts.</p>
+                                </div>
+                                
+                            </div>
+                        </details>
+                        
+                    </div>
+                    <p class="meta-note">Buyer activity share in the early window is tracked separately from SKU promotion share so operators can grow participation without flooding SKUs with discounts.</p>
+                </details>
+            </section>
+            
+
+            
+            <section id="context" class="section-card" data-section="context">
+                <p class="operator-label">For operators</p>
+                <h2>Operator Context</h2>
+                <div class="dual-column">
+                    
+                    <article class="pattern-card">
+                        <strong>Market timing (pop-up conversion lift)</strong>
+                        <p>A short urban pop-up running Nov 20–26 is a concentrated test of whether in-person urgency converts existing email traffic into durable loyalty enrollments and incremental store visits over an 8‑week post-event window, letting operators separate one-time footfall from persistent customer value [^4]. Timing that overlaps the pre-Black Friday momentum compresses high-intent behavior into measurable short windows, which helps identify the true high-value days inside a holiday surge [^4]. There is no published quant anchor in the cited coverage, so operators should treat expected uplifts as unknown and rely on control-baseline comparisons rather than point forecasts [^4].</p>
+                        <div class="meta">Instrument email-to-loyalty conversion rate, incremental store visits vs baseline (8-week), daily footfall and channel source attribution for Nov 20–26.</div>
+                    </article>
+                    
+                    <article class="pattern-card">
+                        <strong>Cultural cadence (limited-edition calendar test)</strong>
+                        <p>A calendar-style limited bundle running Dec 1–24 creates recurring micro-moments that can be A/B tested between discounted vs loyalty-gated acquisition hooks to reveal whether scarcity-driven formats attract net-new customers or primarily reallocate existing spend [^3]. Measuring new-customer rate and cost-per-loyalty-signup over an 8-week window shows whether the bundle format changes the acceptable acquisition spend per customer versus standard promos [^3]. Because the sources do not provide explicit quant anchors for expected conversion lift, treat the test as a behavioral experiment and monitor cohort-level retention to judge long-term value [^3].</p>
+                        <div class="meta">A/B test discounted bundle vs loyalty-gated bundle; instrument new-customer rate, cost-per-loyalty-signup, and 8-week retention cohorts by acquisition arm.</div>
+                    </article>
+                    
+                    <article class="pattern-card">
+                        <strong>Payments signal (BNPL + cash-back impact on AOV)</strong>
+                        <p>Piloting BNPL plus cash-back promotions across a 4-week holiday window directly alters discount math by shifting effective price perception and can materially raise percent of transactions using BNPL and average order value (AOV), which in turn changes the true dollar cost of the promotion versus a percent-off control [^1]. Capturing percent-BNPL penetration, AOV delta, and effective discount dollars saved versus the standard percent-off arm allows operators to translate behavioral uplift into margin impact and acquisition efficiency [^1]. The source coverage lacks explicit quant anchors for expected penetration, so prioritize measuring BNPL share and AOV uplift as your primary quantitative anchors during the pilot [^1].</p>
+                        <div class="meta">Instrument percent of transactions using BNPL, AOV by payment method, and calculate effective discount dollars saved vs percent-off control (track margin and CAC changes).</div>
+                    </article>
+                    
+                    <article class="pattern-card">
+                        <strong>Behavioral substitution (exclusive perk vs sitewide discount)</strong>
+                        <p>Replacing a weekend 20% sitewide promo with an exclusive pop-up perk (early access + loyalty trial) tests whether exclusivity drives higher-quality enrollments and repeat purchase rates rather than broad, low-margin discounting [^4][^3]. Track loyalty enrollments per 1,000 visitors and 30-day repeat purchase to see if the exclusive experience reduces churn and lowers long‑term discount dependency compared with blanket sitewide markdowns [^4][^3]. The combined signals show whether operators can reallocate discount budget into experiential or gated offers that preserve unit economics while still capturing holiday demand [^4][^3].</p>
+                        <div class="meta">Swap the weekend sitewide percent-off with the pop-up perk; instrument loyalty enrollments per 1,000 visitors, 30-day repeat purchase rate, and compare unit margin vs historical sitewide weekends.</div>
+                    </article>
+                    
+                </div>
+            </section>
+            
+
+            
+            <section id="patterns" class="section-card" data-section="patterns">
+                <h2>Pattern Fuel</h2>
+                <div class="dual-column">
+                    
+                    <article class="pattern-card">
+                        <strong>Holiday urban pop-ups as measurable acquisition funnels</strong>
+                        <p>Then: Retailers like Amazon and Primark used short holiday pop-ups in NYC as high-impact brand moments; Now: operators can treat 7–10 day urban pop-ups as direct-acquisition experiments that drive email-to-loyalty conversion and incremental store visits instead of only experiential theater.</p>
+                        <div class="meta">Operator leap: Run a 7-day urban pop-up (e.g., Nov 20–26) and A/B test standard signage vs. an explicit loyalty-enrollment funnel, measuring email-to-loyalty conversion rate and incremental store visits over an 8-week post-event window.</div>
+                    </article>
+                    
+                    <article class="pattern-card">
+                        <strong>Advent-calendar limited-edition bundles as gated acquisition hooks</strong>
+                        <p>Then: Advent calendars evolved into a widely adopted limited-edition platform for brands to bundle discovery and urgency; Now: calendar-style bundles can be used as time-boxed acquisition mechanics (discounted vs. loyalty-gated) during Dec 1–24 to drive new-customer acquisition.</p>
+                        <div class="meta">Operator leap: Launch a limited-edition Dec 1–24 calendar-style bundle and A/B test two acquisition hooks (discounted bundle vs. loyalty-gated bundle), tracking new-customer rate and cost-per-loyalty-signup across an 8-week window.</div>
+                    </article>
+                    
+                    <article class="pattern-card">
+                        <strong>BNPL + cash-back promotions change discounting math and lift AOV</strong>
+                        <p>Then: BNPL and cash-back apps have shifted holiday spending by improving affordability and altering consumer sensitivity to headline discounts; Now: mixing BNPL with cash-back promotions can increase average order value and change the effective dollars-of-discount calculus compared with flat percent-off offers.</p>
+                        <div class="meta">Operator leap: Pilot a 4-week BNPL + cash-back promotion (e.g., Nov 22–Dec 20) and measure percent of transactions using BNPL, AOV, and effective discount dollars saved versus a standard percent-off control to quantify the new discounting math.</div>
+                    </article>
+                    
+                    <article class="pattern-card">
+                        <strong>Hyper-local limited runs drive community evangelism</strong>
+                        <p>Then: Local food favorites (e.g., Iowa recipes) are zealously defended and drive word-of-mouth because of their regional authenticity; Now: regionally tailored, limited-run pop-up offerings can generate the same kind of community-driven advocacy and higher conversion when framed as scarce, local exclusives.</p>
+                        <div class="meta">Operator leap: Test a weekend pop-up with region-specific limited-run items and compare loyalty enrollments per 1,000 visitors and 30-day repeat purchase rates to a neutral/generic offering to validate local-authenticity uplift.</div>
+                    </article>
+                    
+                </div>
+            </section>
+            
+
+            
+            <section id="outcomes" class="section-card" data-section="outcomes">
+                <h2>Operator Outcomes</h2>
+                <div class="dual-column">
+                    
+                    <article class="pattern-card">
+                        <strong>Capture short, high-value holiday windows with urban pop-ups</strong>
+                        <p>Run a focused 7-day urban pop-up during the Nov 20–26 high-value week (Cyber/Thanksgiving window) to drive measurable loyalty conversion and incremental store visits. Treat the pop-up as an acquisition engine: require email capture with a loyalty opt-in test cell, measure email-to-loyalty conversion and incremental store visits versus baseline over an 8-week post-event window, and use those signals to forecast cohort LTV. This is a fast, low-risk way to concentrate spend where footfall and press lift are highest and to quantify the acquisition yield of experiential tactics [4].</p>
+                        <div class="meta">Impact: Loyalty signups, incremental store visits → customer acquisition and throughput</div>
+                    </article>
+                    
+                    <article class="pattern-card">
+                        <strong>Use limited-edition calendar-style bundles to gate and lift high-intent acquisition</strong>
+                        <p>Launch a Dec 1–24 limited-edition, calendar-style bundle and A/B test two acquisition hooks—discounted bundle vs. loyalty-gated bundle—tracking new-customer rate and cost-per-loyalty-signup over an 8-week window. Calendar bundles concentrate daily engagement and create urgency; gating one variant behind loyalty lets teams measure uplift in paid vs. organic acquisition and the marginal value of a loyalty sign-up versus a coupon redemptions [3].</p>
+                        <div class="meta">Impact: New-customer rate and cost-per-loyalty-signup → acquisition efficiency and long-term retention</div>
+                    </article>
+                    
+                    <article class="pattern-card">
+                        <strong>Replace broad sitewide discounts with exclusive pop-up perks to protect margin</strong>
+                        <p>Swap a weekend 20% sitewide promo for a 10-day exclusive pop-up perk (early access + loyalty trial) and track loyalty enrollments per 1,000 visitors and 30-day repeat purchase rate. This shifts spend from blanket percent-off discounting to experiential and membership-driven value, reducing headline discount pressure and improving incremental margin per converted customer while preserving throughput for holiday demand [4][3].</p>
+                        <div class="meta">Impact: Incremental margin and margin per transaction (reduced discount leakage) → improved profitability</div>
+                    </article>
+                    
+                    <article class="pattern-card">
+                        <strong>Pilot BNPL + cash-back offers to raise AOV while managing effective discounting</strong>
+                        <p>Run a 4-week BNPL + cash-back promotion (e.g., Nov 22–Dec 20) and measure percent of transactions using BNPL, AOV, and effective discount dollars versus a standard percent-off control over an 8-week window. BNPL and cash-back partners drive higher AOV and convert budget-conscious shoppers without resorting to deeper percent-off across the catalog; measure the net effective discount dollars and margin impact to decide scale-up versus traditional couponing [1].</p>
+                        <div class="meta">Impact: Average order value and effective discount dollars → AOV lift and controlled margin impact</div>
+                    </article>
+                    
+                </div>
+            </section>
+            
+
+            
+            <section id="risks" class="section-card" data-section="risks">
+                <h2>Risk Radar</h2>
+                
+                
+                <p class="spec-line">Risks at a glance: Short-lived pop-up lift (no durable loyalty) · Limited-edition bundle cannibalizes existing customers / high acquisition cost · BNPL + cashback pilot erodes margins and increases fraud/chargebacks · Replacing sitewide promo with exclusive pop-up perk reduces conversion/revenue</p>
+                
+                <details class="collapsible">
+                    <summary>Key risks and guardrails: noisy data, reward failures, BNPL/cashback economics, consent and deliverability.</summary>
+                    <div class="dual-column">
+                        
+                        <article class="risk-card">
+                            <div class="risk-label">Short-lived pop-up lift (no durable loyalty)</div>
+                            <details>
+                                <summary>Trigger, detection, mitigation</summary>
+                                <p>Trigger: Nov 20–26 urban pop-up creates a concentrated footfall and email-to-loyalty spike that reflects one-time urgency during the pre-Black Friday window rather than persistent customer behavior.</p>
+                                <p>Detection: Instrument email-to-loyalty conversion during the event vs control baseline; incremental store visits vs an 8-week pre/post baseline; daily footfall and channel-attribution; cohort retention (repeat visits/purchases) at 4 and 8 weeks. Set guardrail alerts if post-event incremental visits and 8-week retention do not exceed control by operator-defined lift thresholds (or fall back to baseline).</p>
+                                <div class="meta">Mitigation: Run the pop-up as a randomized test with a matched holdout/control; limit geography/audience and budget exposure; require loyalty-enrollment follow-up incentives to convert one-time visitors to repeat buyers; pause/scale-back the pop-up if incremental store visits or 8-week retention fail to clear pre-defined guardrails; use learnings to adjust timing/creative rather than assuming scalable uplift.</div>
+                            </details>
+                        </article>
+                        
+                        <article class="risk-card">
+                            <div class="risk-label">Limited-edition bundle cannibalizes existing customers / high acquisition cost</div>
+                            <details>
+                                <summary>Trigger, detection, mitigation</summary>
+                                <p>Trigger: Dec 1–24 calendar-style bundle (discounted vs loyalty-gated) primarily attracts existing purchasers or loyalty members, inflating sales without adding net-new customers and raising cost-per-loyalty-signup.</p>
+                                <p>Detection: Measure new-customer rate, cost-per-loyalty-signup, percent of bundle buyers with prior 90-day activity (cannibalization rate), and 8-week repeat purchase. Compare variant performance (discount vs loyalty-gated) to holdout. Alert if new-customer rate or net-new revenue is below target or if CPA exceeds predefined ceiling.</p>
+                                <div class="meta">Mitigation: A/B test bundle variants with a proper holdout; restrict the discount variant to audiences more likely to be new (lookalikes, paid acquisition) and use loyalty-gated variant to protect margin; cap promo availability or quantity by customer segment; pause or reallocate spend if cannibalization or CPA guardrails are breached; iterate creative/positioning to favor net-new acquisition.</div>
+                            </details>
+                        </article>
+                        
+                        <article class="risk-card">
+                            <div class="risk-label">BNPL + cashback pilot erodes margins and increases fraud/chargebacks</div>
+                            <details>
+                                <summary>Trigger, detection, mitigation</summary>
+                                <p>Trigger: A 4-week BNPL + cashback promotion (Nov 22–Dec 20) raises AOV via financing/incentives but increases effective discount dollars, partner fees, and exposure to fraud/chargebacks, reducing net profitability.</p>
+                                <p>Detection: Track percent of transactions using BNPL, AOV, effective discount dollars saved vs percent-off control, gross margin per order (post-fees/subsidies), chargeback/dispute rates, and incremental lifetime value over an 8-week window. Reconcile partner fees/subsidies daily/weekly and alert if margin per order drops below floor or chargebacks exceed thresholds.</p>
+                                <div class="meta">Mitigation: Limit pilot scale and eligible SKUs; cap cashback amounts and BNPL share of transactions; require BNPL partner fraud protections and real-time reporting; run a direct control arm (standard percent-off) to measure net contribution; pass part of fees to customers where feasible or restrict BNPL to higher-margin items; suspend or adjust the program if margin/chargeback guardrails are violated.</div>
+                            </details>
+                        </article>
+                        
+                        <article class="risk-card">
+                            <div class="risk-label">Replacing sitewide promo with exclusive pop-up perk reduces conversion/revenue</div>
+                            <details>
+                                <summary>Trigger, detection, mitigation</summary>
+                                <p>Trigger: Swapping a weekend 20% sitewide promotion for an exclusive pop-up perk (early access + loyalty trial) during a 10-day test causes site visitors who expect broad discounts to not convert, lowering overall revenue and potentially increasing complaints.</p>
+                                <p>Detection: Monitor site conversion rate, revenue per visit, average order value, loyalty enrollments per 1,000 visitors, 30-day repeat purchase rate, cart abandonment, and customer-support/complaint volume vs the previous sitewide-promo baseline. Trigger rollback if conversion or revenue-per-visit drops more than operator-defined thresholds.</p>
+                                <div class="meta">Mitigation: A/B test the exclusive perk against the sitewide promo with a web holdout; limit the exclusive perk to a defined segment (e.g., loyalty prospects) rather than all traffic; provide a fallback web incentive for price-sensitive visitors; set hard rollback rules if conversion or revenue metrics decline beyond acceptable bounds; proactively communicate value to customers to reduce frustration.</div>
+                            </details>
+                        </article>
+                        
+                    </div>
+                </details>
+            </section>
+            
+
+            
+            <section id="future" class="section-card" data-section="future">
+                <h2>Next Horizons</h2>
+                <div class="dual-column">
+                    
+                    <article class="outlook-card">
+                        <strong>6-month — Holiday pilots deliver rapid go/no-go signals</strong>
+                        <p>Compact holiday pilots — an urban pop-up (Nov 20–26), a Dec 1–24 limited-edition calendar bundle A/B test, a BNPL + cash-back promotion, and a weekend-to-pop-up loyalty swap — will generate measurable short-term signals that let operators validate which tactics drive incremental acquisition and spend [^4,^3,^1]. Key short-window metrics are email-to-loyalty conversion, incremental store visits versus baseline over an 8-week post-event window, percent of transactions using BNPL, AOV, new-customer rate and cost-per-loyalty-signup; run these as controlled tests rather than relying on point forecasts [^1,^3,^4]. If control comparisons show durable lift through the 8-week measurement windows, teams can reallocate promotion spend toward formats that lower acquisition cost and increase near-term repeat behavior within the next two quarters [^4,^3].</p>
+                        <div class="meta">Operator watch: Email-to-loyalty conversion rate; incremental store visits vs baseline (8-week); daily footfall and channel source attribution for Nov 20–26; percent of transactions using BNPL; AOV and effective discount dollars saved; new-customer rate; cost-per-loyalty-signup; loyalty enrollments per 1,000 visitors; 30-day repeat purchase rate. · Upside: Success looks like a validated holiday playbook: the pop-up converts email traffic into durable loyalty enrollments and measurable incremental visits; the calendar bundle acquires net-new customers at an acceptable cost-per-loyalty-signup; BNPL lifts AOV without eroding effective margin — enabling marketing, retail ops and payments teams to standardize short-form experiential and payment promotions for future seasonal windows.</div>
+                    </article>
+                    
+                    <article class="outlook-card">
+                        <strong>12-month — Scale-or-sunset decision for experiential and payments capabilities</strong>
+                        <p>Over 12 months, aggregated results from holiday pilots will determine whether experiential activations and BNPL integrations become permanent operating levers or remain seasonal tactics, with emphasis on durable retention and unit economics rather than one-time surge metrics [^4]. If pop-ups and calendar-format bundles produce sustained increases in loyalty enrollments per 1,000 visitors, lower cost-per-loyalty-signup and improved 30/90-day repeat rates while BNPL adoption sustains higher AOV without disproportionate discounting, operators should invest in playbooks, staffing and integrated checkout flows to scale those capabilities [^4,^1,^3]. If gains fade after the 8–12 week windows, codify learnings into targeted holiday playbooks and avoid permanent budget expansion for underperforming initiatives [^4].</p>
+                        <div class="meta">Operator watch: 12-month cohort LTV and retention lift; change in CAC for loyalty signups; share of revenue from loyalty members; AOV trend and BNPL share of transactions; margin impact (effective discount dollars) and incremental-store-visit persistence beyond 8–12 weeks. · Upside: Success looks like a repeatable, cross-functional capability: standardized pop-up operating playbook, integrated BNPL + loyalty checkout flows, predictable acquisition economics for calendar-format campaigns, and centralized dashboards that drive promotional calendar decisions and budget allocation across marketing, retail ops and payments.</div>
+                    </article>
+                    
+                </div>
+            </section>
+            
+
+            
+            <section id="appendix" class="section-card" data-section="appendix">
+                <h2>Appendix Signals</h2>
+                <div class="dual-column">
+                    
+                    <article class="pattern-card">
+                        <strong>Iowa Recipes Article (everafterinthewoods.com)</strong>
+                        <p>Held for later cycle</p>
+                        <div class="meta">Strength 0.00 · Sources: </div>
+                    </article>
+                    
+                </div>
+            </section>
+            
+
+            
+            <section  class="section-card" data-section="case-studies">
+                <h2>Case Study Vignettes</h2>
+                
+                <div class="hero-block">
+                    <img src="images/section_case_study_1_holiday_pop_up_to_loyalty_conv.png" alt="Operators plan an urban pop-up with mockups and traffic tokens, converging pulses imply short test window" />
+                    <div class="attribution">Image generated with OpenAI gpt-image-1-mini</div>
+                </div>
+                
+                <div class="hero-block">
+                    <img src="images/section_case_study_2_holiday_pop_up_to_loyalty_conv.png" alt="Creative team stages advent-style bundles in staggered compartments, rhythmic pulses imply recurring micro-moments" />
+                    <div class="attribution">Image generated with OpenAI gpt-image-1-mini</div>
+                </div>
+                
+                <div class="hero-block">
+                    <img src="images/section_case_study_3_holiday_pop_up_to_loyalty_conv.png" alt="Payments analyst and store lead stage BNPL and exclusive-perk tests, alternating light bands imply split-window timing" />
+                    <div class="attribution">Image generated with OpenAI gpt-image-1-mini</div>
+                </div>
+                
+            </section>
+            
+
+            <section id="sources" class="section-card sources" data-section="sources">
+                <h2>Sources</h2>
+                <ol>
+                    
+                    <li>[1] forbes.com — How BNPL And Cash-Back Apps Influence Holiday Spending Behavior (2025-11-22) — <a href="https://www.forbes.com/sites/shelleykohan/2025/11/21/how-buy-now-pay-later-and-cash-back-apps-drive-holiday-shopping/">https://www.forbes.com/sites/shelleykohan/2025/11/21/how-buy-now-pay-later-and-cash-back-apps-drive-holiday-shopping/</a></li>
+                    
+                    <li>[2] everafterinthewoods.com — 18 Iowa Recipes That Locals Defend Like Small-Town Secrets (2025-11-22) — <a href="https://everafterinthewoods.com/iowa-recipes-that-locals-defend-like-small-town-secrets/">https://everafterinthewoods.com/iowa-recipes-that-locals-defend-like-small-town-secrets/</a></li>
+                    
+                    <li>[3] msn.com — Chocolate, Chanel and cheddar: How Advent calendars became every brand’s favorite limited-edition platform (2025-11-22) — <a href="https://www.msn.com/en-us/money/other/chocolate-chanel-and-cheddar-how-advent-calendars-became-every-brand-s-favorite-limited-edition-platform/ar-AA1QU5eW?ocid=BingNewsVerp">https://www.msn.com/en-us/money/other/chocolate-chanel-and-cheddar-how-advent-calendars-became-every-brand-s-favorite-limited-edition-platform/ar-AA1QU5eW?ocid=BingNewsVerp</a></li>
+                    
+                    <li>[4] retailtouchpoints.com — A Tale of Two Pop-Ups: Amazon, Primark Aim to Capture NYC Holiday Magic (2025-11-22) — <a href="https://www.retailtouchpoints.com/topics/retail-store-design/experiential-retail/a-tale-of-two-pop-ups-amazon-primark-aim-to-capture-nyc-holiday-magic">https://www.retailtouchpoints.com/topics/retail-store-design/experiential-retail/a-tale-of-two-pop-ups-amazon-primark-aim-to-capture-nyc-holiday-magic</a></li>
+                    
+                </ol>
+                <p class="meta-note">Signals validated inside the current window unless marked. Reach out to Brand Collab Lab for operator instrumentation.</p>
+                
+                <p class="meta-note">Confidence note: Medium confidence — QA flag: Signal count outside required band. Dials — strength high, coverage medium, quant high, consistency high</p>
+                
+            </section>
+        </div>
+    </main>
+    <script>
+    (function(){
+        const root = document.documentElement;
+        const btn = document.getElementById('theme-toggle');
+        if(!btn) return;
+        const key = 'sti-theme';
+        const stored = localStorage.getItem(key);
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const applyTheme = (theme) => {
+            const t = theme === 'dark' ? 'dark' : 'light';
+            root.setAttribute('data-theme', t);
+            btn.setAttribute('aria-pressed', t === 'dark');
+            btn.querySelector('.theme-toggle__label').textContent = t === 'dark' ? 'Light' : 'Dark';
+            try { localStorage.setItem(key, t); } catch (err) {}
+            if (window.dataLayer) {
+                window.dataLayer.push({ event: 'theme_toggle', theme: t });
+            }
+        };
+        applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+        btn.addEventListener('click', () => {
+            const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(next);
+        });
+        const navLinks = Array.from(document.querySelectorAll('.section-chips a'));
+        if (navLinks.length) {
+            const linkMap = new Map(
+                navLinks.map((link) => [link.getAttribute('href').replace('#', ''), link])
+            );
+            const setActive = (id) => {
+                navLinks.forEach((link) => link.classList.toggle('active', link === linkMap.get(id)));
+            };
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            setActive(entry.target.id);
+                        }
+                    });
+                },
+                { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+            );
+            linkMap.forEach((_, id) => {
+                const section = document.getElementById(id);
+                if (section) {
+                    observer.observe(section);
+                }
+            });
+            const firstId = navLinks[0]?.getAttribute('href').replace('#', '');
+            if (firstId) {
+                setActive(firstId);
+            }
+        }
+        const collapsibles = document.querySelectorAll('details.collapsible');
+        const beforePrint = () => {
+            collapsibles.forEach(detail => {
+                detail.dataset.wasOpen = detail.open ? 'true' : 'false';
+                detail.open = true;
+            });
+        };
+        const afterPrint = () => {
+            collapsibles.forEach(detail => {
+                if (detail.dataset.wasOpen === 'false') {
+                    detail.open = false;
+                }
+            });
+        };
+        const mq = window.matchMedia && window.matchMedia('print');
+        if (mq && mq.addEventListener) {
+            mq.addEventListener('change', e => {
+                if (e.matches) {
+                    beforePrint();
+                } else {
+                    afterPrint();
+                }
+            });
+        }
+        window.addEventListener('beforeprint', beforePrint);
+        window.addEventListener('afterprint', afterPrint);
+    })();
+    </script>
+</body>
+</html>
