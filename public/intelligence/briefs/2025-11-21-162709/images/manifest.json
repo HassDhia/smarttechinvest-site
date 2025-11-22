@@ -1,0 +1,41 @@
+[
+  {
+    "type": "hero",
+    "query": "Holiday Pop-Up to Loyalty Conversion",
+    "intent": "market",
+    "prompt": "Capture Depict the decision tension between protecting headline price (straight 20% markdown) and using app-linked incentives (5% cashback or 0% BNPL) while judging weekly cohort conversion and AOV across a holiday test window.. Scene: Hybrid studio–pop-up corner: matte concrete floor, warm wood display plinths, soft branded backdrop; minimal retail clutter, clean negative space.. Persona: Operator duo — brand analyst (data-forward) + pop-up manager (field operator) collaborating with a studio art director.. Action: Three-quarter overhead angle of the duo leaning over printed cohort cards and physical product samples; one points while the other arranges translucent cohort stacks.. Urgency symbol: Timing implied by converging light beams and a faint pulsing rim on a display plane (symbolic cadence, not a literal clock).. Key objects: printed cohort cards with tags (S1 testing: cashback vs BNPL vs markdown), loyalty sample cards and on-site sign-up token mockups (S2/S3), product sample boxes and annotated price tags. Lighting: Polished editorial lighting with confident highlights, directional rim light, and generous clean negative space.. Mood: Precise, collaborative, confident — anticipatory timing without panic.. Props: printed cohort cards with tags (S1 testing: cashback vs BNPL vs markdown), loyalty sample cards and on-site sign-up token mockups (S2/S3), product sample boxes and annotated price tags. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, daylight optimism, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/hero_holiday_pop_up_to_loyalty_conv.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday Pop-Up to Loyalty Conversion",
+    "intent": "market",
+    "section": "Signal Map",
+    "prompt": "Structure: Concentric arcs and radial lattice that map visitor→loyalty→purchase flows; layered translucent planes to show cohorts over time.. Motion: Directional flow from outer visitor ring inward to loyalty core, with pulsing arcs to suggest short windows and shifting weight between promotion types.. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, daylight optimism, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_signal_map_holiday_pop_up_to_loyalty_conv.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday Pop-Up to Loyalty Conversion",
+    "intent": "market",
+    "section": "Case Study 1",
+    "prompt": "Scene: Controlled cohort review table in a studio lab: low-angle 3/4 view, brushed steel table, printed AOV and conversion stacks for Nov15–Dec31 test.. Moment: Deciding whether 5% app cashback or 0% BNPL preserves conversion vs a straight 20% markdown; weekly cohort cards are being re-sorted to show substitution effects.. Persona: Brand analyst and finance-minded operator, collaborating with a studio producer to frame the narrative.. Mood: Analytical, measured, investigatory.. Lighting: Polished editorial key light with confident highlights, soft fill, and clean negative space to emphasize hands and cards.. Props: cohort cards labeled by week and promotion type (symbolic S1 tags), product mockups and annotated P&L sticky notes, translucent card stack indicating deferred liability. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, daylight optimism, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_1_holiday_pop_up_to_loyalty_conv.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday Pop-Up to Loyalty Conversion",
+    "intent": "market",
+    "section": "Case Study 2",
+    "prompt": "Scene: Pop-up setup rehearsal: overhead 45° angle, warm wood counter, branded signage mockups; operators map footfall to instant sign-up touchpoints.. Moment: Staging a 7–21 day pop-up that requires app sign-up at point of sale and planning measurement of sign-up conversion and 30-day repeat purchase.. Persona: Pop-up operator and field marketing lead working with a studio lighting tech to simulate day-to-day interaction.. Mood: Practical, anticipatory, tactical.. Lighting: Polished editorial side light with confident highlights on hands and tactile materials; clean background negative space.. Props: loyalty signup mock cards and wristband-like tokens (symbolic S2), sample receipts and on-site signage templates, visitor flow markers (tactile tape strips, without literal UI). polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, daylight optimism, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_2_holiday_pop_up_to_loyalty_conv.png"
+  },
+  {
+    "type": "section",
+    "query": "Holiday Pop-Up to Loyalty Conversion",
+    "intent": "market",
+    "section": "Case Study 3",
+    "prompt": "Scene: Early-access conversion moment in a staged pop-up alcove: tight crop, shallow depth, mixed materials (felt, frosted acrylic) to isolate the exchange.. Moment: Operator guides a visitor through a time-limited loyalty-only product release (Nov 15–22), converting visitors into members while capturing immediate AOV.. Persona: Retail floor operator and loyalty program coordinator collaborating with studio lead to capture the conversion moment.. Mood: Urgent but controlled, celebratory, decisive.. Lighting: Polished editorial key highlight on subject faces and product, with generous negative space to keep focus on the exchange.. Props: small boxed limited-release product and loyalty membership token (symbolic S3), week-tagged transaction slips and a translucent 'early access' placard, soft tactile queue elements (rope, mat) to imply limited access. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, daylight optimism, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_3_holiday_pop_up_to_loyalty_conv.png"
+  }
+]

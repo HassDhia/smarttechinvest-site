@@ -1,0 +1,69 @@
+{
+  "hero": {
+    "core_tension": "Depict the decision tension between protecting headline price (straight 20% markdown) and using app-linked incentives (5% cashback or 0% BNPL) while judging weekly cohort conversion and AOV across a holiday test window.",
+    "setting": "Hybrid studio–pop-up corner: matte concrete floor, warm wood display plinths, soft branded backdrop; minimal retail clutter, clean negative space.",
+    "persona": "Operator duo — brand analyst (data-forward) + pop-up manager (field operator) collaborating with a studio art director.",
+    "action": "Three-quarter overhead angle of the duo leaning over printed cohort cards and physical product samples; one points while the other arranges translucent cohort stacks.",
+    "urgency_symbol": "Timing implied by converging light beams and a faint pulsing rim on a display plane (symbolic cadence, not a literal clock).",
+    "props": [
+      "printed cohort cards with tags (S1 testing: cashback vs BNPL vs markdown)",
+      "loyalty sample cards and on-site sign-up token mockups (S2/S3)",
+      "product sample boxes and annotated price tags"
+    ],
+    "lighting": "Polished editorial lighting with confident highlights, directional rim light, and generous clean negative space.",
+    "mood": "Precise, collaborative, confident — anticipatory timing without panic.",
+    "alt": "Two operators plan a cohort test in a studio-pop-up; converging light implies time pressure."
+  },
+  "signal_map": {
+    "structure": "Concentric arcs and radial lattice that map visitor→loyalty→purchase flows; layered translucent planes to show cohorts over time.",
+    "elements": [
+      "tokens for visitor cohorts (S1, S2, S3)",
+      "paths/arcs showing conversion funnels",
+      "stacked translucent cards indicating weekly snapshots"
+    ],
+    "motion": "Directional flow from outer visitor ring inward to loyalty core, with pulsing arcs to suggest short windows and shifting weight between promotion types.",
+    "palette": "Matte charcoal base, copper highlights, frosted acrylic planes and warm wood texture accents.",
+    "alt": "Abstract map of loyalty flows with pulsing arcs denoting short test windows."
+  },
+  "case_studies": [
+    {
+      "scene": "Controlled cohort review table in a studio lab: low-angle 3/4 view, brushed steel table, printed AOV and conversion stacks for Nov15–Dec31 test.",
+      "moment": "Deciding whether 5% app cashback or 0% BNPL preserves conversion vs a straight 20% markdown; weekly cohort cards are being re-sorted to show substitution effects.",
+      "persona": "Brand analyst and finance-minded operator, collaborating with a studio producer to frame the narrative.",
+      "props": [
+        "cohort cards labeled by week and promotion type (symbolic S1 tags)",
+        "product mockups and annotated P&L sticky notes",
+        "translucent card stack indicating deferred liability"
+      ],
+      "lighting": "Polished editorial key light with confident highlights, soft fill, and clean negative space to emphasize hands and cards.",
+      "mood": "Analytical, measured, investigatory.",
+      "alt": "Brand and retail ops review cohort cards, symbolic pulse marks weekly cadence."
+    },
+    {
+      "scene": "Pop-up setup rehearsal: overhead 45° angle, warm wood counter, branded signage mockups; operators map footfall to instant sign-up touchpoints.",
+      "moment": "Staging a 7–21 day pop-up that requires app sign-up at point of sale and planning measurement of sign-up conversion and 30-day repeat purchase.",
+      "persona": "Pop-up operator and field marketing lead working with a studio lighting tech to simulate day-to-day interaction.",
+      "props": [
+        "loyalty signup mock cards and wristband-like tokens (symbolic S2)",
+        "sample receipts and on-site signage templates",
+        "visitor flow markers (tactile tape strips, without literal UI)"
+      ],
+      "lighting": "Polished editorial side light with confident highlights on hands and tactile materials; clean background negative space.",
+      "mood": "Practical, anticipatory, tactical.",
+      "alt": "Pop-up operator and studio partner set up loyalty signup flow, subtle timing pulse."
+    },
+    {
+      "scene": "Early-access conversion moment in a staged pop-up alcove: tight crop, shallow depth, mixed materials (felt, frosted acrylic) to isolate the exchange.",
+      "moment": "Operator guides a visitor through a time-limited loyalty-only product release (Nov 15–22), converting visitors into members while capturing immediate AOV.",
+      "persona": "Retail floor operator and loyalty program coordinator collaborating with studio lead to capture the conversion moment.",
+      "props": [
+        "small boxed limited-release product and loyalty membership token (symbolic S3)",
+        "week-tagged transaction slips and a translucent 'early access' placard",
+        "soft tactile queue elements (rope, mat) to imply limited access"
+      ],
+      "lighting": "Polished editorial key highlight on subject faces and product, with generous negative space to keep focus on the exchange.",
+      "mood": "Urgent but controlled, celebratory, decisive.",
+      "alt": "On-site early-access moment: operator guides visitor to loyalty sign-up; pulse hints urgency."
+    }
+  ]
+}
