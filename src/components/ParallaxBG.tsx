@@ -48,17 +48,13 @@ export function ParallaxBG() {
   }, [y, slowCoef, fastCoef, noiseCoef, reducedMotion]);
 
   return (
-    <div className="pointer-events-none fixed inset-0 -z-10 select-none" aria-hidden>
-      {/* Far radial glow */}
-      <div ref={glowRef} className="absolute inset-0 bg-glow parallax-transform" />
-      {/* Soft conic beam sweeping subtly across */}
-      <div ref={beamRef} className="absolute inset-0 bg-conic-beam opacity-[0.18] dark:opacity-[0.16] parallax-transform" />
-      {/* Near subtle grid/noise */}
+    <div className="pointer-events-none fixed inset-0 -z-10 select-none overflow-hidden" aria-hidden>
+      <div className="absolute inset-0 bg-[hsl(var(--background))]" />
+      <div ref={glowRef} className="absolute inset-0 bg-glow parallax-transform opacity-70 mix-blend-screen" />
+      <div ref={beamRef} className="absolute inset-0 bg-aurora opacity-50 parallax-transform mix-blend-screen" />
       <div ref={gridRef} className="absolute inset-0 bg-grid parallax-transform opacity-var" />
-      {/* Ultra-subtle noise layer */}
-      <div ref={noiseRef} className="absolute inset-0 opacity-[0.10] dark:opacity-[0.08] bg-noise parallax-transform" />
+      <div ref={noiseRef} className="absolute inset-0 opacity-[0.12] bg-noise parallax-transform" />
+      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[color-mix(in srgb, hsl(var(--foreground)) 15%, transparent)] via-[color-mix(in srgb, hsl(var(--foreground)) 5%, transparent)] to-transparent" />
     </div>
   );
 }
-
-

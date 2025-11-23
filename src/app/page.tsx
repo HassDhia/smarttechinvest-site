@@ -1,186 +1,139 @@
-import { SectionHeader } from "../components/SectionHeader";
-import { BriefCard } from "../components/BriefCard";
-import { SocialProofStrip } from "../components/SocialProofStrip";
-import { CoreOfferCards } from "../components/CoreOfferCards";
-import { listBriefs } from "../lib/content";
+import Image from "next/image";
 import Link from "next/link";
-import { Button } from "../components/ui/Button";
+import { listBriefs } from "../lib/content";
+
+function formatBriefDate(value?: string) {
+  if (!value) return { label: "—", dateTime: undefined };
+  const datePortion = value.slice(0, 10);
+  const [year, month, day] = datePortion.split("-");
+  if (!year || !month || !day) return { label: "—", dateTime: undefined };
+  const parsed = new Date(Number(year), Number(month) - 1, Number(day));
+  if (Number.isNaN(parsed.getTime())) return { label: "—", dateTime: undefined };
+  return {
+    label: parsed.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
+    dateTime: datePortion,
+  };
+}
+
+const labDeliverables = [
+  "Signals & positioning",
+  "Concept & deck spine",
+  "Outreach logic & target map",
+];
 
 export default function Home() {
-  const latestBriefs = listBriefs();
-  const featuredBrief = latestBriefs[0];
-
-  const personas = [
-    {
-      title: "Operators & Local Brands",
-      description: "Independent shops, venues, hospitality, and DTC operators who want growth without adding operational drag.",
-      bullets: [
-        "Use your story and foot traffic to attract bigger brand spend",
-        "Keep operations light",
-        "Turn relevance into partnerships",
-      ],
-    },
-    {
-      title: "Studios, Agencies, Brand Teams",
-      description: "Streamers, film/TV, lifestyle brands, and creative agencies who need partners that feel lived in, not borrowed.",
-      bullets: [
-        "Source authentic operators and locations",
-        "Plug signal intelligence into campaigns fast",
-        "Work with someone who can run point",
-      ],
-    },
-  ];
-
-  const workItems = [
-    {
-      signal: "Market signal",
-      description: "Identified shift from vendor relationships to strategic partnerships in DTC space. Repositioned brand narrative drove measurable pipeline growth.",
-      outcome: "$850K ARR pipeline generated",
-    },
-    {
-      signal: "Behavioral signal",
-      description: "Analyzed partnership response patterns across 12 brands to identify narrative gaps. Signal-driven narrative system delivered higher conversion rates.",
-      outcome: "47% response rate, 3 deals closed",
-    },
-    {
-      signal: "Operational signal",
-      description: "Identified trend toward zero-new-SKU activations in retail partnerships. Signal-informed activation concept drove immediate revenue without inventory changes.",
-      outcome: "$120K revenue in 48 hours",
-    },
-  ];
+  const briefs = listBriefs();
+  const featuredBriefs = briefs.slice(0, 3);
 
   return (
-    <div className="font-sans">
-      {/* Section 1: Hero Section */}
-      <section id="hero" className="container section">
-        <div className="max-w-5xl">
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-balance mb-6">
-            Signal-Driven Brand Collaborations for Operators and Storytellers
-          </h1>
-          <p className="text-lg md:text-xl text-foreground/90 max-w-xl mb-10 leading-relaxed">
-            I turn the way people move, buy, gather, and talk into campaign-ready concepts, decks, and outreach logic that brands can activate immediately.
-          </p>
-          <Button asChild variant="gradient" size="lg">
-            <Link href="/schedule">Book the Brand Collab Lab</Link>
-          </Button>
+    <div className="font-sans bg-[#03060C] text-white">
+      <section className="section relative overflow-hidden border-b border-white/10 bg-[#05070E] py-20">
+        <Image
+          src="/assets/hero/cityscape.jpg"
+          alt="City skyline at dusk"
+          fill
+          className="absolute inset-0 object-cover object-center opacity-80"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.45)] via-[rgba(3,6,12,0.65)] to-[#03060C]" />
+        <div className="container relative z-10 max-w-5xl space-y-8">
+          <p className="headline-label text-white/70">Smart Technology Investments</p>
+          <h1 className="headline-xl">Signal-driven brand collaborations</h1>
+          <p className="body-lede text-white/85">For operators and storytellers.</p>
+          <Link
+            href="/schedule"
+            className="inline-flex items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)]"
+          >
+            Book the brand collab lab
+          </Link>
+          <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.5em] text-white/60">
+            <span>Studios</span>
+            <span>•</span>
+            <span>Retailers</span>
+            <span>•</span>
+            <span>Hospitality</span>
+            <span>•</span>
+            <span>Streaming partners</span>
+          </div>
         </div>
       </section>
 
-      {/* Section 2: Social Proof Strip */}
-      <SocialProofStrip />
+      <section className="container section space-y-8">
+        <div className="border-b border-white/10 pb-4">
+          <p className="headline-label text-white/65">Featured intelligence</p>
+          <h2 className="mt-2 headline-lg">Weekly briefs built for cinematic decks.</h2>
+        </div>
+        {featuredBriefs.length > 0 ? (
+          <div className="grid gap-6 lg:grid-cols-3">
+            {featuredBriefs.map((brief) => {
+              const preview = brief.heroImage || "/assets/og/default-brief.png";
+              const { label, dateTime } = formatBriefDate(brief.date);
+              return (
+                <Link
+                  key={brief.date}
+                  href={brief.href}
+                  className="rounded-[26px] border border-white/10 bg-[#05070E] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1F4FFF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#03060C]"
+                >
+                  <article className="h-full">
+                    <div className="relative aspect-[4/3]">
+                      <Image
+                        src={preview}
+                        alt={brief.title || "Brief preview"}
+                        fill
+                        className="object-cover transition-opacity duration-300 hover:opacity-80"
+                        sizes="(min-width:1280px) 30vw, (min-width:768px) 33vw, 90vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                      <div className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.5em] text-white/65">
+                        Weekly Brief
+                      </div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="text-2xl font-semibold uppercase leading-tight">{brief.title || "Operator Brief"}</h3>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between border-t border-white/10 p-5 text-[11px] uppercase tracking-[0.45em] text-white/55">
+                      <span>{dateTime ? <time dateTime={dateTime}>{label}</time> : label}</span>
+                      <span>{brief.metadata?.sources_count ?? 0} sources</span>
+                    </div>
+                  </article>
+                </Link>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="text-sm text-white/70">Weekly briefs will load after the next ingest.</div>
+        )}
+      </section>
 
-      {/* Section 3: Core Offer (Brand Collab Lab) */}
-      <section id="collab-lab" className="container section vt-section">
-        <SectionHeader 
-          number="01 · Core Offer"
-          title="The Brand Collab Lab" 
-          subtitle="A 45-minute creative lab that turns your world into a brand-ready concept, a forwardable deck spine, and an outreach sequence you can use immediately — without adding drag to your operation." 
-          useGradientTitle 
-        />
-        <CoreOfferCards />
-        <div className="text-center mt-12">
-          <Button asChild variant="gradient" size="lg">
-            <Link href="/schedule">Book the Brand Collab Lab</Link>
-          </Button>
-          <div className="mt-4">
-            <Link href="/collab-lab" className="text-sm text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:underline">
-              See what you leave with →
+      <section className="bg-[#05070E] border-t border-white/10">
+        <div className="container section grid gap-12 lg:grid-cols-2">
+          <div className="space-y-4">
+            <p className="headline-label text-white/65">The Brand Collab Lab</p>
+            <h2 className="headline-lg text-[2.8rem] leading-snug">Your operator-side collab studio.</h2>
+            <p className="text-white/85 text-[1.15rem]">
+              Idea inception through pitch perfection. One session to capture signal, spin the cinematic concept,
+              and leave with the deck spine and outreach logic.
+            </p>
+            <ul className="space-y-2 text-white/85 text-sm">
+              {labDeliverables.map((item) => (
+                <li key={item}>• {item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="space-y-5">
+            <p className="headline-label text-white/65">A Plug-in Intelligence & Strategy Engine</p>
+            <p className="text-white/85 text-[1.15rem]">
+              We power brand collaborations with behavioral data, market insights, and operational know-how. Operators and storytellers
+              come to us to find the whitespace and land the activation.
+            </p>
+            <p className="text-white text-xl font-semibold">Ready to build a brand collaboration that actually lands?</p>
+            <Link
+              href="/schedule"
+              className="inline-flex items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)]"
+            >
+              Book the brand collab lab
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Section 4: Who It's For + Founder */}
-      <section id="who" className="container section vt-section">
-        <SectionHeader 
-          number="02 · Who It's For"
-          title="Who It's For" 
-          useGradientTitle 
-        />
-        <div className="grid gap-8 md:grid-cols-2 mb-16">
-          {personas.map((persona) => (
-            <div
-              key={persona.title}
-              className="rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-8"
-            >
-              <h3 className="text-2xl font-semibold text-foreground mb-3">{persona.title}</h3>
-              <p className="text-sm text-foreground/70 mb-6 leading-relaxed">{persona.description}</p>
-              <ul className="space-y-3">
-                {persona.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-3 text-sm text-foreground/70">
-                    <span className="text-[hsl(var(--primary))] mt-1">•</span>
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Section 5: Proof of Capability (Case Study Grid) */}
-      <section id="work" className="container section vt-section">
-        <SectionHeader 
-          number="03 · Proof"
-          title="Selected Work" 
-          subtitle="Signal identification → outcome achievement. How behavioral signals drive measurable brand results." 
-          useGradientTitle 
-        />
-        <div className="grid gap-6 md:grid-cols-3">
-          {workItems.map((item) => (
-            <article
-              key={item.outcome}
-              className="rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-6"
-            >
-              <p className="text-xs uppercase tracking-[0.2em] text-[hsl(var(--muted-foreground))] mb-4">
-                {item.signal}
-              </p>
-              <p className="text-sm text-[hsl(var(--card-foreground))]/80 mb-6 leading-relaxed">{item.description}</p>
-              <p className="text-xl font-bold text-[hsl(var(--primary))]">{item.outcome}</p>
-            </article>
-          ))}
-        </div>
-        <div className="text-center mt-10">
-          <Link href="/work" className="text-sm font-medium text-[hsl(var(--primary))] hover:underline">
-            View More Proof →
-          </Link>
-        </div>
-      </section>
-
-      {/* Section 6: Intelligence Engine (Secondary) */}
-      <section id="intelligence" className="container section vt-section">
-        <SectionHeader
-          number="04 · Intelligence"
-          title="Intelligence That Drives the Collabs"
-          subtitle="Weekly briefs on AI, culture, influence, and behavioral signals — distilled to what operators and brand teams actually need."
-          useGradientTitle
-        />
-        {featuredBrief ? (
-          <BriefCard brief={featuredBrief} highlight hideMetadata />
-        ) : (
-          <div className="rounded-xl border border-dashed border-[hsl(var(--border))] p-8 text-sm text-[hsl(var(--muted-foreground))]">
-            Intelligence briefs coming online soon.
-          </div>
-        )}
-        <div className="mt-8">
-          <Link href="/intelligence" className="text-sm font-medium text-[hsl(var(--primary))] hover:underline">
-            Browse all intelligence →
-          </Link>
-        </div>
-      </section>
-
-      {/* Section 7: Final CTA Section */}
-      <section id="cta" className="container section vt-section">
-        <div className="bg-[hsl(var(--muted))] p-12 md:p-16 text-center rounded-xl">
-          <h2 className="text-4xl font-semibold tracking-tight mb-4">
-            Ready to Build a Brand Collaboration That Actually Lands?
-          </h2>
-          <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">
-            If 2026 needs more revenue, more story, and more visibility — without more weight — the next step is simple.
-          </p>
-          <Button asChild variant="gradient" size="lg">
-            <Link href="/schedule">Book the Brand Collab Lab</Link>
-          </Button>
         </div>
       </section>
     </div>

@@ -1,0 +1,84 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#02050C"/>
+      <stop offset="50%" stop-color="#050918"/>
+      <stop offset="100%" stop-color="#010205"/>
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f1b38" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0f1b38" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.25" r="0.6">
+      <stop offset="0%" stop-color="#2b4cff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#2b4cff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.05" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky)" />
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+  <rect width="1920" height="1080" fill="url(#haze)"/>
+
+  <!-- skyline silhouettes -->
+  <g fill="#040915">
+    <rect x="0" y="820" width="1920" height="260"/>
+    <path d="M0 780L60 740L110 770L170 730L230 780V1080H0V780Z"/>
+    <path d="M240 760L300 680L360 730L420 650L460 720L500 680L560 760V1080H240V760Z"/>
+    <path d="M580 780L620 600L650 620L680 540L720 720L760 620L790 670L820 600L860 760V1080H580V780Z"/>
+    <path d="M880 760L910 540L940 560L980 480L1010 640L1040 580L1080 760V1080H880V760Z"/>
+    <path d="M1100 770L1130 700L1160 620L1190 640L1230 520L1260 680L1300 610L1320 780V1080H1100V770Z"/>
+    <path d="M1340 760L1400 600L1430 640L1480 540L1510 720L1540 660L1580 720L1620 640L1660 780V1080H1340V760Z"/>
+    <path d="M1680 780L1720 680L1760 710L1800 620L1840 760L1920 710V1080H1680V780Z"/>
+  </g>
+
+  <!-- distant skyline -->
+  <g fill="#070F1F" opacity="0.7">
+    <rect x="70" y="700" width="60" height="380"/>
+    <rect x="140" y="660" width="40" height="420"/>
+    <rect x="210" y="640" width="70" height="440"/>
+    <rect x="340" y="610" width="55" height="470"/>
+    <rect x="420" y="650" width="35" height="430"/>
+    <rect x="500" y="590" width="70" height="490"/>
+    <rect x="620" y="560" width="50" height="520"/>
+    <rect x="700" y="520" width="90" height="560"/>
+    <rect x="830" y="560" width="60" height="520"/>
+    <rect x="930" y="500" width="80" height="580"/>
+    <rect x="1040" y="560" width="50" height="520"/>
+    <rect x="1120" y="520" width="70" height="560"/>
+    <rect x="1230" y="590" width="40" height="490"/>
+    <rect x="1300" y="530" width="80" height="550"/>
+    <rect x="1420" y="570" width="50" height="510"/>
+    <rect x="1500" y="520" width="70" height="560"/>
+    <rect x="1600" y="600" width="45" height="480"/>
+    <rect x="1680" y="560" width="60" height="520"/>
+    <rect x="1750" y="600" width="55" height="480"/>
+  </g>
+
+  <!-- subtle windows -->
+  <g fill="#1e2b48" opacity="0.25">
+    <rect x="260" y="720" width="10" height="40"/>
+    <rect x="280" y="640" width="12" height="50"/>
+    <rect x="450" y="700" width="10" height="35"/>
+    <rect x="470" y="660" width="12" height="45"/>
+    <rect x="720" y="640" width="11" height="50"/>
+    <rect x="745" y="680" width="11" height="38"/>
+    <rect x="980" y="620" width="12" height="60"/>
+    <rect x="1005" y="580" width="10" height="55"/>
+    <rect x="1220" y="660" width="11" height="45"/>
+    <rect x="1245" y="620" width="12" height="55"/>
+    <rect x="1460" y="640" width="11" height="48"/>
+    <rect x="1484" y="690" width="11" height="42"/>
+    <rect x="1700" y="640" width="11" height="52"/>
+    <rect x="1724" y="700" width="11" height="40"/>
+  </g>
+
+  <!-- noise overlay -->
+  <rect width="1920" height="1080" filter="url(#grain)" opacity="0.25"/>
+</svg>

@@ -18,7 +18,7 @@ export function DialogContent({ children, className = "" }: { children: React.Re
     <RD.Portal>
       <RD.Overlay asChild>
         <m.div
-          className="fixed inset-0 z-[var(--z-overlay)] bg-black/50 motion-reduce:transition-none"
+          className="fixed inset-0 z-[var(--z-overlay)] bg-[color-mix(in srgb, hsl(var(--background)) 20%, hsl(var(--foreground)) 80%)]/60 motion-reduce:transition-none"
           initial="hidden"
           animate="show"
           exit="exit"
@@ -48,6 +48,5 @@ export function DialogTitle({ children }: { children: React.ReactNode }) {
 export function DialogDescription({ children }: { children: React.ReactNode }) {
   return <RD.Description className="text-sm text-[hsl(var(--muted-foreground))]">{children}</RD.Description>;
 }
-
 
 

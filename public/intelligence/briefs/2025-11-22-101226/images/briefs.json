@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "core_tension": "Balancing an opening‑weekend loyalty acquisition push (S1) against post‑visit outreach cadence (S2) and discount/partner funding tradeoffs (S3, S4) — show the decision window where a pop‑up must choose acquisition intensity vs broader discounting.",
+    "setting": "Interior holiday pop‑up stall, brushed-metal counter, soft merch drapery; 3/4 angle, foreground hands and midground operator, clean negative space behind.",
+    "persona": "Floor operator and studio lead collaborating — operator in branded apron, studio lead with rolled paper playbook and sample cards.",
+    "action": "Preparing physical loyalty signup cards and stacking partner rebate tokens while exchanging a timed cue — a cooperative calibration between operator and studio.",
+    "urgency_symbol": "Layered light bands or narrowing ribbons of shadow across the counter that imply a shrinking decision window (symbolic timing, not a clock).",
+    "props": [
+      "loyalty signup cards and printed cohort labels (S1)",
+      "BNPL/cashback partner voucher tokens (S2, S3)",
+      "micro‑rebate redeemable cards for value offers (S4)"
+    ],
+    "lighting": "Polished editorial lighting with confident highlights, soft rim light on subjects, deep but clean negative space to imply focus.",
+    "mood": "Precise, collaborative, confident — purposeful choreography between operator and studio.",
+    "alt": "Operator and studio lead at pop-up table framed by narrowing light bands suggesting timing."
+  },
+  "signal_map": {
+    "structure": "Overhead abstract geometry: concentric rings and connecting arcs, nodes on a lattice; top-down angle, textured matte paper and brushed-metal pins as materials.",
+    "elements": [
+      "S1 node — opening‑weekend acquisition (high‑leverage node)",
+      "S2 node — 7‑day post‑visit outreach",
+      "S3 node — discount → partner‑funded cashback path",
+      "S4 node — value/micro‑rebate track",
+      "paths and tokens indicating cohort flow and measurement windows"
+    ],
+    "motion": "Arcs flow from S1 outward to S2 and S3, with a looping return to S1 representing 8‑week cohort follow; implied pulsing along arcs to indicate timing without literal clocks.",
+    "palette": "Muted winter palette: charcoal, warm gold, cool slate; materials: matte paper, soft satin ribbon, brushed aluminum pins.",
+    "alt": "Abstract signal map overhead: arcs link opening-weekend, outreach, cashback, micro-rebate nodes."
+  },
+  "case_studies": [
+    {
+      "scene": "Opening‑weekend checkout lane at pop‑up; low angled close crop on hands and counter, raw wood and laminated card materials.",
+      "moment": "First customers arriving — operator and studio producer finalizing loyalty enrollment flow and stacking immediate‑redeem incentive stickers (S1).",
+      "persona": "Floor operator and studio producer in close collaboration — tactile, action‑oriented roles.",
+      "props": [
+        "physical loyalty signup cards",
+        "immediate‑redeem incentive stickers",
+        "laminated footfall tally cards (instrument for measuring S1)"
+      ],
+      "lighting": "Polished editorial with crisp highlights on hands and cards, intentional negative space behind to isolate the action.",
+      "mood": "Anticipatory, measured — focused on capture and instrumenting behavior.",
+      "alt": "Floor operator and studio producer setting loyalty cards at a pop-up as opening-weekend light narrows."
+    },
+    {
+      "scene": "Back‑of‑house studio table, top‑down composition showing hands assembling follow‑up kits; textured paper, foil accents, neutral backdrop.",
+      "moment": "7‑day post‑visit outreach kit preparation — CRM operator and studio art director placing BNPL/cashback partner tokens into outreach envelopes (S2, S3).",
+      "persona": "CRM operator and studio art director collaborating on conversion nudges and measurable incentives.",
+      "props": [
+        "branded envelopes and rebate tokens",
+        "BNPL partner token cards (physical)",
+        "printed measurement ledger for tracking 7‑day outreach conversions"
+      ],
+      "lighting": "Polished editorial top lighting with confident highlights, soft shadows to emphasize materials and hands.",
+      "mood": "Deliberate, methodical — conversion-focused production with studio polish.",
+      "alt": "CRM operator and studio art director assembling 7-day outreach rebate kits under precise soft highlights."
+    },
+    {
+      "scene": "Value‑led micro‑rebate rack at pop‑up, 3/4 wide shot; raw wood fixtures, matte coupon cards, wide negative space to emphasize choice.",
+      "moment": "Testing micro‑rebates vs headline markdowns — value merch operator and studio strategist arranging redeemable voucher tags and measuring display response (S4).",
+      "persona": "Value merch operator and studio strategist working together — tactile merchandising and strategic framing.",
+      "props": [
+        "micro‑rebate voucher tags (physically redeemable)",
+        "enrollment prompts printed on heavy stock",
+        "sample basket for quick A/B tactile checks"
+      ],
+      "lighting": "Polished editorial fill with confident highlights on voucher edges, soft directional sweep implying temporal pressure.",
+      "mood": "Practical, strategic — testing value propositions under measured timing.",
+      "alt": "Value merch operator and studio strategist arranging micro-rebate tags, timing suggested by light sweep."
+    }
+  ]
+}

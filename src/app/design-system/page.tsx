@@ -15,7 +15,7 @@ export default function DesignSystem() {
       <SectionHeader title="Tokens" subtitle="Preview brand and surfaces" useGradientTitle />
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {["--brand","--brand-600","--surface","--border","--muted"].map((v)=> (
-          <div key={v} className="rounded-2xl border p-3 bg-white/60 dark:bg-slate-950/40 backdrop-blur-md border-[hsl(var(--border))]">
+          <div key={v} className="rounded-2xl border p-3 bg-[color-mix(in srgb, hsl(var(--background)) 70%, hsl(var(--card)) 30%)] backdrop-blur-md border-[hsl(var(--border))]">
             {v === "--brand" && <div className="h-10 rounded-md bg-token-brand" />}
             {v === "--brand-600" && <div className="h-10 rounded-md bg-token-brand-600" />}
             {v === "--surface" && <div className="h-10 rounded-md bg-token-surface" />}
@@ -41,7 +41,7 @@ export default function DesignSystem() {
       <SectionHeader title="Inputs & Badges" useGradientTitle />
       <div className="grid sm:grid-cols-2 gap-4">
         <Input placeholder="Your email" />
-        <div className="flex items-center gap-2"><Badge>Badge</Badge><Badge className="bg-slate-100">Neutral</Badge></div>
+        <div className="flex items-center gap-2"><Badge>Badge</Badge><Badge className="bg-[color-mix(in srgb, hsl(var(--background)) 85%, hsl(var(--foreground)) 15%)] text-[hsl(var(--foreground))]">Neutral</Badge></div>
       </div>
 
       <div className="divide-line my-6" />
@@ -55,5 +55,4 @@ export default function DesignSystem() {
     </div>
   );
 }
-
 
