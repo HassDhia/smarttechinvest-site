@@ -4,7 +4,7 @@ import { Sun, Moon } from "lucide-react";
 import { cn } from "../lib/cn";
 
 export function ThemeToggle({ className }: { className?: string }) {
-  const [theme, setTheme] = useState<string>("light");
+  const [theme, setTheme] = useState<string>("dark");
   useEffect(() => {
     if (typeof window === "undefined") return;
     const saved = localStorage.getItem("theme") || "light";
@@ -49,4 +49,3 @@ export function ThemeToggle({ className }: { className?: string }) {
     </button>
   );
 }
-

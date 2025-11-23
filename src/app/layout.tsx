@@ -34,8 +34,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
+    <html lang="en" suppressHydrationWarning className="dark">
+      <body className="antialiased bg-[#03060C] text-white">
         <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
           <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-2 focus:rounded-md focus:bg-[hsl(var(--primary))] focus:text-[hsl(var(--primary-foreground))]">Skip to content</a>
@@ -43,7 +43,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           (function(){
             try {
               var saved = localStorage.getItem('theme');
-              var useDark = saved ? saved === 'dark' : false; // default LIGHT regardless of system
+              var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+              var useDark = saved ? saved === 'dark' : prefersDark || true;
               document.documentElement.classList.toggle('dark', useDark);
             } catch (e) {}
           })();
