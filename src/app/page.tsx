@@ -37,9 +37,8 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.45)] via-[rgba(3,6,12,0.65)] to-[#03060C]" />
         <div className="container relative z-10 max-w-5xl space-y-8">
-          <p className="headline-label text-white/70">Smart Technology Investments</p>
           <h1 className="headline-xl">Signal-driven brand collaborations</h1>
-          <p className="body-lede text-white/85">For operators and storytellers.</p>
+          <p className="body-lede text-white font-semibold">For operators and storytellers.</p>
           <Link
             href="/schedule"
             className="inline-flex items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)]"

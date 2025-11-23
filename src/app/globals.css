@@ -326,6 +326,10 @@ a { text-decoration: none; }
   }
 }
 
+.section:first-of-type {
+  margin-top: 0;
+}
+
 .divide-line {
   border-top: 1px solid var(--border);
 }
