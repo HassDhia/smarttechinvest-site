@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="font-sans bg-[#03060C] text-white">
-      <section className="section relative overflow-hidden border-b border-white/10 bg-[#05070E] pt-10 pb-20 lg:py-24">
+      <section className="section relative overflow-hidden border-b border-white/10 bg-[#05070E] pt-0 pb-20 lg:pt-0 lg:pb-24">
         <Image
           src="/assets/hero/cityscape.jpg"
           alt="City skyline at dusk"
