@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
+import { cn } from "../lib/cn";
 
-export function ThemeToggle() {
+export function ThemeToggle({ className }: { className?: string }) {
   const [theme, setTheme] = useState<string>("light");
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -26,18 +27,26 @@ export function ThemeToggle() {
       aria-label="Toggle theme"
       aria-pressed={isDark}
       onClick={toggle}
-      className="group relative z-10 mt-auto inline-flex w-full items-center gap-2 rounded-md px-3 h-9 text-sm text-foreground/80 hover:text-foreground hover:bg-accent transition-[background,color] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))]"
+      className={cn(
+        "inline-flex items-center gap-2 rounded-full border border-[hsl(var(--border))] bg-[color-mix(in srgb, hsl(var(--card)) 70%, transparent)] px-4 py-2 text-[0.65rem] font-semibold tracking-[0.35em] uppercase text-[hsl(var(--foreground))]/80 transition-colors hover:text-[hsl(var(--foreground))]",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))]",
+        className
+      )}
     >
-      <span className="relative inline-flex h-5 w-5 items-center justify-center">
-        <Sun size={18} strokeWidth={1.5} className={["absolute transition-transform duration-200", isDark ? "-rotate-90 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"].join(" ")} />
-        <Moon size={18} strokeWidth={1.5} className={["absolute transition-transform duration-200", isDark ? "rotate-0 scale-100 opacity-100" : "rotate-90 scale-0 opacity-0"].join(" ")} />
+      <span className="relative inline-flex h-4 w-4 items-center justify-center">
+        <Sun
+          size={14}
+          strokeWidth={1.5}
+          className={cn("absolute transition-all duration-200", isDark ? "scale-0 opacity-0 -rotate-90" : "scale-100 opacity-100 rotate-0")}
+        />
+        <Moon
+          size={14}
+          strokeWidth={1.5}
+          className={cn("absolute transition-all duration-200", isDark ? "scale-100 opacity-100 rotate-0" : "scale-0 opacity-0 rotate-90")}
+        />
       </span>
-      <span className="leading-none">Theme</span>
-      <span className="ml-auto inline-flex items-center rounded bg-[hsl(var(--muted))] px-2 py-0.5 text-[11px] text-[hsl(var(--muted-foreground))] group-hover:text-foreground">
-        {isDark ? "Dark" : "Light"}
-      </span>
+      <span>{isDark ? "Dark" : "Light"}</span>
     </button>
   );
 }
-
 

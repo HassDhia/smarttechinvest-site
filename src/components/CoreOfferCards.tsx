@@ -1,7 +1,7 @@
 import { Card } from "./Card";
 import { TrendingUp, FileText, Target } from "lucide-react";
 
-const offerCards = [
+export const offerCards = [
   {
     title: "Signals & Positioning",
     description: "We map behavioral, cultural, and market signals orbiting your space so the narrative already speaks your buyers' language.",
@@ -34,4 +34,3 @@ export function CoreOfferCards() {
     </div>
   );
 }
-

@@ -50,24 +50,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}</Script>
         <MotionProvider>
           <ParallaxBG />
-          {/* Native scroll progress bar (no JS, progressive enhancement) */}
           <div className="progress fixed inset-x-0 top-0 h-1 bg-[hsl(var(--primary))] z-[41] pointer-events-none" />
-          <MobileNav />
           <ToastProvider>
-            <div className="grid min-h-screen grid-cols-1 lg:grid-cols-[260px_1fr] bg-transparent">
-              <aside className="hidden lg:block sticky top-0 h-svh bg-transparent">
-                {/* Sidebar: ensure content sits above any fades */}
-                <div className="relative h-full">
-                  <div className="relative z-10 flex h-full flex-col overflow-y-auto pb-12">
-                    <Nav />
-                  </div>
-                  <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-10 bg-gradient-to-t from-background to-transparent" />
-                </div>
-              </aside>
-              <main id="main" className="min-w-0">
+            <div className="flex min-h-screen flex-col bg-transparent">
+              <MobileNav />
+              <Nav />
+              <main id="main" className="flex-1">
                 <PageTransition>{children}</PageTransition>
-                <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-slate-500">
-                  © {new Date().getFullYear()} Smart Technology Investments · <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">Follow on LinkedIn</a>
+                <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-[hsl(var(--foreground)/0.6)]">
+                  © {new Date().getFullYear()} Smart Technology Investments ·{" "}
+                  <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[hsl(var(--foreground)/0.7)] hover:text-[hsl(var(--foreground))] transition-colors"
+                  >
+                    Follow on LinkedIn
+                  </a>
                 </footer>
               </main>
             </div>
