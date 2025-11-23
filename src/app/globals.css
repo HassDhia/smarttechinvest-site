@@ -219,7 +219,7 @@ p  { font-size: var(--step-0); line-height: 1.65; }
 
 .headline-xl {
   font-family: var(--font-heading-condensed);
-  font-size: clamp(3.5rem, 6vw, 5.8rem);
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: 0.045em;
@@ -228,7 +228,7 @@ p  { font-size: var(--step-0); line-height: 1.65; }
 
 .headline-lg {
   font-family: var(--font-heading-condensed);
-  font-size: clamp(2.5rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: 0.04em;
@@ -237,9 +237,9 @@ p  { font-size: var(--step-0); line-height: 1.65; }
 
 .headline-label {
   font-family: var(--font-heading-condensed);
-  font-size: 0.95rem;
+  font-size: clamp(0.65rem, 1.5vw, 0.95rem);
   font-weight: 700;
-  letter-spacing: 0.6em;
+  letter-spacing: clamp(0.35em, 1.4vw, 0.6em);
   text-transform: uppercase;
 }
 
