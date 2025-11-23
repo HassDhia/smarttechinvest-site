@@ -312,6 +312,7 @@ a { text-decoration: none; }
 
 .section {
   margin-block: var(--section-padding-mobile);
+  scroll-margin-top: 80px;
 }
 
 @media (min-width: 768px) {

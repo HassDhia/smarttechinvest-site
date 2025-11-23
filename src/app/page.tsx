@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="font-sans bg-[#03060C] text-white">
-      <section className="section relative overflow-hidden border-b border-white/10 bg-[#05070E] py-20">
+      <section className="section relative overflow-hidden border-b border-white/10 bg-[#05070E] pt-14 pb-20 lg:py-24">
         <Image
           src="/assets/hero/cityscape.jpg"
           alt="City skyline at dusk"
@@ -36,12 +36,12 @@ export default function Home() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.45)] via-[rgba(3,6,12,0.65)] to-[#03060C]" />
-        <div className="container relative z-10 max-w-5xl space-y-8">
+        <div className="container relative z-10 max-w-5xl space-y-6 sm:space-y-8">
           <h1 className="headline-xl">Signal-driven brand collaborations</h1>
           <p className="body-lede text-white font-semibold">For operators and storytellers.</p>
           <Link
             href="/schedule"
-            className="inline-flex items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)]"
+            className="inline-flex w-full items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)] sm:w-auto sm:tracking-[0.3em]"
           >
             Book the brand collab lab
           </Link>
@@ -63,7 +63,7 @@ export default function Home() {
           <h2 className="mt-2 headline-lg">Weekly briefs built for cinematic decks.</h2>
         </div>
         {featuredBriefs.length > 0 ? (
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featuredBriefs.map((brief) => {
               const preview = brief.heroImage || "/assets/og/default-brief.png";
               const { label, dateTime } = formatBriefDate(brief.date);
@@ -113,9 +113,9 @@ export default function Home() {
               Idea inception through pitch perfection. One session to capture signal, spin the cinematic concept,
               and leave with the deck spine and outreach logic.
             </p>
-            <ul className="space-y-2 text-white/85 text-sm">
+            <ul className="space-y-2 pl-4 text-white/85 text-sm marker:text-white/80 list-disc">
               {labDeliverables.map((item) => (
-                <li key={item}>• {item}</li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
