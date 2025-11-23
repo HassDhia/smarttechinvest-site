@@ -3,7 +3,7 @@ import path from 'node:path';
 import matter from 'gray-matter';
 
 const DAILY_DIR = path.join(process.cwd(), 'src/content/daily');
-const BRIEFS_DIR = path.join(process.cwd(), 'public/intelligence/briefs');
+const BRIEF_MANIFEST = path.join(process.cwd(), 'public/intelligence/briefs', 'manifest.json');
 
 export type DailyFrontmatter = {
   title: string;
@@ -40,6 +40,18 @@ export type Brief = {
   coverageWindow?: {start: string; end: string};
   tags?: string[];
 };
+
+export interface BriefManifestEntry {
+  date: string;
+  href: string;
+  pdf: string;
+  og: string;
+  heroImage?: string;
+  title?: string;
+  summary?: string;
+  metadata?: BriefMetadata;
+  keySignals?: string[];
+}
 
 export function getDailySlugs(): string[] {
   try {
