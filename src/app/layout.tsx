@@ -56,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex min-h-screen flex-col bg-transparent">
               <MobileNav />
               <Nav />
-              <main id="main" className="flex-1 pt-[calc(env(safe-area-inset-top)+3.5rem)] lg:pt-0">
+              <main id="main" className="flex-1">
                 <PageTransition>{children}</PageTransition>
                 <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-[hsl(var(--foreground)/0.6)]">
                   © {new Date().getFullYear()} Smart Technology Investments ·{" "}

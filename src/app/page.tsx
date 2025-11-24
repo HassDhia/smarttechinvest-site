@@ -27,10 +27,7 @@ export default function Home() {
 
   return (
     <div className="font-sans bg-[#03060C] text-white">
-      <section
-        className="section relative overflow-hidden border-b border-white/10 bg-[#05070E] pt-0 pb-20 lg:py-24"
-        style={{ marginTop: "calc(-1 * env(safe-area-inset-top, 0px))" }}
-      >
+      <section className="section relative overflow-hidden border-b border-white/10 bg-[#05070E] pt-16 pb-20 lg:py-24">
         <Image
           src="/assets/hero/cityscape.jpg"
           alt="City skyline at dusk"

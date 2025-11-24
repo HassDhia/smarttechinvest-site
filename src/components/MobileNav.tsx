@@ -42,8 +42,8 @@ export function MobileNav() {
 
   return (
     <div className="lg:hidden">
-      <div className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-[#05070e]/95 backdrop-blur-xl" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
-        <div className="container flex h-14 items-center justify-between text-[0.65rem] tracking-[0.35em] uppercase text-white/70">
+      <div className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-gradient-to-b from-black/80 via-black/60 to-transparent backdrop-blur-md px-4" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
+        <div className="flex h-14 items-center justify-between text-[0.65rem] tracking-[0.35em] uppercase text-white/70">
           <Link href="/" className="font-semibold text-white tracking-[0.5em]">
             STI
           </Link>
