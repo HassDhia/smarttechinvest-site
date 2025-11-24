@@ -1,0 +1,100 @@
+{
+  "generated_at": "2025-11-23T16:43:51.591948",
+  "query": "Holiday Pop-Up to Loyalty Conversion",
+  "time_window": {
+    "start": "2025-11-17",
+    "end": "2025-11-24",
+    "days": 7
+  },
+  "confidence": {
+    "score": 0.826,
+    "display": 0.83,
+    "band": "Medium",
+    "dials": {
+      "strength": "high",
+      "coverage": "medium",
+      "quant_support": "high",
+      "consistency": "high"
+    },
+    "breakdown": {
+      "average_strength": 0.8400000000000001,
+      "coverage": 0.667,
+      "quant_support": 1.0,
+      "contradiction_penalty": 0.9
+    }
+  },
+  "files": [
+    "intelligence_report.md",
+    "intelligence_report.html",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "signal_map_notes"
+  ],
+  "title": "Holiday Flagship Early-Access & Pop-up Tests",
+  "highlights": [
+    "Unified targets set clear success thresholds for footfall, early-window share, CPA and QR redemption.",
+    "Direct A/B test compares legacy markdowns (Arm A) with bundle+GWP+loyalty (Arm B) in the same two-week period.",
+    "30‑day action list focuses on measurement, inventory splits, staff scheduling and reporting cadence for rapid readout."
+  ],
+  "executive_summary": "This quick test targets a unified holiday pack with **10–15%** detectable foot-traffic uplift (stretch **≥25%** in top markets), an **early-window transaction share goal 20–30%** (vs **~12–15%** baseline), an **event CPA target ≤0.80×** baseline, and **QR/scan redemption ≥5%** of footfall to close the visit-to-buy loop [^1][^3][^4]. We will run an A/B framing inside the same two-week window: Arm A = legacy markdowns vs Arm B = bundle + gift‑with‑purchase + loyalty incentive, measuring attendance, conversion, and CPA head‑to‑head [^2][^4]. **Within 30 days, teams must** lock site windows and staffing, instrument door counts and QR→POS attribution, finalize creative and inventory splits for Arm A vs Arm B, and agree an A/B holdout and weekly reporting cadence to validate the pack against the quantitative anchors above [^1][^2][^3].",
+  "top_operator_moves": [
+    "Lock two-week flagship sites and finalize Arm A vs Arm B inventory and creative splits.",
+    "Implement door-counts, QR→POS linkages and a clear A/B holdout plan with daily rollups.",
+    "Train floor staff on bundle/GWP flows and loyalty opt-in scripting; commit to weekly KPI reviews."
+  ],
+  "statistics": {
+    "word_count": 3817,
+    "signal_count": 4,
+    "source_count": 6
+  },
+  "read_time_minutes": 20,
+  "length_label": "~20 min read",
+  "qa": {
+    "issues": [
+      "Signal count outside required band",
+      "Read time exceeds target"
+    ],
+    "coverage": 0.667,
+    "quant_support": 1.0,
+    "contradiction_penalty": 0.9,
+    "appendix_count": 2,
+    "scope": {
+      "topic": "Holiday Pop-Up to Loyalty Conversion",
+      "time_window": {
+        "start": "2025-11-17",
+        "end": "2025-11-24",
+        "days": 7
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand↔brand",
+        "brick&mortar↔brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ]
+    },
+    "read_time": 20,
+    "high_quality_signals": true,
+    "observed_quant": true,
+    "tier1_market_signals": false
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07",
+  "social_media_content": {
+    "confidence": 0.83,
+    "teaser_mode": false,
+    "sources_used": "forbes.com | marketingdive.com | retailtouchpoints.com"
+  }
+}

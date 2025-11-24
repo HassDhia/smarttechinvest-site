@@ -6,7 +6,5 @@ export type NavLink = {
 export const navLinks: NavLink[] = [
   { label: "Intelligence", href: "/intelligence" },
   { label: "Collab Lab", href: "/collab-lab" },
-  { label: "Work", href: "/work" },
-  { label: "Resources", href: "/resources" },
   { label: "Schedule", href: "/schedule" },
 ];
