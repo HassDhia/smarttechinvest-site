@@ -10,6 +10,14 @@ export function DownloadCenter({
   brief: Brief;
   className?: string;
 }) {
+  const markdownHref = brief.marketPathMarkdown
+    ? brief.marketPathMarkdown
+    : brief.intelligenceMarkdown
+      ? brief.intelligenceMarkdown
+      : `/intelligence/briefs/${brief.date}/${brief.hasMarketPath ? 'market_path_report.md' : 'intelligence_report.md'}`;
+  const markdownLabel = brief.hasMarketPath ? 'Market-Path Markdown' : 'Intelligence Markdown';
+  const pdfLabel = brief.hasMarketPath ? 'Download Market-Path PDF' : 'Download PDF';
+
   return (
     <div className={cn(
       "rounded-2xl p-4 bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))] shadow-sm",
@@ -27,15 +35,15 @@ export function DownloadCenter({
         <Button asChild variant="gradient" size="md" className="w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
           <a href={brief.pdf} target="_blank" rel="noopener noreferrer">
             <Download size={16} className="mr-2" />
-            Download PDF
+            {pdfLabel}
           </a>
         </Button>
         
         {/* MD Download - Secondary */}
         <Button asChild variant="ghost" size="sm" className="w-full justify-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
-          <a href={`/intelligence/briefs/${brief.date}/intelligence_report.md`} target="_blank" rel="noopener noreferrer">
+          <a href={markdownHref} target="_blank" rel="noopener noreferrer">
             <FileText size={14} className="mr-2" />
-            Markdown Source
+            {markdownLabel}
           </a>
         </Button>
       </div>

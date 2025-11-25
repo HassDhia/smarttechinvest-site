@@ -48,7 +48,7 @@ export function BriefCard({
       
       <div className="p-5">
         <div className="flex items-center gap-2 mb-3">
-        <Badge variant="brand">Weekly Brief</Badge>
+        <Badge variant="brand">{brief.hasMarketPath ? 'Market-Path Dossier' : 'Weekly Brief'}</Badge>
         <div className="flex items-center gap-1 text-xs text-[hsl(var(--muted-foreground))]">
           <Calendar size={12} />
           <time dateTime={dateStr}>{formattedDate}</time>

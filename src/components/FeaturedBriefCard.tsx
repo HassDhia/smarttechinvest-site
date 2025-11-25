@@ -65,7 +65,9 @@ export function FeaturedBriefCard({
           <Calendar size={14} className="opacity-70" />
           {formattedDate}
         </time>
-        <Badge variant="brand" size="sm">Weekly Brief</Badge>
+        <Badge variant="brand" size="sm">
+          {brief.hasMarketPath ? 'Market-Path Dossier' : 'Weekly Brief'}
+        </Badge>
       </div>
       
       {/* Teaser from executive summary / Preview Text */}

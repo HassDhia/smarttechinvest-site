@@ -72,6 +72,8 @@ const mdPath     = pick(src, ['intelligence_report.md']);                   // s
 const socialPostPath = pick(src, ['social_media_post.md']);                 // social post    📱 (optional)
 const socialThreadPath = pick(src, ['social_media_thread.txt']);            // twitter thread 🐦 (optional)
 const socialLinkedinPath = pick(src, ['social_media_linkedin.txt']);        // linkedin post  💼 (optional)
+const marketPathMdPath = pick(src, ['market_path_report.md']);              // Market-Path MD dossier 📚
+const marketPathPdfPath = pick(src, ['market_path_report.pdf']);            // Market-Path PDF dossier 📄
 
 let metadataJson = null;
 if (metaPath) {
@@ -127,9 +129,19 @@ if (summaryPath) {
   }
 }
   if (mdPath) fs.copyFileSync(mdPath, path.join(dst, 'intelligence_report.md'));
+  if (marketPathMdPath) {
+    fs.copyFileSync(marketPathMdPath, path.join(dst, 'market_path_report.md'));
+  }
   if (socialPostPath) fs.copyFileSync(socialPostPath, path.join(dst, 'social_media_post.md'));
   if (socialThreadPath) fs.copyFileSync(socialThreadPath, path.join(dst, 'social_media_thread.txt'));
   if (socialLinkedinPath) fs.copyFileSync(socialLinkedinPath, path.join(dst, 'social_media_linkedin.txt'));
+
+  if (marketPathPdfPath) {
+    const dstMarketPathPdf = path.join(dst, 'market_path_report.pdf');
+    fs.copyFileSync(marketPathPdfPath, dstMarketPathPdf);
+    // Maintain backwards compatibility for existing download links.
+    fs.copyFileSync(dstMarketPathPdf, path.join(dst, 'brief.pdf'));
+  }
 
   // Check for and copy images folder if it exists
   const imagesSrc = path.join(src, 'images');

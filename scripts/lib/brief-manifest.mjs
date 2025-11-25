@@ -57,6 +57,9 @@ export function buildManifestEntryFromDir(dateDir) {
   const summaryPath = path.join(briefDir, 'executive_summary.txt');
   const sourcesPath = path.join(briefDir, 'sources.json');
   const imagesDir = path.join(briefDir, 'images');
+  const marketPathMarkdownPath = path.join(briefDir, 'market_path_report.md');
+  const marketPathPdfPath = path.join(briefDir, 'market_path_report.pdf');
+  const intelligenceMarkdownPath = path.join(briefDir, 'intelligence_report.md');
 
   const metadata = fs.existsSync(metaPath)
     ? JSON.parse(fs.readFileSync(metaPath, 'utf8'))
@@ -116,10 +119,24 @@ export function buildManifestEntryFromDir(dateDir) {
     'report_stats.word_count',
   ]);
 
+  const hasMarketPath = fs.existsSync(marketPathMarkdownPath);
+  const hasMarketPathPdf = fs.existsSync(marketPathPdfPath);
+  const marketPathHref = hasMarketPath
+    ? `/intelligence/briefs/${dateDir}/market-path`
+    : `/intelligence/briefs/${dateDir}/report.html`;
+  const marketPathPdf = hasMarketPathPdf
+    ? `/intelligence/briefs/${dateDir}/market_path_report.pdf`
+    : `/intelligence/briefs/${dateDir}/brief.pdf`;
+  const intelligenceHref = `/intelligence/briefs/${dateDir}/report.html`;
+  const marketPathMarkdown = hasMarketPath ? `/intelligence/briefs/${dateDir}/market_path_report.md` : undefined;
+  const intelligenceMarkdown = fs.existsSync(intelligenceMarkdownPath)
+    ? `/intelligence/briefs/${dateDir}/intelligence_report.md`
+    : undefined;
+
   return {
     date: dateDir,
-    href: `/intelligence/briefs/${dateDir}/report.html`,
-    pdf: `/intelligence/briefs/${dateDir}/brief.pdf`,
+    href: marketPathHref,
+    pdf: marketPathPdf,
     og: `/intelligence/briefs/${dateDir}/og.png`,
     heroImage,
     title: metadata.title || metadata.query,
@@ -130,6 +147,10 @@ export function buildManifestEntryFromDir(dateDir) {
       word_count: wordCount,
     },
     keySignals: keySignals.length ? keySignals : undefined,
+    intelligenceHref,
+    marketPathMarkdown,
+    intelligenceMarkdown,
+    hasMarketPath,
   };
 }
 

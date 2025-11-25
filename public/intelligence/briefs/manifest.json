@@ -1,8 +1,30 @@
 [
   {
+    "date": "2025-11-25-102040",
+    "href": "/intelligence/briefs/2025-11-25-102040/market-path",
+    "pdf": "/intelligence/briefs/2025-11-25-102040/market_path_report.pdf",
+    "og": "/intelligence/briefs/2025-11-25-102040/og.png",
+    "heroImage": "/intelligence/briefs/2025-11-25-102040/images/hero_store_as_studio_how_retail_sto.png",
+    "title": "Holiday Flagship Early-Access & Pop-up Tests",
+    "summary": "Run a concentrated holiday early-access plus pop-up experiment to hit the unified holiday target pack: detectable foot-traffic uplift **10–15%** (stretch **≥25%** in top markets), early-window transaction share **20–30%** (vs ~12–15% baseline), event CPA ≤**0.…",
+    "metadata": {
+      "sources_count": 9,
+      "confidence_score": 83,
+      "word_count": 2756
+    },
+    "keySignals": [
+      "How Agentic Commerce Is Reshaping Retail And CPG Strategy",
+      "A24, Barnes & Noble Partner On Branded In-Store Spaces For Indie Studio’s Books, Movies, Merch"
+    ],
+    "intelligenceHref": "/intelligence/briefs/2025-11-25-102040/report.html",
+    "marketPathMarkdown": "/intelligence/briefs/2025-11-25-102040/market_path_report.md",
+    "intelligenceMarkdown": "/intelligence/briefs/2025-11-25-102040/intelligence_report.md",
+    "hasMarketPath": true
+  },
+  {
     "date": "2025-11-25-093357",
-    "href": "/intelligence/briefs/2025-11-25-093357/report.html",
-    "pdf": "/intelligence/briefs/2025-11-25-093357/brief.pdf",
+    "href": "/intelligence/briefs/2025-11-25-093357/market-path",
+    "pdf": "/intelligence/briefs/2025-11-25-093357/market_path_report.pdf",
     "og": "/intelligence/briefs/2025-11-25-093357/og.png",
     "heroImage": "/intelligence/briefs/2025-11-25-093357/images/hero_consumer_behavior_identity_cyc.png",
     "title": "Holiday Flagship Early-Access & Pop-up Tests",
@@ -15,7 +37,11 @@
     "keySignals": [
       "Disney DIS Movement Within Entertainment Landscape Amid S&P 500 Shifts",
       "Major U.S. Malls Lose Dillard’s, Macy’s, and JCPenney in Quickest Bankruptcy Cycle"
-    ]
+    ],
+    "intelligenceHref": "/intelligence/briefs/2025-11-25-093357/report.html",
+    "marketPathMarkdown": "/intelligence/briefs/2025-11-25-093357/market_path_report.md",
+    "intelligenceMarkdown": "/intelligence/briefs/2025-11-25-093357/intelligence_report.md",
+    "hasMarketPath": true
   },
   {
     "date": "2025-11-23-163612",
