@@ -51,12 +51,13 @@ export function MarketPathContent({ markdownUrl }: { markdownUrl: string }) {
   }
 
   return (
-    <ReactMarkdown
-      className="prose prose-slate dark:prose-invert max-w-none"
-      remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeHighlight]}
-    >
-      {markdown}
-    </ReactMarkdown>
+    <div className="prose prose-slate dark:prose-invert max-w-none">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeHighlight]}
+      >
+        {markdown}
+      </ReactMarkdown>
+    </div>
   );
 }
