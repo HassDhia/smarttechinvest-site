@@ -1,21 +1,15 @@
-import fs from "node:fs";
-import path from "node:path";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import remarkGfm from "remark-gfm";
-import rehypeHighlight from "rehype-highlight";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { listBriefs, getBriefByDate } from "../../../../../lib/content";
 import { DownloadCenter } from "../../../../../components/DownloadCenter";
 import { Button } from "../../../../../components/ui/Button";
+import { MarketPathContent } from "../../../../../components/MarketPathContent";
 
 export const dynamic = "force-static";
 export const revalidate = false;
 export const dynamicParams = false;
-
-const BRIEFS_DIR = path.join(process.cwd(), "public", "intelligence", "briefs");
 
 type Props = {
   params: Promise<{ date: string }>;
@@ -61,12 +55,7 @@ export default async function MarketPathReportPage({ params }: Props) {
     notFound();
   }
 
-  const dossierPath = path.join(BRIEFS_DIR, date, "market_path_report.md");
-  if (!fs.existsSync(dossierPath)) {
-    notFound();
-  }
-
-  const markdown = fs.readFileSync(dossierPath, "utf8");
+  const markdownUrl = `/intelligence/briefs/${date}/market_path_report.md`;
   const intelligenceHref = brief.intelligenceHref ?? `/intelligence/briefs/${date}/report.html`;
 
   return (
@@ -124,17 +113,7 @@ export default async function MarketPathReportPage({ params }: Props) {
           </div>
         </div>
 
-        <article className="prose prose-slate dark:prose-invert max-w-none">
-          <MDXRemote
-            source={markdown}
-            options={{
-              mdxOptions: {
-                remarkPlugins: [remarkGfm],
-                rehypePlugins: [rehypeHighlight],
-              },
-            }}
-          />
-        </article>
+        <MarketPathContent markdownUrl={markdownUrl} />
       </section>
     </div>
   );
