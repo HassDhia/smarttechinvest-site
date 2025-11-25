@@ -1,0 +1,41 @@
+[
+  {
+    "type": "hero",
+    "query": "Consumer Behavior & Identity Cycles",
+    "intent": "market",
+    "prompt": "Capture High-value windows stretch and scatter across many micro-windows. Operators must choose where to place scarce creative drops to capture margin, not just volume. The mechanism is simple: timing wins are now segmented.. Scene: Clean studio table or retail staging area. Wide negative space. Printed micro-drop calendars and sample packs laid out like field maps.. Persona: Brand merchant and creative lead in active collaboration.. Action: Hands point and move sample gift boxes and annotated week cards to mark prioritized micro-windows.. Urgency symbol: Overlapping translucent ribbons and stacked windows that step forward to show priority, suggesting stretched timing without a clock.. Key objects: limited-edition gift boxes, annotated 12-week calendar spreads, cohort index cards, sample packaging swatches. Lighting: Polished editorial lighting with confident highlights, soft key from a high angle, muted fill, strong rim light to separate subjects, and clean negative space.. Mood: Precise, collaborative, confident.. Props: limited-edition gift boxes, annotated 12-week calendar spreads, cohort index cards, sample packaging swatches. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, daylight optimism, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/hero_consumer_behavior_identity_cyc.png"
+  },
+  {
+    "type": "section",
+    "query": "Consumer Behavior & Identity Cycles",
+    "intent": "market",
+    "section": "Signal Map",
+    "prompt": "Structure: Concentric rings and radial arcs mapping season to micro-windows to 1:1 nodes.. Motion: Flow lines from macro ring into focused arcs. Pulsing nodes where personalization compresses conversion. Paths converge on creative drops.. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, daylight optimism, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_signal_map_consumer_behavior_identity_cyc.png"
+  },
+  {
+    "type": "section",
+    "query": "Consumer Behavior & Identity Cycles",
+    "intent": "market",
+    "section": "Case Study 1",
+    "prompt": "Scene: Micro-drop staging for top 25 stores and online.. Moment: Brand merchant seals a limited-edition gift pack and places a store batch sticker for Week 3.. Persona: Brand merchant and store operations lead executing a 6-week creative gifting drop (S1).. Mood: Focused, decisive, tactical.. Lighting: Polished editorial top light with warm fill; highlights on hands and product edges; clean shadow fields.. Props: limited-edition gift boxes, store roll sheets, packing labels with cohort tags. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, daylight optimism, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_1_consumer_behavior_identity_cyc.png"
+  },
+  {
+    "type": "section",
+    "query": "Consumer Behavior & Identity Cycles",
+    "intent": "market",
+    "section": "Case Study 2",
+    "prompt": "Scene: Agentic pilot review in a small lab space.. Moment: Data lead points to a printed 1:1 offer mockup next to a cohort card while a strategist logs KPI targets.. Persona: Brand data lead and email strategist running an 8-week agentic offer pilot (S2).. Mood: Analytical, collaborative, urgent.. Lighting: Polished directional light from side, confident highlights on paper textures, low ambient to emphasize focus.. Props: customer cohort cards, printed offer mockups, whiteboard with conversion KPIs. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, daylight optimism, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_2_consumer_behavior_identity_cyc.png"
+  },
+  {
+    "type": "section",
+    "query": "Consumer Behavior & Identity Cycles",
+    "intent": "market",
+    "section": "Case Study 3",
+    "prompt": "Scene: Local partnership pop-up planning table.. Moment: Brick-and-mortar operator arranges co-promo flyers into a modular pop-up crate while marking foot-traffic hotspots.. Persona: Brick-and-mortar operator and local partner coordinator planning an 8-week partnership program (S3).. Mood: Practical, networked, opportunistic.. Lighting: Polished editorial fill with soft shadows; highlights on paper and material textures; clean negative space to isolate action.. Props: co-promo flyers, modular shelving sample, mall map with foot-traffic pins. polished editorial photography, clean gradients, confident highlights, single clear subject, generous negative space, modern materials, daylight optimism, not a poster, not a collage, not an infographic, no charts, no UI, no labels",
+    "image": "images/section_case_study_3_consumer_behavior_identity_cyc.png"
+  }
+]
