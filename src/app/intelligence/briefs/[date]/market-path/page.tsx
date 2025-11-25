@@ -11,6 +11,10 @@ import { listBriefs, getBriefByDate } from "../../../../../lib/content";
 import { DownloadCenter } from "../../../../../components/DownloadCenter";
 import { Button } from "../../../../../components/ui/Button";
 
+export const dynamic = "force-static";
+export const revalidate = false;
+export const dynamicParams = false;
+
 const BRIEFS_DIR = path.join(process.cwd(), "public", "intelligence", "briefs");
 
 type Props = {
