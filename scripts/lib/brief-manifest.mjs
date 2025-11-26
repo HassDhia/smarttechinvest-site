@@ -60,6 +60,7 @@ export function buildManifestEntryFromDir(dateDir) {
   const marketPathMarkdownPath = path.join(briefDir, 'market_path_report.md');
   const marketPathPdfPath = path.join(briefDir, 'market_path_report.pdf');
   const intelligenceMarkdownPath = path.join(briefDir, 'intelligence_report.md');
+  const intelligenceHtmlPath = path.join(briefDir, 'intelligence_report.html');
 
   const metadata = fs.existsSync(metaPath)
     ? JSON.parse(fs.readFileSync(metaPath, 'utf8'))
@@ -121,13 +122,14 @@ export function buildManifestEntryFromDir(dateDir) {
 
   const hasMarketPath = fs.existsSync(marketPathMarkdownPath);
   const hasMarketPathPdf = fs.existsSync(marketPathPdfPath);
+  const hasIntelligenceHtml = fs.existsSync(intelligenceHtmlPath);
   const marketPathHref = hasMarketPath
     ? `/intelligence/briefs/${dateDir}/market-path`
     : `/intelligence/briefs/${dateDir}/report.html`;
   const marketPathPdf = hasMarketPathPdf
     ? `/intelligence/briefs/${dateDir}/market_path_report.pdf`
     : `/intelligence/briefs/${dateDir}/brief.pdf`;
-  const intelligenceHref = `/intelligence/briefs/${dateDir}/report.html`;
+  const intelligenceHref = hasIntelligenceHtml ? `/intelligence/briefs/${dateDir}/report.html` : undefined;
   const marketPathMarkdown = hasMarketPath ? `/intelligence/briefs/${dateDir}/market_path_report.md` : undefined;
   const intelligenceMarkdown = fs.existsSync(intelligenceMarkdownPath)
     ? `/intelligence/briefs/${dateDir}/intelligence_report.md`

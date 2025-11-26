@@ -56,7 +56,8 @@ export default async function MarketPathReportPage({ params }: Props) {
   }
 
   const markdownUrl = `/intelligence/briefs/${date}/market_path_report.md`;
-  const intelligenceHref = brief.intelligenceHref ?? `/intelligence/briefs/${date}/report.html`;
+  const intelligenceHref = brief.intelligenceHref;
+  const showIntelligenceCta = Boolean(intelligenceHref);
 
   return (
     <div className="font-sans">
@@ -97,20 +98,26 @@ export default async function MarketPathReportPage({ params }: Props) {
 
         <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr] mb-12">
           <DownloadCenter brief={brief} />
-          <div className="rounded-2xl border border-[hsl(var(--border))] bg-card/40 p-4">
-            <div className="flex items-center gap-2 mb-2 text-sm font-semibold text-foreground">
-              <ExternalLink size={16} className="text-[hsl(var(--muted-foreground))]" />
-              Need the full intelligence narration?
+          {showIntelligenceCta ? (
+            <div className="rounded-2xl border border-[hsl(var(--border))] bg-card/40 p-4">
+              <div className="flex items-center gap-2 mb-2 text-sm font-semibold text-foreground">
+                <ExternalLink size={16} className="text-[hsl(var(--muted-foreground))]" />
+                Need the full intelligence narration?
+              </div>
+              <p className="text-sm text-[hsl(var(--muted-foreground))] mb-4">
+                Dive into the McKinsey-style intelligence report for the deep narrative, appendices, and source pull-through.
+              </p>
+              <Button asChild size="sm" variant="secondary" className="w-full justify-center">
+                <a href={intelligenceHref!} target="_blank" rel="noopener noreferrer">
+                  View intelligence report
+                </a>
+              </Button>
             </div>
-            <p className="text-sm text-[hsl(var(--muted-foreground))] mb-4">
-              Dive into the McKinsey-style intelligence report for the deep narrative, appendices, and source pull-through.
-            </p>
-            <Button asChild size="sm" variant="secondary" className="w-full justify-center">
-              <a href={intelligenceHref} target="_blank" rel="noopener noreferrer">
-                View intelligence report
-              </a>
-            </Button>
-          </div>
+          ) : (
+            <div className="rounded-2xl border border-dashed border-[hsl(var(--border))] bg-card/20 p-4 text-sm text-[hsl(var(--muted-foreground))]">
+              This run shipped only the Market-Path dossier. Use the downloads to share it; a McKinsey-style intelligence PDF will appear here when available.
+            </div>
+          )}
         </div>
 
         <MarketPathContent markdownUrl={markdownUrl} />

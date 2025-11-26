@@ -64,7 +64,7 @@ async function ingest() {
     return null;
   };
 
-const htmlPath   = pick(src, ['intelligence_report.html', 'report.html']); // canonical HTML  🔒
+const htmlPath   = pick(src, ['intelligence_report.html', 'report.html']); // canonical HTML (optional in new standard)
 const metaPath   = pick(src, ['metadata.json']);                            // stats          🧭
 const sourcesPath= pick(src, ['sources.json']);                             // signals        🗞️
 const summaryPath= pick(src, ['executive_summary.txt']);                    // teaser/OG desc 🧾
@@ -94,8 +94,11 @@ if (!summaryPath && metadataJson && typeof metadataJson.executive_summary === 's
   }
 }
 
-if (!htmlPath || !metaPath || (!summaryPath && !summaryFallback)) {
-  const error = 'Missing one or more required files: intelligence_report.html/report.html, metadata.json, executive_summary.txt (or metadata.executive_summary)';
+const hasIntelHtml = Boolean(htmlPath);
+const hasMarketPathMd = Boolean(marketPathMdPath);
+
+if (!metaPath || (!summaryPath && !summaryFallback) || (!hasIntelHtml && !hasMarketPathMd)) {
+  const error = 'Missing one or more required files: metadata.json, executive_summary, and either market_path_report.md or intelligence_report.html';
   // Debug: List what files actually exist in source directory
   if (watchMode) {
     try {
@@ -116,7 +119,20 @@ if (!htmlPath || !metaPath || (!summaryPath && !summaryFallback)) {
 
   // 2) Copy with canonical names
 const dstReport = path.join(dst, 'report.html');
-fs.copyFileSync(htmlPath, dstReport);
+if (hasIntelHtml) {
+  fs.copyFileSync(htmlPath, dstReport);
+  fs.copyFileSync(htmlPath, path.join(dst, 'intelligence_report.html'));
+} else {
+  const fallbackReport = `<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url=./market-path">
+<title>Redirecting…</title>
+</head><body>
+<p>Redirecting to the Market-Path dossier. If you are not redirected, <a href="./market-path">click here</a>.</p>
+</body></html>`;
+  fs.writeFileSync(dstReport, fallbackReport, 'utf8');
+}
 fs.copyFileSync(metaPath, path.join(dst, 'metadata.json'));
 if (sourcesPath) fs.copyFileSync(sourcesPath, path.join(dst, 'sources.json'));
 const dstSummary = path.join(dst, 'executive_summary.txt');
@@ -182,14 +198,15 @@ if (summaryPath) {
   }
 
   // 3) Create index.html wrapper that redirects to report.html + declares canonical
+  const indexRedirectTarget = hasIntelHtml ? './report.html' : './market-path';
   const indexWrapper = `<!doctype html>
 <html><head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=./report.html">
-<link rel="canonical" href="./report.html">
+<meta http-equiv="refresh" content="0; url=${indexRedirectTarget}">
+<link rel="canonical" href="${indexRedirectTarget}">
 <title>Redirecting…</title>
 </head><body>
-<p>Redirecting to <a href="./report.html">report</a>…</p>
+<p>Redirecting to <a href="${indexRedirectTarget}">report</a>…</p>
 </body></html>`;
   fs.writeFileSync(path.join(dst, 'index.html'), indexWrapper, 'utf8');
 
