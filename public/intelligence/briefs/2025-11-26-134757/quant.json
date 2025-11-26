@@ -1,0 +1,110 @@
+{
+  "report": "1) Executive Take\nStores are shifting from point-of-sale to content studios that drive foot traffic and earlier purchases. This matters because content-driven visits lift early-window transactions and let brands avoid broad markdowns while lowering event CPA. Operators should run short creator-led studio days, measure buyer-share vs promo intensity, and treat stores as production budgets not just rent lines.\n\n2) The Core Signal\nShift: Retail stores are becoming content properties that generate owned short-form assets and live events to convert visits into early purchases. Mechanism: Content produced on-site increases relevance and urgency for nearby shoppers, raising weekend foot traffic and moving a larger share of holiday transactions into the early window. Picture a storefront as a small TV studio; each filmed moment is an ad that immediately invites purchase.\n\n3) Mechanisms\nCause -> An operator schedules creator-led studio days and micro-events inside stores. \nEffect -> Short-form assets and live activations increase discovery, dwell time, and immediate purchase intent. \nSecond-order -> More purchases shift into the early holiday window, reducing reliance on end-season markdowns and lowering event CPA versus broad digital campaigns. \nConstraint -> Studio days require producer budgets, creator partnerships, and a measurement loop tying content views to in-store conversion.\n\n4) Operator Moves\nImmediate Actions 0-30 days\n- Book four creator-led studio days and two ticketed micro-events. The mechanism is simple. Measure weekend foot traffic vs baseline and early-window transactions. \n- Deploy QR-linked offers with clear attribution and aim for ≥5% scan/redemption of footfall. \n- Run first-party data audit to enable targeted in-store dynamic offers.\n\nPositioning Moves quarter-scale\n- Turn one low-performing bay into a rotating studio pop-up every weekend. The leverage point sits here. \n- Build a content calendar that maps 12 short assets to specific SKUs and audience segments. Track direct-attributed online orders from event creatives.\n\nCompounding Opportunities long-tail\n- Bake studio production into store P&L as a recurring line item. \n- License event content to landlords and partners to subsidize rent. \n- Use creator-led assets to seed paid social funnels, lowering CPA across channels.\n\n5) Risks and Exceptions\nThis is where the model breaks. If local foot traffic is structurally weak or creators lack audience overlap with the brand, studio days cost more than they return. If measurement cannot tie content to purchases, you will over-count impact and risk escalating promo intensity. Regulatory limits on sampling or ticketing can blunt monetization.\n\n6) Mini Case Story\nA streetwear owner booked four weekend studio days and recorded eight short-form clips per day. Weekends saw an estimated 20% uplift in foot traffic and a +18% conversion lift on content-linked SKUs. QR redemption hit 6% of visitors on event days, and event CPA measured roughly 0.75× baseline cost. The brand reduced end-season markdown depth and reallocated saved margin to more studio days.\n\n7) Closing Frame\nIf studios consistently lift early-window share to 20–30% while event CPA stays ≤0.8× baseline, then investing in recurring in-store production becomes the highest-return channel decision.\n\n8) One-Line Mental Model\nTreat stores as micro-studios: produce urgency, capture buyers earlier, and replace markdowns with owned content.\n",
+  "anchors": [
+    {
+      "id": "Q1",
+      "topic": "US holiday retail growth",
+      "value_low": 2.9,
+      "value_high": 3.4,
+      "unit": "% YoY",
+      "status": "observed",
+      "expression": "Retail sales ≈ 1.03× LY",
+      "source_ids": [
+        3
+      ],
+      "applies_to_signals": [
+        "S1",
+        "S3"
+      ]
+    },
+    {
+      "id": "A1",
+      "topic": "Foot-traffic uplift target from in-store content",
+      "value_low": 10,
+      "value_high": 15,
+      "unit": "% vs baseline",
+      "status": "plan",
+      "expression": "Detect 10–15% uplift; stretch ≥25% in top markets",
+      "source_ids": [
+        1,
+        2,
+        4
+      ],
+      "applies_to_signals": [
+        "S1",
+        "S2",
+        "S4"
+      ]
+    },
+    {
+      "id": "A2",
+      "topic": "Early-window transaction share",
+      "value_low": 20,
+      "value_high": 30,
+      "unit": "% of holiday transactions",
+      "status": "plan",
+      "expression": "Move early-window share from ~12–15% to 20–30%",
+      "source_ids": [
+        3,
+        5
+      ],
+      "applies_to_signals": [
+        "S3",
+        "S5"
+      ]
+    },
+    {
+      "id": "A3",
+      "topic": "Event CPA target vs baseline",
+      "value_low": 0.8,
+      "value_high": 0.8,
+      "unit": "× baseline",
+      "status": "plan",
+      "expression": "Event CPA ≤ 0.80× baseline",
+      "source_ids": [
+        6,
+        7
+      ],
+      "applies_to_signals": [
+        "S6",
+        "S3"
+      ]
+    }
+  ],
+  "measurement_plan": [
+    {
+      "id": "M1",
+      "metric": "Event CPA",
+      "expression": "CPA ≤ 0.80× baseline",
+      "owner": "Performance marketing",
+      "timeframe": "Thanksgiving weekend",
+      "status": "plan"
+    },
+    {
+      "id": "M2",
+      "metric": "Buyer activity share vs promo intensity",
+      "expression": "Transactions in early window 20–30% while promo SKU share ≈ LY",
+      "owner": "Merch + Analytics",
+      "timeframe": "Nov 13–26",
+      "status": "plan",
+      "notes": "Track both metrics side by side"
+    },
+    {
+      "id": "M3",
+      "metric": "QR / scan redemption",
+      "expression": "Redemptions ≥5% of footfall on event days",
+      "owner": "Store operations",
+      "timeframe": "Nov 21–26",
+      "status": "plan"
+    },
+    {
+      "id": "M4",
+      "metric": "Foot traffic uplift vs baseline",
+      "expression": "10–15% uplift target; track top-market stretch ≥25%",
+      "owner": "Real estate + Ops",
+      "timeframe": "Nov 21–26",
+      "status": "plan"
+    }
+  ],
+  "coverage": 0.72
+}
