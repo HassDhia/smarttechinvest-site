@@ -1,5 +1,27 @@
 [
   {
+    "date": "2025-11-26-091655",
+    "href": "/intelligence/briefs/2025-11-26-091655/market-path",
+    "pdf": "/intelligence/briefs/2025-11-26-091655/market_path_report.pdf",
+    "og": "/intelligence/briefs/2025-11-26-091655/og.png",
+    "heroImage": "/intelligence/briefs/2025-11-26-091655/images/briefs.json",
+    "title": "Holiday Flagship Early-Access & Pop-up Tests",
+    "summary": "Short, curated early-access windows plus a two-arm A/B framing (Arm A legacy markdown vs Arm B bundle+GWP+loyalty inside the same two-week window) can hit the unified holiday target pack: **10–15%** foot-traffic uplift (stretch **≥25%** in top markets), **20–3…",
+    "metadata": {
+      "sources_count": 9,
+      "confidence_score": 88,
+      "word_count": 3156
+    },
+    "keySignals": [
+      "Vacant Retail Space Becomes A Blank Canvas For Artists",
+      "AI Commerce Startup Onton Raises $7.5M To Take On Retail Giants"
+    ],
+    "intelligenceHref": "/intelligence/briefs/2025-11-26-091655/report.html",
+    "marketPathMarkdown": "/intelligence/briefs/2025-11-26-091655/market_path_report.md",
+    "intelligenceMarkdown": "/intelligence/briefs/2025-11-26-091655/intelligence_report.md",
+    "hasMarketPath": true
+  },
+  {
     "date": "2025-11-25-220815",
     "href": "/intelligence/briefs/2025-11-25-220815/market-path",
     "pdf": "/intelligence/briefs/2025-11-25-220815/market_path_report.pdf",
