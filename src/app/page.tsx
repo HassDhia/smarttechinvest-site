@@ -22,7 +22,7 @@ const labDeliverables = [
 ];
 
 export default function Home() {
-  const briefs = listBriefs();
+  const briefs = listBriefs().filter((brief) => (brief.metadata?.sources_count ?? 0) > 0);
   const featuredBriefs = briefs.slice(0, 3);
 
   return (

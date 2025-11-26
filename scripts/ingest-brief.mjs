@@ -128,32 +128,6 @@ if (summaryPath) {
 }
 fs.copyFileSync(marketPathHtmlPath, path.join(dst, 'market_path_report.html'));
 
-const optionalArtifacts = [
-  { dest: 'market_path_report.md', candidates: ['market_path_report.md'] },
-  { dest: 'market_path_report.pdf', candidates: ['market_path_report.pdf'] },
-  { dest: 'intelligence_report.md', candidates: ['intelligence_report.md'] },
-  { dest: 'intelligence_report.jsonld', candidates: ['intelligence_report.jsonld'] },
-  { dest: 'appendix_signals.json', candidates: ['appendix_signals.json'] },
-  { dest: 'signals.json', candidates: ['signals.json'] },
-  { dest: 'sections.json', candidates: ['sections.json'] },
-  { dest: 'quant.json', candidates: ['quant.json'] },
-  { dest: 'social_media_post.md', candidates: ['social_media_post.md'] },
-  { dest: 'social_media_thread.txt', candidates: ['social_media_thread.txt'] },
-  { dest: 'social_media_linkedin.txt', candidates: ['social_media_linkedin.txt'] },
-];
-
-for (const artifact of optionalArtifacts) {
-  const sourcePath = pick(src, artifact.candidates);
-  if (sourcePath) {
-    fs.copyFileSync(sourcePath, path.join(dst, artifact.dest));
-    if (watchMode) {
-      console.log(`📄 Copied ${artifact.dest}`);
-    }
-  } else if (watchMode) {
-    console.log(`ℹ️  Optional artifact not found: ${artifact.dest}`);
-  }
-}
-
   // Check for and copy images folder if it exists
   const imagesSrc = path.join(src, 'images');
   const imagesDst = path.join(dst, 'images');

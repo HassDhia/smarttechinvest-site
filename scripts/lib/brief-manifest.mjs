@@ -42,8 +42,15 @@ export function readManifest() {
   }
 }
 
+function briefDirExists(date) {
+  if (!date) return false;
+  const dir = path.join(BRIEFS_DIR, date);
+  return fs.existsSync(dir);
+}
+
 export function writeManifest(entries) {
-  const sorted = entries.sort((a, b) => b.date.localeCompare(a.date));
+  const filtered = entries.filter((entry) => briefDirExists(entry.date));
+  const sorted = filtered.sort((a, b) => b.date.localeCompare(a.date));
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(sorted, null, 2));
 }
 
