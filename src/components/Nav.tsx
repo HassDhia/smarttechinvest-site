@@ -8,30 +8,31 @@ export function Nav() {
   const currentPath = pathname ?? "/";
 
   return (
-    <header className="hidden lg:block sticky top-0 z-[45] border-b border-white/10 bg-[#03050c]/95 backdrop-blur-xl">
-      <div className="container flex h-16 items-center justify-between gap-10 uppercase">
+    <header className="hidden lg:block sticky top-0 z-[45] border-b border-white/10 bg-[#070707]/95 backdrop-blur-xl">
+      <div className="container flex h-12 items-center justify-between gap-8 uppercase">
         <Link
           href="/"
-          className="headline-label text-white"
+          className="headline-label text-white tracking-[0.02em]"
           aria-label="Smart Technology Investments"
         >
           Smart Technology Investments
         </Link>
         <nav aria-label="Primary" className="flex-1">
-          <ul className="flex items-center justify-center gap-8 text-[0.75rem] font-semibold tracking-[0.45em] text-white/70">
+          <ul className="flex items-center justify-center gap-8 text-[0.75rem] font-semibold tracking-[0.02em] text-white/85">
             {navLinks.map(({ href, label }) => {
               const active = currentPath === href || currentPath.startsWith(`${href}/`);
               return (
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`relative transition-colors ${active ? "text-white" : "hover:text-white"}`}
+                    className={`relative transition-colors group ${active ? "text-white" : "hover:text-white"}`}
                     aria-current={active ? "page" : undefined}
                   >
                     {label}
-                    {active ? (
-                      <span className="absolute inset-x-0 -bottom-2 mx-auto h-0.5 w-6 rounded-full bg-white" aria-hidden />
-                    ) : null}
+                    <span
+                      className={`absolute inset-x-0 -bottom-2 mx-auto h-px w-6 rounded-full bg-white/20 transition-opacity ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                      aria-hidden
+                    />
                   </Link>
                 </li>
               );
