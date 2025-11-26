@@ -30,7 +30,7 @@ export function Nav() {
                   >
                     {label}
                     <span
-                      className={`absolute inset-x-0 -bottom-2 mx-auto h-px w-6 rounded-full bg-white/20 transition-opacity ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                      className={`absolute inset-x-0 -bottom-2 mx-auto h-px w-6 rounded-full bg-[color-mix(in_srgb,_var(--text-primary)_70%,_transparent)] transition-opacity ${active ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
                       aria-hidden
                     />
                   </Link>

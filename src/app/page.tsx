@@ -104,7 +104,7 @@ export default function Home() {
         )}
       </section>
 
-      <section className="bg-[#05070E]">
+      <section>
         <div className="container section grid gap-12 lg:grid-cols-2">
           <div className="space-y-4">
             <p className="headline-label text-white/65">The Brand Collab Lab</p>

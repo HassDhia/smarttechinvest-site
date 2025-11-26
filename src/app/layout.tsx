@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <ParallaxBG />
           <div className="progress fixed inset-x-0 top-0 h-1 bg-[hsl(var(--primary))] z-[41] pointer-events-none" />
           <ToastProvider>
-            <div className="flex min-h-screen flex-col bg-transparent">
+            <div className="flex min-h-screen flex-col bg-[var(--bg-page)]">
               <MobileNav />
               <Nav />
               <main id="main" className="flex-1">

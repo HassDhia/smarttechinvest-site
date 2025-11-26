@@ -1,0 +1,112 @@
+{
+  "generated_at": "2025-11-26T13:27:37.983096",
+  "query": "Store as Studio:\nHow retail stores are becoming content properties",
+  "time_window": {
+    "start": "2025-11-19",
+    "end": "2025-11-26",
+    "days": 7
+  },
+  "confidence": {
+    "score": 0.834,
+    "display": 0.83,
+    "band": "Medium",
+    "dials": {
+      "strength": "high",
+      "coverage": "medium",
+      "quant_support": "high",
+      "consistency": "high"
+    },
+    "breakdown": {
+      "average_strength": 0.86,
+      "coverage": 0.667,
+      "quant_support": 1.0,
+      "contradiction_penalty": 0.9
+    }
+  },
+  "files": [
+    "intelligence_report.md",
+    "market_path_report.md",
+    "market_path_report.pdf",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "signal_map_notes"
+  ],
+  "title": "Holiday Flagship Early-Access & Pop-up Tests",
+  "highlights": [
+    "Unified holiday targets: **10–15%** footfall uplift (stretch **≥25%**), **20–30%** early-window share, Event CPA ≤ **0.80×**, QR redemption ≥ **5%** of footfall.",
+    "A/B framing: Arm A legacy markdown vs Arm B bundle+GWP+loyalty across the same two-week window to test discount economics and CPA.",
+    "First 30 days focus: lock calendars, instrument door counts and QR→POS, and run creator-led evenings + ticketed launch events to hit event windows quickly [^1][^2]."
+  ],
+  "executive_summary": "### Quick scan Holiday early-access pop-ups and event windows can deliver a **10–15%** detectable foot-traffic uplift with a stretch target of **≥25%** in top markets and shift early-window transactions to **20–30%** of sales versus a ~12–15% baseline [^2][^3]. When framed as a two-week A/B test—Arm A legacy markdown vs Arm B bundle+GWP+loyalty—operators can hit an Event CPA ≤ **0.80×** baseline and push QR/scan redemptions to **≥5%** of footfall, which preserves full-price sell-through and creates owned content assets [^5][^2]. Merch, ops, marketing, and partnerships must lock the two-week calendars, build A/B plans, instrument door counts and QR→POS links, and schedule creator-led evenings and ticketed events to validate uplift in the next **30 days** [^1][^3].",
+  "top_operator_moves": [
+    "Immediate (0–30 days): Lock two-week test windows, implement door-count sensors or proxies, enable QR→POS tracking, and prepare Arm A and Arm B offers.",
+    "Quarter-scale positioning (launch quarter): Run the two-week A/B in 2–3 markets, run ticketed launch evenings, measure early-window share and Event CPA versus baseline, and iterate SKU bundling.",
+    "Compounding (long-tail): Convert high-reach pop-ups into 6-week residencies or recurring creator nights to convert content assets into sustained footfall and lower lifetime CPA."
+  ],
+  "statistics": {
+    "word_count": 3050,
+    "signal_count": 4,
+    "source_count": 5
+  },
+  "read_time_minutes": 16,
+  "length_label": "~16 min read",
+  "qa": {
+    "issues": [
+      "Signal count outside required band",
+      "Read time exceeds target"
+    ],
+    "coverage": 0.667,
+    "quant_support": 1.0,
+    "contradiction_penalty": 0.9,
+    "appendix_count": 1,
+    "scope": {
+      "topic": "Store as Studio:\nHow retail stores are becoming content properties",
+      "time_window": {
+        "start": "2025-11-19",
+        "end": "2025-11-26",
+        "days": 7
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand↔brand",
+        "brick&mortar↔brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ]
+    },
+    "read_time": 16,
+    "high_quality_signals": true,
+    "observed_quant": false,
+    "tier1_market_signals": false
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07",
+  "renderers": [
+    "market_path_markdown",
+    "market_path_pdf",
+    "legacy_html"
+  ],
+  "artifact_paths": [
+    "sti_reports/sti_operator_output_20251126_131840_store_as_studio__how_ret/market_path_report.md",
+    "sti_reports/sti_operator_output_20251126_131840_store_as_studio__how_ret/market_path_report.pdf",
+    "sti_reports/sti_operator_output_20251126_131840_store_as_studio__how_ret/intelligence_report.html",
+    "sti_reports/sti_operator_output_20251126_131840_store_as_studio__how_ret/market_path_report.html"
+  ],
+  "social_media_content": {
+    "confidence": 0.83,
+    "teaser_mode": false,
+    "sources_used": "chicagoreader.com | forbes.com | bisnow.com"
+  }
+}
