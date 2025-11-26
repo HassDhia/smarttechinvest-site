@@ -1,0 +1,76 @@
+{
+  "hero": {
+    "core_tension": "Operators must choose a short, concentrated event window that trades steady daily traffic for intense, shareable attention. The mechanism is simple. This concentrated window creates content that converts beyond the hour.",
+    "setting": "Urban storefront interior. Three-quarter angle. Warm wood podiums and matte concrete floor. Clean negative space for hero subjects.",
+    "persona": "Brand retail lead and creator collaborating. Mid-30s operator, focused, directing light and placement.",
+    "action": "Arranging a merch hero group while a creator shoots short-form clips. Operator nods, signaling go. Momentum locks.",
+    "urgency_symbol": "A half-drawn curtain and a rising aperture of light that narrows the frame to imply a limited window.",
+    "props": [
+      "studio key light",
+      "portable camera rig",
+      "stack of tickets",
+      "merch riser",
+      "folding sign"
+    ],
+    "lighting": "Polished editorial with confident highlights and clean negative space. Soft fill on faces, punch on key products.",
+    "mood": "Precise, collaborative, confident",
+    "alt": "Operator and creator arranging merch under studio light, curtain half-drawn to signal a limited weekend window"
+  },
+  "signal_map": {
+    "structure": "Concentric geometry: center event node, inner ring audience paths, outer ring distribution channels. The signal underneath is pulsed attention moving outward.",
+    "elements": [
+      "center token for live event",
+      "ticket nodes",
+      "camera tokens",
+      "audience paths",
+      "data nodes for attribution"
+    ],
+    "motion": "Discrete outward pulses from center on weekend nodes. Arcs that fan content into online channels and back into storefront loops.",
+    "palette": "Matte black base, warm amber highlights, paper white nodes, brushed steel accents for connectors",
+    "alt": "Concentric event-to-distribution map showing pulsed attention flowing from store event to online channels"
+  },
+  "case_studies": [
+    {
+      "scene": "Streetwear shop converted into a creator studio. Eye-level composition. Raw concrete floor, warm wood fixtures.",
+      "moment": "A creator records a series of short clips while the owner stages merch and checks sound. The mechanism is simple. Content extends the visit.",
+      "persona": "Independent brand owner (Stockboy) directing a creator-led studio day.",
+      "props": [
+        "portable camera",
+        "garment rack",
+        "studio light",
+        "stacked sample boxes"
+      ],
+      "lighting": "Polished editorial highlights on product, soft ambient fill for the owner and creator.",
+      "mood": "Confident, resourceful, focused",
+      "alt": "Brand owner and creator capturing short-form content in a streetwear studio day"
+    },
+    {
+      "scene": "Vacant mall bay activated for an artist pop-up. Overhead three-quarter angle. Industrial materials, temporary risers.",
+      "moment": "An artist paints a wall while passersby pause and photograph. The signal underneath is earned attention that lifts adjacent visits.",
+      "persona": "Landlord activating an underperforming bay with a short-term artist installation.",
+      "props": [
+        "scaffold riser",
+        "temporary signage",
+        "benches",
+        "press cards"
+      ],
+      "lighting": "High-contrast editorial highlights to emphasize texture and spectators.",
+      "mood": "Strategic, activated, kinetic",
+      "alt": "Landlord and artist staging a pop-up in a vacant retail bay to attract adjacent visitors"
+    },
+    {
+      "scene": "Ticketed micro-event in a compact retail footprint. Low-angle close three-quarter. Warm wood stage, brushed steel accents.",
+      "moment": "An instructor leads a small class while a camera captures sequences for post-event drops. This changes discounting math. Attention replaces blanket markdowns.",
+      "persona": "Brand retail lead (Splits59) running micro-events to produce content and drive direct orders.",
+      "props": [
+        "ticket stack",
+        "small stage",
+        "portable camera",
+        "merch pedestal"
+      ],
+      "lighting": "Polished editorial with focused spot on instructor and soft rim on audience.",
+      "mood": "Intentional, experiential, measurable",
+      "alt": "Brand retail lead running a ticketed micro-event producing video assets and direct orders"
+    }
+  ]
+}

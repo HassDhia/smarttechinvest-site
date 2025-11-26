@@ -1,0 +1,25 @@
+[
+  {
+    "type": "hero",
+    "query": "Store as Studio:\nHow retail stores are becoming content properties",
+    "intent": "market",
+    "prompt": "Scene: urban storefront interior three quarter angle warm wood. Personas: brand retail lead creator collaborating mid 30s operator. Action: arranging merch hero group while creator shoots short. Symbolism: half drawn curtain rising aperture light narrows frame. Key objects: studio key light portable camera rig stack tickets. Mood: precise collaborative confident. Lighting: Polished editorial with confident highlights and clean negative space. Soft fill on faces, punch on key products. styled as warm directional light with gentle falloff. Composition: tight medium shot on the collaboration moment with generous negative space, focus on arranging merch hero group while creator shoots short. Palette: graphite and steel with restrained teal with subtle ribbon-like contours in a open negative-space retail bay. polished editorial photography, cinematic but minimal, deep contrast, subtle cool-tone grading, generous negative space, modern materials, natural poses, realistic lighting, no text, no logos, no UI, no charts, no infographics, no collage, no poster layout, single clear focal area",
+    "image": "images/hero_store_as_studio_how_retail_sto.png"
+  },
+  {
+    "type": "section",
+    "query": "Store as Studio:\nHow retail stores are becoming content properties",
+    "intent": "market",
+    "section": "Signal Map",
+    "prompt": "Abstract structure: concentric geometry center event node inner ring audience representing executive take retail spaces shifting point sale content. Motion: discrete outward pulses center weekend nodes arcs fan that suggests executive take retail spaces shifting point sale content. Visual elements: center token live event ticket nodes camera tokens. Mood: analytical, calm, precise. Lighting: half-toned studio wash with subtle reflections on a soft gradient void. Composition: stacked elevation view with a centered form and generous negative space. Color: dark neutrals with matte black base warm amber highlights paper white and cool slate with ivory bands accents. Never literal dashboards, axes, or labels. polished editorial photography, cinematic but minimal, deep contrast, subtle cool-tone grading, generous negative space, modern materials, natural poses, realistic lighting, no text, no logos, no UI, no charts, no infographics, no collage, no poster layout, single clear focal area",
+    "image": "images/section_signal_map_store_as_studio_how_retail_sto.png"
+  },
+  {
+    "type": "section",
+    "query": "Store as Studio:\nHow retail stores are becoming content properties",
+    "intent": "market",
+    "section": "Case Study 1",
+    "prompt": "Scene: streetwear shop converted creator studio eye level composition during creator records series short clips while owner stages. Moment: creator records series short clips while owner stages. Personas: independent brand owner stockboy directing creator led studio. Mood: confident resourceful focused. Lighting: Polished editorial highlights on product, soft ambient fill for the owner and creator. styled as diffused skylight with controlled highlights. Props: portable camera garment rack studio light stacked sample. Composition: three-quarter view from eye level with clear view of streetwear shop converted creator studio eye level composition and minimal background distractions. polished editorial photography, cinematic but minimal, deep contrast, subtle cool-tone grading, generous negative space, modern materials, natural poses, realistic lighting, no text, no logos, no UI, no charts, no infographics, no collage, no poster layout, single clear focal area",
+    "image": "images/section_case_study_1_store_as_studio_how_retail_sto.png"
+  }
+]
