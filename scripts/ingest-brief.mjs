@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { chromium } from 'playwright';
 import { buildManifestEntryFromDir, upsertManifestEntry } from './lib/brief-manifest.mjs';
 
 // Usage: node scripts/ingest-brief.mjs "<path-to-generator-output-folder>" [--watch-mode] [--force]
@@ -53,6 +52,9 @@ async function ingest() {
     }
   }
 
+  if (fs.existsSync(dst)) {
+    fs.rmSync(dst, { recursive: true, force: true });
+  }
   fs.mkdirSync(dst, { recursive: true });
 
   // 1) Locate generator outputs (support a couple of filenames)
@@ -64,16 +66,11 @@ async function ingest() {
     return null;
   };
 
-const htmlPath   = pick(src, ['intelligence_report.html', 'report.html']); // canonical HTML (optional in new standard)
+const htmlPath   = pick(src, ['intelligence_report.html', 'report.html']); // canonical HTML
 const metaPath   = pick(src, ['metadata.json']);                            // stats          🧭
 const sourcesPath= pick(src, ['sources.json']);                             // signals        🗞️
 const summaryPath= pick(src, ['executive_summary.txt']);                    // teaser/OG desc 🧾
-const mdPath     = pick(src, ['intelligence_report.md']);                   // syndication    ✍️ (optional)
-const socialPostPath = pick(src, ['social_media_post.md']);                 // social post    📱 (optional)
-const socialThreadPath = pick(src, ['social_media_thread.txt']);            // twitter thread 🐦 (optional)
-const socialLinkedinPath = pick(src, ['social_media_linkedin.txt']);        // linkedin post  💼 (optional)
-const marketPathMdPath = pick(src, ['market_path_report.md']);              // Market-Path MD dossier 📚
-const marketPathPdfPath = pick(src, ['market_path_report.pdf']);            // Market-Path PDF dossier 📄
+const marketPathHtmlPath = pick(src, ['market_path_report.html']);          // Market-Path HTML dossier
 
 let metadataJson = null;
 if (metaPath) {
@@ -94,11 +91,8 @@ if (!summaryPath && metadataJson && typeof metadataJson.executive_summary === 's
   }
 }
 
-const hasIntelHtml = Boolean(htmlPath);
-const hasMarketPathMd = Boolean(marketPathMdPath);
-
-if (!metaPath || (!summaryPath && !summaryFallback) || (!hasIntelHtml && !hasMarketPathMd)) {
-  const error = 'Missing one or more required files: metadata.json, executive_summary, and either market_path_report.md or intelligence_report.html';
+if (!metaPath || (!summaryPath && !summaryFallback) || !htmlPath || !marketPathHtmlPath) {
+  const error = 'Missing one or more required files: intelligence_report.html, market_path_report.html, metadata.json, executive_summary';
   // Debug: List what files actually exist in source directory
   if (watchMode) {
     try {
@@ -119,20 +113,8 @@ if (!metaPath || (!summaryPath && !summaryFallback) || (!hasIntelHtml && !hasMar
 
   // 2) Copy with canonical names
 const dstReport = path.join(dst, 'report.html');
-if (hasIntelHtml) {
-  fs.copyFileSync(htmlPath, dstReport);
-  fs.copyFileSync(htmlPath, path.join(dst, 'intelligence_report.html'));
-} else {
-  const fallbackReport = `<!doctype html>
-<html><head>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=./market-path">
-<title>Redirecting…</title>
-</head><body>
-<p>Redirecting to the Market-Path dossier. If you are not redirected, <a href="./market-path">click here</a>.</p>
-</body></html>`;
-  fs.writeFileSync(dstReport, fallbackReport, 'utf8');
-}
+fs.copyFileSync(htmlPath, dstReport);
+fs.copyFileSync(htmlPath, path.join(dst, 'intelligence_report.html'));
 fs.copyFileSync(metaPath, path.join(dst, 'metadata.json'));
 if (sourcesPath) fs.copyFileSync(sourcesPath, path.join(dst, 'sources.json'));
 const dstSummary = path.join(dst, 'executive_summary.txt');
@@ -144,20 +126,7 @@ if (summaryPath) {
     console.log('ℹ️  No executive_summary.txt found. Generated from metadata.executive_summary');
   }
 }
-  if (mdPath) fs.copyFileSync(mdPath, path.join(dst, 'intelligence_report.md'));
-  if (marketPathMdPath) {
-    fs.copyFileSync(marketPathMdPath, path.join(dst, 'market_path_report.md'));
-  }
-  if (socialPostPath) fs.copyFileSync(socialPostPath, path.join(dst, 'social_media_post.md'));
-  if (socialThreadPath) fs.copyFileSync(socialThreadPath, path.join(dst, 'social_media_thread.txt'));
-  if (socialLinkedinPath) fs.copyFileSync(socialLinkedinPath, path.join(dst, 'social_media_linkedin.txt'));
-
-  if (marketPathPdfPath) {
-    const dstMarketPathPdf = path.join(dst, 'market_path_report.pdf');
-    fs.copyFileSync(marketPathPdfPath, dstMarketPathPdf);
-    // Maintain backwards compatibility for existing download links.
-    fs.copyFileSync(dstMarketPathPdf, path.join(dst, 'brief.pdf'));
-  }
+  fs.copyFileSync(marketPathHtmlPath, path.join(dst, 'market_path_report.html'));
 
   // Check for and copy images folder if it exists
   const imagesSrc = path.join(src, 'images');
@@ -198,7 +167,7 @@ if (summaryPath) {
   }
 
   // 3) Create index.html wrapper that redirects to report.html + declares canonical
-  const indexRedirectTarget = hasIntelHtml ? './report.html' : './market-path';
+  const indexRedirectTarget = './report.html';
   const indexWrapper = `<!doctype html>
 <html><head>
 <meta charset="utf-8">
@@ -211,7 +180,7 @@ if (summaryPath) {
   fs.writeFileSync(path.join(dst, 'index.html'), indexWrapper, 'utf8');
 
   // 4) Minimal validations
-  const required = ['report.html','metadata.json','executive_summary.txt','index.html'];
+  const required = ['report.html','metadata.json','executive_summary.txt','index.html','market_path_report.html','intelligence_report.html'];
   for (const f of required) {
     const p = path.join(dst, f);
     if (!fs.existsSync(p)) { console.error('Missing required file after copy:', p); process.exit(1); }
@@ -242,72 +211,6 @@ if (summaryPath) {
     const defaultOg = path.join(process.cwd(), 'public', 'assets', 'og', 'default-brief.png');
     if (fs.existsSync(defaultOg)) {
       fs.copyFileSync(defaultOg, og);
-    }
-  }
-
-  // 6) Generate PDF from report.html
-  const pdfPath = path.join(dst, 'brief.pdf');
-  if (!fs.existsSync(pdfPath)) {
-    try {
-      const browser = await chromium.launch({ headless: true });
-      const page = await browser.newPage();
-      
-      const reportHtmlPath = path.join(dst, 'report.html');
-      await page.goto(`file://${path.resolve(reportHtmlPath)}`, { waitUntil: 'networkidle' });
-      
-      // Explicitly wait for all images to load
-      await page.waitForLoadState('networkidle');
-      
-      // Additional safety: wait for all img elements to have loaded
-      try {
-        await page.evaluate(() => {
-          return Promise.all(
-            Array.from(document.images).map(img => {
-              if (img.complete) return Promise.resolve();
-              return new Promise((resolve, reject) => {
-                img.onload = resolve;
-                img.onerror = () => resolve(); // Continue even if image fails to load
-                // Timeout after 5 seconds per image
-                setTimeout(() => resolve(), 5000);
-              });
-            })
-          );
-        });
-      } catch (imgError) {
-        // Continue even if image loading check fails
-        if (watchMode) {
-          console.warn(`⚠️  Some images may not have loaded: ${imgError.message}`);
-        }
-      }
-      
-      // Small delay to ensure all rendering is complete
-      await page.waitForTimeout(500);
-      
-      await page.pdf({ 
-        path: pdfPath, 
-        format: 'Letter', 
-        printBackground: true,
-        margin: {
-          top: '0.5in',
-          right: '0.5in',
-          bottom: '0.5in',
-          left: '0.5in'
-        }
-      });
-      
-      await browser.close();
-      
-      if (watchMode) {
-        console.log(`📄 Generated PDF: ${dateDir}/brief.pdf`);
-      }
-    } catch (error) {
-      const warning = `Failed to generate PDF: ${error.message}`;
-      if (watchMode) {
-        console.warn(`⚠️  ${warning}`);
-      } else {
-        console.warn(warning);
-      }
-      // Don't exit - brief is still usable without PDF
     }
   }
 

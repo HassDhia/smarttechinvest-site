@@ -55,7 +55,7 @@ export default async function MarketPathReportPage({ params }: Props) {
     notFound();
   }
 
-  const markdownUrl = `/intelligence/briefs/${date}/market_path_report.md`;
+  const marketPathHtmlUrl = brief.marketPathHtml ?? `/intelligence/briefs/${date}/market_path_report.html`;
   const intelligenceHref = brief.intelligenceHref;
   const showIntelligenceCta = Boolean(intelligenceHref);
 
@@ -115,12 +115,12 @@ export default async function MarketPathReportPage({ params }: Props) {
             </div>
           ) : (
             <div className="rounded-2xl border border-dashed border-[hsl(var(--border))] bg-card/20 p-4 text-sm text-[hsl(var(--muted-foreground))]">
-              This run shipped only the Market-Path dossier. Use the downloads to share it; a McKinsey-style intelligence PDF will appear here when available.
+              This run shipped only the Market-Path dossier. Use the downloads to share it; a McKinsey-style intelligence report will appear here when available.
             </div>
           )}
         </div>
 
-        <MarketPathContent markdownUrl={markdownUrl} />
+        <MarketPathContent htmlUrl={marketPathHtmlUrl} />
       </section>
     </div>
   );

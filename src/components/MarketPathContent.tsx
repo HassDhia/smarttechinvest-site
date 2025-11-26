@@ -1,17 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeHighlight from "rehype-highlight";
 
-export function MarketPathContent({ markdownUrl }: { markdownUrl: string }) {
-  const [markdown, setMarkdown] = useState<string | null>(null);
+export function MarketPathContent({ htmlUrl }: { htmlUrl: string }) {
+  const [html, setHtml] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let alive = true;
-    fetch(markdownUrl)
+    fetch(htmlUrl)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to load dossier: ${res.status}`);
@@ -20,7 +17,7 @@ export function MarketPathContent({ markdownUrl }: { markdownUrl: string }) {
       })
       .then((text) => {
         if (alive) {
-          setMarkdown(text);
+          setHtml(text);
         }
       })
       .catch((err) => {
@@ -32,17 +29,17 @@ export function MarketPathContent({ markdownUrl }: { markdownUrl: string }) {
     return () => {
       alive = false;
     };
-  }, [markdownUrl]);
+  }, [htmlUrl]);
 
   if (error) {
     return (
       <div className="rounded-xl border border-dashed border-[hsl(var(--destructive))] bg-[hsl(var(--destructive)/0.05)] p-4 text-sm text-[hsl(var(--destructive))]">
-        Unable to load the Market-Path dossier ({error}). Please download the PDF instead.
+        Unable to load the Market-Path dossier ({error}). Please open the HTML file directly.
       </div>
     );
   }
 
-  if (!markdown) {
+  if (!html) {
     return (
       <div className="text-sm text-[hsl(var(--muted-foreground))]">
         Loading dossier…
@@ -51,13 +48,9 @@ export function MarketPathContent({ markdownUrl }: { markdownUrl: string }) {
   }
 
   return (
-    <div className="prose prose-slate dark:prose-invert max-w-none">
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeHighlight]}
-      >
-        {markdown}
-      </ReactMarkdown>
-    </div>
+    <article
+      className="prose prose-slate dark:prose-invert max-w-none"
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
   );
 }

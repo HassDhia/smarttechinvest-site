@@ -59,6 +59,7 @@ export function buildManifestEntryFromDir(dateDir) {
   const imagesDir = path.join(briefDir, 'images');
   const marketPathMarkdownPath = path.join(briefDir, 'market_path_report.md');
   const marketPathPdfPath = path.join(briefDir, 'market_path_report.pdf');
+  const marketPathHtmlPath = path.join(briefDir, 'market_path_report.html');
   const intelligenceMarkdownPath = path.join(briefDir, 'intelligence_report.md');
   const intelligenceHtmlPath = path.join(briefDir, 'intelligence_report.html');
 
@@ -121,24 +122,24 @@ export function buildManifestEntryFromDir(dateDir) {
   ]);
 
   const hasMarketPath = fs.existsSync(marketPathMarkdownPath);
-  const hasMarketPathPdf = fs.existsSync(marketPathPdfPath);
+  const hasMarketPathHtml = fs.existsSync(marketPathHtmlPath);
   const hasIntelligenceHtml = fs.existsSync(intelligenceHtmlPath);
-  const marketPathHref = hasMarketPath
+  const marketPathHref = hasMarketPathHtml
     ? `/intelligence/briefs/${dateDir}/market-path`
     : `/intelligence/briefs/${dateDir}/report.html`;
-  const marketPathPdf = hasMarketPathPdf
-    ? `/intelligence/briefs/${dateDir}/market_path_report.pdf`
-    : `/intelligence/briefs/${dateDir}/brief.pdf`;
+  const marketPathHtml = hasMarketPathHtml
+    ? `/intelligence/briefs/${dateDir}/market_path_report.html`
+    : undefined;
   const intelligenceHref = hasIntelligenceHtml ? `/intelligence/briefs/${dateDir}/report.html` : undefined;
   const marketPathMarkdown = hasMarketPath ? `/intelligence/briefs/${dateDir}/market_path_report.md` : undefined;
   const intelligenceMarkdown = fs.existsSync(intelligenceMarkdownPath)
     ? `/intelligence/briefs/${dateDir}/intelligence_report.md`
     : undefined;
+  const intelligenceHtml = hasIntelligenceHtml ? `/intelligence/briefs/${dateDir}/intelligence_report.html` : undefined;
 
   return {
     date: dateDir,
     href: marketPathHref,
-    pdf: marketPathPdf,
     og: `/intelligence/briefs/${dateDir}/og.png`,
     heroImage,
     title: metadata.title || metadata.query,
@@ -150,9 +151,11 @@ export function buildManifestEntryFromDir(dateDir) {
     },
     keySignals: keySignals.length ? keySignals : undefined,
     intelligenceHref,
+    intelligenceHtml,
+    marketPathHtml,
     marketPathMarkdown,
     intelligenceMarkdown,
-    hasMarketPath,
+    hasMarketPath: hasMarketPathHtml,
   };
 }
 

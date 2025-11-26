@@ -27,10 +27,11 @@ export type Brief = {
   displayDate?: string; // YYYY-MM-DD
   displayTime?: string | null; // HHMMSS or null
   href: string;
-  pdf: string;
   intelligenceHref?: string;
   marketPathMarkdown?: string;
   intelligenceMarkdown?: string;
+  intelligenceHtml?: string;
+  marketPathHtml?: string;
   hasMarketPath?: boolean;
   og: string;
   heroImage?: string;
@@ -48,11 +49,12 @@ export type Brief = {
 export interface BriefManifestEntry {
   date: string;
   href: string;
-  pdf: string;
   og: string;
   intelligenceHref?: string;
   marketPathMarkdown?: string;
   intelligenceMarkdown?: string;
+  intelligenceHtml?: string;
+  marketPathHtml?: string;
   hasMarketPath?: boolean;
   heroImage?: string;
   title?: string;
@@ -135,10 +137,11 @@ export function listBriefs(): Brief[] {
       displayDate,
       displayTime,
       href: entry.href,
-      pdf: entry.pdf,
       intelligenceHref: entry.intelligenceHref,
       marketPathMarkdown: entry.marketPathMarkdown,
       intelligenceMarkdown: entry.intelligenceMarkdown,
+      intelligenceHtml: entry.intelligenceHtml,
+      marketPathHtml: entry.marketPathHtml,
       hasMarketPath: entry.hasMarketPath,
       og: entry.og,
       heroImage: entry.heroImage,

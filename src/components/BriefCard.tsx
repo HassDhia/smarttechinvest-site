@@ -105,12 +105,14 @@ export function BriefCard({
           </a>
         </Button>
         
-        <Button asChild variant="secondary" size="sm">
-          <a href={brief.pdf} target="_blank" rel="noopener noreferrer">
-            <Download size={14} className="mr-1" />
-            PDF
-          </a>
-        </Button>
+        {brief.marketPathHtml && (
+          <Button asChild variant="secondary" size="sm">
+            <a href={brief.marketPathHtml} target="_blank" rel="noopener noreferrer">
+              <Download size={14} className="mr-1" />
+              Open HTML
+            </a>
+          </Button>
+        )}
       </div>
       </div>
     </div>

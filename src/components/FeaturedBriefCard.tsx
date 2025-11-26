@@ -143,12 +143,14 @@ export function FeaturedBriefCard({
           </a>
         </Button>
         
-        <Button asChild variant="secondary" size="lg" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
-          <a href={brief.pdf} target="_blank" rel="noopener noreferrer">
-            <Download size={18} className="mr-2" />
-            Download PDF
-          </a>
-        </Button>
+        {brief.marketPathHtml && (
+          <Button asChild variant="secondary" size="lg" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
+            <a href={brief.marketPathHtml} target="_blank" rel="noopener noreferrer">
+              <Download size={18} className="mr-2" />
+              Open HTML
+            </a>
+          </Button>
+        )}
       </div>
       </div>
     </div>

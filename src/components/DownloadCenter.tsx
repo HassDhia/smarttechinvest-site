@@ -1,6 +1,6 @@
 import { cn } from "../lib/cn";
 import { Button } from "./ui/Button";
-import { Download, FileText } from "lucide-react";
+import { FileText, ExternalLink } from "lucide-react";
 import type { Brief } from "../lib/content";
 
 export function DownloadCenter({
@@ -10,13 +10,8 @@ export function DownloadCenter({
   brief: Brief;
   className?: string;
 }) {
-  const markdownHref = brief.marketPathMarkdown
-    ? brief.marketPathMarkdown
-    : brief.intelligenceMarkdown
-      ? brief.intelligenceMarkdown
-      : `/intelligence/briefs/${brief.date}/${brief.hasMarketPath ? 'market_path_report.md' : 'intelligence_report.md'}`;
-  const markdownLabel = brief.hasMarketPath ? 'Market-Path Markdown' : 'Intelligence Markdown';
-  const pdfLabel = brief.hasMarketPath ? 'Download Market-Path PDF' : 'Download PDF';
+  const dossierHref = brief.marketPathHtml || brief.href;
+  const hasIntelligenceHtml = Boolean(brief.intelligenceHtml);
 
   return (
     <div className={cn(
@@ -31,21 +26,27 @@ export function DownloadCenter({
       
       {/* Download buttons */}
       <div className="space-y-2">
-        {/* PDF Download - Primary */}
+        {/* Market-Path HTML */}
         <Button asChild variant="gradient" size="md" className="w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
-          <a href={brief.pdf} target="_blank" rel="noopener noreferrer">
-            <Download size={16} className="mr-2" />
-            {pdfLabel}
+          <a href={dossierHref} target="_blank" rel="noopener noreferrer">
+            <ExternalLink size={16} className="mr-2" />
+            Open Market-Path Report
           </a>
         </Button>
         
-        {/* MD Download - Secondary */}
-        <Button asChild variant="ghost" size="sm" className="w-full justify-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
-          <a href={markdownHref} target="_blank" rel="noopener noreferrer">
-            <FileText size={14} className="mr-2" />
-            {markdownLabel}
-          </a>
-        </Button>
+        {/* Intelligence HTML */}
+        {hasIntelligenceHtml ? (
+          <Button asChild variant="ghost" size="sm" className="w-full justify-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
+            <a href={brief.intelligenceHtml!} target="_blank" rel="noopener noreferrer">
+              <FileText size={14} className="mr-2" />
+              Open Intelligence Report
+            </a>
+          </Button>
+        ) : (
+          <div className="text-xs text-[hsl(var(--muted-foreground))] px-2 py-1">
+            Intelligence HTML will appear when supplied for this drop.
+          </div>
+        )}
       </div>
       
       {/* Footer note */}
