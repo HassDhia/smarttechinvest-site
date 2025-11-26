@@ -49,7 +49,7 @@ export function MarketPathContent({ htmlUrl }: { htmlUrl: string }) {
 
   return (
     <article
-      className="market-path-content max-w-none"
+      className="market-path-body max-w-none"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

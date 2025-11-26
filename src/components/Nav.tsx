@@ -8,24 +8,24 @@ export function Nav() {
   const currentPath = pathname ?? "/";
 
   return (
-    <header className="hidden lg:block sticky top-0 z-[45] border-b border-white/10 bg-[#070707]/95 backdrop-blur-xl">
-      <div className="container flex h-12 items-center justify-between gap-8 uppercase">
+    <header className="hidden lg:block sticky top-0 z-[45] border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)] backdrop-blur-xl">
+      <div className="container flex h-12 items-center justify-between gap-8 uppercase text-[var(--text-primary)]">
         <Link
           href="/"
-          className="headline-label text-white tracking-[0.02em]"
+          className="headline-label tracking-[0.02em]"
           aria-label="Smart Technology Investments"
         >
           Smart Technology Investments
         </Link>
         <nav aria-label="Primary" className="flex-1">
-          <ul className="flex items-center justify-center gap-8 text-[0.75rem] font-semibold tracking-[0.02em] text-white/85">
+          <ul className="flex items-center justify-center gap-8 text-[0.75rem] font-semibold tracking-[0.02em] text-[var(--text-secondary)]">
             {navLinks.map(({ href, label }) => {
               const active = currentPath === href || currentPath.startsWith(`${href}/`);
               return (
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`relative transition-colors group ${active ? "text-white" : "hover:text-white"}`}
+                    className={`relative transition-colors group ${active ? "text-[var(--text-primary)]" : "hover:text-[var(--text-primary)]"}`}
                     aria-current={active ? "page" : undefined}
                   >
                     {label}

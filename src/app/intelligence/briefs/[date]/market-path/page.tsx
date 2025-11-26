@@ -67,30 +67,30 @@ export default async function MarketPathReportPage({ params }: Props) {
       : [];
 
   return (
-    <div className="font-sans text-white bg-[#040404] min-h-screen">
+    <div className="font-sans text-[var(--text-primary)] bg-[var(--bg-page)] min-h-screen">
       <section className="mx-auto max-w-5xl px-6 sm:px-8 py-12 space-y-12">
         <Link
           href="/intelligence/briefs"
-          className="inline-flex items-center gap-2 text-sm text-white/65 hover:text-white hover:underline transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:underline transition-colors"
         >
           <ArrowLeft size={14} />
           Back to briefs
         </Link>
 
-        <header className="space-y-5 border-b border-white/12 pb-10">
-          <p className="text-xs uppercase tracking-[0.35em] text-white/55">Market-Path dossier</p>
+        <header className="space-y-5 border-b border-[var(--border-subtle)] pb-10">
+          <p className="text-xs uppercase tracking-[0.35em] text-[var(--text-muted)]">Market-Path dossier</p>
           <div className="space-y-3">
-            <h1 className="text-[2.35rem] font-semibold leading-tight text-white">
+            <h1 className="text-[2.35rem] font-semibold leading-tight text-[var(--text-primary)]">
               {brief.title || "Market-Path Report"}
             </h1>
             {brief.summary && (
-              <p className="text-[1.05rem] text-white/75 leading-relaxed max-w-3xl">
+              <p className="text-[1.05rem] text-[var(--text-secondary)] leading-relaxed max-w-3xl">
                 {brief.summary}
               </p>
             )}
           </div>
           {metaChips.length > 0 && (
-            <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.3em] text-white/60">
+            <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.3em] text-[var(--text-muted)]">
               {metaChips.map((chip) => (
                 <span key={chip}>{chip}</span>
               ))}
@@ -101,7 +101,7 @@ export default async function MarketPathReportPage({ params }: Props) {
               href={marketPathHtmlUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center border border-white/15 bg-[#0F0F0F] px-6 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-white/85 hover:bg-white/5 transition-colors"
+              className="inline-flex items-center border border-[var(--accent)] bg-[var(--accent)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-[var(--bg-page)] hover:bg-transparent hover:text-[var(--accent)] transition-colors"
             >
               Open Market-Path Report
             </a>
@@ -110,7 +110,7 @@ export default async function MarketPathReportPage({ params }: Props) {
                 href={intelligenceHref!}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center border border-white/15 px-6 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                className="inline-flex items-center border border-[var(--border-strong)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.35em] text-[var(--text-secondary)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
               >
                 View Intelligence Report
               </a>
@@ -119,7 +119,7 @@ export default async function MarketPathReportPage({ params }: Props) {
         </header>
 
         <section className="pb-16">
-          <div className="border border-white/12 bg-[#050505] px-0 sm:px-2 py-6">
+          <div className="border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-0 sm:px-2 py-6">
             <MarketPathContent htmlUrl={marketPathHtmlUrl} />
           </div>
         </section>
