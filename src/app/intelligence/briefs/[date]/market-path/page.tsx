@@ -69,9 +69,12 @@ export default async function MarketPathReportPage({ params }: Props) {
       : [];
 
   return (
-    <div className="font-sans text-white min-h-screen bg-[#01030a]">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#07112d] via-[#040817] to-[#01030a]" />
-      <section className="container section vt-section max-w-5xl">
+    <div className="font-sans text-white min-h-screen bg-[#01030a] relative overflow-hidden">
+      <div className="fixed inset-0 -z-20 bg-[#01030a]" aria-hidden="true" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-[#0b1b44] via-[#050c20] to-[#01030a]" aria-hidden="true" />
+      <div className="fixed inset-x-0 top-0 -z-5 h-40 bg-gradient-to-b from-white/10 to-transparent blur-[60px]" aria-hidden="true" />
+
+      <section className="container section max-w-5xl relative">
         <div className="mb-6">
           <Link
             href="/intelligence/briefs"
@@ -82,8 +85,8 @@ export default async function MarketPathReportPage({ params }: Props) {
           </Link>
         </div>
 
-        <header className="space-y-3 mb-10">
-          <div className="rounded-[36px] border border-white/10 bg-gradient-to-br from-[#0e1427] via-[#070d1d] to-[#03060c] p-8 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+        <header className="space-y-3 mb-12">
+          <div className="rounded-[36px] border border-white/10 bg-gradient-to-br from-[#111a36] via-[#070d1d] to-[#03060c] p-8 shadow-[0_40px_120px_rgba(1,3,10,0.8)]">
             <p className="text-xs uppercase tracking-[0.45em] text-white/60 mb-3">
               Market-Path Dossier
             </p>
@@ -111,18 +114,18 @@ export default async function MarketPathReportPage({ params }: Props) {
           </div>
         </header>
 
-        <section className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr] mb-12">
-          <DownloadCenter brief={brief} className="bg-[#070d1d]" />
+        <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] mb-14">
+          <DownloadCenter brief={brief} className="bg-[#090f1f]" />
           {showIntelligenceCta ? (
-            <div className="rounded-2xl border border-white/15 bg-[#090f1f] p-4 shadow-[0_15px_35px_rgba(0,0,0,0.4)]">
-              <div className="flex items-center gap-2 mb-2 text-sm font-semibold text-white">
+            <div className="rounded-[28px] border border-white/15 bg-[#0b1227] p-5 shadow-[0_25px_65px_rgba(0,0,0,0.45)]">
+              <div className="flex items-center gap-2 mb-3 text-sm font-semibold text-white">
                 <ExternalLink size={16} className="text-white/70" />
                 Need the full intelligence narration?
               </div>
-              <p className="text-sm text-white/70 mb-4">
+              <p className="text-sm text-white/70 mb-5">
                 Dive into the McKinsey-style intelligence report for the deep narrative, appendices, and source pull-through.
               </p>
-              <Button asChild size="sm" variant="secondary" className="w-full justify-center">
+              <Button asChild size="sm" variant="secondary" className="w-full justify-center uppercase tracking-[0.3em]">
                 <a href={intelligenceHref!} target="_blank" rel="noopener noreferrer">
                   View intelligence report
                 </a>
@@ -135,7 +138,7 @@ export default async function MarketPathReportPage({ params }: Props) {
           )}
         </section>
 
-        <section className="rounded-[32px] border border-white/10 bg-gradient-to-b from-[#070d1d] to-[#03060c] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
+        <section className="rounded-[36px] border border-white/10 bg-gradient-to-b from-[#0b142f] to-[#03060c] p-8 shadow-[0_30px_90px_rgba(0,0,0,0.65)]">
           <MarketPathContent htmlUrl={marketPathHtmlUrl} />
         </section>
       </section>
