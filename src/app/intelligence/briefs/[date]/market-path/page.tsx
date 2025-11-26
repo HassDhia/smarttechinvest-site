@@ -90,9 +90,14 @@ export default async function MarketPathReportPage({ params }: Props) {
             )}
           </div>
           {metaChips.length > 0 && (
-            <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.3em] text-[var(--text-muted)]">
+            <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.3em]">
               {metaChips.map((chip) => (
-                <span key={chip}>{chip}</span>
+                <span
+                  key={chip}
+                  className="inline-flex items-center border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-4 py-1 text-[var(--text-secondary)]"
+                >
+                  {chip}
+                </span>
               ))}
             </div>
           )}
@@ -118,8 +123,8 @@ export default async function MarketPathReportPage({ params }: Props) {
           </div>
         </header>
 
-        <section className="pb-16">
-          <div className="border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-0 sm:px-2 py-6">
+        <section className="pb-16 border-b border-[var(--border-subtle)]">
+          <div className="bg-[var(--bg-surface)] px-0 sm:px-2 py-6">
             <MarketPathContent htmlUrl={marketPathHtmlUrl} />
           </div>
         </section>

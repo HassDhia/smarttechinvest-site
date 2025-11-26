@@ -672,7 +672,7 @@ a { text-decoration: none; }
   border-collapse: collapse;
   margin: 1.5rem 0;
   background-color: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  border: none;
 }
 .market-path-body table th,
 .market-path-body table td {
@@ -713,7 +713,7 @@ a { text-decoration: none; }
 }
 .market-path-body code {
   font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(245, 247, 251, 0.08);
   padding: 0.15rem 0.4rem;
   border-radius: 999px;
   font-size: 0.85em;
@@ -728,6 +728,6 @@ a { text-decoration: none; }
 }
 .market-path-body hr {
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-subtle);
   margin: 2rem 0;
 }
