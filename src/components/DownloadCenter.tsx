@@ -15,20 +15,25 @@ export function DownloadCenter({
 
   return (
     <div className={cn(
-      "rounded-[28px] p-5 bg-[#060b17] text-white border border-white/10 shadow-[0_15px_50px_rgba(0,0,0,0.45)]",
+      "rounded-[30px] p-6 bg-gradient-to-br from-[#0c1532] via-[#070d1d] to-[#040812] text-white border border-white/15 shadow-[0_25px_70px_rgba(1,3,10,0.6)]",
       className
     )}>
       {/* Header */}
-      <div className="flex items-center gap-2 mb-3 text-white/80">
-        <Download size={16} className="text-white/60" />
-        <h3 className="text-sm font-semibold">Download Center</h3>
+      <div className="flex items-center gap-3 mb-4 text-white/80">
+        <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-white/5 border border-white/10">
+          <Download size={18} className="text-white/70" />
+        </div>
+        <div>
+          <p className="text-xs uppercase tracking-[0.45em] text-white/60">Download</p>
+          <h3 className="text-sm font-semibold">Market-Path Assets</h3>
+        </div>
       </div>
       
       {/* Download buttons */}
       <div className="space-y-2">
         {/* Market-Path HTML */}
-        <Button asChild variant="gradient" size="md" className="w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
-          <a href={dossierHref} target="_blank" rel="noopener noreferrer" className="w-full justify-center text-sm uppercase tracking-[0.2em]">
+        <Button asChild variant="gradient" size="md" className="w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 uppercase tracking-[0.3em]">
+          <a href={dossierHref} target="_blank" rel="noopener noreferrer" className="w-full justify-center text-sm">
             <ExternalLink size={16} className="mr-2" />
             Open Market-Path Report
           </a>
@@ -36,23 +41,23 @@ export function DownloadCenter({
         
         {/* Intelligence HTML */}
         {hasIntelligenceHtml ? (
-          <Button asChild variant="ghost" size="sm" className="w-full justify-start text-white/80 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
+          <Button asChild variant="ghost" size="sm" className="w-full justify-between text-white/80 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2">
             <a href={brief.intelligenceHtml!} target="_blank" rel="noopener noreferrer">
               <FileText size={14} className="mr-2" />
               Open Intelligence Report
             </a>
           </Button>
         ) : (
-          <div className="text-xs text-white/60 px-2 py-1">
+          <div className="text-xs text-white/60 px-2 py-1 rounded-md border border-dashed border-white/20">
             Intelligence HTML will appear when supplied for this drop.
           </div>
         )}
       </div>
       
       {/* Footer note */}
-      <div className="mt-3 pt-2 border-t border-[hsl(var(--border))]">
+      <div className="mt-5 pt-3 border-t border-white/10">
         <p className="text-xs text-white/60">
-          Share with partners, media, and BD teams
+          Share with partners, media, and BD teams.
         </p>
       </div>
     </div>

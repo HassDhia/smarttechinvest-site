@@ -614,11 +614,14 @@ a { text-decoration: none; }
 .market-path-content h1,
 .market-path-content h2,
 .market-path-content h3,
-.market-path-content h4 {
+.market-path-content h4,
+.market-path-content h5,
+.market-path-content h6 {
   color: #ffffff;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
   font-weight: 600;
+  line-height: 1.3;
 }
 .market-path-content p {
   margin-bottom: 1rem;
@@ -630,6 +633,7 @@ a { text-decoration: none; }
 .market-path-content a {
   color: #8ab4ff;
   text-decoration: underline;
+  transition: color 150ms ease;
 }
 .market-path-content table {
   width: 100%;
@@ -647,4 +651,40 @@ a { text-decoration: none; }
   padding-left: 1rem;
   color: #cfd8ff;
   margin: 1.5rem 0;
+  font-style: italic;
+}
+.market-path-content img {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 1.5rem 0;
+  width: 100%;
+}
+.market-path-content ul,
+.market-path-content ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: #d7deff;
+}
+.market-path-content li {
+  margin-bottom: 0.35rem;
+}
+.market-path-content code {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.85em;
+  color: #f0f8ff;
+}
+.market-path-content pre code {
+  display: block;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+.market-path-content hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
 }

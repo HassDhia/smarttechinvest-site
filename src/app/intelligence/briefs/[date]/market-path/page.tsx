@@ -115,7 +115,7 @@ export default async function MarketPathReportPage({ params }: Props) {
         </header>
 
         <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] mb-14">
-          <DownloadCenter brief={brief} className="bg-[#090f1f]" />
+          <DownloadCenter brief={brief} />
           {showIntelligenceCta ? (
             <div className="rounded-[28px] border border-white/15 bg-[#0b1227] p-5 shadow-[0_25px_65px_rgba(0,0,0,0.45)]">
               <div className="flex items-center gap-2 mb-3 text-sm font-semibold text-white">
