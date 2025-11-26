@@ -1,6 +1,6 @@
 import { cn } from "../lib/cn";
 import { Button } from "./ui/Button";
-import { FileText, ExternalLink } from "lucide-react";
+import { FileText, ExternalLink, Download } from "lucide-react";
 import type { Brief } from "../lib/content";
 
 export function DownloadCenter({
