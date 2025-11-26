@@ -42,9 +42,12 @@ export function MobileNav() {
 
   return (
     <div className="lg:hidden">
-      <div className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-gradient-to-b from-black/80 via-black/60 to-transparent backdrop-blur-md px-4" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
-        <div className="flex h-14 items-center justify-between text-[0.65rem] tracking-[0.35em] uppercase text-white/70">
-          <Link href="/" className="font-semibold text-white tracking-[0.5em]">
+      <div
+        className="fixed top-0 inset-x-0 z-50 border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-4 shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
+        style={{ paddingTop: "env(safe-area-inset-top)" }}
+      >
+        <div className="flex h-14 items-center justify-between text-[0.65rem] tracking-[0.35em] uppercase text-[var(--text-secondary)]">
+          <Link href="/" className="font-semibold text-[var(--text-primary)] tracking-[0.5em]">
             STI
           </Link>
           <button
@@ -52,7 +55,7 @@ export function MobileNav() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((prev) => !prev)}
-            className="rounded-full border border-white/30 p-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+            className="rounded-full border border-white/30 p-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 bg-transparent"
           >
             {open ? <X aria-hidden /> : <Menu aria-hidden />}
           </button>
