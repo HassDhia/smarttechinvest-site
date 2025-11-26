@@ -60,12 +60,12 @@ export default async function MarketPathReportPage({ params }: Props) {
   const showIntelligenceCta = Boolean(intelligenceHref);
 
   return (
-    <div className="font-sans">
+    <div className="font-sans bg-[#03060C] text-white min-h-screen">
       <section className="container section vt-section max-w-5xl">
         <div className="mb-6">
           <Link
             href="/intelligence/briefs"
-            className="inline-flex items-center gap-2 text-sm text-[hsl(var(--muted-foreground))] hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
           >
             <ArrowLeft size={14} />
             Back to Briefs
@@ -73,20 +73,20 @@ export default async function MarketPathReportPage({ params }: Props) {
         </div>
 
         <header className="space-y-3 mb-8">
-          <p className="text-xs uppercase tracking-[0.45em] text-[hsl(var(--muted-foreground))]">
+          <p className="text-xs uppercase tracking-[0.45em] text-white/60">
             Market-Path Dossier
           </p>
           <h1 className="text-3xl md:text-[2.6rem] font-semibold text-gradient leading-tight">
             {brief.title || "Market-Path Report"}
           </h1>
           {brief.summary && (
-            <p className="text-base md:text-lg text-[hsl(var(--muted-foreground))] leading-relaxed">
+            <p className="text-base md:text-lg text-white/80 leading-relaxed">
               {brief.summary}
             </p>
           )}
 
           {brief.metadata && (
-            <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.25em] text-[hsl(var(--muted-foreground))]">
+            <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.25em] text-white/60">
               <span>{brief.metadata.sources_count} sources</span>
               <span>•</span>
               <span>{brief.metadata.confidence_score}% confidence</span>
@@ -99,12 +99,12 @@ export default async function MarketPathReportPage({ params }: Props) {
         <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr] mb-12">
           <DownloadCenter brief={brief} />
           {showIntelligenceCta ? (
-            <div className="rounded-2xl border border-[hsl(var(--border))] bg-card/40 p-4">
-              <div className="flex items-center gap-2 mb-2 text-sm font-semibold text-foreground">
-                <ExternalLink size={16} className="text-[hsl(var(--muted-foreground))]" />
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <div className="flex items-center gap-2 mb-2 text-sm font-semibold text-white">
+                <ExternalLink size={16} className="text-white/70" />
                 Need the full intelligence narration?
               </div>
-              <p className="text-sm text-[hsl(var(--muted-foreground))] mb-4">
+              <p className="text-sm text-white/70 mb-4">
                 Dive into the McKinsey-style intelligence report for the deep narrative, appendices, and source pull-through.
               </p>
               <Button asChild size="sm" variant="secondary" className="w-full justify-center">
@@ -114,13 +114,15 @@ export default async function MarketPathReportPage({ params }: Props) {
               </Button>
             </div>
           ) : (
-            <div className="rounded-2xl border border-dashed border-[hsl(var(--border))] bg-card/20 p-4 text-sm text-[hsl(var(--muted-foreground))]">
+            <div className="rounded-2xl border border-dashed border-white/20 bg-white/5 p-4 text-sm text-white/70">
               This run shipped only the Market-Path dossier. Use the downloads to share it; a McKinsey-style intelligence report will appear here when available.
             </div>
           )}
         </div>
 
-        <MarketPathContent htmlUrl={marketPathHtmlUrl} />
+        <div className="rounded-[32px] border border-white/10 bg-[#05070E] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+          <MarketPathContent htmlUrl={marketPathHtmlUrl} />
+        </div>
       </section>
     </div>
   );

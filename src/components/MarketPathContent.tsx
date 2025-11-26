@@ -41,7 +41,7 @@ export function MarketPathContent({ htmlUrl }: { htmlUrl: string }) {
 
   if (!html) {
     return (
-      <div className="text-sm text-[hsl(var(--muted-foreground))]">
+      <div className="text-sm text-white/70">
         Loading dossier…
       </div>
     );
@@ -49,7 +49,7 @@ export function MarketPathContent({ htmlUrl }: { htmlUrl: string }) {
 
   return (
     <article
-      className="prose prose-slate dark:prose-invert max-w-none"
+      className="prose prose-invert max-w-none text-white"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );
