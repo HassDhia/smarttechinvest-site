@@ -26,8 +26,8 @@ export default function Home() {
   const featuredBriefs = briefs.slice(0, 3);
 
   return (
-    <div className="font-sans bg-[#03060C] text-white">
-      <section className="section relative overflow-hidden border-b border-white/10 bg-[#05070E] pt-16 pb-20 lg:py-24">
+    <main className="font-sans min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)]">
+      <section className="section relative overflow-hidden bg-[#05070E] pt-16 pb-20 lg:py-24">
         <Image
           src="/assets/hero/cityscape.jpg"
           alt="City skyline at dusk"
@@ -58,7 +58,7 @@ export default function Home() {
       </section>
 
       <section className="container section space-y-8">
-        <div className="border-b border-white/10 pb-4">
+        <div className="pb-4">
           <p className="headline-label text-white/65">Featured intelligence</p>
           <h2 className="mt-2 headline-lg">Weekly briefs built for cinematic decks.</h2>
         </div>
@@ -104,7 +104,7 @@ export default function Home() {
         )}
       </section>
 
-      <section className="bg-[#05070E] border-t border-white/10">
+      <section className="bg-[#05070E]">
         <div className="container section grid gap-12 lg:grid-cols-2">
           <div className="space-y-4">
             <p className="headline-label text-white/65">The Brand Collab Lab</p>
@@ -135,6 +135,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

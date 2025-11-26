@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className="dark">
-      <body className="antialiased bg-[#03060C] text-white">
+      <body className="antialiased bg-[var(--bg-page)] text-[var(--text-primary)]">
         <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
           <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-3 focus:py-2 focus:rounded-md focus:bg-[hsl(var(--primary))] focus:text-[hsl(var(--primary-foreground))]">Skip to content</a>
@@ -58,13 +58,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Nav />
               <main id="main" className="flex-1">
                 <PageTransition>{children}</PageTransition>
-                <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-[hsl(var(--foreground)/0.6)]">
+                <footer className="max-w-screen-xl mx-auto px-4 py-8 text-sm text-[var(--text-secondary)]">
                   © {new Date().getFullYear()} Smart Technology Investments ·{" "}
                   <a
                     href="https://www.linkedin.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[hsl(var(--foreground)/0.7)] hover:text-[hsl(var(--foreground))] transition-colors"
+                    className="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
                   >
                     Follow on LinkedIn
                   </a>

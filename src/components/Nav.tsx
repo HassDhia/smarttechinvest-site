@@ -8,7 +8,7 @@ export function Nav() {
   const currentPath = pathname ?? "/";
 
   return (
-    <header className="hidden lg:block sticky top-0 z-[45] border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)]">
+    <header className="hidden lg:block sticky top-0 z-[45] bg-[var(--bg-elevated)] text-[var(--text-primary)] shadow-[0_1px_0_rgba(0,0,0,0.9)]">
       <div className="container flex h-12 items-center justify-between gap-8 uppercase text-[var(--text-primary)]">
         <Link
           href="/"
