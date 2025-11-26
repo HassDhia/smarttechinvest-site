@@ -28,12 +28,11 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -4 }}
         transition={{ duration: durations.sm }}
-        className="min-h-dvh"
+        className="min-h-dvh bg-[var(--bg-page)] text-[var(--text-primary)]"
       >
         {children}
       </m.main>
     </AnimatePresence>
   );
 }
-
 
