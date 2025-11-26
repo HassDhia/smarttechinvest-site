@@ -49,7 +49,7 @@ export function MarketPathContent({ htmlUrl }: { htmlUrl: string }) {
 
   return (
     <article
-      className="prose prose-invert max-w-none text-white"
+      className="market-path-content max-w-none"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

@@ -606,3 +606,45 @@ a { text-decoration: none; }
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 24%, #000 76%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 24%, #000 76%, transparent);
 }
+
+.market-path-content {
+  color: #f8fbff;
+  line-height: 1.75;
+}
+.market-path-content h1,
+.market-path-content h2,
+.market-path-content h3,
+.market-path-content h4 {
+  color: #ffffff;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+.market-path-content p {
+  margin-bottom: 1rem;
+  color: #d7deff;
+}
+.market-path-content strong {
+  color: #ffffff;
+}
+.market-path-content a {
+  color: #8ab4ff;
+  text-decoration: underline;
+}
+.market-path-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+.market-path-content table th,
+.market-path-content table td {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem;
+  text-align: left;
+}
+.market-path-content blockquote {
+  border-left: 3px solid rgba(138, 180, 255, 0.8);
+  padding-left: 1rem;
+  color: #cfd8ff;
+  margin: 1.5rem 0;
+}

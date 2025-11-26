@@ -73,33 +73,35 @@ export default async function MarketPathReportPage({ params }: Props) {
         </div>
 
         <header className="space-y-3 mb-8">
-          <p className="text-xs uppercase tracking-[0.45em] text-white/60">
-            Market-Path Dossier
-          </p>
-          <h1 className="text-3xl md:text-[2.6rem] font-semibold text-gradient leading-tight">
-            {brief.title || "Market-Path Report"}
-          </h1>
-          {brief.summary && (
-            <p className="text-base md:text-lg text-white/80 leading-relaxed">
-              {brief.summary}
+          <div className="rounded-[36px] border border-white/10 bg-gradient-to-br from-[#0b1120] via-[#060b17] to-[#03060c] p-8 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
+            <p className="text-xs uppercase tracking-[0.45em] text-white/60 mb-3">
+              Market-Path Dossier
             </p>
-          )}
+            <h1 className="text-3xl md:text-[2.6rem] font-semibold text-gradient leading-tight mb-4">
+              {brief.title || "Market-Path Report"}
+            </h1>
+            {brief.summary && (
+              <p className="text-base md:text-lg text-white/80 leading-relaxed">
+                {brief.summary}
+              </p>
+            )}
 
-          {brief.metadata && (
-            <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.25em] text-white/60">
-              <span>{brief.metadata.sources_count} sources</span>
-              <span>•</span>
-              <span>{brief.metadata.confidence_score}% confidence</span>
-              <span>•</span>
-              <span>{brief.metadata.word_count.toLocaleString()} words</span>
-            </div>
-          )}
+            {brief.metadata && (
+              <div className="mt-6 flex flex-wrap gap-4 text-xs uppercase tracking-[0.25em] text-white/60">
+                <span>{brief.metadata.sources_count} sources</span>
+                <span>•</span>
+                <span>{brief.metadata.confidence_score}% confidence</span>
+                <span>•</span>
+                <span>{brief.metadata.word_count.toLocaleString()} words</span>
+              </div>
+            )}
+          </div>
         </header>
 
         <div className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr] mb-12">
-          <DownloadCenter brief={brief} />
+          <DownloadCenter brief={brief} className="bg-[#070d1d]" />
           {showIntelligenceCta ? (
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div className="rounded-2xl border border-white/15 bg-[#090f1f] p-4 shadow-[0_15px_35px_rgba(0,0,0,0.4)]">
               <div className="flex items-center gap-2 mb-2 text-sm font-semibold text-white">
                 <ExternalLink size={16} className="text-white/70" />
                 Need the full intelligence narration?
@@ -114,13 +116,13 @@ export default async function MarketPathReportPage({ params }: Props) {
               </Button>
             </div>
           ) : (
-            <div className="rounded-2xl border border-dashed border-white/20 bg-white/5 p-4 text-sm text-white/70">
+            <div className="rounded-2xl border border-dashed border-white/20 bg-[#070d1d] p-4 text-sm text-white/70 shadow-[0_15px_35px_rgba(0,0,0,0.35)]">
               This run shipped only the Market-Path dossier. Use the downloads to share it; a McKinsey-style intelligence report will appear here when available.
             </div>
           )}
         </div>
 
-        <div className="rounded-[32px] border border-white/10 bg-[#05070E] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+        <div className="rounded-[32px] border border-white/10 bg-gradient-to-b from-[#070d1d] to-[#03060c] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
           <MarketPathContent htmlUrl={marketPathHtmlUrl} />
         </div>
       </section>
