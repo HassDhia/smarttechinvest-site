@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
 import { listBriefs, getBriefByDate } from "../../../../../lib/content";
 import { MarketPathContent } from "../../../../../components/MarketPathContent";
+import { loadSanitizedMarketPathHtml } from "../../../../../lib/marketPath";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -53,6 +54,7 @@ export default async function MarketPathReportPage({ params }: Props) {
     notFound();
   }
 
+  const sanitizedHtml = await loadSanitizedMarketPathHtml(brief.date);
   const marketPathHtmlUrl = brief.marketPathHtml ?? `/intelligence/briefs/${date}/market_path_report.html`;
   const intelligenceHref = brief.intelligenceHref;
   const showIntelligenceCta = Boolean(intelligenceHref);
@@ -125,7 +127,7 @@ export default async function MarketPathReportPage({ params }: Props) {
 
         <section className="pb-16 border-b border-[var(--border-subtle)]">
           <div className="bg-[var(--bg-surface)] px-0 sm:px-2 py-6">
-            <MarketPathContent htmlUrl={marketPathHtmlUrl} />
+            <MarketPathContent html={sanitizedHtml} />
           </div>
         </section>
       </section>
