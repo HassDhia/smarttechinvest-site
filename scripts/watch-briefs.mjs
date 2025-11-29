@@ -51,6 +51,10 @@ function hasRequiredFiles(folderPath) {
   const hasHtml = htmlCandidates.some(file => fs.existsSync(path.join(folderPath, file)));
   if (!hasHtml) return false;
   
+  const marketPathCandidates = ['market_path_report.html', 'market_path_report.md'];
+  const hasMarketPath = marketPathCandidates.some(file => fs.existsSync(path.join(folderPath, file)));
+  if (!hasMarketPath) return false;
+  
   const metadataPath = path.join(folderPath, 'metadata.json');
   if (!fs.existsSync(metadataPath)) return false;
   

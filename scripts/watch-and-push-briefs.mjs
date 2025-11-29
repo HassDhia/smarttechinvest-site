@@ -156,7 +156,7 @@ const processNewBrief = (folderName) => {
     }
     
     // Verify required files exist in the brief directory
-    const requiredFiles = ['report.html', 'metadata.json', 'executive_summary.txt'];
+    const requiredFiles = ['report.html', 'metadata.json', 'executive_summary.txt', 'market_path_report.html'];
     const missingFiles = requiredFiles.filter(file => {
       const filePath = path.join(briefDir, file);
       return !fs.existsSync(filePath);
