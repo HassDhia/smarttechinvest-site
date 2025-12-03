@@ -1,0 +1,269 @@
+{
+  "generated_at": "2025-12-02T20:54:54.070831",
+  "query": "How Value Shoppers Changed December",
+  "time_window": {
+    "start": "2025-11-19",
+    "end": "2025-12-03",
+    "days": 14,
+    "label": "Nov 19 – Dec 03, 2025"
+  },
+  "confidence": {
+    "score": 0.28,
+    "display": 0.28,
+    "band": "Directional",
+    "dials": {
+      "strength": "light",
+      "coverage": "light",
+      "quant_support": "high",
+      "consistency": "high"
+    },
+    "breakdown": {
+      "average_strength": 0.0,
+      "coverage": 0.0,
+      "quant_support": 1.0,
+      "contradiction_penalty": 0.8
+    },
+    "note": "Directional evidence: 9 sources • 4 domains • 9 in-window / 0 background • support coverage 0% Evidence dominated by msn.com (67%)."
+  },
+  "files": [
+    "intelligence_report.md",
+    "market_path_report.md",
+    "market_path_report.pdf",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "comparison_map",
+    "signal_map_notes"
+  ],
+  "title": "How Value Shoppers Changed December",
+  "highlights": [
+    "Early-window buyers are value-first; clear, conditional savings convert better than broad sitewide cuts.",
+    "Thresholds and loyalty multipliers concentrate spend and protect AOV versus blanket discounts.",
+    "Store-media QR units give a clean footfall-to-redemption signal; target **≥5%** redemption to validate media ROI."
+  ],
+  "executive_summary": "You need to capture more early-value holiday buyers without blowing margin in the Nov 19 – Dec 03, 2025 window. Prioritize measured value: aim for **10–15%** foot-traffic uplift (stretch **≥25%**), lift early-window share from **12–15%** toward **20–30%**, and secure **≥5%** QR redemption of footfall while keeping event CPA at or below the desired ceiling. Favor a store-as-studio / media-led holiday approach with targeted thresholds and in-store QR offers; put CRM, Promotions, and Store Ops in a 30-day sprint to run a zip-coded threshold test and a store QR pilot, measure early-window share, incremental AOV, and event CPA vs baseline, and stop sitewide cuts that lower AOV. These moves focus scarce discounting where it converts and make early buyers measurable and accountable to margin [^5].",
+  "top_operator_moves": [
+    "Launch a zip-code and loyalty-segment threshold test for staples and gift basics; measure conversion, incremental AOV, and margin by cohort daily.",
+    "Deploy store-media QR activations in high-footfall locations with unique offer codes; track QR redemption as % of footfall and basket lift per redeemer.",
+    "Set an event CPA guardrail at or below **≤0.80× baseline** and pause any sitewide price cuts that produce AOV or margin slippage."
+  ],
+  "statistics": {
+    "word_count": 3748,
+    "signal_count": 0,
+    "source_count": 9
+  },
+  "read_time_minutes": 19,
+  "length_label": "~19 min read",
+  "qa": {
+    "issues": [
+      "Source coverage under minimum thresholds",
+      "Signal count outside required band",
+      "Read time exceeds target"
+    ],
+    "coverage": 0.0,
+    "quant_support": 1.0,
+    "contradiction_penalty": 0.8,
+    "appendix_count": 7,
+    "scope": {
+      "topic": "How Value Shoppers Changed December",
+      "time_window": {
+        "start": "2025-11-19",
+        "end": "2025-12-03",
+        "days": 14,
+        "label": "Nov 19 – Dec 03, 2025"
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand↔brand",
+        "brick&mortar↔brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ],
+      "approach_hints": [
+        "discount-heavy holiday",
+        "collab-led holiday",
+        "store-as-studio / media-led holiday"
+      ],
+      "unified_target_pack": {
+        "foot_traffic_uplift": {
+          "base": "10-15%",
+          "stretch": "≥25%"
+        },
+        "early_window_share": {
+          "current": "12-15%",
+          "goal": "20-30%"
+        },
+        "event_cpa": {
+          "ceiling": "≤0.80× baseline"
+        },
+        "qr_redemption": {
+          "floor": "≥5% of footfall"
+        },
+        "paired_metric": "Track buyer activity share vs promo intensity side by side"
+      },
+      "window_label": "Nov 19 – Dec 03, 2025",
+      "topic_kind": "general",
+      "thin_evidence": true,
+      "operator_job_story": "How to capture more early-value holiday buyers without blowing margin in the Nov 19 \u0003 Dec 03, 2025 window.",
+      "search_shaped_variants": [
+        "How do we lift early-window share to 20% in two weeks?",
+        "Test targeted discounting vs sitewide cuts and preserve AOV.",
+        "Run a store-media QR test to drive footfall and measured basket lift."
+      ],
+      "evidence_regime": "directional",
+      "evidence_note": "Directional evidence: 9 sources • 4 domains • 9 in-window / 0 background • support coverage 0%",
+      "pilot_spec": {
+        "scenario": "targeted_threshold_burst",
+        "store_count": 1,
+        "store_type": "flagship",
+        "duration_weeks": 2,
+        "window": "Nov 19 – Dec 03, 2025",
+        "primary_move": "Run a two-week targeted threshold offer plus store-media QR test in one flagship to lift early-window share while holding event CPA and QR redemption inside guardrails.",
+        "owner_roles": [
+          "Head of Retail",
+          "Head of Marketing",
+          "Head of Partnerships",
+          "Finance"
+        ],
+        "location_radius_miles": 5,
+        "key_metrics": [
+          "event_cpa",
+          "qr_redemption",
+          "early_window_share"
+        ],
+        "window_label": "Nov 19 – Dec 03, 2025"
+      },
+      "metric_spec": {
+        "early_window_share": {
+          "label": "Early-window purchase share",
+          "target_range": [
+            20.0,
+            30.0
+          ],
+          "unit": "percent",
+          "stage": "target",
+          "owner": "Growth / Promo",
+          "target_text": "Raise early-window share to 20-30% in the Nov 19 \u00138 Dec 03 window (current ~12-15%).",
+          "notes": ""
+        },
+        "event_cpa": {
+          "label": "Event CPA vs baseline",
+          "target_range": [
+            0.8,
+            0.8
+          ],
+          "unit": "x baseline",
+          "stage": "guardrail",
+          "owner": "Finance / Growth",
+          "target_text": "Keep event CPA at or below 0.8x baseline for the pilot.",
+          "notes": ""
+        },
+        "qr_redemption": {
+          "label": "QR redemption rate (redeemers per footfall)",
+          "target_range": [
+            5.0,
+            5.0
+          ],
+          "unit": "percent of footfall",
+          "stage": "guardrail",
+          "owner": "Retail Ops / Store Media",
+          "target_text": "Achieve QR redemptions >=5% of store footfall during the pilot (measurement window: live + 7 days attribution).",
+          "notes": ""
+        },
+        "foot_traffic_uplift": {
+          "label": "Foot traffic uplift vs baseline",
+          "target_range": [
+            10.0,
+            15.0
+          ],
+          "unit": "percent lift",
+          "stage": "target",
+          "owner": "Retail Ops",
+          "target_text": "Target 10-15% foot traffic uplift during the window with a stretch goal of >=25%.",
+          "notes": ""
+        }
+      },
+      "role_actions": {
+        "Head of Retail": [
+          "Launch the flagship pilot for Nov 19 \u00138 Dec 03, deploy QR signage and staff instructions, and ensure daily footfall and QR redemption capture so QR redemption can be measured against the 5% guardrail."
+        ],
+        "Head of Partnerships": [
+          "Lock partner creative and threshold offer mechanics this week and certify partner reporting aligns to Event CPA and Early-window share measurement windows."
+        ],
+        "Finance": [
+          "Confirm baseline CPA and lock the event CPA guardrail at <=0.8x baseline before any promo funds are committed."
+        ],
+        "Head of Marketing": [
+          "Execute targeted audience segments and loyalty-door placements for the threshold offer, prioritize reach that maximizes Early-window share while tracking event_CPA and AOV in daily reports."
+        ]
+      },
+      "pilot_spec_issues": [],
+      "spec_version": "v1",
+      "spec_ok": true,
+      "spec_notes": []
+    },
+    "read_time": 19,
+    "high_quality_signals": true,
+    "observed_quant": true,
+    "tier1_market_signals": true
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07",
+  "source_stats": {
+    "total": 9,
+    "core": 0,
+    "support": 9,
+    "unique_domains": 4,
+    "domain_counts": {
+      "thesun.co.uk": 1,
+      "msn.com": 6,
+      "forbes.com": 1,
+      "autoblog.com": 1
+    },
+    "data_heavy": 4,
+    "time_span_days": 0,
+    "tier_counts": {
+      "core": 9,
+      "context": 0
+    },
+    "dominant_ratio": 0.667,
+    "thin_evidence": true,
+    "thresholds": {
+      "total": true,
+      "core": false,
+      "domains": true,
+      "data": true,
+      "dominance": false,
+      "in_window": true,
+      "background": false,
+      "support_coverage": false
+    },
+    "support_coverage": 0.0,
+    "regime": "directional"
+  },
+  "renderers": [
+    "market_path_markdown",
+    "market_path_pdf",
+    "legacy_html"
+  ],
+  "artifact_paths": [
+    "sti_reports/sti_operator_output_20251202_204555_how_value_shoppers_chang/market_path_report.md",
+    "sti_reports/sti_operator_output_20251202_204555_how_value_shoppers_chang/market_path_report.pdf"
+  ],
+  "social_media_content": {
+    "confidence": 0.28,
+    "teaser_mode": true,
+    "sources_used": ""
+  }
+}
