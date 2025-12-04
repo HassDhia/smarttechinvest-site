@@ -1,0 +1,129 @@
+[
+  {
+    "type": "hero",
+    "slot": "hero",
+    "section": "Hero",
+    "anchor_section": "header",
+    "template": "hero_decision_window",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "scene": "compact planning room split between store floor window",
+        "personas": "head retail operator making go no go call",
+        "action": "selecting three pragmatic cohorts assigning one tailored creative",
+        "symbolism": "wall calendar nov 20 dec 04 highlighted single",
+        "props": "tablet showing cohort list high intent recent buyers",
+        "mood": "precise decisive collaborative",
+        "lighting": "Polished editorial lighting with confident highlights and clear negative space on the tablet and checklist.",
+        "focal_point": "selecting three pragmatic cohorts assigning one tailored creative"
+      },
+      "style": {
+        "framing": "slightly elevated angle looking down",
+        "lighting": "diffused skylight with controlled highlights",
+        "palette": "dark neutrals with electric blue accents",
+        "geometry": "subtle ribbon-like contours",
+        "environment": "open negative-space retail bay"
+      },
+      "metric_focus": [
+        "early_window_share",
+        "event_cpa",
+        "footfall_lift"
+      ],
+      "metric_labels": [
+        "Early-window share",
+        "Event CPA",
+        "Foot-traffic uplift"
+      ]
+    },
+    "metric_focus": [
+      "early_window_share",
+      "event_cpa",
+      "footfall_lift"
+    ],
+    "alt": "Head of Retail selecting three cohort-targeted offers for an early-holiday test",
+    "image": "images/hero_the_quiet_power_of_post_holida.png"
+  },
+  {
+    "type": "section",
+    "section": "Signal Map",
+    "slot": "signal_map",
+    "anchor_section": "signals_and_thesis",
+    "template": "signal_map_concentric",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "context": "run quick paired experiments hold promo intensity constant",
+        "structure": "concentric rings measurement spine central node campaign radial",
+        "elements": "tokens labeled early window share footfall lift separate",
+        "motion": "flow runs inward partner paid reach store media",
+        "direction": "run quick paired experiments hold promo intensity constant",
+        "palette": "neutral paper textures steel gray lines two accent"
+      },
+      "style": {
+        "framing": "radial diagram posture",
+        "lighting": "sheeted daylight gradients",
+        "palette": "mist gray with electric blue pulses",
+        "geometry": "clean networked arcs",
+        "environment": "dark minimal background"
+      },
+      "metric_focus": [
+        "footfall_lift",
+        "early_window_share",
+        "event_cpa"
+      ],
+      "metric_labels": [
+        "Foot-traffic uplift",
+        "Early-window share",
+        "Event CPA"
+      ]
+    },
+    "metric_focus": [
+      "footfall_lift",
+      "early_window_share",
+      "event_cpa"
+    ],
+    "alt": "Head of Partnerships inspecting a signal map linking early-window share to footfall uplift and CPA",
+    "image": "images/section_signal_map_the_quiet_power_of_post_holida.png"
+  },
+  {
+    "type": "section",
+    "section": "Case Study 1",
+    "slot": "case_study_1",
+    "anchor_section": "mini_case_story",
+    "template": "case_play_activation",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "scene": "small creative studio where email lead designer preview",
+        "time": "email lead marks one creative tailored test pins",
+        "moment": "email lead marks one creative tailored test pins",
+        "personas": "email lead operator executing 'relevance trumps volume' cohort",
+        "mood": "focused empirical measured",
+        "lighting": "Clean editorial sidelight emphasizing textures of paper and screens, with soft shadow to isolate the action.",
+        "props": "pinned creative artboards labeled cohort b control card",
+        "focal_point": "small creative studio where email lead designer preview"
+      },
+      "style": {
+        "framing": "grounded eye-level framing focused on the active bay",
+        "lighting": "diffused skylight with controlled highlights",
+        "palette": "graphite and steel with restrained teal",
+        "geometry": "minimal coaxial arcs",
+        "environment": "calm studio void"
+      },
+      "metric_focus": [
+        "conversion_rate",
+        "event_cpa"
+      ],
+      "metric_labels": [
+        "Conversion rate",
+        "Event CPA"
+      ]
+    },
+    "metric_focus": [
+      "conversion_rate",
+      "event_cpa"
+    ],
+    "alt": "Email Lead launching cohort-targeted creative to compare tailored offers vs a 20% control",
+    "image": "images/section_case_study_1_the_quiet_power_of_post_holida.png"
+  }
+]

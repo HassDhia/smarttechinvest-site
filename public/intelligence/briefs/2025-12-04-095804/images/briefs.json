@@ -1,0 +1,83 @@
+{
+  "hero": {
+    "slot": "hero",
+    "core_tension": "Choose targeted cohort sends that preserve margin and relevance versus a tempting blanket sitewide discount.",
+    "setting": "Compact planning room split between a store floor window and a studio desk with screens showing creative variants.",
+    "persona": "Head of Retail (operator) making the go/no-go call",
+    "action": "Selecting three pragmatic cohorts and assigning one tailored creative and offer per cohort on a tablet.",
+    "urgency_symbol": "A wall calendar with Nov 20–Dec 04 highlighted and a single sticky note reading Send Now.",
+    "props": [
+      "Tablet showing cohort list (high-intent, recent buyers, loyalty members)",
+      "Printed control tag labeled 20% OFF",
+      "One-page measurement checklist listing cohort conversion, unsubscribe, event CPA"
+    ],
+    "lighting": "Polished editorial lighting with confident highlights and clear negative space on the tablet and checklist.",
+    "mood": "Precise, decisive, collaborative",
+    "anchor_section": "header",
+    "metric_focus": [
+      "early_window_share",
+      "event_cpa",
+      "footfall_lift"
+    ],
+    "alt": "Head of Retail selecting three cohort-targeted offers for an early-holiday test"
+  },
+  "signal_map": {
+    "slot": "signal_map",
+    "structure": "Concentric rings (measurement spine) with a central node for the campaign and radial arcs for channels.",
+    "elements": [
+      "Tokens labeled early_window_share and footfall_lift on separate rings",
+      "Annotated event_cpa ceiling marker on the outer ring",
+      "Paths from partner placements to in-store touchpoints"
+    ],
+    "motion": "Flow runs inward from partner-paid reach and store media into cohort segments, with thicker arcs where CPA stays below 0.8x.",
+    "palette": "Neutral paper textures, steel gray lines, and two accent colors for lift (teal) and risk (muted red).",
+    "anchor_section": "signals_and_thesis",
+    "metric_focus": [
+      "footfall_lift",
+      "early_window_share",
+      "event_cpa"
+    ],
+    "alt": "Head of Partnerships inspecting a signal map linking early-window share to footfall uplift and CPA"
+  },
+  "case_studies": [
+    {
+      "slot": "case_study_1",
+      "scene": "Small creative studio where an Email Lead and a Designer preview three product-specific creatives tied to cohorts.",
+      "moment": "The Email Lead marks one creative as the tailored test and pins the blanket 20% control aside.",
+      "persona": "Email Lead (operator) executing the 'Relevance trumps volume' cohort play",
+      "props": [
+        "Pinned creative artboards labeled by cohort",
+        "A/B control card labeled 20% off",
+        "Tablet showing live conversion_rate and unsubscribe rate metrics"
+      ],
+      "lighting": "Clean editorial sidelight emphasizing textures of paper and screens, with soft shadow to isolate the action.",
+      "mood": "Focused, empirical, measured",
+      "anchor_section": "mini_case_story",
+      "metric_focus": [
+        "conversion_rate",
+        "event_cpa"
+      ],
+      "alt": "Email Lead launching cohort-targeted creative to compare tailored offers vs a 20% control"
+    },
+    {
+      "slot": "case_study_2",
+      "scene": "Partnership ops desk with a retailer and a partner rep mapping placements onto a weekend store schedule.",
+      "moment": "They agree a partner-funded promo and place QR code panels tied to in-store studio activations.",
+      "persona": "Head of Partnerships (operator) activating a partner-funded promo",
+      "props": [
+        "Co-branded mockup with partner logo",
+        "Map of store zones with QR code placements",
+        "Dashboard printout forecasting partner_value and expected qr_redemption"
+      ],
+      "lighting": "Polished highlights on co-branding; broad negative space to read the map and dashboard easily.",
+      "mood": "Collaborative, tactical, time-aware",
+      "anchor_section": "mini_case_story",
+      "metric_focus": [
+        "partner_value",
+        "qr_redemption",
+        "early_window_share"
+      ],
+      "alt": "Head of Partnerships activating a partner-funded promo to drive QR redemptions in the early window"
+    }
+  ]
+}
