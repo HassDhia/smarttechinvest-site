@@ -1,0 +1,276 @@
+{
+  "generated_at": "2025-12-05T11:56:23.027265",
+  "query": "The New Frugality: Why Premium Brands Are Still Winning",
+  "time_window": {
+    "start": "2025-11-21",
+    "end": "2025-12-05",
+    "days": 14,
+    "label": "Nov 21 – Dec 05, 2025"
+  },
+  "confidence": {
+    "score": 0.28,
+    "display": 0.28,
+    "band": "Directional",
+    "dials": {
+      "strength": "light",
+      "coverage": "light",
+      "quant_support": "high",
+      "consistency": "high"
+    },
+    "breakdown": {
+      "average_strength": 0.0,
+      "coverage": 0.0,
+      "quant_support": 1.0,
+      "contradiction_penalty": 0.8
+    },
+    "note": "Directional evidence: 9 sources • 8 domains • 9 in-window / 0 background • support coverage 0%"
+  },
+  "files": [
+    "intelligence_report.md",
+    "executive_letter.md",
+    "executive_letter.pdf",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "comparison_map",
+    "signal_map_notes"
+  ],
+  "title": "The New Frugality: Why Premium Brands Are Still Winning",
+  "highlights": [
+    "Trust signals—guarantees, provenance, third-party validation, fast returns—convert premium buyers more efficiently than across-the-board discounts.",
+    "Concentrated collab pop-ups and partner-led experiences preserve AOV while moving foot traffic toward the **10-15%** base uplift target.",
+    "Measure buyer activity share against promo intensity to spot margin bleed early and keep event CPA and QR redemption within target bands."
+  ],
+  "executive_summary": "You need to capture premium holiday buyers during Nov 21 – Dec 05 without collapsing margins by scrambling price cuts across the assortment. That means targeting a **10-15%** foot-traffic uplift (stretch **≥25%**), raising early-window share from **12-15%** toward **20-30%**, while holding event CPA at **≤0.80× baseline** and driving QR redemptions to **≥5%** of footfall. Favor a collab-led holiday and store-as-studio activations over blanket markdowns because trust cues and partner validation lift conversion and repeat without eroding price integrity [^7][^8]. In the next 30 days Partnerships and Store Ops must run a narrow collab pop-up pilot with trust overlays.",
+  "top_operator_moves": [
+    "Run a 2-week collab-led store-as-studio pilot Nov 21–Dec 05 that promotes a narrow set of premium SKUs with trust overlays and no blanket markdowns.",
+    "Instrument and daily-report conversion, repeat rate, AOV, buyer activity share vs promo intensity, foot-traffic uplift, event CPA and QR redemption.",
+    "Freeze assortment-wide cuts; reallocate promotional spend to partner fees, in-store production, and fulfillment guarantees for the pilot."
+  ],
+  "statistics": {
+    "word_count": 4012,
+    "signal_count": 0,
+    "source_count": 9
+  },
+  "read_time_minutes": 20,
+  "length_label": "~20 min read",
+  "qa": {
+    "issues": [
+      "Source coverage under minimum thresholds",
+      "Signal count outside required band",
+      "Deep analysis summary exceeds sentence cap",
+      "Read time exceeds target"
+    ],
+    "coverage": 0.0,
+    "quant_support": 1.0,
+    "contradiction_penalty": 0.8,
+    "appendix_count": 8,
+    "scope": {
+      "topic": "The New Frugality: Why Premium Brands Are Still Winning",
+      "time_window": {
+        "start": "2025-11-21",
+        "end": "2025-12-05",
+        "days": 14,
+        "label": "Nov 21 – Dec 05, 2025"
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand↔brand",
+        "brick&mortar↔brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ],
+      "approach_hints": [
+        "discount-heavy holiday",
+        "collab-led holiday",
+        "store-as-studio / media-led holiday"
+      ],
+      "unified_target_pack": {
+        "foot_traffic_uplift": {
+          "base": "10-15%",
+          "stretch": "≥25%"
+        },
+        "early_window_share": {
+          "current": "12-15%",
+          "goal": "20-30%"
+        },
+        "event_cpa": {
+          "ceiling": "≤0.80× baseline"
+        },
+        "qr_redemption": {
+          "floor": "≥5% of footfall"
+        },
+        "paired_metric": "Track buyer activity share vs promo intensity side by side"
+      },
+      "window_label": "Nov 21 – Dec 05, 2025",
+      "topic_kind": "general",
+      "thin_evidence": true,
+      "operator_job_story": "You need to capture premium holiday buyers during Nov 21 – Dec 05 without collapsing margins by scrambling price cuts across the assortment.",
+      "search_shaped_variants": [
+        "How do we win early premium holiday buyers without blanket discounts?",
+        "Test ideas to shift spend from deep markdowns to collab-led store events Nov 21–Dec 05",
+        "Which partner activations lift footfall 15–25% while keeping promo spend flat?",
+        "Show me weekly buyer activity share vs promo depth for early-window premium SKUs"
+      ],
+      "evidence_regime": "directional",
+      "evidence_note": "Directional evidence: 9 sources • 8 domains • 9 in-window / 0 background • support coverage 0%",
+      "pilot_spec": {
+        "scenario": "premium_early_window",
+        "store_count": 8,
+        "store_type": "flagship_plus_matched_controls",
+        "duration_weeks": 2,
+        "window": "Nov 21 – Dec 05, 2025",
+        "primary_move": "Run collab-led in-store events plus trust-overlay premium SKU treatments during Nov 21\u0013Dec 05 to lift premium buyer share without broad assortment markdowns.",
+        "owner_roles": [
+          "Head of Retail",
+          "Head of Marketing",
+          "Head of Partnerships",
+          "Finance"
+        ],
+        "location_radius_miles": 25,
+        "key_metrics": [
+          "store_event_foot_traffic_uplift",
+          "event_cpa_vs_baseline",
+          "buyer_activity_vs_promo",
+          "qr_redemption"
+        ],
+        "window_label": "Nov 21 – Dec 05, 2025"
+      },
+      "metric_spec": {
+        "buyer_activity_vs_promo": {
+          "label": "Weekly premium buyer share vs avg promo depth",
+          "target_range": [
+            20.0,
+            30.0
+          ],
+          "unit": "% premium buyers (week)",
+          "stage": "target",
+          "owner": "Growth Analytics",
+          "target_text": "Lift premium buyer share to 20-30% during window while holding average promo depth flat vs 4-week pre-window baseline.",
+          "notes": ""
+        },
+        "store_event_foot_traffic_uplift": {
+          "label": "Store event A/B foot-traffic uplift",
+          "target_range": [
+            10.0,
+            15.0
+          ],
+          "unit": "% uplift vs matched controls",
+          "stage": "target",
+          "owner": "Store Ops",
+          "target_text": "Deliver 10-15% foot-traffic uplift in event stores versus matched controls over the 2-week window.",
+          "notes": ""
+        },
+        "event_cpa_vs_baseline": {
+          "label": "Event CPA relative to baseline",
+          "target_range": [
+            0.8,
+            0.8
+          ],
+          "unit": "x baseline CPA",
+          "stage": "guardrail",
+          "owner": "Performance Marketing",
+          "target_text": "Keep event CPA at or below 0.8x baseline (ceiling ≤0.8× baseline).",
+          "notes": ""
+        },
+        "qr_redemption": {
+          "label": "QR redemption rate as share of footfall",
+          "target_range": [
+            5.0,
+            5.0
+          ],
+          "unit": "% of footfall",
+          "stage": "guardrail",
+          "owner": "Store Ops",
+          "target_text": "QR-driven redemptions must be at least 5% of store footfall in event stores.",
+          "notes": ""
+        }
+      },
+      "role_actions": {
+        "Head of Retail": [
+          "Configure 8 stores for the Premium Early Window pilot with 4 event and 4 matched control sites and enforce the Store Event Foot Traffic Uplift and QR redemption measurement protocols this week."
+        ],
+        "Head of Partnerships": [
+          "Lock partner activations and in-store programming for the Premium Early Window pilot so collaborator roles, timing, and creative are finalized before Nov 21 to target Buyer Activity Vs Promo lift."
+        ],
+        "Finance": [
+          "Set the event CPA guardrail at ≤0.8x baseline and cap paid activation spend so Event Cpa Vs Baseline cannot exceed the ceiling during the 2-week pilot."
+        ],
+        "Head of Marketing": [
+          "Deploy the trust-overlay creative, segmented email, and paid support tied to premium SKUs for the Premium Early Window pilot and report weekly on Buyer Activity Vs Promo and Event Cpa Vs Baseline."
+        ]
+      },
+      "pilot_spec_issues": [],
+      "spec_version": "v1",
+      "spec_ok": true,
+      "spec_notes": []
+    },
+    "read_time": 20,
+    "high_quality_signals": true,
+    "observed_quant": true,
+    "tier1_market_signals": true
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07",
+  "source_stats": {
+    "total": 9,
+    "core": 0,
+    "support": 9,
+    "unique_domains": 8,
+    "domain_counts": {
+      "motortransport.co.uk": 1,
+      "seekingalpha.com": 1,
+      "familydestinationsguide.com": 2,
+      "adimesaved.com": 1,
+      "mygolfspy.com": 1,
+      "fastcompany.com": 1,
+      "consumeraffairs.com": 1,
+      "msn.com": 1
+    },
+    "data_heavy": 2,
+    "time_span_days": 0,
+    "tier_counts": {
+      "core": 9,
+      "context": 0
+    },
+    "dominant_ratio": 0.222,
+    "thin_evidence": true,
+    "thresholds": {
+      "total": true,
+      "core": false,
+      "domains": true,
+      "data": true,
+      "dominance": true,
+      "in_window": true,
+      "background": false,
+      "support_coverage": false
+    },
+    "support_coverage": 0.0,
+    "regime": "directional"
+  },
+  "renderers": [
+    "executive_letter_markdown",
+    "executive_letter_pdf",
+    "legacy_html"
+  ],
+  "artifact_paths": [
+    "sti_reports/sti_operator_output_20251205_114914_the_new_frugality__why_p/executive_letter.md",
+    "sti_reports/sti_operator_output_20251205_114914_the_new_frugality__why_p/executive_letter.pdf"
+  ],
+  "social_media_content": {
+    "confidence": 0.28,
+    "teaser_mode": true,
+    "sources_used": ""
+  }
+}

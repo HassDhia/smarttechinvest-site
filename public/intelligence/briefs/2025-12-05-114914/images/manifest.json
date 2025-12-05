@@ -1,0 +1,126 @@
+[
+  {
+    "type": "hero",
+    "slot": "hero",
+    "section": "Hero",
+    "anchor_section": "header",
+    "template": "hero_decision_window",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "scene": "high end store reconfigured small studio pop up",
+        "personas": "head retail visibly choosing collab led store studio",
+        "action": "placing partner fixture signing short form trust guarantee",
+        "symbolism": "backlit calendar edge single illuminated shelf tile signals",
+        "props": "partner branded fixture provenance placard expedited returns badge",
+        "mood": "decisive precise collaborative",
+        "lighting": "Polished editorial lighting with confident highlights and controlled shadows; clean negative space around the operator.",
+        "focal_point": "placing partner fixture signing short form trust guarantee"
+      },
+      "style": {
+        "framing": "three-quarter view from eye level",
+        "lighting": "polished editorial lighting with soft shadows",
+        "palette": "ivory and charcoal with cyan pins",
+        "geometry": "clean architectural facets",
+        "environment": "calm studio void"
+      },
+      "metric_focus": [
+        "footfall_lift",
+        "early_window_share"
+      ],
+      "metric_labels": [
+        "Foot-traffic uplift",
+        "Early-window share"
+      ]
+    },
+    "metric_focus": [
+      "footfall_lift",
+      "early_window_share"
+    ],
+    "alt": "Head of Retail executing collab-led store-as-studio pilot to capture early-window premium buyers",
+    "image": "images/hero_the_new_frugality_why_premium_.png"
+  },
+  {
+    "type": "section",
+    "section": "Signal Map",
+    "slot": "signal_map",
+    "anchor_section": "signals_and_thesis",
+    "template": "signal_map_concentric",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "context": "these five signals form single testable thesis capture",
+        "structure": "concentric arcs radial lanes forming measurement spine inner",
+        "elements": "premium sku tokens partner nodes qr markers embedded",
+        "motion": "flow partner nodes across lanes premium sku tokens",
+        "direction": "these five signals form single testable thesis capture",
+        "palette": "muted neutrals two confident accents deep teal early"
+      },
+      "style": {
+        "framing": "gentle isometric framing",
+        "lighting": "sheeted daylight gradients",
+        "palette": "mist gray with electric blue pulses",
+        "geometry": "stacked line work",
+        "environment": "soft gradient void"
+      },
+      "metric_focus": [
+        "footfall_lift",
+        "early_window_share",
+        "event_cpa"
+      ],
+      "metric_labels": [
+        "Foot-traffic uplift",
+        "Early-window share",
+        "Event CPA"
+      ]
+    },
+    "metric_focus": [
+      "footfall_lift",
+      "early_window_share",
+      "event_cpa"
+    ],
+    "alt": "CMO reviewing measurement spine visualizing footfall lift, early-window share and CPA targets",
+    "image": "images/section_signal_map_the_new_frugality_why_premium_.png"
+  },
+  {
+    "type": "section",
+    "section": "Case Study 1",
+    "slot": "case_study_1",
+    "anchor_section": "mini_case_story",
+    "template": "case_play_activation",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "scene": "close up editorial shot premium shelf cluster trust",
+        "time": "head merch compares two identical skus one trust",
+        "moment": "head merch compares two identical skus one trust",
+        "personas": "head merch running b pilot trust overlays versus",
+        "mood": "precise experimental evidence driven",
+        "lighting": "Soft, confident highlights on product surfaces; editorial contrast to make tags legible.",
+        "props": "provenance hangtags third party validation badge expedited returns",
+        "focal_point": "close up editorial shot premium shelf cluster trust"
+      },
+      "style": {
+        "framing": "slightly elevated angle looking down",
+        "lighting": "polished editorial lighting with soft shadows",
+        "palette": "graphite and steel with restrained teal",
+        "geometry": "subtle ribbon-like contours",
+        "environment": "calm studio void"
+      },
+      "metric_focus": [
+        "conversion_rate",
+        "early_window_share"
+      ],
+      "metric_labels": [
+        "Conversion rate",
+        "Early-window share"
+      ]
+    },
+    "metric_focus": [
+      "conversion_rate",
+      "early_window_share"
+    ],
+    "alt": "Head of Merch testing trust-overlay premium SKUs versus markdowns to raise conversion",
+    "image": "images/section_case_study_1_the_new_frugality_why_premium_.png"
+  }
+]
