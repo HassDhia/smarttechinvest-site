@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
     }
 
     const distributionFile = formData.get("distributionFile");
-    let attachments: Array<{ filename: string; content: string; contentType?: string }> = [];
+    const attachments: Array<{ filename: string; content: string; contentType?: string }> = [];
     let attachmentLabel = "None";
 
     if (distributionFile instanceof File && distributionFile.size > 0) {
