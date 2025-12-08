@@ -1,0 +1,129 @@
+[
+  {
+    "type": "hero",
+    "slot": "hero",
+    "section": "Hero",
+    "anchor_section": "header",
+    "template": "hero_decision_window",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "scene": "backroom planning table overlooking retail floor visible nov",
+        "personas": "head retail operator collaborating head partnerships studio lead",
+        "action": "operator marks nov 24 2 dec 08 window",
+        "symbolism": "stacked calendar tiles target window elevated short numeric",
+        "props": "calendar board showing nov 24 2 dec 08",
+        "mood": "decisive collaborative margin focused",
+        "lighting": "Polished editorial lighting: confident highlights on the calendar and bundle, soft negative space around figures.",
+        "focal_point": "operator marks nov 24 2 dec 08 window"
+      },
+      "style": {
+        "framing": "tight medium shot on the collaboration moment",
+        "lighting": "cool high-contrast lighting with crisp edges",
+        "palette": "graphite and steel with restrained teal",
+        "geometry": "minimal coaxial arcs",
+        "environment": "measured spatial grid"
+      },
+      "metric_focus": [
+        "early_window_share",
+        "partner_value",
+        "conversion_rate"
+      ],
+      "metric_labels": [
+        "Early-window share",
+        "Partner value",
+        "Conversion rate"
+      ]
+    },
+    "metric_focus": [
+      "early_window_share",
+      "partner_value",
+      "conversion_rate"
+    ],
+    "alt": "Head of Retail and Partnerships pin a Nov 24\u00032 Dec 08 bundle test on the calendar",
+    "image": "images/hero_why_consumer_bargain_hunting_i.png"
+  },
+  {
+    "type": "section",
+    "section": "Signal Map",
+    "slot": "signal_map",
+    "anchor_section": "signals_and_thesis",
+    "template": "signal_map_concentric",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "context": "these signals point one simple operator play run",
+        "structure": "concentric rings time buckets pre window nov 24",
+        "elements": "tokens store visits sized footfall arcs annotated early",
+        "motion": "flow outer rings nov 24 2 dec 08",
+        "direction": "these signals point one simple operator play run",
+        "palette": "matte neutrals confident highlights target window tactile materials"
+      },
+      "style": {
+        "framing": "gentle isometric framing",
+        "lighting": "soft studio glow with restrained highlights",
+        "palette": "graphite base with cyan sparks",
+        "geometry": "stacked line work",
+        "environment": "architectural plinth"
+      },
+      "metric_focus": [
+        "footfall_lift",
+        "early_window_share",
+        "event_cpa"
+      ],
+      "metric_labels": [
+        "Foot-traffic uplift",
+        "Early-window share",
+        "Event CPA"
+      ]
+    },
+    "metric_focus": [
+      "footfall_lift",
+      "early_window_share",
+      "event_cpa"
+    ],
+    "alt": "Head of Retail reads a rings map showing early_window_share and event_cpa for a Nov 24\u00032 Dec 08 activation",
+    "image": "images/section_signal_map_why_consumer_bargain_hunting_i.png"
+  },
+  {
+    "type": "section",
+    "section": "Case Study 1",
+    "slot": "case_study_1",
+    "anchor_section": "mini_case_story",
+    "template": "case_play_activation",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "scene": "store co branded pop up where low priced",
+        "time": "store manager reviews uplift paired sales after introducing",
+        "moment": "store manager reviews uplift paired sales after introducing",
+        "personas": "store manager testing brand 7brand bundle upsell scripting",
+        "mood": "focused tactical test oriented",
+        "lighting": "Clean editorial key light on the bundle, softer fill behind staff to keep product readable.",
+        "props": "pop up pedestal two stacked skus pos screen",
+        "focal_point": "store co branded pop up where low priced"
+      },
+      "style": {
+        "framing": "tight medium shot on the collaboration moment",
+        "lighting": "diffused skylight with controlled highlights",
+        "palette": "graphite and steel with restrained teal",
+        "geometry": "layered geometric planes",
+        "environment": "measured spatial grid"
+      },
+      "metric_focus": [
+        "conversion_rate",
+        "partner_value"
+      ],
+      "metric_labels": [
+        "Conversion rate",
+        "Partner value"
+      ]
+    },
+    "metric_focus": [
+      "conversion_rate",
+      "partner_value"
+    ],
+    "alt": "Store Manager reviews conversion_rate lift from a brand\t7brand bundle test",
+    "image": "images/section_case_study_1_why_consumer_bargain_hunting_i.png"
+  }
+]
