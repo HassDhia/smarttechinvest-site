@@ -103,18 +103,18 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col gap-2 sm:items-end">
-            <Link
-              href="/intelligence"
-              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-black shadow-[0_10px_30px_rgba(255,255,255,0.25)]"
-            >
-              Get the briefs
-            </Link>
             <a
               href="mailto:sti.partnerships@gmail.com?subject=STI%20Request%20Consideration"
-              className="text-xs uppercase tracking-[0.4em] text-white/70 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#03060C]"
+              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-black shadow-[0_10px_30px_rgba(255,255,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#03060C]"
             >
               Request consideration
             </a>
+            <Link
+              href="/intelligence"
+              className="text-xs uppercase tracking-[0.4em] text-white/70 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#03060C]"
+            >
+              Get the briefs
+            </Link>
           </div>
         </div>
         {featuredBriefs.length > 0 ? (

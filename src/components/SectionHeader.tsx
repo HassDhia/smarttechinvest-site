@@ -1,13 +1,15 @@
-export function SectionHeader({ 
-  title, 
-  subtitle, 
-  kicker, 
+export function SectionHeader({
+  title,
+  subtitle,
+  subtitleClassName,
+  kicker,
   number,
-  useGradientTitle = false 
-}: { 
-  title: string; 
-  subtitle?: string; 
-  kicker?: string; 
+  useGradientTitle = false,
+}: {
+  title: string;
+  subtitle?: string;
+  subtitleClassName?: string;
+  kicker?: string;
   number?: string;
   useGradientTitle?: boolean;
 }) {
@@ -22,10 +24,9 @@ export function SectionHeader({
       ) : null}
       <h2 className={`font-semibold tracking-tight fs-step-3 ${useGradientTitle ? "text-gradient" : "text-foreground"} vt-reveal`}>{title}</h2>
       {subtitle ? (
-        <p className="mt-3 text-foreground/80 fs-step-0 max-w-2xl vt-reveal">{subtitle}</p>
+        <p className={`mt-3 fs-step-0 max-w-2xl vt-reveal ${subtitleClassName ?? "text-foreground/80"}`}>{subtitle}</p>
       ) : null}
     </div>
   );
 }
-
 
