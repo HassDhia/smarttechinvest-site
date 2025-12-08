@@ -31,7 +31,7 @@ Production website for Smart Technology Investments. Built with Next.js App Rout
 
 #### Prerequisites
 
-- Node.js >= 18 and npm >= 9 (see `package.json#engines`)
+- Node.js >= 24 and npm >= 9 (see `package.json#engines`)
 
 #### Setup
 
