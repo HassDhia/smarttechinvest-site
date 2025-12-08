@@ -7,7 +7,7 @@ export function ActivationAngleCTA({ categoryHint }: { categoryHint?: string | n
     <div className="rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 sm:p-8 shadow-[0_15px_35px_rgba(0,0,0,0.35)]">
       <p className="text-xs uppercase tracking-[0.35em] text-[var(--text-muted)] mb-3">Activation angle</p>
       <p className="text-lg text-[var(--text-primary)] leading-relaxed mb-6">
-        If you operate in {categoryLabel} and want to apply this signal to your market, STI can map partner-fit targets
+        If you want to apply this signal to your market, STI can map partner-fit targets
         and structure a collaboration you can take to a budget owner.
       </p>
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
