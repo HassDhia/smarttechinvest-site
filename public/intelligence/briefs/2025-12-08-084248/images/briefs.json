@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "core_tension": "Choose timed collaboration pop-ups that shift purchase timing without cutting margin, or run broad discounts that buy traffic but compress full-price demand.",
+    "setting": "In-store strategy table. Low three-quarter angle on operator leaning over a matte wood table with calendar pages for Nov 24\t6 Dec 08, printed partner briefs, and sample QR stickers; tactile materials and linen swatches visible to imply product curation.",
+    "persona": "Head of Retail or Head of Marketing executing the collab-led approach",
+    "action": "Placing a 'partner pop-up' token on the Nov 24\t6 Dec 08 window while leaving shallow-discount tags in a separate pile to signal test scope",
+    "urgency_symbol": "A small analog countdown timer set to the first activation weekend and a clipped calendar page for the two-week window",
+    "props": [
+      "Partner mood boards labeled S5 (Gen Z pop-up)",
+      "QR sticker sheets and a printed measurement spine showing early-window share targets",
+      "One shallow markdown tag to show limited discount test scope"
+    ],
+    "lighting": "Polished editorial lighting with confident highlights, clear subject shadowing, and a clean negative space to the right for copy or captions",
+    "mood": "Precise, collaborative, decisive",
+    "anchor_section": "header",
+    "metric_focus": [
+      "early_window_share",
+      "event_cpa",
+      "qr_redemption"
+    ],
+    "alt": "Head of Retail placing partner pop-up token, choosing collab-led test with QR activation"
+  },
+  "signal_map": {
+    "structure": "Concentric rings with radial nodes; inner ring sized to early-window share (labels 12-15% baseline, target 20-30%), outer ring sized to footfall uplift (labels 10-15% base, stretch \u00025%); a threshold arc marks event CPA ceiling at \u0000b00.80\u0000d7 baseline.",
+    "elements": [
+      "QR tokens on a path from media nodes to store nodes",
+      "Collaborator nodes (S5) and store-as-studio nodes (S6)",
+      "A dotted arc showing discount-heavy tactic as a short, steep spike inside the margin cliff zone (reference deep_analysis)"
+    ],
+    "motion": "Flow lines show traffic from partner-funded media into store nodes, then split to QR scans and purchase nodes; thicker lines indicate higher yield scenarios",
+    "palette": "Muted cool blues for measurement geometry, warm amber accents for collaborator nodes, paper texture and brass pin material cues for tactile clarity",
+    "anchor_section": "signals_and_thesis",
+    "metric_focus": [
+      "footfall_lift",
+      "early_window_share"
+    ],
+    "alt": "CMO mapping footfall uplift vs early-window share for pop-up and store-as-studio tests"
+  },
+  "case_study_1": {
+    "scene": "Compact urban store corner reimagined as a Gen Z collaborator pop-up. Clean negative space, curated merch islands, youth-facing signage.",
+    "moment": "Head of Marketing watches first dozen QR scans in real time at the door as staff greet under-30 visitors; a small counter shows QR redemption rising toward the 5% floor.",
+    "persona": "Head of Marketing running S5 collaborator pop-ups aimed at Gen Z",
+    "props": [
+      "Branded pop-up modules",
+      "Prominent QR signage tied to an exclusive early-window drop",
+      "Printed cohort tags to separate new vs repeat buyers"
+    ],
+    "lighting": "Bright, directional editorial light on the QR sign and product islands, soft fill elsewhere",
+    "mood": "Targeted, tactical, test-focused",
+    "anchor_section": "mini_case_story",
+    "metric_focus": [
+      "qr_redemption",
+      "conversion_rate"
+    ],
+    "alt": "Head of Marketing monitoring QR redemptions at Gen Z pop-up test"
+  },
+  "case_study_2": {
+    "scene": "Weekend 'store-as-studio' activation with partner crew filming short-form content in a branded corner. Staff hand out partner-funded sample cards with QR codes.",
+    "moment": "Head of Partnerships reviews footfall counters and partner media placements as a crew wraps a short clip; on-paper yield per visitor metrics are compared to baseline.",
+    "persona": "Head of Partnerships coordinating S6 store-as-studio weekend activations",
+    "props": [
+      "Lightweight camera rig and branded backdrop",
+      "Partner media schedule and a printed partner_value ledger",
+      "Kiosk with QR scan log and per-visitor yield printouts"
+    ],
+    "lighting": "Polished studio-key light for subject, neutral background with soft shadow to suggest depth",
+    "mood": "Strategic, performance-driven, collaborative",
+    "anchor_section": "mini_case_story",
+    "metric_focus": [
+      "footfall_lift",
+      "partner_value",
+      "qr_redemption"
+    ],
+    "alt": "Head of Partnerships tracking footfall uplift and QR scans during store-as-studio weekend"
+  },
+  "future_outlook": {
+    "scene": "Morning after test closes. Clean back-of-house table with printed results: early-window share at 25%, event CPA at 0.8x baseline, QR redemption >=5%, and cohort split summaries.",
+    "moment": "CFO and Head of Retail side-by-side reviewing the isolated cohort files that show acquisition lift without broad margin erosion; a circled metric set validates the collab-led approach.",
+    "persona": "CFO reviewing post-test metrics and approving scale of collab-led activations",
+    "props": [
+      "Printed analytics sheets with highlighted targets met (early-window share 20-30%, event CPA \u0000b00.80\u0000d7 baseline, QR redemption \u000225%)",
+      "A muted wall calendar with the Nov 24\t6 Dec 08 window blocked out",
+      "A single shallow-discount tag left folded to indicate limited use"
+    ],
+    "lighting": "Soft, confident editorial light with clear highlights on the result sheets and deep negative space for emphasis",
+    "mood": "Resolved, evidence-first, operational",
+    "anchor_section": "future_outlook",
+    "metric_focus": [
+      "early_window_share",
+      "event_cpa",
+      "qr_redemption"
+    ],
+    "alt": "CFO reviewing post-test results showing early-window share and event CPA outcomes"
+  }
+}

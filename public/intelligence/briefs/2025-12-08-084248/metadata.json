@@ -1,0 +1,335 @@
+{
+  "generated_at": "2025-12-08T08:50:48.969588",
+  "query": "Why Consumer Bargain Hunting Is Reshaping December Demand Patterns",
+  "time_window": {
+    "start": "2025-11-24",
+    "end": "2025-12-08",
+    "days": 14,
+    "label": "Nov 24 \u2013 Dec 08, 2025"
+  },
+  "confidence": {
+    "score": 0.6,
+    "display": 0.6,
+    "band": "Directional",
+    "dials": {
+      "strength": "high",
+      "coverage": "light",
+      "quant_support": "high",
+      "consistency": "high"
+    },
+    "breakdown": {
+      "average_strength": 0.8033333333333333,
+      "coverage": 0.5,
+      "quant_support": 1.0,
+      "contradiction_penalty": 0.8
+    },
+    "note": "Directional evidence: 3 sources \u2022 3 domains \u2022 2 in-window / 1 background \u2022 support coverage 100%"
+  },
+  "files": [
+    "intelligence_report.md",
+    "executive_letter.md",
+    "executive_letter.pdf",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "comparison_map",
+    "signal_map_notes"
+  ],
+  "title": "Why Consumer Bargain Hunting Is Reshaping December Demand Patterns",
+  "highlights": [
+    "Visible discounts concentrate planned full-price purchases into short promo windows; this raises conversion but lowers per-buyer margin and early-window durable demand.",
+    "Shallow, partner-funded activations and studio weekends move foot traffic with less cannibalization than broad markdowns when measured by new-vs-repeat cohort margin and QR-redemption share.",
+    "Dynamic one-day flash pricing tied to competitor checks can cut event CPA toward the **\u22640.80\u00d7** ceiling if discount scope and SKU depth are tightly controlled."
+  ],
+  "executive_summary": "You need to capture December sales without eroding margin by leaning into collaborations and timed value rather than blanket discounts in the Nov 24 - Dec 08, 2025 window. Target lifting early-window share from **12-15%** toward **20-30%** while driving **10-15%** foot-traffic uplift (stretch **\u226525%**), keeping event CPA at or below **\u22640.80\u00d7** baseline and securing QR redemptions of **\u22655%** of footfall to prove non-markdown acquisition value [^1][^3]. In the next 30 days prioritize a collab-led and store-as-studio approach: run two partner pop-ups plus one media-funded weekend studio activation, instrument per-SKU sell-through, cohort margin, and QR redemption, and assign Marketing to own pop-ups and Store Ops to own in-store activations so you can stop mass markdowns if contribution margin collapses [^1][^7].",
+  "top_operator_moves": [
+    "Run two collaborator pop-up weekends and one store-as-studio media activation in the Nov 24 - Dec 08 window; require partner media funding and a QR offer that must hit **\u22655%** redemption of footfall.",
+    "Deploy a one-day dynamic flash price test for targeted SKUs with real-time competitor-price checks owned by E-comm; cap depth per SKU and measure event CPA against the **\u22640.80\u00d7** baseline.",
+    "Instrument per-SKU sell-through, contribution margin by cohort (new vs repeat), early-window share, and per-visitor yield; pause mass markdowns if contribution margin falls below target thresholds."
+  ],
+  "statistics": {
+    "word_count": 4480,
+    "signal_count": 3,
+    "source_count": 9
+  },
+  "read_time_minutes": 23,
+  "length_label": "~23 min read",
+  "qa": {
+    "issues": [
+      "Source coverage under minimum thresholds",
+      "Signal count outside required band",
+      "Read time exceeds target"
+    ],
+    "coverage": 0.5,
+    "quant_support": 1.0,
+    "contradiction_penalty": 0.8,
+    "appendix_count": 5,
+    "scope": {
+      "topic": "Why Consumer Bargain Hunting Is Reshaping December Demand Patterns",
+      "time_window": {
+        "start": "2025-11-24",
+        "end": "2025-12-08",
+        "days": 14,
+        "label": "Nov 24 \u2013 Dec 08, 2025"
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand\u2194brand",
+        "brick&mortar\u2194brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ],
+      "approach_hints": [
+        "discount-heavy holiday",
+        "collab-led holiday",
+        "store-as-studio / media-led holiday"
+      ],
+      "unified_target_pack": {
+        "foot_traffic_uplift": {
+          "base": "10-15%",
+          "stretch": "\u226525%"
+        },
+        "early_window_share": {
+          "current": "12-15%",
+          "goal": "20-30%"
+        },
+        "event_cpa": {
+          "ceiling": "\u22640.80\u00d7 baseline"
+        },
+        "qr_redemption": {
+          "floor": "\u22655% of footfall"
+        },
+        "paired_metric": "Track buyer activity share vs promo intensity side by side"
+      },
+      "window_label": "Nov 24 \u2013 Dec 08, 2025",
+      "topic_kind": "general",
+      "search_guardrail_profile": "retail",
+      "search_guardrail_mode": "light",
+      "guardrail_contamination_ratio": 0.0,
+      "guardrail_noise_ratio": 0.0,
+      "diagnostics": {
+        "search_guardrails": {
+          "ratio": 0.0,
+          "guardrail_weight": 0.0,
+          "total_weight": 10.746,
+          "trigger_domains": [],
+          "trigger_terms": [],
+          "queries": [
+            "Why Consumer Bargain Hunting Is Reshaping December Demand Patterns -stock -shares -options -bond -yield -price target -analyst upgrade -downgrade (retail OR \"store channel\" OR \"store traffic\" OR \"shopper demand\")",
+            "Why Consumer Bargain Hunting Is Reshaping December Demand Patterns early window share exclusive drops -stock -shares -options -bond -yield -price target -analyst upgrade -downgrade (retail OR \"store channel\" OR \"store traffic\" OR \"shopper demand\")",
+            "Why Consumer Bargain Hunting Is Reshaping December Demand Patterns collaboration activation foot traffic -stock -shares -options -bond -yield -price target -analyst upgrade -downgrade (retail OR \"store channel\" OR \"store traffic\" OR \"shopper demand\")",
+            "Why Consumer Bargain Hunting Is Reshaping December Demand Patterns tariff outlook margin pressure -stock -shares -options -bond -yield -price target -analyst upgrade -downgrade (retail OR \"store channel\" OR \"store traffic\" OR \"shopper demand\")"
+          ],
+          "profile": "retail",
+          "threshold": 0.35
+        }
+      },
+      "thin_evidence": true,
+      "operator_job_story": "You need to capture December sales without eroding margin by leaning into collaborations and timed value rather than blanket discounts in the Nov 24 \u001312 Dec 08, 2025 window.",
+      "search_shaped_variants": [
+        "How to lift early-window share to 20%+ without deeper markdowns",
+        "Test ideas for brand brand pop-ups that beat promo CPA in two weeks",
+        "Which discount depths move foot traffic versus just cannibalizing margin",
+        "How to use store events and QR activations to replace mass discounts"
+      ],
+      "evidence_regime": "directional",
+      "evidence_note": "Directional evidence: 3 sources \u2022 3 domains \u2022 2 in-window / 1 background \u2022 support coverage 100%",
+      "pilot_spec": {
+        "scenario": "dec_bargain_hunt_early_window",
+        "store_count": 4,
+        "store_type": "multi_market",
+        "duration_weeks": 2,
+        "window": "Nov 24 \u2013 Dec 08, 2025",
+        "primary_move": "Run a Nov 24\u0013Dec 08 two-week test combining a one-day e-commerce dynamic flash with four in-store collaborator pop-ups and store-as-studio weekend activations to grow early-window share while capping CPA and margin impact.",
+        "owner_roles": [
+          "Head of Retail",
+          "Head of Marketing",
+          "Head of E-commerce",
+          "Finance"
+        ],
+        "location_radius_miles": 25,
+        "key_metrics": [
+          "event_cpa",
+          "qr_redemption_share",
+          "margin_impact_bps"
+        ],
+        "window_label": "Nov 24 \u2013 Dec 08, 2025"
+      },
+      "metric_spec": {
+        "event_cpa": {
+          "label": "Event CPA vs baseline",
+          "target_range": [
+            0.0,
+            0.8
+          ],
+          "unit": "x baseline",
+          "stage": "target",
+          "owner": "Performance Marketing",
+          "target_text": "\u001130\u001120\u001120 \u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010\u0010",
+          "notes": ""
+        },
+        "qr_redemption_share": {
+          "label": "QR redemptions as share of footfall",
+          "target_range": [
+            5.0,
+            5.0
+          ],
+          "unit": "percent",
+          "stage": "target",
+          "owner": "Marketing",
+          "target_text": "5 percent",
+          "notes": ""
+        },
+        "foot_traffic_uplift": {
+          "label": "Foot-traffic uplift during activations",
+          "target_range": [
+            10.0,
+            15.0
+          ],
+          "unit": "percent",
+          "stage": "target",
+          "owner": "Store Operations",
+          "target_text": "10\u001320% uplift vs baseline visits during activations (stretch goal )",
+          "notes": ""
+        },
+        "early_window_share": {
+          "label": "Early-window sales share (Nov 24\u0013Dec 08)",
+          "target_range": [
+            20.0,
+            30.0
+          ],
+          "unit": "percent",
+          "stage": "target",
+          "owner": "Head of Marketing",
+          "target_text": "20\u001330% of December demand captured in the Nov 24\u0013Dec 08 window versus the prior baseline of ~12\u001315%.",
+          "notes": ""
+        },
+        "conversion_lift_u30": {
+          "label": "Conversion lift among customers under 30",
+          "target_range": [
+            3.0,
+            3.0
+          ],
+          "unit": "Percentage Points",
+          "stage": "target",
+          "owner": "Marketing",
+          "target_text": "Increase conversion rate for customers under 30 by at least 3 percentage points vs baseline during activations.",
+          "notes": ""
+        },
+        "margin_impact_bps": {
+          "label": "Margin change per order (bps)",
+          "target_range": [
+            -100.0,
+            -100.0
+          ],
+          "unit": "bps",
+          "stage": "guardrail",
+          "owner": "Finance",
+          "target_text": "Limit margin erosion to no worse than -100 basis points per order during the pilot.",
+          "notes": ""
+        }
+      },
+      "role_actions": {
+        "Head of Retail": "Approve the Dec Bargain Hunt Early Window in-store plan, greenlight two store-as-studio weekend activations, and require Store Operations to report Foot traffic and Qr Redemption Share daily during Nov 24\u0013Dec 08.",
+        "Head of Partnerships": "Confirm collaborator pop-ups and partner-funded media for the Dec Bargain Hunt Early Window and require partners to deliver QR redemption reconciliation and partner media spend vs Event CPA within 48 hours of each activation.",
+        "Finance": "Set and enforce the pilot margin guardrail for Dec Bargain Hunt Early Window at Margin Impact Bps >= -100 bps per order and require daily Event CPA reads before additional paid spend.",
+        "Head of Marketing": "Pace paid channels for Dec Bargain Hunt Early Window to hit Early-window share 20\u001330% and pause or reallocate if Event CPA exceeds 0.8x baseline, while tracking Conversion Lift U30 and QR performance.",
+        "Head of E-commerce": "Execute the one-day dynamic flash price test during the Dec Bargain Hunt Early Window, run competitor-price checks, and report Event CPA by tactic and Margin Impact Bps within Day+3 of the test."
+      },
+      "pilot_spec_issues": [
+        "role_action Head of Partnerships missing from owner_roles"
+      ],
+      "spec_version": "v1",
+      "spec_ok": false,
+      "spec_notes": [
+        "role_action Head of Partnerships missing from owner_roles"
+      ]
+    },
+    "read_time": 23,
+    "high_quality_signals": true,
+    "observed_quant": true,
+    "tier1_market_signals": true
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07",
+  "ops_flags": {
+    "opportunities": true,
+    "brief": true
+  },
+  "operator_job_story": "You need to capture December sales without eroding margin by leaning into collaborations and timed value rather than blanket discounts in the Nov 24 \u001312 Dec 08, 2025 window.",
+  "search_shaped_variants": [
+    "How to lift early-window share to 20%+ without deeper markdowns",
+    "Test ideas for brand brand pop-ups that beat promo CPA in two weeks",
+    "Which discount depths move foot traffic versus just cannibalizing margin",
+    "How to use store events and QR activations to replace mass discounts"
+  ],
+  "approach_hints": [
+    "discount-heavy holiday",
+    "collab-led holiday",
+    "store-as-studio / media-led holiday"
+  ],
+  "source_stats": {
+    "total": 3,
+    "core": 0,
+    "support": 3,
+    "unique_domains": 3,
+    "domain_counts": {
+      "marketingdive.com": 1,
+      "investopedia.com": 1,
+      "supplychainbrain.com": 1
+    },
+    "data_heavy": 0,
+    "time_span_days": 15,
+    "tier_counts": {
+      "core": 2,
+      "context": 1
+    },
+    "dominant_ratio": 0.333,
+    "headline_only": 6,
+    "thin_evidence": true,
+    "thresholds": {
+      "total": false,
+      "core": false,
+      "domains": true,
+      "data": false,
+      "dominance": true,
+      "in_window": false,
+      "background": true,
+      "support_coverage": true
+    },
+    "guardrail_contamination_ratio": 0.0,
+    "guardrail_profile": "retail",
+    "guardrail_mode": "light",
+    "support_coverage": 1.0,
+    "regime": "directional"
+  },
+  "renderers": [
+    "executive_letter_markdown",
+    "executive_letter_pdf",
+    "legacy_html"
+  ],
+  "artifact_paths": [
+    "sti_reports/sti_operator_output_20251208_084248_why_consumer_bargain_hun/executive_letter.md",
+    "sti_reports/sti_operator_output_20251208_084248_why_consumer_bargain_hun/executive_letter.pdf",
+    "sti_reports/sti_operator_output_20251208_084248_why_consumer_bargain_hun/intelligence_report.html",
+    "sti_reports/sti_operator_output_20251208_084248_why_consumer_bargain_hun/executive_letter.html"
+  ],
+  "last_publish_status": "failed",
+  "last_publish_at": "2025-12-08T16:55:29.197177+00:00",
+  "gate_status": {
+    "brief_gate": true,
+    "factual_gate": true,
+    "seo_gate": false
+  }
+}
