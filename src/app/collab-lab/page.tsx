@@ -36,7 +36,7 @@ export default function CollabLabPage() {
             A 45-minute creative lab that turns your world into a forwardable brand concept and deck spine.
           </p>
           <Button asChild variant="gradient" size="lg">
-            <Link href="/schedule">Book the Brand Collab Lab</Link>
+            <Link href="/apply">Book the Brand Collab Lab</Link>
           </Button>
         </div>
       </section>
@@ -79,7 +79,7 @@ export default function CollabLabPage() {
               Book your 45-minute lab session and leave with a forwardable concept, deck spine, and outreach logic.
             </p>
             <Button asChild variant="gradient" size="lg">
-              <Link href="/schedule">Book the Brand Collab Lab</Link>
+              <Link href="/apply">Book the Brand Collab Lab</Link>
             </Button>
           </div>
         </div>

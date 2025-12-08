@@ -5,6 +5,8 @@ import { ArrowLeft } from "lucide-react";
 import { listBriefs, getBriefByDate } from "../../../../../lib/content";
 import { MarketPathContent } from "../../../../../components/MarketPathContent";
 import { loadSanitizedMarketPathHtml } from "../../../../../lib/marketPath";
+import { getSignalStrengthLabel, getSignalStrengthHelperText } from "../../../../../lib/signal-strength";
+import { ActivationAngleCTA } from "../../../../../components/ActivationAngleCTA";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -59,13 +61,14 @@ export default async function MarketPathReportPage({ params }: Props) {
   const intelligenceHref = brief.intelligenceHref;
   const showIntelligenceCta = Boolean(intelligenceHref);
   const stats = brief.metadata;
+  const signalStrengthLabel = getSignalStrengthLabel(stats?.confidence_score);
   const metaChips =
     stats
       ? [
           `${stats.sources_count ?? "—"} sources`,
-          `${stats.confidence_score ?? "—"}% confidence`,
+          signalStrengthLabel ? `Signal Strength: ${signalStrengthLabel}` : null,
           `${stats.word_count?.toLocaleString() ?? "—"} words`,
-        ]
+        ].filter(Boolean)
       : [];
 
   return (
@@ -92,15 +95,22 @@ export default async function MarketPathReportPage({ params }: Props) {
             )}
           </div>
           {metaChips.length > 0 && (
-            <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.3em]">
-              {metaChips.map((chip) => (
-                <span
-                  key={chip}
-                  className="inline-flex items-center border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-4 py-1 text-[var(--text-secondary)]"
-                >
-                  {chip}
-                </span>
-              ))}
+            <div className="space-y-2">
+              <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.3em]">
+                {metaChips.map((chip) => (
+                  <span
+                    key={chip}
+                    className="inline-flex items-center border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-4 py-1 text-[var(--text-secondary)]"
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
+              {signalStrengthLabel && (
+                <p className="text-xs text-[var(--text-muted)] leading-relaxed">
+                  {getSignalStrengthHelperText()}
+                </p>
+              )}
             </div>
           )}
           <div className="flex flex-wrap gap-4">
@@ -125,10 +135,11 @@ export default async function MarketPathReportPage({ params }: Props) {
           </div>
         </header>
 
-        <section className="pb-16 border-b border-[var(--border-subtle)]">
+        <section className="pb-16 border-b border-[var(--border-subtle)] space-y-10">
           <div className="bg-[var(--bg-surface)] px-0 sm:px-2 py-6">
             <MarketPathContent html={sanitizedHtml} />
           </div>
+          <ActivationAngleCTA categoryHint={brief.tags?.[0] || brief.title} />
         </section>
       </section>
     </div>

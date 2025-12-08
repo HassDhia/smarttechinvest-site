@@ -121,15 +121,6 @@ export function MobileNav() {
                     </Link>
                   </li>
                 ))}
-                <li>
-                  <Link
-                    href="/schedule"
-                    onClick={() => setOpen(false)}
-                    className="btn-gradient block rounded-full px-5 py-3 text-center text-xs tracking-[0.35em] uppercase"
-                  >
-                    Book Lab
-                  </Link>
-                </li>
               </ul>
             </m.nav>
           </m.div>

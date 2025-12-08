@@ -5,6 +5,8 @@ import { ArrowLeft } from "lucide-react";
 import { listBriefs, getBriefByDate } from "../../../../../lib/content";
 import { loadIntelligenceReportHtml } from "../../../../../lib/intelligenceReport";
 import { IntelligenceReportContent } from "../../../../../components/IntelligenceReportContent";
+import { getSignalStrengthLabel, getSignalStrengthHelperText } from "../../../../../lib/signal-strength";
+import { ActivationAngleCTA } from "../../../../../components/ActivationAngleCTA";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -50,12 +52,13 @@ export default async function IntelligenceReportPage({ params }: Props) {
     reportHtml = "";
   }
 
+  const signalStrengthLabel = getSignalStrengthLabel(brief.metadata?.confidence_score);
   const metaChips = brief.metadata
     ? [
         `${brief.metadata.sources_count ?? "—"} sources`,
-        `${brief.metadata.confidence_score ?? "—"}% confidence`,
+        signalStrengthLabel ? `Signal Strength: ${signalStrengthLabel}` : null,
         `${brief.metadata.word_count?.toLocaleString() ?? "—"} words`,
-      ]
+      ].filter(Boolean)
     : [];
 
   const standaloneHref = `/intelligence/briefs/${brief.date}/report.html`;
@@ -85,15 +88,22 @@ export default async function IntelligenceReportPage({ params }: Props) {
           </div>
 
           {metaChips.length > 0 && (
-            <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.3em] text-[var(--text-muted)]">
-              {metaChips.map((chip) => (
-                <span
-                  key={chip}
-                  className="inline-flex items-center border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-4 py-1 text-[var(--text-secondary)]"
-                >
-                  {chip}
-                </span>
-              ))}
+            <div className="space-y-2">
+              <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.3em] text-[var(--text-muted)]">
+                {metaChips.map((chip) => (
+                  <span
+                    key={chip}
+                    className="inline-flex items-center border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-4 py-1 text-[var(--text-secondary)]"
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
+              {signalStrengthLabel && (
+                <p className="text-xs text-[var(--text-muted)] leading-relaxed">
+                  {getSignalStrengthHelperText()}
+                </p>
+              )}
             </div>
           )}
 
@@ -109,10 +119,11 @@ export default async function IntelligenceReportPage({ params }: Props) {
           </div>
         </header>
 
-        <section className="pb-16">
+        <section className="pb-16 space-y-10">
           <div className="bg-[var(--bg-surface)] px-0 sm:px-2 py-6 border border-[var(--border-subtle)]">
             <IntelligenceReportContent html={reportHtml} />
           </div>
+          <ActivationAngleCTA categoryHint={brief.tags?.[0] || brief.title} />
         </section>
       </section>
     </div>

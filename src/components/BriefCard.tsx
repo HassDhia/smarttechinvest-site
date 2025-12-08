@@ -4,6 +4,7 @@ import { Button } from "./ui/Button";
 import { Calendar, Download, ExternalLink, BarChart3, FileText, Target } from "lucide-react";
 import type { Brief } from "../lib/content";
 import Image from "next/image";
+import { getSignalStrengthLabel, getSignalStrengthHelperText } from "../lib/signal-strength";
 
 export function BriefCard({
   brief,
@@ -23,6 +24,8 @@ export function BriefCard({
     month: 'long',
     day: 'numeric'
   });
+
+  const signalStrengthLabel = getSignalStrengthLabel(brief.metadata?.confidence_score);
 
   return (
     <div className={cn(
@@ -81,19 +84,28 @@ export function BriefCard({
       
       {/* Metadata Stats */}
       {brief.metadata && !hideMetadata && (
-        <div className="flex items-center gap-4 mb-4 text-xs text-[hsl(var(--muted-foreground))]">
-          <div className="flex items-center gap-1">
-            <FileText size={12} />
-            <span>{brief.metadata.sources_count} sources</span>
+        <div className="mb-4">
+          <div className="flex flex-wrap items-center gap-4 text-xs text-[hsl(var(--muted-foreground))]">
+            <div className="flex items-center gap-1">
+              <FileText size={12} />
+              <span>{brief.metadata.sources_count} sources</span>
+            </div>
+            {signalStrengthLabel && (
+              <div className="flex items-center gap-1">
+                <BarChart3 size={12} />
+                <span>Signal Strength: {signalStrengthLabel}</span>
+              </div>
+            )}
+            <div className="flex items-center gap-1">
+              <Target size={12} />
+              <span>{brief.metadata.word_count.toLocaleString()} words</span>
+            </div>
           </div>
-          <div className="flex items-center gap-1">
-            <BarChart3 size={12} />
-            <span>{brief.metadata.confidence_score}% confidence</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Target size={12} />
-            <span>{brief.metadata.word_count.toLocaleString()} words</span>
-          </div>
+          {signalStrengthLabel && (
+            <p className="mt-2 text-[11px] text-[hsl(var(--muted-foreground))] leading-relaxed">
+              {getSignalStrengthHelperText()}
+            </p>
+          )}
         </div>
       )}
       

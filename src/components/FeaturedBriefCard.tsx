@@ -4,6 +4,7 @@ import { Button } from "./ui/Button";
 import { Calendar, Download, ExternalLink, BarChart3, FileText, Target, Clock } from "lucide-react";
 import type { Brief } from "../lib/content";
 import Image from "next/image";
+import { getSignalStrengthLabel } from "../lib/signal-strength";
 
 export function FeaturedBriefCard({
   brief,
@@ -30,6 +31,8 @@ export function FeaturedBriefCard({
     if (count >= 1000) return `${(count / 1000).toFixed(1)}k`;
     return count.toString();
   };
+
+  const signalStrengthLabel = getSignalStrengthLabel(brief.metadata?.confidence_score);
 
   return (
     <div className={cn(
@@ -107,8 +110,8 @@ export function FeaturedBriefCard({
               <BarChart3 size={14} className="text-[hsl(var(--muted-foreground))]" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xs text-[hsl(var(--muted-foreground))]">Confidence</span>
-              <span className="text-sm font-medium text-foreground">{brief.metadata.confidence_score}%</span>
+              <span className="text-xs text-[hsl(var(--muted-foreground))]">Signal Strength</span>
+              <span className="text-sm font-medium text-foreground">{signalStrengthLabel ?? "—"}</span>
             </div>
           </div>
           <div className="flex items-center gap-2">

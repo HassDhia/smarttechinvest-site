@@ -1,6 +1,7 @@
 import { cn } from "../lib/cn";
 import { Info, FileText, BarChart3, Clock, HelpCircle } from "lucide-react";
 import type { Brief } from "../lib/content";
+import { getSignalStrengthLabel, getSignalStrengthHelperText } from "../lib/signal-strength";
 
 export function BriefSpecs({
   brief,
@@ -14,6 +15,8 @@ export function BriefSpecs({
     const end = new Date(window.end).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
     return `${start}–${end}`;
   };
+
+  const signalStrengthLabel = getSignalStrengthLabel(brief.metadata?.confidence_score);
 
   return (
     <div className={cn(
@@ -71,13 +74,13 @@ export function BriefSpecs({
               <BarChart3 size={14} className="text-[hsl(var(--muted-foreground))]" />
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-xs text-[hsl(var(--muted-foreground))] mb-0.5">Confidence</div>
+              <div className="text-xs text-[hsl(var(--muted-foreground))] mb-0.5">Signal Strength</div>
               <div className="text-sm font-medium text-foreground flex items-center gap-2">
-                {brief.metadata.confidence_score}%
+                {signalStrengthLabel ?? "—"}
                 <div className="group relative">
                   <HelpCircle size={12} className="text-[hsl(var(--muted-foreground))] cursor-help" />
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-[hsl(var(--popover))] text-[hsl(var(--popover-foreground))] text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
-                    Weighted by source quality + internal checks
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-[hsl(var(--popover))] text-[hsl(var(--popover-foreground))] text-xs rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 max-w-[220px] text-center">
+                    {getSignalStrengthHelperText()}
                   </div>
                 </div>
               </div>
@@ -89,7 +92,7 @@ export function BriefSpecs({
       {/* Methodology note */}
       <div className="pt-2 border-t border-[hsl(var(--border))]">
         <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed">
-          Forecast items are labeled; vendor-asserted stats are disclosed.
+          Forecast items are labeled; vendor-asserted stats are disclosed. {getSignalStrengthHelperText()}
         </p>
       </div>
     </div>

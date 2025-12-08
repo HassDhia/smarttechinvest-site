@@ -2,6 +2,7 @@ import { cn } from "../lib/cn";
 import { Badge } from "./ui/Badge";
 import { TrendingUp, Calendar } from "lucide-react";
 import type { Brief } from "../lib/content";
+import { getSignalStrengthLabel, getSignalStrengthTier, SignalStrengthTier } from "../lib/signal-strength";
 
 export function SignalsTicker({
   brief,
@@ -34,10 +35,15 @@ export function SignalsTicker({
     }
   };
 
-  const getConfidenceBadgeClass = (confidence: number) => {
-    if (confidence >= 0.8) return 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800';
-    if (confidence >= 0.6) return 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800';
-    return 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 border-red-200 dark:border-red-800';
+  const getSignalStrengthBadgeClass = (tier: SignalStrengthTier | null) => {
+    switch (tier) {
+      case "high":
+        return "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800";
+      case "medium":
+        return "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800";
+      default:
+        return "bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 border-red-200 dark:border-red-800";
+    }
   };
 
   return (
@@ -70,16 +76,19 @@ export function SignalsTicker({
             
             {/* Badges at the bottom */}
             <div className="flex items-center gap-2">
-              <Badge 
-                variant="outline" 
-                size="sm"
-                className={cn(
-                  "text-xs font-semibold",
-                  getConfidenceBadgeClass(signal.confidence)
-                )}
-              >
-                {Math.round(signal.confidence * 100)}%
-              </Badge>
+              {(() => {
+                const tier = getSignalStrengthTier(signal.confidence);
+                const label = getSignalStrengthLabel(signal.confidence) ?? "Signal";
+                return (
+                  <Badge
+                    variant="outline"
+                    size="sm"
+                    className={cn("text-xs font-semibold", getSignalStrengthBadgeClass(tier))}
+                  >
+                    {label}
+                  </Badge>
+                );
+              })()}
               {signal.date && brief.coverageWindow && isForecast(signal.date, brief.coverageWindow.end) && (
                 <Badge variant="brand" size="sm" className="text-xs">
                   Forecast
@@ -93,7 +102,7 @@ export function SignalsTicker({
       {/* Footer note */}
       <div className="mt-3 pt-2 border-t border-[hsl(var(--border))]">
         <p className="text-xs text-[hsl(var(--muted-foreground))]">
-          Top signals by confidence from {brief.metadata?.sources_count || 0} sources
+          Top signals ranked by Signal Strength from {brief.metadata?.sources_count || 0} sources
         </p>
       </div>
     </div>

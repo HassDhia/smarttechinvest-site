@@ -39,9 +39,9 @@ export function OperatorQuickWins({
       
       {/* CTA */}
       <Button asChild variant="gradient" size="sm" className="w-full">
-        <a href="/schedule">
+        <a href="/apply">
           <ArrowRight size={14} className="mr-2" />
-          Request Demo
+          Request consideration
         </a>
       </Button>
       

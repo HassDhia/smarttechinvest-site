@@ -15,10 +15,10 @@ function formatBriefDate(value?: string) {
   };
 }
 
-const labDeliverables = [
-  "Signals & positioning",
-  "Concept & deck spine",
-  "Outreach logic & target map",
+const whatWeDoBullets = [
+  "Identify partner-fit opportunities using market signal, category logic, and your constraints.",
+  "Structure the collaboration into something a budget owner can approve.",
+  "Support outreach, negotiation, and activation planning as needed.",
 ];
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <main className="font-sans min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)]">
-      <section className="section relative overflow-hidden bg-[#05070E] pt-16 pb-20 lg:py-24">
+      <section id="apply" className="section relative overflow-hidden bg-[#05070E] pt-16 pb-20 lg:py-24">
         <Image
           src="/assets/hero/cityscape.jpg"
           alt="City skyline at dusk"
@@ -36,31 +36,86 @@ export default function Home() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.45)] via-[rgba(3,6,12,0.65)] to-[#03060C]" />
-        <div className="container relative z-10 max-w-5xl space-y-6 sm:space-y-8">
-          <h1 className="headline-xl">Signal-driven brand collaborations</h1>
-          <p className="body-lede text-white font-semibold">For operators and storytellers.</p>
-          <Link
-            href="/schedule"
-            className="inline-flex w-full items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)] sm:w-auto sm:tracking-[0.3em]"
-          >
-            Book the brand collab lab
-          </Link>
-          <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.5em] text-white/60">
-            <span>Studios</span>
-            <span>•</span>
-            <span>Retailers</span>
-            <span>•</span>
-            <span>Hospitality</span>
-            <span>•</span>
-            <span>Streaming partners</span>
+        <div className="container relative z-10 max-w-5xl space-y-5 sm:space-y-7">
+          <h1 className="headline-xl max-w-4xl text-balance text-white">Signal-driven brand collaborations.</h1>
+          <p className="body-lede text-white/90 text-lg sm:text-xl">
+            We design and broker partnerships for operators and creators with real distribution. Built for brand fit, clean economics, and measurable outcomes.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="mailto:sti.partnerships@gmail.com?subject=STI%20Request%20Consideration"
+              className="inline-flex w-full items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)] sm:w-auto sm:tracking-[0.3em]"
+            >
+              Request consideration
+            </a>
+            <Link
+              href="/intelligence"
+              className="inline-flex w-full items-center justify-center rounded-md border border-white/30 px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/95 transition hover:bg-white/10 sm:w-auto sm:tracking-[0.3em]"
+            >
+              Read Intelligence
+            </Link>
+          </div>
+          <p className="text-sm text-white/75">
+            We keep engagements limited. If there is a fit, we will reach out.
+          </p>
+        </div>
+        <div className="container relative z-10 mt-10">
+          <div className="inline-flex items-center rounded-full border border-white/15 bg-black/30 px-4 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white/65 shadow-[0_10px_35px_rgba(0,0,0,0.4)]">
+            Discreet by default. Redacted examples and references available on request.
           </div>
         </div>
       </section>
 
-      <section className="container section space-y-8">
-        <div className="pb-4">
-          <p className="headline-label text-white/65">Featured intelligence</p>
-          <h2 className="mt-2 headline-lg">Weekly briefs built for cinematic decks.</h2>
+      <section id="examples" className="container section space-y-6">
+        <h2 className="headline-lg">What WE Do</h2>
+        <ul className="space-y-3 text-base text-white/85 list-disc pl-5 marker:text-white/70">
+          {whatWeDoBullets.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="container section space-y-6">
+        <p className="headline-label text-white/65">Who this is for</p>
+        <h2 className="headline-lg">Built for</h2>
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-3xl border border-white/10 bg-[#05070E]/70 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.35)]">
+            <h3 className="text-2xl font-semibold text-white mb-3">Operators</h3>
+            <p className="text-white/80 text-base leading-relaxed">
+              Retail, hospitality, studios, venues, and local platforms with foot traffic, membership, or community reach.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-white/10 bg-[#05070E]/70 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.35)]">
+            <h3 className="text-2xl font-semibold text-white mb-3">Brands</h3>
+            <p className="text-white/80 text-base leading-relaxed">
+              Field marketing, partnerships, and brand teams looking for credible local activations and distribution.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="intelligence" className="container section space-y-10">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl space-y-4">
+            <h2 className="headline-lg">Intelligence that turns into deals</h2>
+            <p className="text-white/80 text-base leading-relaxed">
+              Weekly briefs built to spot patterns, not generate noise. Each brief includes an activation angle you can act on.
+            </p>
+          </div>
+          <div className="flex flex-col gap-2 sm:items-end">
+            <Link
+              href="/intelligence"
+              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-black shadow-[0_10px_30px_rgba(255,255,255,0.25)]"
+            >
+              Get the briefs
+            </Link>
+            <a
+              href="mailto:sti.partnerships@gmail.com?subject=STI%20Request%20Consideration"
+              className="text-xs uppercase tracking-[0.4em] text-white/70 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#03060C]"
+            >
+              Request consideration
+            </a>
+          </div>
         </div>
         {featuredBriefs.length > 0 ? (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -102,38 +157,6 @@ export default function Home() {
         ) : (
           <div className="text-sm text-white/70">Weekly briefs will load after the next ingest.</div>
         )}
-      </section>
-
-      <section>
-        <div className="container section grid gap-12 lg:grid-cols-2">
-          <div className="space-y-4">
-            <p className="headline-label text-white/65">The Brand Collab Lab</p>
-            <h2 className="headline-lg text-[2.8rem] leading-snug">Your operator-side collab studio.</h2>
-            <p className="text-white/85 text-[1.15rem]">
-              Idea inception through pitch perfection. One session to capture signal, spin the cinematic concept,
-              and leave with the deck spine and outreach logic.
-            </p>
-            <ul className="space-y-2 pl-4 text-white/85 text-sm marker:text-white/80 list-disc">
-              {labDeliverables.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="space-y-5">
-            <p className="headline-label text-white/65">A Plug-in Intelligence & Strategy Engine</p>
-            <p className="text-white/85 text-[1.15rem]">
-              We power brand collaborations with behavioral data, market insights, and operational know-how. Operators and storytellers
-              come to us to find the whitespace and land the activation.
-            </p>
-            <p className="text-white text-xl font-semibold">Ready to build a brand collaboration that actually lands?</p>
-            <Link
-              href="/schedule"
-              className="inline-flex items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)]"
-            >
-              Book the brand collab lab
-            </Link>
-          </div>
-        </div>
       </section>
     </main>
   );

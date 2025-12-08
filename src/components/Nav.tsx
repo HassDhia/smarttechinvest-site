@@ -20,7 +20,8 @@ export function Nav() {
         <nav aria-label="Primary" className="flex-1">
           <ul className="flex items-center justify-center gap-8 text-[0.75rem] font-semibold tracking-[0.02em] text-[var(--text-secondary)]">
             {navLinks.map(({ href, label }) => {
-              const active = currentPath === href || currentPath.startsWith(`${href}/`);
+              const isAnchor = href.includes("#");
+              const active = !isAnchor && (currentPath === href || currentPath.startsWith(`${href}/`));
               return (
                 <li key={href}>
                   <Link
