@@ -1,0 +1,132 @@
+[
+  {
+    "type": "hero",
+    "slot": "hero",
+    "section": "Hero",
+    "anchor_section": "header",
+    "template": "hero_decision_window",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "scene": "store planning table overhead view small team around",
+        "personas": "head retail partnerships director collaborating studio lead",
+        "action": "pointing at co branded limited sku mockup while",
+        "symbolism": "mechanical countdown clock showing days left until nov",
+        "props": "co branded product mockup tied collab led holiday",
+        "mood": "decisive collaborative focused",
+        "lighting": "Polished editorial lighting with confident highlights on faces and product surfaces, clear negative space behind subjects",
+        "focal_point": "pointing at co branded limited sku mockup while"
+      },
+      "style": {
+        "framing": "grounded eye-level framing focused on the active bay",
+        "lighting": "polished editorial lighting with soft shadows",
+        "palette": "slate base with subtle brass highlights",
+        "geometry": "minimal coaxial arcs",
+        "environment": "structured architectural backdrop"
+      },
+      "metric_focus": [
+        "early_window_share",
+        "partner_value",
+        "qr_redemption"
+      ],
+      "metric_labels": [
+        "Early-window share",
+        "Partner value",
+        "QR redemption"
+      ]
+    },
+    "metric_focus": [
+      "early_window_share",
+      "partner_value",
+      "qr_redemption"
+    ],
+    "alt": "Head of Retail selecting a co-branded SKU and timed coupon test",
+    "image": "images/hero_why_consumer_bargain_hunting_i.png"
+  },
+  {
+    "type": "section",
+    "section": "Signal Map",
+    "slot": "signal_map",
+    "anchor_section": "signals_and_thesis",
+    "template": "signal_map_concentric",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "context": "these five spine signals explain same structural shift",
+        "structure": "concentric rings radial lanes intersecting arcs representing channels",
+        "elements": "segmented tokens promo types discount co brand event",
+        "motion": "inward flow outer channels early window core arrows",
+        "direction": "these five spine signals explain same structural shift",
+        "palette": "muted neutrals single confident highlight color early window"
+      },
+      "style": {
+        "framing": "planar orthographic layout",
+        "lighting": "half-toned studio wash",
+        "palette": "cool slate with ivory bands",
+        "geometry": "clean networked arcs",
+        "environment": "architectural plinth"
+      },
+      "metric_focus": [
+        "footfall_lift",
+        "early_window_share",
+        "event_cpa"
+      ],
+      "metric_labels": [
+        "Foot-traffic uplift",
+        "Early-window share",
+        "Event CPA"
+      ]
+    },
+    "metric_focus": [
+      "footfall_lift",
+      "early_window_share",
+      "event_cpa"
+    ],
+    "alt": "CMO viewing rings that map footfall lift and early-window share targets",
+    "image": "images/section_signal_map_why_consumer_bargain_hunting_i.png"
+  },
+  {
+    "type": "section",
+    "section": "Case Study 1",
+    "slot": "case_study_1",
+    "anchor_section": "mini_case_story",
+    "template": "case_play_activation",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "scene": "retail floor treated studio pop up table event",
+        "time": "first hour timed store event pairs short coupon",
+        "moment": "first hour timed store event pairs short coupon",
+        "personas": "store ops lead running store studio event",
+        "mood": "energetic tactical measurable",
+        "lighting": "Directional spotlights on the demo table, soft fill on the queue to emphasize human scale",
+        "props": "event signage calling out time limited offer handheld",
+        "focal_point": "retail floor treated studio pop up table event"
+      },
+      "style": {
+        "framing": "three-quarter view from eye level",
+        "lighting": "polished editorial lighting with soft shadows",
+        "palette": "ivory and charcoal with cyan pins",
+        "geometry": "subtle ribbon-like contours",
+        "environment": "measured spatial grid"
+      },
+      "metric_focus": [
+        "footfall_lift",
+        "qr_redemption",
+        "event_cpa"
+      ],
+      "metric_labels": [
+        "Foot-traffic uplift",
+        "QR redemption",
+        "Event CPA"
+      ]
+    },
+    "metric_focus": [
+      "footfall_lift",
+      "qr_redemption",
+      "event_cpa"
+    ],
+    "alt": "Store Ops Lead running a timed in-store demo and QR redemption test",
+    "image": "images/section_case_study_1_why_consumer_bargain_hunting_i.png"
+  }
+]
