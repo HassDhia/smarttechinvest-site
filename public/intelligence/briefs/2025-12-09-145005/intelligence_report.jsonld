@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Report",
+  "name": "The Last-Minute Window That Brands Overlook: Late dec / early Jan moments undervalued",
+  "about": "The Last-Minute Window That Brands Overlook: Late dec / early Jan moments undervalued",
+  "abstract": "You need to capture high-intent holiday buyers in the Nov 25 – Dec 09 window without sacrificing December margin or resorting to blanket markdowns. This window matters because front-loaded shoppers convert at higher rates and let you drive **10–15%** foot-traffic uplift (stretch to **≥25%**) while shifting early-window share from **12–15%** toward **20–30%**, and event CPA can run at or below **≤0.80×** baseline when tied to timed partner activations [^9][^2]. Favor a collab-led holiday approach—timed co-brand drops or in-store watch parties—and have Partnerships and Stores finalize a partner, lock inventory and staffing, and instrument daily foot traffic, conversion, and QR-redemption tracking within 30 days so success is measured by foot-traffic uplift, event CPA ≤0.80× baseline, and early-window share hitting **20–30%** [^3]. Stop broad sitewide discounts during this window and test limited offers and experiences instead to protect December margin.",
+  "datePublished": "2025-12-09T22:58:31.189004",
+  "temporalCoverage": "2025-11-25/2025-12-09",
+  "hasPart": [
+    {
+      "@type": "AnalysisNewsArticle",
+      "headline": null,
+      "citation": [
+        "https://sports.yahoo.com/article/nfl-flexes-chicago-bears-dec-203900106.html",
+        "https://www.chicagobears.com/news/bears-packers-week-14-game-moved-to-late-afternoon-window-2025",
+        "https://sports.yahoo.com/article/bears-vs-packers-nfl-week-204714015.html"
+      ],
+      "about": "Market"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 0.6
+  }
+}

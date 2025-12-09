@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "core_tension": "Choose concentrated early-window activations that win intent buyers without cutting December margin.",
+    "setting": "Retail storefront staged as a studio. Clean storefront glass, roster board on wall, staff line-up at counter.",
+    "persona": "Partnerships lead directing a co-branded in-store timed drop and Dec 7 late-afternoon watch-party (S1)",
+    "action": "Operator visibly choosing the collab-led path: handing a branded ticket to a store manager while pointing to a calendar block on Nov 25\u00016 Dec 09.",
+    "urgency_symbol": "Long shadow of a scoreboard-style game clock across the floor to imply Dec 7 timing and narrow window pressure.",
+    "props": [
+      "Branded event tickets and a small printed staffing rota",
+      "A folded partnership one-pager labeled 'Timed Drop Dec 7'",
+      "A discreet QR code card placed near the counter to imply QR redemption tracking"
+    ],
+    "lighting": "Polished editorial lighting with confident highlights on faces and calendar block. Clean negative space around the operator.",
+    "mood": "Decisive, tactical, focused",
+    "anchor_section": "header",
+    "metric_focus": [
+      "footfall_lift",
+      "event_cpa",
+      "qr_redemption"
+    ],
+    "alt": "Partnerships lead finalizing a Dec 7 timed drop while handing event tickets to store manager"
+  },
+  "signal_map": {
+    "structure": "Concentric arcs representing the Nov 25 \u00013 Dec 09 window with radial spokes for channel activations.",
+    "elements": [
+      "Tokens for events plotted on arcs (co-branded drop, watch-party, pop-up)",
+      "Scaled rings labeled with footfall uplift bands (10-15%, 25%+)",
+      "A baseline node for CPA with a target band at 0.8x"
+    ],
+    "motion": "Arrows flow from outer channels into a central measurement spine. Thicker paths denote higher conversion per dollar.",
+    "palette": "Neutral studio grays with confident accent tones: deep navy for partnerships, amber for in-store events, mint for measurement nodes.",
+    "anchor_section": "signals_and_thesis",
+    "metric_focus": [
+      "footfall_lift",
+      "early_window_share",
+      "event_cpa"
+    ],
+    "alt": "Head of Retail mapping Nov 25 to Dec 09 activations with footfall uplift and CPA bands"
+  },
+  "case_studies": [
+    {
+      "scene": "Mid-size store on Dec 7 late afternoon. A clustered crowd around a branded counter as staff scan event QR cards.",
+      "moment": "The moment of conversion: a QR scan yields a timed offer that prompts immediate purchase and a visible uplift in foot traffic.",
+      "persona": "Store operations manager running the in-store watch-party and co-branded drop (references S1 and Late-Nov / early-Dec pocket)",
+      "props": [
+        "Stacked co-branded product boxes",
+        "QR redemption cards on a pedestal",
+        "A small scoreboard display showing 'Footfall +15%'"
+      ],
+      "lighting": "Warm editorial highlights on the counter. Soft fill light on the crowd. Clean negative space above the scene.",
+      "mood": "Controlled excitement, operational clarity",
+      "anchor_section": "mini_case_story",
+      "metric_focus": [
+        "footfall_lift",
+        "qr_redemption",
+        "event_cpa"
+      ],
+      "alt": "Store operations manager running a Dec 7 watch-party as QR scans trigger timed offers"
+    },
+    {
+      "scene": "Store-as-studio pop-up earlier in the Nov 25\u00013 Dec 09 window. A small staged demo with a content crew filming customer interactions.",
+      "moment": "Testing media-led buy-in: quick edit clips go live as part of a local paid boost. Staff log dwell time and conversion signals.",
+      "persona": "Head of Marketing testing a store-as-studio media activation to shift share into the early window (references Late-Nov / early-Dec pocket and store-as-studio approach)",
+      "props": [
+        "Portable light panels and a compact camera on a tripod",
+        "A clipboard showing daily dwell time and conversion targets",
+        "Branded signage saying 'Early Access Demo'"
+      ],
+      "lighting": "Crisp editorial key light on the demo subject. Soft backlight to separate subject from negative space.",
+      "mood": "Experimental, measurement-first",
+      "anchor_section": "mini_case_story",
+      "metric_focus": [
+        "dwell_time",
+        "conversion_rate",
+        "early_window_share"
+      ],
+      "alt": "Head of Marketing running a store-as-studio demo to measure dwell time and conversion"
+    }
+  ]
+}
