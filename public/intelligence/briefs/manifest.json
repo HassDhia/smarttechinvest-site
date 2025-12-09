@@ -1,5 +1,28 @@
 [
   {
+    "date": "2025-12-08-155749",
+    "href": "/intelligence/briefs/2025-12-08-155749/market-path",
+    "og": "/intelligence/briefs/2025-12-08-155749/og.png",
+    "heroImage": "/intelligence/briefs/2025-12-08-155749/images/hero_how_ai_bnpl_and_mobile_rewrote.png",
+    "title": "How AI, BNPL, and Mobile Rewrote the Holiday Funnel",
+    "summary": "You need to capture more early holiday buyers and protect margin without defaulting to deeper headline discounts in the next two weeks. Lifting early-window share from the current 12-15% toward 20-30% while keeping event CPA at or below ≤0.80× baseline and dri…",
+    "metadata": {
+      "sources_count": 9,
+      "confidence_score": 60,
+      "word_count": 4642
+    },
+    "keySignals": [
+      "How BNPL And Cash-Back Apps Influence Holiday Spending Behavior",
+      "From AI Discovery to BNPL: The Tools Transforming Holiday Spending in 2025"
+    ],
+    "intelligenceHref": "/intelligence/briefs/2025-12-08-155749/report.html",
+    "intelligenceHtml": "/intelligence/briefs/2025-12-08-155749/intelligence_report.html",
+    "marketPathHtml": "/intelligence/briefs/2025-12-08-155749/market_path_report.html",
+    "marketPathMarkdown": "/intelligence/briefs/2025-12-08-155749/market_path_report.md",
+    "intelligenceMarkdown": "/intelligence/briefs/2025-12-08-155749/intelligence_report.md",
+    "hasMarketPath": true
+  },
+  {
     "date": "2025-12-08-084248",
     "href": "/intelligence/briefs/2025-12-08-084248/market-path",
     "og": "/intelligence/briefs/2025-12-08-084248/og.png",

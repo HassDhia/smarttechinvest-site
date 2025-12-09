@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "slot": "hero",
+    "core_tension": "Choose AI personalization to capture early buyers while avoiding deeper headline discounts in the Nov 24–Dec 08 window; moment of decision between margin protection and broad promotions.",
+    "setting": "Low, editorial studio angle over a merchandising war table; matte catalogue sheets, a tablet, and a wall rack suggesting store-as-studio without literal retail clutter.",
+    "persona": "Head of Merchandising",
+    "action": "Toggles an A/B test that enables AI-driven site and email recommendations for a defined holiday SKU slice.",
+    "urgency_symbol": "Thin horizontal countdown band across the frame indicating a two-week early-window",
+    "props": [
+      "A/B test print matrix labeled 'AI vs Merch',",
+      "high-margin SKU cards pinned to a board,",
+      "tablet showing percent lift estimates"
+    ],
+    "composition_cues": "low-angle over-table shot, subject foregrounded pointing at tablet, materials: matte paper, brushed metal tablet",
+    "lighting": "Polished editorial lighting with confident highlights and clean negative space",
+    "mood": "Precise, decisive, collaborative",
+    "anchor_section": "header",
+    "metric_focus": [
+      "early_window_share",
+      "event_cpa"
+    ],
+    "reference": "AI lifts early-window share",
+    "alt": "Head of Merchandising toggles AI A/B test to raise early-window share"
+  },
+  "signal_map": {
+    "slot": "signal_map",
+    "structure": "Concentric arcs representing funnel stages with two overlaid rings containing numeric badges for metrics; lattice paths link channel nodes to measurement anchors.",
+    "elements": [
+      "SKU chips placed on arcs to show exposure timing,",
+      "channel tokens (site, email, store),",
+      "measurement anchors annotated with early-window share and event CPA values"
+    ],
+    "motion": "Directional flow from outer discovery arc inward to conversion nodes, with thicker paths where early-window share rises and thinner paths where CPA increases.",
+    "palette": "Neutral base with cool blue for CPA and warm gold for early-window share; material cues: matte paper textures and translucent glass nodes.",
+    "composition_cues": "top-down flatlay geometry, subject less literal, emphasis on numeric badges inside rings",
+    "anchor_section": "signals_and_thesis",
+    "metric_focus": [
+      "early_window_share",
+      "event_cpa"
+    ],
+    "reference": "Measurement spine maps early-window share vs event CPA; encodes unified_target_pack goals",
+    "alt": "Head of Merchandising maps early-window share and event CPA across channels"
+  },
+  "case_studies": [
+    {
+      "slot": "case_study_1",
+      "scene": "A small conference table with split test boards: left side labeled '0% BNPL' and right side '15% sitewide promo', analytic printouts pinned above each.",
+      "moment": "Readout of A/B results where conversion lift under BNPL is compared to AOV and CPA under the promo.",
+      "persona": "Head of Finance",
+      "props": [
+        "side-by-side result charts,",
+        "calculator and margin sketch,",
+        "receipt mockups annotated with fee and return notes"
+      ],
+      "composition_cues": "45-degree angle over shoulder of the finance lead, materials: glossy report pages and steel pen",
+      "lighting": "Crisp, analytical highlights with deep contrast on data points",
+      "mood": "Clinical, strategic, margin-focused",
+      "anchor_section": "mini_case_story",
+      "metric_focus": [
+        "event_cpa",
+        "conversion_rate"
+      ],
+      "reference": "BNPL versus sitewide promos: the margin trade",
+      "alt": "Head of Finance reviews BNPL vs 15% promo A/B test conversion and CPA"
+    },
+    {
+      "slot": "case_study_2",
+      "scene": "In-store studio corner where partnership signage and a tablet display three cashback tiers tied to QR panels; a compact heatmap print sits beside the tablet.",
+      "moment": "Pilot readout showing QR scans and a spike in nearby footfall for capped merchant-funded cashback tiers.",
+      "persona": "Head of Partnerships",
+      "props": [
+        "tiered cashback tiles,",
+        "QR redemption panel mockup,",
+        "small footfall heatmap printout"
+      ],
+      "composition_cues": "eye-level composition with partner and operator reviewing tablet, materials: laminated tier cards and soft-touch tablet bezel",
+      "lighting": "Warm editorial highlights to signal store energy with clear negative space",
+      "mood": "Tactical, collaborative, evidence-driven",
+      "anchor_section": "mini_case_story",
+      "metric_focus": [
+        "qr_redemption",
+        "footfall_lift"
+      ],
+      "reference": "Pilot a cash-back partner with capped merchant funding across three tiers",
+      "alt": "Head of Partnerships reviews QR cash-back pilot measuring footfall and QR redemption"
+    }
+  ]
+}
