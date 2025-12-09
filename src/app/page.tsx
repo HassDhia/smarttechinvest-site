@@ -18,7 +18,7 @@ function formatBriefDate(value?: string) {
 const whatWeDoBullets = [
   "Identify partner-fit opportunities using market signal, category logic, and your constraints.",
   "Structure the collaboration into something a budget owner can approve.",
-  "Support outreach, negotiation, and activation planning as needed.",
+  "Support outreach, negotiation, and ideation as needed.",
 ];
 
 export default function Home() {
@@ -37,7 +37,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.45)] via-[rgba(3,6,12,0.65)] to-[#03060C]" />
         <div className="container relative z-10 max-w-5xl space-y-5 sm:space-y-7">
-          <h1 className="headline-xl max-w-4xl text-balance text-white">Signal-driven brand collaborations.</h1>
+          <h1 className="headline-xl max-w-4xl text-balance text-white">Brand Collaborations.</h1>
           <p className="body-lede text-white/90 text-lg sm:text-xl">
             We design and broker partnerships for operators and creators with real distribution. Built for brand fit, clean economics, and measurable outcomes.
           </p>
@@ -82,13 +82,13 @@ export default function Home() {
           <div className="rounded-3xl border border-white/10 bg-[#05070E]/70 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.35)]">
             <h3 className="text-2xl font-semibold text-white mb-3">Operators</h3>
             <p className="text-white/80 text-base leading-relaxed">
-              Retail, hospitality, studios, venues, and local platforms with foot traffic, membership, or community reach.
+              and local platforms with foot traffic, membership, or community reach.
             </p>
           </div>
           <div className="rounded-3xl border border-white/10 bg-[#05070E]/70 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.35)]">
             <h3 className="text-2xl font-semibold text-white mb-3">Brands</h3>
             <p className="text-white/80 text-base leading-relaxed">
-              Field marketing, partnerships, and brand teams looking for credible local activations and distribution.
+              and brand teams looking for credible local activations and distribution.
             </p>
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function Home() {
           <div className="max-w-3xl space-y-4">
             <h2 className="headline-lg">Intelligence that turns into deals</h2>
             <p className="text-white/80 text-base leading-relaxed">
-              Weekly briefs built to spot patterns, not generate noise. Each brief includes an activation angle you can act on.
+              Market research built to spot patterns, not generate noise. Each report includes an activation angle you can act on.
             </p>
           </div>
           <div className="flex flex-col gap-2 sm:items-end">

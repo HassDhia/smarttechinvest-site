@@ -90,7 +90,7 @@ src/
     diagnostic/page.tsx      # Growth diagnostic form (client)
     offers/page.tsx          # Productized offers
     resources/page.tsx       # Strategy OS resources
-    schedule/page.tsx        # Calendly booking
+    apply/page.tsx           # Consideration form + toggles
     layout.tsx               # Root layout, providers, nav, transitions
     page.tsx                 # Home page
     globals.css              # Tokens + utilities
@@ -108,7 +108,7 @@ src/
 - `/offers` – Productized offers
 - `/diagnostic` – Growth diagnostic (client-side form posts to API)
 - `/resources` – Strategy OS resources
-- `/schedule` – Calendly booking
+- `/apply` – Request consideration form
 - `/api/lead` – POST endpoint
 
 Example `POST /api/lead` payload (sent by the diagnostic page):
