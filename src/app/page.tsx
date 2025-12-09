@@ -39,7 +39,7 @@ export default function Home() {
         <div className="container relative z-10 max-w-5xl space-y-5 sm:space-y-7">
           <h1 className="headline-xl max-w-4xl text-balance text-white">Brand Collaborations.</h1>
           <p className="body-lede text-white/90 text-lg sm:text-xl">
-            We design and broker partnerships for operators and creators with real distribution. Built for brand fit, clean economics, and measurable outcomes.
+            We design and broker partnerships for operators and businesses with real distribution. Built for brand fit, clean economics, and measurable outcomes.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
