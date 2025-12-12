@@ -1,14 +1,13 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import { AnimatePresence, m } from "framer-motion";
 import { durations, easings, overlayVariants } from "../lib/motion";
 import { navLinks } from "../lib/nav-links";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
-  const closeRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     if (open) {
@@ -34,10 +33,6 @@ export function MobileNav() {
       main.removeAttribute("aria-hidden");
       main.removeAttribute("inert");
     }
-  }, [open]);
-
-  useEffect(() => {
-    if (open) closeRef.current?.focus();
   }, [open]);
 
   return (
@@ -87,37 +82,27 @@ export function MobileNav() {
               id="mobile-menu"
               role="dialog"
               aria-modal="true"
-              aria-labelledby="mobile-menu-title"
-              className="absolute inset-x-4 top-6 rounded-3xl border border-white/15 bg-[#05070e] text-white/90 p-6 backdrop-blur-xl"
+              aria-label="Navigation"
+              className="absolute inset-x-4 top-20 rounded-3xl border border-white/15 bg-[#05070e] text-white/90 p-6 backdrop-blur-xl"
               tabIndex={-1}
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1, transition: { duration: durations.md, ease: easings.standard } }}
               exit={{ y: -20, opacity: 0, transition: { duration: durations.sm } }}
             >
-              <div className="flex items-center justify-between mb-4">
-                <span id="mobile-menu-title" className="text-[0.65rem] tracking-[0.3em] uppercase text-white/60">
-                  Navigation
-                </span>
-                <button
-                  ref={closeRef}
-                  type="button"
-                  aria-label="Close menu"
-                  onClick={() => setOpen(false)}
-                  className="rounded-full border border-white/30 p-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
-                >
-                  <X aria-hidden />
-                </button>
-              </div>
-              <ul className="flex flex-col gap-4 text-sm font-semibold">
+              <ul className="flex flex-col divide-y divide-white/10 text-base font-semibold">
                 {navLinks.map(({ href, label }) => (
                   <li key={href}>
                     <Link
                       href={href}
                       onClick={() => setOpen(false)}
-                      className="flex items-center justify-between rounded-2xl border border-white/15 px-4 py-3 text-white/90"
+                      className="group flex items-center justify-between rounded-xl px-2 py-4 text-white/90 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070e]"
                     >
-                      <span>{label}</span>
-                      <span className="text-[0.65rem] tracking-[0.3em] text-white/40">↗</span>
+                      <span className="text-lg">{label}</span>
+                      <ChevronRight
+                        size={18}
+                        aria-hidden
+                        className="text-white/35 transition-colors group-hover:text-white/70"
+                      />
                     </Link>
                   </li>
                 ))}

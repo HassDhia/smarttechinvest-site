@@ -82,9 +82,9 @@ export function HeroAudienceCta({ defaultAudience = "operators" }: { defaultAudi
         </button>
         <Link
           href="/intelligence"
-          className="inline-flex items-center justify-center text-sm font-semibold text-white/85 underline-offset-4 hover:text-white hover:underline transition"
+          className="inline-flex items-center justify-center rounded-full border border-white/30 bg-black/30 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white/95 shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070E]"
         >
-          Read Intelligence
+          Read Intelligence →
         </Link>
       </div>
     </div>
