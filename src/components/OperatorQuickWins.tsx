@@ -39,7 +39,7 @@ export function OperatorQuickWins({
       
       {/* CTA */}
       <Button asChild variant="gradient" size="sm" className="w-full">
-        <a href="mailto:partnerships@smarttechinvest.com?subject=STI%20Request%20Consideration">
+        <a href="mailto:partnerships@smarttechinvest.com?subject=STI%20Collaboration%20Review%20%7C%20Operator">
           <ArrowRight size={14} className="mr-2" />
           Request a collaboration review
         </a>

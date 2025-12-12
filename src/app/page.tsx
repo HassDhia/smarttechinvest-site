@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroAudienceCta } from "../components/HeroAudienceCta";
 import { listBriefs } from "../lib/content";
 
 function formatBriefDate(value?: string) {
@@ -41,26 +42,7 @@ export default function Home() {
           <p className="body-lede text-white/90 text-lg sm:text-xl">
             We architect collaboration concepts aligned to brand calendars and steward the pitchflow until the right team picks it up.
           </p>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:flex-wrap sm:gap-4">
-            <a
-              href="mailto:partnerships@smarttechinvest.com?subject=STI%20Request%20Consideration%20%7C%20Operator"
-              className="inline-flex w-full items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)] sm:w-auto sm:tracking-[0.3em]"
-            >
-              Request consideration (Operators)
-            </a>
-            <a
-              href="mailto:partnerships@smarttechinvest.com?subject=STI%20Activation%20Concepts%20%7C%20Brand"
-              className="inline-flex w-full items-center justify-center rounded-md border border-white/30 px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/95 transition hover:bg-white/10 sm:w-auto sm:tracking-[0.3em]"
-            >
-              Request activation concepts (Brands)
-            </a>
-            <Link
-              href="/intelligence"
-              className="inline-flex items-center justify-center text-sm font-semibold text-white/85 underline-offset-4 hover:text-white hover:underline transition"
-            >
-              Read Intelligence
-            </Link>
-          </div>
+          <HeroAudienceCta />
           <p className="text-sm text-white/85">If it’s a fit, we reply within 48 hours.</p>
         </div>
         <div className="container relative z-10 mt-10">
@@ -123,18 +105,18 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col gap-2 sm:items-end">
-            <a
-              href="mailto:partnerships@smarttechinvest.com?subject=STI%20Request%20Consideration"
-              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-black shadow-[0_10px_30px_rgba(255,255,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#03060C]"
-            >
-              Request a collaboration review
-            </a>
             <Link
               href="/intelligence"
-              className="text-xs uppercase tracking-[0.4em] text-white/70 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#03060C]"
+              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-black shadow-[0_10px_30px_rgba(255,255,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#03060C]"
             >
               Get the briefs
             </Link>
+            <a
+              href="mailto:partnerships@smarttechinvest.com?subject=STI%20Collaboration%20Review%20%7C%20Operator"
+              className="text-xs uppercase tracking-[0.4em] text-white/70 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#03060C]"
+            >
+              Request a collaboration review
+            </a>
           </div>
         </div>
         {featuredBriefs.length > 0 ? (
