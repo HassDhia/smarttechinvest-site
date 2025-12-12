@@ -1,0 +1,343 @@
+{
+  "generated_at": "2025-12-12T13:36:36.336098",
+  "query": "Local Operators as the New Media Channel",
+  "time_window": {
+    "start": "2025-11-28",
+    "end": "2025-12-12",
+    "days": 14,
+    "label": "Nov 28 \u2013 Dec 12, 2025"
+  },
+  "confidence": {
+    "score": 0.28,
+    "display": 0.28,
+    "band": "Directional",
+    "dials": {
+      "strength": "light",
+      "coverage": "light",
+      "quant_support": "high",
+      "consistency": "high"
+    },
+    "breakdown": {
+      "average_strength": 0.0,
+      "coverage": 0.0,
+      "quant_support": 1.0,
+      "contradiction_penalty": 0.8
+    },
+    "note": "Directional evidence: 9 sources \u2022 6 domains \u2022 9 in-window / 0 background \u2022 support coverage 0%"
+  },
+  "files": [
+    "intelligence_report.md",
+    "executive_letter.md",
+    "executive_letter.pdf",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "comparison_map",
+    "signal_map_notes"
+  ],
+  "title": "Local Operators as the New Media Channel",
+  "highlights": [
+    "Local public media inventory is expanding due to bridge funding and stabilization grants, creating short-flight sponsorship slots and higher-trust reach you can buy quickly [^2][^3][^4].",
+    "Programmatic hyper-local CTV lets you control frequency and geos for predictable incremental lifts and cleaner matched-control measurement at scale [^8].",
+    "Use station-level promo codes or QR landing pages tied to store geos to convert impressions to footfall and protect event CPA while testing promo depth versus event-driven demand."
+  ],
+  "executive_summary": "You must lift store foot traffic and buyer share in the early holiday window without blanket discounts, and deliver measurable results inside two planning cycles. Target **10-15%** foot-traffic uplift with a stretch goal of **\u226525%**, grow early-window share from current 12\u201315% toward **20-30%**, and hold event CPA at or below **0.80\u00d7** baseline while driving at least 5% QR redemption of footfall. Favor a store-as-studio / media-led holiday that pairs local public media sponsorships with programmatic hyper-local CTV; partnerships, procurement, and store ops must secure Nov 28\u2013Dec 12 short flights with station-level promo codes or QR landing pages in the next 30 days so you can measure incremental footfall and CPA. Measure success by tracking buyer activity share versus promo intensity and QR redemptions per geo, using matched control areas for attribution [^2][^3][^4][^8].",
+  "top_operator_moves": [
+    "Call top local public stations in priority DMAs this week and buy Nov 28\u2013Dec 12 sponsorships with unique promo codes or QR redirects tied to specific stores.",
+    "Run a small programmatic hyper-local CTV flight across priority trade areas with matched control geos and cap event CPA at **0.80\u00d7** baseline to protect ROI.",
+    "Instrument QR redemptions, station-level code redemptions, dwell estimates, and buyer activity share; report buyer share versus promo intensity daily to commerce and store-ops owners."
+  ],
+  "statistics": {
+    "word_count": 4224,
+    "signal_count": 0,
+    "source_count": 9
+  },
+  "read_time_minutes": 22,
+  "length_label": "~22 min read",
+  "qa": {
+    "issues": [
+      "Source coverage under minimum thresholds",
+      "Signal count outside required band",
+      "Read time exceeds target"
+    ],
+    "coverage": 0.0,
+    "quant_support": 1.0,
+    "contradiction_penalty": 0.8,
+    "appendix_count": 6,
+    "scope": {
+      "topic": "Local Operators as the New Media Channel",
+      "time_window": {
+        "start": "2025-11-28",
+        "end": "2025-12-12",
+        "days": 14,
+        "label": "Nov 28 \u2013 Dec 12, 2025"
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand\u2194brand",
+        "brick&mortar\u2194brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ],
+      "approach_hints": [
+        "discount-heavy holiday",
+        "collab-led holiday",
+        "store-as-studio / media-led holiday"
+      ],
+      "unified_target_pack": {
+        "foot_traffic_uplift": {
+          "base": "10-15%",
+          "stretch": "\u226525%"
+        },
+        "early_window_share": {
+          "current": "12-15%",
+          "goal": "20-30%"
+        },
+        "event_cpa": {
+          "ceiling": "\u22640.80\u00d7 baseline"
+        },
+        "qr_redemption": {
+          "floor": "\u22655% of footfall"
+        },
+        "paired_metric": "Track buyer activity share vs promo intensity side by side"
+      },
+      "window_label": "Nov 28 \u2013 Dec 12, 2025",
+      "topic_kind": "general",
+      "search_guardrail_profile": "finance",
+      "search_guardrail_mode": "light",
+      "guardrail_contamination_ratio": 0.0,
+      "guardrail_noise_ratio": 0.0,
+      "diagnostics": {
+        "search_guardrails": {
+          "ratio": 0.0,
+          "guardrail_weight": 0.0,
+          "total_weight": 2.718,
+          "trigger_domains": [],
+          "trigger_terms": [],
+          "queries": [
+            "Local Operators as the New Media Channel"
+          ],
+          "profile": "finance",
+          "threshold": 0.5
+        }
+      },
+      "thin_evidence": true,
+      "operator_job_story": "You need to drive store foot traffic and buyer share in the early holiday window without resorting to blanket discounts, and do it inside two planning cycles.",
+      "search_shaped_variants": [
+        "Test local public radio or community media sponsorships for Nov 28\u2013Dec 12",
+        "Pilot programmatic local CTV to lift store visits and measure CPA",
+        "How do we trade promo depth for event-driven footfall in early holiday?"
+      ],
+      "evidence_regime": "directional",
+      "evidence_note": "Directional evidence: 9 sources \u2022 6 domains \u2022 9 in-window / 0 background \u2022 support coverage 0%",
+      "spec_notes": [],
+      "pilot_spec": {
+        "scenario": "local_operators_media_pilot",
+        "store_count": 6,
+        "store_type": "geo_cluster",
+        "duration_weeks": 2,
+        "window": "Nov 28 \u2013 Dec 12, 2025",
+        "primary_move": "Run a two-week local-media plus in-store event pilot (public radio + local CTV + QR-enabled events) to lift early-window visits and buyer share while avoiding blanket discounts.",
+        "owner_roles": [
+          "Head of Retail",
+          "Head of Partnerships",
+          "Head of Marketing",
+          "Finance"
+        ],
+        "location_radius_miles": 25,
+        "key_metrics": [
+          "event_cpa",
+          "qr_redemption_rate"
+        ],
+        "window_label": "Nov 28 \u2013 Dec 12, 2025"
+      },
+      "metric_spec": {
+        "foot_traffic_uplift": {
+          "label": "Foot traffic uplift (treatment vs control)",
+          "target_range": [
+            10.0,
+            15.0
+          ],
+          "unit": "percent",
+          "stage": "target",
+          "owner": "Marketing",
+          "target_text": "Target 10-15% incremental visits in the Nov 28 Dec 12 window; stretch target 5%+.",
+          "notes": ""
+        },
+        "early_window_share": {
+          "label": "Early-window buyer share",
+          "target_range": [
+            20.0,
+            30.0
+          ],
+          "unit": "percent",
+          "stage": "target",
+          "owner": "Marketing+Analytics",
+          "target_text": "Goal 20-30% of total buyers in the early window (current ~12-15%).",
+          "notes": ""
+        },
+        "event_cpa": {
+          "label": "Event CPA vs baseline",
+          "target_range": [
+            0.8,
+            0.8
+          ],
+          "unit": "\u00d7baseline",
+          "stage": "guardrail",
+          "owner": "Finance",
+          "target_text": "Ceiling: CPA must be 8% of baseline or lower (<=0.8\u00d7 baseline).",
+          "notes": ""
+        },
+        "qr_redemption_rate": {
+          "label": "QR redemption rate of footfall",
+          "target_range": [
+            5.0,
+            5.0
+          ],
+          "unit": "percent",
+          "stage": "guardrail",
+          "owner": "Store Ops",
+          "target_text": "Floor: QR scans >=5% of measured footfall; ties media exposures to visits.",
+          "notes": ""
+        },
+        "buy_share_vs_promo": {
+          "label": "Buyer activity share vs promo intensity (paired metric)",
+          "target_range": [],
+          "unit": "directional",
+          "stage": "observed",
+          "owner": "Pricing + Analytics",
+          "target_text": "No fixed numeric target; track weekly trend to confirm buyer share rises while Promo Intensity does not.",
+          "notes": ""
+        }
+      },
+      "role_actions": {
+        "Head of Retail": "Prepare two-week in-store events, ensure QR placement and staff activation for Local Operators Media Pilot, and hit the QR redemption guardrail (>=5%).",
+        "Head of Partnerships": "Lock public radio and local CTV buys with station-specific promo codes/QRs for Nov 28 Dec 12 and confirm attribution tags before flight.",
+        "Head of Marketing": "Deliver creative and media pacing to target incremental visits and early-window share, measure daily lift versus control, and monitor Foot traffic and Buy Share Vs Promo.",
+        "Finance": "Set the event CPA guardrail (<=0.8\u00d7 baseline) and approve spend bands so the pilot cannot exceed that ceiling."
+      },
+      "pilot_spec_issues": [],
+      "spec_version": "v1",
+      "spec_ok": false
+    },
+    "read_time": 22,
+    "high_quality_signals": true,
+    "observed_quant": true,
+    "tier1_market_signals": true,
+    "claim_gate": {
+      "passed": false,
+      "errors": [
+        "unsourced_high=3 max=3",
+        "unsourced_total=10 max=8",
+        "0.80x @ top_operator_moves[1]",
+        "10% @ markdown.intelligence_report.md",
+        "20 % @ markdown.intelligence_report.md"
+      ]
+    },
+    "render_gate": {
+      "passed": true,
+      "errors": []
+    },
+    "post_run_warnings": [
+      "claim_gate failed: unsourced_high=3 max=3; unsourced_total=10 max=8"
+    ]
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07",
+  "ops_flags": {
+    "opportunities": true,
+    "brief": true
+  },
+  "operator_job_story": "You need to drive store foot traffic and buyer share in the early holiday window without resorting to blanket discounts, and do it inside two planning cycles.",
+  "search_shaped_variants": [
+    "Test local public radio or community media sponsorships for Nov 28\u2013Dec 12",
+    "Pilot programmatic local CTV to lift store visits and measure CPA",
+    "How do we trade promo depth for event-driven footfall in early holiday?"
+  ],
+  "approach_hints": [
+    "discount-heavy holiday",
+    "collab-led holiday",
+    "store-as-studio / media-led holiday"
+  ],
+  "source_stats": {
+    "total": 9,
+    "core": 0,
+    "support": 9,
+    "unique_domains": 6,
+    "domain_counts": {
+      "prnewswire.com": 1,
+      "msn.com": 4,
+      "theadvocate.com": 1,
+      "abcnews.go.com": 1,
+      "adexchanger.com": 1,
+      "bandt.com.au": 1
+    },
+    "data_heavy": 2,
+    "time_span_days": 6,
+    "tier_counts": {
+      "core": 9,
+      "context": 0
+    },
+    "dominant_ratio": 0.444,
+    "headline_only": 0,
+    "thin_evidence": true,
+    "thresholds": {
+      "total": true,
+      "core": false,
+      "domains": true,
+      "data": true,
+      "dominance": true,
+      "in_window": true,
+      "background": false,
+      "support_coverage": false
+    },
+    "source_health": {
+      "counts": {
+        "full_text": 9,
+        "snippet_only": 0,
+        "blocked": 0,
+        "timeout": 0,
+        "rate_limited": 0,
+        "total": 9
+      },
+      "blocked_domains": {},
+      "issue_samples": []
+    },
+    "guardrail_contamination_ratio": 0.0,
+    "guardrail_profile": "finance",
+    "guardrail_mode": "light",
+    "support_coverage": 0.0,
+    "regime": "directional"
+  },
+  "renderers": [
+    "executive_letter_markdown",
+    "executive_letter_pdf",
+    "legacy_html"
+  ],
+  "artifact_paths": [
+    "sti_reports/sti_operator_output_20251212_132743_local_operators_as_the_n/executive_letter.md",
+    "sti_reports/sti_operator_output_20251212_132743_local_operators_as_the_n/executive_letter.pdf",
+    "sti_reports/sti_operator_output_20251212_132743_local_operators_as_the_n/intelligence_report.html",
+    "sti_reports/sti_operator_output_20251212_132743_local_operators_as_the_n/executive_letter.html"
+  ],
+  "last_publish_status": "failed",
+  "last_publish_at": "2025-12-12T21:42:05.842346+00:00",
+  "gate_status": {
+    "brief_gate": true,
+    "claim_gate": false,
+    "factual_gate": false,
+    "seo_gate": true,
+    "render_gate": true
+  }
+}
