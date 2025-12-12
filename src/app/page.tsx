@@ -43,7 +43,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-4">
             <a
-              href="mailto:sti.partnerships@gmail.com?subject=STI%20Request%20Consideration"
+              href="mailto:partnerships@smarttechinvest.com?subject=STI%20Request%20Consideration"
               className="inline-flex w-full items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)] sm:w-auto sm:tracking-[0.3em]"
             >
               Request consideration
@@ -104,7 +104,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-2 sm:items-end">
             <a
-              href="mailto:sti.partnerships@gmail.com?subject=STI%20Request%20Consideration"
+              href="mailto:partnerships@smarttechinvest.com?subject=STI%20Request%20Consideration"
               className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-black shadow-[0_10px_30px_rgba(255,255,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#03060C]"
             >
               Request consideration

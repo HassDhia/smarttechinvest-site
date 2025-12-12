@@ -1,4 +1,4 @@
-const REQUEST_CONSIDERATION_EMAIL = "mailto:has.dhia@gmail.com?subject=STI%20Request%20Consideration";
+const REQUEST_CONSIDERATION_EMAIL = "mailto:partnerships@smarttechinvest.com?subject=STI%20Request%20Consideration";
 
 export function ActivationAngleCTA({ categoryHint }: { categoryHint?: string | null }) {
   const categoryLabel = categoryHint?.trim() || "this category";
