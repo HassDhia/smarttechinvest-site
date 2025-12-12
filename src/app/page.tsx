@@ -82,12 +82,30 @@ export default function Home() {
             <p className="text-white/80 text-base leading-relaxed">
               and local platforms with foot traffic, membership, or community reach.
             </p>
+            <div className="mt-5 space-y-2">
+              <a
+                href="mailto:partnerships@smarttechinvest.com?subject=STI%20Collaboration%20Review%20%7C%20Operator"
+                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-black shadow-[0_10px_30px_rgba(255,255,255,0.25)] transition hover:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070E]"
+              >
+                Request a collaboration review
+              </a>
+              <p className="text-xs text-white/70">If it’s a fit, we reply within 48 hours.</p>
+            </div>
           </div>
           <div className="rounded-3xl border border-white/10 bg-[#05070E]/70 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.35)]">
             <h3 className="text-2xl font-semibold text-white mb-3">Brands</h3>
             <p className="text-white/80 text-base leading-relaxed">
               and brand teams looking for credible local activations and distribution.
             </p>
+            <div className="mt-5 space-y-2">
+              <a
+                href="mailto:partnerships@smarttechinvest.com?subject=STI%20Local%20Partner%20Pack%20Request"
+                className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070E]"
+              >
+                Request the Local Partner Pack
+              </a>
+              <p className="text-xs text-white/70">If it’s a fit, we reply within 48 hours.</p>
+            </div>
           </div>
         </div>
       </section>
