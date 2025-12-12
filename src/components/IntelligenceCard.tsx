@@ -17,7 +17,14 @@ export function IntelligenceCard({
   type: "daily" | "brief";
   className?: string;
 }) {
-  const formattedDate = new Date(date).toLocaleDateString('en-US', {
+  const parseDisplayDate = (raw: string) => {
+    const match = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!match) return new Date(raw);
+    const [, year, month, day] = match;
+    return new Date(Number(year), Number(month) - 1, Number(day));
+  };
+
+  const formattedDate = parseDisplayDate(date).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'short',
     day: 'numeric'
