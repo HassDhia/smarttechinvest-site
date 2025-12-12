@@ -67,11 +67,11 @@ export function FeaturedBriefCard({
         <time dateTime={brief.displayDate || brief.date.slice(0, 10)} className="flex items-center gap-1.5">
           <Calendar size={14} className="opacity-70" />
           {formattedDate}
-        </time>
-        <Badge variant="brand" size="sm">
-          {brief.hasMarketPath ? 'Market-Path Dossier' : 'Weekly Brief'}
-        </Badge>
-      </div>
+	        </time>
+	        <Badge variant="brand" size="sm">
+	          {brief.hasMarketPath ? 'Market-Path Dossier' : 'Strategic Brief'}
+	        </Badge>
+	      </div>
       
       {/* Teaser from executive summary / Preview Text */}
       {brief.summary && (

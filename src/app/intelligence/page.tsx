@@ -1,8 +1,7 @@
 import { SectionHeader } from "../../components/SectionHeader";
-import { getLatestDailies, listBriefs } from "../../lib/content";
+import { listBriefs } from "../../lib/content";
 import Link from "next/link";
 import Image from "next/image";
-import { IntelligenceCard } from "../../components/IntelligenceCard";
 
 function formatBriefDate(raw: string | undefined) {
   if (!raw) return { label: "—", dateTime: undefined };
@@ -30,7 +29,6 @@ function formatBriefDate(raw: string | undefined) {
 
 export default function IntelligencePage() {
   const allBriefs = listBriefs();
-  const latestDailies = getLatestDailies(6);
 
   return (
     <div className="font-sans text-[var(--text-primary)]">
@@ -38,7 +36,7 @@ export default function IntelligencePage() {
         <SectionHeader
           title="Intelligence That Drives the Collabs"
           subtitleClassName="text-[var(--text-secondary)]"
-          subtitle="Daily signals and weekly briefs on AI, culture, influence, and behavioral shifts — distilled to what operators and brand teams actually need."
+          subtitle="Strategic briefs on AI, culture, influence, and behavioral shifts — distilled to what operators and brand teams actually need."
           useGradientTitle
         />
       </section>
@@ -46,40 +44,8 @@ export default function IntelligencePage() {
       <section className="container section vt-section">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.4em] text-[var(--text-muted)]">Daily Signals</p>
-            <h2 className="text-2xl font-semibold text-[var(--text-primary)]">Latest analysis</h2>
-            <p className="text-sm text-[var(--text-secondary)]">
-              Short, operator-ready notes published as PRs land on main.
-            </p>
-          </div>
-          <Link href="/intelligence/daily" className="text-sm font-medium text-[var(--accent)] hover:underline">
-            View all daily signals →
-          </Link>
-        </div>
-
-        {latestDailies.length > 0 ? (
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {latestDailies.map((daily) => (
-              <IntelligenceCard
-                key={daily.slug}
-                title={daily.frontmatter.title}
-                date={daily.frontmatter.date}
-                summary={daily.frontmatter.summary}
-                href={daily.href}
-                type="daily"
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="mt-6 text-sm text-[var(--text-muted)]">No daily signals published yet.</div>
-        )}
-      </section>
-
-      <section className="container section vt-section">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.4em] text-[var(--text-muted)]">Weekly Briefs</p>
-            <h2 className="text-2xl font-semibold text-[var(--text-primary)]">Strategic briefs</h2>
+            <p className="text-xs uppercase tracking-[0.4em] text-[var(--text-muted)]">Strategic Briefs</p>
+            <h2 className="text-2xl font-semibold text-[var(--text-primary)]">Weekly intelligence</h2>
             <p className="text-sm text-[var(--text-secondary)]">
               Full-length analysis with sources, signal strength, and action paths.
             </p>

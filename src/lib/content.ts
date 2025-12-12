@@ -1,18 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import matter from 'gray-matter';
 
-const DAILY_DIR = path.join(process.cwd(), 'src/content/daily');
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 const BRIEF_MANIFEST = path.join(PUBLIC_DIR, 'intelligence/briefs', 'manifest.json');
-
-export type DailyFrontmatter = {
-  title: string;
-  date: string;      // ISO 8601
-  summary: string;
-  tags?: string[];
-  og?: string;       // /intelligence/og/...
-};
 
 export type BriefMetadata = {
   sources_count: number;
@@ -62,56 +52,6 @@ export interface BriefManifestEntry {
   summary?: string;
   metadata?: BriefMetadata;
   keySignals?: string[];
-}
-
-export function getDailySlugs(): string[] {
-  try {
-    if (!fs.existsSync(DAILY_DIR)) {
-      return [];
-    }
-    return fs.readdirSync(DAILY_DIR)
-      .filter(f => f.endsWith('.mdx'))
-      .map(f => f.replace(/\.mdx$/, ''));
-  } catch {
-    return [];
-  }
-}
-
-export function getDailyBySlug(slug: string) {
-  const realSlug = slug.replace(/\.mdx$/, '');
-  const filePath = path.join(DAILY_DIR, realSlug + '.mdx');
-  
-  if (!fs.existsSync(filePath)) {
-    throw new Error(`Daily post not found: ${slug}`);
-  }
-  
-  const file = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(file);
-  
-  return { 
-    slug: realSlug, 
-    frontmatter: data as DailyFrontmatter, 
-    content 
-  };
-}
-
-export function getAllDailies() {
-  const slugs = getDailySlugs();
-  return slugs
-    .map(slug => {
-      try {
-        const { frontmatter } = getDailyBySlug(slug);
-        return {
-          slug,
-          frontmatter,
-          href: `/intelligence/daily/${slug}`
-        };
-      } catch {
-        return null;
-      }
-    })
-    .filter((item): item is NonNullable<typeof item> => item !== null)
-    .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
 }
 
 function readManifest(): BriefManifestEntry[] {
@@ -191,11 +131,6 @@ export function getBriefByDate(date: string): Brief | null {
 export function getLatestBrief(): Brief | null {
   const briefs = listBriefs();
   return briefs.length > 0 ? briefs[0] : null;
-}
-
-export function getLatestDailies(count: number = 6) {
-  const allDailies = getAllDailies();
-  return allDailies.slice(0, count);
 }
 
 // Additional helper utilities were removed to keep runtime bundles lightweight.

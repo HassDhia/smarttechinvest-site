@@ -139,10 +139,10 @@ export default function Home() {
                         className="object-cover transition-opacity duration-300 hover:opacity-80"
                         sizes="(min-width:1280px) 30vw, (min-width:768px) 33vw, 90vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                      <div className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.5em] text-white/65">
-                        Weekly Brief
-                      </div>
+	                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+	                      <div className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.5em] text-white/65">
+	                        Strategic Brief
+	                      </div>
                       <div className="absolute bottom-4 left-4 right-4">
                         <h3 className="text-2xl font-semibold uppercase leading-tight">{brief.title || "Operator Brief"}</h3>
                       </div>
@@ -156,10 +156,10 @@ export default function Home() {
               );
             })}
           </div>
-        ) : (
-          <div className="text-sm text-white/70">Weekly briefs will load after the next ingest.</div>
-        )}
-      </section>
+	        ) : (
+	          <div className="text-sm text-white/70">Strategic briefs will load after the next ingest.</div>
+	        )}
+	      </section>
     </main>
   );
 }
