@@ -41,13 +41,13 @@ export function OperatorQuickWins({
       <Button asChild variant="gradient" size="sm" className="w-full">
         <a href="mailto:partnerships@smarttechinvest.com?subject=STI%20Request%20Consideration">
           <ArrowRight size={14} className="mr-2" />
-          Request consideration
+          Request a collaboration review
         </a>
       </Button>
       
       {/* Footer note */}
       <p className="text-xs text-[hsl(var(--muted-foreground))] mt-2 text-center">
-        Results in 30 days
+        If it’s a fit, we reply within 48 hours.
       </p>
     </div>
   );

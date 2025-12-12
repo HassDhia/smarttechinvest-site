@@ -15,11 +15,9 @@ export function ActivationAngleCTA({ categoryHint }: { categoryHint?: string | n
           href={REQUEST_CONSIDERATION_EMAIL}
           className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-black shadow-[0_10px_30px_rgba(255,255,255,0.4)] transition hover:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)]"
         >
-          Request consideration
+          Request a collaboration review
         </a>
-        <p className="text-xs text-[var(--text-secondary)]">
-          No pitch decks required to apply. Share the basics. If there is a fit, we will reach out.
-        </p>
+        <p className="text-xs text-[var(--text-secondary)]">If it’s a fit, we reply within 48 hours.</p>
       </div>
     </div>
   );

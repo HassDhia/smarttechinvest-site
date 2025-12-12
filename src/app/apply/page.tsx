@@ -66,7 +66,7 @@ export default function ApplyPage() {
       <section className="container section space-y-10">
         <div className="max-w-3xl space-y-4">
           <p className="headline-label text-white/60">Apply</p>
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-balance">Request consideration</h1>
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-balance">Request a collaboration review</h1>
           <p className="text-lg text-white/85 leading-relaxed">
             If you have real distribution and a clear outcome, send the basics. STI reviews for fit and follows up when there is a credible path.
           </p>

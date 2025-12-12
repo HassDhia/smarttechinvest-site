@@ -46,7 +46,7 @@ export default function Home() {
               href="mailto:partnerships@smarttechinvest.com?subject=STI%20Request%20Consideration"
               className="inline-flex w-full items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)] sm:w-auto sm:tracking-[0.3em]"
             >
-              Request consideration
+              Request a collaboration review
             </a>
             <Link
               href="/intelligence"
@@ -55,9 +55,7 @@ export default function Home() {
               Read Intelligence
             </Link>
           </div>
-          <p className="text-sm text-white/75">
-            We keep engagements limited. If there is a fit, we will reach out.
-          </p>
+          <p className="text-sm text-white/85">If it’s a fit, we reply within 48 hours.</p>
         </div>
         <div className="container relative z-10 mt-10">
           <div className="inline-flex items-center rounded-full border border-white/15 bg-black/30 px-4 py-2 text-[0.65rem] uppercase tracking-[0.3em] text-white/65 shadow-[0_10px_35px_rgba(0,0,0,0.4)]">
@@ -107,7 +105,7 @@ export default function Home() {
               href="mailto:partnerships@smarttechinvest.com?subject=STI%20Request%20Consideration"
               className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-black shadow-[0_10px_30px_rgba(255,255,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#03060C]"
             >
-              Request consideration
+              Request a collaboration review
             </a>
             <Link
               href="/intelligence"

@@ -108,7 +108,7 @@ src/
 - `/offers` – Productized offers
 - `/diagnostic` – Growth diagnostic (client-side form posts to API)
 - `/resources` – Strategy OS resources
-- `/apply` – Request consideration form
+- `/apply` – Request a collaboration review form
 - `/api/lead` – POST endpoint
 
 Example `POST /api/lead` payload (sent by the diagnostic page):
