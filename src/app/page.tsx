@@ -39,18 +39,24 @@ export default function Home() {
         <div className="container relative z-10 max-w-5xl space-y-5 sm:space-y-7">
           <h1 className="headline-xl max-w-4xl text-balance text-white">Brand Collaborations.</h1>
           <p className="body-lede text-white/90 text-lg sm:text-xl">
-            We design and broker partnerships for operators and businesses with real distribution. Built for brand fit, clean economics, and measurable outcomes.
+            We architect collaboration concepts aligned to brand calendars and steward the pitchflow until the right team picks it up.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:flex-wrap sm:gap-4">
             <a
-              href="mailto:partnerships@smarttechinvest.com?subject=STI%20Request%20Consideration"
+              href="mailto:partnerships@smarttechinvest.com?subject=STI%20Request%20Consideration%20%7C%20Operator"
               className="inline-flex w-full items-center justify-center rounded-md bg-[#1F4FFF] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_10px_30px_rgba(31,79,255,0.35)] sm:w-auto sm:tracking-[0.3em]"
             >
-              Request a collaboration review
+              Request consideration (Operators)
+            </a>
+            <a
+              href="mailto:partnerships@smarttechinvest.com?subject=STI%20Activation%20Concepts%20%7C%20Brand"
+              className="inline-flex w-full items-center justify-center rounded-md border border-white/30 px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/95 transition hover:bg-white/10 sm:w-auto sm:tracking-[0.3em]"
+            >
+              Request activation concepts (Brands)
             </a>
             <Link
               href="/intelligence"
-              className="inline-flex w-full items-center justify-center rounded-md border border-white/30 px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white/95 transition hover:bg-white/10 sm:w-auto sm:tracking-[0.3em]"
+              className="inline-flex items-center justify-center text-sm font-semibold text-white/85 underline-offset-4 hover:text-white hover:underline transition"
             >
               Read Intelligence
             </Link>
