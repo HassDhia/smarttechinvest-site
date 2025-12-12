@@ -3,7 +3,7 @@ import path from 'node:path';
 import { execSync } from 'node:child_process';
 import { buildManifestEntryFromDir, upsertManifestEntry } from './lib/brief-manifest.mjs';
 
-const SOURCE_DIR = '/Users/hass/Desktop/02_Projects/Deep Agent STI/sti_reports';
+const SOURCE_DIR = '/Users/hass/Documents/Projects/Deep Agent STI/sti_reports';
 const STATE_FILE = path.join(process.cwd(), '.brief-ingest-state.json');
 const DEBOUNCE_DELAY = 30000; // 30 seconds to batch multiple reports
 

@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 
-const STI_REPORTS_DIR = '/Users/hass/Desktop/02_Projects/Deep Agent STI/sti_reports';
+const STI_REPORTS_DIR = '/Users/hass/Documents/Projects/Deep Agent STI/sti_reports';
 const BRIEFS_DIR = path.join(process.cwd(), 'public/intelligence/briefs');
 const STATE_FILE = '.brief-ingest-state.json';
 
