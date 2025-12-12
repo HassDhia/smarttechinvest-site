@@ -56,7 +56,12 @@ export default async function MarketPathReportPage({ params }: Props) {
     notFound();
   }
 
-  const sanitizedHtml = await loadSanitizedMarketPathHtml(brief.date);
+  let sanitizedHtml = "";
+  try {
+    sanitizedHtml = await loadSanitizedMarketPathHtml(brief.date);
+  } catch {
+    notFound();
+  }
   const marketPathHtmlUrl = brief.marketPathHtml ?? `/intelligence/briefs/${date}/market_path_report.html`;
   const intelligenceHref = brief.intelligenceHref;
   const showIntelligenceCta = Boolean(intelligenceHref);

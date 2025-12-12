@@ -3,7 +3,8 @@ import path from 'node:path';
 import matter from 'gray-matter';
 
 const DAILY_DIR = path.join(process.cwd(), 'src/content/daily');
-const BRIEF_MANIFEST = path.join(process.cwd(), 'public/intelligence/briefs', 'manifest.json');
+const PUBLIC_DIR = path.join(process.cwd(), 'public');
+const BRIEF_MANIFEST = path.join(PUBLIC_DIR, 'intelligence/briefs', 'manifest.json');
 
 export type DailyFrontmatter = {
   title: string;
@@ -127,30 +128,59 @@ function readManifest(): BriefManifestEntry[] {
 
 export function listBriefs(): Brief[] {
   const manifest = readManifest();
-  return manifest.map(entry => {
+
+  const briefs: Brief[] = [];
+
+  for (const entry of manifest) {
+    const briefDir = path.join(PUBLIC_DIR, 'intelligence', 'briefs', entry.date);
+    const marketPathFile = path.join(briefDir, 'market_path_report.html');
+    const reportFile = path.join(briefDir, 'report.html');
+
+    const marketPathExists = Boolean(entry.hasMarketPath && fs.existsSync(marketPathFile));
+    const intelligenceExists = fs.existsSync(reportFile);
+
+    if (!marketPathExists && !intelligenceExists) {
+      continue;
+    }
+
     const displayDate = entry.date.slice(0, 10);
     const hasTimestamp = entry.date.length > 10;
     const displayTime = hasTimestamp ? entry.date.slice(11) : null;
 
-    return {
+    const marketPathHtml = marketPathExists
+      ? entry.marketPathHtml ?? `/intelligence/briefs/${entry.date}/market_path_report.html`
+      : undefined;
+    const marketPathMarkdown = marketPathExists ? entry.marketPathMarkdown : undefined;
+
+    const intelligenceHtml = intelligenceExists
+      ? entry.intelligenceHtml ?? `/intelligence/briefs/${entry.date}/report.html`
+      : undefined;
+    const intelligenceMarkdown = intelligenceExists ? entry.intelligenceMarkdown : undefined;
+    const intelligenceHref = intelligenceExists
+      ? entry.intelligenceHref ?? `/intelligence/briefs/${entry.date}/report.html`
+      : undefined;
+
+    briefs.push({
       date: entry.date,
       displayDate,
       displayTime,
       href: entry.href,
-      intelligenceHref: entry.intelligenceHref,
-      marketPathMarkdown: entry.marketPathMarkdown,
-      intelligenceMarkdown: entry.intelligenceMarkdown,
-      intelligenceHtml: entry.intelligenceHtml,
-      marketPathHtml: entry.marketPathHtml,
-      hasMarketPath: entry.hasMarketPath,
+      intelligenceHref,
+      marketPathMarkdown,
+      intelligenceMarkdown,
+      intelligenceHtml,
+      marketPathHtml,
+      hasMarketPath: marketPathExists,
       og: entry.og,
       heroImage: entry.heroImage,
       title: entry.title,
       summary: entry.summary,
       metadata: entry.metadata,
       keySignals: entry.keySignals,
-    };
-  });
+    });
+  }
+
+  return briefs;
 }
 
 export function getBriefByDate(date: string): Brief | null {
