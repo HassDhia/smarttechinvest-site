@@ -95,7 +95,6 @@ export default function Home() {
               >
                 Request a collaboration review
               </a>
-              <p className="text-xs text-white/70">If it’s a fit, we reply within 48 hours.</p>
             </div>
           </div>
           <div className="rounded-3xl border border-white/10 bg-[#05070E]/70 p-6 shadow-[0_20px_40px_rgba(0,0,0,0.35)]">
@@ -110,7 +109,6 @@ export default function Home() {
               >
                 Request the Local Partner Pack
               </a>
-              <p className="text-xs text-white/70">If it’s a fit, we reply within 48 hours.</p>
             </div>
           </div>
         </div>
