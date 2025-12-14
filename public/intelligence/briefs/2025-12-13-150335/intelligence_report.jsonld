@@ -1,0 +1,53 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Report",
+  "name": "How Brand Budget Owners Evaluate Local Partnerships",
+  "about": "How Brand Budget Owners Evaluate Local Partnerships",
+  "abstract": "You need to capture high-value holiday buyers with local partnerships between Nov 29 and Dec 13 without turning every activation into a headline discount race. This matters because front-loaded, collab-led activations can lift foot traffic from a base **10–15%** toward a stretch of **≥25%**, increase early-window share from **12–15%** to **20–30%**, and keep event CPA at or below **0.80× baseline** when discount depth is controlled [^7][^2]. Over the next 30 days, launch a **20‐store** Nov 29–Dec 13 exclusive drop with one brand partner owned by Head of Retail and Head of Partnerships, and measure early-window share, event CPA and QR redemption against matched controls daily to decide scale and spend.",
+  "datePublished": "2025-12-13T23:16:05.050596",
+  "temporalCoverage": "2025-11-29/2025-12-13",
+  "hasPart": [
+    {
+      "@type": "AnalysisNewsArticle",
+      "headline": null,
+      "citation": [
+        "https://www.linkedin.com/news/story/ai-likely-to-drive-record-cyber-monday-sales-6781852/",
+        "https://www.forbes.com/councils/forbesbusinesscouncil/2025/12/05/how-local-can-dominate-against-the-giants/",
+        "https://www.forbes.com/councils/forbescommunicationscouncil/2025/12/04/the-personal-touch-how-small-businesses-can-win-this-christmas-through-connection/"
+      ],
+      "about": "Behavioral"
+    },
+    {
+      "@type": "AnalysisNewsArticle",
+      "headline": null,
+      "citation": [
+        "https://www.pimco.com/us/en/insights/how-tariffs-and-technology-reshaped-the-us-economy-in-2025-and-what-comes-next",
+        "https://www.businesstimes.com.sg/keywords/us-economy",
+        "https://www.forbes.com/councils/forbesbusinesscouncil/2025/12/05/how-local-can-dominate-against-the-giants/"
+      ],
+      "about": "Market"
+    },
+    {
+      "@type": "AnalysisNewsArticle",
+      "headline": null,
+      "citation": [
+        "https://www.linkedin.com/news/story/ai-likely-to-drive-record-cyber-monday-sales-6781852/",
+        "https://www.forbes.com/councils/forbesagencycouncil/2025/12/10/how-agencies-prove-their-value-in-an-in-house-marketing-world/"
+      ],
+      "about": "Technology"
+    },
+    {
+      "@type": "AnalysisNewsArticle",
+      "headline": null,
+      "citation": [
+        "https://www.linkedin.com/news/story/ai-likely-to-drive-record-cyber-monday-sales-6781852/",
+        "https://www.businesstimes.com.sg/keywords/us-economy"
+      ],
+      "about": "Market"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 0.6
+  }
+}
