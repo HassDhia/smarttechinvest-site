@@ -1,0 +1,108 @@
+{
+  "hero": {
+    "slot": "hero",
+    "core_tension": "Choose to front-load limited in-store drops now or wait and compete on Cyber Monday price rounds",
+    "setting": "Bright, organized store backroom staged like a war-room; racks with locked high-margin SKUs, partner brand packing crate",
+    "composition_cues": "Three-quarter angle, foreground operator at table signing a run sheet, tactile materials: kraft paper, matte metal clipboards",
+    "persona": "Head of Retail with Head of Partnerships beside them",
+    "action": "Deciding and signing the two-week exclusive Nov 29–Dec 13 pilot assortment and store list",
+    "urgency_symbol": "A small calendar with Nov 29 circled, shown as a stamped card on the table",
+    "props": [
+      "branded crate labeled 'Pilot 20 Stores' (references S1 Exclusive Drop)",
+      "store map with 20 pins",
+      "pricing parity checklist"
+    ],
+    "lighting": "Polished editorial lighting; confident highlights on faces and the contract; deep but clean negative space behind",
+    "mood": "Decisive, calibrated",
+    "anchor_section": "header",
+    "metric_focus": [
+      "early_window_share",
+      "partner_value"
+    ],
+    "alt": "Head of Retail signing Nov 29–Dec 13 exclusive drop pilot with Head of Partnerships"
+  },
+  "signal_map": {
+    "slot": "signal_map",
+    "structure": "Concentric rings and radial paths forming a timing wheel; inner ring represents Nov 29–Dec 13 window",
+    "elements": [
+      "tokens for S1, S2, S3, S5 placed on specific rings",
+      "metric glyphs showing early_window_share and footfall_lift embedded in ring segments",
+      "labeled nodes for 'pilot 20 stores', '30 co-funded stores', 'store-as-studio shoots'"
+    ],
+    "motion": "Arcs show movement of demand from online peak to earlier in-store events; arrows along radial paths encode cadence (days before peak)",
+    "palette": "Muted retail neutrals with two highlight colors: high-contrast teal for early-window gains, warm amber for footfall uplift; materials feel like matte acrylic and brushed brass",
+    "composition_cues": "Top-down, scaled to show measurement spine; engraved metric ticks on rings to suggest quant anchors",
+    "anchor_section": "signals_and_thesis",
+    "metric_focus": [
+      "early_window_share",
+      "footfall_lift",
+      "event_cpa"
+    ],
+    "alt": "CMO and Head of Partnerships reviewing timing wheel mapping early_window_share and footfall_lift tests"
+  },
+  "case_studies": [
+    {
+      "slot": "case_study_1",
+      "scene": "Store-as-studio: small team shooting product video in a high-traffic store corner while shoppers pass by",
+      "moment": "Photographer and CMO frame a short clip; operator cues a buyer interaction that will become owned media",
+      "persona": "CMO coordinating with Head of Partnerships and in-store merch lead",
+      "props": [
+        "compact lighting rig on casters",
+        "mobile teleprompter with shot list",
+        "branded product staged on matte plinth"
+      ],
+      "composition_cues": "Low-angle editorial shot focusing on collaboration; shallow depth to separate subject from passing shoppers",
+      "lighting": "Confident highlights on product and faces; soft falloff to ambient store activity",
+      "mood": "Creative, efficient",
+      "anchor_section": "mini_case_story",
+      "metric_focus": [
+        "conversion_rate",
+        "dwell_time"
+      ],
+      "reference": "References 'Store-as-studio multiplies media value' and S3 store-as-studio shoots",
+      "alt": "CMO directing store-as-studio shoot to test buyer activity share vs promo intensity"
+    },
+    {
+      "slot": "case_study_2",
+      "scene": "Co-funded offer rollout: CFO and Head of Partnerships reviewing a compact P&L while a store manager pins co-funded signage to a fixture",
+      "moment": "Team green-lights co-funded offer across 30 stores with a visible CPA target on the spreadsheet",
+      "persona": "CFO and Head of Partnerships executing co-funded offer test",
+      "props": [
+        "folded financial brief showing event_cpa target",
+        "sample co-branded shelf talker",
+        "store list tablet with 30 highlighted locations"
+      ],
+      "composition_cues": "Over-the-shoulder composition on spreadsheet; materials include textured paper and matte tablet glass",
+      "lighting": "High-contrast editorial light on the P&L; softer fill on the manager applying signage",
+      "mood": "Analytical, accountable",
+      "anchor_section": "mini_case_story",
+      "metric_focus": [
+        "event_cpa",
+        "partner_value"
+      ],
+      "reference": "References S2 co-funded offer across 30 stores and measurement_spine KPI ceiling ≤0.80× baseline",
+      "alt": "CFO approving 30-store co-funded offer to hit ≤0.80× event CPA with Head of Partnerships"
+    },
+    {
+      "slot": "case_study_3",
+      "scene": "Staged activation pacing: CMO and Head of Retail moving a large fixture into place three days before the expected online peak",
+      "moment": "Team times activation to start ahead of online peaks; field lead prepares QR codes and staff briefing",
+      "persona": "Head of Retail and CMO coordinating activation timing",
+      "props": [
+        "fold-out activation plan labeled 'Start -3 days'",
+        "stack of QR-enabled pickup cards",
+        "countdown tag showing three days"
+      ],
+      "composition_cues": "Wide angle that shows fixture placement in relation to store entrance; materials: polished laminate and printed QR cards",
+      "lighting": "Clean, editorial fill with edge highlights on the fixture",
+      "mood": "Tactical, anticipatory",
+      "anchor_section": "mini_case_story",
+      "metric_focus": [
+        "footfall_lift",
+        "qr_redemption"
+      ],
+      "reference": "References S5 staging activations to start three days before online peaks and deep_analysis 'Move the peak earlier'",
+      "alt": "Head of Retail staging activation three days early while CMO times QR-enabled offers"
+    }
+  ]
+}
