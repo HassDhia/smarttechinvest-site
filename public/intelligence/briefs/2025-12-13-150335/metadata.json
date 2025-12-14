@@ -1,0 +1,361 @@
+{
+  "generated_at": "2025-12-13T15:13:56.215743",
+  "query": "How Brand Budget Owners Evaluate Local Partnerships",
+  "time_window": {
+    "start": "2025-11-29",
+    "end": "2025-12-13",
+    "days": 14,
+    "label": "Nov 29 \u2013 Dec 13, 2025"
+  },
+  "confidence": {
+    "score": 0.6,
+    "display": 0.6,
+    "band": "Directional",
+    "dials": {
+      "strength": "high",
+      "coverage": "medium",
+      "quant_support": "high",
+      "consistency": "high"
+    },
+    "breakdown": {
+      "average_strength": 0.85,
+      "coverage": 0.667,
+      "quant_support": 1.0,
+      "contradiction_penalty": 0.8
+    },
+    "note": "Directional evidence: 9 sources \u2022 7 domains \u2022 9 in-window / 0 background \u2022 support coverage 67%"
+  },
+  "files": [
+    "intelligence_report.md",
+    "executive_letter.md",
+    "executive_letter.pdf",
+    "intelligence_report.jsonld",
+    "metadata.json"
+  ],
+  "sections": [
+    "deep_analysis",
+    "pattern_matches",
+    "brand_outcomes",
+    "operator_notes",
+    "quant",
+    "activation_kit",
+    "risk_radar",
+    "future_outlook",
+    "comparison_map",
+    "signal_map_notes"
+  ],
+  "title": "How Brand Budget Owners Evaluate Local Partnerships",
+  "highlights": [
+    "Front-load exclusive in-store drops in the Nov 29\u2013Dec 13 window to avoid Cyber Monday price pressure and raise early-window buyer share.",
+    "Treat stores as studios: capture owned content to lower paid CPM while measuring buyer activity share versus promo intensity daily.",
+    "Co-funded, limited offers plus QR tracking hold event CPA down and provide attribution if QR redemption reaches **\u22655%** of footfall."
+  ],
+  "executive_summary": "You need to capture high-value holiday buyers with local partnerships between Nov 29 and Dec 13 without turning every activation into a headline discount race. This matters because front-loaded, collab-led activations can lift foot traffic from a base **10\u201315%** toward a stretch of **\u226525%**, increase early-window share from **12\u201315%** to **20\u201330%**, and keep event CPA at or below **0.80\u00d7 baseline** when discount depth is controlled [^7][^2]. Over the next 30 days, launch a **20\u2010store** Nov 29\u2013Dec 13 exclusive drop with one brand partner owned by Head of Retail and Head of Partnerships, and measure early-window share, event CPA and QR redemption against matched controls daily to decide scale and spend.",
+  "top_operator_moves": [
+    "Run a 20\u2010store exclusive in-store drop Nov 29\u2013Dec 13 with one brand partner; set the KPI: early-window share **20\u201330%** and lock assortment to high-margin SKUs.",
+    "Deploy QR-tagged offers and content in every pilot store and instrument QR redemption against footfall, aiming for **\u22655%** redemption to validate in-store attribution.",
+    "Produce three store-as-studio shoots in high-traffic pilot stores, report buyer activity share vs promo intensity daily, and withhold paid amplification until organic signals meet thresholds."
+  ],
+  "statistics": {
+    "word_count": 4107,
+    "signal_count": 4,
+    "source_count": 9
+  },
+  "read_time_minutes": 21,
+  "length_label": "~21 min read",
+  "qa": {
+    "issues": [
+      "Source coverage under minimum thresholds",
+      "Signal count outside required band",
+      "Read time exceeds target"
+    ],
+    "coverage": 0.667,
+    "quant_support": 1.0,
+    "contradiction_penalty": 0.8,
+    "appendix_count": 5,
+    "scope": {
+      "topic": "How Brand Budget Owners Evaluate Local Partnerships",
+      "time_window": {
+        "start": "2025-11-29",
+        "end": "2025-12-13",
+        "days": 14,
+        "label": "Nov 29 \u2013 Dec 13, 2025"
+      },
+      "target_region": "US",
+      "use_cases": [
+        "brand\u2194brand",
+        "brick&mortar\u2194brand"
+      ],
+      "must_answer": [
+        "When are the high-value windows",
+        "What changes discounting math"
+      ],
+      "approach_hints": [
+        "discount-heavy holiday",
+        "collab-led holiday",
+        "store-as-studio / media-led holiday"
+      ],
+      "unified_target_pack": {
+        "foot_traffic_uplift": {
+          "base": "10-15%",
+          "stretch": "\u226525%"
+        },
+        "early_window_share": {
+          "current": "12-15%",
+          "goal": "20-30%"
+        },
+        "event_cpa": {
+          "ceiling": "\u22640.80\u00d7 baseline"
+        },
+        "qr_redemption": {
+          "floor": "\u22655% of footfall"
+        },
+        "paired_metric": "Track buyer activity share vs promo intensity side by side"
+      },
+      "window_label": "Nov 29 \u2013 Dec 13, 2025",
+      "topic_kind": "collaboration",
+      "search_guardrail_profile": "retail",
+      "search_guardrail_mode": "light",
+      "guardrail_contamination_ratio": 0.0,
+      "guardrail_noise_ratio": 0.0,
+      "diagnostics": {
+        "search_guardrails": {
+          "ratio": 0.0,
+          "guardrail_weight": 0.0,
+          "total_weight": 13.735,
+          "trigger_domains": [],
+          "trigger_terms": [],
+          "queries": [
+            "How Brand Budget Owners Evaluate Local Partnerships -stock -shares -options -bond -yield -price target -analyst upgrade -downgrade (retail OR \"store channel\" OR \"store traffic\" OR \"shopper demand\")",
+            "How Brand Budget Owners Evaluate Local Partnerships early window share exclusive drops -stock -shares -options -bond -yield -price target -analyst upgrade -downgrade (retail OR \"store channel\" OR \"store traffic\" OR \"shopper demand\")",
+            "How Brand Budget Owners Evaluate Local Partnerships co-branded activation case study -stock -shares -options -bond -yield -price target -analyst upgrade -downgrade (retail OR \"store channel\" OR \"store traffic\" OR \"shopper demand\")",
+            "How Brand Budget Owners Evaluate Local Partnerships partnership foot traffic uplift -stock -shares -options -bond -yield -price target -analyst upgrade -downgrade (retail OR \"store channel\" OR \"store traffic\" OR \"shopper demand\")",
+            "How Brand Budget Owners Evaluate Local Partnerships tariff outlook margin pressure -stock -shares -options -bond -yield -price target -analyst upgrade -downgrade (retail OR \"store channel\" OR \"store traffic\" OR \"shopper demand\")",
+            "How Brand Budget Owners Evaluate Local Partnerships collaboration activation foot traffic -stock -shares -options -bond -yield -price target -analyst upgrade -downgrade (retail OR \"store channel\" OR \"store traffic\" OR \"shopper demand\")"
+          ],
+          "profile": "retail",
+          "threshold": 0.35
+        }
+      },
+      "thin_evidence": true,
+      "operator_job_story": "You need to capture high-value holiday buyers with local partnerships between Nov 29 and Dec 13 without turning every activation into a headline discount race.",
+      "search_shaped_variants": [
+        "How do we shift store events earlier in the holiday calendar to avoid Cyber Monday price pressure?",
+        "Which local partner activations lift foot traffic without increasing markdown depth?",
+        "Test plan: exclusive drops in stores Nov 29\u2013Dec 13 \u2014 what metrics and cadence do we measure?",
+        "What QR or content measures prove attribution for brand\u2194brand in-store activations?"
+      ],
+      "evidence_regime": "directional",
+      "evidence_note": "Directional evidence: 9 sources \u2022 7 domains \u2022 9 in-window / 0 background \u2022 support coverage 67%",
+      "spec_notes": [],
+      "pilot_spec_issues": [],
+      "pilot_spec": {
+        "scenario": "local_partnerships_holiday_2wk",
+        "store_count": 20,
+        "store_type": "curated_pilot_stores",
+        "duration_weeks": 2,
+        "window": "Nov 29 \u2013 Dec 13, 2025",
+        "primary_move": "Run a two-week exclusive in-store drop with one brand partner across 20 curated pilot stores to raise early-window buyer share while enforcing CPA and redemption guardrails.",
+        "owner_roles": [
+          "Head of Retail",
+          "Head of Partnerships",
+          "Head of Marketing",
+          "Finance"
+        ],
+        "location_radius_miles": 5,
+        "key_metrics": [
+          "early_window_share",
+          "event_cpa",
+          "qr_redemption",
+          "foot_traffic_uplift"
+        ],
+        "window_label": "Nov 29 \u2013 Dec 13, 2025"
+      },
+      "metric_spec": {
+        "foot_traffic_uplift": {
+          "label": "Foot traffic uplift vs baseline",
+          "target_range": [
+            10.0,
+            15.0
+          ],
+          "unit": "%",
+          "stage": "target",
+          "owner": "Head of Retail",
+          "target_text": "Increase foot traffic by 10-15% vs baseline, with a stretch goal of 625%.",
+          "notes": ""
+        },
+        "early_window_share": {
+          "label": "Early-window buyer share (first 2 weeks)",
+          "target_range": [
+            20.0,
+            30.0
+          ],
+          "unit": "%",
+          "stage": "target",
+          "owner": "Head of Partnerships",
+          "target_text": "Raise early-window buyer share to 20-30% of total period buyers (current ~12-15%).",
+          "notes": ""
+        },
+        "event_cpa": {
+          "label": "Event cost per acquisition vs baseline",
+          "target_range": [
+            0.8,
+            0.8
+          ],
+          "unit": "x baseline",
+          "stage": "guardrail",
+          "owner": "Finance",
+          "target_text": "Keep event CPA at or below 0.8x baseline (ceiling guardrail).",
+          "notes": ""
+        },
+        "qr_redemption": {
+          "label": "QR/code redemption rate per footfall",
+          "target_range": [
+            5.0,
+            5.0
+          ],
+          "unit": "% of footfall",
+          "stage": "guardrail",
+          "owner": "Head of Partnerships",
+          "target_text": "Achieve at least 5% QR redemptions of footfall (activation-level pause recommended if redemptions fall below ~15%).",
+          "notes": ""
+        }
+      },
+      "role_actions": {
+        "Head of Retail": "Execute the Nov 29 Dec 13 pilot across 20 curated stores, own Foot traffic measurement and store ops, and pause any store where Event CPA > 0.8x baseline or QR redemption < 15% this window.",
+        "Head of Partnerships": "Lock partner assortment, co-funding terms, and in-store creative for the two-week exclusive drop and own Early-window share and QR redemption targets during the pilot.",
+        "Head of Marketing": "Run front-of-store media, schedule three store-as-studio shoots in high-traffic pilot stores, and measure buyer activity share versus promo intensity daily to inform pacing.",
+        "Finance": "Set and enforce the Event CPA guardrail at 0.8x baseline for the pilot, pre-approve co-funding thresholds, and stop funding if CPA guardrail is breached."
+      },
+      "spec_version": "v1",
+      "spec_ok": true
+    },
+    "read_time": 21,
+    "high_quality_signals": false,
+    "observed_quant": false,
+    "tier1_market_signals": false,
+    "claim_gate": {
+      "passed": false,
+      "errors": [
+        "unsourced_high=15 max=3",
+        "unsourced_total=22 max=8",
+        "10-15% @ executive_summary",
+        "12-15% @ executive_summary",
+        "20-30% @ executive_summary",
+        "25% @ executive_summary",
+        "0.80x @ executive_summary",
+        "5% @ highlights[2]",
+        "20-30% @ top_operator_moves[0]"
+      ]
+    },
+    "render_gate": {
+      "passed": true,
+      "errors": []
+    },
+    "metric_consistency_gate": {
+      "passed": true,
+      "errors": [],
+      "summary": {}
+    },
+    "citation_format_gate": {
+      "passed": true,
+      "errors": [],
+      "summary": {}
+    },
+    "post_run_warnings": [
+      "markdown contains sentinel token 'TBD'",
+      "claim_gate failed: unsourced_high=15 max=3; unsourced_total=22 max=8"
+    ]
+  },
+  "agent": "EnhancedSTIAgent",
+  "model": "gpt-5-mini-2025-08-07",
+  "ops_flags": {
+    "opportunities": true,
+    "brief": true
+  },
+  "operator_job_story": "You need to capture high-value holiday buyers with local partnerships between Nov 29 and Dec 13 without turning every activation into a headline discount race.",
+  "search_shaped_variants": [
+    "How do we shift store events earlier in the holiday calendar to avoid Cyber Monday price pressure?",
+    "Which local partner activations lift foot traffic without increasing markdown depth?",
+    "Test plan: exclusive drops in stores Nov 29\u2013Dec 13 \u2014 what metrics and cadence do we measure?",
+    "What QR or content measures prove attribution for brand\u2194brand in-store activations?"
+  ],
+  "approach_hints": [
+    "discount-heavy holiday",
+    "collab-led holiday",
+    "store-as-studio / media-led holiday"
+  ],
+  "source_stats": {
+    "total": 9,
+    "core": 0,
+    "support": 9,
+    "unique_domains": 7,
+    "domain_counts": {
+      "forbes.com": 3,
+      "linkedin.com": 1,
+      "businesstimes.com.sg": 1,
+      "seroundtable.com": 1,
+      "sltrib.com": 1,
+      "pimco.com": 1,
+      "microsoft.com": 1
+    },
+    "data_heavy": 6,
+    "time_span_days": 11,
+    "tier_counts": {
+      "core": 9,
+      "context": 0
+    },
+    "dominant_ratio": 0.333,
+    "headline_only": 0,
+    "thin_evidence": true,
+    "thresholds": {
+      "total": true,
+      "core": false,
+      "domains": true,
+      "data": true,
+      "dominance": true,
+      "in_window": true,
+      "background": false,
+      "support_coverage": true
+    },
+    "source_health": {
+      "counts": {
+        "full_text": 9,
+        "snippet_only": 0,
+        "blocked": 0,
+        "timeout": 0,
+        "rate_limited": 0,
+        "total": 9
+      },
+      "blocked_domains": {},
+      "issue_samples": []
+    },
+    "guardrail_contamination_ratio": 0.0,
+    "guardrail_profile": "retail",
+    "guardrail_mode": "light",
+    "support_coverage": 0.667,
+    "regime": "directional"
+  },
+  "renderers": [
+    "executive_letter_markdown",
+    "executive_letter_pdf",
+    "legacy_html"
+  ],
+  "artifact_paths": [
+    "sti_reports/sti_operator_output_20251213_150335_how_brand_budget_owners_/executive_letter.md",
+    "sti_reports/sti_operator_output_20251213_150335_how_brand_budget_owners_/executive_letter.pdf",
+    "sti_reports/sti_operator_output_20251213_150335_how_brand_budget_owners_/intelligence_report.html",
+    "sti_reports/sti_operator_output_20251213_150335_how_brand_budget_owners_/executive_letter.html"
+  ],
+  "last_publish_status": "failed",
+  "last_publish_at": "2025-12-13T23:58:44.978866+00:00",
+  "gate_status": {
+    "brief_gate": true,
+    "claim_gate": false,
+    "factual_gate": true,
+    "seo_gate": true,
+    "render_gate": true,
+    "metric_consistency_gate": true,
+    "citation_format_gate": true
+  }
+}
