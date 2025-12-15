@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capture buyers in the 48-hour window | Signal-Driven Brand Collaborations</title>
+    <style>
+        :root {
+            --bg: #f8f8f2;
+            --paper: #ffffff;
+            --text: #1b1f2b;
+            --muted: #6c7283;
+            --accent: #0a4c6a;
+            --border: #ebedf5;
+            --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            --serif: "Source Serif 4", "Spectral", Georgia, "Times New Roman", serif;
+            --sans: "Source Sans 3", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            --font-base: clamp(1rem, 0.94rem + 0.3vw, 1.15rem);
+            --line-base: 1.7;
+            --h1: clamp(2.2rem, 1.6rem + 1.2vw, 3rem);
+            --h2: clamp(1.4rem, 1.2rem + 0.4vw, 1.65rem);
+            --h3: clamp(1.15rem, 1.05rem + 0.2vw, 1.35rem);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            font-family: var(--sans);
+            color: var(--text);
+            line-height: var(--line-base);
+            font-size: var(--font-base);
+        }
+
+        .page {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 48px 24px 72px;
+        }
+
+        header {
+            background: var(--paper);
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 0 18px 60px rgba(13, 21, 45, 0.08);
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            font-family: var(--serif);
+            font-size: var(--h1);
+            margin: 0 0 12px;
+            line-height: 1.2;
+        }
+
+        h2, h3, h4 {
+            font-family: var(--serif);
+            margin-top: 48px;
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+
+        p {
+            margin: 0 0 20px;
+            font-size: var(--font-base);
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 32px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .meta-item {
+            min-width: 160px;
+        }
+
+        .meta-label {
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .meta-value {
+            font-size: 1rem;
+            margin-top: 4px;
+        }
+
+        .updated {
+            margin-top: 32px;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .hero-figure {
+            margin: 28px 0 0;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 24px 70px rgba(13, 21, 45, 0.09);
+            background: #000;
+        }
+
+        .hero-figure img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            max-height: 480px;
+        }
+
+        .hero-figure figcaption {
+            padding: 16px 28px;
+            font-size: 0.95rem;
+            color: var(--muted);
+            background: var(--paper);
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 24px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+        }
+
+        .hero-meta span strong {
+            display: block;
+            color: var(--text);
+            font-size: 0.95rem;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+
+        .inline-visual {
+            margin: 36px 0;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--paper);
+            box-shadow: 0 16px 40px rgba(13, 21, 45, 0.07);
+        }
+
+        .inline-visual img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .inline-visual figcaption {
+            padding: 18px 24px 22px;
+        }
+
+        .inline-visual .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+        }
+
+        .inline-visual .description {
+            font-size: 1rem;
+            margin-top: 6px;
+            color: var(--text);
+        }
+
+        .inline-visual .metrics {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .inline-visual .metrics span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border: 1px solid var(--border);
+            padding: 4px 8px;
+            border-radius: 999px;
+            color: var(--muted);
+            background: rgba(10, 76, 106, 0.04);
+        }
+
+        .inline-visual .metrics-focus {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        main {
+            margin-top: 42px;
+            background: var(--paper);
+            padding: 48px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            box-shadow: 0 24px 70px rgba(13, 21, 45, 0.07);
+        }
+
+        main h2 {
+            font-size: var(--h2);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 18px;
+            margin: 24px 0;
+            color: var(--accent);
+            font-style: italic;
+            background: rgba(10, 76, 106, 0.04);
+        }
+
+        code, pre {
+            font-family: var(--mono);
+            background: #f3f5fa;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        pre {
+            padding: 18px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border);
+            padding: 12px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: rgba(10, 76, 106, 0.06);
+            font-weight: 600;
+        }
+
+        ul, ol {
+            margin: 0 0 24px 20px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(10, 76, 106, 0.2);
+        }
+
+        a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        sup + sup a.footnote-ref::before {
+            content: ",";
+            margin-right: 0.12em;
+        }
+
+        .image-gallery {
+            margin-top: 52px;
+        }
+
+        .image-gallery h3 {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            margin-bottom: 18px;
+            color: var(--heading);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .image-grid figure {
+            background: var(--paper);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 14px 38px rgba(13, 21, 45, 0.08);
+        }
+
+        .image-grid img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            height: 200px;
+        }
+
+        .image-grid figcaption {
+            padding: 14px 18px 18px;
+        }
+
+        .image-grid .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+        }
+
+        .image-grid .description {
+            font-size: 0.95rem;
+            margin-top: 6px;
+            color: var(--text);
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                padding: 32px 16px;
+            }
+
+            header, main {
+                padding: 32px 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .meta {
+                flex-direction: column;
+            }
+
+            .hero-figure figcaption {
+                padding: 12px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="tagline">Signal-Driven Brand Collaborations</div>
+            <h1>Capture buyers in the 48-hour window</h1>
+            <div class="subtitle">Convert customers ready to buy in the next 48 hours without blanket discounts</div>
+            <div class="meta">
+                
+                    <div class="meta-item">
+                        <div class="meta-label">Window</div>
+                        <div class="meta-value">2025-12-01 → 2025-12-15</div>
+                    </div>
+                
+                    <div class="meta-item">
+                        <div class="meta-label">Read time</div>
+                        <div class="meta-value">~23 min read</div>
+                    </div>
+                
+                    <div class="meta-item">
+                        <div class="meta-label">Confidence</div>
+                        <div class="meta-value">Directional</div>
+                    </div>
+                
+                    <div class="meta-item">
+                        <div class="meta-label">Region</div>
+                        <div class="meta-value">US</div>
+                    </div>
+                
+            </div>
+            
+            <div class="updated">Updated Dec 15, 2025</div>
+            
+        </header>
+        
+        <figure class="hero-figure">
+            <img src="images/hero_the_shorter_decision_window_co.png" alt="Head of Brand choosing a surprise co-brand 48-hour drop test" loading="eager" />
+            <figcaption>A large share of holiday conversions happen inside a tight 48-hour window.</figcaption>
+        </figure>
+        
+        <div class="hero-meta">
+            
+            <span>Window <strong>2025-12-01 → 2025-12-15</strong></span>
+            
+            <span>Read <strong>~23 min read</strong></span>
+            
+            <span>Confidence <strong>Directional</strong></span>
+            
+        </div>
+        
+        
+        <main>
+            <h1 id="capture-buyers-in-the-48-hour-window">Capture buyers in the 48-hour window</h1>
+<p><em>Convert customers ready to buy in the next 48 hours without blanket discounts</em></p>
+<blockquote>
+<p>Execute a two-week surprise co-brand mini-drop to lift immediate purchases and measure short-window code redeems; I need sign-off to run Dec 01–15, 2025 and lock the guardrails.</p>
+</blockquote>
+<p>Limited co-brand drops consistently lift early-window share and redeem-to-purchase rates versus broad promos. That pattern suggests a small group of buyers decide almost immediately when offered a scarce, partner-backed item. These buyers are profitable if we can capture them without moving to wide discounts, because they would have bought anyway in the near term. Focus: convert the people who are ready in <strong>48 hours</strong> and protect margin.</p>
+<p>Run a two-week surprise co-brand mini-burst across web and three micro-pop stores during <strong>Dec 01–15, 2025</strong> as a focused test of the <strong>collab-led holiday</strong> approach. Keep it simple: a surprise drop, unique tracked promo codes for exposed cohorts, locked fulfillment options (reserve or same-day pickup), and a planned-announcement control to compare timing. Finance sets a hard event CPA ceiling up front and requires daily reporting; brand owns the exposure cadence and creative. If you run this for two weeks, watch how much of the period’s purchases happen inside the early window.</p>
+<p>Shifting purchase timing into the early window turns delayed consideration into realized sales now instead of uncertain pipeline. If early-window share moves to the <strong>25–35%</strong> band, stores will feel it as more immediate sell-through, fewer hesitant returns, and clearer pick-up traffic. On the floor you will see shorter inventory dwell, steadier staff conversion moments, and a cleaner promotional profit picture than mass discounts deliver. That change paginates into less markdown pressure across the season.</p>
+<p>The first thing that breaks is masking: a noisy channel mix can make early-window lifts look bigger than they are if exposure attribution is sloppy. Scarcity oversell and fulfillment failures will be visible in missed reserve pickups and rising customer complaints inside the two-week window. Watch redeem-to-purchase conversion and daily CPA; a rising CPA or falling conversion inside 14 days signals either bad targeting or cannibalization. We will also monitor repeat rates over 60–90 days to ensure we did not trade short-term timing for long-term churn.</p>
+<p>I propose the two-week Short Window Co-Brand Drop pilot as the disciplined test: brand builds the VIP exposure and planned-announcement control, promotions issues tracked codes and exposed audience counts, stores lock reserve and same-day pickup flows and report foot-traffic uplift, partnerships confirm partner-funded media and committed deliverables, and finance sets the event CPA ceiling and enforces daily reporting. Approve the Dec 01–15, 2025 two-week surprise co-brand drop pilot and commit brand, stores, promotions, partnerships, and finance to the launch guardrails and daily measurement.</p>
+<p>This window matters because Consumers are signaling compressed decision windows across channels; capturing intent inside those windows preserves margin and prevents discount escalation., Partnered micro-drops let us borrow trusted audiences and media funding now, reducing our paid acquisition spend while testing urgency mechanics at scale., and Short, instrumented windows produce clear causal readouts quickly, so we can decide to roll, scale, or stop within one planning cycle.</p>
+<p>Metrics to watch: Tracked response rate at or above 0.5% measured during the Dec 01–15, 2025 window (code redeems / exposed audience) within the two-week test.; Redeem-to-purchase conversion preserved between 40% and 55% measured over a 14-day post-redeem window for the tracked cohorts.; Early-window purchase share hitting 25%–35% of period purchases where ‘early’ is purchases within 48 hours of exposure during Dec 01–15, 2025.</p>
+<p>If that resonates, Approve the Dec 01–15, 2025 two-week surprise co-brand drop pilot and commit brand, stores, promotions, partnerships, and finance to the launch guardrails and daily measurement.</p>
+<p><em>Forward with subject: Approve: two-week surprise co-brand drop pilot (Dec 01–15, 2025)</em></p>
+            
+            <section class="image-gallery">
+                <h3>Visual Notes</h3>
+                <div class="image-grid">
+                    
+                    <figure>
+                        <img src="images/section_signal_map_the_shorter_decision_window_co.png" alt="Head of Digital reviewing early-window share and tracked response rate map for co-brand and agent tests" loading="lazy" />
+                        <figcaption>
+                            <div class="label">Signal Map</div>
+                            <div class="description">These five signals push one practical thesis: shorten the path from awareness to purchase and stop buying broad reach for long consideration. For brand-to-brand or brand-to-store collaborations, design activations as immediate-convert propositions: align local inventory, same-day fulfillment, real-time checkout (or agent-assisted flows), and 24-hour targeted incentives. Measure conversion rate, sell-through within 48 hours, and margin per converted visit as primary KPIs. Competing approaches to avoid in this window: broad sitewide discounts, long pre-sale ramps, and multi-week creative cycles that assume slow purchase timelines.</div>
+                        </figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <img src="images/section_case_study_1_the_shorter_decision_window_co.png" alt="Head of Stores running a store activation routing attendees to immediate purchase" loading="lazy" />
+                        <figcaption>
+                            <div class="label">Case Study 1</div>
+                            <div class="description">Limited co-brand drop to capture 48-hour buyers. Short-window drops consistently lift early-window share and redeem-to-purchase rates versus broad promos.</div>
+                        </figcaption>
+                    </figure>
+                    
+                </div>
+            </section>
+            
+        </main>
+    </div>
+</body>
+</html>
