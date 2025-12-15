@@ -1,5 +1,28 @@
 [
   {
+    "date": "2025-12-15-120139",
+    "href": "/intelligence/briefs/2025-12-15-120139/market-path",
+    "og": "/intelligence/briefs/2025-12-15-120139/og.png",
+    "heroImage": "/intelligence/briefs/2025-12-15-120139/images/hero_the_shorter_decision_window_co.png",
+    "title": "The Shorter Decision Window Consumers Don’t Notice",
+    "summary": "You need to convert more of the people who are ready to buy in the next **48 hours** without resorting to blanket discounts that destroy margin. Focus on raising foot-traffic uplift while holding blended margin and driving early-window share to the **25–35%**…",
+    "metadata": {
+      "sources_count": 9,
+      "confidence_score": 60,
+      "word_count": 4561
+    },
+    "keySignals": [
+      "Small Business Technology News This Week: Windows 11 Hallucinations, Amazon’s AI Agents, Nana Banana Pro Gets Tested",
+      "US job openings increase modestly in October"
+    ],
+    "intelligenceHref": "/intelligence/briefs/2025-12-15-120139/report.html",
+    "intelligenceHtml": "/intelligence/briefs/2025-12-15-120139/intelligence_report.html",
+    "marketPathHtml": "/intelligence/briefs/2025-12-15-120139/market_path_report.html",
+    "marketPathMarkdown": "/intelligence/briefs/2025-12-15-120139/market_path_report.md",
+    "intelligenceMarkdown": "/intelligence/briefs/2025-12-15-120139/intelligence_report.md",
+    "hasMarketPath": true
+  },
+  {
     "date": "2025-12-13-150335",
     "href": "/intelligence/briefs/2025-12-13-150335/market-path",
     "og": "/intelligence/briefs/2025-12-13-150335/og.png",
