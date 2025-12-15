@@ -1,0 +1,126 @@
+[
+  {
+    "type": "hero",
+    "slot": "hero",
+    "section": "Hero",
+    "anchor_section": "header",
+    "template": "hero_decision_window",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "scene": "backroom strategy table branded store studio low table",
+        "personas": "head brand head stores head promotions visible",
+        "action": "operator stamps promo card '48 hr' hands single",
+        "symbolism": "compact analog clock face set 48 hours rendered",
+        "props": "co brand sample box limited run label promo",
+        "mood": "precise decisive collaborative",
+        "lighting": "Polished editorial lighting with confident highlights on hands and the stamped card. Clean negative space around the table.",
+        "focal_point": "operator stamps promo card '48 hr' hands single"
+      },
+      "style": {
+        "framing": "slightly elevated angle looking down",
+        "lighting": "diffused skylight with controlled highlights",
+        "palette": "graphite and steel with restrained teal",
+        "geometry": "subtle ribbon-like contours",
+        "environment": "measured spatial grid"
+      },
+      "metric_focus": [
+        "early_window_share",
+        "conversion_rate",
+        "partner_value"
+      ],
+      "metric_labels": [
+        "Early-window share",
+        "Conversion rate",
+        "Partner value"
+      ]
+    },
+    "metric_focus": [
+      "early_window_share",
+      "conversion_rate",
+      "partner_value"
+    ],
+    "alt": "Head of Brand choosing a surprise co-brand 48-hour drop test",
+    "image": "images/hero_the_shorter_decision_window_co.png"
+  },
+  {
+    "type": "section",
+    "section": "Signal Map",
+    "slot": "signal_map",
+    "anchor_section": "signals_and_thesis",
+    "template": "signal_map_concentric",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "context": "these five signals push one practical thesis shorten",
+        "structure": "concentric rings radial arcs connecting lattice inner ring",
+        "elements": "promo code tokens placed inner ring store pins",
+        "motion": "flows exposure nodes at rim toward inner ring",
+        "direction": "these five signals push one practical thesis shorten",
+        "palette": "muted neutrals two confident accent tones deep teal"
+      },
+      "style": {
+        "framing": "gentle isometric framing",
+        "lighting": "half-toned studio wash",
+        "palette": "charcoal with muted teal overlays",
+        "geometry": "disciplined concentric ribbons",
+        "environment": "zen studio backdrop"
+      },
+      "metric_focus": [
+        "early_window_share",
+        "tracked_response_rate"
+      ],
+      "metric_labels": [
+        "Early-window share",
+        "Tracked response rate"
+      ]
+    },
+    "metric_focus": [
+      "early_window_share",
+      "tracked_response_rate"
+    ],
+    "alt": "Head of Digital reviewing early-window share and tracked response rate map for co-brand and agent tests",
+    "image": "images/section_signal_map_the_shorter_decision_window_co.png"
+  },
+  {
+    "type": "section",
+    "section": "Case Study 1",
+    "slot": "case_study_1",
+    "anchor_section": "mini_case_story",
+    "template": "case_play_activation",
+    "template_version": "2025-11-29.1",
+    "context": {
+      "tokens": {
+        "scene": "store activation staged like mini studio small cluster",
+        "time": "store associate scans promo code hands reservation ticket",
+        "moment": "store associate scans promo code hands reservation ticket",
+        "personas": "head stores executing store studio activation",
+        "mood": "urgent but controlled efficient hospitality",
+        "lighting": "Spotlit product with soft ambient fill; clean negative space around transaction area.",
+        "props": "reserve pickup tickets promo code wristbands attendees indicating",
+        "focal_point": "store activation staged like mini studio small cluster"
+      },
+      "style": {
+        "framing": "three-quarter view from eye level",
+        "lighting": "diffused skylight with controlled highlights",
+        "palette": "earth neutrals with electric blue accents",
+        "geometry": "minimal coaxial arcs",
+        "environment": "open negative-space retail bay"
+      },
+      "metric_focus": [
+        "conversion_rate",
+        "footfall_lift"
+      ],
+      "metric_labels": [
+        "Conversion rate",
+        "Foot-traffic uplift"
+      ]
+    },
+    "metric_focus": [
+      "conversion_rate",
+      "footfall_lift"
+    ],
+    "alt": "Head of Stores running a store activation routing attendees to immediate purchase",
+    "image": "images/section_case_study_1_the_shorter_decision_window_co.png"
+  }
+]
