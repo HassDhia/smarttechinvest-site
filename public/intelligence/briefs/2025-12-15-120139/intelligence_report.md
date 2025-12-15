@@ -2,21 +2,21 @@
 _Query_: The Shorter Decision Window Consumers Don’t Notice
 
 ### Fast Stack
-- **Headline:** Convert buyers who will act in **48 hours** by using a collab-led drop with exclusive promo codes and immediate fulfillment. Measure success on code redeems per exposed_audience and early-window share, not total two-week sales.
+- **Headline:** Convert buyers who will act in **48 hours** by using a collab-led drop with exclusive promo codes and immediate fulfillment. Measure success on code redeems per exposed audience and early-window share, not total two-week sales.
 - **Why now:** The Dec 01–15 window concentrates decision-ready shoppers and is the last holiday window to test scarcity plus fulfillment before peak season ends.
-- **Next 30 days:** Brand must own the surprise co-brand drop, Head of Stores must lock fulfillment options, and Head of Promotions must expose promo codes and report code_redeems per exposed_audience in 0–48h.
+- **Next 30 days:** Brand must own the surprise co-brand drop, Head of Stores must lock fulfillment options, and Head of Promotions must expose promo codes and report code redeems per exposed audience in 0–48h.
 
 ## Fast Path
 ### Executive Take
-You need to convert more of the people who are ready to buy in the next **48 hours** without resorting to blanket discounts that destroy margin. Focus on raising foot-traffic uplift while holding blended margin and driving early-window share to the **25–35%** anchor; track tracked response rate = code redeems / exposed audience and response-to-purchase conversion to protect event CPA ceilings and repeat rates [^5][^3]. Favor a collab-led holiday approach that uses limited co-brand drops, exclusive promo codes, and locked fulfillment (reserve or same-day pickup); in the next 30 days brand, stores, and partnerships must stand up one surprise co-brand drop and its promo_code instrumentation and measure code_redeems per exposed_audience within 0–48h versus a planned-announcement control. Success is judged by immediate early-window share lift and maintaining blended margin and event CPA against baseline while tracking repeat rate over 60–90 days [^5].
+You need to convert more of the people who are ready to buy in the next **48 hours** without resorting to blanket discounts that destroy margin. Focus on raising foot-traffic uplift while holding blended margin and driving early-window share to the **25–35%** anchor; track tracked response rate = code redeems / exposed audience and response-to-purchase conversion to protect event CPA ceilings and repeat rates [^5][^3]. Favor a collab-led holiday approach that uses limited co-brand drops, exclusive promo codes, and locked fulfillment (reserve or same-day pickup); in the next 30 days brand, stores, and partnerships must stand up one surprise co-brand drop and its promo code instrumentation and measure code redeems per exposed audience within 0–48h versus a planned-announcement control. Success is judged by immediate early-window share lift and maintaining blended margin and event CPA against baseline while tracking repeat rate over 60–90 days [^5].
 
 ### Highlights
 - Most high-value conversions cluster in the first **48 hours** after exposure; treat 0–48h as the test cell [^5].
 - Limited collabs and exclusive drops lift early-window share with less margin erosion than broad discounts; expect **redeem→purchase 40–55%** from tracked responses [^3][^5].
-- Instrument promo_code redeems / exposed_audience and segment by 0–48h vs 49–168h to measure true incrementality and protect blended margin.
+- Instrument promo code redeems / exposed audience and segment by 0–48h vs 49–168h to measure true incrementality and protect blended margin.
 
 ### Top Operator Moves
-- Launch one surprise co-brand drop between Dec 01–15 with limited inventory and unique promo codes, measure code_redeems per exposed_audience in 0–48h against a planned-announcement control.
+- Launch one surprise co-brand drop between Dec 01–15 with limited inventory and unique promo codes, measure code redeems per exposed audience in 0–48h against a planned-announcement control.
 - Enable reserve and same-day pickup for the drop, route store activations to immediate purchase, and set a foot-traffic uplift target versus baseline before the test.
 - Run a 24-hour targeted discount arm for lapsed vs active customers, cap partner-funded payback, and hold blended margin and event CPA ceilings while tracking response-to-purchase conversion.
 
@@ -56,8 +56,8 @@ _Spine:_ What: A large share of holiday conversions happen inside a tight 48-hou
 ## Measurement Spine
 ### Anchors
 - **Tracked response rate (promo code) guardrail:** Tracked response rate = code redeems / exposed audience; hold at least 0.5% and aim up to 2.0% depending on cohort; floor versus baseline (see M1). (Head of Promotions)
-- **Redeem-to-purchase conversion guardrail:** Purchases from tracked redeems / code redeems over 14 days; preserve 40%55% redeem-to-purchase conversion (see M3). (Head of CRM)
-- **Early-window purchase share (0-48h):** Share of period purchases occurring within 48 hours of exposure; target 25%35% to confirm the move shifted timing (see M2). (Head of Brand)
+- **Redeem-to-purchase conversion guardrail:** Purchases from tracked redeems / code redeems over 14 days; preserve 40–55% redeem-to-purchase conversion (see M3). (Head of CRM)
+- **Early-window purchase share (0-48h):** Share of period purchases occurring within 48 hours of exposure; target 25–35% to confirm the move shifted timing (see M2). (Head of Brand)
 - **Event CPA (run) guardrail:** Set an event CPA ceiling versus baseline before launch and enforce it as a guardrail; numeric ceiling to be locked pre-launch (finance-owned). (Finance)
 ### Measurement Plan
 - **Tracked Response Rate (Promo Code)** (Head of Promotions, Dec 01–15, 2025 (redeem look-forward 14 days)) — Code Redeems / Exposed Audience per Promo Code cohort (Dec 01–15; measure redeems through day 14)
@@ -74,19 +74,19 @@ _Spine:_ What: A large share of holiday conversions happen inside a tight 48-hou
 ### High-value 48-hour buyers are concentrated: A large share of holiday conversions happen inside a tight 48-hour window.
 You will find a disproportionate share of purchases occur within 0–48 hours after exposure, not evenly across the two-week window [^5][^9]. That concentrates value: short windows capture buyers who are already decision-ready and who convert at materially higher redeem-to-purchase rates than later responders [^3][^5]. Expect early-window share of sales to sit near the 25–35% anchor unless you change scarcity or fulfillment frictions [^5][^9].
 *Operator note:* Treat the first 48 hours after any promotion or activation as the high-value test cell. Limit supply, tighten messaging to 'available now' and lock fulfillment options (reserve, same-day pickup) so the offer cannot be delayed. Do not measure success on total two-week sales; measure on early-window share and margin from that early cohort.
-*Instrument next:* Instrument code_redeems per exposed_audience segmented by time-since-exposure (0–48h vs 49–168h) for each promotion type (co-brand drop, sitewide discount, store activation).
+*Instrument next:* Instrument code redeems per exposed audience segmented by time-since-exposure (0–48h vs 49–168h) for each promotion type (co-brand drop, sitewide discount, store activation).
 ### Limited collabs preserve margin; blanket discounts do not: Co-branded scarcity lifts early buys with less margin erosion than broad discounts.
 A scarcity-led co-brand drop converts quickly with partner-funded media and higher perceived value, so blended margin holds up better than equivalent sitewide discounts [^5][^9]. Blanket discounts widen reach but drive low incremental margin and can cannibalize regular buyers, pushing redeem-to-purchase ratios down even if raw redeems rise [^5][^9]. When you move from partner-funded scarcity to broad discounts what breaks is payback: you lose partner value and substitute margin for volume with limited incremental customers [^3].
 *Operator note:* Run a controlled co-brand drop where partner provides co-op or audience access and you cap supply. Price with a modest incentive that partners can fund. Compare against a matched sitewide discount by channel and audience. Preserve SKU-level margin floors and block deep discounts on best-sellers so you measure true incrementality.
-*Instrument next:* Instrument Blended margin and Partner value per code_redeem, comparing co-brand limited-drop codes vs sitewide discount codes, normalized to exposed_audience.
+*Instrument next:* Instrument Blended margin and Partner value per code redeems, comparing co-brand limited-drop codes vs sitewide discount codes, normalized to exposed audience.
 ### AI checkout nudges speed decisions but require guardrails: Agent prompts can shorten sessions into purchases but risk wrong offers.
 Agent-assisted prompts at checkout can extend session attention and push ready buyers to buy now, increasing conversion and revenue per session when the agent suggests relevant SKUs and fulfillment options [^1]. The second-order risk is model error: hallucinated recommendations, incorrect inventory claims, or irrelevant upsells will degrade trust and reverse gains quickly [^1]. So the performance lift is real but fragile; it depends on tight templates, inventory checks, and human fallback.
-*Operator note:* Pilot agent-assisted checkout on a small, high-intent cohort. Limit agent actions to showing available fulfillment options, applying a single event promo_code, and confirming stock. Log agent suggestions and human overrides to diagnose hallucination vectors before scaling.
-*Instrument next:* Instrument Conversion rate and incremental revenue per session for agent-assisted checkout cohorts vs non-agent controls, using code_redeems per exposed_audience to attribute offers.
+*Operator note:* Pilot agent-assisted checkout on a small, high-intent cohort. Limit agent actions to showing available fulfillment options, applying a single event promo code, and confirming stock. Log agent suggestions and human overrides to diagnose hallucination vectors before scaling.
+*Instrument next:* Instrument Conversion rate and incremental revenue per session for agent-assisted checkout cohorts vs non-agent controls, using code redeems per exposed audience to attribute offers.
 ### Store-as-studio fixes friction into immediate buys: Routing attendees to immediate pickup multiplies conversion from store activations.
 In-store activations produce foot traffic but only convert predictably when fulfillment removes delay; reserve-for-pickup and same-day fulfilment convert a much higher share of attendees into purchases [^5][^3]. The mechanism is simple: you remove the waiting decision and the online comparison impulse that kills urgency. If you swap durable inventory holds and express pickup for normal fulfillment, conversion and AOV spike without broad discounts [^5][^3][^8].
-*Operator note:* Design activations so the CTA is purchase or reserve-for-pickup now. Hold inventory with a separate pickup pool, sell a strictly limited quantity, and tag sales with a promo_code assigned only at the event. Track AOV and repeat intent for these buyers; treat store staff as sales media and measure cost-per-attendee-to-purchase.
-*Instrument next:* Instrument Foot traffic and code_redeems per exposed_audience for the activation cohort vs baseline store days, and track Event CPA and Repeat rate for purchases tied to event codes.
+*Operator note:* Design activations so the CTA is purchase or reserve-for-pickup now. Hold inventory with a separate pickup pool, sell a strictly limited quantity, and tag sales with a promo code assigned only at the event. Track AOV and repeat intent for these buyers; treat store staff as sales media and measure cost-per-attendee-to-purchase.
+*Instrument next:* Instrument Foot traffic and code redeems per exposed audience for the activation cohort vs baseline store days, and track Event CPA and Repeat rate for purchases tied to event codes.
 
 ## Pattern Matches
 - **Surprise co‐brand drop**
@@ -117,16 +117,16 @@ In-store activations produce foot traffic but only convert predictably when fulf
   Then: Retailers sold early access to subscribers so a higher share of sales happened in the early window and reduced public discount pressure.
   Now: Give a small VIP cohort 48‐hour early access and use scarcity messaging to capture early‐window purchases and preserve later pricing.
   Operator leap: Grant VIP cohort 48‐hour early access to new drops Dec 01–15; measure early‐window share (purchases in first 48 hours / total) and repeat rate over 60–90 days.
-- **Short‐expiry promo_code instrumentation**
+- **Short‐expiry promo code instrumentation**
   Then: Timed coupon codes in emails let marketers measure who acted quickly and attribute purchases to the campaign.
-  Now: Use promo_code with 48‐hour expiry to expose a controlled audience and track code_redeems per exposed_audience to see true short‐window responsiveness.
-  Operator leap: Deploy a promo_code that expires after 48 hours to a defined exposed audience Dec 01–15; track code_redeems / exposed_audience and purchases from tracked responses to set promo response floors.
+  Now: Use promo code with 48‐hour expiry to expose a controlled audience and track code redeems per exposed audience to see true short‐window responsiveness.
+  Operator leap: Deploy a promo code that expires after 48 hours to a defined exposed audience Dec 01–15; track code redeems / exposed audience and purchases from tracked responses to set promo response floors.
 
 ## Brand & Operator Outcomes
-- **Short-window surprise co‐brand drop to corral 48‐hour buyers** (Partnerships / Head of Brand · Dec 01 	6 15, 2025): Run a surprise, partner-funded limited drop in Dec 01–15 restricted to an invite cohort using unique promo_code access. This concentrates buyers who are already decision-ready and moves demand forward: target moving 20% of expected demand into the 48‐hour purchase window without a sitewide price cut. Measure with promo_code redeems (code_redeem / exposed_audience) and compare 48‐hour sell‐through and early_window_share against a planned-announcement control to confirm margin hold.[^7][^5] (Impact: early_window_share; blended_margin; tracked_response_rate)
-- **Agent-assisted checkout prompt to convert intent within sessions** (Head of Digital · Dec 01 	6 15, 2025): A randomized test that surfaces an AI agent checkout prompt for users with high purchase intent and a time-limited promo_code nudges them to buy immediately. Reducing friction and offering a narrow-window incentive converts more ready buyers in-session and shortens the decision window without broad discounts. Track conversion rate and incremental revenue per session via code_redeems (code_redeem / exposed_audience) and monitor event_cpa against baseline.[^1] (Impact: conversion rate; event_cpa; incremental revenue per session)
-- **24-hour targeted discounts: lapsed vs active cohorts** (Head of Promotions (CRM) · Dec 01 	6 15, 2025): Run parallel 24‐hour promo_code offers, one to lapsed customers and one to active buyers, rather than a single sitewide discount. Narrow windows and audience segmentation raise response efficiency and preserve blended margin while pulling purchases into the near term. Measure tracked_response_rate = code_redeems / exposed_audience and response_to_purchase_conversion; compare margin per converted visit and uplift versus a sitewide discount control.[^5][^9] (Impact: blended_margin; throughput; repeat_rate)
-- **Store-as-studio activation routed to immediate purchase or reserved pickup** (Head of Stores · Dec 01 	6 15, 2025): Run one in-store activation that funnels attendees to immediate checkout or a reserved-pickup flow tied to a unique promo_code. This converts experiential foot traffic into same‐day sales, raising foot_traffic_uplift and immediate conversion without broad online discounts. Track code_redeem rate from activation-exposed audience, conversion from activation foot traffic, and AOV to validate throughput and incremental margin.[^5][^3] (Impact: foot_traffic_uplift; throughput; incremental margin)
+- **Short-window surprise co‐brand drop to corral 48‐hour buyers** (Partnerships / Head of Brand · Dec 01–15, 2025): Run a surprise, partner-funded limited drop in Dec 01–15 restricted to an invite cohort using unique promo code access. This concentrates buyers who are already decision-ready and moves demand forward: target moving 20% of expected demand into the 48‐hour purchase window without a sitewide price cut. Measure with promo code redeems (code redeems / exposed audience) and compare 48‐hour sell‐through and Early-window share against a planned-announcement control to confirm margin hold.[^7][^5] (Impact: Early-window share; Blended margin; Tracked response rate)
+- **Agent-assisted checkout prompt to convert intent within sessions** (Head of Digital · Dec 01–15, 2025): A randomized test that surfaces an AI agent checkout prompt for users with high purchase intent and a time-limited promo code nudges them to buy immediately. Reducing friction and offering a narrow-window incentive converts more ready buyers in-session and shortens the decision window without broad discounts. Track conversion rate and incremental revenue per session via code redeems (code redeems / exposed audience) and monitor Event CPA against baseline.[^1] (Impact: conversion rate; Event CPA; incremental revenue per session)
+- **24-hour targeted discounts: lapsed vs active cohorts** (Head of Promotions (CRM) · Dec 01–15, 2025): Run parallel 24‐hour promo code offers, one to lapsed customers and one to active buyers, rather than a single sitewide discount. Narrow windows and audience segmentation raise response efficiency and preserve blended margin while pulling purchases into the near term. Measure Tracked response rate = code redeems / exposed audience and Response-to-purchase conversion; compare margin per converted visit and uplift versus a sitewide discount control.[^5][^9] (Impact: Blended margin; throughput; Repeat rate)
+- **Store-as-studio activation routed to immediate purchase or reserved pickup** (Head of Stores · Dec 01–15, 2025): Run one in-store activation that funnels attendees to immediate checkout or a reserved-pickup flow tied to a unique promo code. This converts experiential foot traffic into same‐day sales, raising Foot traffic and immediate conversion without broad online discounts. Track code redeems rate from activation-exposed audience, conversion from activation foot traffic, and AOV to validate throughput and incremental margin.[^5][^3] (Impact: Foot traffic; throughput; incremental margin)
 
 ## Activation Kit
 ### Limited co-brand drop to capture 48-hour buyers
@@ -140,12 +140,12 @@ Proof: Short-window drops consistently lift early-window share and redeem-to-pur
 Placement options: VIP email + unique promo code, In-app surprise banner + code, Micro pop in 3 stores with reserve-for-pickup codes
 Target map:
   - Head of Brand (Brand): Owns creative and authorized limited inventory allocations for scarcity tests
-  - Head of Digital (Digital): Delivers codes to app/email and measures code_redeems
+  - Head of Digital (Digital): Delivers codes to app/email and measures code redeems
   - Head of Stores (Stores): Runs the small in-store pop and executes reserve pickup
 Cadence:
   - Day 0: Launch kickoff — Confirm inventory tranche, code lists, creative, and tracking for the 48-hour cell. (CTA: Send 1-page runbook to merchandising, store ops, and finance)
-  - Day 1: Reconfirm instrumentation — Validate promo code mapping to exposed_audience and set live dashboards for 0–48h metrics. (CTA: Book 30-minute readout with finance and ops to review guardrails)
-  - Day 3: Early-window review — Compare 0–48h code_redeems, redeem-to-purchase, CPA versus run guardrail and decide scale/stop. (CTA: Deliver scale/kill decision memo to executive sponsor)
+  - Day 1: Reconfirm instrumentation — Validate promo code mapping to exposed audience and set live dashboards for 0–48h metrics. (CTA: Book 30-minute readout with finance and ops to review guardrails)
+  - Day 3: Early-window review — Compare 0–48h code redeems, redeem-to-purchase, CPA versus run guardrail and decide scale/stop. (CTA: Deliver scale/kill decision memo to executive sponsor)
 Ops tags: owner Head of Brand x Head of Digital; Head of Stores | Collab type brand↔operator | Zero new SKUs: No | Ops drag: medium
 ### Agent nudge at checkout to lift conversion
 
@@ -176,11 +176,11 @@ Proof: Segmented 24-hour discounts produce higher margin per converted visit tha
 Placement options: Email to lapsed segment with unique 24h code, Site banner for active customers with time-limited code
 Target map:
   - Head of Promotions (Marketing): Executes targeted messages and discount economics
-  - Head of CRM (CRM): Delivers segmented sends and measures code_redeems
+  - Head of CRM (CRM): Delivers segmented sends and measures code redeems
   - Head of Finance (Finance): Validates margin and 90-day repeat thresholds
 Cadence:
   - Day 0: Test kickoff — Publish segment lists, allocate codes, and freeze SKU margins for the 24-hour cell. (CTA: Send 1-page runbook to merchandising, store ops, and finance)
-  - Day 1: Immediate post-window review — Measure code_redeems, margin per order, and short-term CPA to decide extension. (CTA: Book 30-minute readout with finance and ops to review guardrails)
+  - Day 1: Immediate post-window review — Measure code redeems, margin per order, and short-term CPA to decide extension. (CTA: Book 30-minute readout with finance and ops to review guardrails)
   - Day 30: Repeat and margin check — Assess 90-day repeat and net margin impact to validate channel and segment approach. (CTA: Deliver scale/kill decision memo to executive sponsor)
 Ops tags: owner Head of Promotions x Head of CRM; Head of Finance | Collab type brand↔operator | Zero new SKUs: Yes | Ops drag: low
 
@@ -189,7 +189,7 @@ _The Brand Collab Lab turns these plays into named concepts, deck spines, and ou
 ## Risk Radar
 - **Aggregating two-week results hides 0–48h performance.** (Severity 3, Likelihood 3)
   Trigger: Reporting success on total promotion sales or conversion without time-since-exposure segmentation.
-  Detection: Measure conversion rate and share of sales per exposed_user at 0–48h vs 49–168h and early-window margin per converted visit.
+  Detection: Measure conversion rate and share of sales per exposed user at 0–48h vs 49–168h and early-window margin per converted visit.
   Mitigation: Segment all promo reporting by 0–48h and 49–168h; make early-window conversion rate and margin per converted visit the primary KPI; pause or redesign offers that miss early-window targets in two consecutive tests.
 - **Limited drops sell faster than fulfillment can deliver.** (Severity 3, Likelihood 2)
   Trigger: Running a co-brand drop or limited-inventory promotion without checking pick/pack and pickup capacity.
@@ -209,7 +209,7 @@ _The Brand Collab Lab turns these plays into named concepts, deck spines, and ou
 <!-- image:future_outlook -->
 - **6-month** Co-branded 48-hour drops capture high-intent buyers and protect margin: If true, we will see 25–35% of campaign conversions occur inside the first 48 hours of tight co-brand drops within 6 months (confidence 0.80)
   Operators run short, scarce co-brand drops with locked fulfillment (reserve, same-day pickup) and tightened messaging; early buyers convert immediately rather than waiting for sitewide sales [^5]. This works because a large share of holiday conversions live in a 0–48 hour window and decision-ready shoppers respond to scarcity and immediate pickup options more than broad discounts [^3]. If you adopt this as the default you will celebrate higher margin per converted visit and faster sell-through; if you fail to adopt it you will regret leaving early-window demand to competitors or to later discounting [^9].
-  Watch redeems per exposed_audience within 0–48h (early-window conversion rate) for Capture a disproportionate share of seasonal sales in the early window while holding 10–15 percentage points higher margin versus sitewide discounts
+  Watch redeems per exposed audience within 0–48h (early-window conversion rate) for Capture a disproportionate share of seasonal sales in the early window while holding 10–15 percentage points higher margin versus sitewide discounts
 - **12-month** Blanket discounts win volume but erode margin and train delayed buying: If true, we will see rising reliance on sitewide discounts and lower margin per converted visit across peak periods within 12 months (confidence 0.70)
   Teams lean on broad, time-limited discounts to hit short-term revenue targets and shoppers learn to wait for price drops [^5]. Discount dependence lowers AOV and compresses margin because it shifts conversion timing later and reduces urgency among decision-ready buyers who would have bought in the early window [^9]. If discounting becomes the dominant play you will celebrate short-term revenue spikes but regret long-term margin erosion and higher acquisition cost to re-train buyers out of discount cadence [^5].
   Watch margin per converted visit for discounted cohorts versus non-discounted early-window cohorts for If controlled, discounts can protect short-term revenue; the upside is temporary volume gains while teams build segmented incentives to avoid training buyers to delay
