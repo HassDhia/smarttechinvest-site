@@ -399,11 +399,11 @@
     "sti_reports/sti_operator_output_20251215_120139_the_shorter_decision_win/intelligence_report.html",
     "sti_reports/sti_operator_output_20251215_120139_the_shorter_decision_win/executive_letter.html"
   ],
-  "last_publish_status": "failed",
-  "last_publish_at": "2025-12-15T20:16:23.972508+00:00",
+  "last_publish_status": "published",
+  "last_publish_at": "2025-12-15T20:39:16.248320+00:00",
   "gate_status": {
     "brief_gate": true,
-    "claim_gate": false,
+    "claim_gate": true,
     "factual_gate": true,
     "seo_gate": true,
     "render_gate": true,
