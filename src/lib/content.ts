@@ -1,8 +1,9 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from "node:fs";
+import path from "node:path";
 
-const PUBLIC_DIR = path.join(process.cwd(), 'public');
-const BRIEF_MANIFEST = path.join(PUBLIC_DIR, 'intelligence/briefs', 'manifest.json');
+import briefManifestJson from "../../public/intelligence/briefs/manifest.json";
+
+const PUBLIC_DIR = path.join(process.cwd(), "public");
 
 export type BriefMetadata = {
   sources_count: number;
@@ -55,15 +56,10 @@ export interface BriefManifestEntry {
 }
 
 function readManifest(): BriefManifestEntry[] {
-  try {
-    if (!fs.existsSync(BRIEF_MANIFEST)) {
-      return [];
-    }
-    const raw = fs.readFileSync(BRIEF_MANIFEST, 'utf8');
-    return JSON.parse(raw);
-  } catch {
+  if (!Array.isArray(briefManifestJson)) {
     return [];
   }
+  return briefManifestJson as BriefManifestEntry[];
 }
 
 export function listBriefs(): Brief[] {
