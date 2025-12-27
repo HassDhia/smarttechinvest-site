@@ -116,20 +116,6 @@ export default async function BlogPostPage({ params }: Props) {
           <MDXRemote source={post.content} />
         </div>
 
-        {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-[hsl(var(--border))]">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[hsl(var(--brand))] to-[hsl(var(--brand-dark,var(--brand)))] flex items-center justify-center text-xl font-bold text-white">
-              H
-            </div>
-            <div>
-              <p className="font-semibold">{post.author || 'Hass Dhia'}</p>
-              <p className="text-sm text-[hsl(var(--foreground-secondary))]">
-                Chief Strategy Officer at Smart Technology Investments
-              </p>
-            </div>
-          </div>
-        </footer>
       </article>
     </main>
   );
