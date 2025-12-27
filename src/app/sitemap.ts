@@ -1,7 +1,17 @@
 import { MetadataRoute } from 'next';
+import { getAllPosts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://smarttechinvest.com';
+
+  // Get all blog posts for dynamic sitemap entries
+  const posts = getAllPosts();
+  const blogEntries: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
 
   return [
     {
@@ -40,6 +50,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 0.9,
     },
+    // Individual blog posts (auto-generated)
+    ...blogEntries,
     {
       url: `${baseUrl}/collab-lab`,
       lastModified: new Date(),
