@@ -101,16 +101,18 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Content */}
         <div className="
           prose prose-lg max-w-none dark:prose-invert
-          prose-headings:font-bold
+          text-[hsl(var(--foreground))]
+          prose-headings:font-bold prose-headings:text-[hsl(var(--foreground))]
           prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6
           prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
-          prose-p:my-6 prose-p:leading-relaxed
+          prose-p:my-6 prose-p:leading-relaxed prose-p:text-[hsl(var(--foreground))]
           prose-a:text-[hsl(var(--brand))] prose-a:no-underline hover:prose-a:underline
           prose-img:rounded-lg prose-img:my-8 prose-img:mx-auto
-          prose-blockquote:border-l-4 prose-blockquote:border-[hsl(var(--brand))] prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:my-8
+          prose-blockquote:border-l-4 prose-blockquote:border-[hsl(var(--brand))] prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:my-8 prose-blockquote:text-[hsl(var(--foreground-secondary))]
           prose-strong:text-[hsl(var(--foreground))]
+          prose-em:text-[hsl(var(--foreground))]
           prose-hr:my-12 prose-hr:border-[hsl(var(--border))]
-          prose-ul:my-6 prose-li:my-2
+          prose-ul:my-6 prose-li:my-2 prose-li:text-[hsl(var(--foreground))]
           prose-pre:bg-[hsl(var(--card))]
         ">
           <MDXRemote source={post.content} />
