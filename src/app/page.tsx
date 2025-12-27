@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { Button } from "../components/ui/Button";
-import { listBriefs } from "../lib/content";
+import { getAllPosts } from "../lib/blog";
 
 export const metadata: Metadata = {
   title: "STI - Build Your Brand-Partnerships Growth Arm",
@@ -53,8 +53,8 @@ const services = [
 ];
 
 export default function Home() {
-  const briefs = listBriefs().filter((brief) => (brief.metadata?.sources_count ?? 0) > 0);
-  const featuredBriefs = briefs.slice(0, 2);
+  const posts = getAllPosts();
+  const featuredPosts = posts.slice(0, 2);
 
   return (
     <main className="font-sans min-h-screen bg-[hsl(var(--background))] text-[hsl(var(--foreground))]">
@@ -148,69 +148,74 @@ export default function Home() {
         </Button>
       </section>
 
-      <section id="intelligence" className="container section space-y-12">
+      <section id="blog" className="container section space-y-12">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl space-y-4">
-            <h2 className="headline-lg">Intelligence that turns into deals</h2>
+            <p className="headline-label text-[hsl(var(--primary))]">Insights</p>
+            <h2 className="headline-lg">Ideas that sharpen your edge</h2>
             <p className="text-[hsl(var(--foreground-secondary))] text-base leading-relaxed">
-              Market research built to spot patterns, not generate noise. Each report includes an activation angle you can act on.
+              Neuroscience, behavioral economics, and AI—applied to real business problems. Written for operators who want to understand why things work, not just what to do.
             </p>
           </div>
-          <div className="flex flex-col gap-2 sm:items-end">
+          <div className="flex flex-col gap-3 sm:items-end">
             <Button asChild variant="primary" size="md" className="rounded-full uppercase tracking-[0.25em] text-sm px-7 py-3">
-              <Link href="/intelligence">
-                Get the briefs
+              <Link href="/blog">
+                Read the blog
               </Link>
             </Button>
             <a
-              href="mailto:partnerships@smarttechinvest.com?subject=STI%20Collaboration%20Review%20%7C%20Operator"
+              href="mailto:partnerships@smarttechinvest.com?subject=Subscribe%20to%20STI%20Blog"
               className="text-xs uppercase tracking-[0.4em] text-[hsl(var(--foreground-tertiary))] hover:text-[hsl(var(--foreground))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))]"
             >
-              Request a collaboration review
+              Subscribe for updates
             </a>
           </div>
         </div>
-        {featuredBriefs.length > 0 ? (
+        {featuredPosts.length > 0 ? (
           <div className="grid gap-6 sm:grid-cols-2">
-            {featuredBriefs.map((brief) => {
-              const preview = brief.heroImage || "/assets/og/default-brief.png";
-              const { label, dateTime } = formatBriefDate(brief.date);
+            {featuredPosts.map((post) => {
+              const preview = post.featuredImage || "/assets/og/default-brief.png";
+              const { label, dateTime } = formatBriefDate(post.date);
               return (
                 <Link
-                  key={brief.date}
-                  href={brief.href}
-                  className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--primary))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))]"
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--primary))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] transition-all hover:border-[hsl(var(--primary)/0.5)]"
                 >
                   <article className="h-full">
-                    <div className="relative aspect-[4/3]">
+                    <div className="relative aspect-[16/9]">
                       <Image
                         src={preview}
-                        alt={brief.title || "Brief preview"}
+                        alt={post.title}
                         fill
-                        className="object-cover transition-opacity duration-300 hover:opacity-80"
-                        sizes="(min-width:1280px) 30vw, (min-width:768px) 33vw, 90vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(min-width:1280px) 30vw, (min-width:768px) 50vw, 90vw"
                       />
-	                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-	                      <div className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.5em] text-white/65">
-	                        Strategic Brief
-	                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                       <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-2xl font-semibold uppercase leading-tight text-white">{brief.title || "Operator Brief"}</h3>
+                        <h3 className="text-xl font-semibold leading-tight text-white group-hover:text-white/90 transition-colors">{post.title}</h3>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between border-t border-[hsl(var(--border))] p-5 text-[11px] uppercase tracking-[0.45em] text-[hsl(var(--foreground-secondary))]">
-                      <span>{dateTime ? <time dateTime={dateTime}>{label}</time> : label}</span>
-                      <span>{brief.metadata?.sources_count ?? 0} sources</span>
+                    <div className="p-5 space-y-3">
+                      <p className="text-sm text-[hsl(var(--foreground-secondary))] line-clamp-2">{post.excerpt}</p>
+                      <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.45em] text-[hsl(var(--foreground-tertiary))]">
+                        <span>{dateTime ? <time dateTime={dateTime}>{label}</time> : label}</span>
+                        {post.tags && post.tags.length > 0 && (
+                          <span>{post.tags[0]}</span>
+                        )}
+                      </div>
                     </div>
                   </article>
                 </Link>
               );
             })}
           </div>
-	        ) : (
-	          <div className="text-sm text-[hsl(var(--foreground-secondary))]">Strategic briefs will load after the next ingest.</div>
-	        )}
-	      </section>
+        ) : (
+          <div className="rounded-2xl border border-[hsl(var(--border))] bg-[hsl(var(--card))] p-8 text-center">
+            <p className="text-[hsl(var(--foreground-secondary))]">New posts coming soon. Subscribe to get notified.</p>
+          </div>
+        )}
+      </section>
     </main>
   );
 }

@@ -79,7 +79,7 @@ export default function ApplyPage() {
           <div className="space-y-2">
             <p className="text-xs uppercase tracking-[0.4em] text-white/60">Signals</p>
             <div className="grid gap-4 md:grid-cols-2">
-              <ToggleField id="sendBriefs" label="Send me the briefs" />
+              <ToggleField id="sendBriefs" label="Subscribe to the blog" />
               <ToggleField id="collaborationIntent" label="I want to be considered for a collaboration" defaultChecked />
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function ApplyPage() {
             </Button>
             {status === "success" && (
               <p className="text-sm text-emerald-400" role="status">
-                Received. If there is a fit, we will reach out. If you opted into briefs, you will receive the next issue.
+                Received. If there is a fit, we will reach out. If you subscribed to the blog, you&apos;ll get new posts.
               </p>
             )}
             {status === "error" && errorMessage && (

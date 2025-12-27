@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
       <p><strong>Past Brand Work:</strong> ${brandWork || "—"}</p>
       <p><strong>Constraints / Exclusions:</strong> ${constraints || "—"}</p>
       <p><strong>Notes:</strong><br />${formatHtmlMultiline(notes)}</p>
-      <p><strong>Send briefs?</strong> ${sendBriefs ? "Yes" : "No"}</p>
+      <p><strong>Subscribe to blog?</strong> ${sendBriefs ? "Yes" : "No"}</p>
       <p><strong>Collaboration intent?</strong> ${collaborationIntent ? "Yes" : "No"}</p>
       <p><strong>Distribution attachment:</strong> ${attachmentLabel}</p>
     `;
@@ -104,7 +104,7 @@ export async function POST(req: NextRequest) {
       `Past Brand Work: ${brandWork || "—"}\n` +
       `Constraints / Exclusions: ${constraints || "—"}\n` +
       `Notes: ${formatTextMultiline(notes)}\n` +
-      `Send briefs?: ${sendBriefs ? "Yes" : "No"}\n` +
+      `Subscribe to blog?: ${sendBriefs ? "Yes" : "No"}\n` +
       `Collaboration intent?: ${collaborationIntent ? "Yes" : "No"}\n` +
       `Distribution attachment: ${attachmentLabel}\n`;
 

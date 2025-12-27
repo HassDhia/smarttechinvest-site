@@ -75,10 +75,20 @@ export function getPostBySlug(slug: string): BlogPost | null {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
+  // Ensure date is a string (gray-matter may parse YAML dates as Date objects)
+  let dateStr: string;
+  if (data.date instanceof Date) {
+    dateStr = data.date.toISOString().split('T')[0];
+  } else if (typeof data.date === 'string') {
+    dateStr = data.date;
+  } else {
+    dateStr = new Date().toISOString().split('T')[0];
+  }
+
   return {
     slug,
     title: data.title || 'Untitled',
-    date: data.date || new Date().toISOString().split('T')[0],
+    date: dateStr,
     excerpt: data.excerpt || data.description || '',
     description: data.description,
     tags: data.tags || [],
