@@ -4,7 +4,8 @@ export type NavLink = {
 };
 
 export const navLinks: NavLink[] = [
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
   { label: "Intelligence", href: "/#intelligence" },
-  { label: "About Us", href: "/#examples" },
-  { label: "Apply", href: "/#apply" },
+  { label: "Contact", href: "/#contact" },
 ];

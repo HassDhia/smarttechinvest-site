@@ -1,7 +1,7 @@
 export function IntelligenceReportContent({ html }: { html: string }) {
   if (!html) {
     return (
-      <div className="text-sm text-[var(--text-secondary)]">
+      <div className="text-sm text-[hsl(var(--foreground-secondary))]">
         Intelligence report content unavailable. Open the standalone HTML file instead.
       </div>
     );

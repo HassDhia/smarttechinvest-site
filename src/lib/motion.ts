@@ -1,4 +1,4 @@
-export const durations = { xsm: 0.12, sm: 0.18, md: 0.24, lg: 0.32 } as const;
+export const durations = { xsm: 0.12, sm: 0.2, md: 0.32, lg: 0.5 } as const;
 export const easings = { standard: [0.2, 0.8, 0.2, 1] as const } as const;
 export const distances = { xsm: 4, sm: 6, md: 12 } as const;
 

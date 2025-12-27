@@ -5,6 +5,7 @@ import { Menu, X, ChevronRight } from "lucide-react";
 import { AnimatePresence, m } from "framer-motion";
 import { durations, easings, overlayVariants } from "../lib/motion";
 import { navLinks } from "../lib/nav-links";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -38,22 +39,25 @@ export function MobileNav() {
   return (
     <div className="lg:hidden">
       <div
-        className="fixed top-0 inset-x-0 z-50 border-b border-[var(--border-subtle)] bg-[var(--bg-elevated)] px-4 shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
+        className="fixed top-0 inset-x-0 z-50 border-b border-[hsl(var(--border))] bg-[hsl(var(--card))] px-4 shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
         style={{ paddingTop: "env(safe-area-inset-top)" }}
       >
-        <div className="flex h-14 items-center justify-between text-[0.65rem] tracking-[0.35em] uppercase text-[var(--text-secondary)]">
-          <Link href="/" className="font-semibold text-[var(--text-primary)] tracking-[0.5em]">
+        <div className="flex h-14 items-center justify-between text-[0.65rem] tracking-[0.35em] uppercase text-[hsl(var(--foreground-secondary))]">
+          <Link href="/" className="font-semibold text-[hsl(var(--foreground))] tracking-[0.5em]">
             STI
           </Link>
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((prev) => !prev)}
-            className="rounded-full border border-white/30 p-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 bg-transparent"
-          >
-            {open ? <X aria-hidden /> : <Menu aria-hidden />}
-          </button>
+          <div className="flex items-center gap-2">
+            <ThemeToggle className="h-8 px-3 py-1 text-[0.6rem]" />
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              onClick={() => setOpen((prev) => !prev)}
+              className="rounded-full border border-white/30 p-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 bg-transparent"
+            >
+              {open ? <X aria-hidden /> : <Menu aria-hidden />}
+            </button>
+          </div>
         </div>
       </div>
 

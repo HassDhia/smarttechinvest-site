@@ -31,11 +31,11 @@ export default function IntelligencePage() {
   const allBriefs = listBriefs();
 
   return (
-    <div className="font-sans text-[var(--text-primary)]">
+    <div className="font-sans text-[hsl(var(--foreground))]">
       <section className="container section">
         <SectionHeader
           title="Intelligence That Drives the Collabs"
-          subtitleClassName="text-[var(--text-secondary)]"
+          subtitleClassName="text-[hsl(var(--foreground-secondary))]"
           subtitle="Strategic briefs on AI, culture, influence, and behavioral shifts — distilled to what operators and brand teams actually need."
           useGradientTitle
         />
@@ -44,9 +44,9 @@ export default function IntelligencePage() {
       <section className="container section vt-section">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.4em] text-[var(--text-muted)]">Strategic Briefs</p>
-            <h2 className="text-2xl font-semibold text-[var(--text-primary)]">Weekly intelligence</h2>
-            <p className="text-sm text-[var(--text-secondary)]">
+            <p className="text-xs uppercase tracking-[0.4em] text-[hsl(var(--foreground-tertiary))]">Strategic Briefs</p>
+            <h2 className="text-2xl font-semibold text-[hsl(var(--foreground))]">Weekly intelligence</h2>
+            <p className="text-sm text-[hsl(var(--foreground-secondary))]">
               Full-length analysis with sources, signal strength, and action paths.
             </p>
           </div>
@@ -67,7 +67,7 @@ export default function IntelligencePage() {
                   className="border-b border-[hsl(var(--border))] pb-6 last:border-0"
                 >
                   <div className="flex flex-col md:flex-row md:items-start gap-4">
-                    <div className="text-xs text-[var(--text-muted)] font-mono min-w-[120px]">
+                    <div className="text-xs text-[hsl(var(--foreground-tertiary))] font-mono min-w-[120px]">
                       {dateTime ? (
                         <time dateTime={dateTime}>{label}</time>
                       ) : (
@@ -86,11 +86,11 @@ export default function IntelligencePage() {
                         />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                        <h3 className="text-lg font-semibold text-[hsl(var(--foreground))] mb-2">
                           {brief.title || "Intelligence Brief"}
                         </h3>
                         {brief.summary && (
-                          <p className="text-sm text-[var(--text-secondary)] mb-4 leading-relaxed">
+                          <p className="text-sm text-[hsl(var(--foreground-secondary))] mb-4 leading-relaxed">
                             {brief.summary}
                           </p>
                         )}
@@ -103,10 +103,10 @@ export default function IntelligencePage() {
                           </Link>
                           {brief.marketPathHtml && (
                             <>
-                              <span className="text-[var(--text-muted)]">·</span>
+                              <span className="text-[hsl(var(--foreground-tertiary))]">·</span>
                               <Link
                                 href={brief.marketPathHtml}
-                                className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:underline"
+                                className="text-sm text-[hsl(var(--foreground-tertiary))] hover:text-[hsl(var(--foreground))] hover:underline"
                                 target="_blank"
                                 rel="noopener noreferrer"
                               >
@@ -124,7 +124,7 @@ export default function IntelligencePage() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-[var(--text-muted)]">No briefs available yet.</p>
+            <p className="text-[hsl(var(--foreground-tertiary))]">No briefs available yet.</p>
           </div>
         )}
       </section>

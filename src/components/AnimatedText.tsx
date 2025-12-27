@@ -1,17 +1,24 @@
-// AnimatedText.jsx - React component for rotating text phrases
-import { useState, useEffect } from 'react';
+'use client';
 
-export default function AnimatedText({ 
+import { useState, useEffect, ReactNode } from 'react';
+
+interface AnimatedTextProps {
+  phrases?: string[];
+  interval?: number;
+  className?: string;
+}
+
+export function AnimatedText({
   phrases = [
-    "Fractional Chief of Strategy",
-    "AI-Augmented Growth Systems",
-    "Pricing, Positioning, and GTM",
-    "Ops Automation for SMBs",
-    "Founder Advisory & Deals"
+    'Fractional Chief of Strategy',
+    'AI-Augmented Growth Systems',
+    'Pricing, Positioning, and GTM',
+    'Ops Automation for SMBs',
+    'Founder Advisory & Deals'
   ],
   interval = 3000,
   className = ''
-}) {
+}: AnimatedTextProps): ReactNode {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
 
   useEffect(() => {

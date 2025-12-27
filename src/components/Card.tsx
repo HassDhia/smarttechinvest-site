@@ -16,30 +16,42 @@ export function Card({
   icon?: LucideIcon;
   highlight?: boolean;
 }) {
+  const baseClasses = cn(
+    "rounded-xl p-6 bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))]",
+    "shadow-[var(--shadow-sm)] transition-[box-shadow,transform,border-color] duration-[var(--dur-200)] ease-[var(--ease-standard)]",
+    href && "hover:-translate-y-[2px] hover:shadow-[var(--shadow-lg)] hover:border-[hsl(var(--primary)/0.3)]",
+    highlight && "bg-gradient-to-br from-[hsl(var(--primary)/0.05)] to-[hsl(var(--primary)/0.02)] border-[hsl(var(--primary)/0.2)] hover:border-[hsl(var(--primary)/0.4)]",
+    className
+  );
+
   const content = (
-    <div className={cn(
-      "rounded-xl p-6 bg-card text-[hsl(var(--card-foreground))] border border-[hsl(var(--border))]",
-      highlight ? "card-gradient" : "",
-      className
-    )}>
+    <div className={baseClasses}>
       {IconCmp ? (
-        <div className="mb-2 text-foreground/90 dark:text-foreground/90"><IconCmp className="lucide" aria-hidden /></div>
+        <div className="mb-3 text-[hsl(var(--foreground))] opacity-90">
+          <IconCmp className="lucide" aria-hidden />
+        </div>
       ) : null}
-      <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+      <h3 className="text-lg font-semibold text-[hsl(var(--foreground))]">{title}</h3>
       {description && (
-        <p className="mt-1 text-sm leading-6 text-[hsl(var(--muted-foreground))]">
+        <p className="mt-2 text-sm leading-6 text-[hsl(var(--foreground-secondary))]">
           {description}
         </p>
       )}
       {href ? (
-        <div className="mt-2 text-sm font-semibold">
-          <span className="link-underline text-foreground/80 hover:text-foreground">Learn more →</span>
+        <div className="mt-3 text-sm font-semibold">
+          <span className="link-underline text-[hsl(var(--foreground)/0.7)] hover:text-[hsl(var(--foreground))] transition-colors">
+            Learn more →
+          </span>
         </div>
       ) : null}
     </div>
   );
+
   return href ? (
-    <a href={href} className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] rounded-xl">
+    <a
+      href={href}
+      className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--background))] rounded-xl"
+    >
       {content}
     </a>
   ) : (

@@ -4,13 +4,22 @@ import { Sun, Moon } from "lucide-react";
 import { cn } from "../lib/cn";
 
 export function ThemeToggle({ className }: { className?: string }) {
-  const [theme, setTheme] = useState<string>("dark");
+  const [theme, setTheme] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     if (typeof window === "undefined") return;
-    const saved = localStorage.getItem("theme") || "light";
-    setTheme(saved);
-    document.documentElement.classList.toggle("dark", saved === "dark");
+    const saved = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = saved ? saved === "dark" : prefersDark;
+    setTheme(isDark ? "dark" : "light");
+    document.documentElement.classList.toggle("dark", isDark);
   }, []);
+  if (!mounted || theme === null) {
+    return null;
+  }
+
   const isDark = theme === "dark";
   const toggle = () => {
     const next = isDark ? "light" : "dark";
