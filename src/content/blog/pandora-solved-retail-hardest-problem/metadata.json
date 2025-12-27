@@ -1,0 +1,51 @@
+{
+  "title": "Pandora Just Solved Retail's Hardest Problem",
+  "slug": "pandora-solved-retail-hardest-problem",
+  "date": "2025-12-27",
+  "author": "Hass Dhia",
+  "excerpt": "The jewelry brand deployed AI agents that don't just answer questions—they sell feelings. Here's why this changes everything for brick-and-mortar operators.",
+  "tags": [
+    "AI",
+    "retail",
+    "emotional selling",
+    "customer experience",
+    "hospitality"
+  ],
+  "featuredImage": "images/header.png",
+  "images": [
+    {
+      "path": "images/header.png",
+      "alt": "Robot and human hands reaching toward each other holding a heart - AI scaling emotional connection",
+      "placement": "header"
+    },
+    {
+      "path": "images/concept-1.png",
+      "alt": "AI agent at jewelry counter having emotional selling conversation",
+      "placement": "inline"
+    },
+    {
+      "path": "images/concept-2.png",
+      "alt": "Human brain responding to emotional triggers and patterns",
+      "placement": "inline"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Pandora is betting on AI agents to scale service and emotional selling during the peak holiday season",
+      "url": "https://digiday.com/marketing/pandora-is-betting-on-ai-agents-to-scale-service-and-emotional-selling-during-the-peak-holiday-season/"
+    },
+    {
+      "title": "The Golden Ratio and the Science of Phi",
+      "url": "https://www.neurosciencemarketing.com/blog/articles/golden-mean-brain.htm"
+    },
+    {
+      "title": "Zales debuts next-gen retail concept, The Edit",
+      "url": "https://www.retaildive.com/news/zales-debuts-next-gen-retail-concept-the-edit/808595/"
+    },
+    {
+      "title": "A Billionaire's Comeback, the Biggest Collapse, Airbnb's Edge: Skift's 2025 Hotel Quiz",
+      "url": "https://skift.com/2025/12/27/a-billionaires-comeback-the-biggest-collapse-airbnbs-edge-skifts-2025-hotel-quiz/"
+    }
+  ],
+  "linkedinTeaser": "Pandora's CTO said it best: \"We don't sell pots and pans. Half of what you buy is the product, and half is the experience in the store.\"\n\nThat experience—the emotional selling that happens when a great associate asks the right questions—has always been impossible to scale.\n\nUntil now.\n\nPandora just deployed an AI sales agent called Gemma. Not a chatbot. A sales agent.\n\nShe asks: Who is this gift for? What's the occasion? What do you want them to feel when they open it?\n\nThen she recommends based on those answers.\n\nTheir service AI (Clara) already resolves 60% of inquiries without humans. NPS jumped 10%.\n\nBut Gemma is different. Gemma's job is emotional connection leading to sale.\n\nFor anyone running a gym, hotel, or retail store: this is the playbook.\n\nYour best employee is now a training dataset.\n\nhttps://smarttechinvest.com/blog/pandora-solved-retail-hardest-problem"
+}
