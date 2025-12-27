@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import { getAllPostSlugs, getPostBySlug } from '@/lib/blog';
 import { MDXRemote } from 'next-mdx-remote/rsc';
@@ -86,7 +85,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Tags */}
           {post.tags && post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
@@ -97,23 +96,23 @@ export default async function BlogPostPage({ params }: Props) {
               ))}
             </div>
           )}
-
-          {/* Featured Image */}
-          {post.featuredImage && (
-            <div className="relative aspect-[16/9] rounded-lg overflow-hidden bg-[hsl(var(--card))]">
-              <Image
-                src={post.featuredImage}
-                alt={post.title}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          )}
         </header>
 
         {/* Content */}
-        <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-[hsl(var(--brand))] prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-pre:bg-[hsl(var(--card))]">
+        <div className="
+          prose prose-lg max-w-none dark:prose-invert
+          prose-headings:font-bold
+          prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6
+          prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
+          prose-p:my-6 prose-p:leading-relaxed
+          prose-a:text-[hsl(var(--brand))] prose-a:no-underline hover:prose-a:underline
+          prose-img:rounded-lg prose-img:my-8 prose-img:mx-auto
+          prose-blockquote:border-l-4 prose-blockquote:border-[hsl(var(--brand))] prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:my-8
+          prose-strong:text-[hsl(var(--foreground))]
+          prose-hr:my-12 prose-hr:border-[hsl(var(--border))]
+          prose-ul:my-6 prose-li:my-2
+          prose-pre:bg-[hsl(var(--card))]
+        ">
           <MDXRemote source={post.content} />
         </div>
 
