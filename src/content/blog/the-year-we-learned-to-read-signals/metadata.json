@@ -1,0 +1,37 @@
+{
+  "title": "The Year We Learned to Read Signals",
+  "slug": "the-year-we-learned-to-read-signals",
+  "date": "2025-12-29",
+  "author": "Hass Dhia",
+  "excerpt": "From neural sensors to airline AI, 2025 was the year we finally started listening to what customers, brains, and markets have been trying to tell us.",
+  "tags": [
+    "AI",
+    "neuroscience",
+    "customer experience",
+    "operators"
+  ],
+  "featuredImage": "images/header.png",
+  "linkedinTeaser": "2025 was the year we learned to listen.\n\nA neuroscience breakthrough just gave us the ability to see incoming signals between neurons - something that was literally impossible before.\n\nThe same shift is happening in business.\n\nAmerican Airlines is using AI to understand natural customer questions. Travel platforms are opening infrastructure so any business can compete. And marketers are learning that consistency beats novelty.\n\nThe pattern? The winners aren't the ones with the flashiest tech. They're the ones that finally learned to read the signals their customers have been sending all along.\n\n3 takeaways for operators:\n\n1. Audit your listening systems - what signals are customers sending that you can't receive?\n\n2. Automate the predictable so humans can handle the meaningful\n\n3. Demand consistency from your tools - reliability beats novelty\n\nFull breakdown on the blog: https://smarttechinvest.com/blog/the-year-we-learned-to-read-signals",
+  "sources": [
+    {
+      "title": "Executive Q&A: Inside American's Push to Make Travel More Seamless",
+      "url": "https://skift.com/2025/12/29/executive-qa-inside-americans-push-to-make-travel-more-seamless/",
+      "source": "Skift"
+    },
+    {
+      "title": "Q&A: Why Travel Needs a New Platform Built for an Open Ecosystem",
+      "url": "https://skift.com/2025/12/29/embedded-travel-next-big-opportunity/",
+      "source": "Skift"
+    },
+    {
+      "title": "How marketers rank this year's generative AI image, video tools",
+      "url": "https://digiday.com/marketing/how-marketers-rank-this-years-generative-ai-image-video-tools/",
+      "source": "Digiday"
+    },
+    {
+      "title": "Engineered Protein Reveals Hidden Incoming Signals Between Neurons",
+      "url": "https://neurosciencenews.com/neurotech-neural-communication-30072/",
+      "source": "Neuroscience News"
+    }
+  ]
+}
