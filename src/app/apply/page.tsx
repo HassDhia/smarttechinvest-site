@@ -6,24 +6,22 @@ import { Button } from "../../components/ui/Button";
 import { cn } from "../../lib/cn";
 
 const roleOptions = [
-  { label: "Operator", value: "Operator" },
-  { label: "Creator", value: "Creator" },
   { label: "Brand", value: "Brand" },
+  { label: "Agency", value: "Agency" },
+  { label: "Other", value: "Other" },
 ];
 
-const outcomeOptions = [
-  "Foot traffic",
-  "Sales",
-  "Signups",
-  "Awareness",
-  "Partnerships",
+const focusOptions = [
+  "Which partners are worth pursuing",
+  "Market coverage gaps",
+  "Competitive landscape",
   "Other",
 ];
 
-const budgetOptions = [
-  { label: "Yes", value: "Yes" },
-  { label: "No", value: "No" },
-  { label: "Not sure", value: "Not sure" },
+const timelineOptions = [
+  { label: "Exploring", value: "Exploring" },
+  { label: "Active planning", value: "Active planning" },
+  { label: "Immediate need", value: "Immediate need" },
 ];
 
 const controlClasses =
@@ -66,13 +64,10 @@ export default function ApplyPage() {
       <section className="container section space-y-10">
         <div className="max-w-3xl space-y-4">
           <p className="headline-label text-white/60">Apply</p>
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-balance">Request a collaboration review</h1>
+          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-balance">Tell us about your markets</h1>
           <p className="text-lg text-white/85 leading-relaxed">
-            If you have real distribution and a clear outcome, send the basics. STI reviews for fit and follows up when there is a credible path.
+            Share your target geography, category, and objectives. If there&apos;s a fit, we&apos;ll follow up with how our research can help.
           </p>
-          <div className="rounded-3xl border border-white/15 bg-white/5 px-6 py-5 text-sm text-white/80">
-            Most work is private. Public case studies are limited. Redacted examples are available after initial fit.
-          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8" encType="multipart/form-data">
@@ -80,7 +75,6 @@ export default function ApplyPage() {
             <p className="text-xs uppercase tracking-[0.4em] text-white/60">Signals</p>
             <div className="grid gap-4 md:grid-cols-2">
               <ToggleField id="sendBriefs" label="Subscribe to the blog" />
-              <ToggleField id="collaborationIntent" label="I want to be considered for a collaboration" defaultChecked />
             </div>
           </div>
 
@@ -98,32 +92,28 @@ export default function ApplyPage() {
               </select>
             </Field>
 
-            <Field label="Name" required>
-              <Input name="name" required placeholder="Full name" />
+            <Field label="Company" required>
+              <Input name="company" required placeholder="Company name" />
             </Field>
 
-            <Field label="Company or handle" required>
-              <Input name="company" required placeholder="Company, studio, or handle" />
+            <Field label="Your role" required>
+              <Input name="role_title" required placeholder="Your title or role" />
             </Field>
 
-            <Field label="Primary link" required helper="Website or social profile">
-              <Input name="primaryLink" required placeholder="website or social profile" />
+            <Field label="Target markets" required helper="Cities or regions you're focused on">
+              <Input name="market" required placeholder="Los Angeles, NYC, Texas, etc." />
             </Field>
 
-            <Field label="Market" required helper="City, region">
-              <Input name="market" required placeholder="city, region" />
+            <Field label="Category focus" required helper="Fitness, food & bev, retail, hospitality, other">
+              <Input name="category" required placeholder="fitness, food & bev, retail, hospitality, other" />
             </Field>
 
-            <Field label="Category" required helper="Retail, hospitality, fitness, media, creator, other">
-              <Input name="category" required placeholder="retail, hospitality, fitness, media, creator, other" />
-            </Field>
-
-            <Field label="What outcome are you trying to buy?" required>
-              <select name="outcome" required className={controlClasses} defaultValue="">
+            <Field label="What are you trying to learn?" required>
+              <select name="focus" required className={controlClasses} defaultValue="">
                 <option value="" disabled>
-                  Select outcome
+                  Select focus
                 </option>
-                {outcomeOptions.map((option) => (
+                {focusOptions.map((option) => (
                   <option key={option} value={option}>
                     {option}
                   </option>
@@ -131,46 +121,12 @@ export default function ApplyPage() {
               </select>
             </Field>
 
-            <Field
-              label="Distribution snapshot"
-              required
-              helper="Share what you have today. Examples: monthly foot traffic, email list size, follower count, average views, membership count."
-            >
-              <textarea
-                name="distributionSnapshot"
-                required
-                rows={3}
-                className={cn(controlClasses, "min-h-[120px] resize-vertical")}
-                placeholder="Summarize reach metrics"
-              />
-              <div className="mt-2 text-xs text-white/60">
-                <label htmlFor="distributionFile" className="block text-white/70 mb-1">
-                  Optional upload (screenshots allowed)
-                </label>
-                <input
-                  id="distributionFile"
-                  name="distributionFile"
-                  type="file"
-                  accept="image/*,.pdf"
-                  className="block w-full text-xs text-white/70 file:mr-4 file:rounded-md file:border-0 file:bg-white/10 file:px-3 file:py-2 file:text-xs file:font-semibold file:text-white hover:file:bg-white/20"
-                />
-              </div>
-            </Field>
-
-            <Field label="Past brand work (optional)" helper="List any brands you have worked with, even if informal.">
-              <Input name="brandWork" placeholder="Brand roster or notable collaborations" />
-            </Field>
-
-            <Field label="Constraints or exclusions (optional)" helper="Anything you will not do or will not partner with.">
-              <Input name="constraints" placeholder="List any guardrails" />
-            </Field>
-
-            <Field label="Budget reality" required>
-              <select name="budgetReality" required className={controlClasses} defaultValue="">
+            <Field label="Timeline" required>
+              <select name="timeline" required className={controlClasses} defaultValue="">
                 <option value="" disabled>
-                  Select one
+                  Select timeline
                 </option>
-                {budgetOptions.map((option) => (
+                {timelineOptions.map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label}
                   </option>
@@ -183,18 +139,18 @@ export default function ApplyPage() {
                 name="notes"
                 rows={4}
                 className={cn(controlClasses, "min-h-[140px] resize-vertical")}
-                placeholder="Add any context or questions"
+                placeholder="Add any context about your objectives or questions"
               />
             </Field>
           </div>
 
           <div className="space-y-4">
             <Button type="submit" variant="gradient" size="lg" isLoading={status === "submitting"} className="w-full sm:w-auto">
-              Submit for review
+              Submit
             </Button>
             {status === "success" && (
               <p className="text-sm text-emerald-400" role="status">
-                Received. If there is a fit, we will reach out. If you subscribed to the blog, you&apos;ll get new posts.
+                Received. If there&apos;s a fit, we&apos;ll follow up with how our research can help.
               </p>
             )}
             {status === "error" && errorMessage && (

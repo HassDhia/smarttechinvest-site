@@ -4,7 +4,7 @@ import { getAllPosts } from '@/lib/blog';
 
 export const metadata = {
   title: 'Blog | Smart Technology Investments',
-  description: 'Insights on AI, neuroscience, and business strategy for operators.',
+  description: 'Neuroscience, behavioral economics, and AI—applied to brand partnership strategy.',
 };
 
 export default function BlogPage() {
@@ -19,7 +19,7 @@ export default function BlogPage() {
             Blog
           </h1>
           <p className="text-xl text-[hsl(var(--foreground-secondary))]">
-            AI, neuroscience, and business strategy for operators.
+            Neuroscience, behavioral economics, and AI—applied to brand partnership strategy.
           </p>
         </header>
 

@@ -5,20 +5,20 @@ import { Button } from "../components/ui/Button";
 import { getAllPosts } from "../lib/blog";
 
 export const metadata: Metadata = {
-  title: "STI - Build Your Brand-Partnerships Growth Arm",
-  description: "We give brick-and-mortar businesses the strategy and templates to run brand partnerships themselves. You own the capability—we only stay involved if the upside warrants it.",
-  keywords: ["brand partnerships", "partnership strategy", "templates", "brick-and-mortar", "growth strategy", "self-serve"],
+  title: "STI - Local Partnership Intelligence for Brands",
+  description: "We research, grade, and map local partners so brands invest in the right ones. Strategic intelligence, not execution.",
+  keywords: ["local partnerships", "brand partnerships", "partnership intelligence", "market research", "experiential marketing strategy", "local presence strategy"],
   openGraph: {
-    title: "STI - Build Your Brand-Partnerships Growth Arm",
-    description: "Strategy, templates, and frameworks to run brand partnerships yourself. Own the capability and the economics.",
+    title: "STI - Local Partnership Intelligence for Brands",
+    description: "Strategic intelligence for local brand partnerships. We research and grade local partners so you invest in the right ones.",
     url: "https://smarttechinvest.com",
     siteName: "Smart Technology Investments",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "STI - Build Your Brand-Partnerships Growth Arm",
-    description: "Get the strategy and templates to run brand partnerships yourself.",
+    title: "STI - Local Partnership Intelligence for Brands",
+    description: "We research, grade, and map local partners so brands invest in the right ones.",
   },
 };
 
@@ -35,20 +35,24 @@ function formatBriefDate(value?: string) {
   };
 }
 
-const whatWeDoBullets = [
-  "Show you how to identify partner-fit opportunities using market signals, category logic, and your constraints.",
-  "Give you templates to structure collaborations into something a budget owner can approve.",
-  "Provide frameworks for outreach, negotiation, and pitch refinement—so you can run the process yourself.",
+const approachBullets = [
+  "We grade partners on what actually matters: credibility, reach, engagement quality, owner story, and brand alignment—not just follower counts.",
+  "We apply behavioral science to partnership decisions. Why do some local partnerships drive brand recall while others waste budget?",
+  "We stay on the strategy side. We don't broker deals, run events, or manage logistics. You keep full control of execution and economics.",
 ];
 
 const services = [
   {
-    title: "Strategy & Templates",
-    description: "Frameworks and playbooks to identify, structure, and land brand partnerships. You run it yourself."
+    title: "Partner Intelligence Reports",
+    description: "Deep research on local partners in your target markets. Each report includes credibility scores, reach metrics, owner profiles, and strategic fit analysis. Know who's worth pursuing before you reach out."
   },
   {
-    title: "Market Intelligence",
-    description: "Strategic research that spots opportunities. Each brief includes activation angles you can act on."
+    title: "Market Landscape Mapping",
+    description: "Coverage analysis across neighborhoods, cities, or regions. See where competitors have presence, where gaps exist, and where your brand would have maximum impact."
+  },
+  {
+    title: "Partnership Strategy Consulting",
+    description: "Neuroscience-informed frameworks for evaluating partnership opportunities. We help you think through the decision—you own the relationship and the outcome."
   },
 ];
 
@@ -68,12 +72,12 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.45)] via-[rgba(3,6,12,0.65)] to-[#03060C]" />
         <div className="container relative z-10 max-w-3xl space-y-6">
-          <h1 className="headline-xl text-balance text-white">Build Your Brand-Partnerships Growth Arm.</h1>
-          <p className="text-lg text-white/90">We give you the strategy and templates to run brand partnerships yourself. You own the relationships and economics.</p>
+          <h1 className="headline-xl text-balance text-white">Local Partnership Intelligence for Brands.</h1>
+          <p className="text-lg text-white/90">We research, grade, and map local partners so you invest in the right ones. Strategy, not execution.</p>
           <div className="pt-2">
             <Button asChild variant="primary" size="md" className="rounded-full uppercase tracking-[0.25em] text-sm px-8 py-3">
-              <a href="mailto:partnerships@smarttechinvest.com?subject=STI%20Partnership%20Strategy%20Inquiry">
-                Get started
+              <a href="mailto:partnerships@smarttechinvest.com?subject=STI%20Partnership%20Briefing%20Request">
+                Schedule a briefing
               </a>
             </Button>
           </div>
@@ -83,20 +87,23 @@ export default function Home() {
       <section id="about" className="container section space-y-10">
         <div className="max-w-2xl space-y-6">
           <p className="headline-label text-[hsl(var(--primary))]">About</p>
-          <h2 className="headline-lg">Build the capability in-house, own the upside</h2>
+          <h2 className="headline-lg">The research you need. The execution stays yours.</h2>
           <p className="text-base text-[hsl(var(--foreground-secondary))] leading-relaxed">
-            Most brick-and-mortar businesses know they should be doing brand partnerships, but don&apos;t know where to start. We give you the strategy, templates, and frameworks to build your own brand-partnerships growth arm and run it yourself.
+            Most brands know local partnerships drive results. The problem isn&apos;t execution—it&apos;s knowing where to place your bets.
           </p>
           <p className="text-base text-[hsl(var(--foreground-secondary))] leading-relaxed">
-            You get the playbook. You own the relationships. You keep the economics. We only stay involved long-term if the opportunity is clearly worth our time and yours.
+            Which shops actually have the reach they claim? Which owners have stories worth amplifying? Which neighborhoods are oversaturated, and which are underserved?
+          </p>
+          <p className="text-base text-[hsl(var(--foreground-secondary))] leading-relaxed">
+            We do the research. You make the decisions.
           </p>
         </div>
       </section>
 
       <section id="services" className="container section space-y-12">
         <div className="space-y-4">
-          <p className="headline-label text-[hsl(var(--primary))]">What you get</p>
-          <h2 className="headline-lg">Two core offerings</h2>
+          <p className="headline-label text-[hsl(var(--primary))]">What We Provide</p>
+          <h2 className="headline-lg">Strategic intelligence, not operational burden</h2>
         </div>
         <div className="max-w-2xl space-y-12">
           {services.map((service) => (
@@ -112,22 +119,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="examples" className="container section space-y-8">
-        <h2 className="headline-lg">Our approach</h2>
+      <section id="approach" className="container section space-y-8">
+        <h2 className="headline-lg">How we think about local partnerships</h2>
         <ul className="max-w-2xl space-y-4 text-base text-[hsl(var(--foreground-secondary))] list-disc pl-5 marker:text-[hsl(var(--primary))]">
-          {whatWeDoBullets.map((item) => (
+          {approachBullets.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
       </section>
 
       <section id="audience" className="container section space-y-8">
-        <p className="headline-label text-[hsl(var(--primary))]">Who this is for</p>
+        <p className="headline-label text-[hsl(var(--primary))]">Who This Is For</p>
         <div className="max-w-2xl space-y-8">
           <div>
-            <h2 className="headline-lg mb-4">Brick-and-mortar businesses with venue or community reach</h2>
+            <h2 className="headline-lg mb-4">Brand teams seeking local presence</h2>
             <p className="text-base text-[hsl(var(--foreground-secondary))] leading-relaxed">
-              Gyms, studios, retail stores, event spaces, membership clubs. You have what brands want to access. You know partnerships should be a growth lever, but you need the strategy and templates to make it happen.
+              Marketing directors evaluating experiential alternatives. Partnership managers building local pipelines. CMOs asking why some local investments work and others don&apos;t.
+            </p>
+            <p className="text-base text-[hsl(var(--foreground-secondary))] leading-relaxed mt-4">
+              You have budget for local partnerships. You need intelligence on where to deploy it.
             </p>
           </div>
         </div>
@@ -135,15 +145,15 @@ export default function Home() {
 
       <section id="contact" className="container section space-y-10">
         <div className="max-w-2xl space-y-6">
-          <p className="headline-label text-[hsl(var(--primary))]">Get started</p>
-          <h2 className="headline-lg">Ready to build your partnerships capability?</h2>
+          <p className="headline-label text-[hsl(var(--primary))]">Get Started</p>
+          <h2 className="headline-lg">Ready for better partnership decisions?</h2>
           <p className="text-base text-[hsl(var(--foreground-secondary))] leading-relaxed">
-            Get the strategy, templates, and frameworks to run brand partnerships yourself. No long-term commitment required.
+            Start with a briefing. We&apos;ll discuss your markets, your objectives, and whether our intelligence would be useful.
           </p>
         </div>
         <Button asChild variant="primary" size="md" className="rounded-full uppercase tracking-[0.25em] text-sm px-8 py-3">
-          <a href="mailto:partnerships@smarttechinvest.com?subject=STI%20Partnership%20Strategy%20Inquiry">
-            Get the strategy & templates
+          <a href="mailto:partnerships@smarttechinvest.com?subject=STI%20Partnership%20Briefing%20Request">
+            Schedule a briefing
           </a>
         </Button>
       </section>
@@ -152,9 +162,9 @@ export default function Home() {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl space-y-4">
             <p className="headline-label text-[hsl(var(--primary))]">Insights</p>
-            <h2 className="headline-lg">Ideas that sharpen your edge</h2>
+            <h2 className="headline-lg">How local partnerships actually work</h2>
             <p className="text-[hsl(var(--foreground-secondary))] text-base leading-relaxed">
-              Neuroscience, behavioral economics, and AI—applied to real business problems. Written for operators who want to understand why things work, not just what to do.
+              Neuroscience, behavioral economics, and market analysis—applied to brand partnership decisions. Written for strategists who want to understand the why, not just the what.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:items-end">
