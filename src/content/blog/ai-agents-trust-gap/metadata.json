@@ -1,0 +1,39 @@
+{
+  "title": "The AI Agent Trust Gap: Why Your Brain Says No",
+  "slug": "ai-agents-trust-gap",
+  "date": "2026-01-06",
+  "author": "Hass Dhia",
+  "excerpt": "Everyone's launching AI agents. Almost nobody's asking whether consumers actually want them. The gap between technical capability and psychological readiness explains why most will fail.",
+  "tags": [
+    "AI agents",
+    "consumer behavior",
+    "neuroscience",
+    "trust",
+    "retail technology"
+  ],
+  "featuredImage": "images/header.png",
+  "sources": [
+    {
+      "title": "The Modern Peril of the Availability Heuristic",
+      "url": "https://www.behavioraleconomics.com/the-modern-peril-of-the-availability-heuristic/",
+      "source": "BehavioralEconomics.com"
+    },
+    {
+      "title": "Why the AI shopping agent wars will heat up in 2026",
+      "url": "https://www.modernretail.co/technology/why-the-ai-shopping-agent-wars-will-heat-up-in-2026/",
+      "source": "Modern Retail"
+    },
+    {
+      "title": "PubMatic debuts agentic platform to address programmatic's AI headaches",
+      "url": "https://www.marketingdive.com/news/pubmatic-debuts-agentic-platform-to-solve-programmatics-ai-headaches/808709/",
+      "source": "Marketing Dive"
+    },
+    {
+      "title": "How humanoid, AI-powered agents are reshaping hotel operations",
+      "url": "https://www.hoteldive.com/news/ai-powered-agents-hotel-operations/808827/",
+      "source": "Hotel Dive"
+    }
+  ],
+  "linkedinOrgTeaser": "NEW ON THE BLOG: The AI Agent Trust Gap\n\nEveryone's launching AI shopping agents. Amazon, OpenAI, Perplexity. Hotels are deploying robots. Ad platforms are going \"agentic.\"\n\nBut here's what they're missing: only 33% of consumers say they'd actually complete a purchase through an AI agent.\n\nThe gap isn't technical. It's psychological. Our brains need familiar trust signals that AI agents can't provide.\n\nThe companies that win won't just deploy better technology. They'll wrap AI in human context.\n\nRead the full analysis.\n\n#AIAgents #ConsumerBehavior #RetailTech #BrandStrategy #Neuroscience",
+  "linkedinPersonalTeaser": "I've been watching the AI agent wars unfold this week. Amazon expanded Rufus. OpenAI added checkout to ChatGPT. Hotels are deploying concierge robots.\n\nEveryone's building agents. Almost nobody's asking: do consumers actually want them?\n\nHere's the uncomfortable number: only one third of consumers say they'd complete a purchase through an AI agent. Not because the technology doesn't work. Because our brains are wired to look for trust signals that agents can't show.\n\nWhen an AI recommends something, where's the social proof? Where's the \"people like you bought this\"? The agent might have processed millions of data points. But if it can't show its work, your brain treats that absence as a red flag.\n\nThe companies that figure this out will use AI to scale research while preserving human touchpoints for trust.\n\nBut here's my question: are you building agents that replace human judgment, or tools that amplify it?\n\n#AIAgents #ConsumerPsychology #RetailTech #BrandStrategy"
+}
